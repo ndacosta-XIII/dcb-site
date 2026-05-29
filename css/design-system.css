@@ -1,0 +1,54 @@
+/* ============================================================
+   DCB TECHNOLOGIES — DESIGN SYSTEM
+   Source de vérité unique · Toutes les pages héritent d'ici
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  /* Couleurs */
+  --primary:          #0B3D91;
+  --primary-dark:     #072B6B;
+  --primary-light:    #1A5CB8;
+  --primary-surface:  #E6EEF9;
+  --cta:              #F57C00;
+  --cta-hover:        #E65100;
+  --white:            #FFFFFF;
+
+  /* Surfaces — hiérarchie tonale (zéro bordure 1px de section) */
+  --s0:  #FFFFFF;
+  --s1:  #F8F9FA;
+  --s2:  #F3F4F5;
+  --s3:  #E9E7F2;
+
+  /* Textes */
+  --text:        #1A1A2E;
+  --text-muted:  #4A5568;
+  --text-light:  #6B7280;
+  --text-white:  #FFFFFF;
+
+  /* Tags métiers */
+  --boulangerie: #F59E0B;
+  --restaurant:  #EF4444;
+  --commerce:    #0D9488;
+  --coiffure:    #A855F7;
+
+  /* Typographie */
+  --font-title: 'Sora', sans-serif;
+  --font-body:  'Inter', sans-serif;
+
+  /* Espacements */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* Rayons */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg

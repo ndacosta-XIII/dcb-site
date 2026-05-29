@@ -1,0 +1,180 @@
+<!-- DCB Technologies — Header Component -->
+<nav id="dcb-navbar" class="fixed top-0 w-full h-[68px] z-50 bg-white shadow-[4px_4px_0px_0px_rgba(7,43,107,0.04)]">
+  <div class="flex justify-between items-center max-w-[80rem] mx-auto px-6 h-full">
+
+    <!-- Left: Logo + Desktop Links -->
+    <div class="flex items-center gap-8">
+      <a href="{{base}}index.html" class="font-sora text-[1.375rem] font-bold text-[#0B3D91] tracking-[-0.03em] no-underline whitespace-nowrap">DCB Technologies</a>
+
+      <div class="hidden lg:flex items-center gap-0.5">
+
+        <!-- Dropdown: Caisse -->
+        <div class="group relative">
+          <a href="{{base}}caisse-enregistreuse/index.html" class="dcb-nav-link font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline flex items-center py-1.5 px-2.5 rounded-lg transition-colors duration-150 group-hover:text-[#F57C00]">
+            Caisse
+            <span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none ml-0.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#F57C00]">arrow_drop_down</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1 pt-2.5 min-w-[300px] opacity-0 pointer-events-none transition-all duration-[180ms] z-[200] group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+            <div class="bg-white rounded-2xl shadow-[0_24px_56px_-8px_rgba(7,43,107,0.2),0_0_0_1px_rgba(7,43,107,0.06)] p-2.5">
+              <a href="{{base}}caisse-enregistreuse/boulangerie/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#FEF3C7] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#F59E0B]">bakery_dining</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Boulangerie & Patisserie</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Caisse tactile, gestion stock</div></div>
+              </a>
+              <a href="{{base}}caisse-enregistreuse/restaurant/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#FEE2E2] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#EF4444]">restaurant</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Bar, Brasserie & Resto</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Commande table, ticket rapide</div></div>
+              </a>
+              <a href="{{base}}caisse-enregistreuse/commerce-de-detail/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#CCFBF1] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#0D9488]">storefront</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Mode & Commerce Detail</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Inventaire, fidelite, multi-caisse</div></div>
+              </a>
+              <a href="{{base}}caisse-enregistreuse/coiffure/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#F3E8FF] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#A855F7]">content_cut</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Coiffure & Beaute</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Rendez-vous, cartes fidelite</div></div>
+              </a>
+              <div class="grid grid-cols-2 gap-1 mt-1.5 pt-2 border-t border-gray-100">
+                <a href="{{base}}caisse-enregistreuse/borne-de-commande/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                  <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#E0E7FF] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#4F46E5]">point_of_sale</span></span>
+                  <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Borne commande</div></div>
+                </a>
+                <a href="{{base}}caisse-enregistreuse/monnayeur/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                  <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#D1FAE5] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#059669]">payments</span></span>
+                  <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Monnayeur auto</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown: IT 360 -->
+        <div class="group relative">
+          <a href="{{base}}maintenance-informatique/index.html" class="dcb-nav-link font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline flex items-center py-1.5 px-2.5 rounded-lg transition-colors duration-150 group-hover:text-[#F57C00]">
+            IT 360
+            <span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none ml-0.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#F57C00]">arrow_drop_down</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1 pt-2.5 min-w-[300px] opacity-0 pointer-events-none transition-all duration-[180ms] z-[200] group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+            <div class="bg-white rounded-2xl shadow-[0_24px_56px_-8px_rgba(7,43,107,0.2),0_0_0_1px_rgba(7,43,107,0.06)] p-2.5">
+              <a href="{{base}}maintenance-informatique/maintenance-depannage/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#FEF3C7] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#F59E0B]">build</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Maintenance & Depannage</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Intervention &lt;4h sur site</div></div>
+              </a>
+              <a href="{{base}}maintenance-informatique/cloud-securite/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#E0E7FF] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#4F46E5]">cloud_done</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Cloud & Securite</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Sauvegarde, antivirus, firewall</div></div>
+              </a>
+              <a href="{{base}}maintenance-informatique/location-vente-installation/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#CCFBF1] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#0D9488]">router</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Location & Installation</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Reseaux, postes, serveurs</div></div>
+              </a>
+              <a href="{{base}}maintenance-informatique/outils-collaboratifs/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#F3E8FF] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#A855F7]">groups</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Outils Collaboratifs</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Messagerie, visio, partage</div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown: Web -->
+        <div class="group relative">
+          <a href="{{base}}visibilite-web/index.html" class="dcb-nav-link font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline flex items-center py-1.5 px-2.5 rounded-lg transition-colors duration-150 group-hover:text-[#F57C00]">
+            Web
+            <span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none ml-0.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#F57C00]">arrow_drop_down</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1 pt-2.5 min-w-[300px] opacity-0 pointer-events-none transition-all duration-[180ms] z-[200] group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+            <div class="bg-white rounded-2xl shadow-[0_24px_56px_-8px_rgba(7,43,107,0.2),0_0_0_1px_rgba(7,43,107,0.06)] p-2.5">
+              <a href="{{base}}visibilite-web/creation-site-internet/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#E0E7FF] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#4F46E5]">design_services</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Creation de Site Web</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Vitrine, e-commerce, sur-mesure</div></div>
+              </a>
+              <a href="{{base}}visibilite-web/seo-sea-local/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#FEF3C7] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#F59E0B]">trending_up</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">SEO & SEA Local</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Referencement Google, ads locaux</div></div>
+              </a>
+              <a href="{{base}}visibilite-web/hebergement/index.html" class="group/item flex items-center gap-3 py-2 px-2.5 rounded-[0.625rem] no-underline hover:bg-[#F0F5FF]">
+                <span class="w-[2.125rem] h-[2.125rem] rounded-lg bg-[#CCFBF1] flex items-center justify-center shrink-0"><span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#0D9488]">dns</span></span>
+                <div><div class="font-headline font-bold text-[0.8125rem] text-[#0B3D91] group-hover/item:text-[#F57C00]">Hebergement</div><div class="font-body text-[0.72rem] text-gray-500 mt-0.5">Serveur rapide, SSL, mails pro</div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="{{base}}notre-adn/index.html" class="dcb-nav-link font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline py-1.5 px-2.5 rounded-lg transition-colors duration-150 hover:text-[#F57C00]">Notre ADN</a>
+        <a href="{{base}}contact/index.html" class="dcb-nav-link font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline py-1.5 px-2.5 rounded-lg transition-colors duration-150 hover:text-[#F57C00]">Contact</a>
+      </div>
+    </div>
+
+    <!-- Right: Phone + CTA + Burger -->
+    <div class="flex items-center gap-3.5">
+      <a href="tel:0482530510" class="hidden md:flex items-center gap-1.5 font-headline font-bold text-sm tracking-[-0.02em] text-[#0B3D91] no-underline">
+        <span class="material-symbols-outlined mat-filled text-[1.1rem] leading-none text-[#F57C00]">call</span>
+        04 82 53 05 10
+      </a>
+      <a href="{{base}}contact/index.html" class="hidden min-[480px]:inline-block bg-[#F57C00] text-white py-2.5 px-5 rounded-lg font-headline text-sm font-bold no-underline whitespace-nowrap shadow-sm hover:bg-[#e06f00] transition-colors duration-150">Demander un devis</a>
+      <button id="dcb-burger" onclick="dcbBurgerToggle()" aria-label="Menu" class="flex lg:hidden flex-col justify-center items-center gap-[5px] w-11 h-11 bg-transparent border-none cursor-pointer p-1.5 rounded-lg">
+        <span id="dcb-b1" class="block w-[22px] h-[2.5px] bg-[#0B3D91] rounded-sm transition-transform duration-[250ms] origin-center"></span>
+        <span id="dcb-b2" class="block w-[22px] h-[2.5px] bg-[#0B3D91] rounded-sm transition-opacity duration-[250ms]"></span>
+        <span id="dcb-b3" class="block w-[22px] h-[2.5px] bg-[#0B3D91] rounded-sm transition-transform duration-[250ms] origin-center"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="dcb-mobile-menu" class="hidden lg:hidden absolute top-[68px] left-0 right-0 bg-white border-t border-gray-100 px-5 pb-6 pt-3 shadow-[0_20px_40px_-10px_rgba(7,43,107,0.15)] max-h-[calc(100vh-68px)] overflow-y-auto z-40">
+
+    <!-- Section: Caisse -->
+    <div>
+      <button onclick="dcbMobToggle('dcb-m-caisse')" class="flex justify-between items-center w-full py-3.5 bg-transparent border-none border-b border-gray-100 cursor-pointer">
+        <span class="font-headline font-bold text-[0.9375rem] text-[#0B3D91]">Caisse enregistreuse</span>
+        <span id="arr-dcb-m-caisse" class="material-symbols-outlined mat-filled text-[1.2rem] text-[#0B3D91] transition-transform duration-200">arrow_drop_down</span>
+      </button>
+      <div id="dcb-m-caisse" class="hidden py-2 pb-3">
+        <a href="{{base}}caisse-enregistreuse/boulangerie/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#F59E0B]">bakery_dining</span><span class="font-body font-semibold text-sm text-slate-800">Boulangerie & Patisserie</span></a>
+        <a href="{{base}}caisse-enregistreuse/restaurant/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#EF4444]">restaurant</span><span class="font-body font-semibold text-sm text-slate-800">Bar, Brasserie & Resto</span></a>
+        <a href="{{base}}caisse-enregistreuse/commerce-de-detail/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#0D9488]">storefront</span><span class="font-body font-semibold text-sm text-slate-800">Mode & Commerce Detail</span></a>
+        <a href="{{base}}caisse-enregistreuse/coiffure/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#A855F7]">content_cut</span><span class="font-body font-semibold text-sm text-slate-800">Coiffure & Beaute</span></a>
+        <a href="{{base}}caisse-enregistreuse/borne-de-commande/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#4F46E5]">point_of_sale</span><span class="font-body font-semibold text-sm text-slate-800">Borne de commande</span></a>
+        <a href="{{base}}caisse-enregistreuse/monnayeur/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#059669]">payments</span><span class="font-body font-semibold text-sm text-slate-800">Monnayeur automatique</span></a>
+      </div>
+    </div>
+
+    <!-- Section: IT 360 -->
+    <div>
+      <button onclick="dcbMobToggle('dcb-m-it')" class="flex justify-between items-center w-full py-3.5 bg-transparent border-none border-b border-gray-100 cursor-pointer">
+        <span class="font-headline font-bold text-[0.9375rem] text-[#0B3D91]">IT 360</span>
+        <span id="arr-dcb-m-it" class="material-symbols-outlined mat-filled text-[1.2rem] text-[#0B3D91] transition-transform duration-200">arrow_drop_down</span>
+      </button>
+      <div id="dcb-m-it" class="hidden py-2 pb-3">
+        <a href="{{base}}maintenance-informatique/maintenance-depannage/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#F59E0B]">build</span><span class="font-body font-semibold text-sm text-slate-800">Maintenance & Depannage</span></a>
+        <a href="{{base}}maintenance-informatique/cloud-securite/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#4F46E5]">cloud_done</span><span class="font-body font-semibold text-sm text-slate-800">Cloud & Securite</span></a>
+        <a href="{{base}}maintenance-informatique/location-vente-installation/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#0D9488]">router</span><span class="font-body font-semibold text-sm text-slate-800">Location & Installation</span></a>
+        <a href="{{base}}maintenance-informatique/outils-collaboratifs/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#A855F7]">groups</span><span class="font-body font-semibold text-sm text-slate-800">Outils Collaboratifs</span></a>
+      </div>
+    </div>
+
+    <!-- Section: Web -->
+    <div>
+      <button onclick="dcbMobToggle('dcb-m-web')" class="flex justify-between items-center w-full py-3.5 bg-transparent border-none border-b border-gray-100 cursor-pointer">
+        <span class="font-headline font-bold text-[0.9375rem] text-[#0B3D91]">Visibilite Web</span>
+        <span id="arr-dcb-m-web" class="material-symbols-outlined mat-filled text-[1.2rem] text-[#0B3D91] transition-transform duration-200">arrow_drop_down</span>
+      </button>
+      <div id="dcb-m-web" class="hidden py-2 pb-3">
+        <a href="{{base}}visibilite-web/creation-site-internet/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#4F46E5]">design_services</span><span class="font-body font-semibold text-sm text-slate-800">Creation de Site Web</span></a>
+        <a href="{{base}}visibilite-web/seo-sea-local/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#F59E0B]">trending_up</span><span class="font-body font-semibold text-sm text-slate-800">SEO & SEA Local</span></a>
+        <a href="{{base}}visibilite-web/hebergement/index.html" onclick="dcbMobClose()" class="dcb-mob-link flex items-center gap-3 py-2.5 px-2 no-underline rounded-lg hover:bg-[#F0F5FF]"><span class="material-symbols-outlined mat-filled text-base text-[#0D9488]">dns</span><span class="font-body font-semibold text-sm text-slate-800">Hebergement</span></a>
+      </div>
+    </div>
+
+    <!-- Direct links -->
+    <a href="{{base}}notre-adn/index.html" onclick="dcbMobClose()" class="block py-3.5 font-headline font-bold text-[0.9375rem] text-[#0B3D91] no-underline border-b border-gray-100">Notre ADN</a>
+    <a href="{{base}}contact/index.html" onclick="dcbMobClose()" class="block py-3.5 font-headline font-bold text-[0.9375rem] text-[#0B3D91] no-underline border-b border-gray-100">Contact</a>
+
+    <!-- Mobile CTA -->
+    <div class="mt-5 flex flex-col gap-3">
+      <a href="tel:0482530510" class="flex items-center justify-center gap-2 py-3 rounded-[0.625rem] bg-[#F0F5FF] font-headline font-bold text-[0.9375rem] text-[#0B3D91] no-underline">
+        <span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#F57C00]">call</span>
+        04 82 53 05 10
+      </a>
+      <a href="{{base}}contact/index.html" onclick="dcbMobClose()" class="block text-center py-3.5 rounded-[0.625rem] bg-[#F57C00] text-white font-headline font-bold text-[0.9375rem] no-underline hover:bg-[#e06f00] transition-colors duration-150">Demander un devis</a>
+    </div>
+  </div>
+</nav>

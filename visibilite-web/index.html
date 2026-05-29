@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Visibilité Web pour PME et Commerces | DCB Technologies</title>
+<meta name="description" content="Création de site internet, SEO local et hébergement pour commerçants et PME. Visible sur Google en 30 jours sur Lyon, Mâcon, Chalon. Devis gratuit.">
+<link rel="canonical" href="https://dcb-technologies.fr/visibilite-web/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=8">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=17">
+<style>
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; display:inline-block; vertical-align:middle; }
+  .tonal-shift-elevation { box-shadow: 4px 4px 0px 0px rgba(7,43,107,0.04); }
+  body { font-family: 'Inter', sans-serif; }
+  /* Shells mobile / desktop */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+    /* Couleurs mcard hub Web : création (violet) / seo (red) / heb (teal) */
+    .creat .bar{background:linear-gradient(90deg,#7C3AED,#9D6EF8)}.creat .ic{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .pill{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .feats .material-symbols-outlined{color:#7C3AED}.creat .go .ab{background:#7C3AED}
+    .seo .bar{background:linear-gradient(90deg,#DC2626,#EF4444)}.seo .ic{background:rgba(239,68,68,0.12);color:#EF4444}.seo .pill{background:rgba(239,68,68,0.12);color:#EF4444}.seo .feats .material-symbols-outlined{color:#EF4444}.seo .go .ab{background:#EF4444}
+    .heb .bar{background:linear-gradient(90deg,#0D9488,#14B8A6)}.heb .ic{background:rgba(13,148,136,0.12);color:#0D9488}.heb .pill{background:rgba(13,148,136,0.12);color:#0D9488}.heb .feats .material-symbols-outlined{color:#0D9488}.heb .go .ab{background:#0D9488}
+    /* 17px : tous les titres de card tiennent sur 1 ligne en 375px */
+    [data-metier="web"] .mcard h3 { font-size: 17px }
+  }
+
+  /* ============ Duo MacBook + iPhone (hero signature silo web) ============ */
+  .duo-stage { position:relative; width:100%; max-width:540px; margin:0 auto; height:420px; }
+
+  .macbook { position:absolute; top:10px; left:0; width:440px; max-width:92%; z-index:1; filter:drop-shadow(0 30px 50px rgba(0,0,0,0.45)); }
+  .mb-screen { background:#1B1B20; border-radius:14px 14px 4px 4px; padding:14px 14px 20px; position:relative; border:1px solid #2C2C30; }
+  .mb-screen::before { content:''; position:absolute; top:7px; left:50%; transform:translateX(-50%); width:6px; height:6px; background:#2C2C30; border-radius:50%; }
+  .mb-display { background:#FFF; border-radius:4px; aspect-ratio:16/10; overflow:hidden; position:relative; }
+  .mb-base { width:110%; margin-left:-5%; height:14px; background:linear-gradient(180deg,#C0C5CC 0%,#8A9099 50%,#5A5F66 100%); border-radius:0 0 12px 12px; position:relative; }
+  .mb-base::after { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:80px; height:4px; background:#2C2C30; border-radius:0 0 6px 6px; }
+
+  .site { height:100%; display:flex; flex-direction:column; font-family:'Inter',sans-serif; background:#FFF; }
+  .site-browser { display:flex; align-items:center; gap:6px; padding:4px 8px; background:#F1F3F4; border-bottom:1px solid #E8EAED; flex-shrink:0; }
+  .bb-dots { display:flex; gap:3px; }
+  .bb-dot { width:6px; height:6px; border-radius:50%; }
+  .bb-dot.r { background:#FF5F57; }
+  .bb-dot.y { background:#FEBC2E; }
+  .bb-dot.g { background:#28C840; }
+  .bb-url { flex:1; background:#FFF; border-radius:8px; padding:2px 8px; font-size:7px; color:#5F6368; display:flex; align-items:center; gap:3px; }
+  .bb-url .material-symbols-outlined { font-size:8px; color:#16A34A; }
+
+  .site-nav { display:flex; align-items:center; justify-content:space-between; padding:7px 12px; border-bottom:1px solid #F1F3F4; flex-shrink:0; background:#FFF; }
+  .site-logo { font-family:'Sora',sans-serif; font-size:9px; font-weight:800; color:#0B3D91; letter-spacing:-0.01em; }
+  .site-menu { display:flex; gap:9px; font-size:7px; color:#5F6368; font-weight:600; }
+  .site-menu .active { color:#0B3D91; }
+  .site-cta { background:#F57C00; color:#FFF; font-size:7px; font-weight:700; padding:3px 7px; border-radius:4px; }
+
+  .site-hero { background:linear-gradient(135deg,#0B3D91 0%,#1E5BD9 100%); padding:10px 12px 12px; color:#FFF; position:relative; overflow:hidden; flex-shrink:0; }
+  .site-hero::after { content:''; position:absolute; width:50px; height:50px; background:rgba(245,124,0,0.4); border-radius:50%; filter:blur(15px); top:-10px; right:-10px; }
+  .site-eyebrow { font-size:5px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; margin-bottom:3px; }
+  .site-h1 { font-family:'Sora',sans-serif; font-size:11px; font-weight:700; line-height:1.1; margin-bottom:3px; letter-spacing:-0.02em; }
+  .site-h1 span { color:#F57C00; }
+  .site-sub { font-size:6px; color:rgba(255,255,255,0.75); line-height:1.3; margin-bottom:6px; max-width:75%; }
+  .site-cta-row { display:flex; gap:4px; }
+  .site-btn { display:inline-block; background:#F57C00; color:#FFF; font-size:6px; font-weight:700; padding:3px 7px; border-radius:3px; }
+  .site-btn.ghost { background:transparent; border:0.5px solid rgba(255,255,255,0.3); color:#FFF; }
+
+  .site-services { padding:8px 12px; display:grid; grid-template-columns:repeat(3,1fr); gap:5px; background:#FFF; }
+  .svc-card { background:#F8F9FB; border-radius:4px; padding:5px; text-align:center; }
+  .svc-icon { width:14px; height:14px; margin:0 auto 3px; background:#F57C00; border-radius:3px; display:flex; align-items:center; justify-content:center; }
+  .svc-icon .material-symbols-outlined { color:#FFF; font-size:9px; font-variation-settings:'FILL' 1; }
+  .svc-title { font-size:6px; font-weight:700; color:#0B3D91; margin-bottom:1px; }
+  .svc-desc { font-size:5px; color:#5F6368; line-height:1.2; }
+  .site-footer { display:flex; align-items:center; justify-content:space-between; padding:5px 12px; background:#0B3D91; color:#FFF; font-size:6px; flex-shrink:0; }
+  .site-footer .site-footer-left { display:flex; gap:6px; align-items:center; }
+  .site-footer .site-footer-left .material-symbols-outlined { font-size:8px; color:#F57C00; }
+  .site-footer .site-footer-right { font-weight:700; color:#F57C00; }
+
+  .iphone-front { position:absolute; bottom:0; right:0; width:145px; z-index:3; aspect-ratio:9/19; background:#1B1B20; border-radius:22px; padding:4px; box-shadow:0 30px 60px -15px rgba(0,0,0,0.55),0 20px 40px -20px rgba(245,124,0,0.3); transform:rotate(-4deg); animation:iphone-breathe 7s ease-in-out infinite; }
+  @keyframes iphone-breathe { 0%,100%{transform:rotate(-4deg) translateY(0)} 50%{transform:rotate(-4deg) translateY(-5px)} }
+  .iphone-front-screen { width:100%; height:100%; background:#FFF; border-radius:18px; overflow:hidden; position:relative; }
+  .iphone-front-notch { position:absolute; top:4px; left:50%; transform:translateX(-50%); width:44px; height:14px; background:#1B1B20; border-radius:7px; z-index:5; }
+  .iphone-status { position:absolute; top:7px; left:0; right:0; display:flex; justify-content:space-between; padding:0 12px; font-size:6px; font-weight:700; color:#1B1B20; z-index:4; }
+  .iphone-status .iphone-status-right { display:flex; gap:2px; align-items:center; }
+  .iphone-status .iphone-status-right .material-symbols-outlined { font-size:6px; }
+  .iphone-front-content { padding:24px 8px 8px; }
+
+  .fgbar { display:flex; align-items:center; gap:5px; background:#F1F3F4; border-radius:999px; padding:4px 8px; margin-bottom:6px; }
+  .fglogo { width:9px; height:9px; flex-shrink:0; position:relative; background:conic-gradient(from -45deg,#4285F4 0 90deg,#34A853 90deg 180deg,#FBBC05 180deg 270deg,#EA4335 270deg); border-radius:50%; }
+  .fglogo::after { content:''; position:absolute; inset:28%; background:#F1F3F4; border-radius:50%; }
+  .fgquery { font-size:6.5px; color:#1B1B20; font-weight:600; flex:1; }
+  .fgmic { font-size:8px; color:#5F6368; }
+
+  .floc { display:flex; align-items:center; gap:3px; font-size:5.5px; font-weight:700; color:#5F6368; margin-bottom:5px; padding:0 2px; letter-spacing:0.02em; }
+  .floc .material-symbols-outlined { font-size:7px; }
+
+  .fres { padding:0 2px; }
+  .fres-item { display:flex; gap:5px; padding:5px 0; border-bottom:1px solid #F1F3F4; }
+  .fres-item:last-child { border-bottom:none; }
+  .fres-rank { flex-shrink:0; width:12px; height:12px; border-radius:50%; background:#F1F3F4; color:#5F6368; font-size:6px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .fres-content { flex:1; min-width:0; }
+  .fres-name { font-size:7px; font-weight:700; color:#0B3D91; line-height:1.1; margin-bottom:1px; }
+  .fres-meta-line { display:flex; align-items:center; gap:2px; font-size:5px; color:#5F6368; line-height:1.1; margin-bottom:1px; }
+  .fres-stars { color:#FBBC05; letter-spacing:0.3px; font-size:5px; }
+  .fres-stars-empty { color:#E8EAED; }
+  .fres-info { font-size:5px; color:#5F6368; line-height:1.2; }
+  .fres-info .open { color:#16A34A; font-weight:700; }
+  .fres-item.winner { background:linear-gradient(90deg,rgba(245,124,0,0.10) 0%,rgba(245,124,0,0.02) 100%); margin:0 -2px; padding:6px 4px; border-left:2px solid #F57C00; border-radius:0 4px 4px 0; }
+  .fres-item.winner .fres-rank { background:#F57C00; color:#FFF; }
+  .fres-item.dimmed .fres-name { color:#5F6368; font-weight:500; }
+
+  .float-stat { position:absolute; bottom:50px; left:-30px; background:#FFF; border-radius:14px; padding:18px 22px; box-shadow:0 24px 48px -12px rgba(0,0,0,0.35),0 0 0 1px rgba(11,61,145,0.06); z-index:4; min-width:180px; }
+  .float-stat .lab { font-size:10px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F57C00; margin-bottom:4px; }
+  .float-stat .val { font-family:'Sora',sans-serif; font-size:1.6rem; font-weight:700; color:#0B3D91; line-height:1; letter-spacing:-0.02em; display:flex; align-items:center; gap:6px; }
+  .float-stat .val .material-symbols-outlined { font-size:20px; color:#16A34A; font-variation-settings:'FILL' 1; }
+  .float-stat .desc { font-size:11px; color:#64748B; margin-top:5px; }
+</style>
+<link rel="stylesheet" href="../m/css/mobile.css?v=18" media="screen and (max-width:640px)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Quel est le délai pour créer un site internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez en moyenne 30 jours entre le premier rendez-vous et la mise en ligne. Ce délai inclut la stratégie SEO, le design personnalisé et les tests de compatibilité."}},
+    {"@type": "Question", "name": "Combien coûte l'hébergement ?", "acceptedAnswer": {"@type": "Answer", "text": "L'hébergement professionnel démarre à partir de 29 €/mois, incluant serveurs sécurisés en France, certificat SSL, sauvegardes quotidiennes et maintenance technique."}},
+    {"@type": "Question", "name": "Le référencement est-il garanti ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous ne garantissons pas la première position Google (personne ne le peut honnêtement), mais nous garantissons une amélioration mesurable de votre visibilité locale grâce à nos méthodes SEO éprouvées."}},
+    {"@type": "Question", "name": "Puis-je modifier mon site après la livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, vous pouvez demander des modifications à tout moment. Les retouches mineures (textes, images) sont incluses dans votre contrat de maintenance. Les évolutions majeures font l'objet d'un devis séparé."}},
+    {"@type": "Question", "name": "Pouvez-vous migrer mon ancien site ?", "acceptedAnswer": {"@type": "Answer", "text": "Absolument. Nous récupérons vos contenus existants et vos redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création."}},
+    {"@type": "Question", "name": "Mon site sera-t-il responsive et adapté au mobile ?", "acceptedAnswer": {"@type": "Answer", "text": "Tous nos sites sont conçus en Mobile First. Plus de 60% des recherches locales se font sur smartphone, nous garantissons une expérience fluide sur tous les écrans."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "name": "Visibilité web pour PME et commerces locaux",
+  "description": "Création de site internet, référencement local Google et hébergement web haute performance pour commerçants, artisans et PME en Saône-et-Loire, Rhône, Ain et Loire.",
+  "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+  "serviceType": "Marketing digital et visibilité web",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+    {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+    {"@type": "AdministrativeArea", "name": "Ain (01)"},
+    {"@type": "AdministrativeArea", "name": "Loire (42)"},
+    {"@type": "City", "name": "Lyon"},
+    {"@type": "City", "name": "Mâcon"},
+    {"@type": "City", "name": "Chalon-sur-Saône"},
+    {"@type": "City", "name": "Paray-le-Monial"},
+    {"@type": "City", "name": "Villefranche-sur-Saône"},
+    {"@type": "City", "name": "Bourg-en-Bresse"}
+  ],
+  "url": "https://dcb-technologies.fr/visibilite-web/",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "29",
+    "highPrice": "499",
+    "offerCount": "3"
+  }
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dcb-technologies.fr/"},{"@type":"ListItem","position":2,"name":"Visibilité Web","item":"https://dcb-technologies.fr/visibilite-web/"}]}</script>
+</head>
+<body>
+<div class="d-shell">
+<div id="dcb-nav"></div>
+<main class="pt-[76px]">
+
+<!-- 1. HERO -->
+<section class="bg-gradient-to-br from-[#0B3D91] to-[#072B6B] py-12 lg:py-16 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+    <div class="lg:col-span-7 space-y-6 dcb-stagger">
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Visibilité Web</span>
+        <span class="hidden md:inline-flex bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">verified</span> Site en 30 jours
+        </span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">4 départements</span>
+      </div>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+        Site web, SEO et hébergement, <br><span class="text-[#F57C00] italic font-semibold">par vos techniciens locaux</span>
+      </h1>
+      <p class="text-white/70 text-lg max-w-xl leading-relaxed">Site web professionnel, référencement Google local et hébergement sécurisé. Nous gérons votre <a href="creation-site-internet/index.html" class="underline decoration-white/30 hover:decoration-[#F57C00] hover:text-white transition-colors">présence en ligne</a> pour que vous puissiez vous concentrer sur votre métier.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">check_circle</span>Création site, SEO et hébergement : un seul contrat, un seul interlocuteur</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">check_circle</span>Site livré en 30 jours, visible sur Google, Mobile First garanti</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">check_circle</span>Saône-et-Loire, Rhône, Ain, Loire : experts locaux du commerce de proximité</div>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="../contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">
+          Audit gratuit <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="tel:0482530510" class="dcb-btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2"><span class="material-symbols-outlined">call</span> 04 82 53 05 10</a>
+      </div>
+    </div>
+    <!-- Col droite : duo MacBook + iPhone (signature exclusive silo web) -->
+    <div class="hidden lg:block lg:col-span-5 dcb-stagger">
+      <div class="duo-stage">
+
+        <!-- MacBook -->
+        <div class="macbook">
+          <div class="mb-screen">
+            <div class="mb-display">
+              <div class="site">
+                <div class="site-browser">
+                  <div class="bb-dots">
+                    <span class="bb-dot r"></span>
+                    <span class="bb-dot y"></span>
+                    <span class="bb-dot g"></span>
+                  </div>
+                  <div class="bb-url">
+                    <span class="material-symbols-outlined">lock</span>
+                    votre-commerce.fr
+                  </div>
+                </div>
+                <div class="site-nav">
+                  <span class="site-logo">Votre commerce</span>
+                  <span class="site-menu">
+                    <span class="active">Accueil</span>
+                    <span>Nos services</span>
+                    <span>À propos</span>
+                    <span>Contact</span>
+                  </span>
+                  <span class="site-cta">Nous appeler</span>
+                </div>
+                <div class="site-hero">
+                  <div class="site-eyebrow">Bienvenue</div>
+                  <div class="site-h1">Votre métier,<br><span>au cœur de la ville.</span></div>
+                  <div class="site-sub">Découvrez notre savoir-faire local et nos engagements de proximité.</div>
+                  <div class="site-cta-row">
+                    <span class="site-btn">Découvrir</span>
+                    <span class="site-btn ghost">Nous contacter</span>
+                  </div>
+                </div>
+                <div class="site-services">
+                  <div class="svc-card">
+                    <div class="svc-icon"><span class="material-symbols-outlined">storefront</span></div>
+                    <div class="svc-title">Service 1</div>
+                    <div class="svc-desc">Description courte</div>
+                  </div>
+                  <div class="svc-card">
+                    <div class="svc-icon"><span class="material-symbols-outlined">handshake</span></div>
+                    <div class="svc-title">Service 2</div>
+                    <div class="svc-desc">Description courte</div>
+                  </div>
+                  <div class="svc-card">
+                    <div class="svc-icon"><span class="material-symbols-outlined">schedule</span></div>
+                    <div class="svc-title">Service 3</div>
+                    <div class="svc-desc">Description courte</div>
+                  </div>
+                </div>
+                <div class="site-footer">
+                  <div class="site-footer-left">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Adresse · Ville</span>
+                  </div>
+                  <div class="site-footer-right">04 XX XX XX XX</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-base"></div>
+        </div>
+
+        <!-- iPhone -->
+        <div class="iphone-front">
+          <div class="iphone-front-screen">
+            <div class="iphone-front-notch"></div>
+            <div class="iphone-status">
+              <span>9:41</span>
+              <span class="iphone-status-right">
+                <span class="material-symbols-outlined">network_cell</span>
+                <span class="material-symbols-outlined">wifi</span>
+                <span class="material-symbols-outlined">battery_full</span>
+              </span>
+            </div>
+            <div class="iphone-front-content">
+              <div class="fgbar">
+                <span class="fglogo"></span>
+                <span class="fgquery">métier + ville</span>
+                <span class="material-symbols-outlined fgmic">mic</span>
+              </div>
+              <div class="floc">
+                <span class="material-symbols-outlined">location_on</span>
+                Résultats locaux
+              </div>
+              <div class="fres">
+                <div class="fres-item winner">
+                  <span class="fres-rank">1</span>
+                  <div class="fres-content">
+                    <div class="fres-name">Votre commerce</div>
+                    <div class="fres-meta-line">
+                      <span class="fres-stars">★★★★★</span>
+                      <span>4,8 (127)</span>
+                    </div>
+                    <div class="fres-info"><span class="open">Ouvert</span> · 0,3 km</div>
+                  </div>
+                </div>
+                <div class="fres-item dimmed">
+                  <span class="fres-rank">2</span>
+                  <div class="fres-content">
+                    <div class="fres-name">Concurrent local</div>
+                    <div class="fres-meta-line">
+                      <span class="fres-stars">★★★★<span class="fres-stars-empty">★</span></span>
+                      <span>4,2 (54)</span>
+                    </div>
+                    <div class="fres-info">Ouvre à 9h · 1,2 km</div>
+                  </div>
+                </div>
+                <div class="fres-item dimmed">
+                  <span class="fres-rank">3</span>
+                  <div class="fres-content">
+                    <div class="fres-name">Concurrent local</div>
+                    <div class="fres-meta-line">
+                      <span class="fres-stars">★★★★<span class="fres-stars-empty">★</span></span>
+                      <span>4,0 (38)</span>
+                    </div>
+                    <div class="fres-info">Fermé · 2,1 km</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card flottante stat -->
+        <div class="float-stat">
+          <div class="lab">Trafic</div>
+          <div class="val"><span class="material-symbols-outlined">trending_up</span>+240%</div>
+          <div class="desc">après 8 mois</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TRUST BAR -->
+<section class="py-6 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0B3D91] text-3xl" style="font-variation-settings:'FILL' 1">location_on</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">4 départements couverts</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0B3D91] text-3xl" style="font-variation-settings:'FILL' 1">web</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Sites livrés en 30 jours</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0B3D91] text-3xl" style="font-variation-settings:'FILL' 1">trending_up</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Visibilité locale ×3</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0B3D91] text-3xl" style="font-variation-settings:'FILL' 1">verified</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">99,9% de disponibilité</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROBLÈME / CONSTAT -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-12 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Le constat</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Les freins digitaux des commerces locaux</h2>
+      <p class="text-slate-500 text-base leading-relaxed">80% des consommateurs recherchent un commerce sur Google avant de s'y rendre. Sans présence web optimisée, vous perdez des clients chaque jour au profit de vos concurrents.</p>
+    </div>
+    <div class="space-y-10 md:space-y-12 dcb-stagger">
+
+      <div class="flex gap-6 md:gap-12 items-start">
+        <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">01</span>
+        <div class="pt-2">
+          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Invisible sur Google</h3>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Votre commerce n'apparaît pas dans les résultats de recherche locaux. Les clients potentiels de votre zone ne vous trouvent tout simplement pas.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-6 md:gap-12 items-start">
+        <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">02</span>
+        <div class="pt-2">
+          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Site obsolète, pas mobile</h3>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Votre site date de plusieurs années, ne s'affiche pas correctement sur smartphone et fait fuir vos visiteurs en quelques secondes.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-6 md:gap-12 items-start">
+        <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">03</span>
+        <div class="pt-2">
+          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Aucune stratégie digitale</h3>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Pas de SEO, pas de Google Ads, pas de fiche Google Business optimisée. Vous laissez le terrain libre à la concurrence sans le savoir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. EXPERTISE CARDS -->
+<section id="services" class="bg-white py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Nos expertises</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Des solutions web pour le commerce local.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 dcb-stagger">
+      <a href="creation-site-internet/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="h-[3px] bg-gradient-to-r from-[#0D9488] to-[#14B8A6]"></div>
+        <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+              <span class="material-symbols-outlined text-[#0D9488] text-3xl">desktop_windows</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">En 30 jours</span>
+          </div>
+          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Création de site internet</h3>
+          <p class="text-slate-500 text-sm mb-3">Votre vitrine numérique accessible 24h/24, Mobile First, optimisée pour convertir vos visiteurs en clients.</p>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Design personnalisé sur mesure</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>SEO technique intégré dès la création</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Mobile First, rapide et accessible</li>
+          </ul>
+          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="seo-sea-local/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="h-[3px] bg-gradient-to-r from-[#DC2626] to-[#EF4444]"></div>
+        <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+              <span class="material-symbols-outlined text-[#EF4444] text-3xl">trending_up</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">×3 visibilité</span>
+          </div>
+          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">SEO et SEA Local</h3>
+          <p class="text-slate-500 text-sm mb-3">Soyez premier sur Google localement et captez la demande immédiate de votre zone d'intervention.</p>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Référencement naturel ciblé local</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Google Ads à budget maîtrisé</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Fiche Google Business optimisée</li>
+          </ul>
+          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="hebergement/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="h-[3px] bg-gradient-to-r from-[#4F46E5] to-[#6366F1]"></div>
+        <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+              <span class="material-symbols-outlined text-[#4F46E5] text-3xl">dns</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(79,70,229,0.12)]">99,9% uptime</span>
+          </div>
+          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Hébergement professionnel</h3>
+          <p class="text-slate-500 text-sm mb-3">Serveurs sécurisés en France, ultra-rapides, pour une expérience fluide à vos visiteurs 24h/24.</p>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Hébergé en France, conforme RGPD</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>SSL et sauvegardes quotidiennes inclus</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Support technique réactif</li>
+          </ul>
+          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#4F46E5] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MÉTHODOLOGIE (signature visuelle hub web) -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Méthodologie</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Votre site en ligne en 30 jours</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 dcb-stagger">
+      <div class="relative">
+        <span class="dcb-counter font-sora text-6xl font-black block leading-none mb-2" style="color:rgba(245,124,0,0.25);" data-target="1" data-pad-zero data-duration="1800">00</span>
+        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-1">Brief et Audit</h3>
+        <span class="text-[#0B3D91] text-xs font-bold uppercase tracking-widest">J+3</span>
+        <p class="text-slate-500 text-sm leading-relaxed mt-2">Définition de vos objectifs et analyse de votre marché local.</p>
+      </div>
+      <div class="relative">
+        <span class="dcb-counter font-sora text-6xl font-black block leading-none mb-2" style="color:rgba(245,124,0,0.25);" data-target="2" data-pad-zero data-duration="1800">00</span>
+        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-1">Maquette</h3>
+        <span class="text-[#0B3D91] text-xs font-bold uppercase tracking-widest">J+10</span>
+        <p class="text-slate-500 text-sm leading-relaxed mt-2">Conception visuelle et parcours utilisateur optimisé.</p>
+      </div>
+      <div class="relative">
+        <span class="dcb-counter font-sora text-6xl font-black block leading-none mb-2" style="color:rgba(245,124,0,0.25);" data-target="3" data-pad-zero data-duration="1800">00</span>
+        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-1">Développement</h3>
+        <span class="text-[#0B3D91] text-xs font-bold uppercase tracking-widest">J+25</span>
+        <p class="text-slate-500 text-sm leading-relaxed mt-2">Codage du site, intégration des contenus et tests.</p>
+      </div>
+      <div class="relative">
+        <span class="dcb-counter font-sora text-6xl font-black block leading-none mb-2" style="color:rgba(245,124,0,0.25);" data-target="4" data-pad-zero data-duration="1800">00</span>
+        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-1">Mise en ligne</h3>
+        <span class="text-[#0B3D91] text-xs font-bold uppercase tracking-widest">J+30</span>
+        <p class="text-slate-500 text-sm leading-relaxed mt-2">Lancement officiel et accompagnement post-déploiement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. DIFFÉRENCIATEUR -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Pourquoi DCB</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] leading-tight mb-4">Ni freelance, ni grosse agence. Votre partenaire web local.</h2>
+        <p class="text-slate-500 text-base leading-relaxed">Avec DCB Technologies, vous avez un interlocuteur unique qui comprend votre métier et votre territoire. Pas de sous-traitance, pas de hotline anonyme.</p>
+      </div>
+      <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#F57C00]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">location_on</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Proximité locale</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Basés en Saône-et-Loire, nous intervenons sur site dans les départements 71, 69, 01 et 42.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#F57C00]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">layers</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Full-stack intégré</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Site, SEO et hébergement dans une seule offre. Pas besoin de jongler entre trois prestataires.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#F57C00]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">receipt_long</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Facture unique</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Un seul contrat, un seul interlocuteur, une seule facture. Simplicité administrative garantie.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#F57C00]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">support_agent</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Suivi continu</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Maintenance, mises à jour et évolutions de votre site assurées dans la durée. Pas de site livré puis abandonné.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. TÉMOIGNAGES carousel -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce que disent nos clients.</h2>
+    </div>
+    <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
+      <div data-dcb-track>
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On était invisibles sur Google alors qu'on est là depuis 15 ans. DCB nous a refait un site et mis en place le SEO local. En trois mois, on est passés en première page pour nos requêtes principales. Le téléphone a repris."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
+              <img src="../assets/testimonial-jmf.webp" alt="Jean-Marc Faure, restaurant Les Platanes à Mâcon" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('JF'))">
+            </div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Jean-Marc Faure</p>
+              <p class="text-slate-500 text-sm">Restaurant Les Platanes, Mâcon (71)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Mon ancien site ne s'affichait pas sur mobile, les clients me le disaient. DCB a tout refait en trois semaines, avec le référencement intégré. J'ai doublé mes demandes de devis en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
+              <img src="../assets/testimonial-cm.webp" alt="Claire Moreau, fleuriste à Chalon-sur-Saône" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('CM'))">
+            </div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Claire Moreau</p>
+              <p class="text-slate-500 text-sm">Fleuriste, Chalon-sur-Saône (71)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On héberge notre site chez DCB depuis deux ans. Zéro panne, zéro lenteur. Quand on a eu un problème de certificat SSL un dimanche, ils ont répondu en moins d'une heure. C'est ce genre de réactivité qu'on cherchait."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#4F46E5] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
+              <img src="../assets/testimonial-ta.webp" alt="Thomas Aubert, pharmacien à Villefranche-sur-Saône" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('TA'))">
+            </div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Thomas Aubert</p>
+              <p class="text-slate-500 text-sm">Pharmacie Aubert, Villefranche-sur-Saône (69)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ce qui m'a convaincue, c'est qu'ils sont locaux. Ils connaissent Lyon, ils connaissent les habitudes de recherche ici. Le SEO qu'ils ont mis en place est vraiment ciblé sur notre zone. On n'est pas un numéro de ticket."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
+              <img src="../assets/testimonial-ip.webp" alt="Isabelle Perrin, boutique de mode à Lyon" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('IP'))">
+            </div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Isabelle Perrin</p>
+              <p class="text-slate-500 text-sm">Boutique mode, Lyon 6e (69)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dcb-carousel-controls">
+        <button type="button" data-dcb-prev aria-label="Témoignage précédent"><span class="material-symbols-outlined">arrow_back</span></button>
+        <div data-dcb-dots></div>
+        <button type="button" data-dcb-next aria-label="Témoignage suivant"><span class="material-symbols-outlined">arrow_forward</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. EXPERTS DE PROXIMITÉ (composition éditoriale alignée hub IT : photo dominante + badges + texte panel) -->
+<section class="bg-[#0B3D91] py-14 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B]/60 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+      <!-- Photo dominante avec badges départements posés en bas -->
+      <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
+        <div class="relative aspect-[4/5] lg:aspect-[5/6] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+          <img alt="Commerçant de Saône-et-Loire accompagné par DCB Technologies pour sa présence en ligne"
+               src="../assets/dept-71.webp"
+               class="w-full h-full object-cover"
+               width="1200" height="1500" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg';">
+          <!-- Overlay gradient bottom pour lisibilité badges -->
+          <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#072B6B] via-[#072B6B]/60 to-transparent pointer-events-none"></div>
+          <!-- 4 badges départements posés en bas (flex compact uniforme) -->
+          <div class="absolute flex flex-wrap gap-2.5 lg:gap-3" style="left:24px;right:24px;bottom:24px">
+            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 71 Saône-et-Loire">
+              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">71</div>
+              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Saône-et-Loire</div>
+            </div>
+            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 69 Rhône">
+              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">69</div>
+              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Rhône</div>
+            </div>
+            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 01 Ain">
+              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">01</div>
+              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Ain</div>
+            </div>
+            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 42 Loire">
+              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">42</div>
+              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Loire</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texte panel droite -->
+      <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:12px;font-weight:800;letter-spacing:0.2em">Expertise de proximité</span>
+        <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Un expert web à côté de chez vous</h2>
+        <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Pas de prestataire distant qui ne connaît pas votre marché. Nos consultants web sont implantés localement et comprennent les enjeux du commerce de proximité dans votre département.</p>
+        <ul class="space-y-4 mb-10 list-none p-0">
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Rendez-vous sur site dans tout le bassin</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Formations et ateliers en présentiel</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Support réactif, interlocuteur identifié</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Connaissance des marchés locaux et usages régionaux</span>
+          </li>
+        </ul>
+        <div class="flex flex-wrap items-center gap-6 mb-3">
+          <a href="../contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2.5 shadow-lg shadow-[#F57C00]/30">
+            Prendre rendez-vous
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10" class="inline-flex items-center gap-2 px-1 py-2 rounded-md transition-colors hover:opacity-100" style="color:rgba(255,255,255,0.92);font-weight:700">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F57C00">call</span>
+            04 82 53 05 10
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 9. CROSS-SELL INTER-PILIER -->
+<section class="bg-white py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 max-w-3xl dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Aller plus loin</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Un seul partenaire pour toute votre activité</h2>
+      <p class="text-slate-500 text-lg mt-3">Visibilité web, <a href="../caisse-enregistreuse/index.html" class="underline hover:text-[#0B3D91] transition-colors">caisses enregistreuses</a> et informatique : les trois piliers de votre commerce, gérés par la même équipe locale.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dcb-stagger">
+      <a href="../caisse-enregistreuse/index.html" data-dest="caisse-enregistreuse" class="cx-card group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#0B3D91] text-2xl" style="font-variation-settings:'FILL' 1">point_of_sale</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(11,61,145,0.12)]">Caisse certifiée</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Caisse enregistreuse</h3>
+          <p class="text-slate-500 text-sm mb-4">Logiciel CashMag, matériel professionnel, installation et SAV par la même équipe qui gère votre site. Synchronisez vos stocks physiques et digitaux.</p>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#F57C00] transition-colors">Découvrir nos caisses</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0B3D91] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="relative overflow-hidden min-h-[220px] sm:min-h-0">
+          <img src="../assets/crosssell-caisse.webp" alt="Terminal TPV CashMag installé par DCB dans un commerce local"
+               width="1600" height="1552" loading="lazy" decoding="async"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#0B3D91]/60 via-[#0B3D91]/10 to-transparent pointer-events-none"></div>
+        </div>
+      </a>
+      <a href="../maintenance-informatique/index.html" data-dest="maintenance-informatique" class="cx-card group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#EF4444] text-2xl" style="font-variation-settings:'FILL' 1">shield</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">Intervention &lt;4h</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Maintenance informatique</h3>
+          <p class="text-slate-500 text-sm mb-4">Infrastructure réseau, cloud sécurisé et maintenance proactive. Votre site et vos outils tournent sans interruption, 7j/7.</p>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#EF4444] transition-colors">Découvrir nos services IT</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="relative overflow-hidden min-h-[220px] sm:min-h-0">
+          <img src="../assets/crosssell-it.webp" alt="Technicien DCB en intervention sur infrastructure informatique"
+               width="1600" height="1552" loading="lazy" decoding="async"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#EF4444]/50 via-[#EF4444]/10 to-transparent pointer-events-none"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="bg-[#F8F9FA] py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10 dcb-reveal">
+        <span class="text-[#F57C00] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">FAQ</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Questions fréquentes</h2>
+      </div>
+      <div class="flex flex-col gap-3 mb-12 dcb-reveal">
+        <details class="faq-item"><summary><span>Quel est le délai pour créer un site internet ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Comptez en moyenne 30 jours entre le premier rendez-vous et la mise en ligne. Ce délai inclut la stratégie SEO, le design personnalisé et les tests de compatibilité.</div></details>
+        <details class="faq-item"><summary><span>Combien coûte l'hébergement ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">L'hébergement professionnel démarre à partir de 29 €/mois, incluant serveurs sécurisés en France, certificat SSL, sauvegardes quotidiennes et maintenance technique.</div></details>
+        <details class="faq-item"><summary><span>Le référencement est-il garanti ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nous ne garantissons pas la première position Google (personne ne le peut honnêtement), mais nous garantissons une amélioration mesurable de votre visibilité locale grâce à nos méthodes SEO éprouvées.</div></details>
+        <details class="faq-item"><summary><span>Puis-je modifier mon site après la livraison ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, vous pouvez demander des modifications à tout moment. Les retouches mineures (textes, images) sont incluses dans votre contrat de maintenance. Les évolutions majeures font l'objet d'un devis séparé.</div></details>
+        <details class="faq-item"><summary><span>Pouvez-vous migrer mon ancien site ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Absolument. Nous récupérons vos contenus existants et vos redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création.</div></details>
+        <details class="faq-item"><summary><span>Mon site sera-t-il responsive et adapté au mobile ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Tous nos sites sont conçus en Mobile First. Plus de 60% des recherches locales se font sur smartphone, nous garantissons une expérience fluide sur tous les écrans.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:112px;--accent:#F57C00;--accent-dark:#E06E00">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Prêt à booster votre visibilité en ligne ?</h2>
+        <p class="d-lede">Audit gratuit et sans engagement. Nos conseillers vous rappellent sous 24h pour une étude personnalisée.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../contact/index.html" class="btn btn--primary">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly" style="font-variation-settings:'FILL' 1" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <span class="d-foot-mark" aria-hidden="true"></span>
+      <time class="d-updated" datetime="2026-04-30">Mis a jour le 30 avril 2026</time>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement : .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="web">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+<!-- S1 : HERO -->
+<section class="hero">
+  <div class="chips" style="flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none">
+    <span class="chip" style="white-space:nowrap;flex-shrink:0"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified</span>Site en 30 jours</span>
+    <span class="chip gold" style="white-space:nowrap;flex-shrink:0">Techniciens locaux</span>
+  </div>
+  <h1>Site web, SEO et hébergement, <em>par vos techniciens locaux</em>.</h1>
+  <p class="lede">Création de site, référencement Google local et hébergement sécurisé. Un seul interlocuteur du brief jusqu'à la mise en ligne.</p>
+
+  <div class="scene">
+    <div class="tpv">
+      <img src="../assets/hero-visibilite-web.webp" alt="Site web et fiche Google d'un commerce local conçus par DCB" width="500" height="400" loading="eager" fetchpriority="high"
+           onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'">
+    </div>
+    <div class="float1" aria-hidden="true">
+      <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">trending_up</span></div>
+      <div><div class="lb">Visibilité</div><div class="vl">×3</div></div>
+    </div>
+    <div class="float2" aria-hidden="true">
+      <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">rocket_launch</span></div>
+      <div><div class="lb">En ligne</div><div class="vl">30 jours</div></div>
+    </div>
+  </div>
+
+  <div class="checks">
+    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Site, SEO et hébergement : un seul contrat, un seul interlocuteur</div>
+    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Site livré en 30 jours, Mobile First, visible sur Google</div>
+    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Saône-et-Loire, Rhône, Ain, Loire : experts du commerce local</div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-pri" href="../contact/index.html" aria-label="Demander un audit gratuit">Audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">call</span></a>
+  </div>
+</section>
+
+<!-- S2 : MARQUEE -->
+<ul class="sr-only">
+  <li>Site livré en 30 jours</li>
+  <li>×3 visibilité moyenne</li>
+  <li>Hébergement en France</li>
+  <li>Mobile First garanti</li>
+</ul>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">rocket_launch</span>Site en 30 jours</div>
+    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">trending_up</span>×3 visibilité</div>
+    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">dns</span>Hébergé en France</div>
+    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">smartphone</span>Mobile First</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">rocket_launch</span>Site en 30 jours</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">trending_up</span>×3 visibilité</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">dns</span>Hébergé en France</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">smartphone</span>Mobile First</div>
+  </div>
+</div>
+
+<!-- S3 : PROBLÈME / CONSTAT -->
+<section class="sec s1">
+  <p class="eyebrow">Le constat</p>
+  <h2>Ce que votre visibilité vous <em>coûte vraiment</em>.</h2>
+  <div class="pain">
+    <div class="row">
+      <div class="n">01</div>
+      <div>
+        <h3>Invisible sur Google local</h3>
+        <p>Vos concurrents apparaissent dans le top 3 sur les requêtes de votre ville. Vous, on vous trouve seulement si on cherche votre nom. Chaque jour, des clients potentiels partent ailleurs.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <div>
+        <h3>Un site lent ou inadapté au mobile</h3>
+        <p>Plus de 60% des recherches locales se font sur smartphone. Un site qui rame ou s'affiche mal sur petit écran fait fuir le visiteur en 3 secondes. Sans qu'il revienne.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <div>
+        <h3>Trois prestataires, zéro responsable</h3>
+        <p>Le développeur dit que c'est l'hébergeur. L'hébergeur dit que c'est le référenceur. Pendant ce temps, votre site est en panne et vos clients passent à autre chose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 : SERVICES -->
+<section class="sec">
+  <p class="eyebrow">Nos expertises</p>
+  <h2>Trois leviers, <em>un seul partenaire</em>.</h2>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Filtrer par service">
+    <button class="tab active" role="tab" id="tab-creat" aria-selected="true" aria-controls="card-creat"><span class="material-symbols-outlined" aria-hidden="true">desktop_windows</span>Création</button>
+    <button class="tab" role="tab" id="tab-seo" aria-selected="false" aria-controls="card-seo"><span class="material-symbols-outlined" aria-hidden="true">trending_up</span>SEO local</button>
+    <button class="tab" role="tab" id="tab-heb" aria-selected="false" aria-controls="card-heb"><span class="material-symbols-outlined" aria-hidden="true">dns</span>Hébergement</button>
+  </div>
+  <div class="carou" id="carou">
+    <a class="mcard creat" id="card-creat" role="tabpanel" aria-labelledby="tab-creat" href="creation-site-internet/index.html" aria-label="Voir la page Création de site internet">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head">
+          <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">desktop_windows</span></div>
+          <span class="pill">En 30 jours</span>
+        </div>
+        <h3>Création de site internet</h3>
+        <p class="ds">Votre vitrine numérique, accessible 24h/24, conçue pour convertir.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">design_services</span>Design personnalisé sur mesure</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">search</span>SEO technique intégré dès la création</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">smartphone</span>Mobile First, rapide et accessible</div>
+        </div>
+        <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard seo" id="card-seo" role="tabpanel" aria-labelledby="tab-seo" href="seo-sea-local/index.html" aria-label="Voir la page SEO et SEA Local">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head">
+          <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">trending_up</span></div>
+          <span class="pill">×3 visibilité</span>
+        </div>
+        <h3>SEO &amp; SEA Local</h3>
+        <p class="ds">Premier sur Google dans votre ville, et captez la demande immédiate.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">place</span>Référencement naturel ciblé local</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">ads_click</span>Google Ads à budget maîtrisé</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">store</span>Fiche Google Business optimisée</div>
+        </div>
+        <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard heb" id="card-heb" role="tabpanel" aria-labelledby="tab-heb" href="hebergement/index.html" aria-label="Voir la page Hébergement professionnel">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head">
+          <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">dns</span></div>
+          <span class="pill">99,9% uptime</span>
+        </div>
+        <h3>Hébergement professionnel</h3>
+        <p class="ds">Serveurs sécurisés en France, ultra-rapides, supervisés 24h/24.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">flag</span>Hébergé en France, conforme RGPD</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">lock</span>SSL et sauvegardes quotidiennes</div>
+          <div><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">support_agent</span>Support technique réactif</div>
+        </div>
+        <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+</section>
+<style>
+#dots[data-mi="0"] span.on{background:#7C3AED!important}
+#dots[data-mi="1"] span.on{background:#EF4444!important}
+#dots[data-mi="2"] span.on{background:#0D9488!important}
+#tab-creat.active{background:#7C3AED!important;border-color:#7C3AED!important}
+#tab-seo.active{background:#EF4444!important;border-color:#EF4444!important}
+#tab-heb.active{background:#0D9488!important;border-color:#0D9488!important}
+</style>
+<script>
+(function () {
+  function bind() {
+    var dotsEl = document.getElementById('dots');
+    if (!dotsEl) return;
+    function syncIdx() {
+      var idx = Array.from(dotsEl.children).findIndex(function (s) { return s.classList.contains('on'); });
+      dotsEl.setAttribute('data-mi', idx < 0 ? '0' : String(idx));
+    }
+    var obs = new MutationObserver(syncIdx);
+    Array.from(dotsEl.children).forEach(function (s) {
+      obs.observe(s, { attributes: true, attributeFilter: ['class'] });
+    });
+    syncIdx();
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', bind) : bind();
+})();
+</script>
+
+<!-- S5 : MÉTHODOLOGIE 30 JOURS (signature unique silo web) -->
+<section class="sec s1">
+  <p class="eyebrow">Méthodologie</p>
+  <h2>Votre site en ligne <em>en 30 jours</em>.</h2>
+  <p style="font-size:13px;color:var(--mute);line-height:1.55;margin:8px 0 20px">Une méthode rodée, quatre jalons clairs, zéro mauvaise surprise. Vous savez à chaque étape où en est votre projet.</p>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;position:relative">
+      <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:34px;color:rgba(245,124,0,0.35);line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">01</div>
+      <div>
+        <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--cta);background:rgba(245,124,0,0.10);padding:3px 9px;border-radius:99px;margin-bottom:6px">J + 3</span>
+        <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--p);margin:0 0 4px">Brief &amp; Audit</h3>
+        <p style="margin:0;font-size:13px;color:var(--mute);line-height:1.55">Définition de vos objectifs et analyse de votre marché local.</p>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center">
+      <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:34px;color:rgba(245,124,0,0.35);line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">02</div>
+      <div>
+        <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--cta);background:rgba(245,124,0,0.10);padding:3px 9px;border-radius:99px;margin-bottom:6px">J + 10</span>
+        <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--p);margin:0 0 4px">Maquette</h3>
+        <p style="margin:0;font-size:13px;color:var(--mute);line-height:1.55">Conception visuelle et parcours utilisateur optimisé pour la conversion.</p>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center">
+      <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:34px;color:rgba(245,124,0,0.35);line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">03</div>
+      <div>
+        <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--cta);background:rgba(245,124,0,0.10);padding:3px 9px;border-radius:99px;margin-bottom:6px">J + 25</span>
+        <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--p);margin:0 0 4px">Développement</h3>
+        <p style="margin:0;font-size:13px;color:var(--mute);line-height:1.55">Codage du site, intégration des contenus et tests sur tous supports.</p>
+      </div>
+    </div>
+    <div style="background:#fff;border:2px solid #F57C00;border-radius:18px;padding:18px 16px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;box-shadow:0 8px 28px -8px rgba(245,124,0,0.20);position:relative">
+      <span style="position:absolute;top:-12px;right:14px;background:#F57C00;color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:4px 12px;border-radius:99px;white-space:nowrap">Mise en ligne</span>
+      <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:34px;color:#F57C00;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">04</div>
+      <div>
+        <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:#F57C00;padding:3px 9px;border-radius:99px;margin-bottom:6px">J + 30</span>
+        <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--p);margin:0 0 4px">Lancement</h3>
+        <p style="margin:0;font-size:13px;color:var(--mute);line-height:1.55">Mise en ligne officielle et accompagnement post-déploiement inclus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 : TEMOIGNAGES -->
+<section class="sec">
+  <p class="eyebrow">Ils nous font confiance</p>
+  <h2>Ce que disent <em>nos clients</em>.</h2>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"On était invisibles sur Google alors qu'on est là depuis 15 ans. DCB nous a refait un site et mis en place le SEO local. En trois mois, on est passés en première page. Le téléphone a repris."</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0D9488,#14B8A6);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">JF</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Jean-Marc Faure</div>
+          <div style="font-size:11.5px;color:var(--mute)">Restaurant Les Platanes, Mâcon (71)</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Mon ancien site ne s'affichait pas sur mobile. DCB a tout refait en trois semaines, référencement inclus. J'ai doublé mes demandes de devis en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#1E5BD9);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">CM</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Claire Moreau</div>
+          <div style="font-size:11.5px;color:var(--mute)">Fleuriste, Chalon-sur-Saône (71)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 : CROSS-SELL INTER-PILIER -->
+<section class="sec s1">
+  <p class="eyebrow">Aller plus loin</p>
+  <h2>Un seul partenaire pour <em>toute votre activité</em>.</h2>
+  <div class="peri-a">
+    <a href="../caisse-enregistreuse/index.html" data-dest="caisse-enregistreuse" aria-label="Caisses enregistreuses NF525">
+      <div class="txt">
+        <span class="pp">Caisse certifiée</span>
+        <h3>Caisse enregistreuse NF525</h3>
+        <p>Logiciel CashMag NF525 posé par la même équipe. Stocks physiques et digitaux synchronisés.</p>
+        <span class="lk">Voir nos caisses<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">point_of_sale</span>
+      </div>
+    </a>
+    <a href="../maintenance-informatique/index.html" data-dest="maintenance-informatique" aria-label="Maintenance informatique pour PME">
+      <div class="txt">
+        <span class="pp">Intervention &lt;4h</span>
+        <h3>Maintenance informatique</h3>
+        <p>Réseau, cloud sécurisé, maintenance proactive. Site et postes opérationnels 7j/7.</p>
+        <span class="lk">Découvrir nos services IT<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">shield</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- S8 : FAQ -->
+<section class="sec">
+  <p class="eyebrow">Besoin de précisions ?</p>
+  <h2>Questions <em>fréquentes</em>.</h2>
+  <div class="faq">
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quel est le délai pour créer un site internet ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Comptez en moyenne 30 jours entre le premier rendez-vous et la mise en ligne. Ce délai inclut la stratégie SEO, le design personnalisé et les tests de compatibilité.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien coûte l'hébergement ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">L'hébergement professionnel démarre à partir de 29 €/mois, incluant serveurs sécurisés en France, certificat SSL, sauvegardes quotidiennes et maintenance technique.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Le référencement est-il garanti ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Nous ne garantissons pas la première position Google (personne ne le peut honnêtement), mais nous garantissons une amélioration mesurable de votre visibilité locale grâce à nos méthodes SEO éprouvées.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Puis-je modifier mon site après la livraison ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Oui, vous pouvez demander des modifications à tout moment. Les retouches mineures (textes, images) sont incluses dans votre contrat de maintenance. Les évolutions majeures font l'objet d'un devis séparé.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Pouvez-vous migrer mon ancien site ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Absolument. Nous récupérons vos contenus existants et vos redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Mon site sera-t-il responsive et adapté au mobile ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Tous nos sites sont conçus en Mobile First. Plus de 60% des recherches locales se font sur smartphone, nous garantissons une expérience fluide sur tous les écrans.</div>
+    </details>
+  </div>
+</section>
+
+<!-- S9 : CTA FINAL -->
+<!-- CTA FINAL v3 : Le Bord Tranché (Web hub — accent orange brand) -->
+<style>
+  .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
+  .m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
+  .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
+  .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
+  .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+  .m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
+  .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
+  .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
+  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
+  .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
+</style>
+<section class="m-cta-final" style="--accent:#F57C00;--accent-shadow:rgba(245,124,0,0.35)" aria-labelledby="cta-final-h-web">
+  <span class="topbar" aria-hidden="true"></span>
+  <h3 id="cta-final-h-web">Prêt à booster votre visibilité en ligne ?</h3>
+  <p>Audit gratuit et sans engagement. Nos conseillers vous rappellent sous 24h.</p>
+  <a class="btn btn-pri" href="../contact/index.html">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  <span class="dpx-divider">ou appelez-nous</span>
+  <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+  <span class="bottomark" aria-hidden="true"></span>
+</section>
+
+<!-- DATE E-E-A-T -->
+<p style="font-size:11px;color:#94A3B8;text-align:center;padding:8px 16px 16px">Mis à jour le <time datetime="2026-04-30">30 avril 2026</time></p>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+<script src="../js/scripts.js?v=21"></script>
+<script>
+/* Hub Web : remplace le FAB "Demander un devis" (sheet caisse) par un lien contact */
+(function waitFab() {
+  var btn = document.getElementById('fabDevis');
+  if (!btn) { return setTimeout(waitFab, 30); }
+  var a = document.createElement('a');
+  a.className = btn.className;
+  a.href = '../contact/index.html';
+  a.setAttribute('aria-label', 'Demander un audit visibilité web');
+  a.innerHTML = btn.innerHTML;
+  btn.parentNode.replaceChild(a, btn);
+})();
+</script>
+</body>
+</html>

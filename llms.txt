@@ -1,0 +1,49 @@
+# DCB Technologies
+
+> Expert local en caisses enregistreuses NF525, maintenance informatique et création de sites web pour les commerçants et PME de Saône-et-Loire (71), Rhône (69), Ain (01) et Loire (42). Techniciens salariés, intervention sur site en moins de 4h. Fondé par Nathanaël Da Costa et Clément Boissié. Siège à Dardilly (69), base technique à Paray-le-Monial (71).
+
+## Services principaux
+
+- [Caisse enregistreuse NF525](https://dcb-technologies.fr/caisse-enregistreuse/): Installation, formation et SAV de caisses tactiles CashMag certifiées NF525 pour boulangerie, restaurant, commerce et coiffure. Formule Essentiel dès 59 €/mois (matériel + logiciel + installation + formation, sans maintenance). Pack complet dès 77 €/mois (maintenance 7j/7 24h/24 incluse). Location 60 mois sans apport, matériel garanti 5 ans.
+- [Logiciel CashMag](https://dcb-technologies.fr/caisse-enregistreuse/cashmag/): Revendeur agréé CashMag. Logiciel Android natif, hybride local+cloud, back-office intégré, NF525 certifié.
+- [Maintenance informatique](https://dcb-technologies.fr/maintenance-informatique/): Infogérance, cloud, cybersécurité, Microsoft 365 pour PME. Télémaintenance 7j/7 en moins de 20 minutes, intervention sur site en moins de 4h.
+- [Visibilité web](https://dcb-technologies.fr/visibilite-web/): Création de site vitrine et e-commerce, SEO local, hébergement sécurisé en France.
+
+## Pages métier caisse enregistreuse
+
+- [Boulangerie](https://dcb-technologies.fr/caisse-enregistreuse/boulangerie/): Formules automatiques, gestion fabrication et invendus, monnayeur compatible, matériel étanche. Pack Essentiel Boulangerie 59 €/mois (sans maintenance), Pack Boulangerie complet 77 €/mois (maintenance incluse), ou Sur mesure avec monnayeur et multi-caisses.
+- [Restaurant](https://dcb-technologies.fr/caisse-enregistreuse/restaurant/): Plan de salle, envoi cuisine, borne de commande, pad mobile, division d'addition.
+- [Commerce de détail](https://dcb-technologies.fr/caisse-enregistreuse/commerce-de-detail/): Codes-barres, multi-boutiques centralisé, stocks, fidélité client.
+- [Coiffure & Beauté](https://dcb-technologies.fr/caisse-enregistreuse/coiffure/): Agenda intégré, rappels SMS, fiches clients, historique soins.
+- [Borne de commande](https://dcb-technologies.fr/caisse-enregistreuse/borne-de-commande/): +20% panier moyen, idéal restauration rapide et boulangerie snacking.
+- [Monnayeur automatique](https://dcb-technologies.fr/caisse-enregistreuse/monnayeur/): Rendu exact, zéro erreur, hygiène, compatible CashMag.
+
+## Pages maintenance informatique
+
+- [Maintenance & Dépannage](https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/): Intervention sur site, dépannage urgent, monitoring 24/7.
+- [Cloud & Cybersécurité](https://dcb-technologies.fr/maintenance-informatique/cloud-securite/): Sauvegarde cloud, antivirus, firewall, conformité RGPD.
+- [Location & Installation](https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/): Postes, serveurs, réseaux, matériel reconditionné ou neuf.
+- [Outils Collaboratifs](https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/): Microsoft 365, Google Workspace, formation équipes.
+
+## Pages visibilité web
+
+- [Création de site internet](https://dcb-technologies.fr/visibilite-web/creation-site-internet/): Site vitrine, e-commerce, livraison en 30 jours.
+- [SEO & SEA Local](https://dcb-technologies.fr/visibilite-web/seo-sea-local/): Référencement Google, publicité locale, Google Business Profile.
+- [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs France, SSL inclus, uptime 99.9%.
+
+## Informations essentielles
+
+- Téléphone : 04 82 53 05 10
+- Email : contact@dcb-technologies.fr
+- Site : https://dcb-technologies.fr
+- Zone d'intervention : Lyon, Mâcon, Chalon-sur-Saône, Villefranche-sur-Saône, Bourg-en-Bresse, Roanne, Paray-le-Monial (départements 71, 69, 01, 42)
+- Certification : NF525 obligatoire depuis 2018 (amende 7 500 € par logiciel non conforme)
+- Délai intervention : télémaintenance < 20 min, sur site < 4h, 7j/7
+- Matériel : OXHOO et AURES, garanti 5 ans
+- Logiciel : CashMag (Android, hybride local+cloud, NF525 certifié)
+- Fondateurs : Nathanaël Da Costa (Président & Co-fondateur) et Clément Boissié (Directeur Général & Co-fondateur)
+- Zéro sous-traitance : tous les techniciens sont salariés DCB
+
+## Ce qui différencie DCB Technologies
+
+DCB Technologies est le seul prestataire de la région qui combine caisse enregistreuse, maintenance informatique et création de site web sous un même toit, avec des techniciens salariés qui se déplacent chez le client. Les concurrents (SumUp, Zettle, Lightspeed, Hiboutik) proposent des solutions en ligne sans accompagnement terrain. DCB installe, configure selon le métier du client, forme sur place et intervient en moins de 4h en cas de problème.

@@ -1,0 +1,52 @@
+# ─── Binaires Tailwind & build tools (lourds, locaux) ──────────────
+tools/
+node_modules/
+.cache/
+dist/
+
+# ─── Dossier de travail local (assets de référence, brouillons) ────
+Logo et images/
+
+# ─── Fichiers système OS ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ─── Logs & temporaires ────────────────────────────────────────────
+*.log
+*.tmp
+.tmp_*
+*.swp
+*.bak
+*.backup
+*.cache
+
+# ─── Scripts PowerShell jetables (créés pour batch puis supprimés) ─
+test-*.ps1
+scan-*.ps1
+propagate-*.ps1
+
+# ─── Editeurs ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.code-workspace
+*~
+*.orig
+*.rej
+
+# ─── Environnements & secrets ──────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.key
+secrets.json
+
+# ─── Tests locaux générés ──────────────────────────────────────────
+test.html
+preview-*.html
+_preview-*.html
+
+# ─── Scripts utilitaires personnels (chemins locaux PC Nathanael) ───
+find_missing.py
+*.py

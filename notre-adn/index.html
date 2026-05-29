@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Qui sommes-nous ? Techniciens caisse &amp; IT en Saône-et-Loire | DCB</title>
+<meta name="description" content="DCB Technologies, société indépendante fondée à Paray-le-Monial en juillet 2025. Techniciens salariés, zéro sous-traitance. Proximité Saône-et-Loire, Rhône, Ain, Loire.">
+<link rel="canonical" href="https://dcb-technologies.fr/notre-adn/">
+<meta property="og:title" content="Qui sommes-nous ? Techniciens caisse &amp; IT en Saône-et-Loire | DCB">
+<meta property="og:description" content="Deux co-fondateurs, des techniciens salariés, zéro sous-traitance. DCB Technologies, le partenaire unique pour la caisse, l'IT et le web.">
+<meta property="og:url" content="https://dcb-technologies.fr/notre-adn/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/design-system.css">
+<link rel="stylesheet" href="../css/style.css?v=8">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=17">
+<link rel="stylesheet" href="../m/css/mobile.css?v=18" media="screen and (max-width:640px)">
+<style>
+  /* ── Shells ── */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+  }
+  /* ── Portraits duo ── */
+  .m-portraits { padding: 32px 18px; background: #fff; }
+  .m-portraits .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .m-portraits figure { margin: 0; }
+  .m-portraits img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: 16px; box-shadow: 0 8px 24px -6px rgba(7,43,107,0.15); }
+  .m-portraits figcaption { margin-top: 10px; }
+  .m-portraits .name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; color: #0B3D91; margin: 0 0 3px; }
+  .m-portraits .role { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: #F57C00; margin: 0 0 6px; }
+  .m-portraits .bio { font-size: 12px; line-height: 1.5; color: #64748B; margin: 0; }
+  /* ── Engagements ── */
+  .m-engagements { background: #F8F9FA; padding: 32px 18px; }
+  .m-eng-list { margin-top: 20px; }
+  .m-eng-item { padding: 16px 0; border-bottom: 1px solid #E5E9F0; display: flex; gap: 14px; align-items: flex-start; }
+  .m-eng-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .m-eng-num { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 20px; color: #F57C00; line-height: 1; min-width: 28px; padding-top: 2px; }
+  .m-eng-text { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.45; color: #0B3D91; }
+  /* ── Citation ── */
+  .m-citation { background: #0B3D91; padding: 32px 18px; }
+  .m-citation blockquote { margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; line-height: 1.45; color: #fff; font-style: italic; }
+  .m-citation .author { margin-top: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #F57C00; display: block; }
+  /* ── CTA Final ── */
+  .m-cta-final { background: #F8F9FA; padding: 36px 18px 32px; position: relative; }
+  .m-cta-final .topbar { display: block; width: 80px; height: 3px; background: #F57C00; margin: 0 0 22px; border-radius: 2px; }
+  .m-cta-final h3 { margin: 0 0 10px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(22px,6.5vw,26px); line-height: 1.1; letter-spacing: -0.01em; color: #0B3D91; }
+  .m-cta-final p { margin: 0 0 24px; font-size: 14.5px; line-height: 1.55; color: #4A5568; max-width: 36ch; }
+  .m-cta-final .btn { display: inline-flex; width: auto; align-self: flex-start; margin: 0; }
+  .m-cta-final .dpx-divider { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #64748B; margin: 28px 0 12px; }
+  .m-cta-final .dpx-tel { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 22px 12px 18px; border: 1.5px solid #0B3D91; border-radius: 999px; background: #fff; color: #0B3D91; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 17px; text-decoration: none; }
+  .m-cta-final .dpx-tel .gly { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 1; font-size: 20px; color: #F57C00; }
+  .m-cta-final .bottomark { display: block; width: 16px; height: 2px; background: #0B3D91; margin: 28px 0 0 auto; border-radius: 1px; }
+  /* ───────────────────────────────────────────────────────────
+     PAGE NOTRE ADN — STYLES SPÉCIFIQUES
+     Préfixe .adn- pour éviter toute collision avec le système.
+     Reprend strictement les tokens du :root de style.css.
+     ─────────────────────────────────────────────────────────── */
+  body { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; display:inline-block; vertical-align:middle; }
+
+  .adn-narrow { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+  .adn-eyebrow { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--cta); }
+
+  /* HERO */
+  .adn-hero { padding: 7rem 0 5rem; }
+  .adn-hero p.adn-eyebrow { margin-bottom: 1.75rem; }
+  .adn-hero h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+  }
+  .adn-hero h1 em { font-style: normal; color: var(--cta); }
+  .adn-hero__lede { margin-top: 2rem; font-size: 1.25rem; line-height: 1.6; color: var(--text-muted); max-width: 38rem; }
+
+  /* PORTRAITS */
+  .adn-portraits { padding: 4rem 0 5rem; background: var(--s1); }
+  .adn-portraits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+  .adn-portraits figure { margin: 0; }
+  .adn-portraits img {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 4px 4px 0px 0px rgba(7,43,107,0.04);
+  }
+  .adn-portraits figcaption { margin-top: 1.25rem; }
+  .adn-portraits .adn-portraits__name { font-family: var(--font-title); font-weight: 700; color: var(--primary); font-size: 1.0625rem; }
+  .adn-portraits .adn-portraits__role { font-size: 0.8125rem; color: var(--cta); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
+  .adn-portraits .adn-portraits__bio  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.625rem; }
+
+  /* INTRO */
+  .adn-intro { padding: 5rem 0; }
+  .adn-intro .adn-eyebrow { display: block; margin-bottom: 1rem; color: #F57C00; }
+  .adn-intro h2 { font-family: var(--font-title); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--primary); margin-bottom: 2rem; line-height: 1.2; }
+  .adn-intro p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.25rem; }
+  .adn-intro p strong { color: var(--primary); font-weight: 600; }
+
+  /* CODE / MANIFESTE */
+  .adn-code { padding: 6rem 0; background: var(--s1); border-top: 1px solid rgba(11,61,145,0.08); border-bottom: 1px solid rgba(11,61,145,0.08); }
+  .adn-code .adn-eyebrow { display: block; margin-bottom: 0.875rem; }
+  .adn-code h2 { font-family: var(--font-title); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--primary); margin-bottom: 3rem; line-height: 1.2; }
+  .adn-code__list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .adn-code__item {
+    font-family: var(--font-title);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary);
+  }
+  .adn-code__item .adn-strike {
+    color: rgba(11,61,145,0.4);
+    text-decoration: line-through;
+    text-decoration-color: rgba(245,124,0,0.65);
+    text-decoration-thickness: 2px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.375rem;
+  }
+
+  /* CITATION */
+  .adn-quote { padding: 6rem 0; background: var(--primary); color: #fff; }
+  .adn-quote__inner { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+  .adn-quote__mark { color: var(--cta); font-size: 3rem; line-height: 1; margin-bottom: 1rem; }
+  .adn-quote p {
+    font-family: var(--font-title);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: #fff;
+  }
+  .adn-quote .adn-quote__author {
+    margin-top: 2.5rem;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--cta);
+  }
+
+  /* ORIGINE */
+  .adn-origine { padding: 5rem 0; }
+  .adn-origine .adn-eyebrow { display: block; margin-bottom: 1rem; color: #F57C00; }
+  .adn-origine h2 { font-family: var(--font-title); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--primary); margin-bottom: 2rem; line-height: 1.2; }
+  .adn-origine p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.25rem; }
+  .adn-origine p strong { color: var(--primary); font-weight: 600; }
+  .adn-origine__date {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #E6EEF9; color: var(--primary);
+    padding: 0.5rem 1rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+  }
+
+  /* SIGNATURE / CTA FINAL */
+  .adn-signature { padding: 5rem 0 6rem; background: var(--s1); border-top: 1px solid rgba(11,61,145,0.08); text-align: center; }
+  .adn-signature h2 { font-family: var(--font-title); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 600; color: var(--primary); line-height: 1.35; margin-bottom: 2.5rem; }
+  .adn-signature__phone { font-family: var(--font-title); font-size: 2rem; font-weight: 700; color: var(--primary); display: inline-block; margin-bottom: 0.5rem; }
+  .adn-signature__hours { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+  .adn-signature__cta { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .adn-signature__authors { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(11,61,145,0.08); }
+  .adn-signature__authors-line { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-light); }
+
+  @media (max-width: 700px) {
+    .adn-portraits__grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="d-shell">
+<!-- NAV STANDARD INJECTÉE PAR scripts.js -->
+<div id="dcb-nav"></div>
+
+<main class="pt-[76px]">
+
+  <!-- 1 · HERO -->
+  <section class="adn-hero">
+    <div class="adn-narrow">
+      <p class="adn-eyebrow">Notre ADN</p>
+      <h1>L'opposé d'une <em>ESN</em> comme les autres.</h1>
+      <p class="adn-hero__lede">Deux fondateurs, une équipe de techniciens salariés, et une promesse : être présents quand un commerçant ou une PME a besoin d'aide. Pas un standard. Pas un sous-traitant. Quelqu'un qu'on connaît.</p>
+    </div>
+  </section>
+
+  <!-- 2 · PORTRAITS DUO -->
+  <section class="adn-portraits">
+    <div class="adn-portraits__grid">
+      <figure>
+        <img src="../assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, président et co-fondateur de DCB Technologies" width="800" height="1000" loading="lazy" decoding="async">
+        <figcaption>
+          <p class="adn-portraits__name">Nathanaël Da Costa</p>
+          <p class="adn-portraits__role">Président &amp; co-fondateur</p>
+          <p class="adn-portraits__bio">Infrastructure, systèmes, réseau. C'est lui qui conçoit et fiabilise l'architecture technique de chaque client.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/cb-clement-boissie.jpg" alt="Clément Boissié, directeur général et co-fondateur de DCB Technologies" width="800" height="1000" loading="lazy" decoding="async">
+        <figcaption>
+          <p class="adn-portraits__name">Clément Boissié</p>
+          <p class="adn-portraits__role">Directeur général &amp; co-fondateur</p>
+          <p class="adn-portraits__bio">Métier, relation client, terrain. Il accompagne chaque commerçant dans le choix et l'évolution de ses outils.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 · INTRO -->
+  <section class="adn-intro">
+    <div class="adn-narrow">
+      <p class="adn-eyebrow">L'idée de départ</p>
+      <h2>Un seul interlocuteur pour la caisse, l'informatique et le web.</h2>
+      <p>Nathanaël et Clément se sont croisés en intervention chez un même client. Lui sur le réseau, l'autre sur la caisse. Trois prestataires sur le site, aucun ne se parle. Le constat était simple : <strong>un commerçant local mérite mieux que ça</strong>.</p>
+      <p>DCB Technologies est née de cette conviction. Un seul partenaire pour les trois piliers du quotidien d'un commerce : la caisse certifiée, le parc informatique, la présence en ligne. Un seul numéro, une seule facture, des techniciens salariés.</p>
+    </div>
+  </section>
+
+  <!-- 4 · CODE / MANIFESTE -->
+  <section class="adn-code">
+    <div class="adn-narrow">
+      <p class="adn-eyebrow">Notre code</p>
+      <h2>Quatre engagements, jamais négociés.</h2>
+      <div class="adn-code__list">
+        <div class="adn-code__item">
+          <span class="adn-strike">Ticket dans un CRM, hotline délocalisée.</span>
+          Un nom. Un numéro direct. Une voiture sur la route.
+        </div>
+        <div class="adn-code__item">
+          <span class="adn-strike">Réponse sous 48 à 72h.</span>
+          Intervention sur site sous 4h. Astreinte 7j/7 sur contrat.
+        </div>
+        <div class="adn-code__item">
+          <span class="adn-strike">Sous-traitance, prestataires variables.</span>
+          100% techniciens salariés DCB. Toujours les mêmes visages.
+        </div>
+        <div class="adn-code__item">
+          <span class="adn-strike">Devis flou, surcoûts à la facture.</span>
+          Devis détaillé. Prix annoncé. Prix payé.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · CITATION -->
+  <section class="adn-quote">
+    <div class="adn-quote__inner">
+      <div class="adn-quote__mark">
+        <span class="material-symbols-outlined" style="font-size: 3rem; color: #F57C00; font-variation-settings:'FILL' 1">format_quote</span>
+      </div>
+      <p>« On a fondé DCB pour qu'un boulanger qui ouvre à 5h du matin n'ait pas à se demander, à 5h05, qui appeler quand sa caisse plante. »</p>
+      <p class="adn-quote__author">Clément Boissié · Co-fondateur</p>
+    </div>
+  </section>
+
+  <!-- 6 · ORIGINE -->
+  <section class="adn-origine">
+    <div class="adn-narrow">
+      <p class="adn-eyebrow">L'origine</p>
+      <span class="adn-origine__date"><span class="material-symbols-outlined" style="font-size:1rem;">flag</span> Fondée en juillet 2025</span>
+      <h2>Une jeune entreprise, déjà ancrée sur le terrain.</h2>
+      <p>DCB Technologies est née à Paray-le-Monial à l'été 2025. Quelques mois plus tard, l'entreprise accompagne déjà <strong>une vingtaine de commerces et PME</strong> en Saône-et-Loire, Rhône, Ain et Loire.</p>
+      <p>Cette croissance rapide, on la doit au bouche-à-oreille local et à une règle simple : faire ce qu'on a dit qu'on ferait, dans le délai annoncé. Pas plus compliqué.</p>
+      <p>Ce qui nous distingue ne tient ni au nombre de clients, ni au chiffre d'affaires. Ça tient à la promesse de fond : <strong>être joignables, être présents, être responsables</strong>. Et de pouvoir le rester en grandissant.</p>
+    </div>
+  </section>
+
+  <!-- 7 · CTA FINAL -->
+  <section class="d-cta-final" style="padding-top:80px;padding-bottom:112px;background:#F8F9FA;--accent:#F57C00;--accent-dark:#E06E00">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+        <div class="lg:col-span-7 col-msg">
+          <span class="filet" aria-hidden="true"></span>
+          <h2 class="d-h">Le café est offert au siège. Le téléphone fonctionne aussi.</h2>
+          <p class="d-lede">Un technicien ou l'un des co-fondateurs vous répond directement. Pas un standard, pas un formulaire anonyme.</p>
+        </div>
+        <div class="lg:col-span-5 col-action">
+          <a href="../contact/index.html" class="btn btn--primary">Prendre contact<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+          <span class="d-divider">ou appelez-nous</span>
+          <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly" style="font-variation-settings:'FILL' 1" aria-hidden="true">call</span>04 82 53 05 10</a>
+        </div>
+      </div>
+      <div class="d-foot">
+        <span></span>
+        <span class="d-updated">Nathanaël Da Costa &amp; Clément Boissié · Co-fondateurs · Paray-le-Monial</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER STANDARD INJECTÉ PAR scripts.js -->
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="">
+
+<!-- SKIP LINK -->
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+
+<!-- PROGRESS BAR -->
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+
+<!-- HEADER : injecté par scripts.js -->
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+<!-- S1 : HERO -->
+<section class="hero">
+  <p class="eyebrow">Notre ADN</p>
+  <h1>L'opposé d'une <em>ESN</em> comme les autres.</h1>
+  <p class="lede">Deux fondateurs, une équipe de techniciens salariés, et une promesse : être présents quand ça plante. Pas un standard. Quelqu'un qu'on connaît.</p>
+</section>
+
+<!-- S2 : PORTRAITS DUO -->
+<section class="m-portraits">
+  <p class="eyebrow">Les fondateurs</p>
+  <h2 class="sec-h2" style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;line-height:1.2;color:#0B3D91;margin:0 0 20px">Deux visages, un seul numéro.</h2>
+  <div class="grid">
+    <figure>
+      <img src="../assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, co-fondateur DCB Technologies" width="400" height="533" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>
+        <p class="name">Nathanaël Da Costa</p>
+        <p class="role">Co-fondateur</p>
+        <p class="bio">Infrastructure, systèmes, réseau. Il conçoit et fiabilise l'architecture technique de chaque client.</p>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/cb-clement-boissie.jpg" alt="Clément Boissié, co-fondateur DCB Technologies" width="400" height="533" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>
+        <p class="name">Clément Boissié</p>
+        <p class="role">Co-fondateur</p>
+        <p class="bio">Métier, relation client, terrain. Il accompagne chaque commerçant dans le choix de ses outils.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- S3 : ENGAGEMENTS -->
+<section class="m-engagements">
+  <p class="eyebrow">Notre code</p>
+  <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;line-height:1.2;color:#0B3D91;margin:0">Quatre engagements, jamais négociés.</h2>
+  <div class="m-eng-list">
+    <div class="m-eng-item">
+      <span class="m-eng-num">01</span>
+      <span class="m-eng-text">Un nom. Un numéro direct. Une voiture sur la route.</span>
+    </div>
+    <div class="m-eng-item">
+      <span class="m-eng-num">02</span>
+      <span class="m-eng-text">Intervention sur site sous 4h. Astreinte 7j/7 sur contrat.</span>
+    </div>
+    <div class="m-eng-item">
+      <span class="m-eng-num">03</span>
+      <span class="m-eng-text">100% techniciens salariés DCB. Toujours les mêmes visages.</span>
+    </div>
+    <div class="m-eng-item">
+      <span class="m-eng-num">04</span>
+      <span class="m-eng-text">Devis détaillé. Prix annoncé. Prix payé.</span>
+    </div>
+  </div>
+</section>
+
+<!-- S4 : CITATION -->
+<section class="m-citation">
+  <span class="material-symbols-outlined" style="font-size:32px;color:#F57C00;display:block;margin-bottom:12px;font-variation-settings:'FILL' 1">format_quote</span>
+  <blockquote>« On a fondé DCB pour qu'un boulanger qui ouvre à 5h du matin n'ait pas à se demander, à 5h05, qui appeler quand sa caisse plante. »</blockquote>
+  <span class="author">Clément Boissié · Co-fondateur</span>
+</section>
+
+<!-- S5 : CTA FINAL -->
+<section class="m-cta-final" aria-labelledby="m-cta-adn-h">
+  <span class="topbar" aria-hidden="true"></span>
+  <h3 id="m-cta-adn-h">Le café est offert au siège. Le téléphone fonctionne aussi.</h3>
+  <p>Un technicien ou l'un des co-fondateurs vous répond directement.</p>
+  <a class="btn btn-pri" href="../contact/index.html">Prendre contact<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  <span class="dpx-divider">ou appelez-nous</span>
+  <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+  <span class="bottomark" aria-hidden="true"></span>
+</section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<script src="../js/scripts.js?v=21"></script>
+<script>
+(function(){
+  if(window.innerWidth<=640){
+    var s=document.createElement('script');
+    s.src='../m/js/mobile.js';
+    document.body.appendChild(s);
+    /* FAB Notre ADN : retire data-sheet dès l'injection, redirige vers contact */
+    var obs=new MutationObserver(function(){
+      var btn=document.getElementById('fabDevis');
+      if(btn){
+        obs.disconnect();
+        btn.removeAttribute('data-sheet');
+        btn.onclick=function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href='../contact/index.html';
+        };
+      }
+    });
+    obs.observe(document.body,{childList:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
