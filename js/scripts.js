@@ -231,7 +231,7 @@
         '</div>' +
 
         '<!-- Zones d\'intervention v3 : Atlas typographique (filet orange contraint au dept, eyebrow blanc DA) -->' +
-        '<div class="pt-8 pb-8 mb-2">' +
+        '<div class="pb-8 mb-2">' +
           '<h3 id="zones-intervention" class="text-[11px] font-bold tracking-[0.2em] uppercase text-white/60 mb-8 mt-0">Zones d\u2019intervention</h3>' +
           '<dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 m-0">' +
             // 71 Sa\u00f4ne-et-Loire
@@ -246,7 +246,7 @@
                   '<li class="text-sm font-semibold text-white leading-snug">Chalon-sur-Sa\u00f4ne</li>' +
                   '<li class="text-sm font-semibold text-white leading-snug">Paray-le-Monial</li>' +
                 '</ul>' +
-                '<ul class="list-none p-0 mt-4 pt-4 space-y-1.5">' +
+                '<ul class="list-none p-0 mt-3 space-y-1.5">' +
                   '<li class="text-xs text-white/45 leading-snug">Charolles</li>' +
                   '<li class="text-xs text-white/45 leading-snug">Tournus</li>' +
                   '<li class="text-xs text-white/45 leading-snug">Cluny</li>' +
@@ -296,7 +296,7 @@
         '</div>' +
 
         '<!-- Bottom bar -->' +
-        '<div class="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 flex-wrap">' +
+        '<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 flex-wrap">' +
           '<p class="text-slate-500 font-body text-xs">\u00a9 2025 DCB Technologies. Tous droits r\u00e9serv\u00e9s.</p>' +
           '<div class="flex flex-wrap gap-2">' +
             '<a href="' + base + 'mentions-legales/index.html" class="inline-flex items-center px-3 py-2.5 text-slate-400 font-body text-xs no-underline hover:text-white transition-colors duration-150">Mentions L\u00e9gales</a>' +
