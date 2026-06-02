@@ -594,3 +594,8 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
   .mcard,.peri-a a,.btn,.fab .b1,.tech .tech-cta{transition:none}
   .mcard:active,.peri-a a:active{transform:none}
 }
+
+/* ── CTA Final mobile : date 'Mis a jour le' integree (editorial italique avant bottomark) ──
+   Override .bottomark margin-top inline des pages via specificite .m-shell + 2 classes (0,3,0 > 0,2,0). */
+.m-shell .m-cta-final .m-updated{margin:36px 0 0;font-family:'Inter',sans-serif;font-size:11.5px;font-style:italic;letter-spacing:0.02em;color:#94A3B8;text-align:left}
+.m-shell .m-cta-final .bottomark{margin-top:20px}
