@@ -600,14 +600,12 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
 .m-shell .m-cta-final .m-updated{margin:36px 0 0;font-family:'Inter',sans-serif;font-size:11.5px;font-style:italic;letter-spacing:0.02em;color:#94A3B8;text-align:left}
 .m-shell .m-cta-final .bottomark{margin-top:20px}
 
-/* ── Resultats mesures mobile : Hero stat asymetrique (1er HUGE 72px + 2 autres 44px) ──
-   Filet signature accent au-dessus de la liste. Numero en couleur narration,
-   label discret slate-500 caps. Casse le cliche '3 chiffres egaux empiles'. */
-.m-shell .m-stats{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:36px}
+/* ── Resultats mesures mobile : 3 stats equilibrees, label-first editorial ──
+   Filet signature accent en haut. Label en premier (setup), numero en grand (punchline).
+   Pattern magazine factoid : context -> reveal. Casse cliche SaaS '3 gros chiffres'. */
+.m-shell .m-stats{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:34px}
 .m-shell .m-stats::before{content:'';display:block;width:56px;height:3px;background:var(--accent,#0B3D91);border-radius:2px;margin-bottom:14px}
-.m-shell .m-stat{margin:0;padding:0}
-.m-shell .m-stat-num{font-family:'Sora',sans-serif;font-weight:800;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
-.m-shell .m-stat:first-child .m-stat-num{font-size:72px}
-.m-shell .m-stat:not(:first-child) .m-stat-num{font-size:44px}
-.m-shell .m-stat-lab{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#64748B;margin-top:10px;line-height:1.4}
-.m-shell .m-stat-desc{font-size:12.5px;color:#94A3B8;line-height:1.5;margin-top:6px;font-style:italic}
+.m-shell .m-stat{margin:0;padding:0;display:flex;flex-direction:column}
+.m-shell .m-stat-lab{order:1;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748B;line-height:1.4;margin:0 0 6px}
+.m-shell .m-stat-num{order:2;font-family:'Sora',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
+.m-shell .m-stat-desc{order:3;font-size:12.5px;color:#94A3B8;line-height:1.5;margin-top:8px;font-style:italic}
