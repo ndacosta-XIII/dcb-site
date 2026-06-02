@@ -101,6 +101,10 @@
     /* Ferme le menu si ouvert — évite 2 role="dialog" simultanés */
     if (menu && menu.classList.contains('on')) { closeMenu(); }
     _sheetOpener = document.activeElement;
+    /* Reset du metier au metier de la page (segment .on + couleur sheet + packs) a chaque ouverture.
+       Surcharge eventuelle par data-plan : le handler [data-sheet][data-plan] dans scripts.js fire apres
+       et applique setSheetMetier(metier, plan) avec le pack preselectionne. */
+    if (typeof window.dcbResetSheetMetier === 'function') { window.dcbResetSheetMetier(); }
     /* Réinitialise le bouton submit si l'utilisateur rouvre la sheet après un envoi */
     var _submitBtn = sheet.querySelector('[type="submit"]');
     if (_submitBtn) {

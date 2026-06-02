@@ -731,37 +731,50 @@
       cselSetValue(preselect || '');
     }
 
-    /* Init avec le métier de la page courante */
+    /* ── Sync de l'etat metier dans le sheet (segment .on + couleur scoped + packs) ──
+       Si m === metier (page courante), on enleve l'override data-form-metier pour que le
+       sheet herite de la couleur de la page. Sinon on pose l'override pour repeindre
+       UNIQUEMENT le formulaire via .sheet[data-form-metier="X"] dans mobile.css. */
+    function setSheetMetier(m, preselect) {
+      updatePacks(m, preselect);
+      document.querySelectorAll('.seg button[data-metier]').forEach(function (b) {
+        var active = (b.getAttribute('data-metier') === m);
+        b.classList.toggle('on', active);
+        b.setAttribute('aria-checked', active ? 'true' : 'false');
+      });
+      var sheetEl = document.getElementById('sheet');
+      if (sheetEl) {
+        if (m === metier) {
+          sheetEl.removeAttribute('data-form-metier');
+        } else {
+          sheetEl.setAttribute('data-form-metier', m);
+        }
+      }
+    }
+
+    /* Init avec le metier de la page courante */
     updatePacks(metier);
 
-    /* ── Pré-sélection pack via data-plan (borne, monnayeur, etc.) ── */
+    /* ── Pre-selection pack via data-plan (borne, monnayeur, etc.) ──
+       On RESET d'abord au metier de la page (segment .on + couleur sheet) pour eviter
+       que l'etat persiste si l'utilisateur avait change de metier dans une ouverture
+       precedente du sheet. Puis on applique le pack preselectionne. */
     document.querySelectorAll('[data-sheet][data-plan]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var plan = btn.getAttribute('data-plan');
-        if (plan) updatePacks(metier, plan);
+        setSheetMetier(metier, plan || '');
       });
     });
 
-    /* Mise à jour quand l'utilisateur change de métier (packs + thème couleur du formulaire UNIQUEMENT, pas de la page).
-       Avant : on mutait data-metier sur .m-shell, ce qui repeignait toute la page (bug).
-       Maintenant : on toggle la classe .on sur le segment cliqué + on pose data-form-metier sur le sheet.
-       Les overrides CSS .sheet[data-form-metier="X"] dans mobile.css gagnent en spécificité sur les règles globales [data-metier]. */
+    /* Mise a jour quand l'utilisateur change de metier dans le formulaire (packs + theme couleur scoped). */
     document.querySelectorAll('.seg button[data-metier]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var m = btn.getAttribute('data-metier');
-        updatePacks(m);
-        var grp = btn.parentElement;
-        if (grp) {
-          grp.querySelectorAll('button').forEach(function (b) {
-            var active = (b === btn);
-            b.classList.toggle('on', active);
-            b.setAttribute('aria-checked', active ? 'true' : 'false');
-          });
-        }
-        var sheetEl = document.getElementById('sheet');
-        if (sheetEl) sheetEl.setAttribute('data-form-metier', m);
+        setSheetMetier(btn.getAttribute('data-metier'));
       });
     });
+
+    /* Expose globalement pour que mobile.js openSheet() puisse reset le sheet a chaque ouverture */
+    window.dcbResetSheetMetier = function () { setSheetMetier(metier); };
 
     /* ── Wire custom select toggle ── */
     var cselEl = document.getElementById('csel-formule');
@@ -790,7 +803,7 @@
     /* ── Charge mobile.js si viewport mobile ── */
     if (window.matchMedia('(max-width:640px)').matches) {
       var mjs = document.createElement('script');
-      mjs.src = base + 'm/js/mobile.js';
+      mjs.src = base + 'm/js/mobile.js?v=2';
       document.body.appendChild(mjs);
     }
   })();
