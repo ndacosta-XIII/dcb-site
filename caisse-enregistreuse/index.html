@@ -1463,37 +1463,6 @@
   </div>
 </section>
 
-<!-- ÉCOSYSTÈME MATÉRIEL : cross-sell -->
-<section class="sec">
-  <p class="eyebrow">Écosystème matériel</p>
-  <h2>Optimisez votre <em>point de vente</em>.</h2>
-  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
-  <div class="peri-a">
-    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" aria-label="Borne de commande self-service K1">
-      <div class="txt">
-        <span class="pp">+20% panier moyen</span>
-        <h3>Borne de commande</h3>
-        <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
-        <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
-      </div>
-      <div class="vis"><img src="../assets/borne-k1.png" alt="Borne de commande K1" width="120" height="180" loading="lazy"></div>
-    </a>
-    <a href="monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique">
-      <div class="txt">
-        <span class="pp">0 contact argent</span>
-        <h3>Monnayeur automatique</h3>
-        <p>Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
-        <span class="lk">Découvrir le monnayeur<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
-      </div>
-      <div class="vis">
-        <video autoplay loop muted playsinline preload="none" width="120" height="120" aria-hidden="true">
-          <source src="../assets/monnayeur-3d.webm" type="video/webm">
-        </video>
-      </div>
-    </a>
-  </div>
-</section>
-
 <!-- TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) -->
 <style>
   .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
@@ -1555,6 +1524,37 @@
   <button class="m-prox-reveal" data-d="4" data-sheet style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;border:0;cursor:pointer">Demander un devis<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></button>
 </section>
 <script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
+
+<!-- ÉCOSYSTÈME MATÉRIEL : cross-sell -->
+<section class="sec">
+  <p class="eyebrow">Écosystème matériel</p>
+  <h2>Optimisez votre <em>point de vente</em>.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
+  <div class="peri-a">
+    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" aria-label="Borne de commande self-service K1">
+      <div class="txt">
+        <span class="pp">+20% panier moyen</span>
+        <h3>Borne de commande</h3>
+        <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
+        <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis"><img src="../assets/borne-k1.png" alt="Borne de commande K1" width="120" height="180" loading="lazy"></div>
+    </a>
+    <a href="monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique">
+      <div class="txt">
+        <span class="pp">0 contact argent</span>
+        <h3>Monnayeur automatique</h3>
+        <p>Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
+        <span class="lk">Découvrir le monnayeur<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <video autoplay loop muted playsinline preload="none" width="120" height="120" aria-hidden="true">
+          <source src="../assets/monnayeur-3d.webm" type="video/webm">
+        </video>
+      </div>
+    </a>
+  </div>
+</section>
 
 <!-- FAQ -->
 <section class="sec s1">
@@ -1624,6 +1624,6 @@
 
 
 </div><!-- /m-shell -->
-<script src="../js/scripts.js?v=26"></script>
+<script src="../js/scripts.js?v=27"></script>
 </body>
 </html>

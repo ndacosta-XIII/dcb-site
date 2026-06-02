@@ -449,7 +449,7 @@
           '</button>' +
         '</div>' +
         '<nav aria-label="Menu principal mobile">' +
-          msGrp('caisse-enregistreuse', 'point_of_sale', 'rgba(245,124,0,0.18)', 'Caisse enregistreuse',
+          msGrp('caisse-enregistreuse', 'point_of_sale', '#0D9488', 'Caisse enregistreuse',
             msSub('caisse-enregistreuse/boulangerie/index.html',        'bakery_dining', '#F59E0B', 'Boulangerie &amp; Pâtisserie') +
             msSub('caisse-enregistreuse/restaurant/index.html',         'restaurant',    '#EF4444', 'Bar, Brasserie &amp; Resto') +
             msSub('caisse-enregistreuse/commerce-de-detail/index.html', 'storefront',    '#0D9488', 'Mode &amp; Commerce détail') +
@@ -457,14 +457,14 @@
             msSub('caisse-enregistreuse/borne-de-commande/index.html',  'point_of_sale', '#4F46E5', 'Borne de commande') +
             msSub('caisse-enregistreuse/monnayeur/index.html',          'payments',      '#059669', 'Monnayeur automatique')
           ) +
-          msGrp('maintenance-informatique', 'build', 'rgba(239,68,68,0.16)', 'Informatique',
+          msGrp('maintenance-informatique', 'build', '#345BAF', 'Informatique',
             msSub('maintenance-informatique/infogerance-pme/index.html',            'manage_accounts','#F59E0B', 'Infogérance PME') +
             msSub('maintenance-informatique/maintenance-depannage/index.html',      'build',          '#EF4444', 'Maintenance &amp; Dépannage') +
             msSub('maintenance-informatique/cloud-securite/index.html',             'cloud_done',     '#0D9488', 'Cloud &amp; Sécurité') +
             msSub('maintenance-informatique/location-vente-installation/index.html','router',         '#4F46E5', 'Location &amp; Installation') +
             msSub('maintenance-informatique/outils-collaboratifs/index.html',       'groups',         '#A855F7', 'Outils collaboratifs')
           ) +
-          msGrp('visibilite-web', 'language', 'rgba(255,255,255,0.14)', 'Visibilité web',
+          msGrp('visibilite-web', 'language', '#F57C00', 'Visibilité web',
             msSub('visibilite-web/creation-site-internet/index.html', 'design_services', '#C084FC', 'Création de site web') +
             msSub('visibilite-web/seo-sea-local/index.html',          'trending_up',     '#F87171', 'SEO &amp; SEA local') +
             msSub('visibilite-web/hebergement/index.html',            'dns',             '#2DD4BF', 'Hébergement')
