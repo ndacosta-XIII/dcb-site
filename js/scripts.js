@@ -803,7 +803,7 @@
     /* ── Charge mobile.js si viewport mobile ── */
     if (window.matchMedia('(max-width:640px)').matches) {
       var mjs = document.createElement('script');
-      mjs.src = base + 'm/js/mobile.js?v=2';
+      mjs.src = base + 'm/js/mobile.js?v=3';
       document.body.appendChild(mjs);
     }
   })();
