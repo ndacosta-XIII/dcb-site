@@ -600,12 +600,12 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
 .m-shell .m-cta-final .m-updated{margin:36px 0 0;font-family:'Inter',sans-serif;font-size:11.5px;font-style:italic;letter-spacing:0.02em;color:#94A3B8;text-align:left}
 .m-shell .m-cta-final .bottomark{margin-top:20px}
 
-/* ── Resultats mesures mobile : 3 stats equilibrees, label-first editorial ──
-   Filet signature accent en haut. Label en premier (setup), numero en grand (punchline).
-   Pattern magazine factoid : context -> reveal. Casse cliche SaaS '3 gros chiffres'. */
+/* ── Resultats mesures mobile : 3 stats equilibrees, number-first standard ──
+   Filet signature accent en haut. Numero d'abord, label en dessous (lecture habituelle).
+   Marche aussi bien sans desc (borne, monnayeur 1-2) qu'avec (seo-sea, monnayeur 3). */
 .m-shell .m-stats{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:34px}
 .m-shell .m-stats::before{content:'';display:block;width:56px;height:3px;background:var(--accent,#0B3D91);border-radius:2px;margin-bottom:14px}
-.m-shell .m-stat{margin:0;padding:0;display:flex;flex-direction:column}
-.m-shell .m-stat-lab{order:1;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748B;line-height:1.4;margin:0 0 6px}
-.m-shell .m-stat-num{order:2;font-family:'Sora',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
-.m-shell .m-stat-desc{order:3;font-size:12.5px;color:#94A3B8;line-height:1.5;margin-top:8px;font-style:italic}
+.m-shell .m-stat{margin:0;padding:0}
+.m-shell .m-stat-num{font-family:'Sora',sans-serif;font-weight:800;font-size:48px;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
+.m-shell .m-stat-lab{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748B;line-height:1.4;margin-top:10px}
+.m-shell .m-stat-desc{font-size:12.5px;color:#94A3B8;line-height:1.5;margin-top:6px;font-style:italic}
