@@ -397,6 +397,35 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 [data-metier="commerce"]    .field input:focus,[data-metier="commerce"]    .field select:focus{border-color:#0D9488}
 [data-metier="beaute"]      .field input:focus,[data-metier="beaute"]      .field select:focus{border-color:#A855F7}
 
+/* ── Theme metier dynamique scoped au sheet ──
+   Override les rules [data-metier="X"] ci-dessus quand l'utilisateur change de metier dans le formulaire :
+   on pose data-form-metier sur #sheet et la specificite .sheet[data-form-metier="X"] (0,2,1)
+   gagne sur [data-metier="X"] (0,1,1) → seul le formulaire change de couleur, pas la page. */
+.sheet[data-form-metier="boulangerie"] .csel.open{border-color:#F59E0B}
+.sheet[data-form-metier="restaurant"]  .csel.open{border-color:#EF4444}
+.sheet[data-form-metier="commerce"]    .csel.open{border-color:#0D9488}
+.sheet[data-form-metier="beaute"]      .csel.open{border-color:#A855F7}
+
+.sheet[data-form-metier="boulangerie"] .csel-list li[aria-selected="true"]{color:#F59E0B;background:rgba(245,158,11,0.08);font-weight:700}
+.sheet[data-form-metier="restaurant"]  .csel-list li[aria-selected="true"]{color:#EF4444;background:rgba(239,68,68,0.08);font-weight:700}
+.sheet[data-form-metier="commerce"]    .csel-list li[aria-selected="true"]{color:#0D9488;background:rgba(13,148,136,0.08);font-weight:700}
+.sheet[data-form-metier="beaute"]      .csel-list li[aria-selected="true"]{color:#A855F7;background:rgba(168,85,247,0.08);font-weight:700}
+
+.sheet[data-form-metier="boulangerie"] .seg button.on{background:#F59E0B;border-color:#F59E0B;box-shadow:0 4px 14px -4px rgba(245,158,11,0.45)}
+.sheet[data-form-metier="restaurant"]  .seg button.on{background:#EF4444;border-color:#EF4444;box-shadow:0 4px 14px -4px rgba(239,68,68,0.45)}
+.sheet[data-form-metier="commerce"]    .seg button.on{background:#0D9488;border-color:#0D9488;box-shadow:0 4px 14px -4px rgba(13,148,136,0.45)}
+.sheet[data-form-metier="beaute"]      .seg button.on{background:#A855F7;border-color:#A855F7;box-shadow:0 4px 14px -4px rgba(168,85,247,0.45)}
+
+.sheet[data-form-metier="boulangerie"] .btn-pri{background:#F59E0B}
+.sheet[data-form-metier="restaurant"]  .btn-pri{background:#EF4444}
+.sheet[data-form-metier="commerce"]    .btn-pri{background:#0D9488}
+.sheet[data-form-metier="beaute"]      .btn-pri{background:#A855F7}
+
+.sheet[data-form-metier="boulangerie"] .field input:focus,.sheet[data-form-metier="boulangerie"] .field select:focus{border-color:#F59E0B}
+.sheet[data-form-metier="restaurant"]  .field input:focus,.sheet[data-form-metier="restaurant"]  .field select:focus{border-color:#EF4444}
+.sheet[data-form-metier="commerce"]    .field input:focus,.sheet[data-form-metier="commerce"]    .field select:focus{border-color:#0D9488}
+.sheet[data-form-metier="beaute"]      .field input:focus,.sheet[data-form-metier="beaute"]      .field select:focus{border-color:#A855F7}
+
 /* ── MENU plein écran */
 .menu{position:fixed;inset:0;z-index:var(--z-menu);background:#0B3D91;display:flex;flex-direction:column;padding:18px;opacity:0;pointer-events:none;visibility:hidden;transform:scale(0.98);transition:opacity 0.25s ease,transform 0.25s ease,visibility 0s linear 0.25s}
 .menu.on{opacity:1;pointer-events:auto;visibility:visible;transform:scale(1);transition:opacity 0.25s ease,transform 0.25s ease,visibility 0s}

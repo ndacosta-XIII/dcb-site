@@ -742,13 +742,24 @@
       });
     });
 
-    /* Mise à jour quand l'utilisateur change de métier (packs + thème couleur) */
+    /* Mise à jour quand l'utilisateur change de métier (packs + thème couleur du formulaire UNIQUEMENT, pas de la page).
+       Avant : on mutait data-metier sur .m-shell, ce qui repeignait toute la page (bug).
+       Maintenant : on toggle la classe .on sur le segment cliqué + on pose data-form-metier sur le sheet.
+       Les overrides CSS .sheet[data-form-metier="X"] dans mobile.css gagnent en spécificité sur les règles globales [data-metier]. */
     document.querySelectorAll('.seg button[data-metier]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var m = btn.getAttribute('data-metier');
         updatePacks(m);
-        var shell = document.querySelector('.m-shell');
-        if (shell) shell.setAttribute('data-metier', m);
+        var grp = btn.parentElement;
+        if (grp) {
+          grp.querySelectorAll('button').forEach(function (b) {
+            var active = (b === btn);
+            b.classList.toggle('on', active);
+            b.setAttribute('aria-checked', active ? 'true' : 'false');
+          });
+        }
+        var sheetEl = document.getElementById('sheet');
+        if (sheetEl) sheetEl.setAttribute('data-form-metier', m);
       });
     });
 
