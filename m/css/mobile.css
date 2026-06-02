@@ -609,3 +609,16 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
 .m-shell .m-stat-num{font-family:'Sora',sans-serif;font-weight:800;font-size:48px;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
 .m-shell .m-stat-lab{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748B;line-height:1.4;margin-top:10px}
 .m-shell .m-stat-desc{font-size:12.5px;color:#94A3B8;line-height:1.5;margin-top:6px;font-style:italic}
+
+/* ── Timeline verticale mobile : process etapes connectees ──
+   Used by infogerance S7 'Prise en charge rapide'. Pattern distinct du .pain (S3) :
+   badge circulaire numerote + ligne verticale connectrice 2px + day marker accent. */
+.m-shell .m-timeline{list-style:none;margin:22px 0 0;padding:0;position:relative}
+.m-shell .m-timeline .m-step{position:relative;padding:0 0 32px 52px}
+.m-shell .m-timeline .m-step:last-child{padding-bottom:0}
+.m-shell .m-timeline .m-step::before{content:'';position:absolute;left:15px;top:36px;bottom:-4px;width:2px;background:var(--accent,#F59E0B);opacity:.22;border-radius:1px}
+.m-shell .m-timeline .m-step:last-child::before{display:none}
+.m-shell .m-timeline .m-step-badge{position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--accent,#F59E0B);color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;z-index:1;line-height:1}
+.m-shell .m-timeline .m-step-day{font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent,#F59E0B);margin:0 0 4px;line-height:1.4}
+.m-shell .m-timeline .m-step-h3{font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;font-size:16px;margin:0 0 6px;line-height:1.25}
+.m-shell .m-timeline .m-step-p{font-size:13.5px;color:#4A5568;line-height:1.55;margin:0}
