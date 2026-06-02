@@ -599,3 +599,11 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
    Override .bottomark margin-top inline des pages via specificite .m-shell + 2 classes (0,3,0 > 0,2,0). */
 .m-shell .m-cta-final .m-updated{margin:36px 0 0;font-family:'Inter',sans-serif;font-size:11.5px;font-style:italic;letter-spacing:0.02em;color:#94A3B8;text-align:left}
 .m-shell .m-cta-final .bottomark{margin-top:20px}
+
+/* ── Resultats mesures mobile : stack typographique unifie (borne / monnayeur / seo-sea) ──
+   Pattern editorial sans cards/borders/separateurs. Accent --accent par page (indigo/vert/rouge). */
+.m-shell .m-stats{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:28px}
+.m-shell .m-stat{margin:0;padding:0}
+.m-shell .m-stat-num{font-family:'Sora',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-0.03em;color:var(--accent,#0B3D91)}
+.m-shell .m-stat-lab{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0B3D91;margin-top:10px;line-height:1.35}
+.m-shell .m-stat-desc{font-size:12.5px;color:#64748B;line-height:1.5;margin-top:6px;font-style:italic}
