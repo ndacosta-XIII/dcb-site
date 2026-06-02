@@ -325,7 +325,7 @@
       color: #0B3D91; line-height: 1.2; margin: 6px 0 18px;
     }
     [data-metier="contact"] .c-form-card {
-      background: #FFFFFF; border-radius: 16px; padding: 20px;
+      background: #F8F9FA; border-radius: 16px; padding: 20px;
       border: 1px solid #E5E9F0;
       box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 18px 36px -16px rgba(11,61,145,0.14);
     }
@@ -342,25 +342,21 @@
     [data-metier="contact"] .c-fld input,
     [data-metier="contact"] .c-fld textarea {
       width: 100%; font-family: inherit; font-size: 16px;
-      color: #0B3D91; background: transparent; border: none;
-      border-bottom: 1.5px solid #E5E9F0; padding: 10px 2px;
+      color: #0B3D91; background: #FFFFFF;
+      border: 1.5px solid #E5E9F0; border-radius: 10px;
+      padding: 12px 14px;
       outline: none; transition: border-color 0.2s, box-shadow 0.2s;
     }
     [data-metier="contact"] .c-fld input::placeholder,
     [data-metier="contact"] .c-fld textarea::placeholder { color: #94A3B8; }
     [data-metier="contact"] .c-fld input:focus,
     [data-metier="contact"] .c-fld textarea:focus {
-      border-bottom-color: #0B3D91;
-      box-shadow: 0 1px 0 0 #0B3D91;
+      border-color: #0B3D91;
+      box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
     }
     [data-metier="contact"] .c-fld textarea {
-      border: 1.5px solid #E5E9F0; border-radius: 8px;
-      padding: 12px 14px; min-height: 110px; background: #FAFBFC;
+      min-height: 110px;
       resize: vertical;
-    }
-    [data-metier="contact"] .c-fld textarea:focus {
-      border-color: #0B3D91; background: #FFFFFF;
-      box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
     }
     [data-metier="contact"] .c-fld input.is-error,
     [data-metier="contact"] .c-fld textarea.is-error {
