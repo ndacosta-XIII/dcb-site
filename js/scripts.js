@@ -20,7 +20,7 @@
 
   /* ── DROPDOWN PANEL HELPER ───────────────────────────────── */
   function ddPanel(items) {
-    return '<div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1 pt-2.5 min-w-[300px] opacity-0 pointer-events-none transition-all duration-[180ms] z-[200] group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">' +
+    return '<div class="dcb-dd absolute top-full left-1/2 -translate-x-1/2 -translate-y-1 pt-2.5 min-w-[300px] opacity-0 pointer-events-none transition-all duration-[180ms] z-[200] group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">' +
       '<div class="bg-white rounded-2xl shadow-[0_24px_56px_-8px_rgba(7,43,107,0.2),0_0_0_1px_rgba(7,43,107,0.06)] p-2.5">' + items + '</div></div>';
   }
 
@@ -411,6 +411,44 @@
 
   var footerEl = document.getElementById('dcb-footer');
   if (footerEl) footerEl.outerHTML = footer;
+
+  /* ── DROPDOWNS NAV : click toggle (fallback hover, supporte touch + edge cases) ──
+     Style inline pour activer/desactiver l'etat dd-open sans toucher au CSS Tailwind. */
+  (function () {
+    var navbar = document.getElementById('dcb-navbar');
+    if (!navbar) return;
+    var openClass = 'dd-open';
+    function closeAll() {
+      navbar.querySelectorAll('.group.' + openClass).forEach(function (g) {
+        g.classList.remove(openClass);
+        var pnl = g.querySelector('.dcb-dd');
+        if (pnl) { pnl.style.opacity = ''; pnl.style.pointerEvents = ''; pnl.style.transform = ''; }
+      });
+    }
+    navbar.querySelectorAll('.group').forEach(function (grp) {
+      var link = grp.querySelector('a');
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        var pnl = grp.querySelector('.dcb-dd');
+        if (!pnl) return;
+        var isOpen = grp.classList.contains(openClass);
+        closeAll();
+        if (!isOpen) {
+          e.preventDefault();
+          grp.classList.add(openClass);
+          pnl.style.opacity = '1';
+          pnl.style.pointerEvents = 'auto';
+          pnl.style.transform = 'translate(-50%, 0)';
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#dcb-navbar')) closeAll();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
 
   /* ── INJECTION M-SHELL ─────────────────────────────────────────
      Pages avec .m-shell : injecte le frame mobile (header, menu,
