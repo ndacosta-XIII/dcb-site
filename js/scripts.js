@@ -127,6 +127,37 @@
     '</div>' +
     '</div>';
 
+  /* ── NAV ACCENT : detection page metier ──────────────────────
+     Sur les pages metier (sous-pages caisse/IT/Web avec couleur narration),
+     le CTA 'Demander un devis' + l'icone tel prennent la couleur narration.
+     Sur les autres pages (hubs, homepage, contact, ADN, blog, legales) :
+     reste sur l'orange brand #F57C00. */
+  var navAccentMap = {
+    'caisse-enregistreuse/boulangerie':       '#F59E0B',
+    'caisse-enregistreuse/restaurant':        '#EF4444',
+    'caisse-enregistreuse/commerce-de-detail':'#0D9488',
+    'caisse-enregistreuse/coiffure':          '#A855F7',
+    'caisse-enregistreuse/borne-de-commande': '#4F46E5',
+    'caisse-enregistreuse/monnayeur':         '#059669',
+    'caisse-enregistreuse/cashmag':           '#F57C00',
+    'caisse-enregistreuse/hairnet':           '#c59c45',
+    'maintenance-informatique/maintenance-depannage':       '#EF4444',
+    'maintenance-informatique/cloud-securite':              '#0D9488',
+    'maintenance-informatique/location-vente-installation': '#4F46E5',
+    'maintenance-informatique/outils-collaboratifs':        '#A855F7',
+    'maintenance-informatique/infogerance-pme':             '#F59E0B',
+    'visibilite-web/creation-site-internet': '#A855F7',
+    'visibilite-web/seo-sea-local':          '#EF4444',
+    'visibilite-web/hebergement':            '#0D9488'
+  };
+  var navAccent = '#F57C00';
+  (function () {
+    var pth = window.location.pathname;
+    for (var k in navAccentMap) {
+      if (pth.indexOf(k) !== -1) { navAccent = navAccentMap[k]; return; }
+    }
+  })();
+
   /* ── NAV ──────────────────────────────────────────────────── */
   var nav =
     '<nav id="dcb-navbar" class="fixed top-0 w-full h-[76px] z-50 bg-white shadow-[4px_4px_0px_0px_rgba(7,43,107,0.04)]">' +
@@ -164,8 +195,8 @@
         '<!-- Right: Phone + CTA + Burger -->' +
         '<div class="flex items-center gap-5">' +
           '<a href="tel:0482530510" class="hidden md:flex items-center gap-2 py-2.5 font-headline font-bold text-[0.9375rem] tracking-[-0.02em] text-[#0B3D91] no-underline">' +
-            '<span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none text-[#F57C00]">call</span>04 82 53 05 10</a>' +
-          '<a href="' + base + 'contact/index.html" class="hidden min-[480px]:inline-block bg-[#F57C00] text-white py-3 px-6 rounded-[14px] font-headline text-[0.9375rem] font-bold no-underline whitespace-nowrap shadow-sm hover:bg-[#e06f00] transition-colors duration-150">Demander un devis</a>' +
+            '<span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none" style="color:' + navAccent + '">call</span>04 82 53 05 10</a>' +
+          '<a href="' + base + 'contact/index.html" class="hidden min-[480px]:inline-block text-white py-3 px-6 rounded-[14px] font-headline text-[0.9375rem] font-bold no-underline whitespace-nowrap shadow-sm hover:brightness-95 transition-all duration-150" style="background:' + navAccent + '">Demander un devis</a>' +
           '<button id="dcb-burger" onclick="dcbBurgerToggle()" aria-label="Menu" class="flex lg:hidden flex-col justify-center items-center gap-[5px] w-11 h-11 bg-transparent border-none cursor-pointer p-1.5 rounded-lg">' +
             '<span id="dcb-b1" class="block w-[22px] h-[2.5px] bg-[#0B3D91] rounded-sm transition-transform duration-[250ms] origin-center"></span>' +
             '<span id="dcb-b2" class="block w-[22px] h-[2.5px] bg-[#0B3D91] rounded-sm transition-opacity duration-[250ms]"></span>' +
