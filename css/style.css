@@ -914,3 +914,19 @@ abbr[data-tooltip]:focus::before {
   #dcb-footer-desktop,
   #dcb-phone-fab { display: none !important; }
 }
+
+/* ── Hero chips : compactes a 1024-1279px (lg) pour tenir sur 1 ligne ──
+   A 1024px laptop, lg:col-span-7 = ~570px usable. 3 chips a px-4 text-[11px]
+   ne tiennent pas sur 1 ligne -> wrap sur 2 lignes. Solution : padding et
+   font reduits uniquement sur ce range. Taille normale conservee a xl+ (1280+). */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section .flex.flex-wrap.gap-3 > span {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  section .flex.flex-wrap.gap-3 {
+    flex-wrap: nowrap;
+  }
+}
