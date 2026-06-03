@@ -1097,7 +1097,7 @@
     /* 1. CSS frame mobile */
     var mgl = document.createElement('link');
     mgl.rel = 'stylesheet';
-    mgl.href = base + 'm/css/mobile-global.css';
+    mgl.href = base + 'm/css/mobile-global.css?v=2';
     mgl.media = 'screen and (max-width:640px)';
     document.head.appendChild(mgl);
 
@@ -1278,7 +1278,7 @@
 
     /* 9. Charge mobile.js pour burger + scroll + progress bar */
     var mjs = document.createElement('script');
-    mjs.src = base + 'm/js/mobile.js';
+    mjs.src = base + 'm/js/mobile.js?v=3';
     /* FAB visible dès le départ : pas de .hero à observer sur ces pages */
     mjs.onload = function () {
       var fabEl = document.querySelector('.fab');

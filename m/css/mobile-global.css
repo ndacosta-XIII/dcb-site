@@ -249,3 +249,12 @@ html{scroll-padding-top:72px}
   .footer details summary .material-symbols-outlined{transition:none}
   .fab .b1{transition:none}
 }
+
+/* ── Hide desktop nav + footer + phone FAB sur pages sans .m-shell ──
+   Sur ces pages (legales : cgv, confidentialite, mentions-legales) le mobile-global.css
+   est charge en complement et injecte .top + .menu + .fab + .footer. On masque le
+   desktop nav + footer pour eviter le double affichage sur mobile <=640. */
+@media (max-width:640px) {
+  #dcb-nav, #dcb-footer { display: none !important; }
+  #dcb-phone-fab { display: none !important; }
+}
