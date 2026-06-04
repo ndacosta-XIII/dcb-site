@@ -622,3 +622,12 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
 .m-shell .m-timeline .m-step-day{font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent,#F59E0B);margin:0 0 4px;line-height:1.4}
 .m-shell .m-timeline .m-step-h3{font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;font-size:16px;margin:0 0 6px;line-height:1.25}
 .m-shell .m-timeline .m-step-p{font-size:13.5px;color:#4A5568;line-height:1.55;margin:0}
+
+/* ── Mobile S (<=360px) : masquer 3eme chip hero pour eviter coupure ──
+   A 320px (iPhone SE) la 3eme chip 'Garantie 5 ans' est coupee
+   par l'overflow. On garde max 2 chips visibles, scope <=360px
+   uniquement (375+ inchange). */
+@media (max-width: 360px) {
+  .m-shell .hero .chips .chip:nth-child(3),
+  .m-shell .hero .chips .chip:nth-child(n+4) { display: none }
+}
