@@ -930,3 +930,20 @@ abbr[data-tooltip]:focus::before {
     flex-wrap: nowrap;
   }
 }
+
+/* ── Hero CTA buttons : meme ligne a 1024-1279px (lg) ──
+   A 1024px, les 2 boutons hero (Demander un devis + Voir les solutions par metier)
+   wrap sur 2 lignes a cause de px-8 et du texte long du secondaire. Solution :
+   padding horizontal reduit + gap reduit + nowrap force sur ce range. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section .flex.flex-wrap.gap-4.pt-2 {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+  section .flex.flex-wrap.gap-4.pt-2 > a {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+}
