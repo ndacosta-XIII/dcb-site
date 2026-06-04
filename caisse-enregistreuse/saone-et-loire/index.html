@@ -649,7 +649,9 @@
 </div><!-- /d-shell -->
 
 <!-- =============================================================
-     MOBILE SHELL (<=640 px) - sections reordonnees selon page-cro
+     MOBILE SHELL (<=640 px) - 9 sections validees page-cro
+     Ordre : HERO TRUST ZONE PROXIMITE METIERS TEMOIGNAGES NF525 FAQ CTA
+     Periph supprime (cross-sell faible valeur sur location mobile)
 ============================================================= -->
 <div class="m-shell" data-metier="caisse-71">
 
@@ -749,6 +751,68 @@
     </div>
   </div>
 </section>
+
+<!-- TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) -->
+<style>
+  .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
+  .m-prox-reveal.in{opacity:1;transform:none}
+  .m-prox-reveal[data-d="1"]{transition-delay:.06s}
+  .m-prox-reveal[data-d="2"]{transition-delay:.12s}
+  .m-prox-reveal[data-d="3"]{transition-delay:.18s}
+  .m-prox-reveal[data-d="4"]{transition-delay:.24s}
+  @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
+</style>
+<section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+    <img src="../../assets/dept-69.webp" alt="Technicien DCB en intervention sur une caisse enregistreuse chez un commerçant du Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,61,145,0) 40%,rgba(11,61,145,0.65) 75%,rgba(11,61,145,0.92) 100%);pointer-events:none"></div>
+    <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.22)">
+        <span style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:22px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">71</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Saône-et-Loire</span>
+        </span>
+        <span style="font-size:9.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-shadow:0 1px 2px rgba(0,0,0,0.30)">Pôle technique</span>
+      </div>
+      <div style="display:flex;gap:6px">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
+          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">69</span>
+          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Rhône</span>
+        </div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
+          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">01</span>
+          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Ain</span>
+        </div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
+          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">42</span>
+          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Loire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
+  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens, à vos côtés</h2>
+  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié. Un nom, un téléphone, quelqu'un qui connaît votre caisse et votre activité. Pas un numéro de ticket.</p>
+  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+    </li>
+  </ul>
+  <button class="m-prox-reveal" data-d="4" data-sheet style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;border:0;cursor:pointer">Demander un devis<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></button>
+</section>
+<script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
 
 <!-- CONFIGURATIONS MÉTIERS : carousel -->
 <section class="sec s1">
@@ -947,99 +1011,6 @@
   </div>
 </section>
 
-<!-- ÉCOSYSTÈME MATÉRIEL : cross-sell -->
-<section class="sec">
-  <p class="eyebrow">Écosystème matériel</p>
-  <h2>Optimisez votre <em>point de vente</em>.</h2>
-  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
-  <div class="peri-a">
-    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" aria-label="Borne de commande self-service K1">
-      <div class="txt">
-        <span class="pp">+20% panier moyen</span>
-        <h3>Borne de commande</h3>
-        <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
-        <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
-      </div>
-      <div class="vis"><img src="../../assets/borne-k1.png" alt="Borne de commande K1" width="120" height="180" loading="lazy"></div>
-    </a>
-    <a href="monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique">
-      <div class="txt">
-        <span class="pp">0 contact argent</span>
-        <h3>Monnayeur automatique</h3>
-        <p>Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
-        <span class="lk">Découvrir le monnayeur<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
-      </div>
-      <div class="vis">
-        <video autoplay loop muted playsinline preload="none" width="120" height="120" aria-hidden="true">
-          <source src="../../assets/monnayeur-3d.webm" type="video/webm">
-        </video>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) -->
-<style>
-  .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
-  .m-prox-reveal.in{opacity:1;transform:none}
-  .m-prox-reveal[data-d="1"]{transition-delay:.06s}
-  .m-prox-reveal[data-d="2"]{transition-delay:.12s}
-  .m-prox-reveal[data-d="3"]{transition-delay:.18s}
-  .m-prox-reveal[data-d="4"]{transition-delay:.24s}
-  @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
-</style>
-<section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
-  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
-    <img src="../../assets/dept-69.webp" alt="Technicien DCB en intervention sur une caisse enregistreuse chez un commerçant du Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,61,145,0) 40%,rgba(11,61,145,0.65) 75%,rgba(11,61,145,0.92) 100%);pointer-events:none"></div>
-    <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.22)">
-        <span style="display:flex;align-items:baseline;gap:10px">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:22px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">71</span>
-          <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Saône-et-Loire</span>
-        </span>
-        <span style="font-size:9.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-shadow:0 1px 2px rgba(0,0,0,0.30)">Pôle technique</span>
-      </div>
-      <div style="display:flex;gap:6px">
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">69</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Rhône</span>
-        </div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">01</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Ain</span>
-        </div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">42</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Loire</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
-  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens, à vos côtés</h2>
-  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié. Un nom, un téléphone, quelqu'un qui connaît votre caisse et votre activité. Pas un numéro de ticket.</p>
-  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
-    </li>
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
-    </li>
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
-    </li>
-  </ul>
-  <button class="m-prox-reveal" data-d="4" data-sheet style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;border:0;cursor:pointer">Demander un devis<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></button>
-</section>
-<script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
-
 <!-- FAQ -->
 <section class="sec s1">
   <p class="eyebrow">Besoin de précisions ?</p>
@@ -1105,6 +1076,7 @@
 <div id="m-menu"></div>
 
 
+</div><!-- /m-shell -->
 </div><!-- /m-shell -->
 </div><!-- /m-shell -->
 </div><!-- /m-shell -->
