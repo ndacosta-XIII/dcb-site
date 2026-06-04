@@ -47,37 +47,43 @@
     box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 24px 48px -24px rgba(11,61,145,0.18);
   }
 
-  /* Inputs underline minimal */
+  /* Inputs : fond gris pour contraster avec la card blanche */
   .form-input-underline {
-    background: transparent;
-    border: none;
-    border-bottom: 1.5px solid #E5E9F0;
-    border-radius: 0;
-    padding: 12px 2px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #F3F4F6;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
     color: #0B3D91;
     font-size: 16px;
     width: 100%;
     outline: none;
     font-family: inherit;
   }
-  .form-input-underline:focus {
-    border-bottom-color: #0B3D91;
-    box-shadow: 0 1px 0 0 #0B3D91;
+  .form-input-underline:hover {
+    background: #EDEEF1;
   }
-  .form-input-underline.is-error { border-bottom-color: #EF4444 !important; }
+  .form-input-underline:focus {
+    background: #FFFFFF;
+    border-color: #0B3D91;
+    box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
+  }
+  .form-input-underline.is-error { border-color: #EF4444 !important; background: #FEF2F2 !important; }
   .form-input-underline::placeholder { color: #94A3B8; }
   textarea.form-input-underline {
-    border: 1.5px solid #E5E9F0;
+    background: #F3F4F6;
+    border: 1.5px solid transparent;
     border-radius: 8px;
     padding: 14px 16px;
-    background: #FAFBFC;
     resize: vertical;
     min-height: 160px;
   }
+  textarea.form-input-underline:hover {
+    background: #EDEEF1;
+  }
   textarea.form-input-underline:focus {
-    border-color: #0B3D91;
     background: #FFFFFF;
+    border-color: #0B3D91;
     box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
   }
 
