@@ -73,6 +73,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ── PAGES LOCATION DÉPARTEMENT (silo caisse) ──── -->
+  <url>
+    <loc>https://dcb-technologies.fr/caisse-enregistreuse/saone-et-loire/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ── SOUS-PAGES MAINTENANCE INFORMATIQUE ──── -->
   <url>
     <loc>https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/</loc>
