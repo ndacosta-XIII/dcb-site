@@ -628,6 +628,15 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--cta);outline-offset
    par l'overflow. On garde max 2 chips visibles, scope <=360px
    uniquement (375+ inchange). */
 @media (max-width: 360px) {
+  /* Wrapper : autorise wrap si chip trop large (ex. BOULANGERIE & PATISSERIE) */
+  .m-shell .hero .chips { flex-wrap: wrap; overflow-x: visible }
+  /* Max 2 chips visibles : masque 3eme + suivantes */
   .m-shell .hero .chips .chip:nth-child(3),
   .m-shell .hero .chips .chip:nth-child(n+4) { display: none }
+  /* Compactage chip : font et padding reduits, letter-spacing serre */
+  .m-shell .hero .chips .chip {
+    font-size: 9px;
+    padding: 4px 8px;
+    letter-spacing: 0.1em;
+  }
 }
