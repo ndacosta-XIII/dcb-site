@@ -448,7 +448,7 @@
 
 <!-- (sections Processus, Comparatif et CashMag-condensé supprimées : non conformes au pattern hub) -->
 
-<!-- ── 9. PÉRIPHÉRIQUES (cross-sell) ─────────── -->
+<!-- ── 7. PÉRIPHÉRIQUES (cross-sell, pattern P-07a) ─────────── -->
 <section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
@@ -490,7 +490,7 @@
   </div>
 </section>
 
-<!-- ── 8. TECHNICIENS / PROXIMITÉ 71 (bleu, pattern hub section 10, padding aligné) ─────────── -->
+<!-- ── 8. TECHNICIENS / PROXIMITÉ 71 (bleu, pattern P-13, padding aligné) ─────────── -->
 <section class="bg-[#0B3D91] py-12 lg:py-16 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
@@ -563,7 +563,7 @@
   </div>
 </section>
 
-<!-- ── 9. FAQ 71-SPECIFIC (gris, pattern hub section 11) ─────────── -->
+<!-- ── 9. FAQ 71-SPECIFIC (gris, pattern P-08) ─────────── -->
 <section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mx-auto">
@@ -617,8 +617,8 @@
   </div>
 </section>
 
-<!-- ── 11. CTA FINAL ─────────── -->
-<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px">
+<!-- ── 10. CTA FINAL v3 "Le Seuil" (pattern P-09, accent marque orange) ─────────── -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#F57C00;--accent-dark:#E06E00">
   <div class="max-w-7xl mx-auto px-6">
     <nav aria-label="Fil d'Ariane" class="mb-6 text-sm text-white/60">
       <a href="../../" class="hover:text-white">Accueil</a> <span class="mx-2">›</span>
@@ -648,11 +648,11 @@
 <div id="dcb-footer"></div>
 </div><!-- /d-shell -->
 
-<!-- =============================================================
-     MOBILE SHELL (<=640 px) - 9 sections validees page-cro
-     Ordre : HERO TRUST ZONE PROXIMITE METIERS TEMOIGNAGES NF525 FAQ CTA
-     Periph supprime (cross-sell faible valeur sur location mobile)
-============================================================= -->
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement : .m-shell)
+     Ordre local validé page-cro : HERO TRUST POURQUOI PROXIMITE METIERS
+     TEMOIGNAGES NF525 CROSS-SELL FAQ CTA (techniciens tôt = choix local).
+═══════════════════════════════════════════════════════════════ -->
 <div class="m-shell" data-metier="caisse-71">
 
 <!-- SKIP LINK -->
@@ -1011,6 +1011,38 @@
   </div>
 </section>
 
+<!-- CROSS-SELL PÉRIPHÉRIQUES (parité desktop, pattern P-07a mobile .peri-a) -->
+<section class="sec">
+  <p class="eyebrow">Écosystème matériel</p>
+  <h2>Optimisez votre <em>point de vente</em>.</h2>
+  <div class="peri-a">
+    <a href="../borne-de-commande/index.html" data-dest="borne-de-commande" aria-label="Borne de commande self-service">
+      <div class="txt">
+        <span class="pp">+20% panier moyen</span>
+        <h3>Borne de commande</h3>
+        <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
+        <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <img src="../../assets/borne-k1.png" alt="Borne de commande tactile K1" width="120" height="120" loading="lazy" decoding="async">
+      </div>
+    </a>
+    <a href="../monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique">
+      <div class="txt">
+        <span class="pp">0 contact argent</span>
+        <h3>Monnayeur automatique</h3>
+        <p>Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
+        <span class="lk">Découvrir le monnayeur<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <video autoplay loop muted playsinline preload="none" width="120" height="120" aria-hidden="true">
+          <source src="../../assets/monnayeur-3d.webm" type="video/webm">
+        </video>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- FAQ (synchro avec desktop + JSON-LD) -->
 <section class="sec s1">
   <p class="eyebrow">Questions Saône-et-Loire</p>
@@ -1062,17 +1094,17 @@
 <!-- CTA FINAL v3 : Le Bord Tranché (fond clair, alignement gauche éditorial, pill tel bordurée) -->
 <style>
   .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
-  .m-cta-final .topbar{display:block;width:80px;height:3px;background:#F57C00;margin:0 0 22px;border-radius:2px}
-  .m-cta-final.resto .topbar{background:#EF4444}
+  .m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
   .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
   .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
   .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+  .m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
   .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
   .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
-  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:#F57C00}
+  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
   .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
 </style>
-<section class="m-cta-final" aria-labelledby="cta-final-h-hub">
+<section class="m-cta-final" style="--accent:#F57C00;--accent-dark:#E06E00" aria-labelledby="cta-final-h-hub">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h-hub">Parlez à un technicien DCB en Saône-et-Loire.</h3>
   <p>Diagnostic gratuit, sans engagement. On se déplace chez vous en 71 pour auditer votre installation et vous proposer la configuration adaptée.</p>
@@ -1093,10 +1125,6 @@
 
 
 </div><!-- /m-shell -->
-
-<a href="tel:0482530510" id="dcb-phone-fab" aria-label="Appeler DCB Technologies au 04 82 53 05 10"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">call</span></a>
-
-<script src="../../js/components.js?v=15"></script>
 <script src="../../js/scripts.js?v=32"></script>
 </body>
 </html>
