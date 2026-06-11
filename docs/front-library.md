@@ -198,30 +198,40 @@ Les placeholders `m-nav`, `m-menu`, `m-fab`, `m-sheet`, `m-footer` restent VIDES
 
 ---
 
-## 2. Tokens et accents (rappel, source : CLAUDE.md racine)
+## 2. Tokens et accents (rappel, source : CLAUDE.md racine, section "Grammaire visuelle")
 
-### Marque
+### Règle maîtresse : deux familles de pages
+- **Pages marque** (accueil, hubs, contact, notre-adn, blog, saone-et-loire, cashmag) : l'orange `#F57C00` est la couleur identité (eyebrows, icônes, badges, CTA, CTA final).
+- **Pages narration** (toutes les sous-pages métier/service) : ZÉRO orange, l'accent de la page habille tout. Exceptions : filet signature footer (orange constant) et cards cross-sell vers une page marque (orange = couleur de destination). NB : la frame injectée par scripts.js (téléphone nav, FAB, sheet) est encore orange partout ; son passage à `--page-accent` est une cible à implémenter (trigger words `13header`/`13footer` requis), ne pas la "corriger" page par page.
+
+### Base
 | Token | Hex | Usage |
 |---|---|---|
 | Primary | `#0B3D91` | Titres, liens actifs, hero |
 | Primary Dark | `#072B6B` | Footer, gradients de fin |
-| CTA Orange | `#F57C00` | Boutons CTA uniquement + filet signature footer |
+| Orange DCB | `#F57C00` | Pages marque : identité · Pages narration : interdit (hors exceptions ci-dessus) |
 | Surfaces | `#FFFFFF` / `#F8F9FA` / `#F3F4F5` | Alternance par shift tonal, zéro bordure 1px |
 | Text muted | `#4A5568` (`text-slate-500`) | Texte secondaire |
 
-### Accent par page (à substituer dans les patterns copiés)
-| Page | Accent | | Page | Accent |
-|---|---|---|---|---|
-| boulangerie | `#F59E0B` | | maintenance-depannage | `#EF4444` |
-| restaurant | `#EF4444` | | cloud-securite | `#0D9488` |
-| commerce-de-detail | `#0D9488` | | location-vente-installation | `#4F46E5` |
-| coiffure | `#A855F7` | | outils-collaboratifs | `#A855F7` |
-| borne-de-commande | `#4F46E5` | | infogerance-pme | `#F59E0B` |
-| monnayeur | `#059669` | | creation-site-internet | `#7C3AED` |
-| cashmag | `#76B737` | | seo-sea-local | `#EF4444` |
-| hairnet | `#4527A4` / `#C59C45` | | hebergement | `#0D9488` |
+### Accents par page : paires `--accent` / `--accent-dark` (à substituer dans les patterns copiés)
+| Pages | Accent | Dark |
+|---|---|---|
+| boulangerie, infogerance-pme | `#F59E0B` | `#D97706` |
+| restaurant, maintenance-depannage, seo-sea-local | `#EF4444` | `#DC2626` |
+| commerce-de-detail, cloud-securite, hebergement | `#0D9488` | `#0F766E` |
+| coiffure, outils-collaboratifs | `#A855F7` | `#9333EA` |
+| borne-de-commande, location-vente-installation | `#4F46E5` | `#4338CA` |
+| monnayeur | `#059669` | `#047857` |
+| creation-site-internet | `#7C3AED` | `#6D28D9` |
+| cashmag | `#76B737` | `#5E9028` |
+| hairnet | `#4527A4` + or `#C59C45` | : |
+| pages marque (orange DCB) | `#F57C00` | `#E06E00` |
 
-Le CTA final (P-09) est piloté par les variables CSS `--accent` / `--accent-dark` : c'est le SEUL endroit où l'accent passe par variable, ailleurs il est inline dans les classes Tailwind (`text-[#F59E0B]`, `bg-[#F59E0B]/10`, etc.). Lors de la copie d'un pattern : remplacer TOUTES les occurrences de l'accent source par l'accent cible.
+Règles d'application lors de la copie d'un pattern :
+- Remplacer TOUTES les occurrences de l'accent source par l'accent cible (un seul accent dominant par sous-page).
+- Le CTA final (P-09) et ses atomes (topbar, icône tel) passent par `var(--accent)` / `var(--accent-dark)`, JAMAIS de couleur en dur. Ailleurs l'accent est inline dans les classes Tailwind (`text-[#F59E0B]`, `bg-[#F59E0B]/10`, etc.).
+- Card cross-sell : couleur de la page de DESTINATION, pas celle de la page courante.
+- Déclinaisons rouge autorisées uniquement en gradients/dark : `#F87171` (clair), `#DC2626`/`#B91C1C` (foncé).
 
 ### Conventions structurelles
 - Sections : `py-12 lg:py-16` · Containers : `max-w-7xl mx-auto px-6` · Cards : `rounded-xl`/`rounded-2xl` + `tonal-shift-elevation` · CTA : `rounded-[14px]` · `<main>` desktop : `pt-[76px]`.

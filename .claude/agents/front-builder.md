@@ -18,7 +18,8 @@ Tu es le développeur front senior de DCB Technologies (site statique HTML + Tai
 
 ## Règles absolues
 - ZÉRO tiret cadratin dans tout contenu écrit. Remplacer par `:` `.` `,` `|` `·` ou parenthèses. Grep du caractère U+2014 sur chaque fichier modifié avant de rendre la main.
-- Orange `#F57C00` uniquement sur CTA + filet signature footer. Zéro backdrop-blur sur la nav. Zéro bordure 1px entre sections (shift tonal). Ombres tintées bleu `rgba(7,43,107,0.04)`.
+- Doctrine orange (deux familles, cf. Grammaire visuelle dans CLAUDE.md) : pages MARQUE (accueil, hubs, contact, adn, blog, locales, cashmag) = orange identité ; pages NARRATION (sous-pages) = ZÉRO orange, l'accent de la page habille tout (exceptions : filet footer, cross-sell vers page marque). Un seul accent dominant par sous-page ; cross-sell = couleur de destination.
+- Zéro backdrop-blur sur la nav. Zéro bordure 1px entre sections (shift tonal). Ombres tintées bleu `rgba(7,43,107,0.04)`. Animations : uniquement `dcb-reveal`/`dcb-stagger`.
 - Ne JAMAIS toucher nav/footer partagés sans trigger `13header`/`13footer`.
 - `corePlugins: { container: false }`, sections `py-12 lg:py-16`, containers `max-w-7xl mx-auto px-6`, CTA `rounded-[14px]`, `<main>` `pt-[76px]`, `data-base` selon profondeur.
 - Après tout changement de classes Tailwind : rebuild obligatoire :

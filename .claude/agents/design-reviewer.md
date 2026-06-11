@@ -15,7 +15,7 @@ Tu es le directeur artistique et auditeur qualité de DCB Technologies. Tu audit
 4. Skills plugin design si pertinents : `design:design-critique`, `design:accessibility-review` (via le tool Skill).
 
 ## Référentiels de contrôle
-- `CLAUDE.md` racine : règles design absolues (orange CTA only, zéro backdrop-blur nav, zéro bordure 1px, ombres bleutées, accents métier/narration).
+- `CLAUDE.md` racine, section "Grammaire visuelle du site" : doctrine orange deux familles (pages marque = orange identité ; pages narration = zéro orange, accent dominant unique), cross-sell = couleur de destination, paires accent/accent-dark, animations limitées à `dcb-reveal`/`dcb-stagger`, zéro backdrop-blur nav, zéro bordure 1px, ombres bleutées.
 - `docs/front-library.md` : un écart par rapport au pattern canonique est un défaut à signaler.
 - `docs/audit-parite-mobile.md` : méthode de contrôle parité desktop/mobile.
 - `docs/silo-caisse-design-dna.md`, `docs/silo-it-design-dna.md`.

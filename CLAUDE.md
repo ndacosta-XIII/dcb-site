@@ -97,10 +97,7 @@ S'applique à : titres HTML, meta description, H1/H2/H3, body, FAQ, JSON-LD, opt
 Scan : `./*.html`, `./**/*.html`, `./js/**/*.js`. Les classes utilisées uniquement dans `scripts.js` sont bien capturées.
 
 ### Cache-bust
-- `css/style.css?v=8`
-- `js/scripts.js?v=21`
-
-Incrémenter à chaque modif structurelle de ces fichiers, sur **toutes** les pages.
+`css/style.css?v=N` et `js/scripts.js?v=N` : N identique sur TOUTES les pages, incrémenté à chaque modif structurelle de ces fichiers. Ne jamais écrire le numéro courant dans la doc : la vérité est dans les pages (vérification : agent site-qa, point 3).
 
 ---
 
@@ -145,55 +142,62 @@ Bandeau CTA en fin de chaque page (desktop `.d-cta-final` + mobile `.m-cta-final
 
 ---
 
-## 🎨 Design System
+## 🎨 Grammaire visuelle du site
 
-### Couleurs DCB (marque)
+Gouvernance : **une règle n'existe ici que si le code la prouve** (audit du 11/06/2026, comptage d'occurrences sur les 28 pages). Toute règle contredite par le code est corrigée (ici + `docs/front-library.md` + agents) dans le même commit. Aucun numéro de version ni valeur volatile en dur dans la doc.
+
+### Les deux familles de pages (règle maîtresse)
+| Famille | Pages | Rôle de l'orange `#F57C00` |
+|---|---|---|
+| **Pages marque** (DCB parle) | Accueil, hub caisse, hub IT, hub web, contact, notre-adn, blog, pages locales (saone-et-loire), cashmag | Couleur IDENTITÉ : eyebrows, icônes, badges, CTA, CTA final (`--accent:#F57C00`), sur base bleu primaire |
+| **Pages narration** (le métier parle) | Toutes les sous-pages métier/service | **ZÉRO orange** : l'accent de la page habille TOUT, y compris la frame (téléphone nav, FAB, bottom-sheet) via `--page-accent` lu par scripts.js. Exceptions : le filet signature footer (orange constant, marque) et les cards cross-sell vers une page marque (orange = couleur de destination) |
+
+⚠️ **État d'implémentation de la ligne "pages narration"** : le contenu des pages respecte déjà la règle (accent dominant à 117-155 occurrences, orange résiduel 3-17). La partie FRAME (`--page-accent` dans scripts.js : téléphone nav, FAB, sheet) est une CIBLE à implémenter, pas l'état actuel ; elle nécessite les trigger words `13header`/`13footer`. D'ici là, ne pas "corriger" l'orange de la frame page par page.
+
+### Couleurs de base
 | Token | Hex | Usage |
 |---|---|---|
 | Primary | `#0B3D91` | Titres, liens actifs, hero |
-| Primary Dark | `#072B6B` | Footer, gradient fin |
-| CTA Orange | `#F57C00` | **Boutons CTA uniquement** + filet signature footer |
-| Surface 0 | `#FFFFFF` | Fond blanc |
-| Surface 1 | `#F8F9FA` | Section alternée |
-| Surface 2 | `#F3F4F5` | Surface medium |
+| Primary Dark | `#072B6B` | Footer, fin du gradient hero marque |
+| Surface 0/1/2 | `#FFFFFF` / `#F8F9FA` / `#F3F4F5` | Alternance par shift tonal |
 | Text Muted | `#4A5568` (≈ `text-slate-500`) | Texte secondaire |
 
-### Accents métier (silo caisse)
-| Métier | Accent |
-|---|---|
-| Boulangerie | `#F59E0B` ambre |
-| Restaurant | `#EF4444` coral |
-| Commerce de détail | `#0D9488` teal |
-| Coiffure | `#A855F7` violet |
-| Borne de commande | `#4F46E5` indigo |
-| Monnayeur | `#059669` vert |
-| CashMag (hero produit) | `#76B737` vert partenaire |
-| Hairnet (partenaire) | `#4527A4` violet / `#C59C45` or |
-
-### Accents narration (silos IT & Web)
-| Page | Accent | Narration |
+### Accents par page : paires `--accent` / `--accent-dark`
+| Pages | Accent | Dark |
 |---|---|---|
-| `maintenance-depannage` | `#EF4444` | Urgence |
-| `cloud-securite` | `#0D9488` | Éducation |
-| `location-vente-installation` | `#4F46E5` | Décision |
-| `outils-collaboratifs` | `#A855F7` | Démo |
-| `infogerance-pme` | `#F59E0B` | Pricing récurrent |
-| `creation-site-internet` | `#7C3AED` | Process |
-| `seo-sea-local` | `#EF4444` | Résultats (aligné rouge restaurant, source de vérité) |
-| `hebergement` | `#0D9488` | Comparatif |
+| boulangerie, infogerance-pme | `#F59E0B` ambre | `#D97706` |
+| restaurant, maintenance-depannage, seo-sea-local | `#EF4444` rouge | `#DC2626` |
+| commerce-de-detail, cloud-securite, hebergement | `#0D9488` teal | `#0F766E` |
+| coiffure, outils-collaboratifs | `#A855F7` violet | `#9333EA` |
+| borne-de-commande, location-vente-installation | `#4F46E5` indigo | `#4338CA` |
+| monnayeur | `#059669` vert | `#047857` |
+| creation-site-internet | `#7C3AED` violet web | `#6D28D9` |
+| cashmag (vert partenaire) | `#76B737` | `#5E9028` |
+| hairnet | `#4527A4` + or `#C59C45` | : |
+| pages marque (orange DCB) | `#F57C00` | `#E06E00` |
 
-### Règles design absolues
-- **Zéro `backdrop-blur`** sur la nav (fond blanc uni).
-- **Orange `#F57C00` uniquement sur CTA + filet signature footer.** Jamais comme fond ou accent décoratif.
-- **Zéro bordure 1px** entre sections. Séparation par shift tonal.
-- **Ombres tintées bleu** : `rgba(7,43,107,0.04)`.
-- **Une seule référence pour le rouge** : `#EF4444` (restaurant). Toutes les pages rouges s'alignent dessus.
+### Règles de couleur (prouvées par le code)
+- **Un seul accent dominant par sous-page**, aucun accent concurrent.
+- **Le cross-sell porte la couleur de sa page de DESTINATION** (card monnayeur verte dans boulangerie, card borne indigo dans restaurant, card vers un hub = orange).
+- **Hub = multi-accent** : chaque card enfant porte l'accent de sa sous-page cible, l'orange identité autour.
+- **Le CTA final et ses atomes (topbar, icône tel) utilisent TOUJOURS `var(--accent)`**, jamais de couleur en dur (dérive constatée sur restaurant L878/L887, à corriger lors de l'implémentation frame).
+- Rouge : référence `#EF4444`. Déclinaisons `#F87171` (clair), `#DC2626`/`#B91C1C` (foncé) autorisées UNIQUEMENT en gradients et dark pairs.
+- Pages légales : sobres, zéro accent.
+- Zéro `backdrop-blur` sur la nav (fond blanc uni). Zéro bordure 1px entre sections (shift tonal). Ombres tintées bleu `rgba(7,43,107,0.04)`.
+
+### Signatures transverses (présentes sur tout le site, ne jamais casser)
+- **CTA final v3** ("Le Seuil" desktop / "Le Bord Tranché" mobile) en fin de chaque page, piloté par `--accent`/`--accent-dark`.
+- **Date E-E-A-T** "Mis à jour le ..." dans le CTA final (desktop + mobile, 23 pages).
+- **Animations : uniquement le système maison** `dcb-reveal` / `dcb-stagger` + hovers standards. Toute animation hors système doit être justifiée (référentiel pour la chasse à l'AI slop).
+- Élévation cards : `tonal-shift-elevation`.
+- Gradient hero pages marque : `#0B3D91 → #072B6B`.
+- Filet signature orange : footer (constant sur tout le site) + CTA final.
 
 ### Typo
 - `--font-title` Sora (700/800) pour titres
 - `--font-body` Inter (400/500/600) pour body
 - H2 standard : `font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]`
-- Labels : `text-[11px] font-bold tracking-[0.2em] uppercase`
+- Labels/eyebrows : `text-[11px] font-bold tracking-[0.2em] uppercase`
 
 ### Conventions Tailwind
 1. `corePlugins: { container: false }` sur chaque page (évite conflit nav).
