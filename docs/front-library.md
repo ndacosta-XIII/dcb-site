@@ -1339,6 +1339,8 @@ Usage : hubs (caisse, IT, web). Blobs CSS, zéro parallax.
 
 Usage : hubs. Une card par sous-page du silo, chaque card a sa propre signature interne (liste numérotée, mini flow, icon-list, pill badges) : on varie l'intérieur, pas l'enveloppe.
 
+> **DÉPRÉCIÉ (top-stripe dégradé) :** le filet supérieur pleine largeur en dégradé (`<div class="h-[3px] bg-gradient-to-r from-... to-...">` en tête de card) est remplacé par le **Filet signature** (P-16), aplat court 28x3 couleur de destination posé DANS le padding, avec hover width 28→48px. Le hub homepage (`index.html`) applique déjà le filet signature sur ses cards piliers ; les autres hubs migreront en phase 2 (chasse au slop). Le code dégradé reste documenté ci-dessous pour les pages non encore migrées, ne pas le re-propager sur une nouvelle page.
+
 **Desktop (marqueur `<!-- ── 4. METIERS CARDS ─────────── -->`, hub caisse, 4 cards) :**
 ```html
 <!-- ── 4. METIERS CARDS ─────────── -->
@@ -2147,6 +2149,198 @@ Usage : pages process (creation-site, depannage timeline, méthode hub). Accent 
 
 ---
 
+### P-16 · Filet signature (aplat court 3px)
+
+Petit aplat de couleur pleine, court (28x3 desktop, 24x3 mobile, radius 2px), posé en MARQUEUR D'ENTRÉE d'un bloc présenté en colonne ou en grille éditoriale. C'est la signature qui remplace officiellement les top-stripes dégradés pleine largeur (slop, cf. P-11 déprécié). Référence : `index.html` (cards piliers hero, colonnes Proof, items Proof mobile).
+
+**Règle de couleur :**
+- Sur une **card pilier ou cross-sell** : couleur de DESTINATION (la couleur de la page vers laquelle la card pointe), avec hover qui étire le filet de 28 à 48px.
+- En **section éditoriale d'une page marque** (Proof, garanties) : orange identité `#F57C00`, fixe (pas de hover).
+- En **section éditoriale d'une sous-page narration** : l'accent de la page (jamais d'orange), même logique.
+
+**Règle d'usage (anti sur-application) :** le filet signature est un marqueur d'entrée de bloc en colonne ou en grille (card, colonne Proof, item de liste éditoriale). On ne le pose JAMAIS sous un en-tête de section centré (eyebrow + H2 centrés) : là, l'eyebrow joue déjà le rôle de marqueur, ajouter un filet ferait doublon. Un filet par bloc, aligné à gauche du contenu.
+
+**Desktop, version card (hover 28→48px), CSS + markup (marqueur `.pilier-filet`, hero homepage) :**
+```html
+<style>
+  /* Cards piliers : filet signature couleur destination (remplace le top-stripe dégradé) */
+  .pilier-filet {
+    display: block; width: 28px; height: 3px; border-radius: 2px;
+    margin-bottom: 20px;
+    transition: width 0.3s ease-out;
+  }
+  .group:hover .pilier-filet { width: 48px; }
+  @media (prefers-reduced-motion: reduce) { .pilier-filet { transition: none; } }
+</style>
+
+<a href="./caisse-enregistreuse/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
+  <div class="p-7 lg:p-8 flex flex-col">
+    <span class="pilier-filet" style="background:#1D9E75" aria-hidden="true"></span>
+    <!-- ... reste de la card ... -->
+  </div>
+</a>
+```
+
+**Desktop, version section éditoriale (fixe, orange marque), CSS + markup (marqueur `.d-proof-filet`, Proof homepage) :**
+```html
+<style>
+  /* Filet court orange : marqueur d'entrée de colonne, remplace le séparateur 1px */
+  .d-proof-filet {
+    display: block; width: 28px; height: 3px; border-radius: 2px;
+    background: #F57C00; margin-bottom: 24px;
+  }
+</style>
+
+<div class="d-proof-col">
+  <span class="d-proof-filet" aria-hidden="true"></span>
+  <!-- ... en-tête + corps de colonne ... -->
+</div>
+```
+
+**Mobile, version item de liste (24x3, pseudo-élément, orange marque), CSS (marqueur `.h-trust-meta::before`, Proof mobile homepage) :**
+```css
+/* Filet court orange : marqueur d'entrée d'item, remplace le séparateur 1px */
+[data-metier="home"] .h-trust-meta::before {
+  content: ""; display: block;
+  width: 24px; height: 3px; border-radius: 2px;
+  background: #F57C00; margin-bottom: 10px;
+}
+```
+
+---
+
+### P-17 · Proof éditorial 3 colonnes (sans cards)
+
+Bloc de preuve (certifications, garanties vérifiables) en 3 colonnes rythmées par le blanc : pas de cards grises, pas de séparateurs 1px, pas d'ombres de card. Chaque colonne s'ouvre par un Filet signature orange (P-16) puis un en-tête icône + eyebrow + titre, et un paragraphe. L'espacement (`gap: 0 72px`) fait tout le travail de séparation. En-tête de section centré au-dessus (eyebrow + H2), SANS filet (cf. règle anti sur-application P-16). Référence : `index.html`, marqueur `<!-- 2. PROOF ... -->`.
+
+**Desktop (CSS scopé inline + markup) :**
+```html
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 lg:mb-12 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Ce qui nous engage</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] max-w-2xl mx-auto leading-tight">Trois garanties vérifiables, sans marketing.</h2>
+    </div>
+    <style>
+      /* PROOF éditorial sans cards : 3 colonnes rythmées par le blanc + filet signature orange en marqueur d'entrée */
+      .d-proof { display: grid; grid-template-columns: 1fr; gap: 48px 0; }
+      .d-proof-col { padding: 0; }
+      @media (min-width: 768px) {
+        .d-proof { grid-template-columns: repeat(3, 1fr); gap: 0 72px; }
+        .d-proof-col { padding: 0; }
+      }
+      .d-proof-filet { display: block; width: 28px; height: 3px; border-radius: 2px; background: #F57C00; margin-bottom: 24px; }
+      .d-proof-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+      .d-proof-ic {
+        width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0;
+        background: #FFFFFF; display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 1px 0 rgba(7,43,107,0.04), 0 6px 16px -8px rgba(7,43,107,0.18);
+      }
+      .d-proof-eb { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F57C00; }
+      .d-proof-h { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem; line-height: 1.15; color: #0B3D91; margin: 2px 0 0; }
+      .d-proof-p { color: #64748B; line-height: 1.65; font-size: 15px; margin: 0; }
+      .d-proof-p .em-blue { color: #0B3D91; font-weight: 600; }
+    </style>
+    <div class="d-proof dcb-stagger">
+
+      <!-- Colonne 1 : icône image (logo certif) -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
+            <img src="assets/partenaire-nf525.webp" alt="Certification NF525 AFNOR" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+          </div>
+          <div>
+            <span class="d-proof-eb">Certification AFNOR</span>
+            <p class="d-proof-h">NF525</p>
+          </div>
+        </div>
+        <p class="d-proof-p">Logiciel de caisse conforme loi anti-fraude TVA. Attestation éditable depuis votre caisse à tout moment.</p>
+      </div>
+
+      <!-- Colonne 2 : icône Material symbol -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
+            <span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1; font-size:40px;">workspace_premium</span>
+          </div>
+          <div>
+            <span class="d-proof-eb">Partenaire agréé</span>
+            <p class="d-proof-h">CashMag</p>
+          </div>
+        </div>
+        <p class="d-proof-p">Installateur officiel du logiciel de caisse leader en France. Formation technique certifiée.</p>
+      </div>
+
+      <!-- Colonne 3 : icône duo avatars (lien cliquable) -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <a href="./notre-adn/index.html" class="flex shrink-0 no-underline group/founders" aria-label="Découvrir les fondateurs de DCB Technologies">
+            <img src="assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
+            <img src="assets/cb-clement-boissie.jpg" alt="Clément Boissié, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm -ml-3 transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
+          </a>
+          <div>
+            <span class="d-proof-eb">Fondateurs</span>
+            <p class="d-proof-h">22 ans cumulés</p>
+          </div>
+        </div>
+        <p class="d-proof-p"><span class="em-blue">Nathanaël</span> et <span class="em-blue">Clément</span> : vous parlez aux fondateurs, pas à un commercial.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+```
+
+**Mobile** : la déclinaison mobile de ce bloc est le pattern `.h-trust` (3 garanties verticales, filet orange 24x3 via `.h-trust-meta::before`, cf. P-16). CSS scopé sous `[data-metier="home"]` dans le `<style>` head de `index.html` (marqueur `S4 PROOF`).
+
+---
+
+### P-18 · Arguments liste 2 colonnes (sans cards)
+
+Liste d'arguments de différenciation en 2 colonnes : pas de cards, pas de filets de séparation, pur espacement (`column-gap: 72px; row-gap: 44px`). Chaque item = chip icône carrée 56px orange (fond `rgba(245,124,0,0.10)`) à gauche + titre Sora + paragraphe. Le blanc et l'alignement strict font le rythme. En-tête de section à gauche au-dessus (eyebrow + H2 + lien ADN), sans filet. Référence : `index.html`, marqueur `<!-- 6. ARGUMENTS ... -->` (remplace l'ancienne grille 4 cards grises centrées).
+
+**Desktop (CSS scopé inline + markup) :**
+```html
+<style>
+  /* ARGUMENTS éditorial sans cards : liste 2 colonnes icône-à-gauche + texte.
+     Aucun filet de séparation : le blanc + la chip icône font le travail. */
+  .d-diff {
+    display: grid; grid-template-columns: 1fr;
+    column-gap: 72px; row-gap: 44px;
+    max-width: 980px; margin: 0 auto;
+  }
+  .d-diff-item { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: flex-start; }
+  .d-diff-ic {
+    width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+    background: rgba(245,124,0,0.10); color: #F57C00;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .d-diff-ic .material-symbols-outlined { font-size: 28px; }
+  .d-diff-body h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.25; color: #0B3D91; margin: 4px 0 6px; }
+  .d-diff-body p { color: #64748B; line-height: 1.6; font-size: 14.5px; margin: 0; }
+  @media (min-width: 768px) { .d-diff { grid-template-columns: repeat(2, 1fr); } }
+</style>
+<div class="d-diff dcb-stagger">
+  <div class="d-diff-item">
+    <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">location_on</span></div>
+    <div class="d-diff-body">
+      <h3>Toujours près de vous</h3>
+      <p>Nos techniciens interviennent directement sur votre site en moins de 4 heures.</p>
+    </div>
+  </div>
+  <!-- ... 3 autres .d-diff-item (badge, tune, headset_mic) ... -->
+</div>
+```
+
+**Mobile** : déclinaison `.h-diff` (stack vertical, chip icône 44px orange via `.h-diff-ic`), CSS scopé sous `[data-metier="home"]` dans le `<style>` head de `index.html` (marqueur `S6 ARGUMENTS`).
+
+> Note accent : sur une page marque (homepage), la chip est orange `#F57C00`. Sur une sous-page narration, remplacer par l'accent de la page (fond `rgba(accent,0.10)`, icône `var(--accent)`), jamais d'orange.
+
+---
+
 ## 5. Signatures one-off : NE PAS répliquer, pointer
 
 Sections uniques à une page (identité de la page). On ne les copie pas ailleurs ; pour les modifier, aller à la source.
@@ -2154,9 +2348,7 @@ Sections uniques à une page (identité de la page). On ne les copie pas ailleur
 | Signature | Page | Marqueur |
 |---|---|---|
 | Hero homepage "3 cartes chevauchantes" | `index.html` | `<!-- 1. HERO V3 ... -->` |
-| Proof "Ce qui nous engage" | `index.html` | `<!-- 2. PROOF ... -->` |
 | Bandeau partenaires défilant | `index.html` | `<!-- 3. BANDEAU PARTENAIRES ... -->` |
-| Arguments horizontaux (signature homepage) | `index.html` | `<!-- 6. ARGUMENTS ... -->` |
 | Comparatif "1 interlocuteur vs 3 prestataires" | `index.html` | `<!-- 8. COMPARATIF ... -->` |
 | Tablette CashMag (placeholder screenshot) | `caisse-enregistreuse/index.html` | `<!-- ── 6. LOGICIEL CASHMAG ─────────── -->` |
 | Section Hairnet (salons coiffure) | `caisse-enregistreuse/index.html` | `<!-- ── 7. LOGICIEL HAIRNET ... -->` |
