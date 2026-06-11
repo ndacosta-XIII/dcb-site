@@ -70,6 +70,13 @@ Cf. `.gitignore` à la racine.
 - `git commit --amend` après un push
 - `--no-verify` ou `--no-gpg-sign`
 
+### Tests visuels (filet regression CSS/HTML transverses)
+
+Avant tout lot de modifications CSS/HTML transverses : `cd tests/visual && npm run baseline`.
+Apres le lot : `npm run check` (tableau PASS/FAIL par page+viewport, code de sortie non-zero si regression).
+Toute diff non voulue = regression a corriger avant commit.
+Refaire la baseline apres validation d'un lot voulu pour mettre a jour la reference.
+
 ---
 
 ## 🚫 RÈGLE ABSOLUE — ZÉRO TIRET CADRATIN

@@ -50,3 +50,9 @@ _preview-*.html
 # ─── Scripts utilitaires personnels (chemins locaux PC Nathanael) ───
 find_missing.py
 *.py
+
+# ─── Tests visuels : PNG captures + node_modules local ──────────────
+tests/visual/node_modules/
+tests/visual/baseline/
+tests/visual/current/
+tests/visual/diff/

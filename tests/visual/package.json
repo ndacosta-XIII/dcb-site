@@ -1,0 +1,17 @@
+{
+  "name": "dcb-visual-tests",
+  "version": "1.0.0",
+  "description": "Filet de tests visuels pour DCB Technologies site statique",
+  "private": true,
+  "scripts": {
+    "baseline": "node capture.js --mode baseline",
+    "check": "node capture.js --mode check && node diff.js"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "pixelmatch": "^5.3.0",
+    "pngjs": "^7.0.0",
+    "serve-static": "^1.15.0",
+    "finalhandler": "^1.2.0"
+  }
+}
