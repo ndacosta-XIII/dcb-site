@@ -415,6 +415,7 @@
     }
     [data-metier="blog"] .b-hidden { display: none !important; }
     @keyframes b-spin-anim { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { [data-metier="blog"] .b-spin { animation: none !important; } }
   }
 </style>
 <link rel="stylesheet" href="../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
