@@ -296,5 +296,5 @@ Sources de vérité transverses (tout agent front/contenu doit les respecter) :
 - **Matériel :** OXHOO, AURES, Lenovo
 - **Délai SAV :** intervention sous 4h sur site
 - **Partenaires :** NF525, CashMag, Hairnet, OXHOO, AURES, Lenovo, iMin, Yavin, Pedro Porto
-- **Hébergement live :** `https://blissful-bhabha.91-134-132-127.plesk.page` (Plesk)
+- **Hébergement :** PAS ENCORE DE VERSION LIVE (l'ancien Plesk concernait le projet V1, obsolète). Dev local : `file://` ou `serve.ps1`. Domaine cible des URLs canoniques/sitemap : `dcb-technologies.fr` (non déployé).
 - **Repo Git :** `ndacosta-XIII/dcb-site` (privé, GitHub)
