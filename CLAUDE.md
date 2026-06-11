@@ -4,6 +4,32 @@ Site marketing statique pour **DCB Technologies** (B2B local : caisses, IT, web)
 
 ---
 
+## 🤖 AGENTS : RÈGLE DE DÉLÉGATION (PRIORITÉ ABSOLUE)
+
+**Le modèle principal est un ORCHESTRATEUR. Il n'exécute JAMAIS lui-même une tâche couverte par un agent ci-dessous : il la délègue via le tool Agent/Task, puis vérifie et synthétise.** Exécuter soi-même une tâche d'un domaine couvert est une violation des instructions projet. Seules exceptions : micro-modifications triviales (typo, valeur d'attribut) et questions de pure lecture.
+
+| Domaine de la tâche | Agent | Modèle |
+|---|---|---|
+| Page/section desktop, HTML/CSS/Tailwind, intégration maquette | `front-builder` | opus |
+| Shell mobile `.m-shell`, responsive ≤640px, dual-shell | `mobile-builder` | opus |
+| Audit UI/UX, a11y, cohérence visuelle, motion | `design-reviewer` | opus |
+| Textes du site : titres, sections, FAQ, meta, CTA, humanisation | `copywriter-site` | opus |
+| SEO, GEO, balises, JSON-LD, maillage, sitemap | `seo-expert` | sonnet |
+| Conversion : audit CRO, formulaires, ordre sections, A/B | `cro-expert` | opus |
+| Audit pub payante : Google/Meta/LinkedIn/TikTok Ads, budget, tracking | `ads-auditor` | sonnet |
+| Création pub : plan média, copy d'annonces, visuels ads | `ads-creator` | sonnet |
+| Stratégie marketing : contenu, emails, social, pricing, concurrents | `marketing-strategist` | opus |
+| Harmonisation d'un silo entier, propagation multi-pages | `silo-harmonizer` | sonnet |
+| QA mécanique pré-commit : em dash, Tailwind, cache-bust, liens, JSON-LD | `site-qa` | haiku |
+| Pub vidéo Remotion (pipeline complet) | `pub-strategist` → `pub-copywriter` → `motion-director` → `remotion-builder` → `frame-auditor` (+ `ui-faithful` si UI tierce) | mixte |
+
+**Règles d'orchestration :**
+- Tâche multi-domaines : décomposer et déléguer en chaîne (ex. nouvelle page = `cro-expert` (ordre sections) → `copywriter-site` (textes) → `front-builder` (desktop) → `mobile-builder` (mobile) → `seo-expert` (balises/JSON-LD) → `site-qa` (vérif) ).
+- Avant chaque commit multi-fichiers : passage `site-qa` obligatoire.
+- Les agents chargent eux-mêmes leurs skills : ne pas invoquer un skill d'un domaine couvert depuis le modèle principal.
+
+---
+
 ## 🔧 GIT WORKFLOW — RÈGLES
 
 Le projet est versionné. Repo privé GitHub : `ndacosta-XIII/dcb-site` (branche `main`).
@@ -180,25 +206,15 @@ Bandeau CTA en fin de chaque page (desktop `.d-cta-final` + mobile `.m-cta-final
 
 ---
 
-## 🧠 Skills obligatoires
+## 🧠 Skills et sources de vérité
 
-### Tout sujet UI/UX/design
-**`ui-ux-pro-max`** — Base locale dans `.claude/skills/ui-ux-pro-max/`. Toujours invoquer pour : choix style, couleurs, fonts, layout, animations, a11y, audit visuel.
+Les skills sont chargés PAR LES AGENTS (cf. table de délégation en tête de fichier), pas par le modèle principal. Chaque agent documente dans son fichier `.claude/agents/<nom>.md` les skills de son domaine et leur ordre d'invocation.
 
-```powershell
-$PYTHON = "C:\Users\Dacos\AppData\Local\Programs\Python\Python312\python.exe"
-& $PYTHON .claude\skills\ui-ux-pro-max\scripts\search.py "<query>" --design-system
-& $PYTHON .claude\skills\ui-ux-pro-max\scripts\search.py "<query>" --domain <ux|style|color|typography|landing|chart|product|web>
-```
-
-### Intégration shell mobile
-Trois skills dans l'ordre, non négociables :
-1. **`page-cro`** : auditer l'ordre des sections pour la narration mobile (l'ordre desktop n'est pas forcément optimal).
-2. **`impeccable craft`** : brief shape validé par l'utilisateur avant tout HTML.
-3. **`ui-ux-pro-max`** (`--domain ux` + `--domain landing`) : pendant l'écriture des sections.
-
-### SEO/contenu
-Avant toute tâche SEO, balises, JSON-LD, maillage, mise en ligne : lire `AUDIT_SEO.md` + `seo-analyse/` (modules + master plan).
+Sources de vérité transverses (tout agent front/contenu doit les respecter) :
+- **`docs/front-library.md`** : bibliothèque officielle des sections (code canonique desktop + mobile). Toute nouvelle page/section part d'un pattern de cette bibliothèque, JAMAIS d'une invention.
+- `docs/mobile-standard.md` : référentiel shell mobile.
+- `docs/content-reference.md` : formulations validées (anti duplicate content).
+- `AUDIT_SEO.md` + `seo-analyse/` : avant toute tâche SEO.
 
 ---
 
