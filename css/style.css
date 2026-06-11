@@ -57,6 +57,10 @@ h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.15; }
   display: inline-block;
   vertical-align: middle;
 }
+.ms-fill { font-variation-settings: 'FILL' 1; }
+
+/* ── TONAL SHIFT ─────────────────────────────────────────────── */
+.tonal-shift-elevation { box-shadow: 4px 4px 0px 0px rgba(7,43,107,0.04); }
 
 /* ── UTILITIES ──────────────────────────────────────────────── */
 .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }

@@ -20,11 +20,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/style.css?v=12">
+<link rel="stylesheet" href="../../css/style.css?v=13">
 <link rel="stylesheet" href="../../css/tailwind.min.css?v=17">
 <style>
-  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; display:inline-block; vertical-align:middle; }
-  .tonal-shift-elevation { box-shadow: 4px 4px 0px 0px rgba(7,43,107,0.04); }
   body { font-family: 'Inter', sans-serif; }
   @keyframes hero-blob-a { 0%,100% { transform: translate(30%,-30%) scale(1); } 50% { transform: translate(22%,-22%) scale(1.12); } }
   @keyframes hero-blob-b { 0%,100% { transform: translateY(0); opacity:1; } 50% { transform: translateY(-20px); opacity:0.7; } }
@@ -50,7 +48,7 @@
   }
   .dcb-dot.is-active::before { background: #F59E0B !important; }
 </style>
-<link rel="stylesheet" href="../../m/css/mobile.css?v=27" media="screen and (max-width:640px)">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
 <!-- Preload LCP image mobile : remplacer par .webp quand l'image réelle sera disponible -->
 <link rel="preload" as="image" href="../../assets/placeholder-hero-boulangerie.jpg" fetchpriority="high" media="(max-width:640px)">
 <script type="application/ld+json">
@@ -126,9 +124,9 @@
       <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr>, <br><span class="text-[#F59E0B] italic font-semibold">installée par vos techniciens</span></h1>
       <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">Votre rush du matin, vos formules, vos invendus, votre clôture du soir. Tout est pensé pour le quotidien d'une boulangerie, pas pour un commerce générique. Formule Essentiel dès 59 €/mois, un technicien DCB vient chez vous pour tout configurer.</p>
       <div class="space-y-4">
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">check_circle</span>Suivi de fabrication et gestion des invendus intégrés</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">check_circle</span>Clôture Z et export comptable automatiques</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">check_circle</span>Suivi de fabrication et gestion des invendus intégrés</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">check_circle</span>Clôture Z et export comptable automatiques</div>
       </div>
       <div class="flex flex-wrap gap-4 pt-2">
         <a href="#tarifs" class="dcb-btn-hover bg-[#F59E0B] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">Voir les tarifs <span class="material-symbols-outlined">arrow_forward</span></a>
@@ -152,19 +150,19 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#F59E0B] text-3xl" style="font-variation-settings:'FILL' 1">verified</span>
+        <span class="material-symbols-outlined text-[#F59E0B] text-3xl ms-fill">verified</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Certifié NF525</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#F59E0B] text-3xl" style="font-variation-settings:'FILL' 1">shield</span>
+        <span class="material-symbols-outlined text-[#F59E0B] text-3xl ms-fill">shield</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Garantie 5 ans</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#F59E0B] text-3xl" style="font-variation-settings:'FILL' 1">support_agent</span>
+        <span class="material-symbols-outlined text-[#F59E0B] text-3xl ms-fill">support_agent</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">SAV 7j/7 24h/24</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#F59E0B] text-3xl" style="font-variation-settings:'FILL' 1">water_drop</span>
+        <span class="material-symbols-outlined text-[#F59E0B] text-3xl ms-fill">water_drop</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Matériel étanche</span>
       </div>
     </div>
@@ -183,22 +181,22 @@
       </div>
       <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">restaurant_menu</span></div>
+          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">restaurant_menu</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Formules automatiques</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Vous créez une formule en 2 minutes. En caisse, elle se déclenche dès que les bons articles sont scannés. Votre vendeur n'a rien à faire, la file avance.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">precision_manufacturing</span></div>
+          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">precision_manufacturing</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Stocks et fabrication</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Combien de baguettes tradition demain ? CashMag vous le dit. Stocks, matières premières, alertes de fabrication. Vous produisez juste, vous jetez moins.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">history</span></div>
+          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">history</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Clôture et export comptable</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Un clic, 3 minutes, c'est bouclé. Le rapport Z part directement chez votre comptable. Vous fermez la caisse en 3 minutes, pas en trente.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">monitoring</span></div>
+          <div class="w-11 h-11 bg-[#F59E0B]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F59E0B] ms-fill">monitoring</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Suivi d'activité en direct</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Vos articles porteurs, vos invendus, votre CA heure par heure. Vous voyez ce qui marche et vous ajustez votre production le lendemain.</p>
         </div>
@@ -263,7 +261,7 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Licence CashMag 5 ans</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Installation, paramétrage, formation</li>
           <li class="flex items-center gap-2 text-slate-400"><span class="material-symbols-outlined text-red-400 text-base">close</span>Pas de maintenance incluse</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=essentiel-boulangerie" class="mt-auto w-full border-2 border-[#F59E0B] text-[#F59E0B] py-3 rounded-lg font-bold hover:bg-[#F59E0B]/5 transition-colors text-sm text-center block">Choisir Essentiel</a>
       </div>
@@ -280,7 +278,7 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Licence CashMag 5 ans</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Maintenance 7j/7 24h/24</li>
           <li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Installation, paramétrage et formation</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=pack-boulangerie" class="mt-auto w-full bg-[#F59E0B] text-white py-3 rounded-lg font-bold shadow-lg shadow-[#F59E0B]/20 hover:brightness-110 transition-all text-sm text-center block">Choisir ce pack</a>
       </div>
@@ -294,7 +292,7 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Borne de commande snacking</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Engagement sur mesure (24, 36, 60 mois)</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Achat comptant disponible</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=sur-mesure-boulangerie" class="mt-auto w-full border-2 border-[#F59E0B] text-[#F59E0B] py-3 rounded-lg font-bold hover:bg-[#F59E0B]/5 transition-colors text-sm text-center block">Choisir Sur mesure</a>
       </div>
@@ -363,7 +361,7 @@
       <div data-dcb-track>
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On avait peur que le monnayeur soit compliqué. En pratique, les vendeuses ont compris en dix minutes. On a zéro erreur de caisse depuis l'installation, et la clôture du soir prend moins de temps qu'avant."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -377,7 +375,7 @@
         </div>
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ils ont vu qu'on avait un gros pic entre 7h et 9h, et ils ont configuré les formules en fonction. L'installation a été faite un dimanche soir pour ne pas perturber le lundi matin. Ça, c'est du professionnel."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -391,7 +389,7 @@
         </div>
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"La gestion des formules a tout changé pour nous. Avant, chaque petit-déjeuner prenait 3 clics. Maintenant le logiciel détecte la formule tout seul. Aux heures de pointe, ça se sent immédiatement sur la file."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -405,7 +403,7 @@
         </div>
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#F59E0B] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On a deux boutiques et tout remonte dans le même back-office. Je vois le CA de chaque point de vente en temps réel depuis mon téléphone. Avant DCB, on jonglait avec deux systèmes différents."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -506,7 +504,7 @@
       <div class="lg:col-span-5 col-action">
         <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
         <span class="d-divider">ou appelez-nous</span>
-        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly" style="font-variation-settings:'FILL' 1" aria-hidden="true">call</span>04 82 53 05 10</a>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
       </div>
     </div>
     <div class="d-foot">
@@ -551,24 +549,24 @@
            onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuC6dD_N7eNcuSRj8KkOwbO9S3fGm95vyR4f8TY-Z9_rwgbt-2m-V9e80E_wbZD5LCi95qy7Y60rDHw2kUr_VIdY83mA2CjIdZXZu8_INy0uQZPdhzhMT07cSP1vNMrI6xBswHOQPZLXlI57gqDNkHP-gdR5bbakn0AFkagKqRhziomWcJIYkvI6y5DRXU_fL5Jenc5ZMRWNzLavBK-Ic-mNY9u3Zqb_tjMCjtIGkSOi9eciYPQtchE8Cjp1MRtixjUyqmoHz0uUNJuW'">
     </div>
     <div class="float1" aria-hidden="true">
-      <div class="ic"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">payments</span></div>
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">payments</span></div>
       <div><div class="lb">Formules</div><div class="vl">Auto</div></div>
     </div>
     <div class="float2" aria-hidden="true">
-      <div class="ic"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">verified</span></div>
+      <div class="ic"><span class="material-symbols-outlined ms-fill">verified</span></div>
       <div><div class="lb">NF525</div><div class="vl">Conforme</div></div>
     </div>
   </div>
 
   <div class="checks">
-    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
-    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Suivi de fabrication et gestion des invendus intégrés</div>
-    <div><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">check_circle</span>Clôture Z et export comptable automatiques</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Suivi de fabrication et gestion des invendus intégrés</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Clôture Z et export comptable automatiques</div>
   </div>
 
   <div class="cta-row">
     <button class="btn btn-pri" data-sheet aria-label="Demander un devis caisse boulangerie">Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
-    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">call</span></a>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
   </div>
 </section>
 
@@ -582,16 +580,16 @@
 </ul>
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified</span>Certifié NF525</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">speed</span>Intervention &lt;4h</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified_user</span>Garantie 5 ans</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">water_drop</span>Matériel étanche</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">support_agent</span>SAV 7j/7 24h/24</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified</span>Certifié NF525</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">speed</span>Intervention &lt;4h</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified_user</span>Garantie 5 ans</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">water_drop</span>Matériel étanche</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">support_agent</span>SAV 7j/7 24h/24</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">speed</span>Intervention &lt;4h</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">water_drop</span>Matériel étanche</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7 24h/24</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">speed</span>Intervention &lt;4h</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">water_drop</span>Matériel étanche</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7 24h/24</div>
   </div>
 </div>
 
@@ -631,7 +629,7 @@
   <div class="cm-feats" style="margin-top:14px">
     <div class="ft">
       <div class="ic" style="background:rgba(245,158,11,0.10);color:#F59E0B">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">restaurant_menu</span>
+        <span class="material-symbols-outlined ms-fill">restaurant_menu</span>
       </div>
       <div>
         <h3>Formules automatiques</h3>
@@ -640,7 +638,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(245,158,11,0.10);color:#F59E0B">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">precision_manufacturing</span>
+        <span class="material-symbols-outlined ms-fill">precision_manufacturing</span>
       </div>
       <div>
         <h3>Stocks et fabrication</h3>
@@ -649,7 +647,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(245,158,11,0.10);color:#F59E0B">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">history</span>
+        <span class="material-symbols-outlined ms-fill">history</span>
       </div>
       <div>
         <h3>Clôture Z en 1 clic</h3>
@@ -658,7 +656,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(245,158,11,0.10);color:#F59E0B">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">monitoring</span>
+        <span class="material-symbols-outlined ms-fill">monitoring</span>
       </div>
       <div>
         <h3>Suivi d'activité en direct</h3>
@@ -827,18 +825,6 @@
 
 <!-- S9 : CTA FINAL -->
 <!-- CTA FINAL v3 : Le Bord Tranché (signature métier boulangerie #F59E0B) -->
-<style>
-  .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
-  .m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
-  .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
-  .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
-  .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
-  .m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
-  .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
-  .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
-  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
-  .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
-</style>
 <section class="m-cta-final" style="--accent:#F59E0B;--accent-shadow:rgba(245,158,11,0.40)" aria-labelledby="cta-final-h">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h">Demandez votre devis boulangerie gratuit.</h3>

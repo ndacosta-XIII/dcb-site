@@ -18,6 +18,7 @@ html,body{margin:0;padding:0;font-family:'Inter',sans-serif;color:var(--ink);-we
 html{scroll-padding-top:72px}
 .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;vertical-align:middle}
 .fill{font-variation-settings:'FILL' 1,'wght' 500}
+.ms-fill{font-variation-settings:'FILL' 1}
 a{text-decoration:none;color:inherit}
 button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--cta);margin:0 0 8px}
@@ -328,6 +329,18 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .final-a .tel{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px;background:var(--s1);border-radius:14px}
 .final-a .tel .ic{width:42px;height:42px;background:rgba(245,124,0,0.10);color:var(--cta);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .final-a .tel .num{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:var(--p)}
+
+/* ── CTA FINAL v3 « Le Bord Tranché » : squelette mutualisé (accent via --accent sur la section) */
+.m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
+.m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
+.m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
+.m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
+.m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+.m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
+.m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
+.m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
+.m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
+.m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
 
 /* ── FAB sticky — safe-area iOS incluse */
 .fab{position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:#fff;border-radius:20px;padding:8px;display:grid;grid-template-columns:1fr 56px;gap:8px;z-index:var(--z-fab);box-shadow:0 18px 36px -10px rgba(7,43,107,0.30),0 2px 6px rgba(7,43,107,0.08);border:1px solid rgba(11,61,145,0.08)}

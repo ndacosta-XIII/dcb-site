@@ -20,11 +20,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/style.css?v=12">
+<link rel="stylesheet" href="../../css/style.css?v=13">
 <link rel="stylesheet" href="../../css/tailwind.min.css?v=17">
 <style>
-  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; display:inline-block; vertical-align:middle; }
-  .tonal-shift-elevation { box-shadow: 4px 4px 0px 0px rgba(7,43,107,0.04); }
   body { font-family: 'Inter', sans-serif; }
   @keyframes hero-blob-a { 0%,100% { transform: translate(30%,-30%) scale(1); } 50% { transform: translate(22%,-22%) scale(1.12); } }
   @keyframes hero-blob-b { 0%,100% { transform: translateY(0); opacity:1; } 50% { transform: translateY(-20px); opacity:0.7; } }
@@ -52,7 +50,7 @@
     .m-shell .hero h1 { font-size: 23px }
   }
 </style>
-<link rel="stylesheet" href="../../m/css/mobile.css?v=27" media="screen and (max-width:640px)">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
 <!-- Preload LCP image mobile : remplacer par .webp quand l'image réelle sera disponible -->
 <link rel="preload" as="image" href="../../assets/placeholder-hero-restaurant.jpg" fetchpriority="high" media="(max-width:640px)">
 <script type="application/ld+json">
@@ -127,9 +125,9 @@
       <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse restaurant <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr>, <br><span class="text-[#EF4444] italic font-semibold">pensée pour votre service</span></h1>
       <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">En salle, en cuisine, au bar : chaque poste travaille en temps réel. Un système d'encaissement complet pensé pour les restaurants, brasseries et bars de la région. Pack Comptoir dès 77 €/mois, un technicien DCB vient chez vous dans les 4 départements.</p>
       <div class="space-y-4">
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">check_circle</span>Plan de salle interactif et envoi cuisine en temps réel</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">check_circle</span>Prise de commande sur tablette directement à table</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">check_circle</span>Division d'addition et paiements mixtes simplifiés</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444] ms-fill">check_circle</span>Plan de salle interactif et envoi cuisine en temps réel</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444] ms-fill">check_circle</span>Prise de commande sur tablette directement à table</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#EF4444] ms-fill">check_circle</span>Division d'addition et paiements mixtes simplifiés</div>
       </div>
       <div class="flex flex-wrap gap-4 pt-2">
         <a href="#tarifs" class="dcb-btn-hover bg-[#EF4444] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">Voir les tarifs <span class="material-symbols-outlined">arrow_forward</span></a>
@@ -152,19 +150,19 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#EF4444] text-3xl" style="font-variation-settings:'FILL' 1">verified</span>
+        <span class="material-symbols-outlined text-[#EF4444] text-3xl ms-fill">verified</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Certifié NF525</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#EF4444] text-3xl" style="font-variation-settings:'FILL' 1">shield</span>
+        <span class="material-symbols-outlined text-[#EF4444] text-3xl ms-fill">shield</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Garantie 5 ans</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#EF4444] text-3xl" style="font-variation-settings:'FILL' 1">support_agent</span>
+        <span class="material-symbols-outlined text-[#EF4444] text-3xl ms-fill">support_agent</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">SAV 7j/7 24h/24</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-[#EF4444] text-3xl" style="font-variation-settings:'FILL' 1">school</span>
+        <span class="material-symbols-outlined text-[#EF4444] text-3xl ms-fill">school</span>
         <span class="font-semibold text-base md:text-xl text-slate-500">Formation sur place</span>
       </div>
     </div>
@@ -217,28 +215,28 @@
       <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 order-2 lg:order-1 dcb-stagger">
         <div class="space-y-3">
           <div class="w-11 h-11 bg-[#EF4444]/10 flex items-center justify-center rounded-lg">
-            <span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">table_restaurant</span>
+            <span class="material-symbols-outlined text-[#EF4444] ms-fill">table_restaurant</span>
           </div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Plan de salle à l'identique</h3>
           <p class="text-slate-500 text-sm leading-relaxed">On reproduit votre salle à l'écran : tables, couverts, zones bar, terrasse, salles privées. Vos serveurs se repèrent dès le premier service, sans formation longue.</p>
         </div>
         <div class="space-y-3">
           <div class="w-11 h-11 bg-[#EF4444]/10 flex items-center justify-center rounded-lg">
-            <span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">restaurant</span>
+            <span class="material-symbols-outlined text-[#EF4444] ms-fill">restaurant</span>
           </div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Envoi cuisine multi-postes</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Cuisine chaude, cuisine froide, bar : chaque poste reçoit uniquement ce qui le concerne. Fini les doublons et les commandes qui traînent au pass.</p>
         </div>
         <div class="space-y-3">
           <div class="w-11 h-11 bg-[#EF4444]/10 flex items-center justify-center rounded-lg">
-            <span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">smartphone</span>
+            <span class="material-symbols-outlined text-[#EF4444] ms-fill">smartphone</span>
           </div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Commande sur tablette</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Vos serveurs restent en salle, la commande part en cuisine en direct. Moins de va-et-vient, plus de temps pour les clients, moins d'erreurs de saisie.</p>
         </div>
         <div class="space-y-3">
           <div class="w-11 h-11 bg-[#EF4444]/10 flex items-center justify-center rounded-lg">
-            <span class="material-symbols-outlined text-[#EF4444]" style="font-variation-settings:'FILL' 1">payments</span>
+            <span class="material-symbols-outlined text-[#EF4444] ms-fill">payments</span>
           </div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Division d'addition</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Groupe qui paie séparément, couvert qui part avant les autres, note pro à isoler. Division par article ou par montant, paiements mixtes, même sur les tables de 10.</p>
@@ -300,7 +298,7 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Licence CashMag 5 ans</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Maintenance 7j/7 24h/24</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Installation, paramétrage et formation</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=pack-comptoir" class="mt-auto w-full border-2 border-[#EF4444] text-[#EF4444] py-3 rounded-lg font-bold hover:bg-[#EF4444]/5 transition-colors text-sm text-center block">Choisir Pack Comptoir</a>
       </div>
@@ -317,7 +315,7 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Licence CashMag 5 ans</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Maintenance 7j/7 24h/24</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Installation, paramétrage et formation</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=pack-service" class="mt-auto w-full bg-[#EF4444] text-white py-3 rounded-lg font-bold shadow-lg shadow-[#EF4444]/20 hover:brightness-110 transition-all text-sm text-center block">Choisir ce pack</a>
       </div>
@@ -333,7 +331,7 @@
           <li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Module réservation de table en ligne</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Statistiques avancées (serveur, table, heure)</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#EF4444] text-base">check</span>Engagement flexible (24-60 mois) ou achat comptant</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base" style="font-variation-settings:'FILL' 1">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base ms-fill">verified</span><span class="text-[#0B3D91] font-semibold">Logiciel certifié NF525</span></li>
         </ul>
         <a href="../../contact/index.html?offre=sur-mesure-restaurant" class="mt-auto w-full border-2 border-[#EF4444] text-[#EF4444] py-3 rounded-lg font-bold hover:bg-[#EF4444]/5 transition-colors text-sm text-center block">Choisir Sur mesure</a>
       </div>
@@ -401,7 +399,7 @@
       <div data-dcb-track>
         <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"L'envoi cuisine a tout changé. Zéro erreur sur les commandes, même avec 80 couverts en terrasse. Le pad mobile nous fait gagner un serveur."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -415,7 +413,7 @@
         </div>
         <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Depuis que nous travaillons avec DCB, nous avons gagné en sérénité. L'installation a été rapide et les équipes sont très réactives en cas de rush."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -429,7 +427,7 @@
         </div>
         <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Le plan de salle sur tablette, c'est un vrai confort. On déplace les tables en deux clics pour les groupes, et les serveurs voient en temps réel ce qui est occupé. Simple et efficace."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -443,7 +441,7 @@
         </div>
         <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
-            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+            <span class="material-symbols-outlined text-[#EF4444] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"La borne absorbe 40% de nos commandes aux heures de pointe. Les serveurs se concentrent sur le service en salle, et le ticket moyen a augmenté naturellement."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
@@ -545,7 +543,7 @@
       <div class="lg:col-span-5 col-action">
         <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
         <span class="d-divider">ou appelez-nous</span>
-        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly" style="font-variation-settings:'FILL' 1" aria-hidden="true">call</span>04 82 53 05 10</a>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
       </div>
     </div>
     <div class="d-foot">
@@ -578,7 +576,7 @@
 <!-- S1 : HERO -->
 <section class="hero">
   <div class="chips">
-    <span class="chip"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">restaurant</span>Restaurant &amp; Brasserie</span>
+    <span class="chip"><span class="material-symbols-outlined fill ms-fill">restaurant</span>Restaurant &amp; Brasserie</span>
     <span class="chip red">Dès 77€/mois</span>
   </div>
   <h1>Caisse enregistreuse restaurant <abbr title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018">NF525</abbr>, <em>pensée pour votre service</em>.</h1>
@@ -591,7 +589,7 @@
     </div>
     <div class="float-stat" aria-hidden="true">
       <div class="ic" style="background:linear-gradient(135deg,#EF4444,#B91C1C)">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">timer</span>
+        <span class="material-symbols-outlined ms-fill">timer</span>
       </div>
       <div class="txt">
         <div class="num">+20%</div>
@@ -608,7 +606,7 @@
 
   <div class="cta-row">
     <button class="btn btn-pri" data-sheet aria-label="Demander un devis caisse restaurant">Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
-    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">call</span></a>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
   </div>
 </section>
 
@@ -621,14 +619,14 @@
 </ul>
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified</span>Certifié NF525</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified_user</span>Garantie 5 ans</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">support_agent</span>SAV 7j/7 24h/24</div>
-    <div class="it"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">school</span>Formation sur place</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified</span>Certifié NF525</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">verified_user</span>Garantie 5 ans</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">support_agent</span>SAV 7j/7 24h/24</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1">school</span>Formation sur place</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7 24h/24</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">school</span>Formation sur place</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7 24h/24</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">school</span>Formation sur place</div>
   </div>
 </div>
 
@@ -675,7 +673,7 @@
   <div class="cm-feats" style="margin-top:14px">
     <div class="ft">
       <div class="ic" style="background:rgba(239,68,68,0.10);color:#EF4444">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">table_restaurant</span>
+        <span class="material-symbols-outlined ms-fill">table_restaurant</span>
       </div>
       <div>
         <h3>Plan de salle à l'identique</h3>
@@ -684,7 +682,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(239,68,68,0.10);color:#EF4444">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">restaurant</span>
+        <span class="material-symbols-outlined ms-fill">restaurant</span>
       </div>
       <div>
         <h3>Envoi cuisine multi-postes</h3>
@@ -693,7 +691,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(239,68,68,0.10);color:#EF4444">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">smartphone</span>
+        <span class="material-symbols-outlined ms-fill">smartphone</span>
       </div>
       <div>
         <h3>Commande sur tablette</h3>
@@ -702,7 +700,7 @@
     </div>
     <div class="ft">
       <div class="ic" style="background:rgba(239,68,68,0.10);color:#EF4444">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">payments</span>
+        <span class="material-symbols-outlined ms-fill">payments</span>
       </div>
       <div>
         <h3>Division d'addition</h3>
@@ -873,18 +871,6 @@
 </section>
 
 <!-- S9 : CTA FINAL v3 : Le Bord Tranché (signature métier coral #EF4444 sur filet supérieur) -->
-<style>
-  .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
-  .m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
-  .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
-  .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
-  .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
-  .m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
-  .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
-  .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
-  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
-  .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
-</style>
 <section class="m-cta-final" style="--accent:#EF4444;--accent-dark:#DC2626" aria-labelledby="cta-final-h-resto">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h-resto">Demandez une démonstration dans votre établissement.</h3>
