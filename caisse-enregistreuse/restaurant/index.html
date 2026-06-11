@@ -478,7 +478,7 @@
         <div class="p-7 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
             <div class="cx-icon w-11 h-11 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#4F46E5] text-2xl">point_of_sale</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F57C00] bg-[#F57C00]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(245,124,0,0.12)]">+20% panier moyen</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(79,70,229,0.12)]">+20% panier moyen</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Borne de commande</h3>
           <p class="text-slate-500 text-sm mb-4">Idéale pour restauration rapide et brasserie à flux tendu. Les clients commandent en autonomie pendant que vos serveurs se concentrent sur le service en salle.</p>
@@ -875,19 +875,17 @@
 <!-- S9 : CTA FINAL v3 : Le Bord Tranché (signature métier coral #EF4444 sur filet supérieur) -->
 <style>
   .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
-  .m-cta-final .topbar{display:block;width:80px;height:3px;background:#F57C00;margin:0 0 22px;border-radius:2px}
-  .m-cta-final.resto .topbar{background:#EF4444}
-  .m-cta-final.resto .btn.btn-pri{background:#EF4444}
-  .m-cta-final.resto .dpx-tel .gly{color:#EF4444}
+  .m-cta-final .topbar{display:block;width:80px;height:3px;background:var(--accent,#F57C00);margin:0 0 22px;border-radius:2px}
   .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
   .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
   .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+  .m-cta-final .btn.btn-pri{background:var(--accent,#F57C00)}
   .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
   .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
-  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:#F57C00}
+  .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:var(--accent,#F57C00)}
   .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
 </style>
-<section class="m-cta-final resto" aria-labelledby="cta-final-h-resto">
+<section class="m-cta-final" style="--accent:#EF4444;--accent-dark:#DC2626" aria-labelledby="cta-final-h-resto">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h-resto">Demandez une démonstration dans votre établissement.</h3>
   <p>Un technicien DCB observe votre service et vous propose la configuration adaptée à votre établissement. Sans engagement.</p>

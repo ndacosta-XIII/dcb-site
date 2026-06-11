@@ -48,16 +48,16 @@
   .m-citation .author { margin-top: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #F57C00; display: block; }
   /* ── CTA Final ── */
   .m-cta-final { background: #F8F9FA; padding: 36px 18px 32px; position: relative; }
-  .m-cta-final .topbar { display: block; width: 80px; height: 3px; background: #F57C00; margin: 0 0 22px; border-radius: 2px; }
+  .m-cta-final .topbar { display: block; width: 80px; height: 3px; background: var(--accent,#F57C00); margin: 0 0 22px; border-radius: 2px; }
   .m-cta-final h3 { margin: 0 0 10px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(22px,6.5vw,26px); line-height: 1.1; letter-spacing: -0.01em; color: #0B3D91; }
   .m-cta-final p { margin: 0 0 24px; font-size: 14.5px; line-height: 1.55; color: #4A5568; max-width: 36ch; }
   .m-cta-final .btn { display: inline-flex; width: auto; align-self: flex-start; margin: 0; }
   .m-cta-final .dpx-divider { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #64748B; margin: 28px 0 12px; }
   .m-cta-final .dpx-tel { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 22px 12px 18px; border: 1.5px solid #0B3D91; border-radius: 999px; background: #fff; color: #0B3D91; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 17px; text-decoration: none; }
-  .m-cta-final .dpx-tel .gly { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 1; font-size: 20px; color: #F57C00; }
+  .m-cta-final .dpx-tel .gly { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 1; font-size: 20px; color: var(--accent,#F57C00); }
   .m-cta-final .bottomark { display: block; width: 16px; height: 2px; background: #0B3D91; margin: 28px 0 0 auto; border-radius: 1px; }
   /* ───────────────────────────────────────────────────────────
-     PAGE NOTRE ADN — STYLES SPÉCIFIQUES
+     PAGE NOTRE ADN : STYLES SPÉCIFIQUES
      Préfixe .adn- pour éviter toute collision avec le système.
      Reprend strictement les tokens du :root de style.css.
      ─────────────────────────────────────────────────────────── */
@@ -373,7 +373,7 @@
 </section>
 
 <!-- S5 : CTA FINAL -->
-<section class="m-cta-final" aria-labelledby="m-cta-adn-h">
+<section class="m-cta-final" aria-labelledby="m-cta-adn-h" style="--accent:#F57C00;--accent-dark:#E06E00">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="m-cta-adn-h">Le café est offert au siège. Le téléphone fonctionne aussi.</h3>
   <p>Un technicien ou l'un des co-fondateurs vous répond directement.</p>
