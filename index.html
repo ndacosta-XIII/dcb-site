@@ -24,17 +24,20 @@
 <style>
   body { font-family: 'Inter', sans-serif; }
 
-  /* Blobs ambiants hero homepage : float infini, zero dépendance scroll */
+  /* Blob ambiant hero homepage : float infini, zero dépendance scroll */
   @keyframes hero-blob-a {
     0%,100% { transform: translate(30%,-30%) scale(1); }
     50%     { transform: translate(22%,-22%) scale(1.12); }
   }
-  @keyframes hero-blob-b {
-    0%,100% { transform: translateY(0); opacity:1; }
-    50%     { transform: translateY(-20px); opacity:0.7; }
-  }
   .hero-blob-a { animation: hero-blob-a 16s ease-in-out infinite; }
-  .hero-blob-b { animation: hero-blob-b 12s ease-in-out infinite; }
+
+  /* Cards piliers : filet signature couleur destination (remplace le top-stripe dégradé) */
+  .pilier-filet {
+    display: block; width: 28px; height: 3px; border-radius: 2px;
+    margin-bottom: 20px;
+    transition: width 0.3s ease-out;
+  }
+  .group:hover .pilier-filet { width: 48px; }
   /* Tooltip vers le bas, ancré à gauche pour rester dans la carte */
   abbr.tooltip-down[data-tooltip]:hover::after {
     bottom: auto;
@@ -51,8 +54,29 @@
     border-top-color: transparent;
     border-bottom-color: #0B3D91;
   }
+  /* Marquee partenaires DESKTOP : défilement infini sans saut (track dupliqué aria-hidden) */
+  .d-partners {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .d-partners-track {
+    display: flex; flex-wrap: nowrap; align-items: center;
+    width: max-content; gap: 24px 64px;
+    animation: d-partners-scroll 32s linear infinite;
+  }
+  .d-partners:hover .d-partners-track { animation-play-state: paused; }
+  .d-partners-track .partner-logo { flex-shrink: 0; }
+  @keyframes d-partners-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .hero-blob-a, .hero-blob-b { animation: none !important; }
+    .hero-blob-a { animation: none !important; }
+    .h-partners-track { animation: none !important; }
+    .d-partners-track { animation: none !important; flex-wrap: wrap; justify-content: center; }
+    .pilier-filet { transition: none; }
   }
 
   /* ═══════════════════════════════════════════════════════════════
@@ -75,7 +99,7 @@
     }
     [data-metier="home"] .h-stats {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-      padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.10);
+      margin-top: 4px; padding-top: 8px;
     }
     [data-metier="home"] .h-stat .num {
       display: block; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 24px;
@@ -93,7 +117,7 @@
 
     /* S2 MARQUEE PARTENAIRES */
     [data-metier="home"] .h-partners {
-      background: #FFFFFF; padding: 18px 0; border-bottom: 1px solid var(--line);
+      background: #FFFFFF; padding: 18px 0;
       overflow: hidden;
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -112,17 +136,17 @@
     }
 
     /* S3 TROIS PILIERS : carousel IT-hub pattern + color overrides 3 piliers */
-    [data-metier="home"] .caisse .bar{background:linear-gradient(90deg,#1D9E75,#0D9488)}
+    [data-metier="home"] .caisse .bar{background:#1D9E75}
     [data-metier="home"] .caisse .ic{background:rgba(29,158,117,0.12);color:#1D9E75}
     [data-metier="home"] .caisse .pill{background:rgba(29,158,117,0.12);color:#1D9E75}
     [data-metier="home"] .caisse .feats .material-symbols-outlined{color:#1D9E75}
     [data-metier="home"] .caisse .go .ab{background:#1D9E75}
-    [data-metier="home"] .it .bar{background:linear-gradient(90deg,#0B3D91,#345BAF)}
+    [data-metier="home"] .it .bar{background:#0B3D91}
     [data-metier="home"] .it .ic{background:rgba(11,61,145,0.10);color:#0B3D91}
     [data-metier="home"] .it .pill{background:rgba(11,61,145,0.10);color:#0B3D91}
     [data-metier="home"] .it .feats .material-symbols-outlined{color:#0B3D91}
     [data-metier="home"] .it .go .ab{background:#0B3D91}
-    [data-metier="home"] .web .bar{background:linear-gradient(90deg,#F57C00,#FF9800)}
+    [data-metier="home"] .web .bar{background:#F57C00}
     [data-metier="home"] .web .ic{background:rgba(245,124,0,0.10);color:#F57C00}
     [data-metier="home"] .web .pill{background:rgba(245,124,0,0.10);color:#F57C00}
     [data-metier="home"] .web .feats .material-symbols-outlined{color:#F57C00}
@@ -140,10 +164,10 @@
     }
     [data-metier="home"] .h-trust-item {
       display: grid; grid-template-columns: 64px 1fr; gap: 14px 16px;
-      padding: 22px 0; border-bottom: 1px solid var(--line);
+      padding: 26px 0;
       text-decoration: none; color: inherit;
     }
-    [data-metier="home"] .h-trust-item:last-child { border-bottom: none; }
+    [data-metier="home"] .h-trust-item:first-child { padding-top: 14px; }
     [data-metier="home"] a.h-trust-item { transition: opacity 0.15s; }
     [data-metier="home"] a.h-trust-item:active { opacity: 0.75; }
     [data-metier="home"] .h-trust-ic {
@@ -153,7 +177,7 @@
       box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 4px 12px -4px rgba(11,61,145,0.12);
     }
     [data-metier="home"] .h-trust-ic img { max-width: 48px; max-height: 48px; object-fit: contain; }
-    [data-metier="home"] .h-trust-ic .material-symbols-outlined { font-size: 32px; color: #0B3D91; }
+    [data-metier="home"] .h-trust-ic .material-symbols-outlined { font-size: 32px; color: #F57C00; }
     [data-metier="home"] .h-trust-ic-fond {
       grid-row: 1; grid-column: 1;
       display: inline-flex; align-items: center;
@@ -174,6 +198,12 @@
     [data-metier="home"] .h-trust-meta {
       grid-row: 1; grid-column: 2;
       display: flex; flex-direction: column; align-self: center; min-width: 0;
+    }
+    /* Filet court orange (décline .d-proof-filet desktop, dimension réduite mobile) : marqueur d'entrée d'item, remplace le séparateur 1px */
+    [data-metier="home"] .h-trust-meta::before {
+      content: ""; display: block;
+      width: 24px; height: 3px; border-radius: 2px;
+      background: #F57C00; margin-bottom: 10px;
     }
     [data-metier="home"] .h-trust-eb {
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
@@ -209,13 +239,14 @@
     }
     [data-metier="home"] .h-diff-item {
       display: grid; grid-template-columns: 44px 1fr; gap: 14px;
-      padding: 18px 0; border-bottom: 1px solid var(--line);
+      padding: 22px 0;
       align-items: flex-start;
     }
-    [data-metier="home"] .h-diff-item:last-child { border-bottom: none; }
+    [data-metier="home"] .h-diff-item:first-child { padding-top: 8px; }
+    [data-metier="home"] .h-diff-item:last-child { padding-bottom: 0; }
     [data-metier="home"] .h-diff-ic {
       width: 44px; height: 44px; border-radius: 12px;
-      background: rgba(11,61,145,0.10); color: #0B3D91;
+      background: rgba(245,124,0,0.10); color: #F57C00;
       display: flex; align-items: center; justify-content: center;
     }
     [data-metier="home"] .h-diff-ic .material-symbols-outlined { font-size: 22px; }
@@ -415,12 +446,12 @@
   </div>
   <div class="max-w-7xl mx-auto px-6 pt-9 relative z-10 flex items-end justify-between gap-12 dcb-stagger">
     <div class="max-w-[720px]">
-      <p class="text-[11.5px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-[18px]">Présents là où vous êtes</p>
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-[18px]">Présents là où vous êtes</p>
       <h1 class="font-sora text-[54px] font-extrabold text-white leading-[1.05] tracking-tight mb-[18px]">Votre expert local<br><span class="text-[#F57C00] italic font-semibold">en caisse, informatique<br>et site internet</span></h1>
       <p class="text-[18px] leading-relaxed max-w-[600px]" style="color:rgba(255,255,255,0.68)">Un seul interlocuteur, des techniciens salariés qui se déplacent chez vous sur les départements <span class="text-white font-semibold">71, 69, 01 et 42</span>. Zéro sous-traitance, zéro centre d'appels.</p>
     </div>
     <div class="flex flex-col items-center gap-3 shrink-0 pb-2">
-      <a href="./contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2 whitespace-nowrap ">Demander un devis <span class="material-symbols-outlined">arrow_forward</span></a>
+      <a href="./contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-[14px] font-bold flex items-center gap-2 whitespace-nowrap ">Demander un devis <span class="material-symbols-outlined">arrow_forward</span></a>
       <a href="tel:0482530510" class="flex items-center gap-2 text-white font-sora font-bold text-[17px]"><span class="material-symbols-outlined text-[#F57C00] ms-fill">call</span> 04 82 53 05 10</a>
     </div>
   </div>
@@ -429,11 +460,12 @@
 <div class="bg-[#F8F9FA] pb-12">
 <div class="max-w-7xl mx-auto px-6 -mt-24 relative z-10 pt-4">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 dcb-stagger">
-    <a href="./caisse-enregistreuse/index.html" class="group rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]" style="background: linear-gradient(to right,#1D9E75,#0D9488) top/100% 3px no-repeat, #fff">
+    <a href="./caisse-enregistreuse/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
       <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#1D9E75" aria-hidden="true"></span>
         <div class="flex items-center justify-between mb-6">
-          <div class="w-14 h-14 rounded-xl bg-[#1D9E75]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#1D9E75] text-3xl">point_of_sale</span></div>
-          <span class="text-[11px] font-bold uppercase tracking-widest text-[#1D9E75] bg-[#1D9E75]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(29,158,117,0.12)]">Dès 59€/mois</span>
+          <div class="w-14 h-14 rounded-xl bg-[#1D9E75]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#1D9E75] text-3xl">point_of_sale</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#1D9E75] bg-[#1D9E75]/10 px-3 py-1 rounded-full">Dès 59€/mois</span>
         </div>
         <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Caisse enregistreuse</h3>
         <p class="text-slate-500 leading-relaxed mb-4">Logiciel CashMag certifié, matériel garanti 5 ans. Boulangeries, restaurants, commerces, salons.</p>
@@ -441,17 +473,18 @@
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#1D9E75] shrink-0"></span>Installation et formation sur site</li>
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#1D9E75] shrink-0"></span>SAV en moins de 4h, 7j/7</li>
         </ul>
-        <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
           <span class="font-bold text-[#0B3D91] group-hover:text-[#1D9E75] transition-colors">Découvrir</span>
           <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#1D9E75] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
         </div>
       </div>
     </a>
-    <a href="./maintenance-informatique/index.html" class="group rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]" style="background: linear-gradient(to right,#0B3D91,#345baf) top/100% 3px no-repeat, #fff">
+    <a href="./maintenance-informatique/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
       <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#0B3D91" aria-hidden="true"></span>
         <div class="flex items-center justify-between mb-6">
-          <div class="w-14 h-14 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#0B3D91] text-3xl">build</span></div>
-          <span class="text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(11,61,145,0.12)]">&lt;4h sur site</span>
+          <div class="w-14 h-14 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#0B3D91] text-3xl">build</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full">&lt;4h sur site</span>
         </div>
         <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Informatique</h3>
         <p class="text-slate-500 leading-relaxed mb-4">Maintenance, cloud, sécurité, <abbr class="tooltip-down" data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>. Techniciens salariés, monitoring 24/7.</p>
@@ -459,17 +492,18 @@
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0B3D91] shrink-0"></span>Dépannage à distance et sur site</li>
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0B3D91] shrink-0"></span>Sauvegarde cloud et cybersécurité</li>
         </ul>
-        <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
           <span class="font-bold text-[#0B3D91] group-hover:text-[#345baf] transition-colors">Découvrir</span>
           <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0B3D91] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
         </div>
       </div>
     </a>
-    <a href="./visibilite-web/index.html" class="group rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]" style="background: linear-gradient(to right,#F57C00,#FF9800) top/100% 3px no-repeat, #fff">
+    <a href="./visibilite-web/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
       <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#F57C00" aria-hidden="true"></span>
         <div class="flex items-center justify-between mb-6">
-          <div class="w-14 h-14 rounded-xl bg-[#F57C00]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#F57C00] text-3xl">language</span></div>
-          <span class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] bg-[#F57C00]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(245,124,0,0.12)]">3x plus visible</span>
+          <div class="w-14 h-14 rounded-xl bg-[#F57C00]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#F57C00] text-3xl">language</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] bg-[#F57C00]/10 px-3 py-1 rounded-full">3x plus visible</span>
         </div>
         <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Site internet</h3>
         <p class="text-slate-500 leading-relaxed mb-4">Site vitrine, e-commerce, référencement local. Vos clients vous trouvent sur Google avant vos concurrents.</p>
@@ -477,7 +511,7 @@
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F57C00] shrink-0"></span>Référencement local optimisé</li>
           <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F57C00] shrink-0"></span>Hébergement pro inclus, serveurs France</li>
         </ul>
-        <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
           <span class="font-bold text-[#0B3D91] group-hover:text-[#F57C00] transition-colors">Découvrir</span>
           <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F57C00] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
         </div>
@@ -494,66 +528,102 @@
       <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Ce qui nous engage</span>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] max-w-2xl mx-auto leading-tight">Trois garanties vérifiables, sans marketing.</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 dcb-stagger">
+    <style>
+      /* PROOF éditorial sans cards : 3 colonnes rythmées par le blanc + filet signature orange en marqueur d'entrée */
+      .d-proof {
+        display: grid; grid-template-columns: 1fr;
+        gap: 48px 0;
+      }
+      .d-proof-col { padding: 0; }
+      @media (min-width: 768px) {
+        .d-proof { grid-template-columns: repeat(3, 1fr); gap: 0 72px; }
+        .d-proof-col { padding: 0; }
+      }
+      /* Filet court orange (décline .pilier-filet) : marqueur d'entrée de colonne, remplace le séparateur 1px */
+      .d-proof-filet {
+        display: block; width: 28px; height: 3px; border-radius: 2px;
+        background: #F57C00; margin-bottom: 24px;
+      }
+      .d-proof-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+      .d-proof-ic {
+        width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0;
+        background: #FFFFFF; display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 1px 0 rgba(7,43,107,0.04), 0 6px 16px -8px rgba(7,43,107,0.18);
+      }
+      .d-proof-eb {
+        display: block; font-size: 10px; font-weight: 700;
+        letter-spacing: 0.2em; text-transform: uppercase; color: #F57C00;
+      }
+      .d-proof-h {
+        font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem;
+        line-height: 1.15; color: #0B3D91; margin: 2px 0 0;
+      }
+      .d-proof-p { color: #64748B; line-height: 1.65; font-size: 15px; margin: 0; }
+      .d-proof-p .em-blue { color: #0B3D91; font-weight: 600; }
+    </style>
+    <div class="d-proof dcb-stagger">
 
-      <!-- Card 1 : NF525 certification AFNOR -->
-      <div class="bg-[#F8F9FA] p-7 lg:p-8 rounded-2xl tonal-shift-elevation dcb-card-hover">
-        <div class="flex items-center gap-4 mb-5">
-          <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-sm">
+      <!-- Colonne 1 : NF525 certification AFNOR -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
             <img src="assets/partenaire-nf525.webp" alt="Certification NF525 AFNOR" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block">Certification AFNOR</span>
-            <p class="font-sora text-xl font-bold text-[#0B3D91] leading-tight mt-0.5">NF525</p>
+            <span class="d-proof-eb">Certification AFNOR</span>
+            <p class="d-proof-h">NF525</p>
           </div>
         </div>
-        <p class="text-slate-500 leading-relaxed text-[15px]">Logiciel de caisse conforme loi anti-fraude TVA. Attestation éditable depuis votre caisse à tout moment, y compris en cas de contrôle fiscal. Amende évitée : 7 500 € par système non conforme.</p>
+        <p class="d-proof-p">Logiciel de caisse conforme loi anti-fraude TVA. Attestation éditable depuis votre caisse à tout moment, y compris en cas de contrôle fiscal. Amende évitée : 7 500 € par système non conforme.</p>
       </div>
 
-      <!-- Card 2 : Partenaire officiel CashMag -->
-      <div class="bg-[#F8F9FA] p-7 lg:p-8 rounded-2xl tonal-shift-elevation dcb-card-hover">
-        <div class="flex items-center gap-4 mb-5">
-          <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-sm">
-            <span class="material-symbols-outlined text-[#0B3D91]" style="font-variation-settings:'FILL' 1; font-size:40px;">workspace_premium</span>
+      <!-- Colonne 2 : Partenaire officiel CashMag -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
+            <span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1; font-size:40px;">workspace_premium</span>
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block">Partenaire agréé</span>
+            <span class="d-proof-eb">Partenaire agréé</span>
             <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." style="display:inline-flex;margin-top:0.25rem">
               <img src="assets/partenaire-cashmag.webp" alt="CashMag" class="h-7 w-auto object-contain" width="179" height="28" loading="lazy">
             </abbr>
           </div>
         </div>
-        <p class="text-slate-500 leading-relaxed text-[15px]">Installateur officiel du logiciel de caisse leader en France. Formation technique certifiée, configuration métier par métier, support direct éditeur en cas de besoin complexe.</p>
+        <p class="d-proof-p">Installateur officiel du logiciel de caisse leader en France. Formation technique certifiée, configuration métier par métier, support direct éditeur en cas de besoin complexe.</p>
       </div>
 
-      <!-- Card 3 : Expertise fondateurs vérifiable -->
-      <div class="bg-[#F8F9FA] p-7 lg:p-8 rounded-2xl tonal-shift-elevation dcb-card-hover">
-        <div class="flex items-center gap-4 mb-5">
+      <!-- Colonne 3 : Expertise fondateurs vérifiable -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
           <a href="./notre-adn/index.html" class="flex shrink-0 no-underline group/founders" aria-label="Découvrir les fondateurs de DCB Technologies">
             <img src="assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
             <img src="assets/cb-clement-boissie.jpg" alt="Clément Boissié, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm -ml-3 transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
           </a>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block">Fondateurs</span>
-            <p class="font-sora text-xl font-bold text-[#0B3D91] leading-tight mt-0.5">22 ans cumulés</p>
+            <span class="d-proof-eb">Fondateurs</span>
+            <p class="d-proof-h">22 ans cumulés</p>
           </div>
         </div>
-        <p class="text-slate-500 leading-relaxed text-[15px]"><span class="text-[#0B3D91] font-semibold">Nathanaël</span> (10 ans direction opérations et relation client, maintenance industrielle) · <span class="text-[#0B3D91] font-semibold">Clément</span> (12 ans IT, projets internationaux). Vous parlez aux fondateurs, pas à un commercial.</p>
+        <p class="d-proof-p"><span class="em-blue">Nathanaël</span> (10 ans direction opérations et relation client, maintenance industrielle) · <span class="em-blue">Clément</span> (12 ans IT, projets internationaux). Vous parlez aux fondateurs, pas à un commercial.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- 3. BANDEAU PARTENAIRES : logos partenaires en défilement -->
-<section class="bg-[#F8F9FA] py-5 border-y border-slate-100">
+<!-- 3. BANDEAU PARTENAIRES : marquee infinie (track dupliqué aria-hidden, shift tonal sans bordure) -->
+<section class="overflow-hidden" style="background:#F3F4F5;padding-top:30px;padding-bottom:30px">
   <style>
-    @keyframes alan-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     .partner-logo { filter: grayscale(1) opacity(0.45); transition: filter 0.3s ease; }
     .partner-logo:hover { filter: grayscale(0) opacity(0.85); }
   </style>
-  <div class="max-w-7xl mx-auto px-6 overflow-hidden">
-    <div class="flex flex-nowrap gap-10 items-center" style="animation: alan-scroll 32s linear infinite; width: max-content;">
+  <div class="d-partners" aria-label="Nos partenaires et certifications">
+    <div class="d-partners-track">
+      <!-- Set 1 (lu) -->
       <img src="assets/partenaire-cashmag.webp"      alt="CashMag, logiciel caisse NF525"   class="partner-logo h-7  w-auto object-contain" width="179" height="28" loading="lazy">
       <img src="assets/partenaire-nf525.webp"        alt="Certification NF525 AFNOR"          class="partner-logo h-12 w-auto object-contain" width="51"  height="48" loading="lazy">
       <img src="assets/partenaire-hairnet.webp"      alt="Hair-Net, logiciel coiffure NF525" class="partner-logo h-9  w-auto object-contain" width="225" height="36" style="transform:translateY(-5px)" loading="lazy">
@@ -563,7 +633,7 @@
       <img src="assets/partenaire-lenovo.webp"       alt="Lenovo, parc informatique PME"     class="partner-logo h-8  w-auto object-contain" width="152" height="32" loading="lazy">
       <img src="assets/partenaire-pedro-porto.webp"  alt="Pedro Porto, consommables caisse"  class="partner-logo h-10 w-auto object-contain" width="133" height="40" loading="lazy">
       <img src="assets/partenaire-yavin.webp"        alt="Yavin, solutions de paiement"      class="partner-logo h-9  w-auto object-contain" width="85"  height="36" loading="lazy" style="transform:translateY(5px)">
-      <!-- Duplication pour boucle sans saut -->
+      <!-- Set 2 (dupliqué pour la boucle sans saut, masqué aux lecteurs d'écran) -->
       <img src="assets/partenaire-cashmag.webp"      alt="" aria-hidden="true" class="partner-logo h-7  w-auto object-contain" width="179" height="28" loading="lazy">
       <img src="assets/partenaire-nf525.webp"        alt="" aria-hidden="true" class="partner-logo h-12 w-auto object-contain" width="51"  height="48" loading="lazy">
       <img src="assets/partenaire-hairnet.webp"      alt="" aria-hidden="true" class="partner-logo h-9  w-auto object-contain" width="225" height="36" style="transform:translateY(-5px)" loading="lazy">
@@ -592,12 +662,12 @@
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nathanaël est venu un lundi matin avant l'ouverture, tout était opérationnel à 7h30. Et quand on a eu un souci de ticket trois semaines plus tard, le technicien était là en deux heures. On ne changerait pour rien au monde."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#F59E0B] rounded-full flex items-center justify-center text-white font-bold shrink-0">SM</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Sophie Moreau</p>
               <p class="text-slate-500 text-sm">Boulangerie des Deux Clochers, Chalon-sur-Saône (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
             </div>
           </div>
         </div>
@@ -608,12 +678,12 @@
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"DCB gère notre caisse ET notre informatique de bureau. Un seul interlocuteur pour tout. Quand notre serveur de réservations a planté un vendredi soir, ils l'ont relancé en télémaintenance en quinze minutes."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0">DK</div>
             <div>
               <p class="font-bold text-[#0B3D91]">David K.</p>
               <p class="text-slate-500 text-sm">Brasserie Le Central, Lyon 2ème (69)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
             </div>
           </div>
         </div>
@@ -624,12 +694,12 @@
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On avait un logiciel de caisse en ligne avant. Le jour où la connexion a planté un samedi, personne pour nous aider. Avec DCB, on sait qu'ils décrochent et qu'ils viennent. C'est simple mais ça change tout."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0">MT</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Marc Terrier</p>
               <p class="text-slate-500 text-sm">Boutique L'Atelier, Villefranche-sur-Saône (69)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
             </div>
           </div>
         </div>
@@ -640,12 +710,12 @@
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"DCB nous a refait notre site internet et installé la caisse en même temps. Résultat : on apparaît sur Google quand quelqu'un cherche un coiffeur à Mâcon, et la prise de rendez-vous en ligne fonctionne avec notre logiciel salon."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#A855F7] rounded-full flex items-center justify-center text-white font-bold shrink-0">LD</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Laëtitia D.</p>
               <p class="text-slate-500 text-sm">Salon Élégance, Mâcon (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
             </div>
           </div>
         </div>
@@ -675,26 +745,61 @@
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce qui nous différencie</h2>
       <p class="text-slate-500 mt-3"><a href="./notre-adn/index.html" class="text-[#0B3D91] font-semibold hover:text-[#F57C00] transition-colors">Découvrir notre ADN →</a></p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
-      <div class="bg-[#F8F9FA] p-6 rounded-xl text-center hover:shadow-md transition-shadow">
-        <div class="w-14 h-14 bg-[#0B3D91]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><span class="material-symbols-outlined text-[#0B3D91] text-3xl ms-fill">location_on</span></div>
-        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-2">Toujours près de vous</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Nos techniciens interviennent directement sur votre site en moins de 4 heures.</p>
+    <style>
+      /* ARGUMENTS éditorial sans cards : liste 2 colonnes icône-à-gauche + texte.
+         Aucun filet de séparation : le blanc + la puce icône carrée font le travail (rythme généreux, alignement strict). */
+      .d-diff {
+        display: grid; grid-template-columns: 1fr;
+        column-gap: 72px; row-gap: 44px;
+        max-width: 980px; margin: 0 auto;
+      }
+      .d-diff-item {
+        display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+        align-items: flex-start;
+      }
+      .d-diff-ic {
+        width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+        background: rgba(245,124,0,0.10); color: #F57C00;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .d-diff-ic .material-symbols-outlined { font-size: 28px; }
+      .d-diff-body h3 {
+        font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.0625rem;
+        line-height: 1.25; color: #0B3D91; margin: 4px 0 6px;
+      }
+      .d-diff-body p { color: #64748B; line-height: 1.6; font-size: 14.5px; margin: 0; }
+      @media (min-width: 768px) {
+        .d-diff { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+    <div class="d-diff dcb-stagger">
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">location_on</span></div>
+        <div class="d-diff-body">
+          <h3>Toujours près de vous</h3>
+          <p>Nos techniciens interviennent directement sur votre site en moins de 4 heures.</p>
+        </div>
       </div>
-      <div class="bg-[#F8F9FA] p-6 rounded-xl text-center hover:shadow-md transition-shadow">
-        <div class="w-14 h-14 bg-[#0B3D91]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><span class="material-symbols-outlined text-[#0B3D91] text-3xl ms-fill">badge</span></div>
-        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-2">Nos techniciens, pas des sous-traitants</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Tous nos intervenants sont des salariés qualifiés DCB. Vous savez toujours qui sonne à votre porte.</p>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">badge</span></div>
+        <div class="d-diff-body">
+          <h3>Nos techniciens, pas des sous-traitants</h3>
+          <p>Tous nos intervenants sont des salariés qualifiés DCB. Vous savez toujours qui sonne à votre porte.</p>
+        </div>
       </div>
-      <div class="bg-[#F8F9FA] p-6 rounded-xl text-center hover:shadow-md transition-shadow">
-        <div class="w-14 h-14 bg-[#0B3D91]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><span class="material-symbols-outlined text-[#0B3D91] text-3xl ms-fill">tune</span></div>
-        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-2">Adapté à votre activité</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Boulangerie, restaurant, salon, PME : chaque solution est configurée selon vos horaires et contraintes réelles.</p>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">tune</span></div>
+        <div class="d-diff-body">
+          <h3>Adapté à votre activité</h3>
+          <p>Boulangerie, restaurant, salon, PME : chaque solution est configurée selon vos horaires et contraintes réelles.</p>
+        </div>
       </div>
-      <div class="bg-[#F8F9FA] p-6 rounded-xl text-center hover:shadow-md transition-shadow">
-        <div class="w-14 h-14 bg-[#0B3D91]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><span class="material-symbols-outlined text-[#0B3D91] text-3xl ms-fill">headset_mic</span></div>
-        <h3 class="font-sora text-lg font-bold text-[#0B3D91] mb-2">Support réel, pas une hotline</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Un numéro direct et une présence terrain quand le téléphone ne suffit pas.</p>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">headset_mic</span></div>
+        <div class="d-diff-body">
+          <h3>Support réel, pas une hotline</h3>
+          <p>Un numéro direct et une présence terrain quand le téléphone ne suffit pas.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -744,7 +849,7 @@
 
       <!-- Texte panel droite -->
       <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
-        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:12px;font-weight:800;letter-spacing:0.2em">Proximité locale</span>
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:11px;font-weight:700;letter-spacing:0.2em">Proximité locale</span>
         <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nous intervenons dans toute votre région</h2>
         <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Deux bases opérationnelles à Paray-le-Monial et Dardilly. Des techniciens salariés qui connaissent votre installation par coeur. Quand vous appelez, vous tombez sur quelqu'un qui sait déjà comment vous travaillez.</p>
         <ul class="space-y-4 mb-10 list-none p-0">
@@ -762,7 +867,7 @@
           </li>
         </ul>
         <div class="flex flex-wrap items-center gap-6 mb-3">
-          <a href="./contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2.5">
+          <a href="./contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-[14px] font-bold inline-flex items-center gap-2.5">
             Vérifier l'éligibilité
             <span class="material-symbols-outlined">map</span>
           </a>
@@ -786,21 +891,21 @@
       <p class="text-slate-500 text-base leading-relaxed">Caisse, informatique, site internet : tout gérer avec trois fournisseurs différents ou avec un seul partenaire ? Un éditeur caisse, une ESN et une agence web, chacun fait son métier. Mais personne ne coordonne. Voici les différences concrètes.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto dcb-stagger">
-      <div class="bg-white p-7 rounded-xl">
+      <div class="bg-[#F8F9FA] p-7 rounded-2xl tonal-shift-elevation">
         <h3 class="font-sora font-bold text-lg text-slate-400 mb-6 flex items-center gap-2">
           <span class="material-symbols-outlined text-slate-300 text-2xl">people</span> 3 prestataires distincts
         </h3>
         <div class="space-y-4">
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">3 contrats, 3 factures, 3 échéances</div><div class="text-slate-400 text-xs mt-0.5">Chaque renouvellement et litige : à négocier séparément avec chaque fournisseur</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Interlocuteur qui change à chaque appel</div><div class="text-slate-400 text-xs mt-0.5">Rotation des commerciaux : réexpliquer votre contexte depuis le début</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Arbitrage entre prestataires à chaque projet</div><div class="text-slate-400 text-xs mt-0.5">Caisse, IT et web : trois équipes qui ne se parlent pas</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Intervention variable, souvent sous-traitée</div><div class="text-slate-400 text-xs mt-0.5">Technicien inconnu, délai non garanti, résultat imprévisible</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Aucune vision globale de votre système</div><div class="text-slate-400 text-xs mt-0.5">Un bug caisse/site : chacun renvoie la balle à l'autre</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Urgence week-end rarement couverte</div><div class="text-slate-400 text-xs mt-0.5">Une panne de caisse un samedi attend le lundi pour être résolue</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">NF525, RGPD, SEO : 3 audits séparés</div><div class="text-slate-400 text-xs mt-0.5">Pas de cohérence, pas de vision unifiée de votre conformité</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">3 contrats, 3 factures, 3 échéances</div><div class="text-slate-500 text-xs mt-0.5">Chaque renouvellement et litige : à négocier séparément avec chaque fournisseur</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Interlocuteur qui change à chaque appel</div><div class="text-slate-500 text-xs mt-0.5">Rotation des commerciaux : réexpliquer votre contexte depuis le début</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Arbitrage entre prestataires à chaque projet</div><div class="text-slate-500 text-xs mt-0.5">Caisse, IT et web : trois équipes qui ne se parlent pas</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Intervention variable, souvent sous-traitée</div><div class="text-slate-500 text-xs mt-0.5">Technicien inconnu, délai non garanti, résultat imprévisible</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Aucune vision globale de votre système</div><div class="text-slate-500 text-xs mt-0.5">Un bug caisse/site : chacun renvoie la balle à l'autre</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Urgence week-end rarement couverte</div><div class="text-slate-500 text-xs mt-0.5">Une panne de caisse un samedi attend le lundi pour être résolue</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">NF525, RGPD, SEO : 3 audits séparés</div><div class="text-slate-500 text-xs mt-0.5">Pas de cohérence, pas de vision unifiée de votre conformité</div></div></div>
         </div>
       </div>
-      <div class="bg-white p-7 rounded-xl border-2 border-[#F57C00] ring-4 ring-[#F57C00]/5 relative">
+      <div class="bg-white p-7 rounded-2xl border-2 border-[#F57C00] ring-4 ring-[#F57C00]/5 relative">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F57C00] text-white px-4 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase whitespace-nowrap">Pour démarrer vite</div>
         <div class="flex items-center gap-3 mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 145 145" class="h-6 w-auto shrink-0" aria-hidden="true">
@@ -1039,7 +1144,7 @@
     <p class="eyebrow">Ils nous font confiance</p>
     <h2>Ce que disent <em>nos clients</em>.</h2>
     <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
-      <div style="background:#fff;border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="background:#fff;border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
         <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
           <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
           <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
@@ -1056,7 +1161,7 @@
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="background:#fff;border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
         <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
           <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
           <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
@@ -1115,17 +1220,8 @@
   </section>
 
   <!-- S7 PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + texte panel) -->
-  <style>
-    .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
-    .m-prox-reveal.in{opacity:1;transform:none}
-    .m-prox-reveal[data-d="1"]{transition-delay:.06s}
-    .m-prox-reveal[data-d="2"]{transition-delay:.12s}
-    .m-prox-reveal[data-d="3"]{transition-delay:.18s}
-    .m-prox-reveal[data-d="4"]{transition-delay:.24s}
-    @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
-  </style>
-  <section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
-    <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+  <section class="m-prox dcb-stagger" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+    <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
       <img src="./assets/dept-69.webp" alt="Technicien DCB en intervention chez un commerçant du Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,61,145,0) 40%,rgba(11,61,145,0.65) 75%,rgba(11,61,145,0.92) 100%);pointer-events:none"></div>
       <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px">
@@ -1152,17 +1248,16 @@
         </div>
       </div>
     </div>
-    <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Proximité locale</p>
-    <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nous intervenons dans toute votre région</h2>
-    <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Deux agences, Paray-le-Monial et Dardilly. Vos techniciens connaissent vos machines, pas un ticket.</p>
-    <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px">
+    <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Proximité locale</p>
+    <h2 style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nous intervenons dans toute votre région</h2>
+    <p style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Deux agences, Paray-le-Monial et Dardilly. Vos techniciens connaissent vos machines, pas un ticket.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px">
       <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>Lyon, Mâcon, Chalon, Villefranche, Bourg-en-Bresse, Roanne</li>
       <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>Télémaintenance &lt;20 min, sur site &lt;4 h</li>
       <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>Caisse, informatique ou site web : un seul interlocuteur</li>
     </ul>
-    <a class="m-prox-reveal" data-d="4" href="./contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Vérifier l'éligibilité<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+    <a href="./contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Vérifier l'éligibilité<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
   </section>
-  <script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
 
   <!-- S8 COMPARATIF : pattern inline depannage/location-vente (3 prestataires vs DCB) -->
   <section class="sec s1">
@@ -1170,7 +1265,7 @@
     <h2>DCB ou 3 prestataires : <em>ce qui change vraiment</em>.</h2>
     <p style="font-size:13px;color:var(--mute);line-height:1.55;margin:8px 0 20px">Caisse, informatique, site internet : tout gérer avec trois fournisseurs différents ou avec un seul partenaire. Un éditeur caisse, une ESN et une agence web, chacun fait son métier. Mais personne ne coordonne.</p>
     <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px">
+      <div style="background:#fff;border-radius:18px;padding:18px 16px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
         <div style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;color:var(--mute);padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)">
           <span class="material-symbols-outlined" style="font-size:17px;color:#CBD5E1">people</span>
           3 prestataires distincts
