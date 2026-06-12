@@ -302,7 +302,7 @@ Sources de vérité transverses (tout agent front/contenu doit les respecter) :
 - **Téléphone :** 04 82 53 05 10
 - **Email :** contact@dcb-technologies.fr
 - **Co-fondateurs :** Nathanaël Da Costa & Clément Boissié
-- **Siège :** Paray-le-Monial (71600)
+- **Siège social :** Dardilly (69570) · **Base technique et atelier :** Paray-le-Monial (71600). Les deux sont réels : "deux bases opérationnelles" est une formulation valide. L'ancrage terrain du discours commercial reste Paray.
 - **Zone d'intervention :** Saône-et-Loire (71), Rhône (69), Ain (01), Loire (42)
 - **Logiciel caisse :** CashMag (certifié NF525)
 - **Matériel :** OXHOO, AURES, Lenovo
