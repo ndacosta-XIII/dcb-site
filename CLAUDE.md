@@ -190,6 +190,7 @@ Gouvernance : **une règle n'existe ici que si le code la prouve** (audit du 11/
 - **Le CTA final et ses atomes (topbar, icône tel) utilisent TOUJOURS `var(--accent)`**, jamais de couleur en dur (dérive constatée sur restaurant L878/L887, à corriger lors de l'implémentation frame).
 - Rouge : référence `#EF4444`. Déclinaisons `#F87171` (clair), `#DC2626`/`#B91C1C` (foncé) autorisées UNIQUEMENT en gradients et dark pairs.
 - Pages légales : sobres, zéro accent.
+- **Pastille d'icône = surface OPPOSÉE à celle de la section** (grise `#F8F9FA` sur section blanche, blanche sur section grise), icône orange sur pages marque, JAMAIS d'ombre sous les pastilles. (Validé client 12/06/2026, pilote hub caisse.)
 - Zéro `backdrop-blur` sur la nav (fond blanc uni). Zéro bordure 1px entre sections (shift tonal). Ombres tintées bleu `rgba(7,43,107,0.04)`.
 
 ### Signatures transverses (présentes sur tout le site, ne jamais casser)

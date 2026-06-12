@@ -44,7 +44,7 @@ Règles : un seul accent dominant par sous-page. Cross-sell = couleur de la page
 - Boutons CTA: rounded-[14px]. Pages marque : orange. Pages narration : couleur accent de la page.
 - Cards: rounded-xl ou rounded-2xl, classe tonal-shift-elevation, ombre rgba(7,43,107,0.04)
 - CTA final v3 obligatoire en fin de page ("Le Seuil" desktop, "Le Bord Tranché" mobile), piloté par var(--accent)/var(--accent-dark), jamais de couleur en dur. Date E-E-A-T "Mis à jour le ..." incluse.
-- Top-stripe colorée sur cards (h-[3px] bg-gradient-to-r) : pattern hérité jugé AI slop, suppression prévue en phase de nettoyage. NE PAS en créer de nouvelles.
+- Top-stripe colorée sur cards (h-[3px] bg-gradient-to-r) : pattern hérité jugé AI slop, suppression prévue en phase de nettoyage. NE PAS en créer de nouvelles. Hub caisse dé-sloppé le 12/06/2026 (top-stripe remplacée par filet signature P-16 ; pilote anti-slop validé client).
 - Nav: bg-white (jamais de backdrop-blur), h-[76px]
 - Animations : uniquement le système maison dcb-reveal / dcb-stagger + hovers standards.
 - Build: Tailwind CSS statique (tailwind.min.css), pas de CDN runtime

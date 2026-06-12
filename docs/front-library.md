@@ -233,6 +233,10 @@ Règles d'application lors de la copie d'un pattern :
 - Card cross-sell : couleur de la page de DESTINATION, pas celle de la page courante.
 - Déclinaisons rouge autorisées uniquement en gradients/dark : `#F87171` (clair), `#DC2626`/`#B91C1C` (foncé).
 
+### Règle pastille d'icône (validée client, 12/06/2026)
+- **Pastille d'icône = surface OPPOSÉE à celle de la section** : grise `#F8F9FA` sur section blanche, blanche sur section grise. Sur les pages marque, l'icône reste orange `#F57C00`.
+- **JAMAIS d'ombre sous les pastilles** d'icône (la surface opposée fait le contraste, pas un drop-shadow).
+
 ### Conventions structurelles
 - Sections : `py-12 lg:py-16` · Containers : `max-w-7xl mx-auto px-6` · Cards : `rounded-xl`/`rounded-2xl` + `tonal-shift-elevation` · CTA : `rounded-[14px]` · `<main>` desktop : `pt-[76px]`.
 - H2 standard : `font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]`. Labels : `text-[11px] font-bold tracking-[0.2em] uppercase`.
@@ -1339,44 +1343,39 @@ Usage : hubs (caisse, IT, web). Blobs CSS, zéro parallax.
 
 Usage : hubs. Une card par sous-page du silo, chaque card a sa propre signature interne (liste numérotée, mini flow, icon-list, pill badges) : on varie l'intérieur, pas l'enveloppe.
 
-> **DÉPRÉCIÉ (top-stripe dégradé) :** le filet supérieur pleine largeur en dégradé (`<div class="h-[3px] bg-gradient-to-r from-... to-...">` en tête de card) est remplacé par le **Filet signature** (P-16), aplat court 28x3 couleur de destination posé DANS le padding, avec hover width 28→48px. Le hub homepage (`index.html`) applique déjà le filet signature sur ses cards piliers ; les autres hubs migreront en phase 2 (chasse au slop). Le code dégradé reste documenté ci-dessous pour les pages non encore migrées, ne pas le re-propager sur une nouvelle page.
+> **CANONIQUE (hub caisse dé-sloppé, 12/06/2026) :** rangée densifiée **4-up** (`md:grid-cols-2 lg:grid-cols-4`, `gap-6`) sur section grise `bg-[#F8F9FA]`. Plus de top-stripe dégradé : c'est le **Filet signature** (P-16) qui marque l'entrée de card (aplat court 28x3 couleur de destination, dans le padding, hover width 28→48px via `.pilier-filet` / `.group:hover .pilier-filet`). Card épurée : `p-6 lg:p-7`, icône `w-12 h-12` accent métier sur surface `/10`, hover sobre `group-hover:scale-105` (plus de `-rotate-6` ni `group-hover:shadow-[0_0_0_6px_...]` glow sur le badge), liste à puces accent, pied `Découvrir` + pastille flèche `bg-[#0B3D91]/5` → `group-hover:bg-{accent}` (plus de `border-t border-slate-100`). En mobile : carousel `.tabs` + `.carou` + `.dots` (cf. bloc mobile ci-dessous).
+>
+> **DÉPRÉCIÉ :** ne plus re-propager le top-stripe dégradé pleine largeur (`<div class="h-[3px] bg-gradient-to-r ...">`), le glow `group-hover:shadow-[0_0_0_6px_...]` sur le badge, ni le `border-t border-slate-100` du pied de card.
 
-**Desktop (marqueur `<!-- ── 4. METIERS CARDS ─────────── -->`, hub caisse, 4 cards) :**
+**Desktop (marqueur `<!-- ── 4. METIERS CARDS ─────────── -->`, hub caisse, rangée 4-up dé-sloppée, 1 card représentative) :**
 ```html
 <!-- ── 4. METIERS CARDS ─────────── -->
-<section id="metiers" class="py-12 lg:py-16 bg-white">
+<section id="metiers" class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Configurations sur mesure</p>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Une solution pour chaque métier.</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
 
-      <!-- Boulangerie : liste numérotée -->
-      <a href="./boulangerie/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#F59E0B] text-3xl">bakery_dining</span>
+      <!-- Boulangerie (card type : varier accent + liste + icône par métier ; enveloppe identique) -->
+      <a href="./boulangerie/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#F59E0B" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#F59E0B] text-2xl">bakery_dining</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(245,158,11,0.12)]">Dès 59€/mois</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-2.5 py-1 rounded-full">Dès 59€</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Boulangerie &amp; Pâtisserie</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Encaissement rapide dès l'ouverture, gestion des invendus et fidélisation client.</p>
-          <ol class="space-y-3 mb-4">
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">01</span>Vente au poids et gestion des DLC
-            </li>
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">02</span>Suivi des invendus en temps réel
-            </li>
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">03</span>Fidélité client et rendu monnaie automatique
-            </li>
-          </ol>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Voir les configurations</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Boulangerie &amp; Pâtisserie</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Vente au poids et DLC</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Suivi des invendus en temps réel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Fidélité et rendu monnaie</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Découvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -1384,108 +1383,7 @@ Usage : hubs. Une card par sous-page du silo, chaque card a sa propre signature 
         </div>
       </a>
 
-      <!-- Restaurant : mini flow -->
-      <a href="./restaurant/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#EF4444] to-[#F87171]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#EF4444] text-3xl">restaurant</span>
-            </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">Dès 77€/mois</span>
-          </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Restauration &amp; Bar</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Service fluide du premier au dernier couvert, même en plein coup de feu.</p>
-          <div class="flex-1 flex items-center pb-6">
-            <div class="flex items-center gap-2 w-full">
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block" style="font-variation-settings:'FILL' 1">table_restaurant</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Plan de salle</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block" style="font-variation-settings:'FILL' 1">stylus_note</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Commande mobile</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block" style="font-variation-settings:'FILL' 1">payments</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Encaissement</p>
-              </div>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Voir les configurations</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
-              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Commerce : icon-list -->
-      <a href="./commerce-de-detail/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#0D9488] to-[#14B8A6]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#0D9488] text-3xl">storefront</span>
-            </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">Dès 83€/mois</span>
-          </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Commerce de détail</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Pilotez vos stocks et vos ventes sur un ou plusieurs points de vente.</p>
-          <ul class="space-y-3 mb-4">
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0" style="font-variation-settings:'FILL' 1">inventory_2</span>Stocks et codes-barres temps réel
-            </li>
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0" style="font-variation-settings:'FILL' 1">bar_chart</span>Statistiques et tableaux de bord
-            </li>
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0" style="font-variation-settings:'FILL' 1">store</span>Multi-boutiques centralisé
-            </li>
-          </ul>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Voir les configurations</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
-              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Coiffure : pill badges -->
-      <a href="./coiffure/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#A855F7] to-[#C084FC]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#A855F7] text-3xl">content_cut</span>
-            </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(168,85,247,0.12)]">Dès 115€/mois</span>
-          </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Beauté &amp; Bien-être</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Gérez vos rendez-vous, vos clients et votre caisse depuis un seul écran.</p>
-          <div class="flex flex-col gap-2 mb-4">
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">calendar_month</span>Agenda et réservation en ligne
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">sms</span>Rappels SMS automatiques
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">loyalty</span>Fidélité et fiches clients
-            </span>
-          </div>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Voir la caisse coiffure</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#A855F7] transition-all">
-              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
-            </span>
-          </div>
-        </div>
-      </a>
+      <!-- Restaurant (#EF4444), Commerce (#0D9488), Coiffure (#A855F7) : même enveloppe, accent + icône + liste métier -->
 
     </div>
   </div>
@@ -1859,7 +1757,11 @@ Usage : hubs + homepage. Photo dominante + 4 badges départements posés en bas 
 
 Usage : silo caisse. Formulation de référence obligatoire (cf. `docs/content-reference.md`) : "Certifié NF525 par l'AFNOR : attestation accessible à tout moment depuis votre caisse."
 
-**Desktop (marqueur `<!-- ── 8. NF525 ─────────── -->`, hub caisse) :**
+> **CANONIQUE (hub caisse dé-sloppé, 12/06/2026) :** section sur surface grise (`.d-shell .sec-nf525{background:#F8F9FA}`). Composition = `.nf-hero` (logo chip blanc simple ombre, **plus de cadre pointillé** `.nf-logo-frame::before` ni **watermark géant "NF525"** `.sec-nf525::before` : ces deux règles slop ont été purgées à la source dans `css/style.css`) + `.nf-pillars` (3 piliers inchangés) + bloc amende `.nf-editorial`. Le panneau ambre `.nf-alert` (fond `rgba(245,158,11,…)`, bordure, shield) est **remplacé** par `.nf-editorial` : composition éditoriale nue, filet orange 28x3 (`.nf-editorial-filet`), chiffre Sora `clamp(3rem,5vw,3.75rem)` orange (`.nf-editorial-val`), corps de texte aligné centre. Zéro card, zéro bordure 1px.
+>
+> **DÉPRÉCIÉ :** panneau ambre `.nf-alert`/`.nf-alert-amount`/`.nf-alert-text`/`.nf-alert-shield`, watermark `.sec-nf525::before`, cadre pointillé `.nf-logo-frame::before`. Ne plus re-propager.
+
+**Desktop (marqueur `<!-- ── 8. NF525 ─────────── -->`, hub caisse, version éditoriale) :**
 ```html
 <!-- ── 8. NF525 ─────────── -->
 <section class="sec-nf525">
@@ -1901,23 +1803,14 @@ Usage : silo caisse. Formulation de référence obligatoire (cf. `docs/content-r
       </div>
     </div>
 
-    <div class="nf-alert">
-      <div class="nf-alert-amount">
-        <span class="lab">Amende</span>
-        <span class="val">7 500 €</span>
-        <span class="sub">par caisse non conforme</span>
+    <div class="nf-editorial">
+      <div class="nf-editorial-amount">
+        <span class="nf-editorial-filet" aria-hidden="true"></span>
+        <div class="nf-editorial-lab">Amende</div>
+        <div class="nf-editorial-val">7 500 €</div>
+        <div class="nf-editorial-sub">par caisse non conforme</div>
       </div>
-      <div class="nf-alert-text">
-        <div class="nf-alert-title">
-          <span class="material-symbols-outlined">warning</span>
-          En cas de contrôle fiscal
-        </div>
-        <div class="nf-alert-desc">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</div>
-      </div>
-      <div class="nf-alert-shield">
-        <div class="nf-alert-shield-icon"><span class="material-symbols-outlined">verified</span></div>
-        <div class="nf-alert-shield-text">Conforme &amp; tracé</div>
-      </div>
+      <p class="nf-editorial-body">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</p>
     </div>
 
   </div>
@@ -2410,9 +2303,9 @@ Inventaire automatique des marqueurs de section de chaque page (D = desktop, M =
 - D : 1. HERO · 2. TRUST BAR · 3. POURQUOI HAIRNET AVEC DCB · 4. L'ACCOMPAGNEMENT DCB · 5. GOOGLE RESERVE : signature feature · 6. FIDÉLITÉ & PARCOURS CLIENTS · 7. PILOTAGE & MANAGEMENT · 8. NF525 · 9. TÉMOIGNAGES (carrousel) · 10. CROSS-SELL INTER-SILOS · 11. FAQ · CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css)
 - M : S1 : HERO · S2 : TRUST BAR MARQUEE · S3 : POURQUOI HAIRNET AVEC DCB · S4 : FEATURES (Google Reserve + Fidélité) · S5 : PILOTAGE ET GESTION · S6 : NF525 · S7 : TÉMOIGNAGES · S8 : CROSS-SELL (peri-a) · S9 : FAQ · CTA FINAL · CTA FINAL v3 : Le Bord Tranché (signature partenaire Hairnet, accent coiffure #A855F7)
 
-**caisse-enregistreuse/index.html**
-- D : 1. HERO : blobs CSS ambiants (zero parallax scroll = zero bug) · 2. TRUST BAR · 3. PROBLEME / SOLUTION · 4. METIERS CARDS · 5. TEMOIGNAGES · 6. LOGICIEL CASHMAG · 7. LOGICIEL HAIRNET (pour les salons de coiffure) · 8. NF525 · 9. PERIPHERIQUES · 10. TECHNICIENS / PROXIMITE · 11. FAQ + CTA FINAL · 12. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css)
-- M : HERO · TRUST BAR : marquee infini + équivalent SR statique · POURQUOI CHANGER · TÉMOIGNAGES · CONFIGURATIONS MÉTIERS : carousel · CASHMAG · NF525 : CONFORMITÉ LÉGALE · TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) · ÉCOSYSTÈME MATÉRIEL : cross-sell · CTA FINAL v3 : Le Bord Tranché (fond clair, alignement gauche éditorial, pill tel bordurée)
+**caisse-enregistreuse/index.html** : pilote anti-slop validé client (dé-sloppé 12/06/2026 : METIERS rangée 4-up + filet P-16, CASHMAG points éditoriaux P-18 sans card, HAIRNET liste éditoriale fond blanc, NF525 éditorial sans panneau ambre ni watermark)
+- D : 1. HERO : blobs CSS ambiants (zero parallax scroll = zero bug) · 2. TRUST BAR · 3. PROBLEME / SOLUTION · 4. METIERS CARDS (rangée 4-up densifiée, filet signature P-16) · 5. TEMOIGNAGES · 6. LOGICIEL CASHMAG (mockup + points éditoriaux 3 colonnes P-18) · 7. LOGICIEL HAIRNET (liste éditoriale, fond blanc, pour les salons de coiffure) · 8. NF525 (piliers + bloc amende éditorial, sans panneau ambre ni watermark) · 9. PERIPHERIQUES · 10. TECHNICIENS / PROXIMITE · 11. FAQ + CTA FINAL · 12. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css)
+- M : HERO · TRUST BAR : marquee infini + équivalent SR statique · POURQUOI CHANGER · TÉMOIGNAGES · CONFIGURATIONS MÉTIERS : carousel · CASHMAG : section flat éditoriale (pastilles à icône orange) · NF525 : CONFORMITÉ LÉGALE (bloc amende éditorial, sans panneau ambre) · TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) · ÉCOSYSTÈME MATÉRIEL : cross-sell · CTA FINAL v3 : Le Bord Tranché (fond clair, alignement gauche éditorial, pill tel bordurée)
 
 **caisse-enregistreuse/monnayeur/index.html**
 - D : 1. HERO · 2. TRUST BAR · 3. PROBLEME / SOLUTION · 5. COMMENT CA MARCHE · 4. PRICING · 6. STATS · 7. TÉMOIGNAGES (carrousel standard) · 8. CROSS-SELL · 9. FAQ · CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css)
