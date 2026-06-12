@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=13">
+<link rel="stylesheet" href="../css/style.css?v=14">
 <link rel="stylesheet" href="../css/tailwind.min.css?v=17">
 <style>
   body { font-family: 'Inter', sans-serif; }
@@ -39,8 +39,22 @@
   .hubc-blob-a { animation: hubc-blob-a 16s ease-in-out infinite; }
   .hubc-blob-b { animation: hubc-blob-b 12s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) {
-    .hubc-blob-a, .hubc-blob-b, .cm-kpi-badge { animation: none !important; }
+    .hubc-blob-a, .hubc-blob-b { animation: none !important; }
+    .pilier-filet { transition: none !important; }
   }
+
+  /* Filet signature (P-16) : aplat court couleur destination, marqueur d'entree de card, hover 28 -> 48px */
+  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
+  .group:hover .pilier-filet { width:48px; }
+
+  /* METIERS : cards d'origine du hub, de-sloppees (stripe -> filet P-16, hover sobre, sans glow ni border-t) */
+
+  /* KPI badges mockup : apparition one-shot (plus de loop breathe), rotate conserve */
+  @keyframes cm-kpi-in-top { from { opacity:0; transform:rotate(2.5deg) translateY(10px) scale(0.96); } to { opacity:1; transform:rotate(2.5deg) translateY(0) scale(1); } }
+  @keyframes cm-kpi-in-bot { from { opacity:0; transform:rotate(-2.5deg) translateY(10px) scale(0.96); } to { opacity:1; transform:rotate(-2.5deg) translateY(0) scale(1); } }
+  .cm-kpi-badge.top { animation:cm-kpi-in-top 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .cm-kpi-badge.bot { animation:cm-kpi-in-bot 0.7s cubic-bezier(0.22,1,0.36,1) 0.12s both; }
+  @media (prefers-reduced-motion: reduce) { .cm-kpi-badge.top, .cm-kpi-badge.bot { animation:none !important; } }
 
   /* ── CASHMAG MOCKUP : import direct handoff ─────────── */
   .cm-mockup-stage { position:relative; width:100%; max-width:520px; margin:0 auto; }
@@ -74,8 +88,8 @@
   .cm-pay-btn .material-symbols-outlined { font-size:16px; }
   .cm-pay-btn.primary { background:#15803d; color:#FFF; }
   .cm-kpi-badge { position:absolute; background:#FFF; border-radius:16px; padding:18px 22px; box-shadow:0 0 0 1px rgba(11,61,145,0.08),0 4px 12px rgba(0,0,0,0.08); z-index:3; display:flex; align-items:center; gap:14px; min-width:200px; }
-  .cm-kpi-badge.top { top:-28px; right:-22px; transform:rotate(2.5deg); animation:kpi-top-breathe 6s ease-in-out infinite; }
-  .cm-kpi-badge.bot { bottom:-28px; left:-22px; transform:rotate(-2.5deg); animation:kpi-bot-breathe 7s ease-in-out infinite; }
+  .cm-kpi-badge.top { top:-28px; right:-22px; transform:rotate(2.5deg); }
+  .cm-kpi-badge.bot { bottom:-28px; left:-22px; transform:rotate(-2.5deg); }
   .cm-kpi-icon { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#F57C00 0%,#FF9933 100%); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 6px 14px -4px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.25); }
   .cm-kpi-icon .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1,'wght' 600; }
   .cm-kpi-badge.bot .cm-kpi-icon { background:linear-gradient(135deg,#0B3D91 0%,#1E5BD9 100%); box-shadow:0 6px 14px -4px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.25); }
@@ -83,115 +97,110 @@
   .cm-kpi-text .lab { font-size:10px; font-weight:700; color:#5F6368; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:4px; }
   .cm-kpi-text .val { font-family:'Sora',sans-serif; font-size:1.75rem; font-weight:700; color:#0B3D91; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; margin-bottom:2px; line-height:1; }
   .cm-kpi-text .sub { font-size:11px; color:#64748B; font-weight:500; }
-  /* ── CASHMAG FEATURE CARDS : import direct handoff ─────────── */
-  .features-grid { display:grid; grid-template-columns:1fr; gap:1rem; }
-  @media(min-width:640px){ .features-grid { grid-template-columns:repeat(2,1fr); } }
-  @media(min-width:1024px){ .features-grid { grid-template-columns:repeat(4,1fr); gap:1.25rem; } }
-  .feature-card { position:relative; background:#FFF; border-radius:16px; padding:1.75rem 1.5rem; border:1px solid #E5E9F0; transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; overflow:hidden; box-shadow:0 1px 0 rgba(11,61,145,0.04),0 8px 16px -8px rgba(11,61,145,0.08); }
-  .feature-card::after { content:attr(data-num); position:absolute; bottom:-32px; right:-10px; font-family:'Sora',sans-serif; font-size:8.5rem; font-weight:800; color:rgba(11,61,145,0.05); line-height:1; letter-spacing:-0.05em; pointer-events:none; z-index:0; font-variant-numeric:tabular-nums; }
-  .feature-card > * { position:relative; z-index:1; }
-  .feature-card:hover { transform:translateY(-6px); box-shadow:0 1px 0 rgba(11,61,145,0.04),0 28px 48px -16px rgba(11,61,145,0.22); border-color:rgba(11,61,145,0.18); }
-  .feature-icon { width:44px; height:44px; border-radius:10px; background:rgba(118,183,55,0.10); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; color:#76B737; transition:all 0.25s; }
-  .feature-icon .material-symbols-outlined { font-size:22px; font-variation-settings:'FILL' 0,'wght' 500; }
-  .feature-card:hover .feature-icon { background:rgba(118,183,55,0.16); }
-  .feature-title { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#0B3D91; margin-bottom:0.5rem; letter-spacing:-0.01em; }
-  .feature-desc { color:#64748B; font-size:0.875rem; line-height:1.55; }
+  /* ── CASHMAG : mise en scene centree. Mockup piece maitresse, points editoriaux
+     en 3 colonnes (P-18, sans cards). Regime marque bleu, accents orange (chantier 2) ─────────── */
+  .cm-points { display:grid; grid-template-columns:1fr; gap:2rem; margin-top:3rem; }
+  @media(min-width:768px){ .cm-points { grid-template-columns:repeat(3,1fr); gap:2.5rem 4rem; } }
+  .cm-point { display:grid; grid-template-columns:44px 1fr; gap:1rem; align-items:start; }
+  .cm-point-icon {
+    width:44px; height:44px; border-radius:12px;
+    background:#FFFFFF;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cm-point-icon .material-symbols-outlined { color:#F57C00; font-size:1.375rem; }
+  .cm-point h3 { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#0B3D91; letter-spacing:-0.01em; margin-bottom:0.375rem; }
+  .cm-point p { color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  .cm-note { font-style:italic; color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  .cm-note strong { color:#0B3D91; font-weight:600; font-style:normal; }
 
   /* ── HAIRNET SECTION ─────────── */
   .sec-inner { max-width:80rem; margin:0 auto; }
-  .sec-hairnet { background:#F8F9FA; padding:4rem 1.5rem 5rem; position:relative; overflow:hidden; }
-  .sec-hairnet::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-image:radial-gradient(ellipse 40% 30% at 85% 15%,rgba(69,39,164,0.04),transparent 60%),radial-gradient(ellipse 30% 25% at 10% 85%,rgba(197,156,69,0.05),transparent 60%); pointer-events:none; }
-  .sec-hairnet > * { position:relative; z-index:1; }
+  .sec-hairnet { background:#FFF; padding:4rem 1.5rem 5rem; }
   .hn-header { display:grid; grid-template-columns:1fr; gap:2rem; margin-bottom:3rem; align-items:center; }
   @media(min-width:900px){ .hn-header { grid-template-columns:1.4fr 1fr; gap:4rem; } }
-  .hn-eyebrow { display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8B6914; margin-bottom:1rem; }
+  .hn-eyebrow { display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; margin-bottom:1rem; }
   .hn-h2 { font-family:'Sora',sans-serif; font-size:clamp(1.875rem,3.5vw,2.25rem); font-weight:700; line-height:1.1; color:#0B3D91; letter-spacing:-0.02em; margin-bottom:1rem; }
   .hn-h2 em { font-style:normal; color:#0B3D91; }
   .hn-lede { color:#475569; font-size:1.25rem; line-height:1.625; margin-bottom:1.5rem; }
-  .hn-pivot { background:#FFF; border:1px solid rgba(69,39,164,0.18); border-radius:14px; padding:1.5rem 1.75rem; display:flex; align-items:center; gap:1.25rem; box-shadow:0 18px 36px -14px rgba(69,39,164,0.22),0 4px 10px -2px rgba(69,39,164,0.06); position:relative; overflow:hidden; }
-  .hn-pivot::after { content:none; }
-  .hn-pivot-icon { width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,#4527a4 0%,#6B46C1 100%); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 16px -4px rgba(69,39,164,0.4); position:relative; z-index:1; }
+  .hn-pivot { background:rgba(11,61,145,0.06); border-radius:14px; padding:1.5rem 1.75rem; display:flex; align-items:center; gap:1.25rem; }
+  .hn-pivot-icon { width:48px; height:48px; border-radius:12px; background:#0B3D91; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   .hn-pivot-icon .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1; }
-  .hn-pivot-text { font-size:0.9375rem; line-height:1.55; color:#475569; position:relative; z-index:1; }
-  .hn-pivot-text strong { color:#4527a4; font-weight:700; display:block; margin-bottom:2px; font-family:'Sora',sans-serif; font-size:1rem; }
+  .hn-pivot-text { font-size:0.9375rem; line-height:1.55; color:#475569; }
+  .hn-pivot-text strong { color:#0B3D91; font-weight:700; display:block; margin-bottom:2px; font-family:'Sora',sans-serif; font-size:1rem; }
   .hn-main { display:grid; grid-template-columns:1fr; gap:3rem; align-items:stretch; }
   @media(min-width:1024px){ .hn-main { grid-template-columns:5fr 7fr; gap:4rem; align-items:center; } }
-  .hn-card { background:#4527a4; background-image:radial-gradient(ellipse 70% 50% at 0% 100%,rgba(107,70,193,0.45) 0%,transparent 55%),linear-gradient(160deg,#4527a4 0%,#2D1B69 100%); border-radius:20px; padding:2.25rem; color:#FFF; position:relative; overflow:hidden; box-shadow:0 40px 70px -20px rgba(69,39,164,0.5),0 0 0 1px rgba(197,156,69,0.18),inset 0 1px 0 rgba(255,255,255,0.08); }
-  .hn-card::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:24px 24px; background-position:-1px -1px; pointer-events:none; mask-image:linear-gradient(160deg,#000 0%,transparent 70%); -webkit-mask-image:linear-gradient(160deg,#000 0%,transparent 70%); }
-  .hn-card::after { content:'✂'; position:absolute; bottom:-1.5rem; right:-0.5rem; font-size:11rem; color:rgba(197,156,69,0.10); pointer-events:none; line-height:1; transform:rotate(-15deg); }
+  .hn-card { background:linear-gradient(160deg,#0B3D91 0%,#072B6B 100%); border-radius:20px; padding:2.25rem; color:#FFF; box-shadow:0 30px 60px -20px rgba(11,61,145,0.35); }
   .hn-card-head { display:flex; align-items:center; gap:12px; margin-bottom:1.5rem; position:relative; z-index:1; }
-  .hn-card-logo { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#c59c45 0%,#E5BB5C 100%); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .hn-card-logo { width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .hn-card-logo img { width:100%; height:100%; object-fit:cover; display:block; }
   .hn-card-logo .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1; }
   .hn-card-name { font-family:'Sora',sans-serif; font-size:1.125rem; font-weight:700; }
   .hn-card-tag { margin-left:auto; font-size:9px; font-weight:700; letter-spacing:0.14em; background:rgba(255,255,255,0.12); padding:4px 8px; border-radius:999px; text-transform:uppercase; }
   .hn-stat-block { margin-bottom:1.5rem; position:relative; z-index:1; }
-  .hn-stat-label { font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8B6914; margin-bottom:6px; }
-  .hn-card .hn-stat-label { color:#E5C570; }
+  .hn-stat-label { font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; margin-bottom:6px; }
+  .hn-card .hn-stat-label { color:#F57C00; }
   .hn-stat-value { font-family:'Sora',sans-serif; font-weight:800; letter-spacing:-0.02em; line-height:1; margin-bottom:6px; }
   .hn-stat-value.xl { font-size:2.25rem; }
   .hn-stat-value.lg { font-size:1.875rem; }
   .hn-stat-desc { color:rgba(255,255,255,0.72); font-size:0.875rem; line-height:1.5; }
-  .hn-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.12); position:relative; z-index:1; }
-  .hn-pill { background:#FFF; color:#4527a4; padding:5px 11px; border-radius:999px; font-size:11px; font-weight:700; }
-  .hn-features { display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2rem; }
-  .hn-feature { display:grid; grid-template-columns:auto 1fr; gap:1.25rem; padding:1.125rem 1.25rem; border-radius:14px; border:1px solid #EDE9FE; background:#FFF; transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s; }
-  .hn-feature:hover { transform:translateX(4px); border-color:rgba(69,39,164,0.25); box-shadow:0 14px 28px -10px rgba(69,39,164,0.18); }
-  .hn-feature-icon { width:44px; height:44px; border-radius:11px; background:rgba(69,39,164,0.08); display:flex; align-items:center; justify-content:center; color:#4527a4; flex-shrink:0; }
-  .hn-feature-icon .material-symbols-outlined { font-size:22px; }
-  .hn-feature-title { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#0B3D91; margin-bottom:0.35rem; }
-  .hn-feature-desc { color:#64748B; font-size:0.875rem; line-height:1.55; }
-  .hn-cta { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,#c59c45 0%,#B8893A 100%); color:#FFF; padding:0.875rem 1.5rem; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 10px 22px -6px rgba(197,156,69,0.45); transition:transform 0.2s,box-shadow 0.2s; }
-  .hn-cta:hover { transform:translateY(-2px); box-shadow:0 14px 28px -8px rgba(197,156,69,0.55); }
+  .hn-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:1.75rem; }
+  .hn-pill { background:#FFF; color:#0B3D91; padding:5px 11px; border-radius:999px; font-size:11px; font-weight:700; }
+  /* Hairnet : liste editoriale (P-18) chip icone + texte, zero bordure, le blanc fait le rythme (chantier 3) */
+  .hn-features { display:flex; flex-direction:column; gap:2rem; margin-bottom:2.25rem; }
+  .hn-feature { display:grid; grid-template-columns:56px 1fr; gap:1.25rem; align-items:flex-start; }
+  .hn-feature-icon { width:56px; height:56px; border-radius:14px; background:#F8F9FA; display:flex; align-items:center; justify-content:center; color:#F57C00; flex-shrink:0; }
+  .hn-feature-icon .material-symbols-outlined { font-size:26px; }
+  .hn-feature-title { font-family:'Sora',sans-serif; font-size:1.0625rem; font-weight:700; color:#0B3D91; margin-bottom:0.4rem; letter-spacing:-0.01em; }
+  .hn-feature-desc { color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  /* CTA Hairnet : atomes standards dcb-btn-hover, seule la couleur or change (inline) */
 
-  /* ── NF525 SECTION ─────────── */
-  .sec-nf525 { background:#FFF; padding:4rem 1.5rem 5rem; position:relative; overflow:hidden; }
-  .sec-nf525::before { content:'NF525'; position:absolute; bottom:-2.5rem; right:-1rem; font-family:'Sora',sans-serif; font-size:18rem; font-weight:800; color:rgba(11,61,145,0.04); line-height:1; letter-spacing:-0.05em; pointer-events:none; }
-  .sec-nf525 > * { position:relative; z-index:1; }
-  .nf-hero { display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; margin-bottom:3.5rem; }
-  @media(min-width:900px){ .nf-hero { grid-template-columns:auto 1fr; gap:3rem; } }
-  .nf-logo-wrap { display:flex; align-items:center; justify-content:center; position:relative; }
-  .nf-logo-frame { width:180px; height:180px; border-radius:24px; background:#FFF; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 48px -16px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.06); position:relative; }
-  .nf-logo-frame::before { content:''; position:absolute; inset:-8px; border-radius:28px; border:2px dashed rgba(11,61,145,0.18); pointer-events:none; }
-  .nf-logo-frame img { max-width:110px; max-height:110px; width:auto; height:auto; object-fit:contain; }
-  .nf-logo-frame svg { width:110px; height:110px; }
-  .nf-hero-text { max-width:640px; }
-  .nf-hero-h2 { font-family:'Sora',sans-serif; font-size:clamp(1.875rem,3.5vw,2.25rem); font-weight:700; line-height:1.1; color:#0B3D91; letter-spacing:-0.02em; margin-bottom:1rem; }
-  .nf-hero-lede { color:#475569; font-size:1.25rem; line-height:1.625; margin-bottom:1.5rem; }
-  .nf-hero-lede a { color:#0B3D91; font-weight:600; text-decoration:underline; text-underline-offset:3px; }
-  .nf-hero-lede a:hover { color:#F57C00; }
-  .nf-pillars { position:relative; margin-bottom:3rem; }
-  .nf-pillars::before { content:''; position:absolute; top:32px; left:10%; right:10%; height:2px; background:linear-gradient(90deg,transparent,#0B3D91 15%,#0B3D91 85%,transparent); opacity:0.25; }
-  @media(max-width:767px){ .nf-pillars::before { display:none; } }
-  .nf-pillars-grid { display:grid; grid-template-columns:1fr; gap:1.5rem; }
-  @media(min-width:768px){ .nf-pillars-grid { grid-template-columns:repeat(3,1fr); gap:2rem; } }
-  .nf-pillar { text-align:center; position:relative; padding:0 0.5rem; }
-  .nf-pillar-icon-wrap { width:64px; height:64px; margin:0 auto 1.25rem; border-radius:50%; background:#FFF; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.08); position:relative; z-index:2; }
-  .nf-pillar-icon-wrap::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:1px solid rgba(11,61,145,0.12); }
-  .nf-pillar-icon-wrap .material-symbols-outlined { color:#0B3D91; font-size:30px; font-variation-settings:'FILL' 1; }
-  .nf-pillar-num { display:block; font-family:'Sora',sans-serif; font-size:10px; font-weight:700; color:#94A3B8; letter-spacing:0.18em; margin-top:0.875rem; text-transform:uppercase; }
-  .nf-pillar-title { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#0B3D91; margin-bottom:0.5rem; margin-top:0.25rem; }
-  .nf-pillar-desc { color:#64748B; font-size:0.875rem; line-height:1.55; max-width:280px; margin:0 auto; }
-  .nf-alert { display:grid; grid-template-columns:auto 1fr auto; gap:1.5rem; align-items:center; background:rgba(245,158,11,0.05); border-radius:16px; padding:1.5rem 1.75rem; border:1px solid rgba(245,158,11,0.22); box-shadow:0 12px 32px -8px rgba(245,158,11,0.10); position:relative; overflow:hidden; }
-  .nf-alert::before { content:''; position:absolute; top:0; right:0; bottom:0; width:220px; background:linear-gradient(90deg,transparent,rgba(245,158,11,0.06)); pointer-events:none; }
-  @media(max-width:767px){ .nf-alert { grid-template-columns:1fr; gap:1rem; padding:1.25rem; } .nf-alert::before { display:none; } .nf-alert-amount { border-right:none; border-bottom:1px solid rgba(245,158,11,0.2); padding:0 0 0.75rem 0; } }
-  .nf-alert-amount { display:flex; flex-direction:column; align-items:center; padding:0.5rem 1.25rem 0.5rem 0; border-right:1px solid rgba(245,158,11,0.25); min-width:110px; }
-  .nf-alert-amount .lab { font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#92400E; margin-bottom:2px; }
-  .nf-alert-amount .val { font-family:'Sora',sans-serif; font-size:1.875rem; font-weight:800; letter-spacing:-0.02em; line-height:1; color:#D97706; }
-  .nf-alert-amount .sub { font-size:12px; color:#92400E; margin-top:4px; }
-  .nf-alert-text { position:relative; z-index:1; }
-  .nf-alert-title { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#92400E; margin-bottom:0.35rem; display:flex; align-items:center; gap:8px; }
-  .nf-alert-title .material-symbols-outlined { font-size:18px; color:#D97706; font-variation-settings:'FILL' 1; }
-  .nf-alert-desc { color:#78350F; font-size:0.875rem; line-height:1.55; }
-  .nf-alert-desc strong { color:#92400E; font-weight:700; }
-  .nf-alert-shield { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0.5rem 1rem; border-left:1px dashed rgba(245,158,11,0.3); position:relative; z-index:1; }
-  @media(max-width:767px){ .nf-alert-shield { border-left:none; border-top:1px dashed rgba(245,158,11,0.3); padding-top:1rem; padding-left:0; } }
-  .nf-alert-shield-icon { width:36px; height:36px; border-radius:50%; background:rgba(22,163,74,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:0.5rem; }
-  .nf-alert-shield-icon .material-symbols-outlined { color:#16A34A; font-size:20px; font-variation-settings:'FILL' 1,'wght' 700; }
-  .nf-alert-shield-text { font-size:12px; font-weight:700; color:#166534; line-height:1.3; max-width:110px; }
+  /* ── NF525 : section verbatim hub (classes .nf-* via css/style.css) ── */
+  /* NF525 desktop chantier 3 : epure editorial homepage. Watermark geant et cadre
+     pointille purges a la source dans css/style.css (anti-slop global). */
+  /* 3a. Logo NF : chip blanc simple ombre homepage */
+  .d-shell .sec-nf525{background:#F8F9FA}
+  .sec-nf525 .nf-logo-frame{width:auto;height:auto;border-radius:14px;background:#FFFFFF;padding:1.5rem;}
+  .sec-nf525 .nf-logo-frame img{max-width:120px;max-height:120px}
+  /* 3b. Bloc amende : composition editoriale nue (filet orange 28x3, chiffre Sora bleu) */
+  .nf-editorial{display:grid;grid-template-columns:auto 1fr;gap:2.5rem 3.5rem;align-items:start;margin-top:1rem}
+  @media(max-width:767px){.nf-editorial{grid-template-columns:1fr;gap:1.5rem}}
+  .nf-editorial-amount{}
+  .nf-editorial-filet{display:block;width:28px;height:3px;border-radius:2px;background:#F57C00;margin-bottom:1.25rem}
+  .nf-editorial-lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#64748B;margin-bottom:0.5rem}
+  .nf-editorial-val{font-family:'Sora',sans-serif;font-size:clamp(3rem,5vw,3.75rem);font-weight:800;letter-spacing:-0.02em;line-height:1;color:#F57C00}
+  .nf-editorial-sub{font-size:0.9375rem;color:#64748B;margin-top:0.625rem}
+  .nf-editorial-body{color:#475569;font-size:1.0625rem;line-height:1.65;max-width:42rem;align-self:center}
+  .nf-editorial-body strong{color:#0B3D91;font-weight:700}
   /* ── SHELLS mobile / desktop ─────────────────────────────────── */
   .m-shell{display:none}
-  @media(max-width:640px){.m-shell{display:block}.d-shell{display:none}#dcb-phone-fab{display:none!important}}
+  @media(max-width:640px){.m-shell{display:block}.d-shell{display:none}#dcb-phone-fab{display:none!important}
+    /* ANTI-SLOP MOBILE (iteration 2) ─────────────────────────── */
+    /* Cards legitimes : on remplace la bordure 1px par l'ombre tintee bleu (doctrine homepage mobile) */
+    .m-shell .pain .row{border:0;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)}
+    /* TRUST BAR mobile (chantier 1) : marquee fond gris #F8F9FA, zero bordure (shift tonal) */
+    .m-shell .marquee{background:#F8F9FA;border-bottom:0}
+    /* CASHMAG mobile : effet carte casse -> section flat editoriale, fond neutre, pastilles bleues a icones orange */
+    .m-shell .cm-flat .eyebrow-cm{color:#F57C00}
+    .m-shell .cm-flat-chip{display:inline-flex;align-items:center;background:transparent;padding:0;margin:14px 0 18px;box-shadow:none}
+    .m-shell .cm-flat-chip img{height:30px;width:auto;display:block}
+    .m-shell .cm-flat-intro{font-size:13.5px;line-height:1.6;color:var(--mute);margin:0 0 20px}
+    .m-shell .cm-flat-intro strong{color:#0B3D91;font-weight:700}
+    .m-shell .cm-flat .cm-feats .ft .ic{background:#F8F9FA;color:#F57C00}
+    /* CTA CashMag mobile : vrai atome bouton homepage (.btn.btn-pri), regle en pill auto-width inline */
+    .m-shell .cm-flat-cta{display:inline-flex;width:auto;margin-top:20px;text-decoration:none;box-shadow:0 10px 22px -8px rgba(245,124,0,0.45)}
+    .m-shell .cm-flat-cta .material-symbols-outlined{font-size:18px}
+    /* Chaine tonale (chantier 5) : periph cards gris sur section blanche (evite carte blanche sur fond blanc) */
+    .m-shell .peri-a a{background:#F8F9FA}
+    /* NF525 mobile : piliers verbatim hub (.nf-pillars-a / .nf-p-a via m/css/mobile.css) */
+    /* Chantier 4 : panneau ambre remplace par composition editoriale nue (filet orange 24x3, chiffre Sora bleu) */
+    .m-shell .nf-editorial-a{margin-top:16px}
+    .m-shell .nf-editorial-a .filet{display:block;width:24px;height:3px;border-radius:2px;background:#F57C00;margin-bottom:16px}
+    .m-shell .nf-editorial-a .lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+    .m-shell .nf-editorial-a .amt{font-family:'Sora',sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.02em;color:#F57C00}
+    .m-shell .nf-editorial-a .sub{font-size:13px;color:var(--mute);margin-top:8px}
+    .m-shell .nf-editorial-a .desc{font-size:13.5px;line-height:1.6;color:var(--mute);margin:18px 0 0}
+    .m-shell .nf-editorial-a .desc strong{color:#0B3D91;font-weight:700}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -327,7 +336,7 @@
 </section>
 
 <!-- ── 2. TRUST BAR ─────────── -->
-<section class="py-6 bg-white">
+<section class="py-6 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
@@ -351,7 +360,7 @@
 </section>
 
 <!-- ── 3. PROBLEME / SOLUTION ─────────── -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-12 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Pourquoi changer ?</p>
@@ -382,39 +391,32 @@
 </section>
 
 <!-- ── 4. METIERS CARDS ─────────── -->
-<section id="metiers" class="py-12 lg:py-16 bg-white">
+<section id="metiers" class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Configurations sur mesure</p>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Une solution pour chaque métier.</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
 
       <!-- Boulangerie : liste numérotée -->
-      <a href="./boulangerie/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#F59E0B] text-3xl">bakery_dining</span>
+      <a href="./boulangerie/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#F59E0B" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#F59E0B] text-2xl">bakery_dining</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(245,158,11,0.12)]">Dès 59€/mois</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-2.5 py-1 rounded-full">Dès 59€</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Boulangerie &amp; Pâtisserie</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Encaissement rapide dès l'ouverture, gestion des invendus et fidélisation client.</p>
-          <ol class="space-y-3 mb-4">
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">01</span>Vente au poids et gestion des DLC
-            </li>
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">02</span>Suivi des invendus en temps réel
-            </li>
-            <li class="flex items-center gap-4 text-base md:text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#F59E0B] text-base leading-none shrink-0 w-6">03</span>Fidélité client et rendu monnaie automatique
-            </li>
-          </ol>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Voir les configurations</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Boulangerie &amp; Pâtisserie</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Vente au poids et DLC</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Suivi des invendus en temps réel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Fidélité et rendu monnaie</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Découvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -422,38 +424,24 @@
         </div>
       </a>
 
-      <!-- Restaurant : mini flow -->
-      <a href="./restaurant/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#EF4444] to-[#F87171]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#EF4444] text-3xl">restaurant</span>
+      <!-- Restaurant -->
+      <a href="./restaurant/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#EF4444] text-2xl">restaurant</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">Dès 77€/mois</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-2.5 py-1 rounded-full">Dès 77€</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Restauration &amp; Bar</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Service fluide du premier au dernier couvert, même en plein coup de feu.</p>
-          <div class="flex-1 flex items-center pb-6">
-            <div class="flex items-center gap-2 w-full">
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">table_restaurant</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Plan de salle</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">stylus_note</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Commande mobile</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">payments</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Encaissement</p>
-              </div>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Voir les configurations</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Restauration &amp; Bar</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Plan de salle visuel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Commande mobile en salle</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Encaissement éclair</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Découvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -461,31 +449,24 @@
         </div>
       </a>
 
-      <!-- Commerce : icon-list -->
-      <a href="./commerce-de-detail/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#0D9488] to-[#14B8A6]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#0D9488] text-3xl">storefront</span>
+      <!-- Commerce -->
+      <a href="./commerce-de-detail/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#0D9488] text-2xl">storefront</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">Dès 83€/mois</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-full">Dès 83€</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Commerce de détail</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Pilotez vos stocks et vos ventes sur un ou plusieurs points de vente.</p>
-          <ul class="space-y-3 mb-4">
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">inventory_2</span>Stocks et codes-barres temps réel
-            </li>
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">bar_chart</span>Statistiques et tableaux de bord
-            </li>
-            <li class="flex items-center gap-3 text-base md:text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">store</span>Multi-boutiques centralisé
-            </li>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Commerce de détail</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Stocks et codes-barres temps réel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Statistiques et tableaux de bord</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Multi-boutiques centralisé</li>
           </ul>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Voir les configurations</span>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -493,31 +474,24 @@
         </div>
       </a>
 
-      <!-- Coiffure : pill badges -->
-      <a href="./coiffure/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#A855F7] to-[#C084FC]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#A855F7] text-3xl">content_cut</span>
+      <!-- Coiffure -->
+      <a href="./coiffure/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#A855F7" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#A855F7] text-2xl">content_cut</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(168,85,247,0.12)]">Dès 115€/mois</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-2.5 py-1 rounded-full">Dès 115€</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Beauté &amp; Bien-être</h3>
-          <p class="text-slate-500 text-base md:text-sm mb-4">Gérez vos rendez-vous, vos clients et votre caisse depuis un seul écran.</p>
-          <div class="flex flex-col gap-2 mb-4">
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">calendar_month</span>Agenda et réservation en ligne
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">sms</span>Rappels SMS automatiques
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">loyalty</span>Fidélité et fiches clients
-            </span>
-          </div>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Voir la caisse coiffure</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Beauté &amp; Bien-être</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Agenda et réservation en ligne</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Rappels SMS automatiques</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Fidélité et fiches clients</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Découvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#A855F7] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -530,7 +504,7 @@
 </section>
 
 <!-- ── 5. TEMOIGNAGES ─────────── -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
@@ -539,65 +513,73 @@
     <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
       <div data-dcb-track>
         <!-- Témoignage 1 : Restaurateur Lyon -->
-        <div class="bg-white p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ils ont passé du temps à comprendre comment on travaillait avant de nous proposer quoi que ce soit. Le plan de salle est configuré exactement comme notre salle réelle. Le support, c'est un vrai numéro, pas une hotline."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0">DK</div>
             <div>
               <p class="font-bold text-[#0B3D91]">David K.</p>
               <p class="text-slate-500 text-sm">Brasserie Le Central, Lyon 2ème (69)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Témoignage 2 : Boulanger Mâcon -->
-        <div class="bg-white p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ouverture à 5h30, et la caisse devait être prête. Le technicien DCB est venu la veille, tout était paramétré pour le pain, les viennoiseries, les snacks. Trois ans plus tard, zéro panne et un suivi qui ne change pas."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#F59E0B] rounded-full flex items-center justify-center text-white font-bold shrink-0">JL</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Julien L.</p>
               <p class="text-slate-500 text-sm">Boulangerie du Vieux Mâcon (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Témoignage 3 : Commerçante Roanne -->
-        <div class="bg-white p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Fini les heures perdues à chercher mes erreurs de centimes le soir. La clôture est automatisée. Récemment, j'avais une question sur un taux de TVA : j'ai appelé DCB, un des fondateurs m'a expliqué la manipulation en direct."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0">CB</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Céline B.</p>
               <p class="text-slate-500 text-sm">Commerçante, Roanne (42)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Témoignage 4 : Coiffeuse Chalon -->
-        <div class="bg-white p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"L'agenda en ligne et les rappels SMS ont divisé par deux les rendez-vous oubliés. Et chaque cliente a sa fiche avec son historique de couleur. Mes assistantes l'ont prise en main en une demi-journée."</p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+          <div class="flex items-center gap-4 pt-6">
             <div class="w-12 h-12 bg-[#A855F7] rounded-full flex items-center justify-center text-white font-bold shrink-0">EM</div>
             <div>
               <p class="font-bold text-[#0B3D91]">Emma M.</p>
               <p class="text-slate-500 text-sm">Salon Émeraude, Chalon-sur-Saône (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
             </div>
           </div>
         </div>
@@ -616,47 +598,18 @@
   </div>
 </section>
 
-<!-- ── 6. LOGICIEL CASHMAG ─────────── -->
-<section class="py-12 lg:py-16 bg-white">
+<!-- ── 6. LOGICIEL CASHMAG : regime marque bleu, vert partenaire reserve au logo ─────────── -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
-      <div class="md:col-span-7 dcb-reveal dcb-reveal-left">
-        <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#76B737">Le cerveau de votre établissement</p>
-        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-6">CashMag : le logiciel de caisse certifié que nous installons et maîtrisons</h2>
-        <p class="text-xl text-slate-600 leading-relaxed mb-6">On a choisi CashMag parce qu'il est certifié NF525 par l'AFNOR et qu'on maîtrise chaque paramètre de sa configuration. Notre valeur ajoutée : on vient sur place, on prend le temps de comprendre votre activité, et on configure tout avant la mise en service. En cas de problème, vous n'appelez pas un standard. Vous appelez votre technicien, celui qui a installé votre caisse.</p>
-        <div class="space-y-4 mb-8">
-          <div class="flex gap-4">
-            <span class="material-symbols-outlined text-[#76B737] text-2xl shrink-0 mt-0.5">monitoring</span>
-            <div>
-              <h3 class="font-sora font-bold text-base text-[#0B3D91] mb-1">Dashboard temps réel</h3>
-              <p class="text-slate-500 text-sm" style="line-height:1.55">Chiffre d'affaires, panier moyen, couverts : consultable depuis smartphone, où que vous soyez.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <span class="material-symbols-outlined text-[#76B737] text-2xl shrink-0 mt-0.5">account_balance_wallet</span>
-            <div>
-              <h3 class="font-sora font-bold text-base text-[#0B3D91] mb-1">Comptabilité automatisée</h3>
-              <p class="text-slate-500 text-sm" style="line-height:1.55">Journaux de vente, ventilation TVA, export expert-comptable automatique.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <span class="material-symbols-outlined text-[#76B737] text-2xl shrink-0 mt-0.5">inventory_2</span>
-            <div>
-              <h3 class="font-sora font-bold text-base text-[#0B3D91] mb-1">Gestion de stock dynamique</h3>
-              <p class="text-slate-500 text-sm" style="line-height:1.55">Décrémentation automatique à chaque vente, alertes rupture, fiches techniques matières premières.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href="./cashmag/index.html" class="dcb-btn-hover bg-[#76B737] text-white px-7 py-3.5 rounded-lg font-bold inline-flex items-center gap-2">
-            Découvrir CashMag en détail <span class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
-          <a href="../contact/index.html" class="dcb-btn-hover bg-white border-2 border-[#0B3D91] text-[#0B3D91] px-7 py-3.5 rounded-lg font-bold inline-flex items-center gap-2">
-            Demander un devis
-          </a>
-        </div>
-      </div>
-      <div class="md:col-span-5 dcb-reveal dcb-reveal-right">
+    <div class="text-center max-w-3xl mx-auto mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#F57C00">Le cerveau de votre établissement</p>
+      <span class="inline-flex items-center justify-center mb-6">
+        <img src="../assets/logo-cashmag-logiciel-caisse-nf525.png" alt="Logo CashMag, logiciel de caisse certifié NF525" width="419" height="80" class="h-9 w-auto" loading="lazy">
+      </span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-5">CashMag : le logiciel de caisse certifié que nous installons et maîtrisons</h2>
+      <p class="text-xl text-slate-500 leading-relaxed">Certifié NF525 par l'AFNOR. On vient sur place, on prend le temps de comprendre votre activité, et on configure chaque paramètre avant la mise en service.</p>
+    </div>
+    <div class="dcb-reveal dcb-reveal-scale">
         <div class="cm-mockup-stage">
 
           <!-- ZONE PLACEHOLDER : tablette CashMag HTML, à remplacer par screenshot réel -->
@@ -733,29 +686,40 @@
             </div>
           </div>
         </div>
+    </div>
+    <div class="cm-points dcb-stagger">
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">monitoring</span></div>
+        <div>
+          <h3>Back-office cloud temps réel</h3>
+          <p>Chiffre d'affaires, panier moyen et couverts depuis votre smartphone. Prix et produits modifiables à distance.</p>
+        </div>
+      </div>
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">bolt</span></div>
+        <div>
+          <h3>Rapide et autonome</h3>
+          <p>Zéro latence pendant le coup de feu. Mode hybride : encaisse même sans internet, synchronise au retour de la connexion.</p>
+        </div>
+      </div>
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+        <div>
+          <h3>Stock et comptabilité automatisés</h3>
+          <p>Stock décrémenté à chaque vente, alertes rupture. Ventilation TVA et export expert-comptable automatiques.</p>
+        </div>
       </div>
     </div>
-    <div class="features-grid dcb-stagger" style="margin-top:2.5rem;">
-      <article class="feature-card" data-num="01">
-        <div class="feature-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
-        <h3 class="feature-title">Mode hybride</h3>
-        <p class="feature-desc">Encaissez même sans internet, les données se synchronisent dès le retour de connexion.</p>
-      </article>
-      <article class="feature-card" data-num="02">
-        <div class="feature-icon"><span class="material-symbols-outlined">bolt</span></div>
-        <h3 class="feature-title">Zéro latence</h3>
-        <p class="feature-desc">Interface optimisée pour les coups de feu. Aucune attente entre deux tickets.</p>
-      </article>
-      <article class="feature-card" data-num="03">
-        <div class="feature-icon"><span class="material-symbols-outlined">smartphone</span></div>
-        <h3 class="feature-title">Suivi mobile</h3>
-        <p class="feature-desc">Consultez votre chiffre d'affaires en direct depuis votre smartphone, où que vous soyez.</p>
-      </article>
-      <article class="feature-card" data-num="04">
-        <div class="feature-icon"><span class="material-symbols-outlined">edit_document</span></div>
-        <h3 class="feature-title">Modif à distance</h3>
-        <p class="feature-desc">Changez vos prix ou ajoutez des produits depuis chez vous, en un clic sur le cloud.</p>
-      </article>
+    <div class="text-center mt-10 dcb-reveal">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="./cashmag/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
+          Découvrir CashMag en détail <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+        <a href="../contact/index.html" class="dcb-btn-hover bg-transparent border-2 border-[#0B3D91] text-[#0B3D91] px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
+          Demander un devis
+        </a>
+      </div>
+      <p class="cm-note mt-6">En cas de problème, vous n'appelez pas un standard : <strong>vous appelez le technicien qui a installé votre caisse</strong>.</p>
     </div>
   </div>
 </section>
@@ -766,7 +730,7 @@
 
     <div class="hn-header">
       <div>
-        <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#C59C45">Logiciel métier dédié</p>
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#F57C00">Logiciel métier dédié</p>
         <h2 class="hn-h2">Hairnet : <em>le logiciel pensé pour les salons de coiffure</em></h2>
         <p class="hn-lede">CashMag couvre la boulangerie, le restaurant et le commerce. Pour les salons de coiffure et les instituts de beauté, DCB installe Hairnet : un logiciel spécialisé avec agenda, réservation en ligne via Google Reserve, fidélité dématérialisée, gestion des no-show et pilotage multi-salons. Certifié NF525, configuré sur site par nos techniciens.</p>
       </div>
@@ -781,7 +745,7 @@
     <div class="hn-main">
       <div class="hn-card">
         <div class="hn-card-head">
-          <div class="hn-card-logo" style="width:auto;height:48px;padding:0;border-radius:0;background:transparent;box-shadow:none;margin-left:-8px;"><img src="../assets/hairnet-logo-blanc.webp" alt="Logo Hairnet logiciel de caisse coiffure" width="300" height="94" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+          <div class="hn-card-logo" style="width:auto;height:72px;padding:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;margin-left:-4px;"><img src="../assets/hairnet-logo-blanc.webp" alt="Logo Hairnet logiciel de caisse coiffure" width="300" height="94" style="height:100%;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);"></div>
           <span class="hn-card-tag">Salon</span>
         </div>
         <div class="hn-stat-block">
@@ -825,11 +789,12 @@
             </div>
           </div>
         </div>
+        <!-- (markup conservé, restyle editorial via CSS .hn-feature ci-dessous) -->
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href="./hairnet/index.html" class="hn-cta">
-            Découvrir Hairnet en détail <span class="material-symbols-outlined">arrow_forward</span>
+          <a href="./hairnet/index.html" class="dcb-btn-hover text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2" style="background:#F57C00">
+            Découvrir Hairnet en détail <span class="material-symbols-outlined text-lg">arrow_forward</span>
           </a>
-          <a href="../contact/index.html" class="dcb-btn-hover bg-white border-2 border-[#0B3D91] text-[#0B3D91] px-7 py-3.5 rounded-lg font-bold inline-flex items-center gap-2">
+          <a href="../contact/index.html" class="dcb-btn-hover bg-white border-2 border-[#0B3D91] text-[#0B3D91] px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
             Demander un devis
           </a>
         </div>
@@ -879,30 +844,21 @@
       </div>
     </div>
 
-    <div class="nf-alert">
-      <div class="nf-alert-amount">
-        <span class="lab">Amende</span>
-        <span class="val">7 500 €</span>
-        <span class="sub">par caisse non conforme</span>
+    <div class="nf-editorial">
+      <div class="nf-editorial-amount">
+        <span class="nf-editorial-filet" aria-hidden="true"></span>
+        <div class="nf-editorial-lab">Amende</div>
+        <div class="nf-editorial-val">7 500 €</div>
+        <div class="nf-editorial-sub">par caisse non conforme</div>
       </div>
-      <div class="nf-alert-text">
-        <div class="nf-alert-title">
-          <span class="material-symbols-outlined">warning</span>
-          En cas de contrôle fiscal
-        </div>
-        <div class="nf-alert-desc">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</div>
-      </div>
-      <div class="nf-alert-shield">
-        <div class="nf-alert-shield-icon"><span class="material-symbols-outlined">verified</span></div>
-        <div class="nf-alert-shield-text">Conforme &amp; tracé</div>
-      </div>
+      <p class="nf-editorial-body">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</p>
     </div>
 
   </div>
 </section>
 
 <!-- ── 9. PERIPHERIQUES ─────────── -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Écosystème matériel</p>
@@ -911,38 +867,40 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dcb-stagger">
       <!-- Borne -->
-      <a href="./borne-de-commande/index.html" data-dest="borne-de-commande" class="cx-card group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+      <a href="./borne-de-commande/index.html" data-dest="borne-de-commande" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
+          <span class="pilier-filet" style="background:#4F46E5;margin-bottom:16px" aria-hidden="true"></span>
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#4F46E5] text-2xl ms-fill">point_of_sale</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(79,70,229,0.12)]">+20% panier moyen</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#4F46E5] text-2xl ms-fill">point_of_sale</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full">+20% panier moyen</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Borne de commande</h3>
           <p class="text-slate-500 text-base md:text-sm mb-4">Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
-          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div class="pt-4 flex items-center justify-between">
             <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#4F46E5] transition-colors">Découvrir la borne</span>
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
-        <div class="bg-[#F8F9FA] flex items-center justify-center p-4">
+        <div class="bg-white flex items-center justify-center p-4">
           <img alt="Borne de commande K1" class="h-[160px] w-auto object-contain" src="../assets/borne-k1.png">
         </div>
       </a>
       <!-- Monnayeur -->
-      <a href="./monnayeur/index.html" data-dest="monnayeur" class="cx-card group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+      <a href="./monnayeur/index.html" data-dest="monnayeur" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
+          <span class="pilier-filet" style="background:#059669;margin-bottom:16px" aria-hidden="true"></span>
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#059669]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#059669] text-2xl ms-fill">payments</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#059669] bg-[#059669]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(5,150,105,0.12)]">0 contact argent</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#059669]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#059669] text-2xl ms-fill">payments</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#059669] bg-[#059669]/10 px-3 py-1 rounded-full">0 contact argent</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Monnayeur automatique</h3>
           <p class="text-slate-500 text-base md:text-sm mb-4">Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
-          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div class="pt-4 flex items-center justify-between">
             <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#059669] transition-colors">Découvrir le monnayeur</span>
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#059669] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
-        <div class="bg-[#F8F9FA] flex items-center justify-center p-4 overflow-hidden">
+        <div class="bg-white flex items-center justify-center p-4 overflow-hidden">
           <video autoplay loop muted playsinline class="h-[160px] w-auto object-contain" aria-label="Animation 3D monnayeur automatique">
             <source src="../assets/monnayeur-3d.webm" type="video/webm">
           </video>
@@ -994,7 +952,7 @@
 
       <!-- Texte panel droite -->
       <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
-        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:12px;font-weight:800;letter-spacing:0.2em">Expertise de proximité</span>
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:11px;font-weight:700;letter-spacing:0.2em">Expertise de proximité</span>
         <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nos techniciens à vos côtés</h2>
         <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Chaque client a un interlocuteur identifié, quelqu'un qui connaît son installation, son activité, ses horaires. Pas un numéro de ticket : un nom, un téléphone, une présence.</p>
         <ul class="space-y-4 mb-10 list-none p-0">
@@ -1012,7 +970,7 @@
           </li>
         </ul>
         <div class="flex flex-wrap items-center gap-6 mb-3">
-          <a href="../notre-adn/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2.5">
+          <a href="../notre-adn/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-3">
             Découvrir notre équipe
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
@@ -1230,8 +1188,8 @@
   <p class="eyebrow">Ils nous font confiance</p>
   <h2>Ce que disent <em>nos clients</em>.</h2>
   <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
-    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
-      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+    <div style="background:var(--s1);border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" role="img" aria-label="5 étoiles sur 5">
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
@@ -1247,8 +1205,8 @@
         </div>
       </div>
     </div>
-    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
-      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+    <div style="background:var(--s1);border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" role="img" aria-label="5 étoiles sur 5">
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
         <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
@@ -1348,6 +1306,9 @@
 #tab-rest.active{background:#EF4444!important;border-color:#EF4444!important}
 #tab-com.active{background:#0D9488!important;border-color:#0D9488!important}
 #tab-coif.active{background:#A855F7!important;border-color:#A855F7!important}
+/* Anti-slop : suppression du bandeau colore en haut des mcards (doctrine homepage : .mcard .bar{display:none}).
+   Le signal couleur metier est porte par .ic / .pill / .feats / .go .ab (deja en place via mobile.css). */
+.m-shell .mcard .bar{display:none}
 </style>
 <script>
 /* MutationObserver : réagit à chaque toggle .on, indépendant du cache mobile.js */
@@ -1371,43 +1332,37 @@
 })();
 </script>
 
-<!-- CASHMAG -->
-<section class="sec">
+<!-- CASHMAG : regime marque bleu, composition editoriale flat (effet carte casse, chantier 3) -->
+<section class="sec cm-flat">
   <p class="eyebrow eyebrow-cm">Le cerveau de votre établissement</p>
   <h2>CashMag : <em>le logiciel de caisse certifié</em> que nous installons et maîtrisons.</h2>
-  <div class="cm-card">
-    <div class="cm-bar"></div>
-    <div class="cm-body">
-      <div class="cm-h">
-        <img src="../assets/logo-cashmag-logiciel-caisse-nf525.png" alt="Logo CashMag, logiciel de caisse certifié NF525" class="cm-logo-img" width="419" height="80">
+  <span class="cm-flat-chip"><img src="../assets/logo-cashmag-logiciel-caisse-nf525.png" alt="Logo CashMag, logiciel de caisse certifié NF525" width="419" height="80"></span>
+  <p class="cm-flat-intro">On a choisi CashMag parce qu'il est <strong>certifié NF525 par l'AFNOR</strong> et qu'on maîtrise chaque paramètre de sa configuration. Notre valeur ajoutée : on vient sur place, on prend le temps de comprendre votre activité, et on configure tout avant la mise en service.</p>
+  <p class="cm-flat-intro">En cas de problème, vous n'appelez pas un standard : vous appelez votre technicien, celui qui a installé votre caisse.</p>
+  <div class="cm-feats">
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">monitoring</span></div>
+      <div>
+        <h3>Dashboard temps réel</h3>
+        <p>Chiffre d'affaires, panier moyen, couverts : consultable depuis smartphone, où que vous soyez.</p>
       </div>
-      <p class="cm-intro">On a choisi CashMag parce qu'il est <strong>certifié NF525 par l'AFNOR</strong> et qu'on maîtrise chaque paramètre de sa configuration. Notre valeur ajoutée : on vient sur place, on prend le temps de comprendre votre activité, et on configure tout avant la mise en service. En cas de problème, vous n'appelez pas un standard : vous appelez votre technicien, celui qui a installé votre caisse.</p>
-      <div class="cm-feats">
-        <div class="ft">
-          <div class="ic"><span class="material-symbols-outlined">monitoring</span></div>
-          <div>
-            <h3>Dashboard temps réel</h3>
-            <p>Chiffre d'affaires, panier moyen, couverts : consultable depuis smartphone, où que vous soyez.</p>
-          </div>
-        </div>
-        <div class="ft">
-          <div class="ic"><span class="material-symbols-outlined">account_balance_wallet</span></div>
-          <div>
-            <h3>Comptabilité automatisée</h3>
-            <p>Journaux de vente, ventilation TVA, export expert-comptable automatique.</p>
-          </div>
-        </div>
-        <div class="ft">
-          <div class="ic"><span class="material-symbols-outlined">inventory_2</span></div>
-          <div>
-            <h3>Gestion de stock dynamique</h3>
-            <p>Décrémentation automatique à chaque vente, alertes rupture, fiches techniques matières premières.</p>
-          </div>
-        </div>
+    </div>
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+      <div>
+        <h3>Comptabilité automatisée</h3>
+        <p>Journaux de vente, ventilation TVA, export expert-comptable automatique.</p>
       </div>
-      <a class="cm-cta" href="cashmag/index.html">Découvrir CashMag en détail<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">inventory_2</span></div>
+      <div>
+        <h3>Gestion de stock dynamique</h3>
+        <p>Décrémentation automatique à chaque vente, alertes rupture, fiches techniques matières premières.</p>
+      </div>
     </div>
   </div>
+  <a class="btn btn-pri cm-flat-cta" href="cashmag/index.html">Découvrir CashMag en détail<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
 </section>
 
 <!-- NF525 : CONFORMITÉ LÉGALE -->
@@ -1443,36 +1398,18 @@
     </div>
   </div>
 
-  <div class="nf-alert-a">
-    <div class="top-row">
-      <div>
-        <div class="sub">Amende</div>
-        <div class="amt">7 500 €</div>
-        <div class="sub">par caisse non conforme</div>
-      </div>
-      <div class="warn"><span class="material-symbols-outlined fill ms-fill">warning</span></div>
-    </div>
-    <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#92400E;display:flex;align-items:center;gap:6px;margin-top:2px"><span class="material-symbols-outlined fill" style="font-size:18px;color:#D97706;font-variation-settings:'FILL' 1">warning</span>En cas de contrôle fiscal</div>
-    <div class="desc">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</div>
-    <div class="shield">
-      <div class="si"><span class="material-symbols-outlined fill ms-fill">verified</span></div>
-      <div class="st">Conforme &amp; tracé</div>
-    </div>
+  <div class="nf-editorial-a">
+    <span class="filet" aria-hidden="true"></span>
+    <div class="lab">Amende</div>
+    <div class="amt">7 500 €</div>
+    <div class="sub">par caisse non conforme</div>
+    <p class="desc">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse.</p>
   </div>
 </section>
 
 <!-- TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) -->
-<style>
-  .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
-  .m-prox-reveal.in{opacity:1;transform:none}
-  .m-prox-reveal[data-d="1"]{transition-delay:.06s}
-  .m-prox-reveal[data-d="2"]{transition-delay:.12s}
-  .m-prox-reveal[data-d="3"]{transition-delay:.18s}
-  .m-prox-reveal[data-d="4"]{transition-delay:.24s}
-  @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
-</style>
-<section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
-  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+<section class="m-prox dcb-stagger" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+  <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
     <img src="../assets/dept-69.webp" alt="Technicien DCB en intervention sur une caisse enregistreuse chez un commerçant du Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,61,145,0) 40%,rgba(11,61,145,0.65) 75%,rgba(11,61,145,0.92) 100%);pointer-events:none"></div>
     <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px">
@@ -1499,29 +1436,28 @@
       </div>
     </div>
   </div>
-  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
-  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens, à vos côtés</h2>
-  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié. Un nom, un téléphone, quelqu'un qui connaît votre caisse et votre activité. Pas un numéro de ticket.</p>
-  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+  <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
+  <h2 style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens, à vos côtés</h2>
+  <p style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié. Un nom, un téléphone, quelqu'un qui connaît votre caisse et votre activité. Pas un numéro de ticket.</p>
+  <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px">
+    <li style="display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.45;color:#fff">
+      <span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+      <span style="flex:1">Télémaintenance 7j/7</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
     </li>
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+    <li style="display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.45;color:#fff">
+      <span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+      <span style="flex:1">Si besoin, sur site</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
     </li>
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+    <li style="display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.45;color:#fff">
+      <span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+      <span style="flex:1">Remplacement matériel</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
     </li>
   </ul>
-  <button class="m-prox-reveal" data-d="4" data-sheet style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;border:0;cursor:pointer">Demander un devis<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></button>
+  <button class="btn btn-pri" data-sheet style="width:100%">Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
 </section>
-<script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
 
 <!-- ÉCOSYSTÈME MATÉRIEL : cross-sell -->
 <section class="sec">
