@@ -957,14 +957,12 @@ abbr[data-tooltip]:focus::before {
    Classes : .sec-nf525, .nf-hero, .nf-logo-*, .nf-pillar*, .nf-alert*
 ═══════════════════════════════════════════════════════════════════ */
 .sec-nf525 { background:#FFF; padding:4rem 1.5rem 5rem; position:relative; overflow:hidden; }
-.sec-nf525::before { content:'NF525'; position:absolute; bottom:-2.5rem; right:-1rem; font-family:'Sora',sans-serif; font-size:18rem; font-weight:800; color:rgba(11,61,145,0.04); line-height:1; letter-spacing:-0.05em; pointer-events:none; }
 .sec-nf525 > * { position:relative; z-index:1; }
 .sec-nf525 .sec-inner { max-width:80rem; margin:0 auto; }
 .nf-hero { display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; margin-bottom:3.5rem; }
 @media(min-width:900px){ .nf-hero { grid-template-columns:auto 1fr; gap:3rem; } }
 .nf-logo-wrap { display:flex; align-items:center; justify-content:center; position:relative; }
 .nf-logo-frame { width:180px; height:180px; border-radius:24px; background:#FFF; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 48px -16px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.06); position:relative; }
-.nf-logo-frame::before { content:''; position:absolute; inset:-8px; border-radius:28px; border:2px dashed rgba(11,61,145,0.18); pointer-events:none; }
 .nf-logo-frame img { max-width:110px; max-height:110px; width:auto; height:auto; object-fit:contain; }
 .nf-logo-frame svg { width:110px; height:110px; }
 .nf-hero-text { max-width:640px; }
