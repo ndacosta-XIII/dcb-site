@@ -237,6 +237,10 @@ Règles d'application lors de la copie d'un pattern :
 - **Pastille d'icône = surface OPPOSÉE à celle de la section** : grise `#F8F9FA` sur section blanche, blanche sur section grise. Sur les pages marque, l'icône reste orange `#F57C00`.
 - **JAMAIS d'ombre sous les pastilles** d'icône (la surface opposée fait le contraste, pas un drop-shadow).
 
+### Règle tooltips/abbr (validée client, 12/06/2026)
+- **Jamais de soulignement pointillé ni surlignage sur les abréviations.** Pas d'attribut `title` sur les `<abbr>` : utiliser `data-tooltip` + `aria-label` uniquement.
+- Forme correcte : `<abbr data-tooltip="..." aria-label="...">SIGLE</abbr>` — sans `title`.
+
 ### Conventions structurelles
 - Sections : `py-12 lg:py-16` · Containers : `max-w-7xl mx-auto px-6` · Cards : `rounded-xl`/`rounded-2xl` + `tonal-shift-elevation` · CTA : `rounded-[14px]` · `<main>` desktop : `pt-[76px]`.
 - H2 standard : `font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]`. Labels : `text-[11px] font-bold tracking-[0.2em] uppercase`.
@@ -274,7 +278,7 @@ Variantes desktop (pointeurs, même rôle, autre signature visuelle) :
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Installation sur site</span>
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Formation incluse</span>
       </div>
-      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr>, <br><span class="text-[#F59E0B] italic font-semibold">installée par vos techniciens</span></h1>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr>, <br><span class="text-[#F59E0B] italic font-semibold">installée par vos techniciens</span></h1>
       <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">Votre rush du matin, vos formules, vos invendus, votre clôture du soir. Tout est pensé pour le quotidien d'une boulangerie, pas pour un commerce générique. Formule Essentiel dès 59 €/mois, un technicien DCB vient chez vous pour tout configurer.</p>
       <div class="space-y-4">
         <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
@@ -308,7 +312,7 @@ Variantes desktop (pointeurs, même rôle, autre signature visuelle) :
     <span class="chip">Boulangerie &amp; Pâtisserie</span>
     <span class="chip gold">Dès 59 €/mois</span>
   </div>
-  <h1>Caisse enregistreuse boulangerie <abbr title="Norme Française 525, obligatoire depuis 2018">NF525</abbr>, <em>installée par vos techniciens</em>.</h1>
+  <h1>Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525, obligatoire depuis 2018" aria-label="Norme Française 525, obligatoire depuis 2018">NF525</abbr>, <em>installée par vos techniciens</em>.</h1>
   <p class="lede">Formules, invendus, clôture Z : pensé pour une boulangerie, pas un commerce générique. Dès 59&nbsp;€/mois, un technicien DCB vient chez vous pour tout configurer.</p>
 
   <div class="scene">
@@ -594,7 +598,7 @@ Usage : sous-pages. Grille de fonctionnalités spécifiques au métier/service. 
       <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
         <span class="text-[11px] font-bold tracking-[0.2em] text-[#F59E0B] uppercase block mb-3">Votre quotidien</span>
         <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Ce que votre caisse fait pour vous chaque jour</h2>
-        <p class="text-slate-500 text-base leading-relaxed mb-6"><abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." title="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr> est le logiciel de caisse boulangerie certifié NF525 que nous installons sur site, configuré pour les horaires et les contraintes d'une boulangerie artisanale. On l'a déployé chez des boulangers à Mâcon, Chalon, Villefranche. Chacun est différent parce que chaque boulangerie a ses propres contraintes.</p>
+        <p class="text-slate-500 text-base leading-relaxed mb-6"><abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr> est le logiciel de caisse boulangerie certifié NF525 que nous installons sur site, configuré pour les horaires et les contraintes d'une boulangerie artisanale. On l'a déployé chez des boulangers à Mâcon, Chalon, Villefranche. Chacun est différent parce que chaque boulangerie a ses propres contraintes.</p>
         <a href="../cashmag/index.html" class="inline-flex items-center gap-2 text-[#0B3D91] font-bold text-sm hover:text-[#F57C00] transition-colors">En savoir plus sur CashMag <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
       </div>
       <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
@@ -694,7 +698,7 @@ Usage : sous-pages avec offre packagée (boulangerie, restaurant, depannage, inf
         <div class="font-sora text-3xl font-bold text-[#F59E0B] leading-none mb-1">59€<span class="text-sm font-normal text-slate-400">/mois</span></div>
         <p class="text-xs text-slate-400 mb-6">sur 60 mois, sans apport</p>
         <ul class="list-none flex flex-col gap-3 mb-6 text-sm">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span><abbr data-tooltip="Terminal Point de Vente : la caisse tactile physique avec écran, tiroir et imprimante ticket." title="Terminal Point de Vente : la caisse tactile physique avec écran, tiroir et imprimante ticket." aria-label="Terminal Point de Vente : la caisse tactile physique avec écran, tiroir et imprimante ticket.">TPV</abbr> tactile 15,6"</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span><abbr data-tooltip="Terminal Point de Vente : la caisse tactile physique avec écran, tiroir et imprimante ticket." aria-label="Terminal Point de Vente : la caisse tactile physique avec écran, tiroir et imprimante ticket.">TPV</abbr> tactile 15,6"</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Tiroir caisse + imprimante ticket</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Licence CashMag 5 ans</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#F59E0B] text-base">check</span>Installation, paramétrage, formation</li>
@@ -1298,7 +1302,7 @@ Usage : hubs (caisse, IT, web). Blobs CSS, zéro parallax.
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
     <div class="lg:col-span-7 space-y-8 dcb-stagger">
       <div class="flex flex-wrap gap-3">
-        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr> Certifié</span>
+        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr> Certifié</span>
         <span class="price-badge bg-[#F57C00] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase">Dès 59€/mois</span>
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Garantie 5 ans</span>
       </div>
@@ -1309,7 +1313,7 @@ Usage : hubs (caisse, IT, web). Blobs CSS, zéro parallax.
       <div class="space-y-4">
         <div class="flex items-center gap-3 text-white">
           <span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">check_circle</span>
-          <span>Logiciel <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." title="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr> certifié NF525, conforme loi anti-fraude TVA</span>
+          <span>Logiciel <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr> certifié NF525, conforme loi anti-fraude TVA</span>
         </div>
         <div class="flex items-center gap-3 text-white">
           <span class="material-symbols-outlined text-[#F57C00]" style="font-variation-settings:'FILL' 1">check_circle</span>

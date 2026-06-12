@@ -192,6 +192,7 @@ Gouvernance : **une règle n'existe ici que si le code la prouve** (audit du 11/
 - Pages légales : sobres, zéro accent.
 - **Pastille d'icône = surface OPPOSÉE à celle de la section** (grise `#F8F9FA` sur section blanche, blanche sur section grise), icône orange sur pages marque, JAMAIS d'ombre sous les pastilles. (Validé client 12/06/2026, pilote hub caisse.)
 - Zéro `backdrop-blur` sur la nav (fond blanc uni). Zéro bordure 1px entre sections (shift tonal). Ombres tintées bleu `rgba(7,43,107,0.04)`.
+- **Tooltips/abbr : jamais de soulignement pointillé ni surlignage.** Pas d'attribut `title` sur les `<abbr>` : utiliser `data-tooltip` + `aria-label` uniquement.
 
 ### Signatures transverses (présentes sur tout le site, ne jamais casser)
 - **CTA final v3** ("Le Seuil" desktop / "Le Bord Tranché" mobile) en fin de chaque page, piloté par `--accent`/`--accent-dark`.
