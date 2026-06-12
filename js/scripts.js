@@ -622,12 +622,19 @@
         '</form>' +
       '</div>';
 
-    /* ── FAB sticky ── */
+    /* ── FAB sticky ──
+       Silo caisse : bouton ouvre la bottom-sheet devis intégrée.
+       Toutes les autres pages : lien direct vers la page contact. */
+    var isCaisse = pth.indexOf('/caisse-enregistreuse/') !== -1;
     var msFab =
       '<div class="fab hidden" role="group" aria-label="Actions rapides">' +
-        '<button class="b1" id="fabDevis" aria-label="Demander un devis">' +
-          'Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>' +
-        '</button>' +
+        (isCaisse
+          ? '<button class="b1" id="fabDevis" aria-label="Demander un devis">' +
+              'Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>' +
+            '</button>'
+          : '<a class="b1" href="' + base + 'contact/index.html" aria-label="Demander un devis">' +
+              'Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>' +
+            '</a>') +
         '<a class="b2" href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10">' +
           '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1">call</span>' +
         '</a>' +
