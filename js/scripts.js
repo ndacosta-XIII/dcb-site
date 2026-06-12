@@ -284,6 +284,8 @@
                   '<li class="text-xs text-white/45 leading-snug">Le Creusot</li>' +
                   '<li class="text-xs text-white/45 leading-snug">Montceau-les-Mines</li>' +
                 '</ul>' +
+                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
+                '<a href="' + base + 'caisse-enregistreuse/saone-et-loire/" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Sa\u00f4ne-et-Loire \u2192</a>' +
               '</dd>' +
             '</div>' +
             // 69 Rh\u00f4ne
@@ -297,6 +299,8 @@
                   '<li class="text-sm font-semibold text-white leading-snug">Lyon</li>' +
                   '<li class="text-sm font-semibold text-white leading-snug">Villefranche-sur-Sa\u00f4ne</li>' +
                 '</ul>' +
+                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
+                '<a href="' + base + 'caisse-enregistreuse/rhone/" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Rh\u00f4ne \u2192</a>' +
               '</dd>' +
             '</div>' +
             // 01 Ain
@@ -309,6 +313,8 @@
                 '<ul class="list-none p-0 m-0 space-y-1.5">' +
                   '<li class="text-sm font-semibold text-white leading-snug">Bourg-en-Bresse</li>' +
                 '</ul>' +
+                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
+                '<a href="' + base + 'caisse-enregistreuse/ain/" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Ain →</a>' +
               '</dd>' +
             '</div>' +
             // 42 Loire
@@ -321,6 +327,8 @@
                 '<ul class="list-none p-0 m-0 space-y-1.5">' +
                   '<li class="text-sm font-semibold text-white leading-snug">Roanne</li>' +
                 '</ul>' +
+                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
+                '<a href="' + base + 'caisse-enregistreuse/loire/" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Loire →</a>' +
               '</dd>' +
             '</div>' +
           '</dl>' +

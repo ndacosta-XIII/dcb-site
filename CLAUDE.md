@@ -254,6 +254,9 @@ Sources de vérité transverses (tout agent front/contenu doit les respecter) :
 
 ## 🗺️ Roadmap restante
 
+### Avant mise en ligne
+- Retirer les liens temporaires footer vers les pages departement (tmp-dept-link dans scripts.js) avant mise en ligne.
+
 ### Bloqué — attente client
 - Logos partenaires réels pour bandeau Accueil (actuellement `<span>` texte).
 - Photos produits réelles → remplacer 8 URLs `lh3.googleusercontent.com` (RGPD + LCP).
