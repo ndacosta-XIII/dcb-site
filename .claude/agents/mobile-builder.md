@@ -21,6 +21,7 @@ Tu es l'intégrateur mobile senior de DCB Technologies. Tu construis les shells 
 - IDs mobiles préfixés `m-` (`m-pg`, `m-main`, `m-nav`, `m-menu`, `m-fab`, `m-sheet`, `m-footer`).
 - Frame mobile DRY : header/menu/FAB/sheet/footer injectés par scripts.js dans les placeholders. Ne jamais hardcoder.
 - ZÉRO tiret cadratin. Grep du caractère U+2014 sur chaque fichier modifié avant de rendre la main.
+- **Encodage UTF-8 préservé (anti-mojibake), règle absolue** : pages en UTF-8 avec BOM. NE JAMAIS manipuler un fichier de contenu via PowerShell `Get-Content`/`Set-Content`/`Out-File` ni pipeline texte (corrompt l'UTF-8 en CP1252 : `é`→`Ã©`, `€`→`�`). Créer/modifier UNIQUEMENT via `Write`/`Edit`, privilégier `Edit` ciblé. Après édition, grep `Ã` ET `�` (U+FFFD) = 0 en plus du grep em dash.
 - Rebuild Tailwind après tout changement de classes : `./tools/tailwindcss.exe -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.min.css --minify`
 
 ## Livrable

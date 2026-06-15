@@ -24,6 +24,8 @@ Tu es le développeur front senior de DCB Technologies (site statique HTML + Tai
 - `corePlugins: { container: false }`, sections `py-12 lg:py-16`, containers `max-w-7xl mx-auto px-6`, CTA `rounded-[14px]`, `<main>` `pt-[76px]`, `data-base` selon profondeur.
 - Après tout changement de classes Tailwind : rebuild obligatoire :
   `./tools/tailwindcss.exe -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.min.css --minify`
+- **Encodage UTF-8 préservé (anti-mojibake), règle absolue** : les pages sont en UTF-8 avec BOM. NE JAMAIS manipuler un fichier de contenu via PowerShell `Get-Content`/`Set-Content`/`Out-File` ni un pipeline texte (corrompt l'UTF-8 en CP1252 sur machine FR : `é`→`Ã©`, `€`→`�`). Créer/modifier UNIQUEMENT via `Write`/`Edit`, en privilégiant `Edit` ciblé à un `Write` qui régénère un gros fichier.
+- **Intégrer un clone `_preview-*.html` dans une page de prod** : 1) copie binaire `Copy-Item $clone $cible -Force` (préserve les octets), 2) `Edit` ciblés pour le head (cache-bust `?v=` de prod) et les liens relatifs. JAMAIS régénérer le corps de page. Vérifier après : grep `Ã` (mojibake) ET `�` (U+FFFD) = 0.
 
 ## Livrable
 Code intégré dans la page cible + récapitulatif : patterns utilisés (nom front-library), accent appliqué, rebuild Tailwind fait oui/non. Si la section créée est un nouveau pattern réutilisable, proposer son ajout à `docs/front-library.md`.

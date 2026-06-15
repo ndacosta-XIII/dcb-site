@@ -91,6 +91,19 @@ S'applique à : titres HTML, meta description, H1/H2/H3, body, FAQ, JSON-LD, opt
 
 ---
 
+## 🔤 RÈGLE ABSOLUE — ENCODAGE UTF-8 PRÉSERVÉ (anti-mojibake)
+
+Les pages sont en **UTF-8 avec BOM** (`EF BB BF`). Une corruption d'encodage (double UTF-8 / passage par CP1252 : `é`→`Ã©`, `€`→`�`, `Ê`→`�`) est un défaut grave, invisible au grep em dash. **Elle ne doit jamais se produire**, pas seulement être détectée.
+
+**Cause à proscrire :** réécrire un fichier de contenu d'une manière qui le fait transiter par l'encodage console/ANSI de Windows. Donc :
+
+- **JAMAIS** manipuler un fichier HTML/CSS/JS de contenu via PowerShell `Get-Content` / `Set-Content` / `Out-File` ni via un pipeline texte (`... | Set-Content`). Ces commandes ne garantissent pas l'UTF-8 sur une machine FR.
+- Pour **créer ou modifier** du contenu : utiliser EXCLUSIVEMENT les outils du harness `Write` / `Edit` (UTF-8 garanti). Privilégier `Edit` ciblé à un `Write` qui régénère un gros fichier.
+- Pour **intégrer un clone** (`_preview-*.html`) dans une page de production : **copie binaire** d'abord (`Copy-Item $clone $cible -Force`, qui préserve les octets à l'identique), PUIS `Edit` ciblés pour le head (cache-bust `?v=`) et les liens relatifs. Ne JAMAIS régénérer le corps de la page.
+- Manipulation d'octets autorisée uniquement pour une **réparation** d'encodage : repartir d'une source git sans perte, transformer en CP1252→UTF-8, réécrire en UTF-8 **avec BOM**, dry-run de contrôle (mojibake=0, `�` U+FFFD=0, em dash=0) avant écriture.
+
+---
+
 ## ⚙️ Tech Stack
 
 - **HTML5 + Tailwind CSS v3.4.17 (build statique) + Vanilla JS.**
