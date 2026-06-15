@@ -114,6 +114,13 @@ Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations 
 - Argument stéphanois propre : "la différence entre lever le rideau et le laisser baissé".
 - CTA final : "Parlez à un technicien DCB dans la Loire."
 
+### Architecture anti-redondance DE-DUP 2026-06-15 (4 pages dpt)
+Chaque zone a un rôle distinct pour ne pas répéter les mêmes arguments :
+- Trust bar IDENTIQUE 4 pages (réassurances marque) : "Intervention <4h" / "Garantie 5 ans" / "Certifié NF525" / "Zéro sous-traitance". (71 : item 1 = "Intervention sous 4h en Saône-et-Loire".) Plus de "Télémaintenance 20 min" en trust bar.
+- Checklist proximité IDENTIQUE 4 pages (engagements SAV chiffrés) : "Télémaintenance 7j/7 en moins de 20 minutes" / "Sur site en moins de 4h si besoin" / "Remplacement de matériel sous 48h". Sans "8 pannes sur 10" (puce 1) ni "zéro sous-traitance" (déjà trust bar).
+- Cards "Pourquoi changer" = 3 PROBLÈMES vécus, 1 mention courte de la solution max (card 1).
+- Texte final dans content-departements-redige.md, section "VERSION DE-DUP 2026-06-15".
+
 ### Anti-duplicate : blocs partagés assumés (information fonctionnelle/légale)
 - Card 2 "Un logiciel non conforme" (NF525 + amende 7 500 €) : quasi identique sur les 4 pages.
 - Section 4 métiers, section 7 périphériques, piliers NF525 (section 6) : repris du template 71.

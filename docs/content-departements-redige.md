@@ -546,6 +546,135 @@ Très peu de spécialistes caisse NF525 se déplacent vraiment dans la Loire. Ch
 
 ---
 
+## VERSION DE-DUP 2026-06-15 (les 4 pages) : architecture anti-redondance validée client
+
+PROBLÈME RÉGLÉ : les mêmes arguments (télémaintenance 20 min, sur site 4h, zéro sous-traitance,
+NF525) étaient répétés dans 5 zones de chaque page. Cette version donne à CHAQUE zone un rôle
+distinct, calé sur le hub caisse. Elle SUPERSÈDE les "VERSION ALLÉGÉE" ci-dessus pour les 4 zones
+traitées (H1, trust bar, cards "Pourquoi changer", checklist proximité). Les ledes hero restent
+ceux de la VERSION ALLÉGÉE (déjà dé-densifiés).
+
+RÉPARTITION DES RÔLES (anti-doublon) :
+- Trust bar = 4 réassurances MARQUE, identiques sur les 4 pages. Plus de "Télémaintenance 20 min"
+  ici (elle vit dans la checklist proximité), retour de "Garantie 5 ans" comme au hub.
+- Cards "Pourquoi changer" = les 3 PROBLÈMES vécus (douleurs client). 1 seule mention courte de la
+  solution DCB dans la card 1, pas la liste des délais SAV.
+- Checklist proximité = les 3 ENGAGEMENTS SAV chiffrés, structure identique aux 4 pages (calée hub).
+- Hero chips = territoire + 1 signe distinctif de la page.
+
+### TRUST BAR (4 items, IDENTIQUE sur les 4 pages, calée hub caisse)
+1. Intervention <4h          (icône speed)
+2. Garantie 5 ans            (icône verified_user)
+3. Certifié NF525            (icône verified)
+4. Zéro sous-traitance       (icône groups)
+
+(Sur 71, l'item 1 reste libellé "Intervention sous 4h en Saône-et-Loire" : correction de wording
+déjà validée plus haut. Les 3 autres items identiques aux pages 69/01/42.)
+
+### CHECKLIST PROXIMITÉ (3 puces, structure IDENTIQUE sur les 4 pages, calée hub)
+Puce 1 : Télémaintenance 7j/7 en moins de 20 minutes
+Puce 2 : Sur site en moins de 4h si besoin
+Puce 3 : Remplacement de matériel sous 48h
+
+(La sous-phrase "8 pannes sur 10 réglées sans déplacement" est RETIRÉE de la puce 1. "Zéro
+sous-traitance" est RETIRÉ de la puce 3 : il vit désormais en trust bar.)
+
+---
+
+#### 71 : SAONE-ET-LOIRE
+
+H1 ligne 1 : Caisse enregistreuse NF525 en Saône-et-Loire,
+H1 italique : techniciens basés à Paray-le-Monial
+
+Cards "Pourquoi changer" (problème, hauteurs égalisées) :
+
+Card 1 : Un SAV injoignable
+Chez SumUp ou un revendeur en ligne, une panne devient un ticket, un chatbot, puis deux jours à
+compter vos ventes à la main. Chez DCB, vous appelez le 04 82 53 05 10 et un technicien prend la
+main, tout de suite.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous
+peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR :
+l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Une caisse pas faite pour vous
+Une boulangerie qui ouvre à 5h n'a pas les mêmes besoins qu'un restaurant avec plan de salle. On
+règle chaque caisse sur votre activité réelle, à Mâcon comme à Autun, avant la mise en service.
+
+---
+
+#### 69 : RHONE
+
+H1 ligne 1 : Caisse enregistreuse NF525 à Lyon et dans le Rhône,
+H1 italique : techniciens basés à Dardilly
+
+Cards "Pourquoi changer" (problème, hauteurs égalisées) :
+
+Card 1 : Un SAV injoignable
+À Lyon, les revendeurs ne manquent pas. Les techniciens qui décrochent, si. Ailleurs, une panne
+devient un ticket et deux jours d'attente. Chez DCB, vous appelez le 04 82 53 05 10 et un technicien
+prend la main, tout de suite.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous
+peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR :
+l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Un prestataire sans ancrage local
+Lyon attire beaucoup de solutions nationales, sans aucune adresse physique sur place. Chez DCB,
+vous avez un technicien identifié au bout du fil, basé à Dardilly. Votre dossier reste dans la même
+équipe, du devis à la maintenance.
+
+---
+
+#### 01 : AIN (aucune base, aucun stock local : angle réactivité)
+
+H1 ligne 1 : Caisse enregistreuse NF525 dans l'Ain,
+H1 italique : Bresse, Bugey et Pays de Gex
+
+Cards "Pourquoi changer" (problème, hauteurs égalisées) :
+
+Card 1 : Un SAV qui ne répond pas le matin
+À Bourg-en-Bresse comme à Gex, les revendeurs de caisse sont rares. Quand ça plante, c'est un
+ticket d'assistance et deux jours à patienter. Chez DCB, vous appelez le 04 82 53 05 10 et un
+technicien prend la main à distance, tout de suite.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous
+peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR :
+l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Installé de loin, jamais formé
+Beaucoup de commerçants de l'Ain ont reçu leur caisse par la poste, sans personne pour la mettre en
+route. Chez DCB, un technicien vient dans votre établissement, règle le logiciel sur votre activité
+réelle et forme votre équipe avant la mise en service.
+
+---
+
+#### 42 : LOIRE (aucune base, aucun stock local : angle réactivité)
+
+H1 ligne 1 : Caisse enregistreuse NF525 dans la Loire,
+H1 italique : Saint-Étienne, Roanne et le Forez
+
+Cards "Pourquoi changer" (problème, hauteurs égalisées) :
+
+Card 1 : Un SAV qui ne répond pas le samedi
+À Saint-Étienne comme à Roanne, les revendeurs de caisse se comptent sur les doigts d'une main. Une
+panne un samedi de marché, et c'est ticket, chatbot, deux jours à encaisser à la main. Chez DCB,
+vous appelez le 04 82 53 05 10 et un technicien prend la main, tout de suite.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous
+peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR :
+l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Une caisse pas configurée pour vous
+Un boucher de Roanne n'a pas les mêmes besoins qu'une brasserie stéphanoise ou qu'une boulangerie
+de Montbrison. On règle chaque caisse sur votre activité réelle, avant la mise en service.
+
+---
+
 ## NOTE INTÉGRATION (rappel front-builder)
 - Cards "métiers" (section 4), périphériques (section 7) et piliers NF525 (section 6) : repris du template 71 à l'identique, pas de réécriture.
 - Aucun em dash (U+2014) dans ce livrable : remplacé par deux-points, virgules, points ou puces.
