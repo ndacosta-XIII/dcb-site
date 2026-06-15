@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" data-base="../../">
 <head>
 <meta charset="utf-8">
@@ -83,10 +83,9 @@
 
   /* ---- Phone Google Maps : ancré bas-droite, déborde sous le browser ---- */
   /* Stage 420px, browser 310px → phone part de y=108 jusqu'à y=420 = 312px de haut */
-  .serp-phone { position:absolute; bottom:0; right:0; width:163px; height:327px; z-index:3; background:#1B1B20; border-radius:26px; padding:5px; box-shadow:0 24px 48px -10px rgba(0,0,0,0.65), 0 14px 32px -16px rgba(239,68,68,0.45); transform:rotate(3.5deg); animation:phone-breathe 7s ease-in-out infinite; }
-  @keyframes phone-breathe { 0%,100%{transform:rotate(3.5deg) translateY(0)} 50%{transform:rotate(3.5deg) translateY(-5px)} }
+  .serp-phone { position:absolute; bottom:0; right:0; width:163px; height:327px; z-index:3; background:#1B1B20; border-radius:26px; padding:5px; box-shadow:0 24px 48px -10px rgba(0,0,0,0.65), 0 14px 32px -16px rgba(239,68,68,0.45); transform:rotate(3.5deg); }
   @keyframes badge-pop { from{transform:scale(0.6) translateY(8px);opacity:0} to{transform:scale(1) translateY(0);opacity:1} }
-  @media (prefers-reduced-motion: reduce) { .serp-phone { animation: none !important; } .serp-left-badge, .serp-biz-sheet { animation: none !important; opacity: 1; transform: none !important; } }
+  @media (prefers-reduced-motion: reduce) { .serp-left-badge, .serp-biz-sheet { animation: none !important; opacity: 1; transform: none !important; } }
   .serp-phone-screen { width:100%; height:100%; background:#C5D5EC; border-radius:21px; overflow:hidden; position:relative; }
 
   /* ---- Badge stat flottant : ancré bas-gauche du browser (y≈270) ---- */
@@ -959,5 +958,3 @@
 </script>
 </body>
 </html>
-
-
