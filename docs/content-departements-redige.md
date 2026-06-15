@@ -26,6 +26,27 @@ A remplacer par : `Questions fréquentes en Saône-et-Loire.`
 
 (Le chip hero "Saône-et-Loire (71)" reste inchangé : le code entre parenthèses est autorisé dans un badge visuel.)
 
+### VERSION ALLÉGÉE 2026-06-15 (71) : 3 zones à intégrer desktop = mobile
+
+Réduction de densité demandée client. Texte identique sur les deux shells.
+
+**ZONE 1 : Lede hero (remplace L144 desktop / lede mobile)**
+Votre technicien DCB ne vient pas de Lyon, il vient de Paray-le-Monial : atelier, stock et techniciens salariés sur place. Prise en main à distance en 20 minutes, sur site en moins de 4h si besoin. Packs caisse tactile à partir de 59 €/mois.
+
+**ZONE 2 : 3 cards "Pourquoi changer" (densité égalisée)**
+
+Card 1 : Un SAV injoignable
+Avec SumUp ou un revendeur en ligne, une panne se transforme en ticket, en chatbot et en deux jours à compter vos ventes à la main. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance tout de suite. Sur site en moins de 4h si besoin.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Une caisse pas faite pour vous
+Une boulangerie qui ouvre à 5h n'a pas les mêmes besoins qu'un restaurant avec plan de salle. On règle chaque caisse sur votre activité réelle, à Mâcon comme à Autun, avant la mise en service.
+
+**ZONE 3 : Lede section "Vos techniciens en Saône-et-Loire" (remplace L509 desktop / L746 mobile)**
+Chaque client a un interlocuteur identifié, pas un numéro de ticket : un nom, un téléphone, une présence à Paray-le-Monial. On prend la main à distance en 20 minutes, sur site en moins de 4h si besoin.
+
 ---
 
 ## 2. RHONE (69) : PAGE COMPLETE
@@ -48,7 +69,7 @@ Caisse enregistreuse NF525 à Lyon et dans le Rhône, techniciens basés à Dard
 - Siège à Dardilly
 - Intervention sous 4h
 
-**Lede hero :**
+**Lede hero :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Rhône]
 Votre technicien DCB n'arrive pas d'une ville lointaine : notre siège est à Dardilly, à dix minutes du centre de Lyon. Le stock matériel et les techniciens sont sur place. Une panne à Villeurbanne, à Vénissieux ou dans le Beaujolais, on prend la main à distance dans les 20 minutes. Si un déplacement s'impose, un technicien est chez vous en moins de 4h. Packs caisse tactile à partir de 59 €/mois.
 
 **Checklist hero (3 items) :**
@@ -69,6 +90,7 @@ Libellé : "Siège social" / "Dardilly"
 
 **Eyebrow :** Pourquoi changer ?
 **H2 :** Votre caisse actuelle vous freine.
+[CARDS REMPLACÉES → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Rhône]
 
 **Card 1 : Un SAV injoignable**
 A Lyon, les revendeurs ne manquent pas. Les techniciens qui répondent, si. Avec SumUp ou un vendeur en ligne, une panne se transforme en ticket, en chatbot, et en deux jours à compter vos ventes à la main. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance tout de suite. Si un passage est nécessaire, un technicien sort de Dardilly.
@@ -103,7 +125,7 @@ Corps : identique au template 71 (information légale partagée). Dans le lede, 
 
 **Eyebrow :** Expertise de proximité
 **H2 :** Vos techniciens dans le Rhône
-**Lede :** A Lyon, trouver un prestataire est facile. Trouver un technicien qui connaît votre installation, qui décroche quand vous appelez et qui peut sortir de Dardilly en cas d'urgence, c'est plus rare. C'est exactement ce qu'on fait : zéro sous-traitance, un nom, un téléphone.
+**Lede :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Rhône] A Lyon, trouver un prestataire est facile. Trouver un technicien qui connaît votre installation, qui décroche quand vous appelez et qui peut sortir de Dardilly en cas d'urgence, c'est plus rare. C'est exactement ce qu'on fait : zéro sous-traitance, un nom, un téléphone.
 
 **Checklist (3 items) :**
 - Télémaintenance 7j/7, prise en main en moins de 20 minutes
@@ -169,6 +191,27 @@ Un technicien DCB sort de Dardilly, vient dans votre établissement, installe le
 **H2 :** Parlez à un technicien DCB dans le Rhône.
 **Sous-texte bouton :** Diagnostic gratuit, sans engagement
 
+### VERSION ALLÉGÉE 2026-06-15 (69) : 3 zones à intégrer desktop = mobile
+
+Réduction de densité demandée client. Texte identique sur les deux shells. Remplace le lede hero, les 3 cards "Pourquoi changer" et le lede proximité ci-dessus.
+
+**ZONE 1 : Lede hero**
+Votre technicien ne vient pas d'une ville lointaine : notre siège est à Dardilly, stock et équipe sur place, à dix minutes de Lyon. Prise en main à distance en 20 minutes, sur site en moins de 4h si besoin. Packs caisse tactile à partir de 59 €/mois.
+
+**ZONE 2 : 3 cards "Pourquoi changer" (densité égalisée)**
+
+Card 1 : Un SAV injoignable
+A Lyon, les revendeurs ne manquent pas. Les techniciens qui décrochent, si. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance tout de suite, sans ticket ni chatbot. Si un passage s'impose, un technicien sort de Dardilly.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Un prestataire sans ancrage local
+Lyon attire beaucoup de solutions nationales sans aucune adresse physique sur place. Chez DCB, vous avez un technicien identifié au bout du fil, basé à Dardilly. Votre dossier reste dans la même équipe, du devis à la maintenance.
+
+**ZONE 3 : Lede section "Vos techniciens dans le Rhône"**
+A Lyon, trouver un prestataire est facile. Trouver un technicien qui connaît votre installation et décroche quand vous appelez, c'est plus rare. C'est ce qu'on fait, depuis Dardilly : prise en main à distance en 20 minutes, sur site en moins de 4h si besoin.
+
 ---
 
 ## 3. AIN (01) : PAGE COMPLETE
@@ -193,7 +236,7 @@ Caisse enregistreuse NF525 dans l'Ain, intervention rapide sur toute la Bresse e
 - Télémaintenance 20 min
 - Sur site sous 4h
 
-**Lede hero :**
+**Lede hero :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Ain]
 Une panne à Bourg-en-Bresse un samedi matin. Le temps qu'un revendeur lointain vous rappelle, on a déjà pris la main à distance. La télémaintenance règle 8 pannes sur 10 en moins de 20 minutes. Et quand un déplacement est vraiment nécessaire, un technicien est chez vous en moins de 4h, partout dans l'Ain. Packs caisse tactile à partir de 59 €/mois.
 
 **Checklist hero (3 items) :**
@@ -214,6 +257,7 @@ Libellé : "Réponse" / "20 min"
 
 **Eyebrow :** Pourquoi changer ?
 **H2 :** Votre caisse actuelle vous freine.
+[CARDS REMPLACÉES → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Ain]
 
 **Card 1 : Un SAV qui ne répond pas le matin**
 A Bourg-en-Bresse comme à Gex, les revendeurs de caisse sont rares. Quand ça plante, c'est un ticket d'assistance et deux jours à patienter. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance dans les 20 minutes, où que vous soyez dans l'Ain. Si un passage est nécessaire, un technicien arrive en moins de 4h.
@@ -248,7 +292,7 @@ Corps : identique au template 71 (information légale partagée). Dans le lede, 
 
 **Eyebrow :** Expertise sans frontière
 **H2 :** Vos techniciens dans l'Ain
-**Lede :** La réactivité ne se mesure pas en kilomètres. Dans l'Ain comme ailleurs, 8 pannes sur 10 se règlent en moins de 20 minutes par prise en main à distance. Quand un déplacement est nécessaire, nos techniciens sont sur site en moins de 4 heures. Bourg-en-Bresse, Gex, Nantua : même engagement.
+**Lede :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Ain] La réactivité ne se mesure pas en kilomètres. Dans l'Ain comme ailleurs, 8 pannes sur 10 se règlent en moins de 20 minutes par prise en main à distance. Quand un déplacement est nécessaire, nos techniciens sont sur site en moins de 4 heures. Bourg-en-Bresse, Gex, Nantua : même engagement.
 
 **Checklist (3 items) :**
 - Télémaintenance 7j/7 en moins de 20 minutes : 8 pannes sur 10 réglées sans déplacement
@@ -313,6 +357,27 @@ Lightspeed et Clyo sont des logiciels en ligne, sans personne pour venir vous ac
 **H2 :** Parlez à un technicien DCB dans l'Ain.
 **Sous-texte bouton :** Diagnostic gratuit, sans engagement
 
+### VERSION ALLÉGÉE 2026-06-15 (01) : 3 zones à intégrer desktop = mobile
+
+Réduction de densité demandée client. Texte identique sur les deux shells. Remplace le lede hero, les 3 cards "Pourquoi changer" et le lede proximité ci-dessus. AUCUNE base, AUCUN stock local : angle réactivité, jamais proximité kilométrique.
+
+**ZONE 1 : Lede hero**
+Une panne à Bourg-en-Bresse un samedi matin, et la télémaintenance a déjà pris la main avant qu'un revendeur lointain vous rappelle. Prise en main à distance en 20 minutes, sur site en moins de 4h si besoin, partout dans l'Ain. Packs caisse tactile à partir de 59 €/mois.
+
+**ZONE 2 : 3 cards "Pourquoi changer" (densité égalisée)**
+
+Card 1 : Un SAV qui ne répond pas le matin
+A Bourg-en-Bresse comme à Gex, les revendeurs de caisse sont rares, et quand ça plante c'est un ticket et deux jours à patienter. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance en 20 minutes. Sur site en moins de 4h si besoin.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Installé de loin, jamais formé
+Beaucoup de commerçants de l'Ain ont reçu leur caisse par la poste, sans personne pour la mettre en route. Chez DCB, un technicien vient dans votre établissement, règle le logiciel sur votre activité réelle et forme votre équipe avant la mise en service.
+
+**ZONE 3 : Lede section "Vos techniciens dans l'Ain"**
+La réactivité ne se mesure pas en kilomètres. Dans l'Ain, on prend la main à distance en 20 minutes et 8 pannes sur 10 se règlent sans déplacement. Quand un passage s'impose, un technicien est chez vous en moins de 4h.
+
 ---
 
 ## 4. LOIRE (42) : PAGE COMPLETE
@@ -337,7 +402,7 @@ Caisse enregistreuse NF525 dans la Loire, intervention rapide à Saint-Etienne e
 - Télémaintenance 20 min
 - Sur site sous 4h
 
-**Lede hero :**
+**Lede hero :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Loire]
 Saint-Etienne, Roanne, Montbrison : trois bassins, une seule équipe. La télémaintenance DCB règle 8 pannes sur 10 en moins de 20 minutes, sans personne sur la route. Et le jour où un passage est indispensable, un technicien est chez vous en moins de 4h, partout dans la Loire. Packs caisse tactile à partir de 59 €/mois.
 
 **Checklist hero (3 items) :**
@@ -358,6 +423,7 @@ Libellé : "Réponse" / "20 min"
 
 **Eyebrow :** Pourquoi changer ?
 **H2 :** Votre caisse actuelle vous freine.
+[CARDS REMPLACÉES → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Loire]
 
 **Card 1 : Un SAV qui ne répond pas le samedi**
 A Saint-Etienne comme à Roanne, les revendeurs de caisse se comptent sur les doigts d'une main. Une panne un samedi de marché, et c'est ticket, chatbot, et deux jours à encaisser à la main. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance dans les 20 minutes. Sur site en moins de 4h si la situation l'exige.
@@ -392,7 +458,7 @@ Corps : identique au template 71 (information légale partagée). Dans le lede, 
 
 **Eyebrow :** Expertise sans frontière
 **H2 :** Vos techniciens dans la Loire
-**Lede :** Saint-Etienne compte 173 000 habitants et très peu de spécialistes caisse NF525 qui se déplacent vraiment. Chez DCB, la télémaintenance règle la majorité des pannes en 20 minutes, depuis n'importe où. Quand un déplacement est nécessaire, nos techniciens sont chez vous en moins de 4 heures, dans le Roannais, le Forez comme le Pilat.
+**Lede :** [REMPLACÉ → voir VERSION ALLÉGÉE 2026-06-15 en fin de section Loire] Saint-Etienne compte 173 000 habitants et très peu de spécialistes caisse NF525 qui se déplacent vraiment. Chez DCB, la télémaintenance règle la majorité des pannes en 20 minutes, depuis n'importe où. Quand un déplacement est nécessaire, nos techniciens sont chez vous en moins de 4 heures, dans le Roannais, le Forez comme le Pilat.
 
 **Checklist (3 items) :**
 - Télémaintenance 7j/7 en moins de 20 minutes : 8 pannes sur 10 réglées sans déplacement
@@ -456,6 +522,27 @@ La location longue durée, 24 ou 36 mois, est la formule la plus souple pour les
 ### CTA final
 **H2 :** Parlez à un technicien DCB dans la Loire.
 **Sous-texte bouton :** Diagnostic gratuit, sans engagement
+
+### VERSION ALLÉGÉE 2026-06-15 (42) : 3 zones à intégrer desktop = mobile
+
+Réduction de densité demandée client. Texte identique sur les deux shells. Remplace le lede hero, les 3 cards "Pourquoi changer" et le lede proximité ci-dessus. AUCUNE base, AUCUN stock local : angle réactivité, jamais proximité kilométrique.
+
+**ZONE 1 : Lede hero**
+Saint-Etienne, Roanne, Montbrison : une seule équipe. Prise en main à distance en 20 minutes, sur site en moins de 4h si besoin, partout dans la Loire. Packs caisse tactile à partir de 59 €/mois.
+
+**ZONE 2 : 3 cards "Pourquoi changer" (densité égalisée)**
+
+Card 1 : Un SAV qui ne répond pas le samedi
+A Saint-Etienne comme à Roanne, les revendeurs de caisse se comptent sur les doigts d'une main. Une panne un samedi de marché, et c'est ticket, chatbot, deux jours à encaisser à la main. Chez DCB, vous appelez le 04 82 53 05 10 et on prend la main à distance en 20 minutes. Sur site en moins de 4h si besoin.
+
+Card 2 : Un logiciel non conforme
+Depuis 2018, tout commerçant assujetti à la TVA doit utiliser un logiciel certifié NF525, sous peine de 7 500 € d'amende par caisse non conforme. CashMag est certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse.
+
+Card 3 : Une caisse pas configurée pour vous
+Un boucher de Roanne n'a pas les mêmes besoins qu'une brasserie stéphanoise ou qu'une boulangerie de Montbrison. On règle chaque caisse sur votre activité réelle, avant la mise en service, pendant une installation sur place.
+
+**ZONE 3 : Lede section "Vos techniciens dans la Loire"**
+Très peu de spécialistes caisse NF525 se déplacent vraiment dans la Loire. Chez DCB, on prend la main à distance en 20 minutes et 8 pannes sur 10 se règlent sans déplacement. Quand un passage s'impose, un technicien est chez vous en moins de 4h.
 
 ---
 
