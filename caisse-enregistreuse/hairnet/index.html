@@ -20,92 +20,114 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/style.css?v=14">
-<link rel="stylesheet" href="../../css/tailwind.min.css?v=19">
-<link rel="stylesheet" href="../../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
+<link rel="stylesheet" href="../../css/style.css?v=15">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=20">
 <style>
   body { font-family: 'Inter', sans-serif; }
-  /* ── Hairnet brand colors (not in Tailwind bundle) ── */
-  .bg-\[\#4527a4\] { background-color: #4527a4 !important; }
+  /* ── Accent VIOLET dominant variabilise (--accent) + OR premium fixe (#c59c45, secondaire) ──
+     Les classes arbitraires .text-[#4527a4] etc. du markup pointent vers var(--accent) :
+     un seul levier de couleur dominante, l'or reste pour ses usages premium. */
+  .bg-\[\#4527a4\] { background-color: var(--accent) !important; }
   .bg-\[\#2E1A7A\] { background-color: #2E1A7A !important; }
   .bg-\[\#5D3BB5\] { background-color: #5D3BB5 !important; }
   .bg-\[\#c59c45\] { background-color: #c59c45 !important; }
-  .text-\[\#4527a4\] { color: #4527a4 !important; }
+  .text-\[\#4527a4\] { color: var(--accent) !important; }
   .text-\[\#c59c45\] { color: #c59c45 !important; }
-  .border-\[\#4527a4\] { border-color: #4527a4 !important; }
+  .border-\[\#4527a4\] { border-color: var(--accent) !important; }
   .border-\[\#c59c45\] { border-color: #c59c45 !important; }
   .bg-\[\#4527a4\]\/5 { background-color: rgba(69,39,164,0.05) !important; }
   .bg-\[\#4527a4\]\/10 { background-color: rgba(69,39,164,0.10) !important; }
+  .bg-\[\#4527a4\]\/15 { background-color: rgba(69,39,164,0.15) !important; }
+  .bg-\[\#4527a4\]\/20 { background-color: rgba(69,39,164,0.20) !important; }
   .bg-\[\#c59c45\]\/5 { background-color: rgba(197,156,69,0.05) !important; }
   .bg-\[\#c59c45\]\/10 { background-color: rgba(197,156,69,0.10) !important; }
   .bg-\[\#c59c45\]\/15 { background-color: rgba(197,156,69,0.15) !important; }
-  .from-\[\#4527a4\] { --tw-gradient-from: #4527a4 !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(69,39,164,0)) !important; }
+  .border-\[\#4527a4\]\/20 { border-color: rgba(69,39,164,0.20) !important; }
+  .from-\[\#4527a4\] { --tw-gradient-from: var(--accent) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(69,39,164,0)) !important; }
+  .from-\[\#2E1A7A\] { --tw-gradient-from: #2E1A7A !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(46,26,122,0)) !important; }
+  .from-\[\#7C3AED\] { --tw-gradient-from: #7C3AED !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(124,58,237,0)) !important; }
   .to-\[\#2E1A7A\] { --tw-gradient-to: #2E1A7A !important; }
   .to-\[\#5D3BB5\] { --tw-gradient-to: #5D3BB5 !important; }
+  .to-\[\#4527a4\] { --tw-gradient-to: var(--accent) !important; }
+  .to-transparent { --tw-gradient-to: transparent !important; }
   .hover\:text-\[\#c59c45\]:hover { color: #c59c45 !important; }
 
-  /* ── NF525 SECTION ─────────── */
+  /* ── NF525 : section verbatim hub caisse (atomes editoriaux nus).
+     Watermark geant, cadre pointille et panneau ambre purges (anti-slop, alignement cashmag/hub). */
   .sec-inner { max-width:80rem; margin:0 auto; }
-  .sec-nf525 { background:#F8F9FA; padding:4rem 1.5rem 5rem; position:relative; overflow:hidden; }
-  .sec-nf525::before { content:'NF525'; position:absolute; bottom:-2.5rem; right:-1rem; font-family:'Sora',sans-serif; font-size:18rem; font-weight:800; color:rgba(11,61,145,0.04); line-height:1; letter-spacing:-0.05em; pointer-events:none; }
-  .sec-nf525 > * { position:relative; z-index:1; }
+  .sec-nf525 { background:#F8F9FA; padding:4rem 1.5rem 5rem; }
   .nf-hero { display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; margin-bottom:3.5rem; }
   @media(min-width:900px){ .nf-hero { grid-template-columns:auto 1fr; gap:3rem; } }
-  .nf-logo-wrap { display:flex; align-items:center; justify-content:center; position:relative; }
-  .nf-logo-frame { width:180px; height:180px; border-radius:24px; background:#FFF; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 48px -16px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.06); position:relative; }
-  .nf-logo-frame::before { content:''; position:absolute; inset:-8px; border-radius:28px; border:2px dashed rgba(11,61,145,0.18); pointer-events:none; }
-  .nf-logo-frame img { max-width:110px; max-height:110px; width:auto; height:auto; object-fit:contain; }
+  .nf-logo-wrap { display:flex; align-items:center; justify-content:center; }
+  /* Logo NF : chip blanc simple ombre (pas de cadre pointille) */
+  .nf-logo-frame { width:auto; height:auto; border-radius:14px; background:#FFFFFF; padding:1.5rem; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 48px -16px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.06); }
+  .nf-logo-frame img { max-width:120px; max-height:120px; width:auto; height:auto; object-fit:contain; }
   .nf-hero-text { max-width:640px; }
-  .nf-hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8B6914; margin-bottom:1rem; }
   .nf-hero-h2 { font-family:'Sora',sans-serif; font-size:clamp(1.75rem,3.5vw,2.5rem); font-weight:700; line-height:1.1; color:#0B3D91; letter-spacing:-0.02em; margin-bottom:1rem; }
   .nf-hero-lede { color:#475569; font-size:1.0625rem; line-height:1.6; }
   .nf-hero-lede a { color:#0B3D91; font-weight:600; text-decoration:underline; text-underline-offset:3px; }
-  .nf-hero-lede a:hover { color:#c59c45; }
-  .nf-pillars { position:relative; margin-bottom:3rem; }
-  .nf-pillars::before { content:''; position:absolute; top:32px; left:10%; right:10%; height:2px; background:linear-gradient(90deg,transparent,#0B3D91 15%,#0B3D91 85%,transparent); opacity:0.25; }
-  @media(max-width:767px){ .nf-pillars::before { display:none; } }
+  .nf-hero-lede a:hover { color:var(--accent); }
+  .nf-pillars { margin-bottom:3rem; }
   .nf-pillars-grid { display:grid; grid-template-columns:1fr; gap:1.5rem; }
   @media(min-width:768px){ .nf-pillars-grid { grid-template-columns:repeat(3,1fr); gap:2rem; } }
-  .nf-pillar { text-align:center; position:relative; padding:0 0.5rem; }
-  .nf-pillar-icon-wrap { width:64px; height:64px; margin:0 auto 1.25rem; border-radius:50%; background:#FFF; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(11,61,145,0.18),0 0 0 1px rgba(11,61,145,0.08); position:relative; z-index:2; }
-  .nf-pillar-icon-wrap::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:1px solid rgba(11,61,145,0.12); }
+  .nf-pillar { text-align:center; padding:0 0.5rem; }
+  /* Pastille pilier : surface opposee (blanche sur section grise), icone accent, ZERO ombre, ZERO double anneau (regle 12/06) */
+  .nf-pillar-icon-wrap { width:64px; height:64px; margin:0 auto 1.25rem; border-radius:50%; background:#FFFFFF; display:flex; align-items:center; justify-content:center; }
   .nf-pillar-icon-wrap .material-symbols-outlined { color:#0B3D91; font-size:30px; font-variation-settings:'FILL' 1; }
   .nf-pillar-num { display:block; font-family:'Sora',sans-serif; font-size:10px; font-weight:700; color:#94A3B8; letter-spacing:0.18em; margin-top:0.875rem; text-transform:uppercase; }
   .nf-pillar-title { font-family:'Sora',sans-serif; font-size:1.0625rem; font-weight:700; color:#0B3D91; margin-bottom:0.5rem; margin-top:0.25rem; }
   .nf-pillar-desc { color:#64748B; font-size:0.875rem; line-height:1.55; max-width:280px; margin:0 auto; }
-  .nf-alert { display:grid; grid-template-columns:auto 1fr auto; gap:1.5rem; align-items:center; background:rgba(245,158,11,0.05); border-radius:16px; padding:1.5rem 1.75rem; border:1px solid rgba(245,158,11,0.22); box-shadow:0 12px 32px -8px rgba(245,158,11,0.10); position:relative; overflow:hidden; }
-  .nf-alert::before { content:''; position:absolute; top:0; right:0; bottom:0; width:220px; background:linear-gradient(90deg,transparent,rgba(245,158,11,0.06)); pointer-events:none; }
-  @media(max-width:767px){ .nf-alert { grid-template-columns:1fr; gap:1rem; padding:1.25rem; } .nf-alert::before { display:none; } .nf-alert-amount { border-right:none; border-bottom:1px solid rgba(245,158,11,0.2); padding:0 0 0.75rem 0; } }
-  .nf-alert-amount { display:flex; flex-direction:column; align-items:center; padding:0.5rem 1.25rem 0.5rem 0; border-right:1px solid rgba(245,158,11,0.25); min-width:110px; }
-  .nf-alert-amount .lab { font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#92400E; margin-bottom:2px; }
-  .nf-alert-amount .val { font-family:'Sora',sans-serif; font-size:1.875rem; font-weight:800; letter-spacing:-0.02em; line-height:1; color:#D97706; }
-  .nf-alert-amount .sub { font-size:11px; color:#92400E; margin-top:4px; }
-  .nf-alert-text { position:relative; z-index:1; }
-  .nf-alert-title { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#92400E; margin-bottom:0.35rem; display:flex; align-items:center; gap:8px; }
-  .nf-alert-title .material-symbols-outlined { font-size:18px; color:#D97706; font-variation-settings:'FILL' 1; }
-  .nf-alert-desc { color:#78350F; font-size:0.875rem; line-height:1.55; }
-  .nf-alert-desc strong { color:#92400E; font-weight:700; }
-  .nf-alert-shield { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0.5rem 1rem; border-left:1px dashed rgba(245,158,11,0.3); position:relative; z-index:1; }
-  @media(max-width:767px){ .nf-alert-shield { border-left:none; border-top:1px dashed rgba(245,158,11,0.3); padding-top:1rem; padding-left:0; } }
-  .nf-alert-shield-icon { width:36px; height:36px; border-radius:50%; background:rgba(22,163,74,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:0.5rem; }
-  .nf-alert-shield-icon .material-symbols-outlined { color:#16A34A; font-size:20px; font-variation-settings:'FILL' 1,'wght' 700; }
-  .nf-alert-shield-text { font-size:11px; font-weight:700; color:#166534; line-height:1.3; max-width:110px; }
+  /* Bloc amende : composition editoriale nue (filet accent 28x3, chiffre Sora accent) */
+  .nf-editorial { display:grid; grid-template-columns:auto 1fr; gap:2.5rem 3.5rem; align-items:start; margin-top:1rem; }
+  @media(max-width:767px){ .nf-editorial { grid-template-columns:1fr; gap:1.5rem; } }
+  .nf-editorial-filet { display:block; width:28px; height:3px; border-radius:2px; background:var(--accent); margin-bottom:1.25rem; }
+  .nf-editorial-lab { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#64748B; margin-bottom:0.5rem; }
+  .nf-editorial-val { font-family:'Sora',sans-serif; font-size:clamp(3rem,5vw,3.75rem); font-weight:800; letter-spacing:-0.02em; line-height:1; color:var(--accent); }
+  .nf-editorial-sub { font-size:0.9375rem; color:#64748B; margin-top:0.625rem; }
+  .nf-editorial-body { color:#475569; font-size:1.0625rem; line-height:1.65; max-width:42rem; align-self:center; }
+  .nf-editorial-body strong { color:#0B3D91; font-weight:700; }
+  /* Cartes FAQ : blanches sur section grise (surface opposee) */
+  .d-shell .faq-item{background:#FFFFFF}
   /* ── MOBILE SHELL ── */
   .m-shell{display:none}
   @media(max-width:640px){
     .m-shell{display:block}
     .d-shell{display:none}
     #dcb-phone-fab{display:none!important}
-    [data-metier="hairnet"] .eyebrow{color:#4527a4}
-    [data-metier="hairnet"] .hero h1 em{color:#c59c45}
-    [data-metier="hairnet"] .sec h2 em{color:#4527a4}
-    [data-metier="hairnet"] .hero .checks .material-symbols-outlined{color:#c59c45}
-    [data-metier="hairnet"] .pain .n{color:#4527a4}
-    [data-metier="hairnet"] .marquee-track .it .material-symbols-outlined{color:#4527a4}
-    [data-metier="hairnet"] .fab .b1{background:#c59c45;box-shadow:0 10px 22px -6px rgba(197,156,69,0.55)}
-    [data-metier="hairnet"] .btn-pri{background:#c59c45}
+    /* Accent VIOLET dominant variabilise (modele restaurant L38-45). OR premium conserve la ou il est inline. */
+    [data-metier="hairnet"] .eyebrow{color:var(--accent)}
+    [data-metier="hairnet"] .hero h1 em{color:var(--accent)}
+    [data-metier="hairnet"] .sec h2 em{color:var(--accent)}
+    [data-metier="hairnet"] .hero .checks .material-symbols-outlined{color:var(--accent)}
+    [data-metier="hairnet"] .pain .n{color:var(--accent)}
+    [data-metier="hairnet"] .marquee-track .it .material-symbols-outlined{color:var(--accent)}
+    [data-metier="hairnet"] .fab .b1{background:var(--accent);box-shadow:0 10px 22px -6px rgba(69,39,164,0.55)}
+    [data-metier="hairnet"] .btn-pri{background:var(--accent)}
+    /* HERO : accent OR premium #C59C45 comme le desktop (badge, titre em, puces check, cert-pill, CTA). Scope .hero uniquement : sheet, FAB et CTA final restent violet. */
+    [data-metier="hairnet"] .hero h1 em{color:#C59C45}
+    [data-metier="hairnet"] .hero .chips .chip:first-child{background:#C59C45;border-color:#C59C45;color:#fff;font-weight:800}
+    [data-metier="hairnet"] .hero .checks .material-symbols-outlined{color:#C59C45}
+    [data-metier="hairnet"] .hero .cert-pill .material-symbols-outlined{color:#C59C45}
+    [data-metier="hairnet"] .hero .cta-row .btn-pri{background:#C59C45}
+    @media(max-width:390px){[data-metier="hairnet"] .hero h1{font-size:23px}}
+    /* Pastilles features S4/S5 (sections .sec) : surface opposee grise + icone accent (regle pastille 12/06) */
+    .m-shell .cm-feats .ft .ic{background:#F8F9FA;color:var(--accent)}
+    .m-shell .cm-feats .ft .ic .material-symbols-outlined{color:var(--accent)}
+    .m-shell .cm-feats--pilotage .ft .ic{background:#FFFFFF}
+    /* Bloc amende NF525 nu (atome hub mobile .nf-editorial-a, accent violet) */
+    .m-shell .nf-editorial-a{margin-top:16px}
+    .m-shell .nf-editorial-a .filet{display:block;width:24px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:16px}
+    .m-shell .nf-editorial-a .lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+    .m-shell .nf-editorial-a .amt{font-family:'Sora',sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.02em;color:var(--accent)}
+    .m-shell .nf-editorial-a .sub{font-size:13px;color:var(--mute);margin-top:8px}
+    .m-shell .nf-editorial-a .desc{font-size:13.5px;line-height:1.6;color:var(--mute);margin:18px 0 0}
+    .m-shell .nf-editorial-a .desc strong{color:#0B3D91;font-weight:700}
   }
+  .dcb-dot.is-active::before { background: var(--accent) !important; }
 </style>
+<link rel="stylesheet" href="../../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
+<!-- Preload LCP image mobile : tablette Hairnet (hero .m-shell) -->
+<link rel="preload" as="image" href="../../assets/tpv-cashmag.webp" fetchpriority="high" media="(max-width:640px)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -165,7 +187,7 @@
 }
 </script>
 </head>
-<body>
+<body style="--accent:#4527A4;--accent-dark:#3A1F8A">
 <div class="d-shell">
 <div id="dcb-nav"></div>
 <main class="pt-[76px]">
@@ -173,14 +195,13 @@
 <!-- 1. HERO -->
 <section class="bg-[#4527a4] py-12 lg:py-16 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10 pointer-events-none">
-    <div class="hero-blob-a absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#2E1A7A] to-transparent"></div>
   </div>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
     <div class="lg:col-span-7 space-y-8 dcb-stagger">
       <div class="flex flex-wrap gap-3">
-        <span class="bg-[#c59c45] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-[#c59c45]">DCB × <abbr data-tooltip="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé." title="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé." aria-label="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé.">Hairnet</abbr></span>
-        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." title="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr> Certifié</span>
+        <span class="bg-[#c59c45] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-[#c59c45]">DCB × <abbr data-tooltip="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé." aria-label="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé.">Hairnet</abbr></span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr> Certifié</span>
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Google Reserve</span>
       </div>
       <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
@@ -230,7 +251,7 @@
               <p class="font-sora font-bold text-[#0B3D91] text-base">Agenda du salon</p>
             </div>
             <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#c59c45]/10">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#c59c45] animate-pulse"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c59c45]"></span>
               <span class="text-[10px] font-bold text-[#c59c45]">Live</span>
             </div>
           </div>
@@ -289,7 +310,7 @@
 </section>
 
 <!-- 2. TRUST BAR -->
-<section class="py-6 bg-white">
+<section class="py-6 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
@@ -313,7 +334,7 @@
 </section>
 
 <!-- 3. POURQUOI HAIRNET AVEC DCB -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-10 dcb-reveal">
       <span class="text-[11px] font-bold tracking-[0.2em] text-[#4527a4] uppercase block mb-3">Le partenariat</span>
@@ -321,28 +342,32 @@
       <p class="text-slate-500 leading-relaxed mb-4">Hairnet est un logiciel de caisse coiffure certifié NF525, spécialisé pour les salons : agenda de rendez-vous, gestion anti no-show, programme de fidélité dématérialisé, réservation Google Reserve et reporting en temps réel.</p>
       <p class="text-slate-500 leading-relaxed">Un agenda, un programme de fidélité, des KPI : tout ça ne sert à rien tant que ce n'est pas configuré pour votre salon. DCB Technologies transforme Hairnet en caisse coiffure opérationnelle dès le premier shampooing, partout en Saône-et-Loire, Rhône, Ain et Loire.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 dcb-stagger">
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <span class="material-symbols-outlined text-[#4527a4] text-2xl mb-3 block ms-fill">home_pin</span>
-        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">On se déplace dans votre salon</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 dcb-stagger">
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">On se déplace dans votre salon</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Installation, formation équipe, reprise de votre fichier clients : tout se fait chez vous, pas à distance depuis un support externe.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <span class="material-symbols-outlined text-[#4527a4] text-2xl mb-3 block ms-fill">schedule</span>
-        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">On paramètre selon votre planning</h3>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">On paramètre selon votre planning</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Horaires, créneaux par praticien, temps de pause, prestations : chaque salon a ses règles. On configure Hairnet pour qu'il colle à votre réalité.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <span class="material-symbols-outlined text-[#4527a4] text-2xl mb-3 block ms-fill">support_agent</span>
-        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">On reste disponibles</h3>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">On reste disponibles</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Numéro direct, technicien qui connaît votre installation. Télémaintenance en moins de 20 min, intervention sur site en moins de 4h si besoin.</p>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- 4. L'ACCOMPAGNEMENT DCB -->
-<section class="py-12 lg:py-16 bg-white">
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
@@ -352,22 +377,22 @@
       </div>
       <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#0B3D91]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0B3D91] ms-fill">search</span></div>
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:#C59C45">search</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Audit de votre salon</h3>
           <p class="text-slate-500 text-sm leading-relaxed">On vient observer votre organisation : nombre de praticiens, prestations, gestion actuelle des rendez-vous. On comprend avant de proposer.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#0B3D91]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0B3D91] ms-fill">upload_file</span></div>
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:#C59C45">upload_file</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Import de vos données</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Fichier clients, historique des soins, stocks produits : on importe tout depuis votre ancien logiciel ou un Excel. Rien à ressaisir.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#0B3D91]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0B3D91] ms-fill">school</span></div>
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:#C59C45">school</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Formation de l'équipe</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Sur place, sur votre vrai planning, avec vos vraies prestations. Vos collaboratrices sont autonomes dès le premier service.</p>
         </div>
         <div class="space-y-3">
-          <div class="w-11 h-11 bg-[#0B3D91]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0B3D91] ms-fill">update</span></div>
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:#C59C45">update</span></div>
           <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Suivi continu</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Mises à jour NF525 automatiques, support prioritaire, ajout d'un poste si vous grandissez. Toujours le même interlocuteur.</p>
         </div>
@@ -377,7 +402,7 @@
 </section>
 
 <!-- 5. GOOGLE RESERVE : signature feature -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="dcb-reveal dcb-reveal-left">
@@ -386,21 +411,21 @@
         <p class="text-slate-500 leading-relaxed mb-8">Avec Hairnet, votre salon apparaît sur Google Maps et votre fiche Google Business avec le bouton "Prendre rendez-vous". Les clients choisissent un créneau disponible, confirment, et apparaissent dans votre agenda en temps réel.</p>
         <div class="space-y-5">
           <div class="flex gap-4">
-            <div class="w-10 h-10 bg-[#c59c45]/10 rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#c59c45] ms-fill">travel_explore</span></div>
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">travel_explore</span></div>
             <div>
               <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Visibilité locale renforcée</h3>
               <p class="text-slate-500 text-sm">Votre salon remonte dans les résultats "coiffeur près de moi". Google privilégie les établissements qui proposent la réservation directe.</p>
             </div>
           </div>
           <div class="flex gap-4">
-            <div class="w-10 h-10 bg-[#c59c45]/10 rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#c59c45] ms-fill">bolt</span></div>
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">bolt</span></div>
             <div>
               <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Réservation sans friction</h3>
               <p class="text-slate-500 text-sm">Zéro appel, zéro SMS à décrocher pendant un shampooing. Le client voit les créneaux libres et confirme en deux clics.</p>
             </div>
           </div>
           <div class="flex gap-4">
-            <div class="w-10 h-10 bg-[#c59c45]/10 rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#c59c45] ms-fill">insights</span></div>
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">insights</span></div>
             <div>
               <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Suivi du canal Google</h3>
               <p class="text-slate-500 text-sm">Vous voyez chaque jour combien de nouveaux clients sont venus via Google Reserve, pour piloter votre présence en ligne.</p>
@@ -416,7 +441,7 @@
                 <span class="material-symbols-outlined text-[#4285F4]" style="font-variation-settings:'FILL' 1; font-size: 32px;">location_on</span>
                 <span class="font-sora font-bold text-[#0B3D91]">Votre salon sur Google</span>
               </div>
-              <div class="w-full bg-[#4527a4]/5 border-2 border-dashed border-[#4527a4]/30 rounded-lg p-4 mb-3">
+              <div class="w-full bg-[#4527a4]/5 rounded-lg p-4 mb-3">
                 <p class="text-[#4527a4] font-bold text-sm mb-1">★★★★★ 4.9 (127 avis)</p>
                 <p class="text-slate-500 text-xs">Ouvert · Ferme à 19h</p>
               </div>
@@ -434,7 +459,7 @@
 </section>
 
 <!-- 6. FIDÉLITÉ & PARCOURS CLIENTS -->
-<section class="py-12 lg:py-16 bg-white">
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-10 dcb-reveal">
       <span class="text-[11px] font-bold tracking-[0.2em] text-[#c59c45] uppercase block mb-3">Fidélité & parcours client</span>
@@ -442,18 +467,18 @@
       <p class="text-slate-500 leading-relaxed">Vos meilleures clientes sont celles qui reviennent. Hairnet les identifie, les récompense et vous aide à relancer les clientes inactives au bon moment.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 dcb-stagger">
-      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#c59c45]/15 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#c59c45] ms-fill">loyalty</span></div>
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#F8F9FA"><span class="material-symbols-outlined text-[#c59c45] ms-fill">loyalty</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Cartes dématérialisées</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Fini les tampons oubliés. La carte de fidélité vit dans Hairnet, se met à jour à chaque passage, et vos clientes voient leur solde sur le ticket.</p>
       </div>
-      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#c59c45]/15 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#c59c45] ms-fill">workspace_premium</span></div>
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#F8F9FA"><span class="material-symbols-outlined text-[#c59c45] ms-fill">workspace_premium</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Programme VIP</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Vos clientes régulières passent en statut VIP automatiquement : remises dédiées, accès prioritaire aux créneaux, bons cadeaux offerts. Vous choisissez les règles.</p>
       </div>
-      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#c59c45]/15 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#c59c45] ms-fill">badge</span></div>
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#F8F9FA"><span class="material-symbols-outlined text-[#c59c45] ms-fill">badge</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Diagnostic tablette</h3>
         <p class="text-slate-500 text-sm leading-relaxed">À chaque visite, votre coiffeuse retrouve sur tablette l'historique complet : colorations, allergies, préférences, photos avant/après. Zéro cahier à feuilleter.</p>
       </div>
@@ -462,7 +487,7 @@
 </section>
 
 <!-- 7. PILOTAGE & MANAGEMENT -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-10 dcb-reveal">
       <span class="text-[11px] font-bold tracking-[0.2em] text-[#4527a4] uppercase block mb-3">Pilotage & management</span>
@@ -470,43 +495,43 @@
       <p class="text-slate-500 leading-relaxed">Hairnet ne se contente pas d'encaisser. Il donne à chaque manager les données pour décider vite et juste.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">monitoring</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">monitoring</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">KPI en temps réel</h3>
         <p class="text-slate-500 text-sm leading-relaxed">CA, panier moyen, taux de remplissage par praticien, ventes additionnelles produits. Tout est sur votre dashboard.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">event_busy</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">event_busy</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Anti no-show</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Acompte à la réservation, empreinte bancaire, rappel SMS automatique. Les rendez-vous non honorés sont divisés par trois en moyenne.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">campaign</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">campaign</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Marketing SMS & email</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Segmentez votre fichier (VIP, inactives, anniversaires) et envoyez des campagnes ciblées en quelques clics. Résultat mesurable sur chaque envoi.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">emoji_events</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">emoji_events</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Challenges équipe</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Objectifs par praticien, classements, animations. Plus de 30 mécaniques différentes pour motiver votre équipe sur les ventes additionnelles.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">inventory_2</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">inventory_2</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Stocks produits</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Suivi par référence et par marque, alerte quand un produit manque, commandes fournisseurs pilotées depuis le back-office.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">groups</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">groups</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Planning personnel</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Heures travaillées, congés, commissions par collaboratrice. Un seul outil pour piloter votre masse salariale.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">summarize</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">summarize</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Export comptable</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Sage, Cegid, EBP : vos données financières partent directement chez votre expert-comptable. Moins de ressaisie, moins d'erreurs.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
-        <div class="w-12 h-12 rounded-xl bg-[#4527a4]/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-[#4527a4] ms-fill">hub</span></div>
+      <div class="bg-[#F8F9FA] p-6 rounded-xl tonal-shift-elevation">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">hub</span></div>
         <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Multi-salons</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Plusieurs adresses ? Pilotage centralisé, reporting consolidé, fidélité partagée entre établissements. Vos clientes retrouvent leur historique partout.</p>
       </div>
@@ -525,7 +550,7 @@
         </div>
       </div>
       <div class="nf-hero-text">
-        <div class="nf-hero-eyebrow">Conformité légale</div>
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[var(--accent)] mb-4">Conformité légale</p>
         <h2 class="nf-hero-h2">Hairnet est certifié NF525. Votre salon est protégé.</h2>
         <p class="nf-hero-lede">Depuis 2018, la loi impose aux salons assujettis à la TVA d'utiliser un logiciel certifié par un organisme accrédité comme <a href="https://certification.afnor.org/" target="_blank" rel="noopener">l'AFNOR</a>. Sans certification, l'amende est de 7 500 € par système de caisse non conforme. Hairnet intègre les trois piliers NF525 dès sa conception, mises à jour réglementaires incluses dans la licence.</p>
       </div>
@@ -554,30 +579,21 @@
       </div>
     </div>
 
-    <div class="nf-alert">
-      <div class="nf-alert-amount">
-        <span class="lab">Amende</span>
-        <span class="val">7 500 €</span>
-        <span class="sub">par système non conforme</span>
+    <div class="nf-editorial">
+      <div class="nf-editorial-amount">
+        <span class="nf-editorial-filet" aria-hidden="true"></span>
+        <div class="nf-editorial-lab">Amende</div>
+        <div class="nf-editorial-val">7 500 €</div>
+        <div class="nf-editorial-sub">par système non conforme</div>
       </div>
-      <div class="nf-alert-text">
-        <div class="nf-alert-title">
-          <span class="material-symbols-outlined">warning</span>
-          En cas de contrôle fiscal
-        </div>
-        <div class="nf-alert-desc">Votre attestation de conformité NF525 est <strong>accessible directement depuis le menu Hairnet</strong> : téléchargeable, imprimable, envoyable par email. DCB Technologies vous la remet aussi le jour de l'installation.</div>
-      </div>
-      <div class="nf-alert-shield">
-        <div class="nf-alert-shield-icon"><span class="material-symbols-outlined">verified</span></div>
-        <div class="nf-alert-shield-text">Conforme &amp; tracé</div>
-      </div>
+      <p class="nf-editorial-body">Votre attestation de conformité NF525 est <strong>accessible directement depuis le menu Hairnet</strong> : téléchargeable, imprimable, envoyable par email à tout moment. DCB Technologies vous la remet aussi le jour de l'installation.</p>
     </div>
 
   </div>
 </section>
 
 <!-- 9. TÉMOIGNAGES (carrousel) -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#c59c45] mb-4">Ils nous font confiance</p>
@@ -585,7 +601,7 @@
     </div>
     <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
       <div data-dcb-track>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#c59c45] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"La réservation Google a tout changé. Les clientes prennent rendez-vous depuis Maps, ça arrive dans Hairnet, on n'a plus besoin de décrocher pendant les shampooings. Le salon tourne tout seul, on se concentre sur le métier."</p>
@@ -599,7 +615,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#c59c45] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"L'acompte à la réservation a vraiment réglé le problème des no-show. On a perdu trois fois moins de créneaux en un trimestre. Et les clientes ne se plaignent pas, elles comprennent."</p>
@@ -613,7 +629,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#c59c45] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"DCB a tout migré depuis notre ancien logiciel en une demi-journée. Fichier clients, prestations, abonnements : rien n'a été perdu. L'équipe était formée avant la fin de la journée."</p>
@@ -627,10 +643,10 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#c59c45] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Deux instituts pilotés depuis mon téléphone. Le reporting multi-salons de Hairnet me donne la photo complète en une minute. Et quand j'ai eu un souci avec une mise à jour, DCB a résolu ça en <abbr data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." title="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr> avant midi."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Deux instituts pilotés depuis mon téléphone. Le reporting multi-salons de Hairnet me donne la photo complète en une minute. Et quand j'ai eu un souci avec une mise à jour, DCB a résolu ça en <abbr data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr> avant midi."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
             <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0">LV</div>
@@ -652,7 +668,7 @@
 </section>
 
 <!-- 9b. BANNER CASHMAG (cross-link logiciel métier) -->
-<section class="py-12 bg-white">
+<section class="py-12 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <a href="../cashmag/index.html" class="block rounded-2xl overflow-hidden no-underline bg-white border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_rgba(11,61,145,0.2)] tonal-shift-elevation dcb-reveal dcb-reveal-scale">
       <div class="flex flex-col md:flex-row items-stretch">
@@ -692,8 +708,8 @@
       <a href="../coiffure/index.html" data-dest="coiffure" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#A855F7] text-2xl">content_cut</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(168,85,247,0.12)]">Caisse coiffure</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#A855F7] text-2xl">content_cut</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-3 py-1 rounded-full">Caisse coiffure</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Caisse coiffure complète</h3>
           <p class="text-slate-500 text-sm mb-4">Matériel tactile, forfaits, installation sur site. Tout ce qu'une caisse coiffure doit faire au quotidien.</p>
@@ -709,8 +725,8 @@
       <a href="../../visibilite-web/creation-site-internet/index.html" data-dest="creation-site-internet" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#7C3AED] text-2xl">language</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#7C3AED] bg-[#7C3AED]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(124,58,237,0.12)]">Visibilité locale</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#7C3AED] text-2xl">language</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#7C3AED] bg-[#7C3AED]/10 px-3 py-1 rounded-full">Visibilité locale</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Site web salon</h3>
           <p class="text-slate-500 text-sm mb-4">Site vitrine, réservation en ligne, visibilité locale. Couplé à Google Reserve.</p>
@@ -749,7 +765,7 @@
 </section>
 
 <!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
-<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#A855F7;--accent-dark:#9333EA">
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#4527A4;--accent-dark:#3A1F8A;background:#FFFFFF">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
       <div class="lg:col-span-7 col-msg">
@@ -803,7 +819,7 @@
     <div class="tpv">
       <img src="../../assets/tpv-cashmag.webp" alt="Interface logiciel Hairnet sur tablette Android" width="600" height="375" loading="eager" fetchpriority="high">
       <div class="cert-pill">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#4527a4">verified</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#C59C45">verified</span>
         NF525 Certifié
       </div>
     </div>
@@ -877,7 +893,7 @@
   <div class="cm-feats" style="margin-top:14px">
     <div style="font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#94A3B8;padding:10px 0 6px;border-bottom:1px solid var(--line);margin-bottom:4px">Google Reserve</div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">travel_explore</span>
       </div>
       <div>
@@ -886,7 +902,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">bolt</span>
       </div>
       <div>
@@ -895,7 +911,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">insights</span>
       </div>
       <div>
@@ -905,7 +921,7 @@
     </div>
     <div style="font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#94A3B8;padding:14px 0 6px;border-bottom:1px solid var(--line);margin-bottom:4px">Fidélité client</div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">loyalty</span>
       </div>
       <div>
@@ -914,7 +930,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">workspace_premium</span>
       </div>
       <div>
@@ -923,7 +939,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">badge</span>
       </div>
       <div>
@@ -938,9 +954,9 @@
 <section class="sec s1">
   <p class="eyebrow">Pilotage</p>
   <h2>Votre salon <em>sous contrôle</em>, à distance.</h2>
-  <div class="cm-feats" style="margin-top:14px">
+  <div class="cm-feats cm-feats--pilotage" style="margin-top:14px">
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">monitoring</span>
       </div>
       <div>
@@ -949,7 +965,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">event_busy</span>
       </div>
       <div>
@@ -958,7 +974,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">campaign</span>
       </div>
       <div>
@@ -967,7 +983,7 @@
       </div>
     </div>
     <div class="ft">
-      <div class="ic" style="background:rgba(69,39,164,0.10);color:#4527a4">
+      <div class="ic">
         <span class="material-symbols-outlined ms-fill">hub</span>
       </div>
       <div>
@@ -982,10 +998,12 @@
 <section class="sec">
   <p class="eyebrow">Conformité légale</p>
   <h2>NF525 certifié dès la <em>conception</em>.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:8px 0 18px">Depuis 2018, la loi impose aux salons assujettis à la TVA un logiciel certifié par un organisme accrédité comme <a href="https://certification.afnor.org/" target="_blank" rel="noopener" style="color:#0B3D91;font-weight:600">l'AFNOR</a>. Hairnet intègre les trois piliers NF525 dès sa conception.</p>
   <div class="nf-pillars-a" style="margin-top:14px">
     <div class="nf-p-a">
       <div class="ic"><span class="material-symbols-outlined ms-fill">lock</span></div>
       <div>
+        <span class="num">Pilier 01</span>
         <h3>Données inaltérables</h3>
         <p>Aucun encaissement ne peut être supprimé après validation. Chaque opération est chaînée pour prévenir toute fraude.</p>
       </div>
@@ -993,6 +1011,7 @@
     <div class="nf-p-a">
       <div class="ic"><span class="material-symbols-outlined ms-fill">archive</span></div>
       <div>
+        <span class="num">Pilier 02</span>
         <h3>Archivage conforme</h3>
         <p>Données conservées selon les règles fiscales. Mises à jour réglementaires incluses dans la licence.</p>
       </div>
@@ -1000,24 +1019,18 @@
     <div class="nf-p-a">
       <div class="ic"><span class="material-symbols-outlined ms-fill">verified</span></div>
       <div>
+        <span class="num">Pilier 03</span>
         <h3>Attestation disponible</h3>
         <p>Accessible depuis le menu Hairnet, imprimable, envoyable. DCB vous la remet le jour de l'installation.</p>
       </div>
     </div>
   </div>
-  <div class="nf-alert-a">
-    <div class="top-row">
-      <div>
-        <div class="amt">7 500 €</div>
-        <div class="sub">par système non conforme</div>
-      </div>
-      <div class="warn"><span class="material-symbols-outlined ms-fill">warning</span></div>
-    </div>
-    <p class="desc">Dès que votre salon encaisse et est assujetti à la TVA, la loi vous impose un logiciel NF525. Sans attestation, l'amende est de <strong>7 500 € par système non conforme</strong>.</p>
-    <div class="shield">
-      <div class="si"><span class="material-symbols-outlined ms-fill">verified</span></div>
-      <div class="st">Conforme et tracé depuis l'installation</div>
-    </div>
+  <div class="nf-editorial-a">
+    <span class="filet" aria-hidden="true"></span>
+    <div class="lab">Amende</div>
+    <div class="amt">7 500 €</div>
+    <div class="sub">par système non conforme</div>
+    <p class="desc">Votre attestation de conformité NF525 est <strong>accessible directement depuis le menu Hairnet</strong>, imprimable et envoyable à tout moment. DCB vous la remet le jour de l'installation.</p>
   </div>
 </section>
 
@@ -1118,8 +1131,8 @@
 </section>
 
 <!-- CTA FINAL -->
-<!-- CTA FINAL v3 : Le Bord Tranché (signature partenaire Hairnet, accent coiffure #A855F7) -->
-<section class="m-cta-final" style="--accent:#A855F7;--accent-shadow:rgba(168,85,247,0.40)" aria-labelledby="cta-final-h">
+<!-- CTA FINAL v3 : Le Bord Tranché (signature partenaire Hairnet, accent violet #4527A4 herite via var) -->
+<section class="m-cta-final" style="--accent:#4527A4;--accent-dark:#3A1F8A;--accent-shadow:rgba(69,39,164,0.40)" aria-labelledby="cta-final-h">
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h">Demandez une démo Hairnet dans votre salon.</h3>
   <p>Un technicien DCB se déplace pour vous montrer Hairnet en conditions réelles, sur votre planning.</p>
@@ -1139,7 +1152,7 @@
 <div id="m-menu"></div>
 
 </div><!-- /m-shell -->
-<script src="../../js/scripts.js?v=35"></script>
+<script src="../../js/scripts.js?v=36"></script>
 </body>
 </html>
 
