@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Maintenance Informatique PME : Intervention &lt;4h | DCB Technologies</title>
-<meta name="description" content="Maintenance informatique, cloud, cybersécurité et outils collaboratifs pour PME. Techniciens salariés, intervention sous 4h sur Lyon, Mâcon, Chalon. Devis gratuit.">
+<meta name="description" content="Maintenance informatique, cloud, cybersÃ©curitÃ© et outils collaboratifs pour PME. Techniciens salariÃ©s, intervention sous 4h sur Lyon, MÃ¢con, Chalon. Devis gratuit.">
 <link rel="canonical" href="https://dcb-technologies.fr/maintenance-informatique/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +12,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=14">
-<link rel="stylesheet" href="../css/tailwind.min.css?v=17">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=18">
 <style>
   body { font-family: 'Inter', sans-serif; }
+  /* Cards services/cross-sell : filet signature couleur destination (remplace le top-stripe degrade) */
+  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
+  .group:hover .pilier-filet { width:48px; }
+  @media (prefers-reduced-motion: reduce) { .pilier-filet { transition:none !important; } }
   /* Shells mobile / desktop */
   .m-shell { display: none }
   @media(max-width:640px) {
     .m-shell { display: block }
     .d-shell { display: none }
     #dcb-phone-fab { display: none !important }
-    /* ── Couleurs mcard IT hub ─────────────── */
+    /* â”€â”€ Couleurs mcard IT hub â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .info .bar{background:linear-gradient(90deg,#F59E0B,#FBBF24)}.info .ic{background:rgba(245,158,11,0.12);color:#F59E0B}.info .pill{background:rgba(245,158,11,0.12);color:#F59E0B}.info .feats .material-symbols-outlined{color:#F59E0B}.info .go .ab{background:#F59E0B}
     .maint .bar{background:linear-gradient(90deg,#EF4444,#F87171)}.maint .ic{background:rgba(239,68,68,0.12);color:#EF4444}.maint .pill{background:rgba(239,68,68,0.12);color:#EF4444}.maint .feats .material-symbols-outlined{color:#EF4444}.maint .go .ab{background:#EF4444}
     .cloud .bar{background:linear-gradient(90deg,#0D9488,#14B8A6)}.cloud .ic{background:rgba(13,148,136,0.12);color:#0D9488}.cloud .pill{background:rgba(13,148,136,0.12);color:#0D9488}.cloud .feats .material-symbols-outlined{color:#0D9488}.cloud .go .ab{background:#0D9488}
     .loc .bar{background:linear-gradient(90deg,#0B3D91,#2563EB)}.loc .ic{background:rgba(11,61,145,0.12);color:#0B3D91}.loc .pill{background:rgba(11,61,145,0.12);color:#0B3D91}.loc .feats .material-symbols-outlined{color:#0B3D91}.loc .go .ab{background:#0B3D91}
@@ -34,12 +39,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Quel est le délai de réponse en cas d'urgence ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos techniciens salariés interviennent en moins de 4 heures sur site pour toute panne critique. En télémaintenance, la prise en charge est immédiate pendant les heures ouvrées."}},
-    {"@type": "Question", "name": "La télémaintenance est-elle sécurisée ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, nous utilisons des outils de prise en main à distance chiffrés de bout en bout. Chaque session est tracée et soumise à votre autorisation préalable."}},
-    {"@type": "Question", "name": "Que couvre la maintenance préventive ?", "acceptedAnswer": {"@type": "Answer", "text": "Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage logiciel, vérification des sauvegardes et rapports mensuels d'état de santé de votre infrastructure."}},
-    {"@type": "Question", "name": "Combien coûte une intervention sur site ?", "acceptedAnswer": {"@type": "Answer", "text": "Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement."}},
-    {"@type": "Question", "name": "Êtes-vous compatibles avec mon matériel existant ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous travaillons avec toutes les marques du marché. Un audit préalable gratuit nous permet de vérifier la compatibilité et de vous proposer la solution la plus adaptée."}},
-    {"@type": "Question", "name": "Y a-t-il un engagement contractuel minimum ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spécifiques."}}
+    {"@type": "Question", "name": "Quel est le dÃ©lai de rÃ©ponse en cas d'urgence ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos techniciens salariÃ©s interviennent en moins de 4 heures sur site pour toute panne critique. En tÃ©lÃ©maintenance, la prise en charge est immÃ©diate pendant les heures ouvrÃ©es."}},
+    {"@type": "Question", "name": "La tÃ©lÃ©maintenance est-elle sÃ©curisÃ©e ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, nous utilisons des outils de prise en main Ã  distance chiffrÃ©s de bout en bout. Chaque session est tracÃ©e et soumise Ã  votre autorisation prÃ©alable."}},
+    {"@type": "Question", "name": "Que couvre la maintenance prÃ©ventive ?", "acceptedAnswer": {"@type": "Answer", "text": "Surveillance 24/7 de votre parc, mises Ã  jour de sÃ©curitÃ©, nettoyage logiciel, vÃ©rification des sauvegardes et rapports mensuels d'Ã©tat de santÃ© de votre infrastructure."}},
+    {"@type": "Question", "name": "Combien coÃ»te une intervention sur site ?", "acceptedAnswer": {"@type": "Answer", "text": "Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposÃ© pour Ã©valuer vos besoins avant tout engagement."}},
+    {"@type": "Question", "name": "ÃŠtes-vous compatibles avec mon matÃ©riel existant ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous travaillons avec toutes les marques du marchÃ©. Un audit prÃ©alable gratuit nous permet de vÃ©rifier la compatibilitÃ© et de vous proposer la solution la plus adaptÃ©e."}},
+    {"@type": "Question", "name": "Y a-t-il un engagement contractuel minimum ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spÃ©cifiques."}}
   ]
 }
 </script>
@@ -49,19 +54,19 @@
   "@context": "https://schema.org/",
   "@type": "Service",
   "name": "Maintenance informatique entreprise",
-  "description": "Maintenance, cloud, cybersécurité et outils collaboratifs pour PME. Techniciens salariés DCB, intervention sous 4h, zéro sous-traitance. Saône-et-Loire, Rhône, Ain, Loire.",
+  "description": "Maintenance, cloud, cybersÃ©curitÃ© et outils collaboratifs pour PME. Techniciens salariÃ©s DCB, intervention sous 4h, zÃ©ro sous-traitance. SaÃ´ne-et-Loire, RhÃ´ne, Ain, Loire.",
   "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
   "serviceType": "Maintenance informatique",
   "areaServed": [
-    {"@type":"AdministrativeArea","name":"Saône-et-Loire (71)"},
-    {"@type":"AdministrativeArea","name":"Rhône (69)"},
+    {"@type":"AdministrativeArea","name":"SaÃ´ne-et-Loire (71)"},
+    {"@type":"AdministrativeArea","name":"RhÃ´ne (69)"},
     {"@type":"AdministrativeArea","name":"Ain (01)"},
     {"@type":"AdministrativeArea","name":"Loire (42)"},
     {"@type":"City","name":"Lyon"},
-    {"@type":"City","name":"Mâcon"},
-    {"@type":"City","name":"Chalon-sur-Saône"},
+    {"@type":"City","name":"MÃ¢con"},
+    {"@type":"City","name":"Chalon-sur-SaÃ´ne"},
     {"@type":"City","name":"Paray-le-Monial"},
-    {"@type":"City","name":"Villefranche-sur-Saône"},
+    {"@type":"City","name":"Villefranche-sur-SaÃ´ne"},
     {"@type":"City","name":"Bourg-en-Bresse"}
   ],
   "url": "https://dcb-technologies.fr/maintenance-informatique/",
@@ -69,8 +74,8 @@
     "@type": "OfferCatalog",
     "name": "Services IT DCB",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Maintenance et dépannage informatique","url":"https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud et cybersécurité","url":"https://dcb-technologies.fr/maintenance-informatique/cloud-securite/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Maintenance et dÃ©pannage informatique","url":"https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud et cybersÃ©curitÃ©","url":"https://dcb-technologies.fr/maintenance-informatique/cloud-securite/"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Location, vente et installation","url":"https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Outils collaboratifs Microsoft 365 et Google Workspace","url":"https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/"}}
     ]
@@ -101,11 +106,11 @@
       <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
         Un seul interlocuteur pour <span class="text-[#F57C00] italic font-semibold">tout votre informatique.</span>
       </h1>
-      <p class="text-white/70 text-lg max-w-xl leading-relaxed">Réactivité J+1, techniciens salariés, zéro sous-traitance. Nous gérons votre parc informatique pour que vous puissiez vous concentrer sur votre métier.</p>
+      <p class="text-white/70 text-lg max-w-xl leading-relaxed">RÃ©activitÃ© J+1, techniciens salariÃ©s, zÃ©ro sous-traitance. Nous gÃ©rons votre parc informatique pour que vous puissiez vous concentrer sur votre mÃ©tier.</p>
       <div class="space-y-4">
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Maintenance, cloud, réseau : un seul contrat, un seul numéro</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Techniciens salariés DCB, intervention sur site en moins de 4h</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Saône-et-Loire, Rhône, Ain, Loire : couverture locale garantie</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Maintenance, cloud, rÃ©seau : un seul contrat, un seul numÃ©ro</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Techniciens salariÃ©s DCB, intervention sur site en moins de 4h</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>SaÃ´ne-et-Loire, RhÃ´ne, Ain, Loire : couverture locale garantie</div>
       </div>
       <div class="flex flex-wrap gap-4 pt-2">
         <a href="../contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">
@@ -116,7 +121,7 @@
     </div>
     <!-- Col droite : photo + cards flottantes -->
     <div class="hidden lg:block lg:col-span-5 relative pt-8">
-      <img alt="Technicien DCB Technologies présentant une solution informatique à trois clients PME dans un open-space lumineux"
+      <img alt="Technicien DCB Technologies prÃ©sentant une solution informatique Ã  trois clients PME dans un open-space lumineux"
            class="relative z-20 rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover bg-[#072B6B]"
            src="../assets/hero-maintenance-it.webp"
            width="1200" height="896"
@@ -128,30 +133,30 @@
             <span class="absolute inline-flex h-3 w-3 rounded-full bg-[#10B981] opacity-60 animate-ping"></span>
             <span class="relative inline-flex h-2 w-2 rounded-full bg-[#10B981]"></span>
           </span>
-          <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">Système</span>
+          <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">SystÃ¨me</span>
         </div>
         <p class="font-sora text-2xl font-bold text-[#0B3D91] leading-none mb-1">Online</p>
-        <p class="text-xs text-slate-500 leading-relaxed">4 départements monitorés 24/7</p>
+        <p class="text-xs text-slate-500 leading-relaxed">4 dÃ©partements monitorÃ©s 24/7</p>
       </div>
       <div class="absolute -bottom-4 -left-4 z-30 bg-white p-5 rounded-xl shadow-xl">
         <p class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] mb-1">Expertise IT</p>
-        <p class="font-sora text-xl font-bold text-[#0B3D91]">4 départements couverts</p>
+        <p class="font-sora text-xl font-bold text-[#0B3D91]">4 dÃ©partements couverts</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 2. TRUST BAR (pattern DNA, accent primary hub) -->
-<section class="py-6 bg-white">
+<section class="py-6 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">location_on</span>
-        <span class="font-semibold text-base md:text-xl text-slate-500">4 départements couverts</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">4 dÃ©partements couverts</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">engineering</span>
-        <span class="font-semibold text-base md:text-xl text-slate-500">Techniciens salariés</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Techniciens salariÃ©s</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">speed</span>
@@ -165,13 +170,13 @@
   </div>
 </section>
 
-<!-- 3. PROBLÈME / CONSTAT (pattern caisse boulangerie) -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<!-- 3. PROBLÃˆME / CONSTAT (pattern caisse boulangerie) -->
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-12 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Le constat</p>
-      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Ce que votre informatique vous coûte vraiment</h2>
-      <p class="text-slate-500 text-base leading-relaxed">Entre pannes à répétition, risques sécurité non couverts et matériel obsolète, l'informatique devient un centre de coût invisible. Voici les signaux à reconnaître avant qu'ils ne coûtent cher.</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Ce que votre informatique vous coÃ»te vraiment</h2>
+      <p class="text-slate-500 text-base leading-relaxed">Entre pannes Ã  rÃ©pÃ©tition, risques sÃ©curitÃ© non couverts et matÃ©riel obsolÃ¨te, l'informatique devient un centre de coÃ»t invisible. Voici les signaux Ã  reconnaÃ®tre avant qu'ils ne coÃ»tent cher.</p>
     </div>
     <div class="space-y-10 md:space-y-12 dcb-stagger">
 
@@ -179,23 +184,23 @@
         <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">01</span>
         <div class="pt-2">
           <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Du temps perdu chaque jour</h3>
-          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Un poste qui rame, une impression qui plante, une mise à jour qui bloque. Cumulé sur une équipe, c'est plusieurs heures de productivité qui fuient chaque semaine.</p>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Un poste qui rame, une impression qui plante, une mise Ã  jour qui bloque. CumulÃ© sur une Ã©quipe, c'est plusieurs heures de productivitÃ© qui fuient chaque semaine.</p>
         </div>
       </div>
 
       <div class="flex gap-6 md:gap-12 items-start">
         <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">02</span>
         <div class="pt-2">
-          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Des risques sécurité non couverts</h3>
-          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Antivirus périmé, sauvegardes non testées, mots de passe faibles. Une attaque par ransomware coûte en moyenne 15 000 € à une TPE. La prévention coûte dix fois moins cher.</p>
+          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Des risques sÃ©curitÃ© non couverts</h3>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Antivirus pÃ©rimÃ©, sauvegardes non testÃ©es, mots de passe faibles. Une attaque par ransomware coÃ»te en moyenne 15 000 â‚¬ Ã  une TPE. La prÃ©vention coÃ»te dix fois moins cher.</p>
         </div>
       </div>
 
       <div class="flex gap-6 md:gap-12 items-start">
         <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">03</span>
         <div class="pt-2">
-          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Du matériel vieillissant sans suivi</h3>
-          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Des postes de 5 à 7 ans, un serveur sans remplacement prévu. Le jour de la panne critique, tout s'arrête en urgence. Renouveler votre parc à froid coûte toujours moins cher.</p>
+          <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Du matÃ©riel vieillissant sans suivi</h3>
+          <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Des postes de 5 Ã  7 ans, un serveur sans remplacement prÃ©vu. Le jour de la panne critique, tout s'arrÃªte en urgence. Renouveler votre parc Ã  froid coÃ»te toujours moins cher.</p>
         </div>
       </div>
 
@@ -203,42 +208,42 @@
   </div>
 </section>
 
-<!-- 4. SERVICE CARDS (5 cards métiers vers sous-pages IT) -->
-<section id="services" class="bg-white py-12 lg:py-16">
+<!-- 4. SERVICE CARDS (5 cards mÃ©tiers vers sous-pages IT) -->
+<section id="services" class="bg-[#F8F9FA] py-12 lg:py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Nos domaines d'intervention</p>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Cinq expertises, un seul partenaire.</h2>
     </div>
 
-    <!-- Card vedette : Infogérance PME (coeur du silo) -->
-    <a href="../maintenance-informatique/infogerance-pme/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline mb-8 hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] dcb-reveal block">
-      <div class="h-[4px] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]"></div>
+    <!-- Card vedette : InfogÃ©rance PME (coeur du silo) -->
+    <a href="infogerance-pme/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline mb-8 hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] dcb-reveal block">
       <div class="flex flex-col lg:flex-row">
-        <div class="flex-1 p-8 lg:p-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#F59E0B] text-3xl">manage_accounts</span>
+        <div class="flex-1 p-6 lg:p-7">
+          <span class="pilier-filet" style="background:#F59E0B" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#F59E0B] text-2xl">manage_accounts</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(245,158,11,0.12)]">Technicien attitré</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-1 rounded-full">Technicien attitrÃ©</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl lg:text-3xl text-[#0B3D91] mb-2 leading-tight">Infogérance PME<span class="block text-[#F59E0B]">Un technicien qui vous connaît.</span></h3>
-          <p class="text-slate-500 text-sm lg:text-base mb-5 max-w-lg">Un technicien salarié DCB attitré à votre entreprise. Il connaît votre parc, vos logiciels, vos habitudes. Coût mensuel fixe, zéro surprise.</p>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 mb-6">
+          <h3 class="font-sora font-bold text-xl lg:text-2xl text-[#0B3D91] mb-2 leading-tight">InfogÃ©rance PME<span class="block text-[#F59E0B]">Un technicien qui vous connaÃ®t.</span></h3>
+          <p class="text-slate-500 text-sm mb-2 max-w-lg">Un technicien salariÃ© DCB attitrÃ© Ã  votre entreprise. Il connaÃ®t votre parc, vos logiciels, vos habitudes. CoÃ»t mensuel fixe, zÃ©ro surprise.</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 mt-1 mb-2" style="row-gap:11px">
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Surveillance 24/7 de votre parc</li>
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Interventions sur site incluses</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Rapport mensuel d'état de santé</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Rapport mensuel d'Ã©tat de santÃ©</li>
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Audit initial gratuit</li>
           </ul>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Découvrir l'infogérance</span>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:14px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">DÃ©couvrir l'infogÃ©rance</span>
             <span class="w-10 h-10 rounded-full bg-[#F59E0B]/10 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all">
               <span class="material-symbols-outlined text-[#F59E0B] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
           </div>
         </div>
         <div class="lg:w-72 bg-[#FEF3C7] flex items-center justify-center border-t lg:border-t-0 lg:border-l border-amber-100 overflow-hidden relative min-h-[220px] lg:min-h-0">
-          <img src="../assets/hero-infogerance.webp" alt="Technicien DCB attitré supervisant le parc informatique d'un client PME sur dashboard de monitoring"
+          <img src="../assets/hero-infogerance.webp" alt="Technicien DCB attitrÃ© supervisant le parc informatique d'un client PME sur dashboard de monitoring"
                width="1200" height="811"
                loading="lazy" decoding="async"
                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -251,101 +256,73 @@
       </div>
     </a>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
-      <!-- Location · Vente · Installation -->
-      <a href="../maintenance-informatique/location-vente-installation/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#4F46E5] to-[#6366F1]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#0B3D91] text-3xl">devices</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
+      <!-- Location Â· Vente Â· Installation -->
+      <a href="location-vente-installation/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#4F46E5" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#4F46E5] text-2xl">devices</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(11,61,145,0.12)]">Location & Achat</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-2.5 py-1 rounded-full">Location & Achat</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Location &amp; Installation</h3>
-          <p class="text-slate-500 text-sm mb-4">Équipements neufs, solutions de financement flexibles, installation sur site par nos techniciens.</p>
-          <ol class="space-y-3 mb-4">
-            <li class="flex items-center gap-4 text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#0B3D91] text-base leading-none shrink-0 w-6">01</span>Postes, serveurs et réseaux
-            </li>
-            <li class="flex items-center gap-4 text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#0B3D91] text-base leading-none shrink-0 w-6">02</span>Location ou achat avec financement
-            </li>
-            <li class="flex items-center gap-4 text-sm text-slate-600">
-              <span class="font-sora font-bold text-[#0B3D91] text-base leading-none shrink-0 w-6">03</span>Installation et paramétrage sur site
-            </li>
-          </ol>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] transition-colors">Découvrir</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0B3D91] transition-all">
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Location &amp; Installation</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Postes, serveurs et rÃ©seaux</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Location ou achat avec financement</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Installation et paramÃ©trage sur site</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#4F46E5] transition-colors">DÃ©couvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
           </div>
         </div>
       </a>
-      <!-- Maintenance & Dépannage -->
-      <a href="../maintenance-informatique/maintenance-depannage/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#EF4444] to-[#F87171]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#EF4444] text-3xl">build</span>
+      <!-- Maintenance & DÃ©pannage -->
+      <a href="maintenance-depannage/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#EF4444] text-2xl">build</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">&lt;4h sur site</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-2.5 py-1 rounded-full">&lt;4h sur site</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Maintenance &amp; Dépannage</h3>
-          <p class="text-slate-500 text-sm mb-4">Intervention prioritaire en cas de panne. Monitoring préventif pour anticiper les interruptions.</p>
-          <div class="flex-1 flex items-center pb-6">
-            <div class="flex items-center gap-2 w-full">
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">monitor_heart</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Surveillance préventive 24/7</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">phonelink_ring</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Télémaintenance immédiate</p>
-              </div>
-              <span class="material-symbols-outlined text-slate-300 text-lg shrink-0">arrow_forward</span>
-              <div class="flex-1 text-center">
-                <span class="material-symbols-outlined text-[#EF4444] text-2xl mb-1 block ms-fill">directions_car</span>
-                <p class="text-[11px] font-semibold text-slate-600 leading-tight">Intervention site &lt;4h</p>
-              </div>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Découvrir</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Maintenance &amp; DÃ©pannage</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Surveillance prÃ©ventive 24/7</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>TÃ©lÃ©maintenance immÃ©diate</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Intervention sur site &lt;4h</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">DÃ©couvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
           </div>
         </div>
       </a>
-      <!-- Cloud · Sécurité · Messagerie -->
-      <a href="../maintenance-informatique/cloud-securite/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#0D9488] to-[#14B8A6]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#0D9488] text-3xl">cloud_done</span>
+      <!-- Cloud Â· SÃ©curitÃ© Â· Messagerie -->
+      <a href="cloud-securite/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#0D9488] text-2xl">cloud_done</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">100% sécurisé</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-full">100% sÃ©curisÃ©</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Cloud &amp; Sécurité</h3>
-          <p class="text-slate-500 text-sm mb-4">Sauvegarde externalisée, antivirus managé, messagerie pro sécurisée. Protection complète de vos données.</p>
-          <ul class="space-y-3 mb-4">
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">cloud_upload</span>Sauvegarde externalisée automatique
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">security</span>Antivirus et firewall managés
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="material-symbols-outlined text-[#0D9488] text-xl shrink-0 ms-fill">mail</span>Messagerie pro sécurisée
-            </li>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Cloud &amp; SÃ©curitÃ©</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Sauvegarde externalisÃ©e automatique</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Antivirus et firewall managÃ©s</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Messagerie pro sÃ©curisÃ©e</li>
           </ul>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">DÃ©couvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -353,30 +330,23 @@
         </div>
       </a>
       <!-- Outils Collaboratifs -->
-      <a href="../maintenance-informatique/outils-collaboratifs/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#A855F7] to-[#C084FC]"></div>
-        <div class="p-7 lg:p-8 flex flex-col flex-1">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#A855F7] text-3xl">groups</span>
+      <a href="outils-collaboratifs/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#A855F7" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#A855F7] text-2xl">groups</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(168,85,247,0.12)]">M365 & Workspace</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-2.5 py-1 rounded-full">M365 & Workspace</span>
           </div>
-          <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Outils Collaboratifs</h3>
-          <p class="text-slate-500 text-sm mb-4">Microsoft 365, Google Workspace : déploiement pour fluidifier le travail d'équipe et la mobilité.</p>
-          <div class="flex flex-col gap-2 mb-4">
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">videocam</span>Visioconférence et messagerie
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">folder_shared</span>Partage de fichiers sécurisé
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-[#A855F7]/10 text-[#A855F7] text-xs font-semibold px-3 py-1.5 rounded-full self-start">
-              <span class="material-symbols-outlined text-[14px] ms-fill">phone_iphone</span>Accès mobile multi-appareils
-            </span>
-          </div>
-          <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Découvrir</span>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Outils Collaboratifs</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>VisioconfÃ©rence et messagerie</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Partage de fichiers sÃ©curisÃ©</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>AccÃ¨s mobile multi-appareils</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">DÃ©couvrir</span>
             <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#A855F7] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
@@ -387,47 +357,47 @@
   </div>
 </section>
 
-<!-- 4. COMPARATIF (pattern hébergement : 2 cards séparées, badge Recommandé, 2 niveaux de contenu) -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<!-- 4. COMPARATIF (pattern hÃ©bergement : 2 cards sÃ©parÃ©es, badge RecommandÃ©, 2 niveaux de contenu) -->
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-10 dcb-reveal">
       <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Un seul interlocuteur IT</span>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Ce que nos clients ne trouvent nulle part ailleurs</h2>
-      <p class="text-slate-500 text-base leading-relaxed">Deux approches, deux expériences client. La différence se mesure dès le premier appel.</p>
+      <p class="text-slate-500 text-base leading-relaxed">Deux approches, deux expÃ©riences client. La diffÃ©rence se mesure dÃ¨s le premier appel.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto dcb-stagger">
-      <div class="bg-white p-7 rounded-xl">
+      <div class="bg-[#F8F9FA] p-7 rounded-xl">
         <h3 class="font-sora font-bold text-lg text-slate-400 mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-slate-300 text-2xl">computer</span> Chez les autres</h3>
         <div class="space-y-4">
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Hotline délocalisée, serveur vocal</div><div class="text-slate-400 text-xs mt-0.5">Vous expliquez votre problème à un inconnu qui ne connaît pas votre parc</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Sous-traitants variables à chaque intervention</div><div class="text-slate-400 text-xs mt-0.5">Un technicien différent à chaque appel, tout est à réexpliquer</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Portefeuille 200+ clients par technicien</div><div class="text-slate-400 text-xs mt-0.5">Peu de suivi réel, votre dossier est un ticket parmi des milliers</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Réponse sous 48 à 72h en moyenne sur site</div><div class="text-slate-400 text-xs mt-0.5">Panne un vendredi soir ? Vous attendez lundi matin</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Urgences week-end rarement couvertes</div><div class="text-slate-400 text-xs mt-0.5">Astreinte souvent payante, délai non garanti</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Silo IT isolé, sans vision globale</div><div class="text-slate-400 text-xs mt-0.5">Pas de coordination avec votre caisse ou votre site web</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Hotline dÃ©localisÃ©e, serveur vocal</div><div class="text-slate-400 text-xs mt-0.5">Vous expliquez votre problÃ¨me Ã  un inconnu qui ne connaÃ®t pas votre parc</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Sous-traitants variables Ã  chaque intervention</div><div class="text-slate-400 text-xs mt-0.5">Un technicien diffÃ©rent Ã  chaque appel, tout est Ã  rÃ©expliquer</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Portefeuille 200+ clients par technicien</div><div class="text-slate-400 text-xs mt-0.5">Peu de suivi rÃ©el, votre dossier est un ticket parmi des milliers</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">RÃ©ponse sous 48 Ã  72h en moyenne sur site</div><div class="text-slate-400 text-xs mt-0.5">Panne un vendredi soir ? Vous attendez lundi matin</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Urgences week-end rarement couvertes</div><div class="text-slate-400 text-xs mt-0.5">Astreinte souvent payante, dÃ©lai non garanti</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Silo IT isolÃ©, sans vision globale</div><div class="text-slate-400 text-xs mt-0.5">Pas de coordination avec votre caisse ou votre site web</div></div></div>
         </div>
       </div>
-      <div class="bg-white p-7 rounded-xl border-2 border-[#F57C00] ring-4 ring-[#F57C00]/5 relative">
+      <div class="bg-[#F8F9FA] p-7 rounded-xl border-2 border-[#F57C00] ring-4 ring-[#F57C00]/5 relative">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F57C00] text-white px-4 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase whitespace-nowrap">Choix des TPE</div>
         <div class="flex items-center gap-3 mb-6">
           <img src="../assets/logo-dcb.svg" alt="DCB Technologies" class="h-8 w-auto" width="100" height="32">
         </div>
         <div class="space-y-4">
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Technicien attitré local, numéro direct</div><div class="text-slate-500 text-xs mt-0.5">Il connaît votre configuration, pas besoin de tout réexpliquer</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">100% techniciens salariés DCB, zéro sous-traitance</div><div class="text-slate-500 text-xs mt-0.5">Toujours le même visage, toujours la même exigence</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Portefeuille limité, vrai suivi personnalisé</div><div class="text-slate-500 text-xs mt-0.5">Vous n'êtes pas un numéro de ticket</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Technicien attitrÃ© local, numÃ©ro direct</div><div class="text-slate-500 text-xs mt-0.5">Il connaÃ®t votre configuration, pas besoin de tout rÃ©expliquer</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">100% techniciens salariÃ©s DCB, zÃ©ro sous-traitance</div><div class="text-slate-500 text-xs mt-0.5">Toujours le mÃªme visage, toujours la mÃªme exigence</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Portefeuille limitÃ©, vrai suivi personnalisÃ©</div><div class="text-slate-500 text-xs mt-0.5">Vous n'Ãªtes pas un numÃ©ro de ticket</div></div></div>
           <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Intervention sur site garantie en moins de 4h</div><div class="text-slate-500 text-xs mt-0.5">SLA contractuel, pas une promesse commerciale</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Astreinte 7j/7 pour les urgences critiques</div><div class="text-slate-500 text-xs mt-0.5">Un vrai technicien décroche, y compris le dimanche</div></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Vision globale IT + caisse + site web</div><div class="text-slate-500 text-xs mt-0.5">Un seul partenaire pour toute votre infrastructure numérique</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Astreinte 7j/7 pour les urgences critiques</div><div class="text-slate-500 text-xs mt-0.5">Un vrai technicien dÃ©croche, y compris le dimanche</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Vision globale IT + caisse + site web</div><div class="text-slate-500 text-xs mt-0.5">Un seul partenaire pour toute votre infrastructure numÃ©rique</div></div></div>
         </div>
       </div>
     </div>
-    <p class="text-center text-xs text-slate-400 mt-10 italic max-w-3xl mx-auto">Comparatif à titre indicatif. Les ESN généralistes peuvent convenir aux grandes entreprises avec DSI interne. DCB Technologies est conçu pour les TPE et PME qui veulent un interlocuteur unique et local.</p>
+    <p class="text-center text-xs text-slate-400 mt-10 italic max-w-3xl mx-auto">Comparatif Ã  titre indicatif. Les ESN gÃ©nÃ©ralistes peuvent convenir aux grandes entreprises avec DSI interne. DCB Technologies est conÃ§u pour les TPE et PME qui veulent un interlocuteur unique et local.</p>
   </div>
 </section>
 
-<!-- 6. TÉMOIGNAGES carousel (pattern caisse boulangerie, 4 clients IT) -->
-<section class="py-12 lg:py-16 bg-white">
+<!-- 6. TÃ‰MOIGNAGES carousel (pattern caisse boulangerie, 4 clients IT) -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
@@ -435,82 +405,82 @@
     </div>
     <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
       <div data-dcb-track>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Avant DCB, chaque panne c'était une demi-journée de perdue à attendre qu'un technicien nous rappelle. Maintenant on a un numéro direct, un technicien qu'on connaît. En un an, zéro interruption longue."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Avant DCB, chaque panne c'Ã©tait une demi-journÃ©e de perdue Ã  attendre qu'un technicien nous rappelle. Maintenant on a un numÃ©ro direct, un technicien qu'on connaÃ®t. En un an, zÃ©ro interruption longue."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
             <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-pg.webp" alt="Philippe Garnier, comptable à Mâcon" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('PG'))">
+              <img src="../assets/testimonial-pg.webp" alt="Philippe Garnier, comptable Ã  MÃ¢con" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('PG'))">
             </div>
             <div>
               <p class="font-bold text-[#0B3D91]">Philippe Garnier</p>
-              <p class="text-slate-500 text-sm">Cabinet comptable, Mâcon (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="text-slate-500 text-sm">Cabinet comptable, MÃ¢con (71)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">â˜…â˜…â˜…â˜…â˜…</p>
             </div>
           </div>
         </div>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"La migration vers M365 nous faisait peur : 40 boîtes mail, des années de courriers, des partages complexes. DCB a tout orchestré un week-end. Le lundi matin, on travaillait sans même s'en rendre compte."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"La migration vers M365 nous faisait peur : 40 boÃ®tes mail, des annÃ©es de courriers, des partages complexes. DCB a tout orchestrÃ© un week-end. Le lundi matin, on travaillait sans mÃªme s'en rendre compte."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
             <div class="w-12 h-12 bg-[#A855F7] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-sl.webp" alt="Sophie Leclerc, PME industrielle à Bourg-en-Bresse" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('SL'))">
+              <img src="../assets/testimonial-sl.webp" alt="Sophie Leclerc, PME industrielle Ã  Bourg-en-Bresse" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('SL'))">
             </div>
             <div>
               <p class="font-bold text-[#0B3D91]">Sophie Leclerc</p>
               <p class="text-slate-500 text-sm">PME industrielle, Bourg-en-Bresse (01)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">â˜…â˜…â˜…â˜…â˜…</p>
             </div>
           </div>
         </div>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On a failli perdre notre serveur un vendredi à 18h. DCB a pris la main en vingt minutes et évité l'incident. Le lundi matin, rapport écrit dans ma boîte avec les actions préventives. Pro."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On a failli perdre notre serveur un vendredi Ã  18h. DCB a pris la main en vingt minutes et Ã©vitÃ© l'incident. Le lundi matin, rapport Ã©crit dans ma boÃ®te avec les actions prÃ©ventives. Pro."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
             <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-ml.webp" alt="Marc Lefebvre, directeur logistique à Bourg-en-Bresse" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('ML'))">
+              <img src="../assets/testimonial-ml.webp" alt="Marc Lefebvre, directeur logistique Ã  Bourg-en-Bresse" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('ML'))">
             </div>
             <div>
               <p class="font-bold text-[#0B3D91]">Marc Lefebvre</p>
               <p class="text-slate-500 text-sm">Directeur logistique, Bourg-en-Bresse (01)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">â˜…â˜…â˜…â˜…â˜…</p>
             </div>
           </div>
         </div>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Deux boutiques, un système IT unifié, et quand la caisse plante à Chalon, c'est le même technicien qui connaît tout qui arrive. Pas de ping-pong entre fournisseurs. C'est l'approche qu'on cherchait."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Deux boutiques, un systÃ¨me IT unifiÃ©, et quand la caisse plante Ã  Chalon, c'est le mÃªme technicien qui connaÃ®t tout qui arrive. Pas de ping-pong entre fournisseurs. C'est l'approche qu'on cherchait."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
             <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-nr.webp" alt="Nathalie Renaud, commerce multi-sites à Chalon-sur-Saône" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('NR'))">
+              <img src="../assets/testimonial-nr.webp" alt="Nathalie Renaud, commerce multi-sites Ã  Chalon-sur-SaÃ´ne" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('NR'))">
             </div>
             <div>
               <p class="font-bold text-[#0B3D91]">Nathalie Renaud</p>
-              <p class="text-slate-500 text-sm">Commerce multi-sites, Chalon-sur-Saône (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+              <p class="text-slate-500 text-sm">Commerce multi-sites, Chalon-sur-SaÃ´ne (71)</p>
+              <p class="text-[#F57C00] text-xs font-medium mt-1">â˜…â˜…â˜…â˜…â˜…</p>
             </div>
           </div>
         </div>
       </div>
       <div class="dcb-carousel-controls">
-        <button type="button" data-dcb-prev aria-label="Témoignage précédent"><span class="material-symbols-outlined">arrow_back</span></button>
+        <button type="button" data-dcb-prev aria-label="TÃ©moignage prÃ©cÃ©dent"><span class="material-symbols-outlined">arrow_back</span></button>
         <div data-dcb-dots></div>
-        <button type="button" data-dcb-next aria-label="Témoignage suivant"><span class="material-symbols-outlined">arrow_forward</span></button>
+        <button type="button" data-dcb-next aria-label="TÃ©moignage suivant"><span class="material-symbols-outlined">arrow_forward</span></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 7. NOS TECHNICIENS À VOS CÔTÉS : composition éditoriale photo + texte panel + badges départements -->
-<section class="bg-[#0B3D91] py-14 lg:py-24 relative overflow-hidden">
+<!-- 7. NOS TECHNICIENS Ã€ VOS CÃ”TÃ‰S : composition Ã©ditoriale photo + texte panel + badges dÃ©partements -->
+<section class="bg-[#0B3D91] py-12 lg:py-16 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
     <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B]/60 to-transparent"></div>
@@ -519,51 +489,31 @@
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-      <!-- Photo dominante avec badges départements posés en bas -->
+      <!-- Photo dominante avec badges dÃ©partements posÃ©s en bas -->
       <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
-        <div class="relative aspect-[4/5] lg:aspect-[5/6] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
-          <img alt="Technicien DCB en intervention dans une agence Lyon 69 Rhône"
+        <div class="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+          <img alt="Technicien DCB en intervention dans une agence Lyon 69 RhÃ´ne"
                src="../assets/dept-69.webp"
                class="w-full h-full object-cover"
                width="1200" height="1500" loading="lazy" decoding="async"
                onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg';">
-          <!-- Overlay gradient bottom pour lisibilité badges -->
-          <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#072B6B] via-[#072B6B]/60 to-transparent pointer-events-none"></div>
-          <!-- 4 badges départements posés en bas (flex compact uniforme) -->
-          <div class="absolute flex flex-wrap gap-2.5 lg:gap-3" style="left:24px;right:24px;bottom:24px">
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 71 Saône-et-Loire">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">71</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Saône-et-Loire</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 69 Rhône">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">69</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Rhône</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 01 Ain">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">01</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Ain</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 42 Loire">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">42</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Loire</div>
-            </div>
-          </div>
         </div>
+        <p style="color:rgba(255,255,255,0.75);font-size:13.5px;letter-spacing:0.03em;margin-top:14px;line-height:1.5">SaÃ´ne-et-Loire (71) Â· RhÃ´ne (69) Â· Ain (01) Â· Loire (42)</p>
       </div>
 
       <!-- Texte panel droite -->
       <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
-        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:12px;font-weight:800;letter-spacing:0.2em">Expertise de proximité</span>
-        <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nos techniciens à vos côtés</h2>
-        <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Chaque client a un interlocuteur identifié, quelqu'un qui connaît son parc, son activité, ses horaires. Pas un numéro de ticket : un nom, un téléphone, une présence sur le terrain.</p>
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:12px;font-weight:800;letter-spacing:0.2em">Expertise de proximitÃ©</span>
+        <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nos techniciens Ã  vos cÃ´tÃ©s</h2>
+        <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Chaque client a un interlocuteur identifiÃ©, quelqu'un qui connaÃ®t son parc, son activitÃ©, ses horaires. Pas un numÃ©ro de ticket : un nom, un tÃ©lÃ©phone, une prÃ©sence sur le terrain.</p>
         <ul class="space-y-4 mb-10 list-none p-0">
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
-            <span class="leading-relaxed">100% techniciens salariés, zéro sous-traitance</span>
+            <span class="leading-relaxed">100% techniciens salariÃ©s, zÃ©ro sous-traitance</span>
           </li>
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
-            <span class="leading-relaxed">Télémaintenance en moins de 20 minutes</span>
+            <span class="leading-relaxed">TÃ©lÃ©maintenance en moins de 20 minutes</span>
           </li>
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
@@ -571,12 +521,12 @@
           </li>
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
-            <span class="leading-relaxed">92% des tickets résolus dès J+1</span>
+            <span class="leading-relaxed">92% des tickets rÃ©solus dÃ¨s J+1</span>
           </li>
         </ul>
         <div class="flex flex-wrap items-center gap-6 mb-3">
-          <a href="../notre-adn/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2.5">
-            Découvrir notre équipe
+          <a href="../notre-adn/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-3">
+            DÃ©couvrir notre Ã©quipe
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
           <a href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10" class="inline-flex items-center gap-2 px-1 py-2 rounded-md transition-colors hover:opacity-100" style="color:rgba(255,255,255,0.92);font-weight:700">
@@ -590,53 +540,53 @@
   </div>
 </section>
 
-<!-- 8. CROSS-SELL INTER-PILIER (pattern boulangerie : 2 cards riches avec split visuel à droite) -->
+<!-- 8. CROSS-SELL INTER-PILIER (pattern boulangerie : 2 cards riches avec split visuel Ã  droite) -->
 <section class="bg-white py-12 lg:py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 max-w-3xl dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Aller plus loin</p>
-      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Un seul partenaire pour toute votre activité</h2>
-      <p class="text-slate-500 text-lg mt-3">Caisses, visibilité web et informatique : les trois piliers de votre commerce ou entreprise, gérés par la même équipe locale.</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Un seul partenaire pour toute votre activitÃ©</h2>
+      <p class="text-slate-500 text-lg mt-3">Caisses, visibilitÃ© web et informatique : les trois piliers de votre commerce ou entreprise, gÃ©rÃ©s par la mÃªme Ã©quipe locale.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dcb-stagger">
       <!-- Card 1 : Caisse enregistreuse -->
       <a href="../caisse-enregistreuse/index.html" data-dest="caisse-enregistreuse" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#0B3D91] text-2xl ms-fill">point_of_sale</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(11,61,145,0.12)]">Caisse certifiée</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#0B3D91] text-2xl ms-fill">point_of_sale</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full">Caisse certifiÃ©e</span>
           </div>
           <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Caisse enregistreuse</h3>
-          <p class="text-slate-500 text-sm mb-4">Logiciel CashMag, matériel professionnel, installation et SAV par le même technicien qui gère votre parc informatique. Une seule équipe, une seule facture.</p>
+          <p class="text-slate-500 text-sm mb-4">Logiciel CashMag, matÃ©riel professionnel, installation et SAV par le mÃªme technicien qui gÃ¨re votre parc informatique. Une seule Ã©quipe, une seule facture.</p>
           <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#F57C00] transition-colors">Découvrir nos caisses</span>
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#F57C00] transition-colors">DÃ©couvrir nos caisses</span>
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0B3D91] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
         <!-- Cross-sell Caisse : TPV sur comptoir artisan -->
         <div class="relative overflow-hidden min-h-[220px] sm:min-h-0">
-          <img src="../assets/crosssell-caisse.webp" alt="Terminal TPV CashMag installé par DCB dans un commerce local"
+          <img src="../assets/crosssell-caisse.webp" alt="Terminal TPV CashMag installÃ© par DCB dans un commerce local"
                width="1600" height="1552" loading="lazy" decoding="async"
                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
         </div>
       </a>
-      <!-- Card 2 : Visibilité en ligne -->
+      <!-- Card 2 : VisibilitÃ© en ligne -->
       <a href="../visibilite-web/index.html" data-dest="visibilite-web" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
         <div class="p-7 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
-            <div class="cx-icon w-11 h-11 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#0D9488] text-2xl ms-fill">language</span></div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">SEO local</span>
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#0D9488] text-2xl ms-fill">language</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full">SEO local</span>
           </div>
-          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Visibilité en ligne</h3>
-          <p class="text-slate-500 text-sm mb-4">Site web professionnel, référencement Google local et hébergement sécurisé. Vos clients vous trouvent avant vos concurrents, sur votre zone d'intervention.</p>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">VisibilitÃ© en ligne</h3>
+          <p class="text-slate-500 text-sm mb-4">Site web professionnel, rÃ©fÃ©rencement Google local et hÃ©bergement sÃ©curisÃ©. Vos clients vous trouvent avant vos concurrents, sur votre zone d'intervention.</p>
           <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#0D9488] transition-colors">Découvrir la visibilité web</span>
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#0D9488] transition-colors">DÃ©couvrir la visibilitÃ© web</span>
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
         <!-- Cross-sell Web : laptop avec site web pro + smartphone + notes -->
         <div class="relative overflow-hidden min-h-[220px] sm:min-h-0">
-          <img src="../assets/crosssell-web.webp" alt="Site web professionnel créé par DCB affiché sur laptop et smartphone"
+          <img src="../assets/crosssell-web.webp" alt="Site web professionnel crÃ©Ã© par DCB affichÃ© sur laptop et smartphone"
                width="1600" height="872" loading="lazy" decoding="async"
                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
         </div>
@@ -651,15 +601,15 @@
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-10 dcb-reveal">
         <span class="text-[#F57C00] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">FAQ</span>
-        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Questions fréquentes</h2>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Questions frÃ©quentes</h2>
       </div>
       <div class="flex flex-col gap-3 dcb-reveal">
-        <details class="faq-item"><summary><span>Quel est le délai de réponse en cas d'urgence ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nos techniciens salariés interviennent en moins de 4 heures sur site pour toute panne critique. En <abbr data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>, la prise en charge est immédiate pendant les heures ouvrées.</div></details>
-        <details class="faq-item"><summary><span>La <abbr data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr> est-elle sécurisée ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, nous utilisons des outils de prise en main à distance chiffrés de bout en bout. Chaque session est tracée et soumise à votre autorisation préalable.</div></details>
-        <details class="faq-item"><summary><span>Que couvre la maintenance préventive ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage logiciel, vérification des sauvegardes et rapports mensuels d'état de santé de votre infrastructure.</div></details>
-        <details class="faq-item"><summary><span>Combien coûte une intervention sur site ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement.</div></details>
-        <details class="faq-item"><summary><span>Êtes-vous compatibles avec mon matériel existant ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nous travaillons avec toutes les marques du marché. Un audit préalable gratuit nous permet de vérifier la compatibilité et de vous proposer la solution la plus adaptée.</div></details>
-        <details class="faq-item"><summary><span>Y a-t-il un engagement contractuel minimum ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spécifiques.</div></details>
+        <details class="faq-item"><summary><span>Quel est le dÃ©lai de rÃ©ponse en cas d'urgence ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nos techniciens salariÃ©s interviennent en moins de 4 heures sur site pour toute panne critique. En <abbr data-tooltip="DÃ©pannage Ã  distance via accÃ¨s sÃ©curisÃ©, sans dÃ©placement technicien. DÃ©lai DCB : moins de 20 minutes." aria-label="DÃ©pannage Ã  distance via accÃ¨s sÃ©curisÃ©, sans dÃ©placement technicien. DÃ©lai DCB : moins de 20 minutes.">tÃ©lÃ©maintenance</abbr>, la prise en charge est immÃ©diate pendant les heures ouvrÃ©es.</div></details>
+        <details class="faq-item"><summary><span>La <abbr data-tooltip="DÃ©pannage Ã  distance via accÃ¨s sÃ©curisÃ©, sans dÃ©placement technicien. DÃ©lai DCB : moins de 20 minutes." aria-label="DÃ©pannage Ã  distance via accÃ¨s sÃ©curisÃ©, sans dÃ©placement technicien. DÃ©lai DCB : moins de 20 minutes.">tÃ©lÃ©maintenance</abbr> est-elle sÃ©curisÃ©e ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, nous utilisons des outils de prise en main Ã  distance chiffrÃ©s de bout en bout. Chaque session est tracÃ©e et soumise Ã  votre autorisation prÃ©alable.</div></details>
+        <details class="faq-item"><summary><span>Que couvre la maintenance prÃ©ventive ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Surveillance 24/7 de votre parc, mises Ã  jour de sÃ©curitÃ©, nettoyage logiciel, vÃ©rification des sauvegardes et rapports mensuels d'Ã©tat de santÃ© de votre infrastructure.</div></details>
+        <details class="faq-item"><summary><span>Combien coÃ»te une intervention sur site ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposÃ© pour Ã©valuer vos besoins avant tout engagement.</div></details>
+        <details class="faq-item"><summary><span>ÃŠtes-vous compatibles avec mon matÃ©riel existant ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nous travaillons avec toutes les marques du marchÃ©. Un audit prÃ©alable gratuit nous permet de vÃ©rifier la compatibilitÃ© et de vous proposer la solution la plus adaptÃ©e.</div></details>
+        <details class="faq-item"><summary><span>Y a-t-il un engagement contractuel minimum ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spÃ©cifiques.</div></details>
       </div>
     </div>
   </div>
@@ -671,7 +621,7 @@
     <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
       <div class="lg:col-span-7 col-msg">
         <span class="filet" aria-hidden="true"></span>
-        <h2 class="d-h">Prêt à simplifier votre informatique ?</h2>
+        <h2 class="d-h">PrÃªt Ã  simplifier votre informatique ?</h2>
         <p class="d-lede">Diagnostic gratuit et sans engagement. Nos conseillers vous rappellent sous 24h.</p>
       </div>
       <div class="lg:col-span-5 col-action">
@@ -691,9 +641,9 @@
 <div id="dcb-footer"></div>
 </div><!-- /d-shell -->
 
-<!-- ═══════════════════════════════════════════════════════════════
-     MOBILE SHELL  (visible ≤640 px uniquement : .m-shell)
-═══════════════════════════════════════════════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     MOBILE SHELL  (visible â‰¤640 px uniquement : .m-shell)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="m-shell" data-metier="informatique">
 
 <!-- SKIP LINK -->
@@ -702,7 +652,7 @@
 <!-- PROGRESS BAR -->
 <div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
 
-<!-- HEADER : injecté par scripts.js via #m-nav -->
+<!-- HEADER : injectÃ© par scripts.js via #m-nav -->
 <div id="m-nav"></div>
 
 <!-- MAIN CONTENT -->
@@ -712,10 +662,10 @@
 <section class="hero" style="background:linear-gradient(135deg,#0B3D91 0%,#072B6B 100%)">
   <div class="chips" style="flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none">
     <span class="chip" style="white-space:nowrap;flex-shrink:0"><span class="material-symbols-outlined fill ms-fill">speed</span>Intervention &lt;4h</span>
-    <span class="chip gold" style="white-space:nowrap;flex-shrink:0">Zéro sous-traitance</span>
+    <span class="chip gold" style="white-space:nowrap;flex-shrink:0">ZÃ©ro sous-traitance</span>
   </div>
   <h1>Un seul interlocuteur pour <em>tout votre informatique</em>.</h1>
-  <p class="lede">Techniciens salariés, zéro sous-traitance, intervention sur site en moins de 4h. Saône-et-Loire, Rhône, Ain, Loire.</p>
+  <p class="lede">Techniciens salariÃ©s, zÃ©ro sous-traitance, intervention sur site en moins de 4h. SaÃ´ne-et-Loire, RhÃ´ne, Ain, Loire.</p>
 
   <div class="scene">
     <div class="tpv">
@@ -728,14 +678,14 @@
     </div>
     <div class="float2" aria-hidden="true">
       <div class="ic"><span class="material-symbols-outlined ms-fill">engineering</span></div>
-      <div><div class="lb">Techniciens</div><div class="vl">Salariés</div></div>
+      <div><div class="lb">Techniciens</div><div class="vl">SalariÃ©s</div></div>
     </div>
   </div>
 
   <div class="checks">
-    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Maintenance, cloud, réseau : un seul contrat, un seul numéro</div>
-    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Techniciens salariés DCB, intervention sur site en moins de 4h</div>
-    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Saône-et-Loire, Rhône, Ain, Loire : couverture locale garantie</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Maintenance, cloud, rÃ©seau : un seul contrat, un seul numÃ©ro</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Techniciens salariÃ©s DCB, intervention sur site en moins de 4h</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>SaÃ´ne-et-Loire, RhÃ´ne, Ain, Loire : couverture locale garantie</div>
   </div>
 
   <div class="cta-row">
@@ -747,47 +697,47 @@
 <!-- S2 : MARQUEE -->
 <ul class="sr-only">
   <li>Intervention sur site en moins de 4h</li>
-  <li>Techniciens salariés DCB</li>
+  <li>Techniciens salariÃ©s DCB</li>
   <li>SAV 7j/7</li>
-  <li>Zéro sous-traitance</li>
+  <li>ZÃ©ro sous-traitance</li>
 </ul>
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <div class="it"><span class="material-symbols-outlined fill ms-fill">speed</span>&lt;4h sur site</div>
-    <div class="it"><span class="material-symbols-outlined fill ms-fill">engineering</span>Techniciens salariés</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">engineering</span>Techniciens salariÃ©s</div>
     <div class="it"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7</div>
     <div class="it"><span class="material-symbols-outlined fill ms-fill">verified</span>0 sous-traitance</div>
     <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">speed</span>&lt;4h sur site</div>
-    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">engineering</span>Techniciens salariés</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">engineering</span>Techniciens salariÃ©s</div>
     <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">support_agent</span>SAV 7j/7</div>
     <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified</span>0 sous-traitance</div>
   </div>
 </div>
 
-<!-- S3 : PROBLÈME / CONSTAT -->
+<!-- S3 : PROBLÃˆME / CONSTAT -->
 <section class="sec s1">
   <p class="eyebrow">Le constat</p>
-  <h2>Ce que votre informatique <em>vous coûte vraiment</em>.</h2>
+  <h2>Ce que votre informatique <em>vous coÃ»te vraiment</em>.</h2>
   <div class="pain">
     <div class="row">
       <div class="n">01</div>
       <div>
         <h3>Du temps perdu chaque jour</h3>
-        <p>Un poste qui rame, une impression qui plante, une mise à jour qui bloque. Cumulé sur une équipe, c'est plusieurs heures de productivité perdues chaque semaine.</p>
+        <p>Un poste qui rame, une impression qui plante, une mise Ã  jour qui bloque. CumulÃ© sur une Ã©quipe, c'est plusieurs heures de productivitÃ© perdues chaque semaine.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">02</div>
       <div>
-        <h3>Des risques sécurité non couverts</h3>
-        <p>Antivirus périmé, sauvegardes non testées, mots de passe faibles. Une attaque par ransomware coûte en moyenne 15 000 € à une TPE. La prévention coûte dix fois moins cher.</p>
+        <h3>Des risques sÃ©curitÃ© non couverts</h3>
+        <p>Antivirus pÃ©rimÃ©, sauvegardes non testÃ©es, mots de passe faibles. Une attaque par ransomware coÃ»te en moyenne 15 000 â‚¬ Ã  une TPE. La prÃ©vention coÃ»te dix fois moins cher.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">03</div>
       <div>
-        <h3>Du matériel vieillissant sans suivi</h3>
-        <p>Des postes de 5 à 7 ans, un serveur sans plan de remplacement. Le jour de la panne critique, tout s'arrête en urgence. Renouveler votre parc à froid coûte toujours moins cher.</p>
+        <h3>Du matÃ©riel vieillissant sans suivi</h3>
+        <p>Des postes de 5 Ã  7 ans, un serveur sans plan de remplacement. Le jour de la panne critique, tout s'arrÃªte en urgence. Renouveler votre parc Ã  froid coÃ»te toujours moins cher.</p>
       </div>
     </div>
   </div>
@@ -795,45 +745,63 @@
 
 <!-- S4 : SERVICES -->
 <section class="sec">
-  <p class="eyebrow">Nos expertises</p>
-  <h2>Quatre domaines, <em>un seul partenaire</em>.</h2>
+  <p class="eyebrow">Nos domaines d'intervention</p>
+  <h2>Cinq expertises, <em>un seul partenaire</em>.</h2>
   <div class="tabs" id="tabs" role="tablist" aria-label="Filtrer par service">
-    <button class="tab active" role="tab" id="tab-maint" aria-selected="true" aria-controls="card-maint"><span class="material-symbols-outlined" aria-hidden="true">build</span>Maintenance</button>
+    <button class="tab active" role="tab" id="tab-info" aria-selected="true" aria-controls="card-info"><span class="material-symbols-outlined" aria-hidden="true">manage_accounts</span>InfogÃ©rance</button>
+    <button class="tab" role="tab" id="tab-maint" aria-selected="false" aria-controls="card-maint"><span class="material-symbols-outlined" aria-hidden="true">build</span>Maintenance</button>
     <button class="tab" role="tab" id="tab-cloud" aria-selected="false" aria-controls="card-cloud"><span class="material-symbols-outlined" aria-hidden="true">cloud_done</span>Cloud</button>
     <button class="tab" role="tab" id="tab-loc" aria-selected="false" aria-controls="card-loc"><span class="material-symbols-outlined" aria-hidden="true">devices</span>Location</button>
     <button class="tab" role="tab" id="tab-outils" aria-selected="false" aria-controls="card-outils"><span class="material-symbols-outlined" aria-hidden="true">groups</span>Outils</button>
   </div>
   <div class="carou" id="carou">
-    <a class="mcard maint" id="card-maint" role="tabpanel" aria-labelledby="tab-maint" href="maintenance-depannage/index.html" aria-label="Voir la page Maintenance et Dépannage">
+    <a class="mcard info" id="card-info" role="tabpanel" aria-labelledby="tab-info" href="infogerance-pme/index.html" aria-label="Voir la page InfogÃ©rance PME">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head">
+          <div class="ic"><span class="material-symbols-outlined ms-fill">manage_accounts</span></div>
+          <span class="pill">Technicien attitrÃ©</span>
+        </div>
+        <h3>InfogÃ©rance PME</h3>
+        <p class="ds">Un technicien salariÃ© attitrÃ© qui connaÃ®t votre parc. CoÃ»t fixe, zÃ©ro surprise.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined ms-fill">monitor_heart</span>Surveillance de votre parc 24h/24</div>
+          <div><span class="material-symbols-outlined ms-fill">construction</span>Interventions sur site incluses</div>
+          <div><span class="material-symbols-outlined ms-fill">fact_check</span>Rapport mensuel et audit initial gratuit</div>
+        </div>
+        <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard maint" id="card-maint" role="tabpanel" aria-labelledby="tab-maint" href="maintenance-depannage/index.html" aria-label="Voir la page Maintenance et DÃ©pannage">
       <div class="bar"></div>
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">build</span></div>
           <span class="pill">Intervention &lt;4h</span>
         </div>
-        <h3>Maintenance &amp; Dépannage</h3>
-        <p class="ds">Votre technicien attitré, sur place en moins de 4h.</p>
+        <h3>Maintenance &amp; DÃ©pannage</h3>
+        <p class="ds">Votre technicien attitrÃ©, sur place en moins de 4h.</p>
         <div class="feats">
           <div><span class="material-symbols-outlined ms-fill">timer</span>Intervention garantie &lt;4h</div>
           <div><span class="material-symbols-outlined ms-fill">monitor_heart</span>Monitoring 24h/24, 7j/7</div>
-          <div><span class="material-symbols-outlined ms-fill">person_pin</span>Technicien attitré, zéro sous-traitance</div>
+          <div><span class="material-symbols-outlined ms-fill">person_pin</span>Technicien attitrÃ©, zÃ©ro sous-traitance</div>
         </div>
         <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
       </div>
     </a>
-    <a class="mcard cloud" id="card-cloud" role="tabpanel" aria-labelledby="tab-cloud" href="cloud-securite/index.html" aria-label="Voir la page Cloud et Sécurité">
+    <a class="mcard cloud" id="card-cloud" role="tabpanel" aria-labelledby="tab-cloud" href="cloud-securite/index.html" aria-label="Voir la page Cloud et SÃ©curitÃ©">
       <div class="bar"></div>
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">cloud_done</span></div>
           <span class="pill">Sauvegarde 3-2-1</span>
         </div>
-        <h3>Cloud &amp; Sécurité</h3>
-        <p class="ds">Vos données sauvegardées et protégées, même en cas de sinistre.</p>
+        <h3>Cloud &amp; SÃ©curitÃ©</h3>
+        <p class="ds">Vos donnÃ©es sauvegardÃ©es et protÃ©gÃ©es, mÃªme en cas de sinistre.</p>
         <div class="feats">
-          <div><span class="material-symbols-outlined ms-fill">backup</span>Sauvegarde externalisée quotidienne</div>
-          <div><span class="material-symbols-outlined ms-fill">security</span>Antivirus managé et mis à jour</div>
-          <div><span class="material-symbols-outlined ms-fill">mark_email_read</span>Messagerie pro sécurisée</div>
+          <div><span class="material-symbols-outlined ms-fill">backup</span>Sauvegarde externalisÃ©e quotidienne</div>
+          <div><span class="material-symbols-outlined ms-fill">security</span>Antivirus managÃ© et mis Ã  jour</div>
+          <div><span class="material-symbols-outlined ms-fill">mark_email_read</span>Messagerie pro sÃ©curisÃ©e</div>
         </div>
         <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
       </div>
@@ -843,14 +811,14 @@
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">devices</span></div>
-          <span class="pill">Zéro achat immédiat</span>
+          <span class="pill">ZÃ©ro achat immÃ©diat</span>
         </div>
         <h3>Location &amp; Installation</h3>
-        <p class="ds">Matériel récent, financement flexible, installation clé en main.</p>
+        <p class="ds">MatÃ©riel rÃ©cent, financement flexible, installation clÃ© en main.</p>
         <div class="feats">
-          <div><span class="material-symbols-outlined ms-fill">computer</span>Matériel récent, garanti</div>
-          <div><span class="material-symbols-outlined ms-fill">payments</span>Mensualités fixes, sans surprise</div>
-          <div><span class="material-symbols-outlined ms-fill">handyman</span>Installation et câblage réseau</div>
+          <div><span class="material-symbols-outlined ms-fill">computer</span>MatÃ©riel rÃ©cent, garanti</div>
+          <div><span class="material-symbols-outlined ms-fill">payments</span>MensualitÃ©s fixes, sans surprise</div>
+          <div><span class="material-symbols-outlined ms-fill">handyman</span>Installation et cÃ¢blage rÃ©seau</div>
         </div>
         <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
       </div>
@@ -863,27 +831,32 @@
           <span class="pill">Microsoft 365 &amp; Google</span>
         </div>
         <h3>Outils Collaboratifs</h3>
-        <p class="ds">Microsoft 365 ou Google Workspace, configuré et formé sur site.</p>
+        <p class="ds">Microsoft 365 ou Google Workspace, configurÃ© et formÃ© sur site.</p>
         <div class="feats">
-          <div><span class="material-symbols-outlined ms-fill">email</span>Messagerie et agenda partagés</div>
+          <div><span class="material-symbols-outlined ms-fill">email</span>Messagerie et agenda partagÃ©s</div>
           <div><span class="material-symbols-outlined ms-fill">folder_shared</span>Stockage cloud collaboratif</div>
-          <div><span class="material-symbols-outlined ms-fill">school</span>Formation de votre équipe incluse</div>
+          <div><span class="material-symbols-outlined ms-fill">school</span>Formation de votre Ã©quipe incluse</div>
         </div>
         <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
       </div>
     </a>
   </div>
-  <div class="dots" id="dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+  <div class="dots" id="dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
 </section>
 <style>
-#dots[data-mi="0"] span.on{background:#EF4444!important}
-#dots[data-mi="1"] span.on{background:#0D9488!important}
-#dots[data-mi="2"] span.on{background:#4F46E5!important}
-#dots[data-mi="3"] span.on{background:#A855F7!important}
+#dots[data-mi="0"] span.on{background:#F59E0B!important}
+#dots[data-mi="1"] span.on{background:#EF4444!important}
+#dots[data-mi="2"] span.on{background:#0D9488!important}
+#dots[data-mi="3"] span.on{background:#4F46E5!important}
+#dots[data-mi="4"] span.on{background:#A855F7!important}
+#tab-info.active{background:#F59E0B!important;border-color:#F59E0B!important}
 #tab-maint.active{background:#EF4444!important;border-color:#EF4444!important}
 #tab-cloud.active{background:#0D9488!important;border-color:#0D9488!important}
 #tab-loc.active{background:#4F46E5!important;border-color:#4F46E5!important}
 #tab-outils.active{background:#A855F7!important;border-color:#A855F7!important}
+/* Anti-slop : suppression du bandeau colore en haut des mcards (doctrine homepage, alignee hub caisse mobile).
+   Le signal couleur metier est porte par .ic / .pill / .feats / .go .ab (deja en place via mobile.css). */
+.m-shell .mcard .bar{display:none}
 </style>
 <script>
 (function () {
@@ -908,29 +881,29 @@
 <section class="sec s1">
   <p class="eyebrow">Comparatif</p>
   <h2>DCB ou une ESN&nbsp;: <em>ce qui change vraiment</em>.</h2>
-  <p style="font-size:13px;color:var(--mute);line-height:1.55;margin:8px 0 20px">Les grandes ESN conviennent aux structures avec DSI interne. Pas à une PME qui veut un technicien attitré, un numéro direct et une intervention garantie en moins de 4h.</p>
+  <p style="font-size:13px;color:var(--mute);line-height:1.55;margin:8px 0 20px">Les grandes ESN conviennent aux structures avec DSI interne. Pas Ã  une PME qui veut un technicien attitrÃ©, un numÃ©ro direct et une intervention garantie en moins de 4h.</p>
   <div style="display:flex;flex-direction:column;gap:12px">
     <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px">
       <div style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;color:var(--mute);padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)">
         <span class="material-symbols-outlined" style="font-size:17px;color:#CBD5E1">computer</span>
-        ESN généraliste / hotline délocalisée
+        ESN gÃ©nÃ©raliste / hotline dÃ©localisÃ©e
       </div>
       <div style="display:flex;flex-direction:column;gap:10px">
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Hotline délocalisée, serveur vocal</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Vous réexpliquez votre problème à chaque appel</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Hotline dÃ©localisÃ©e, serveur vocal</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Vous rÃ©expliquez votre problÃ¨me Ã  chaque appel</span></div>
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Sous-traitants variables à chaque intervention</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Un technicien différent à chaque appel</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Sous-traitants variables Ã  chaque intervention</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Un technicien diffÃ©rent Ã  chaque appel</span></div>
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Réponse sous 48 à 72h en moyenne sur site</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Panne un vendredi soir : vous attendez lundi</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">RÃ©ponse sous 48 Ã  72h en moyenne sur site</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Panne un vendredi soir : vous attendez lundi</span></div>
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Urgences week-end rarement couvertes</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Astreinte souvent payante, délai non garanti</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Urgences week-end rarement couvertes</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Astreinte souvent payante, dÃ©lai non garanti</span></div>
         </div>
       </div>
     </div>
@@ -943,11 +916,11 @@
       <div style="display:flex;flex-direction:column;gap:10px">
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Technicien attitré local, numéro direct</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Il connaît votre configuration, pas besoin de tout réexpliquer</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Technicien attitrÃ© local, numÃ©ro direct</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Il connaÃ®t votre configuration, pas besoin de tout rÃ©expliquer</span></div>
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">100% techniciens salariés, zéro sous-traitance</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Toujours le même visage, toujours la même exigence</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">100% techniciens salariÃ©s, zÃ©ro sous-traitance</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Toujours le mÃªme visage, toujours la mÃªme exigence</span></div>
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
@@ -955,12 +928,12 @@
         </div>
         <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
           <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
-          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Astreinte 7j/7 pour les urgences critiques</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Un vrai technicien décroche, y compris le dimanche</span></div>
+          <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Astreinte 7j/7 pour les urgences critiques</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Un vrai technicien dÃ©croche, y compris le dimanche</span></div>
         </div>
       </div>
     </div>
   </div>
-  <p style="font-size:11px;color:var(--subtle);text-align:center;margin-top:14px;font-style:italic;line-height:1.5">Comparatif indicatif. Les ESN généralistes conviennent aux grandes structures avec DSI interne.</p>
+  <p style="font-size:11px;color:var(--subtle);text-align:center;margin-top:14px;font-style:italic;line-height:1.5">Comparatif indicatif. Les ESN gÃ©nÃ©ralistes conviennent aux grandes structures avec DSI interne.</p>
 </section>
 
 <!-- S6 : TEMOIGNAGES -->
@@ -969,31 +942,31 @@
   <h2>Ce que disent <em>nos clients</em>.</h2>
   <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
     <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
-      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 Ã©toiles sur 5">
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Avant DCB, chaque panne c'était une demi-journée de perdue à attendre qu'un technicien nous rappelle. Maintenant on a un numéro direct, un technicien qu'on connaît. En un an, zéro interruption longue."</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Avant DCB, chaque panne c'Ã©tait une demi-journÃ©e de perdue Ã  attendre qu'un technicien nous rappelle. Maintenant on a un numÃ©ro direct, un technicien qu'on connaÃ®t. En un an, zÃ©ro interruption longue."</p>
       <div style="display:flex;align-items:center;gap:10px">
         <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#1E5BD9);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">PG</div>
         <div>
           <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Philippe Garnier</div>
-          <div style="font-size:11.5px;color:var(--mute)">Cabinet comptable, Mâcon (71)</div>
+          <div style="font-size:11.5px;color:var(--mute)">Cabinet comptable, MÃ¢con (71)</div>
         </div>
       </div>
     </div>
     <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
-      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 Ã©toiles sur 5">
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"La migration vers M365 nous faisait peur : 40 boîtes mail, des années de courriers. DCB a tout orchestré un week-end. Le lundi matin, on travaillait sans même s'en rendre compte."</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"La migration vers M365 nous faisait peur : 40 boÃ®tes mail, des annÃ©es de courriers. DCB a tout orchestrÃ© un week-end. Le lundi matin, on travaillait sans mÃªme s'en rendre compte."</p>
       <div style="display:flex;align-items:center;gap:10px">
         <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#A855F7,#9333EA);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">SL</div>
         <div>
@@ -1005,7 +978,7 @@
   </div>
 </section>
 
-<!-- S7 : EXPERTISE DE PROXIMITÉ (composition éditoriale mobile, contenu desktop préservé) -->
+<!-- S7 : EXPERTISE DE PROXIMITÃ‰ (composition Ã©ditoriale mobile, contenu desktop prÃ©servÃ©) -->
 <style>
   .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
   .m-prox-reveal.in{opacity:1;transform:none}
@@ -1016,68 +989,56 @@
   @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
 </style>
 <section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
-  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
-    <img src="../assets/dept-69.webp" alt="Technicien DCB en intervention dans une agence Lyon 69 Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,61,145,0) 40%,rgba(11,61,145,0.65) 75%,rgba(11,61,145,0.92) 100%);pointer-events:none"></div>
-    <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.22)">
-        <span style="display:flex;align-items:baseline;gap:10px">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:22px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">71</span>
-          <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Saône-et-Loire</span>
-        </span>
-        <span style="font-size:9.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-shadow:0 1px 2px rgba(0,0,0,0.30)">Pôle technique</span>
-      </div>
-      <div style="display:flex;gap:6px">
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">69</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Rhône</span>
-        </div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">01</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Ain</span>
-        </div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 8px;border-radius:10px;background:rgba(11,61,145,0.55);border:1px solid rgba(255,255,255,0.18)">
-          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:16px;line-height:1;color:#F57C00;text-shadow:0 1px 2px rgba(0,0,0,0.30)">42</span>
-          <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.30)">Loire</span>
-        </div>
-      </div>
-    </div>
+  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+    <img src="../assets/dept-69.webp" alt="Technicien DCB en intervention dans une agence Lyon 69 RhÃ´ne" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
   </div>
-  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
-  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens à vos côtés</h2>
-  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié, quelqu'un qui connaît son parc, son activité, ses horaires. Pas un numéro de ticket : un nom, un téléphone, une présence sur le terrain.</p>
-  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px">
-    <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>100% techniciens salariés, zéro sous-traitance</li>
-    <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>Télémaintenance en moins de 20 minutes</li>
-    <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>Intervention sur site garantie en moins de 4h</li>
-    <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.45;color:#fff"><span class="material-symbols-outlined" style="font-size:20px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0;margin-top:1px">check_circle</span>92% des tickets résolus dès J+1</li>
+  <p style="color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.03em;margin-top:12px;margin-bottom:0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">SaÃ´ne-et-Loire Â· RhÃ´ne Â· Ain Â· Loire</p>
+  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximitÃ©</p>
+  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens Ã  vos cÃ´tÃ©s</h2>
+  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifiÃ©, quelqu'un qui connaÃ®t son parc, son activitÃ©, ses horaires. Pas un numÃ©ro de ticket : un nom, un tÃ©lÃ©phone, une prÃ©sence sur le terrain.</p>
+  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">TÃ©lÃ©maintenance 7j/7</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matÃ©riel</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+    </li>
   </ul>
-  <a class="m-prox-reveal" data-d="4" href="../notre-adn/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Découvrir notre équipe<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+  <a class="m-prox-reveal" data-d="4" href="../notre-adn/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">DÃ©couvrir notre Ã©quipe<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
 </section>
 <script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
 
 <!-- S8 : CROSS-SELL INTER-PILIER -->
 <section class="sec s1">
   <p class="eyebrow">Aller plus loin</p>
-  <h2>Un seul partenaire pour <em>toute votre activité</em>.</h2>
+  <h2>Un seul partenaire pour <em>toute votre activitÃ©</em>.</h2>
   <div class="peri-a">
     <a href="../caisse-enregistreuse/index.html" data-dest="caisse-enregistreuse" aria-label="Caisse enregistreuse NF525">
       <div class="txt">
         <span class="pp">Installation sur site</span>
         <h3>Caisse enregistreuse NF525</h3>
-        <p>Un technicien pour caisse et parc IT. Un contrat, une facture, zéro ping-pong.</p>
+        <p>Un technicien pour caisse et parc IT. Un contrat, une facture, zÃ©ro ping-pong.</p>
         <span class="lk">Voir nos caisses<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
       </div>
       <div class="vis">
         <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">point_of_sale</span>
       </div>
     </a>
-    <a href="../visibilite-web/index.html" data-dest="visibilite-web" aria-label="Visibilité web et SEO local">
+    <a href="../visibilite-web/index.html" data-dest="visibilite-web" aria-label="VisibilitÃ© web et SEO local">
       <div class="txt">
         <span class="pp">SEO local</span>
-        <h3>Visibilité en ligne</h3>
-        <p>Site pro, SEO Google local et hébergement sécurisé. Visible avant vos concurrents.</p>
-        <span class="lk">Découvrir nos offres<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+        <h3>VisibilitÃ© en ligne</h3>
+        <p>Site pro, SEO Google local et hÃ©bergement sÃ©curisÃ©. Visible avant vos concurrents.</p>
+        <span class="lk">DÃ©couvrir nos offres<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
       </div>
       <div class="vis">
         <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">language</span>
@@ -1088,32 +1049,32 @@
 
 <!-- S8 : FAQ -->
 <section class="sec">
-  <p class="eyebrow">Besoin de précisions ?</p>
-  <h2>Questions <em>fréquentes</em>.</h2>
+  <p class="eyebrow">Besoin de prÃ©cisions ?</p>
+  <h2>Questions <em>frÃ©quentes</em>.</h2>
   <div class="faq">
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quel est le délai de réponse en cas d'urgence ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Nos techniciens salariés interviennent en moins de 4 heures sur site pour toute panne critique. En télémaintenance, la prise en charge est immédiate pendant les heures ouvrées.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quel est le dÃ©lai de rÃ©ponse en cas d'urgence ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Nos techniciens salariÃ©s interviennent en moins de 4 heures sur site pour toute panne critique. En tÃ©lÃ©maintenance, la prise en charge est immÃ©diate pendant les heures ouvrÃ©es.</div>
     </details>
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La télémaintenance est-elle sécurisée ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Oui, nous utilisons des outils de prise en main à distance chiffrés de bout en bout. Chaque session est tracée et soumise à votre autorisation préalable.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La tÃ©lÃ©maintenance est-elle sÃ©curisÃ©e ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Oui, nous utilisons des outils de prise en main Ã  distance chiffrÃ©s de bout en bout. Chaque session est tracÃ©e et soumise Ã  votre autorisation prÃ©alable.</div>
     </details>
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que couvre la maintenance préventive ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage logiciel, vérification des sauvegardes et rapports mensuels d'état de santé de votre infrastructure.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que couvre la maintenance prÃ©ventive ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Surveillance 24/7 de votre parc, mises Ã  jour de sÃ©curitÃ©, nettoyage logiciel, vÃ©rification des sauvegardes et rapports mensuels d'Ã©tat de santÃ© de votre infrastructure.</div>
     </details>
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien coûte une intervention sur site ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien coÃ»te une intervention sur site ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposÃ© pour Ã©valuer vos besoins avant tout engagement.</div>
     </details>
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Êtes-vous compatibles avec mon matériel existant ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Nous travaillons avec toutes les marques du marché. Un audit préalable gratuit nous permet de vérifier la compatibilité et de vous proposer la solution la plus adaptée.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>ÃŠtes-vous compatibles avec mon matÃ©riel existant ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Nous travaillons avec toutes les marques du marchÃ©. Un audit prÃ©alable gratuit nous permet de vÃ©rifier la compatibilitÃ© et de vous proposer la solution la plus adaptÃ©e.</div>
     </details>
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Y a-t-il un engagement contractuel minimum ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spécifiques.</div>
+      <div class="ans">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spÃ©cifiques.</div>
     </details>
   </div>
 </section>
@@ -1122,18 +1083,18 @@
 <!-- CTA FINAL v3 : Le Bord Tranche (IT hub, accent orange brand) -->
 <section class="m-cta-final" style="--accent:#F57C00;--accent-shadow:rgba(245,124,0,0.35)" aria-labelledby="cta-final-h-it">
   <span class="topbar" aria-hidden="true"></span>
-  <h3 id="cta-final-h-it">Prêt à simplifier votre informatique ?</h3>
+  <h3 id="cta-final-h-it">PrÃªt Ã  simplifier votre informatique ?</h3>
   <p>Diagnostic gratuit et sans engagement. Nos conseillers vous rappellent sous 24h.</p>
   <a class="btn btn-pri" href="../contact/index.html">Demander un diagnostic gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
   <span class="dpx-divider">ou appelez-nous</span>
   <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
-  <p class="m-updated">Mis à jour le <time datetime="2026-04-23">23 avril 2026</time></p>
+  <p class="m-updated">Mis Ã  jour le <time datetime="2026-04-23">23 avril 2026</time></p>
   <span class="bottomark" aria-hidden="true"></span>
 </section>
 
 </main><!-- /m-main -->
 
-<!-- FRAME MOBILE : injecté par scripts.js -->
+<!-- FRAME MOBILE : injectÃ© par scripts.js -->
 <div id="m-footer"></div>
 <div id="m-fab"></div>
 <div id="m-sheet"></div>
@@ -1156,3 +1117,4 @@
 </script>
 </body>
 </html>
+
