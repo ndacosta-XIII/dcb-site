@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" data-base="../">
 <head>
 <meta charset="utf-8">
@@ -22,9 +22,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=15">
-<link rel="stylesheet" href="../css/tailwind.min.css?v=20">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=21">
 <style>
   body { font-family: 'Inter', sans-serif; }
+  /* Filet signature (P-16) : aplat court couleur destination, marqueur d'entree de card, hover 28 -> 48px */
+  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
+  .group:hover .pilier-filet { width:48px; }
+  @media (prefers-reduced-motion: reduce) { .pilier-filet { transition: none !important; } }
   /* Shells mobile / desktop */
   .m-shell { display: none }
   @media(max-width:640px) {
@@ -32,9 +36,13 @@
     .d-shell { display: none }
     #dcb-phone-fab { display: none !important }
     /* Couleurs mcard hub Web : création (violet) / seo (red) / heb (teal) */
-    .creat .bar{background:linear-gradient(90deg,#7C3AED,#9D6EF8)}.creat .ic{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .pill{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .feats .material-symbols-outlined{color:#7C3AED}.creat .go .ab{background:#7C3AED}
-    .seo .bar{background:linear-gradient(90deg,#DC2626,#EF4444)}.seo .ic{background:rgba(239,68,68,0.12);color:#EF4444}.seo .pill{background:rgba(239,68,68,0.12);color:#EF4444}.seo .feats .material-symbols-outlined{color:#EF4444}.seo .go .ab{background:#EF4444}
-    .heb .bar{background:linear-gradient(90deg,#0D9488,#14B8A6)}.heb .ic{background:rgba(13,148,136,0.12);color:#0D9488}.heb .pill{background:rgba(13,148,136,0.12);color:#0D9488}.heb .feats .material-symbols-outlined{color:#0D9488}.heb .go .ab{background:#0D9488}
+    /* Anti-slop : bande pleine largeur retirée, remplacée par le filet signature (aplat court couleur destination) */
+    [data-metier="web"] .mcard .bar{display:none}
+    [data-metier="web"] .mcard .body{position:relative}
+    [data-metier="web"] .mcard .body::before{content:"";display:block;width:28px;height:3px;border-radius:2px;margin-bottom:16px}
+    .creat .body::before{background:#7C3AED}.creat .ic{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .pill{background:rgba(124,58,237,0.12);color:#7C3AED}.creat .feats .material-symbols-outlined{color:#7C3AED}.creat .go .ab{background:#7C3AED}
+    .seo .body::before{background:#EF4444}.seo .ic{background:rgba(239,68,68,0.12);color:#EF4444}.seo .pill{background:rgba(239,68,68,0.12);color:#EF4444}.seo .feats .material-symbols-outlined{color:#EF4444}.seo .go .ab{background:#EF4444}
+    .heb .body::before{background:#0D9488}.heb .ic{background:rgba(13,148,136,0.12);color:#0D9488}.heb .pill{background:rgba(13,148,136,0.12);color:#0D9488}.heb .feats .material-symbols-outlined{color:#0D9488}.heb .go .ab{background:#0D9488}
     /* 17px : tous les titres de card tiennent sur 1 ligne en 375px */
     [data-metier="web"] .mcard h3 { font-size: 17px }
   }
@@ -86,9 +94,7 @@
   .site-footer .site-footer-left .material-symbols-outlined { font-size:8px; color:#F57C00; }
   .site-footer .site-footer-right { font-weight:700; color:#F57C00; }
 
-  .iphone-front { position:absolute; bottom:0; right:0; width:145px; z-index:3; aspect-ratio:9/19; background:#1B1B20; border-radius:22px; padding:4px; box-shadow:0 30px 60px -15px rgba(0,0,0,0.55),0 20px 40px -20px rgba(245,124,0,0.3); transform:rotate(-4deg); animation:iphone-breathe 7s ease-in-out infinite; }
-  @keyframes iphone-breathe { 0%,100%{transform:rotate(-4deg) translateY(0)} 50%{transform:rotate(-4deg) translateY(-5px)} }
-  @media (prefers-reduced-motion: reduce) { .iphone-front { animation: none !important; } }
+  .iphone-front { position:absolute; bottom:0; right:0; width:145px; z-index:3; aspect-ratio:9/19; background:#1B1B20; border-radius:22px; padding:4px; box-shadow:0 30px 60px -15px rgba(0,0,0,0.55),0 20px 40px -20px rgba(245,124,0,0.3); transform:rotate(-4deg); }
   .iphone-front-screen { width:100%; height:100%; background:#FFF; border-radius:18px; overflow:hidden; position:relative; }
   .iphone-front-notch { position:absolute; top:4px; left:50%; transform:translateX(-50%); width:44px; height:14px; background:#1B1B20; border-radius:7px; z-index:5; }
   .iphone-status { position:absolute; top:7px; left:0; right:0; display:flex; justify-content:space-between; padding:0 12px; font-size:6px; font-weight:700; color:#1B1B20; z-index:4; }
@@ -376,7 +382,7 @@
 </section>
 
 <!-- 2. TRUST BAR -->
-<section class="py-6 bg-white">
+<section class="py-6 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
       <div class="flex items-center gap-3">
@@ -400,7 +406,7 @@
 </section>
 
 <!-- 3. PROBLÈME / CONSTAT -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-12 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Le constat</p>
@@ -437,45 +443,45 @@
 </section>
 
 <!-- 4. EXPERTISE CARDS -->
-<section id="services" class="bg-white py-12 lg:py-16">
+<section id="services" class="bg-[#F8F9FA] py-12 lg:py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Nos expertises</p>
       <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Des solutions web pour le commerce local.</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 dcb-stagger">
-      <a href="creation-site-internet/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#0D9488] to-[#14B8A6]"></div>
+      <a href="creation-site-internet/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
         <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#7C3AED" aria-hidden="true"></span>
           <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#0D9488] text-3xl">desktop_windows</span>
+            <div class="w-14 h-14 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#7C3AED] text-3xl">desktop_windows</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(13,148,136,0.12)]">En moins d'une semaine</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#7C3AED] bg-[#7C3AED]/10 px-3 py-1 rounded-full">En moins d'une semaine</span>
           </div>
           <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Création de site internet</h3>
           <p class="text-slate-500 text-sm mb-3">Votre vitrine en ligne, accessible 24h/24, Mobile First et prête pour le référencement local dès le premier jour.</p>
           <ul class="space-y-2.5 mb-4">
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Design personnalisé sur mesure</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>SEO technique intégré dès la création</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Mobile First, rapide et accessible</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>Design personnalisé sur mesure</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>SEO technique intégré dès la création</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>Mobile First, rapide et accessible</li>
           </ul>
           <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#7C3AED] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#7C3AED] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
           </div>
         </div>
       </a>
-      <a href="seo-sea-local/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#DC2626] to-[#EF4444]"></div>
+      <a href="seo-sea-local/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
         <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
           <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+            <div class="w-14 h-14 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
               <span class="material-symbols-outlined text-[#EF4444] text-3xl">trending_up</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">Jusqu'à ×3 visibilité</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full">Jusqu'à ×3 visibilité</span>
           </div>
           <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">SEO et SEA Local</h3>
           <p class="text-slate-500 text-sm mb-3">Premier sur Google quand vos clients cherchent votre métier dans votre ville. Budget maîtrisé, résultats mesurables.</p>
@@ -492,25 +498,25 @@
           </div>
         </div>
       </a>
-      <a href="hebergement/index.html" class="group bg-white rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
-        <div class="h-[3px] bg-gradient-to-r from-[#4F46E5] to-[#6366F1]"></div>
+      <a href="hebergement/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
         <div class="p-7 lg:p-8 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
           <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-              <span class="material-symbols-outlined text-[#4F46E5] text-3xl">dns</span>
+            <div class="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#0D9488] text-3xl">dns</span>
             </div>
-            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(79,70,229,0.12)]">99,9% uptime</span>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-3 py-1 rounded-full">99,9% uptime</span>
           </div>
           <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Hébergement professionnel</h3>
           <p class="text-slate-500 text-sm mb-3">Serveurs en France, ultra-rapides, avec SSL et sauvegardes quotidiennes. Votre site ne tombe pas le vendredi soir.</p>
           <ul class="space-y-2.5 mb-4">
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Hébergé en France, conforme RGPD</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>SSL et sauvegardes quotidiennes inclus</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Support technique réactif</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Hébergé en France, conforme RGPD</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>SSL et sauvegardes quotidiennes inclus</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Support technique réactif</li>
           </ul>
           <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="font-bold text-[#0B3D91] group-hover:text-[#4F46E5] transition-colors">Découvrir</span>
-            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
               <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
             </span>
           </div>
@@ -521,7 +527,7 @@
 </section>
 
 <!-- 5. MÉTHODOLOGIE (signature visuelle hub web) -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-14 lg:mb-16 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-3">Méthodologie</p>
@@ -573,7 +579,7 @@
 </section>
 
 <!-- 6. DIFFÉRENCIATEUR -->
-<section class="py-12 lg:py-16 bg-white">
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
@@ -608,7 +614,7 @@
 </section>
 
 <!-- 7. TÉMOIGNAGES carousel -->
-<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+<section class="py-12 lg:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-10 dcb-reveal">
       <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
@@ -616,7 +622,7 @@
     </div>
     <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
       <div data-dcb-track>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On était invisibles sur Google alors qu'on est là depuis 15 ans. DCB nous a refait un site et mis en place le SEO local. En trois mois, on est passés en première page pour nos requêtes principales. Le téléphone a repris."</p>
@@ -632,7 +638,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Mon ancien site ne s'affichait pas sur mobile, les clients me le disaient. DCB a tout refait en trois semaines, avec le référencement intégré. J'ai doublé mes demandes de devis en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</p>
@@ -648,7 +654,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On héberge notre site chez DCB depuis deux ans. Zéro panne, zéro lenteur. Quand on a eu un problème de certificat SSL un dimanche, ils ont répondu en moins d'une heure. C'est ce genre de réactivité qu'on cherchait."</p>
@@ -664,7 +670,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
             <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ce qui m'a convaincue, c'est qu'ils sont locaux. Ils connaissent Lyon, ils connaissent les habitudes de recherche ici. Le SEO qu'ils ont mis en place est vraiment ciblé sur notre zone. On n'est pas un numéro de ticket."</p>
@@ -691,7 +697,7 @@
 </section>
 
 <!-- 8. EXPERTS DE PROXIMITÉ (composition éditoriale alignée hub IT : photo dominante + badges + texte panel) -->
-<section class="bg-[#0B3D91] py-14 lg:py-24 relative overflow-hidden">
+<section class="bg-[#0B3D91] py-12 lg:py-16 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
     <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B]/60 to-transparent"></div>
@@ -702,34 +708,14 @@
 
       <!-- Photo dominante avec badges départements posés en bas -->
       <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
-        <div class="relative aspect-[4/5] lg:aspect-[5/6] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+        <div class="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
           <img alt="Commerçant de Saône-et-Loire accompagné par DCB Technologies pour sa présence en ligne"
                src="../assets/dept-71.webp"
                class="w-full h-full object-cover"
                width="1200" height="1500" loading="lazy" decoding="async"
                onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg';">
-          <!-- Overlay gradient bottom pour lisibilité badges -->
-          <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#072B6B] via-[#072B6B]/60 to-transparent pointer-events-none"></div>
-          <!-- 4 badges départements posés en bas (flex compact uniforme) -->
-          <div class="absolute flex flex-wrap gap-2.5 lg:gap-3" style="left:24px;right:24px;bottom:24px">
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 71 Saône-et-Loire">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">71</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Saône-et-Loire</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 69 Rhône">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">69</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Rhône</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 01 Ain">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">01</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Ain</div>
-            </div>
-            <div class="rounded-xl px-3 py-2.5 lg:px-4 lg:py-3 text-center" style="background:rgba(11,61,145,0.95);border:1px solid rgba(255,255,255,0.15);min-width:140px;flex-shrink:0" aria-label="Département 42 Loire">
-              <div class="font-sora leading-none" style="color:#F57C00;font-weight:800;font-size:1.5rem">42</div>
-              <div class="uppercase mt-1.5 leading-none" style="color:rgba(255,255,255,0.88);font-weight:700;font-size:10.5px;letter-spacing:0.14em">Loire</div>
-            </div>
-          </div>
         </div>
+        <p style="color:rgba(255,255,255,0.75);font-size:13.5px;letter-spacing:0.03em;margin-top:14px;line-height:1.5">Saône-et-Loire (71) · Rhône (69) · Ain (01) · Loire (42)</p>
       </div>
 
       <!-- Texte panel droite -->
@@ -980,7 +966,6 @@
   </div>
   <div class="carou" id="carou">
     <a class="mcard creat" id="card-creat" role="tabpanel" aria-labelledby="tab-creat" href="creation-site-internet/index.html" aria-label="Voir la page Création de site internet">
-      <div class="bar"></div>
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">desktop_windows</span></div>
@@ -997,7 +982,6 @@
       </div>
     </a>
     <a class="mcard seo" id="card-seo" role="tabpanel" aria-labelledby="tab-seo" href="seo-sea-local/index.html" aria-label="Voir la page SEO et SEA Local">
-      <div class="bar"></div>
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">trending_up</span></div>
@@ -1014,7 +998,6 @@
       </div>
     </a>
     <a class="mcard heb" id="card-heb" role="tabpanel" aria-labelledby="tab-heb" href="hebergement/index.html" aria-label="Voir la page Hébergement professionnel">
-      <div class="bar"></div>
       <div class="body">
         <div class="head">
           <div class="ic"><span class="material-symbols-outlined ms-fill">dns</span></div>
@@ -1140,6 +1123,45 @@
   </div>
 </section>
 
+<!-- S6b : EXPERTISE DE PROXIMITÉ (composition éditoriale mobile v2) -->
+<style>
+  .m-prox-reveal{opacity:0;transform:translateY(12px);transition:opacity .42s ease-out,transform .42s ease-out}
+  .m-prox-reveal.in{opacity:1;transform:none}
+  .m-prox-reveal[data-d="1"]{transition-delay:.06s}
+  .m-prox-reveal[data-d="2"]{transition-delay:.12s}
+  .m-prox-reveal[data-d="3"]{transition-delay:.18s}
+  .m-prox-reveal[data-d="4"]{transition-delay:.24s}
+  @media (prefers-reduced-motion: reduce){.m-prox-reveal{opacity:1;transform:none;transition:none}}
+</style>
+<section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+  <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+    <img src="../assets/dept-71.webp" alt="Commerçant de Saône-et-Loire accompagné par DCB Technologies pour sa présence en ligne" width="800" height="600" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  </div>
+  <p style="color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.03em;margin-top:12px;margin-bottom:0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Saône-et-Loire · Rhône · Ain · Loire</p>
+  <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
+  <h2 class="m-prox-reveal" data-d="2" style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">On se déplace. On connaît votre marché.</h2>
+  <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Ce n'est pas une agence qui sous-traite à l'autre bout de la France. DCB est basée en Saône-et-Loire et intervient dans les 4 départements.</p>
+  <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+    </li>
+  </ul>
+  <a class="m-prox-reveal" data-d="4" href="../contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Prendre rendez-vous<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+</section>
+<script>(function(){var els=document.querySelectorAll('.m-prox .m-prox-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:0.18});els.forEach(function(e){io.observe(e)})})();</script>
+
 <!-- S7 : CROSS-SELL INTER-PILIER -->
 <section class="sec s1">
   <p class="eyebrow">Aller plus loin</p>
@@ -1256,5 +1278,3 @@
 </script>
 </body>
 </html>
-
-
