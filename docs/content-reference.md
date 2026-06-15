@@ -84,6 +84,41 @@ Parlez à un technicien DCB — diagnostic gratuit, sans engagement.
 
 ---
 
+## Pages locales Caisse par département
+
+Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations propres par page (garde-fou anti-duplicate). Angle 71/69 = base réelle (Paray / Dardilly). Angle 01/42 = réactivité sans base locale (télémaintenance 20 min + sur site <4h), aucune base/stock/agence suggérée.
+
+### Saône-et-Loire (`caisse-enregistreuse/saone-et-loire/index.html`)
+- Angle : "Votre technicien ne vient pas de Lyon, il vient de Paray." Base et stock à Paray-le-Monial.
+- Trust bar validée : "Intervention sous 4h en Saône-et-Loire" (et non "en 71").
+- FAQ H2 validée : "Questions fréquentes en Saône-et-Loire."
+
+### Rhône (`caisse-enregistreuse/rhone/index.html`)
+- Angle propre : "Notre siège est à Dardilly, à dix minutes du centre de Lyon." Stock + techniciens sur place.
+- Accroche SAV propre : "A Lyon, les revendeurs ne manquent pas. Les techniciens qui répondent, si."
+- Card 3 propre : "Un prestataire sans ancrage local" (solutions nationales sans adresse physique).
+- Techniciens lede propre : "qui peut sortir de Dardilly en cas d'urgence".
+- CTA final : "Parlez à un technicien DCB dans le Rhône."
+
+### Ain (`caisse-enregistreuse/ain/index.html`)
+- Angle propre : "La réactivité ne se mesure pas en kilomètres." 8 pannes sur 10 réglées à distance en 20 min.
+- Accroche hero propre : "Une panne à Bourg-en-Bresse un samedi matin. Le temps qu'un revendeur lointain vous rappelle, on a déjà pris la main."
+- Card 3 propre : "Installé de loin, jamais formé" (caisse reçue par la poste).
+- Eyebrow techniciens propre : "Expertise sans frontière".
+- Argument Pays de Gex : télémaintenance évite de traverser l'agglomération genevoise.
+- CTA final : "Parlez à un technicien DCB dans l'Ain."
+
+### Loire (`caisse-enregistreuse/loire/index.html`)
+- Angle propre : "Saint-Etienne, Roanne, Montbrison : trois bassins, une seule équipe." Saint-Etienne = 173 000 hab, peu de spécialistes NF525 qui se déplacent.
+- Card 3 propre : "Une caisse pas configurée pour vous" (boucher de Roanne / brasserie stéphanoise / boulangerie de Montbrison).
+- Argument stéphanois propre : "la différence entre lever le rideau et le laisser baissé".
+- CTA final : "Parlez à un technicien DCB dans la Loire."
+
+### Anti-duplicate : blocs partagés assumés (information fonctionnelle/légale)
+- Card 2 "Un logiciel non conforme" (NF525 + amende 7 500 €) : quasi identique sur les 4 pages.
+- Section 4 métiers, section 7 périphériques, piliers NF525 (section 6) : repris du template 71.
+- Ratio cible respecté : 60-65% unique par page.
+
 ## Hub IT (`maintenance-informatique/index.html`)
 # À remplir
 
