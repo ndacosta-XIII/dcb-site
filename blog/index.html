@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=15">
+<link rel="stylesheet" href="../css/style.css?v=17">
 <link rel="stylesheet" href="../css/tailwind.min.css?v=21">
 <style>
   body { font-family: 'Inter', sans-serif; background: #fff; }
@@ -616,18 +616,28 @@
   </div>
 </section>
 
-<!-- ── 5. NEWSLETTER ──────────────────────────────────────────── -->
-<section class="bg-[#F8F9FA]" style="padding-top:3rem; padding-bottom:3rem;">
+<!-- ── 5. NEWSLETTER ("Le Seuil" éditorial : filet vertical, aligné à gauche) ── -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;background:#F8F9FA;--accent:#F57C00;--accent-dark:#E06E00">
   <div class="max-w-7xl mx-auto px-6">
-    <div style="background:#fff; border-radius:24px; text-align:center; padding:3rem; box-shadow:0 25px 50px -12px rgba(11,61,145,0.15); border-top:8px solid #F57C00;">
-      <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] block mb-4">La lettre DCB</span>
-      <h3 class="font-sora text-2xl md:text-3xl font-bold text-[#0B3D91] leading-[1.2] mb-4">Un guide pratique tous les 15 du mois.<br>Pas de blabla, que du concret.</h3>
-      <p class="text-[#4A5568] leading-relaxed mb-8 max-w-2xl mx-auto">Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidelisation locale) directement dans votre boite mail.</p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" onsubmit="event.preventDefault();">
-        <input type="email" placeholder="vous@commerce.fr" required class="flex-1 px-4 py-3.5 border-[1.5px] border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#0B3D91]">
-        <button type="submit" class="bg-[#F57C00] text-white py-3.5 px-6 rounded-lg font-sora font-bold text-sm hover:bg-[#e06f00] transition-colors whitespace-nowrap">M'inscrire</button>
-      </form>
-      <span class="text-[#4A5568] text-xs block mt-4">Desinscription en 1 clic. Pas de spam.</span>
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] block mb-4">La lettre DCB</span>
+        <h2 class="d-h">Un guide pratique tous les 15 du mois. Pas de blabla, que du concret.</h2>
+        <p class="d-lede">Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidelisation locale) directement dans votre boite mail.</p>
+      </div>
+      <div class="lg:col-span-5 col-action flex flex-col justify-center" style="align-self:stretch">
+        <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault();">
+          <label for="news-email" class="sr-only">Votre adresse email</label>
+          <input id="news-email" type="email" placeholder="vous@commerce.fr" required class="flex-1 min-w-0 px-4 py-3.5 text-sm" style="border:1.5px solid #E5E7EB;border-radius:14px;background:#fff;color:#0B3D91" onfocus="this.style.borderColor='#0B3D91'" onblur="this.style.borderColor='#E5E7EB'">
+          <button type="submit" class="btn btn--primary whitespace-nowrap">M'inscrire</button>
+        </form>
+        <span class="text-[#4A5568] text-xs block mt-4">Desinscription en 1 clic. Pas de spam.</span>
+      </div>
+    </div>
+    <div class="d-foot">
+      <span class="d-foot-mark" aria-hidden="true"></span>
+      <time class="d-updated" datetime="2026-04-23">Mis à jour le 23 avril 2026</time>
     </div>
   </div>
 </section>
