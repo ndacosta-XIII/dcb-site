@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=17">
-<link rel="stylesheet" href="../css/tailwind.min.css?v=21">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=22">
 <style>
   body { font-family: 'Inter', sans-serif; }
   .price-badge { }
@@ -57,7 +57,7 @@
   @media (prefers-reduced-motion: reduce) { .cm-kpi-badge.top, .cm-kpi-badge.bot { animation:none !important; } }
 
   /* ── CASHMAG MOCKUP : import direct handoff ─────────── */
-  .cm-mockup-stage { position:relative; width:100%; max-width:520px; margin:0 auto; }
+  .cm-mockup-stage { position:relative; width:100%; max-width:620px; margin:0 auto; }
   .cm-tablet { background:#1B1B20; border-radius:18px; padding:12px; box-shadow:0 40px 70px -20px rgba(11,61,145,0.25),0 25px 50px -25px rgba(0,0,0,0.3); position:relative; z-index:2; }
   .cm-tablet-screen { background:#FFF; border-radius:8px; overflow:hidden; display:grid; grid-template-columns:1fr 1.5fr; min-height:360px; }
   .cm-ticket { background:#F8F9FB; padding:14px; display:flex; flex-direction:column; border-right:1px solid #E5E9F0; }
@@ -283,8 +283,8 @@
   "termsOfService": "https://dcb-technologies.fr/cgv/"
 }
 </script>
-<link rel="stylesheet" href="../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
-<link rel="preload" as="image" type="image/webp" href="../assets/tpv-cashmag.webp" fetchpriority="high" media="(max-width:640px)">
+<link rel="stylesheet" href="../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<link rel="preload" as="image" type="image/webp" href="../assets/tpv-tactile-cashmag-nf525.webp" fetchpriority="high" media="(max-width:640px)">
 </head>
 <body>
 <div class="d-shell">
@@ -325,11 +325,13 @@
         <a href="#metiers" class="dcb-btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-bold">Voir les solutions par métier</a>
       </div>
     </div>
-    <div class="hidden lg:block lg:col-span-5 relative">
-      <img alt="TPV tactile CashMag caisse enregistreuse" class="rounded-3xl shadow-2xl w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp13e-NRlYas7vvFPn442wkUtTiYQ3HTrNrDN7eCl9EtIuXPm_GIZeDwFEb2sr7FRTjb-ixzoxUmHaYQV_2_8xWSNJ0ykVH2fgJBQ6G8SoKK9J4QmiO1dBLiGDv72PCvy0LcSEmb6ikEIdfpXwRZ2vx7b6c7SxdeszC6Oi7Zp1B3gyE-vfY7xtywdPbQTNbbyYGMRikciIeGqYa7lcfSEPr9NoxJsUDkT2ogLCLvoP0J3_-npDPuVokkdl3jzSSXLLeHdLkJTrtdtC">
-      <div class="absolute -bottom-4 -left-4 bg-white p-5 rounded-xl shadow-xl">
+    <div class="hidden lg:flex lg:col-span-5 relative items-center justify-center">
+      <div class="relative mx-auto" style="width:97%">
+      <img alt="TPV tactile CashMag caisse enregistreuse" class="block w-full" src="../assets/tpv-tactile-cashmag-nf525.webp" width="1200" height="1192" loading="eager" fetchpriority="high">
+      <div class="absolute -bottom-4 bg-white p-5 rounded-xl shadow-xl" style="left:-32px">
         <p class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] mb-1">Installé sous 48h</p>
         <p class="font-sora text-xl font-bold text-[#0B3D91]">Matériel en stock</p>
+      </div>
       </div>
     </div>
   </div>
@@ -612,61 +614,10 @@
     <div class="dcb-reveal dcb-reveal-scale">
         <div class="cm-mockup-stage">
 
-          <!-- ZONE PLACEHOLDER : tablette CashMag HTML, à remplacer par screenshot réel -->
+          <!-- Tablette CashMag : screenshot réel de l'interface d'encaissement -->
           <div class="cm-tablet">
-            <div class="cm-tablet-screen">
-              <div class="cm-ticket">
-                <div class="cm-ticket-head">
-                  <span>Ticket en cours</span>
-                  <span class="cm-ticket-num">#1247</span>
-                </div>
-                <div class="cm-ticket-list">
-                  <div class="cm-line">
-                    <div><div class="cm-line-name">Café</div><div class="cm-line-qty">×2</div></div>
-                    <div class="cm-line-price">3,80 €</div>
-                  </div>
-                  <div class="cm-line">
-                    <div><div class="cm-line-name">Croissant</div><div class="cm-line-qty">×1</div></div>
-                    <div class="cm-line-price">1,40 €</div>
-                  </div>
-                  <div class="cm-line">
-                    <div><div class="cm-line-name">Sandwich</div><div class="cm-line-qty">×1</div></div>
-                    <div class="cm-line-price">5,90 €</div>
-                  </div>
-                  <div class="cm-line">
-                    <div><div class="cm-line-name">Salade</div><div class="cm-line-qty">×1</div></div>
-                    <div class="cm-line-price">8,50 €</div>
-                  </div>
-                </div>
-                <div class="cm-ticket-total">
-                  <div class="cm-total-row">
-                    <span class="cm-total-label">Total</span>
-                    <span class="cm-total-amount">19,60 €</span>
-                  </div>
-                </div>
-              </div>
-              <div class="cm-grid-area">
-                <div class="cm-grid-tabs">
-                  <span class="cm-tab active">Boissons</span>
-                  <span class="cm-tab">Snacks</span>
-                  <span class="cm-tab">Plats</span>
-                </div>
-                <div class="cm-products">
-                  <div class="cm-product highlight"><div class="emo">☕</div><div class="name">Café</div><div class="price">1,90 €</div></div>
-                  <div class="cm-product"><div class="emo">🍵</div><div class="name">Thé</div><div class="price">2,20 €</div></div>
-                  <div class="cm-product"><div class="emo">🥤</div><div class="name">Soda</div><div class="price">3,00 €</div></div>
-                  <div class="cm-product"><div class="emo">🍷</div><div class="name">Vin</div><div class="price">4,50 €</div></div>
-                  <div class="cm-product"><div class="emo">🍺</div><div class="name">Bière</div><div class="price">3,50 €</div></div>
-                  <div class="cm-product"><div class="emo">🥃</div><div class="name">Whisky</div><div class="price">6,00 €</div></div>
-                  <div class="cm-product"><div class="emo">💧</div><div class="name">Eau</div><div class="price">2,00 €</div></div>
-                  <div class="cm-product"><div class="emo">🥂</div><div class="name">Cocktail</div><div class="price">8,00 €</div></div>
-                </div>
-                <div class="cm-pay-bar">
-                  <div class="cm-pay-btn"><span class="material-symbols-outlined">euro</span>Espèces</div>
-                  <div class="cm-pay-btn"><span class="material-symbols-outlined">credit_card</span>CB</div>
-                  <div class="cm-pay-btn primary"><span class="material-symbols-outlined ms-fill">check_circle</span>Encaisser</div>
-                </div>
-              </div>
+            <div class="cm-tablet-screen" style="display:block;min-height:0">
+              <img src="../assets/logiciel-caisse-cashmag-ecran-encaissement.webp" alt="Interface de caisse CashMag : écran d'encaissement des boissons" width="1280" height="720" loading="lazy" decoding="async" style="display:block;width:100%;height:auto">
             </div>
           </div>
           <div class="cm-kpi-badge top">
@@ -881,8 +832,8 @@
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
-        <div class="bg-white flex items-center justify-center p-4">
-          <img alt="Borne de commande K1" class="h-[160px] w-auto object-contain" src="../assets/borne-k1.png">
+        <div class="relative bg-white min-h-[200px]">
+          <img alt="Borne de commande tactile en libre-service dans un restaurant" class="absolute inset-0 w-full h-full object-cover" src="../assets/borne-commande-loire.webp" width="1000" height="1000" loading="lazy" decoding="async">
         </div>
       </a>
       <!-- Monnayeur -->
@@ -1090,9 +1041,9 @@
   <h1>Caisse enregistreuse NF525, <em>installation, formation et SAV sur site</em>.</h1>
   <p class="lede">Panne un samedi matin : prise en main à distance immédiate. Sur place en moins de 4h si besoin. Packs caisse tactile à partir de 59&nbsp;€/mois, en 71, 69, 01 et 42.</p>
 
-  <div class="scene">
+  <div class="scene scene-cutout">
     <div class="tpv">
-      <img src="../assets/tpv-cashmag.webp" alt="Terminal point de vente CashMag NF525" width="500" height="400" loading="eager" fetchpriority="high">
+      <img src="../assets/tpv-tactile-cashmag-nf525.webp" alt="Terminal point de vente tactile CashMag NF525" width="1200" height="1192" loading="eager" fetchpriority="high">
     </div>
     <div class="float1" aria-hidden="true">
       <div class="ic"><span class="material-symbols-outlined fill ms-fill">bolt</span></div>
@@ -1424,14 +1375,14 @@
   <h2>Optimisez votre <em>point de vente</em>.</h2>
   <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
   <div class="peri-a">
-    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" aria-label="Borne de commande self-service K1">
+    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" class="peri-photo" aria-label="Borne de commande self-service K1">
       <div class="txt">
         <span class="pp">+20% panier moyen</span>
         <h3>Borne de commande</h3>
         <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
         <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
       </div>
-      <div class="vis"><img src="../assets/borne-k1.png" alt="Borne de commande K1" width="120" height="180" loading="lazy"></div>
+      <div class="vis vis-photo"><img src="../assets/borne-commande-loire.webp" alt="Borne de commande tactile en libre-service dans un restaurant" width="1000" height="1000" loading="lazy" decoding="async"></div>
     </a>
     <a href="monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique">
       <div class="txt">

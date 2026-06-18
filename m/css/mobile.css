@@ -96,6 +96,10 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .hero .scene.scene-c{height:auto;position:relative;margin:8px 0 12px}
 .hero .scene.scene-c .tpv{position:relative;left:auto;top:auto;transform:none;width:100%;aspect-ratio:16/10;margin:0}
 .hero .scene.scene-c .tpv img{border-radius:18px}
+/* ── SCENE cutout : TPV détouré transparent (hub caisse + page Loire), scope strict, n'altère aucune règle .tpv partagée */
+.hero .scene.scene-cutout{height:calc((100vw - 36px) * 0.74 * 0.993 + 8px)}
+.hero .scene.scene-cutout .tpv{background:none;border-radius:0;box-shadow:none;width:74%;aspect-ratio:1504/1494;top:0}
+.hero .scene.scene-cutout .tpv img{object-fit:contain}
 .hero .cert-pill{position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.93);border-radius:20px;padding:5px 12px 5px 7px;display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#0F172A;letter-spacing:0.06em;text-transform:uppercase;pointer-events:none}
 .hero .cert-pill .material-symbols-outlined{font-size:15px}
 .hero .checks{position:relative;display:flex;flex-direction:column;gap:10px;margin-bottom:22px;padding-top:6px}
@@ -218,6 +222,10 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .peri-a a .vis{display:flex;align-items:center;justify-content:center;padding:10px;min-height:130px}
 .peri-a a .vis img,.peri-a a .vis video{max-width:100%;max-height:120px;object-fit:contain}
 .peri-a a:not([data-dest]) .vis{background:var(--s1)}
+/* Card photo plein cadre (scope hub caisse uniquement, posee via .peri-photo / .vis-photo) */
+.peri-a a.peri-photo{grid-template-columns:1.25fr 1.05fr}
+.peri-a a .vis.vis-photo{padding:0;min-height:0}
+.peri-a a .vis.vis-photo img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover}
 
 /* ── CROSS-SELL : icône dans .vis ── */
 .peri-a .vis .fill{font-size:56px;opacity:0.75}
