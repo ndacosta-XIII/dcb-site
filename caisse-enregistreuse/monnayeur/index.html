@@ -43,6 +43,19 @@
     [data-metier="monnayeur"] .hero .checks .material-symbols-outlined { color: #059669 }
     [data-metier="monnayeur"] .pain .n { color: #059669 }
     [data-metier="monnayeur"] .marquee-track .it .material-symbols-outlined { color: #059669 }
+    /* Hero mobile monnayeur : photo PORTRAIT (comptoir boulangerie 3:4), override scopé de la scene paysage partagée, ne touche pas mobile.css */
+    [data-metier="monnayeur"] .hero .scene.scene-portrait { height: auto; position: relative; margin: 10px auto 12px; }
+    [data-metier="monnayeur"] .hero .scene.scene-portrait .tpv {
+      position: relative; left: auto; top: auto; transform: none;
+      width: 72%; max-width: 280px; margin: 0 auto;
+      aspect-ratio: 1000 / 1334; border-radius: 18px;
+    }
+    [data-metier="monnayeur"] .hero .scene.scene-portrait .tpv img { object-fit: cover; }
+    [data-metier="monnayeur"] .hero .scene.scene-portrait .float-stat {
+      left: 8px; right: auto; transform: none; bottom: 10px;
+      animation: flsp-mon 5s ease-in-out infinite;
+    }
+    @keyframes flsp-mon { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-5px) } }
   }
   .dcb-dot.is-active::before { background: #059669 !important; }
 </style>
@@ -198,10 +211,8 @@
       </div>
     </div>
     <div class="hidden lg:block lg:col-span-5 relative">
-      <div class="rounded-3xl shadow-2xl w-full overflow-hidden bg-white aspect-[4/5] flex items-center justify-center p-8">
-        <video autoplay loop muted playsinline class="w-full h-full object-contain" aria-label="Monnayeur automatique 3D">
-          <source src="../../assets/monnayeur-3d.webm" type="video/webm">
-        </video>
+      <div class="rounded-3xl shadow-2xl w-full overflow-hidden aspect-[4/5]">
+        <img class="w-full h-full object-cover" src="../../assets/monnayeur-cashmag-comptoir-boulangerie.webp" alt="Monnayeur automatique CashMag encastré dans le comptoir d'une boulangerie" width="1000" height="1334" loading="eager" fetchpriority="high">
       </div>
       <div class="absolute -bottom-4 -left-4 bg-white p-5 rounded-xl shadow-xl">
         <p class="text-[11px] font-bold uppercase tracking-widest text-[#059669] mb-1">Clôture Z</p>
@@ -675,8 +686,8 @@
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
-        <div class="cx-vis bg-gradient-to-br from-[#F59E0B] to-[#B45309] flex items-center justify-center p-4 relative overflow-hidden">
-          <span class="material-symbols-outlined text-white/90 relative z-10" style="font-size: 120px; font-variation-settings:'FILL' 1, 'wght' 300;">bakery_dining</span>
+        <div class="cx-vis relative overflow-hidden">
+          <img class="absolute inset-0 w-full h-full object-cover" src="../../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag dans une boulangerie" width="1200" height="1192" loading="lazy" decoding="async">
         </div>
       </a>
       <a href="../index.html#metiers" data-dest="caisse-enregistreuse" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
@@ -692,8 +703,8 @@
             <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
           </div>
         </div>
-        <div class="cx-vis bg-gradient-to-br from-[#0D9488] to-[#115E59] flex items-center justify-center p-4 relative overflow-hidden">
-          <span class="material-symbols-outlined text-white/90 relative z-10" style="font-size: 120px; font-variation-settings:'FILL' 1, 'wght' 300;">point_of_sale</span>
+        <div class="cx-vis relative overflow-hidden">
+          <img class="absolute inset-0 w-full h-full object-cover" src="../../assets/caisse-tactile-cashmag-restaurant.webp" alt="Caisse tactile CashMag dans un restaurant" width="1200" height="1192" loading="lazy" decoding="async">
         </div>
       </a>
     </div>
@@ -774,11 +785,9 @@
   <h1>Monnayeur automatique,<br><em>zéro erreur, zéro attente au rendu</em>.</h1>
   <p class="lede">Votre vendeur cherche la monnaie, la file s'allonge, un écart se glisse. Le monnayeur connecté à CashMag règle ces trois problèmes. F26 Metal dès 258&nbsp;€/mois, un technicien DCB vient chez vous.</p>
 
-  <div class="scene">
+  <div class="scene scene-portrait">
     <div class="tpv">
-      <video autoplay loop muted playsinline preload="auto" width="500" height="400" aria-hidden="true">
-        <source src="../../assets/monnayeur-3d.webm" type="video/webm">
-      </video>
+      <img src="../../assets/monnayeur-cashmag-comptoir-boulangerie.webp" alt="Monnayeur automatique CashMag encastré dans le comptoir d'une boulangerie" width="1000" height="1334" loading="eager" fetchpriority="high">
     </div>
     <div class="float-stat" aria-hidden="true">
       <div class="ic" style="background:linear-gradient(135deg,#059669,#065F46)">
@@ -972,26 +981,26 @@
   <p class="eyebrow">Aller plus loin</p>
   <h2>Le monnayeur ne travaille pas <em>seul</em>.</h2>
   <div class="peri-a">
-    <a href="../boulangerie/index.html" data-dest="boulangerie" aria-label="Caisse enregistreuse boulangerie">
+    <a href="../boulangerie/index.html" data-dest="boulangerie" aria-label="Caisse enregistreuse boulangerie" class="peri-photo">
       <div class="txt">
         <span class="pp">Caisse boulangerie</span>
         <h3>Caisse enregistreuse boulangerie</h3>
         <p>Zéro contact pain/argent pour vos vendeuses. Le monnayeur s'interface direct.</p>
         <span class="lk">Découvrir la caisse boulangerie<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
       </div>
-      <div class="vis">
-        <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">bakery_dining</span>
+      <div class="vis vis-photo">
+        <img src="../../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag dans une boulangerie" width="1200" height="1192" loading="lazy" decoding="async">
       </div>
     </a>
-    <a href="../index.html#metiers" data-dest="caisse-enregistreuse" aria-label="Toutes nos caisses par métier">
+    <a href="../index.html#metiers" data-dest="caisse-enregistreuse" aria-label="Toutes nos caisses par métier" class="peri-photo">
       <div class="txt">
         <span class="pp">Toutes nos caisses</span>
         <h3>Votre caisse par métier</h3>
         <p>Restaurant, commerce, coiffure : caisse configurée et compatible monnayeur.</p>
         <span class="lk">Voir toutes les caisses<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
       </div>
-      <div class="vis">
-        <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">point_of_sale</span>
+      <div class="vis vis-photo">
+        <img src="../../assets/caisse-tactile-cashmag-restaurant.webp" alt="Caisse tactile CashMag dans un restaurant" width="1200" height="1192" loading="lazy" decoding="async">
       </div>
     </a>
   </div>
