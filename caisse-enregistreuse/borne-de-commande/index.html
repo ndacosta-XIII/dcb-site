@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css?v=17">
-<link rel="stylesheet" href="../../css/tailwind.min.css?v=21">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
 <style>
   body { font-family: 'Inter', sans-serif; }
   @keyframes hero-blob-a { 0%,100% { transform: translate(30%,-30%) scale(1); } 50% { transform: translate(22%,-22%) scale(1.12); } }
@@ -43,10 +43,23 @@
     [data-metier="borne"] .hero .checks .material-symbols-outlined { color: #4F46E5 }
     [data-metier="borne"] .pain .n { color: #4F46E5 }
     [data-metier="borne"] .marquee-track .it .material-symbols-outlined { color: #4F46E5 }
+    /* Hero mobile borne : visuel PORTRAIT (borne murale verticale), override scopé de la scene paysage partagée */
+    [data-metier="borne"] .hero .scene.scene-portrait { height: auto; position: relative; margin: 10px auto 12px; }
+    [data-metier="borne"] .hero .scene.scene-portrait .tpv {
+      position: relative; left: auto; top: auto; transform: none;
+      width: 66%; max-width: 260px; margin: 0 auto;
+      aspect-ratio: 700 / 1201; border-radius: 18px;
+    }
+    [data-metier="borne"] .hero .scene.scene-portrait .tpv img { object-fit: cover; }
+    [data-metier="borne"] .hero .scene.scene-portrait .float-stat {
+      left: 8px; right: auto; transform: none; bottom: 10px;
+    }
+    [data-metier="borne"] .hero .scene.scene-portrait .float-stat { animation: flsp 5s ease-in-out infinite; }
+    @keyframes flsp { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-5px) } }
   }
   .dcb-dot.is-active::before { background: #4F46E5 !important; }
 </style>
-<link rel="stylesheet" href="../../m/css/mobile.css?v=28" media="screen and (max-width:640px)">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -203,12 +216,12 @@
       </div>
     </div>
     <div class="hidden lg:block lg:col-span-5 relative">
-      <div class="rounded-3xl shadow-2xl w-full overflow-hidden bg-white flex items-center justify-center p-6" style="height: 480px;">
-        <img alt="Borne de commande tactile K1 en restaurant" class="w-auto object-contain" src="../../assets/borne-k1.png" style="max-height: 100%;">
-      </div>
-      <div class="absolute -bottom-4 -left-4 bg-white p-5 rounded-xl shadow-xl">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] mb-1">Panier moyen</p>
-        <p class="font-sora text-xl font-bold text-[#0B3D91]">+20% constaté</p>
+      <div class="relative mx-auto max-w-[300px] lg:-translate-x-32">
+        <img alt="Borne de commande tactile en libre-service dans un restaurant" class="w-full h-auto rounded-3xl shadow-2xl" src="../../assets/borne-commande-hero.webp" width="700" height="1201" loading="eager" fetchpriority="high">
+        <div class="absolute -bottom-4 -left-8 bg-white p-5 rounded-xl shadow-xl">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] mb-1">Panier moyen</p>
+          <p class="font-sora text-xl font-bold text-[#0B3D91]">+20% constaté</p>
+        </div>
       </div>
     </div>
   </div>
@@ -717,9 +730,9 @@
   <h1>Borne de commande restaurant, <em>service fluide garanti</em>.</h1>
   <p class="lede">Vos clients commandent en autonomie. Votre équipe se concentre sur la préparation. Intégrée à CashMag, un technicien DCB vient chez vous. Dès 127&nbsp;€/mois.</p>
 
-  <div class="scene">
+  <div class="scene scene-portrait">
     <div class="tpv">
-      <img src="../../assets/borne-k1.png" alt="Borne de commande self-service restaurant" width="500" height="400" loading="eager" fetchpriority="high">
+      <img src="../../assets/borne-commande-hero.webp" alt="Borne de commande tactile en libre-service dans un restaurant" width="700" height="1201" loading="eager" fetchpriority="high">
     </div>
     <div class="float-stat" aria-hidden="true">
       <div class="ic" style="background:linear-gradient(135deg,#4F46E5,#3730A3)">
