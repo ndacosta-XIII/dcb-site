@@ -261,79 +261,6 @@
 
         '</div>' +
 
-        '<!-- Zones d\'intervention v3 : Atlas typographique (filet orange contraint au dept, eyebrow blanc DA) -->' +
-        '<div class="pb-8 mb-2">' +
-          '<h3 id="zones-intervention" class="text-[11px] font-bold tracking-[0.2em] uppercase text-white/60 mb-8 mt-0">Zones d\u2019intervention</h3>' +
-          '<dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 m-0">' +
-            // 71 Sa\u00f4ne-et-Loire
-            '<div>' +
-              '<dt class="border-l-2 border-[#F57C00] pl-6 mb-5">' +
-                '<div class="font-sora text-5xl font-black text-white leading-none tabular-nums">71</div>' +
-                '<div class="text-[10px] uppercase tracking-[0.18em] text-white/70 font-semibold mt-2">Sa\u00f4ne-et-Loire</div>' +
-              '</dt>' +
-              '<dd class="m-0 pl-6">' +
-                '<ul class="list-none p-0 m-0 space-y-1.5">' +
-                  '<li class="text-sm font-semibold text-white leading-snug">M\u00e2con</li>' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Chalon-sur-Sa\u00f4ne</li>' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Paray-le-Monial</li>' +
-                '</ul>' +
-                '<ul class="list-none p-0 mt-3 space-y-1.5">' +
-                  '<li class="text-xs text-white/45 leading-snug">Charolles</li>' +
-                  '<li class="text-xs text-white/45 leading-snug">Tournus</li>' +
-                  '<li class="text-xs text-white/45 leading-snug">Cluny</li>' +
-                  '<li class="text-xs text-white/45 leading-snug">Le Creusot</li>' +
-                  '<li class="text-xs text-white/45 leading-snug">Montceau-les-Mines</li>' +
-                '</ul>' +
-                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
-                '<a href="' + base + 'caisse-enregistreuse/saone-et-loire/index.html" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Sa\u00f4ne-et-Loire \u2192</a>' +
-              '</dd>' +
-            '</div>' +
-            // 69 Rh\u00f4ne
-            '<div>' +
-              '<dt class="border-l-2 border-[#F57C00] pl-6 mb-5">' +
-                '<div class="font-sora text-5xl font-black text-white leading-none tabular-nums">69</div>' +
-                '<div class="text-[10px] uppercase tracking-[0.18em] text-white/70 font-semibold mt-2">Rh\u00f4ne</div>' +
-              '</dt>' +
-              '<dd class="m-0 pl-6">' +
-                '<ul class="list-none p-0 m-0 space-y-1.5">' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Lyon</li>' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Villefranche-sur-Sa\u00f4ne</li>' +
-                '</ul>' +
-                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
-                '<a href="' + base + 'caisse-enregistreuse/rhone/index.html" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Rh\u00f4ne \u2192</a>' +
-              '</dd>' +
-            '</div>' +
-            // 01 Ain
-            '<div>' +
-              '<dt class="border-l-2 border-[#F57C00] pl-6 mb-5">' +
-                '<div class="font-sora text-5xl font-black text-white leading-none tabular-nums">01</div>' +
-                '<div class="text-[10px] uppercase tracking-[0.18em] text-white/70 font-semibold mt-2">Ain</div>' +
-              '</dt>' +
-              '<dd class="m-0 pl-6">' +
-                '<ul class="list-none p-0 m-0 space-y-1.5">' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Bourg-en-Bresse</li>' +
-                '</ul>' +
-                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
-                '<a href="' + base + 'caisse-enregistreuse/ain/index.html" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Ain →</a>' +
-              '</dd>' +
-            '</div>' +
-            // 42 Loire
-            '<div>' +
-              '<dt class="border-l-2 border-[#F57C00] pl-6 mb-5">' +
-                '<div class="font-sora text-5xl font-black text-white leading-none tabular-nums">42</div>' +
-                '<div class="text-[10px] uppercase tracking-[0.18em] text-white/70 font-semibold mt-2">Loire</div>' +
-              '</dt>' +
-              '<dd class="m-0 pl-6">' +
-                '<ul class="list-none p-0 m-0 space-y-1.5">' +
-                  '<li class="text-sm font-semibold text-white leading-snug">Roanne</li>' +
-                '</ul>' +
-                /* TEMPORAIRE : liens departement a retirer avant mise en ligne */
-                '<a href="' + base + 'caisse-enregistreuse/loire/index.html" class="tmp-dept-link block mt-4 text-xs text-white/40 no-underline hover:text-white/70 transition-colors duration-150">Caisse Loire →</a>' +
-              '</dd>' +
-            '</div>' +
-          '</dl>' +
-        '</div>' +
-
         '<!-- Bottom bar -->' +
         '<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 flex-wrap">' +
           '<p class="text-slate-500 font-body text-xs">\u00a9 2025 DCB Technologies. Tous droits r\u00e9serv\u00e9s.</p>' +
@@ -696,14 +623,6 @@
             '<li><a href="' + base + 'blog/index.html">Blog &amp; Actus</a></li>' +
           '</ul>' +
         '</details>' +
-        '<div class="zones">' +
-          '<div class="lb">Zones d\'intervention</div>' +
-          '<div class="vl">' +
-            '<strong>Lyon · Mâcon · Chalon-sur-Saône · Villefranche · Bourg-en-Bresse · Roanne</strong>' +
-            '<br>Paray-le-Monial, Charolles, Tournus, Cluny, Le Creusot, Montceau' +
-            '<br>Saône-et-Loire (71) · Rhône (69) · Ain (01) · Loire (42)' +
-          '</div>' +
-        '</div>' +
         '<div class="bottom">' +
           '<div class="cp">© 2026 DCB Technologies. Tous droits réservés.</div>' +
           '<div class="lg">' +
@@ -1338,14 +1257,6 @@
             '<li><a href="' + base + 'blog/index.html">Blog &amp; Actus</a></li>' +
           '</ul>' +
         '</details>' +
-        '<div class="zones">' +
-          '<div class="lb">Zones d\'intervention</div>' +
-          '<div class="vl">' +
-            '<strong>Lyon · Mâcon · Chalon-sur-Saône · Villefranche · Bourg-en-Bresse · Roanne</strong>' +
-            '<br>Paray-le-Monial, Charolles, Tournus, Cluny, Le Creusot, Montceau' +
-            '<br>Saône-et-Loire (71) · Rhône (69) · Ain (01) · Loire (42)' +
-          '</div>' +
-        '</div>' +
         '<div class="bottom">' +
           '<div class="cp">© 2026 DCB Technologies. Tous droits réservés.</div>' +
           '<div class="lg">' +
