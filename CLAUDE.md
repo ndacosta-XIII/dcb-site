@@ -139,7 +139,7 @@ dcb-site-clean/
   m/css/mobile.css                                 Styles mobile partagés (shell .m-shell)
   m/js/mobile.js                                   Script mobile partagé
   docs/                                            Documentation interne (standards, audits)
-  seo-analyse/                                     Modules SEO + master plan
+  pour-clement/                                    Modules SEO + master plan + chantier go-live (partagé Clément)
   AUDIT_SEO.md                                     Audit technique SEO
   PRODUCT.md, DESIGN.md                            Brief & design system pour skills
   robots.txt, sitemap.xml, .htaccess, llms.txt     SEO infra
@@ -240,7 +240,7 @@ Sources de vérité transverses (tout agent front/contenu doit les respecter) :
 - **`docs/front-library.md`** : bibliothèque officielle des sections (code canonique desktop + mobile). Toute nouvelle page/section part d'un pattern de cette bibliothèque, JAMAIS d'une invention.
 - `docs/mobile-standard.md` : référentiel shell mobile.
 - `docs/content-reference.md` : formulations validées (anti duplicate content).
-- `AUDIT_SEO.md` + `seo-analyse/` : avant toute tâche SEO.
+- `AUDIT_SEO.md` + `pour-clement/` (ex-`seo-analyse/`, renommé pour partage Clément) : avant toute tâche SEO.
 
 ---
 
