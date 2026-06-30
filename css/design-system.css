@@ -3,8 +3,7 @@
    Source de vérité unique · Toutes les pages héritent d'ici
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+/* Fonts auto-hébergées : voir les @font-face dans style.css (woff2 locaux, ../assets/fonts/). */
 
 /* ── TOKENS ─────────────────────────────────────────────── */
 :root {

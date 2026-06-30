@@ -296,13 +296,9 @@
     document.head.appendChild(style);
   }
 
-  /* ── FONT (si absente) ───────────────────────────────────── */
-  if (!document.querySelector('link[href*="Plus+Jakarta+Sans"]')) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap';
-    document.head.appendChild(link);
-  }
+  /* ── FONT ─────────────────────────────────────────────────────
+     Plus Jakarta Sans (FAB) auto-hébergée : @font-face dans css/style.css
+     (woff2 local ../assets/fonts/). Plus aucune dépendance CDN Google Fonts. */
 
   /* ── JS HANDLERS ─────────────────────────────────────────── */
   window.dcbBurgerToggle = function () {
