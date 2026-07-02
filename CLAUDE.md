@@ -276,6 +276,7 @@ Sources de vérité transverses (tout agent front/contenu doit les respecter) :
 - Photos produits réelles → remplacer 8 URLs `lh3.googleusercontent.com` (RGPD + LCP).
 - Témoignages réels (noms, photos, entreprises).
 - Métriques trust bar réelles par page.
+- Grille tarifaire réelle du contrat de maintenance IT : la page Contrat (silo IT refondu, cf. `pour-clement/strategie_IT.md`) affiche des montants factices en attendant que Clément produise sa vraie grille. À remplacer AVANT mise en ligne.
 
 ### Silo Web — finition
 - Hub Visibilité Web : JSON-LD `Service` détaillé (`areaServed`), date E-E-A-T, breadcrumb.

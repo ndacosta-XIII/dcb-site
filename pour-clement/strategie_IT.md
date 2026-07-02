@@ -21,7 +21,7 @@ La seule exception au raisonnement besoin : les deux pages maintenance, qui se d
 
 | Offre | Posture prix |
 |---|---|
-| Contrat de maintenance (infogérance) | Seule offre à tarif défini : grille affichée. Argument face aux ESN opaques. |
+| Contrat de maintenance (infogérance) | Seule offre à tarif défini : grille affichée. Argument face aux ESN opaques. Montants factices tant que la grille réelle n'est pas produite (cf. annexe B). |
 | Dépannage ponctuel | Mécanisme affiché (« facturé à l'heure, tarif annoncé avant intervention, zéro surprise »), pas de montant public. |
 | Tout le reste | Sur devis après audit gratuit. L'informatique est affaire d'expertise et de devis personnalisé. |
 
@@ -29,7 +29,7 @@ Productisation progressive : au fil du temps, certaines offres recevront un tari
 
 ## 3. Architecture cible (6 pages)
 
-| Page | Slug actuel | Slug cible (reco, à trancher) | Besoin incarné |
+| Page | Slug actuel | Slug cible (validé 02/07/2026) | Besoin incarné |
 |---|---|---|---|
 | Hub | `maintenance-informatique/` | inchangé | Toute la technologie de votre entreprise, un seul interlocuteur |
 | Contrat | `infogerance-pme/` | inchangé | Déléguer son informatique (2 formules) |
@@ -38,7 +38,7 @@ Productisation progressive : au fil du temps, certaines offres recevront un tari
 | Communiquer | `outils-collaboratifs/` | inchangé | Passer à la vitesse supérieure, crédibilité professionnelle |
 | Équiper | `location-vente-installation/` | inchangé | S'équiper sans plomber la trésorerie |
 
-Zéro page créée, zéro page supprimée : que du recadrage. En cas de renommage de slug : mettre à jour sitemap.xml, liens internes de tout le site, JSON-LD, nav et footer.
+Zéro page créée, zéro page supprimée : que du recadrage. Les deux renommages de slugs sont validés : mettre à jour sitemap.xml, liens internes de tout le site, JSON-LD, nav et footer.
 
 Évolution prévue : quand une offre est productisée (VoIP en premier), elle pourra gagner une page dédiée sur le modèle des pages produit du silo caisse (monnayeur, borne), rattachée au silo IT et cross-sellée depuis sa page besoin.
 
@@ -61,11 +61,11 @@ Le hub actuel est à 9/10 depuis les corrections du 24/06 : on le réorganise, o
 - **Moment du visiteur** : dirigeant en réflexion, fatigué de gérer l'informatique lui-même ou déçu d'un prestataire. Il compare, il veut de la réassurance.
 - **Angle** : « Votre service informatique, sans embaucher. » Le contrat remplace le poste IT interne que la PME ne peut pas se payer (l'argument d'arbitrage 40 000 EUR/an du comparatif actuel reste).
 - **Bloc central (nouveau)** : le comparatif des **deux formules**, présenté comme un choix, pas une hiérarchie :
-  - **Formule présence** : un technicien DCB travaille dans les locaux du client, sur des missions de durée. Nom commercial à trancher (options : « technicien détaché », « renfort intégré », « présence dédiée »). **Ne jamais employer le mot « régie ».**
+  - **Formule technicien sur site** (libellé retenu par Clément, affinable à la rédaction) : un technicien DCB travaille dans les locaux du client, sur des missions de durée. **Ne jamais employer le mot « régie ».**
   - **Formule à distance** : DCB gère le parc sans présence permanente : supervision, télémaintenance, interventions sur site quand il faut.
 - **Conservé de l'existant** : process d'onboarding daté (J / J+5 / J+10), technicien référent, comparatif CDI / prestataire / DCB.
 - **Ajout** : la **réversibilité** (« vos données, vos accès, votre documentation vous appartiennent, restituables à tout moment ») : objection n°1 qui bloque une signature d'infogérance.
-- **Prix** : la grille du contrat, affichée. La grille mensuelle actuellement sur la page maintenance-depannage (89/149 EUR) décrit un contrat : elle migre ici (montants à valider par Clément au moment de la rédaction).
+- **Prix** : la grille du contrat, affichée, avec des **montants factices plausibles** : aucun prix exact n'existe à ce jour, Clément doit travailler sa grille. À remplacer par la vraie grille AVANT mise en ligne (tracé dans la roadmap CLAUDE.md, attente client). Les 89/149 EUR actuels de maintenance-depannage étaient fictifs eux aussi : ils ne font pas référence.
 - **Frontière (phrase de cadrage sous le hero)** : « Besoin d'un dépannage ponctuel, sans engagement ? » avec lien vers la page ponctuel.
 - **Requêtes cibles** : contrat de maintenance informatique, infogérance PME, externalisation informatique. Le title porte les deux vocabulaires (contrat de maintenance + infogérance).
 
@@ -74,7 +74,7 @@ Le hub actuel est à 9/10 depuis les corrections du 24/06 : on le réorganise, o
 - **Moment du visiteur** : quelque chose est en panne, ou besoin one-shot. Il veut un numéro, un délai, un prix. Pas un argumentaire.
 - **Angle** : « Un problème, un expert, une facture claire. » Dépannage professionnel facturé à l'heure, sans engagement, sans contrat.
 - **Hero** : appel direct + hiérarchie SAV dans le bon ordre (télémaintenance immédiate d'abord, sur site en moins de 4h si besoin). Le process en 4 étapes de la page actuelle (qualification < 15 min, télémaintenance < 30 min, sur site < 4h, rapport sous 24h) devient le modèle du hero au lieu de le contredire.
-- **Retiré** : la grille 89/149 EUR/mois (c'est un contrat, elle part sur la page Contrat).
+- **Retiré** : la grille 89/149 EUR/mois (montants fictifs, et c'est un contrat : la grille vivra sur la page Contrat, cf. 4.2).
 - **Cross-sell montée en gamme (le funnel)** : en bas de page, l'idée « si c'est votre deuxième panne cette année, elle devrait être la dernière payée à l'heure » avec lien vers le contrat.
 - **Requêtes cibles** : dépannage informatique + villes, réparation ordinateur entreprise, maintenance informatique ponctuelle. Page de destination naturelle pour de futures campagnes SEA « dépannage informatique ».
 
@@ -100,7 +100,7 @@ Le hub actuel est à 9/10 depuis les corrections du 24/06 : on le réorganise, o
 - **Moment du visiteur** : création, embauche, croissance, ou un parc qui rame. Question de fond : acheter ou louer, et qui installe.
 - **Angle** : conservé, il est bon : du matériel de pointe sans plomber la trésorerie. Le comparatif fiscal achat / LLD reste le contenu pilier.
 - **Sections produits** : postes et serveurs (location LLD / vente) · **wifi et réseau pro** (aujourd'hui enterré, devient une section visible : les recherches « wifi entreprise » atterrissent ici) · installation et paramétrage · SAV matériel.
-- **Ajout** : le **financement** comme argument (DCB peut proposer du financement) : à mentionner sans détailler le mécanisme tant que les modalités ne sont pas précisées (cf. annexe B).
+- **Ajout** : le **financement** comme argument : DCB propose la **LOA (location avec option d'achat) via un organisme bailleur**. Ne jamais nommer le bailleur sur le site. Se combine à l'angle trésorerie existant (achat / LLD / LOA).
 - **Reformulé** : le discours marques devient un argument d'indépendance : « nos grossistes nous permettent de fournir quasiment toutes les marques : on vous conseille la machine qui convient à votre besoin, pas celle qu'on doit écouler ». Ne jamais écrire « partenaire » d'un constructeur ; « compte pro Lenovo » possible si utile.
 - **Retiré** : « 80% de nos clients choisissent la LLD » (faux), « garantie 5 ans » en absolu (tout est au cas par cas ; parler de garantie uniquement en termes génériques « garantie constructeur selon matériel »).
 - **Requêtes cibles** : location matériel informatique, location ordinateur entreprise, installation réseau entreprise, wifi entreprise.
@@ -125,7 +125,7 @@ Tableau des 3 modes de travail, présent sur les deux pages maintenance (version
 3. **Les deux objections qui font signer** : réversibilité sur la page Contrat ; RGPD concret sur la page Protéger.
 4. **Témoignages** : l'avis réel Teddy Malfroy sur le hub uniquement. Zéro témoignage sur les sous-pages tant qu'aucun vrai avis n'est collecté (une section absente vaut mieux qu'un faux avis). Sections réactivables à réception d'avis réels.
 5. **Audit gratuit = porte d'entrée du silo** : mis en évidence sur le hub, CTA secondaire sur toutes les pages (« on regarde votre installation gratuitement, on vous dit où vous en êtes »).
-6. **Financement** : DCB peut proposer du financement. Mentionner comme leveur d'objection (Équiper en premier lieu), sans détailler le mécanisme tant que les modalités ne sont pas précisées.
+6. **Financement** : LOA via un organisme bailleur (le nom du bailleur ne figure jamais sur le site). Mentionner comme leveur d'objection, Équiper en premier lieu.
 7. **Maillage** : les 3 pages besoin concluent par « qui gère tout ça ? » vers les 2 pages maintenance. Les 2 pages maintenance se renvoient l'une à l'autre via le bloc échelle et les phrases de cadrage. Le hub route tout. Cross-sell inter-piliers (caisse, web) conservé.
 8. **Anti-gabarit** : H2 personnalisés par page (fini « Aller plus loin » sur 5 pages), formule SAV déclinée différemment selon le contexte de chaque page, ancrage local 4 départements équilibré (modèle silo caisse).
 9. **Vocabulaire interdit** : « régie » (remplacé par le nom commercial retenu pour la formule présence). Zéro tiret cadratin. UTF-8 BOM préservé (règles CLAUDE.md).
@@ -154,10 +154,10 @@ Offres à travailler côté DCB pour leur donner un tarif public, par ordre de f
 | 9 | Formation cybersécurité | par session ou par salarié |
 | 10 | Mise à disposition de personnel | par jour / mission (à cadrer, sans « régie ») |
 
-## Annexe B : points ouverts à trancher à la relecture
+## Annexe B : arbitrages rendus par Clément le 02/07/2026
 
-1. **Slugs** : renommer `maintenance-depannage/` en `depannage-informatique/` et `cloud-securite/` en `cybersecurite/`, ou garder les slugs actuels ?
-2. **Nom commercial de la formule présence** : « technicien détaché », « renfort intégré », « présence dédiée », autre ?
-3. **Modalités du financement** : leasing via organisme, paiement étalé, autre ? (Conditionne ce qu'on a le droit d'écrire.)
-4. **Grille du contrat** : les montants 89/149 EUR actuels sont-ils la vraie grille à afficher sur la page Contrat ?
-5. **Taux horaire du ponctuel** : posture actée « mécanisme sans montant » ; à réévaluer plus tard si Clément veut afficher le taux.
+1. **Slugs** : renommages validés (`maintenance-depannage/` devient `depannage-informatique/`, `cloud-securite/` devient `cybersecurite/`).
+2. **Formule présence** : libellé « technicien sur site » retenu, affinable à la rédaction. Jamais « régie ».
+3. **Financement** : LOA via un organisme bailleur. Le nom du bailleur ne figure jamais sur le site.
+4. **Grille du contrat** : aucun prix exact n'existe encore. Afficher des montants factices plausibles, à remplacer par la vraie grille avant mise en ligne (tracé dans la roadmap CLAUDE.md, attente client).
+5. **Taux horaire du ponctuel** : pas d'affichage de montant, le tarif dépend du domaine de compétence demandé. Cette vérité peut s'écrire telle quelle sur la page : « tarif annoncé avant intervention, selon l'expertise requise ».
