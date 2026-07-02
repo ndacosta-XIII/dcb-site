@@ -86,7 +86,7 @@ Parlez à un technicien DCB — diagnostic gratuit, sans engagement.
 
 ## Pages locales Caisse par département
 
-Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations propres par page (garde-fou anti-duplicate). Angle 71/69 = base réelle (Paray / Dardilly). Angle 01/42 = réactivité sans base locale (télémaintenance 20 min + sur site <4h), aucune base/stock/agence suggérée.
+Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations propres par page (garde-fou anti-duplicate). Angle 71 = base technique réelle (atelier Paray-le-Monial). Angle 69 = siège social réel à Dardilly + techniciens salariés (proximité). ATTENTION : DCB n'a PAS de stock/entrepôt local (ni à Lyon/Dardilly) : ne jamais écrire "stock" ou "entrepôt" DCB (faux fait banni le 01/07/2026). Angle 01/42 = réactivité sans base locale (télémaintenance 20 min + sur site <4h), aucune base/stock/agence suggérée.
 
 ### Saône-et-Loire (`caisse-enregistreuse/saone-et-loire/index.html`)
 - Angle : "Votre technicien ne vient pas de Lyon, il vient de Paray." Base et stock à Paray-le-Monial.
@@ -94,7 +94,7 @@ Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations 
 - FAQ H2 validée : "Questions fréquentes en Saône-et-Loire."
 
 ### Rhône (`caisse-enregistreuse/rhone/index.html`)
-- Angle propre : "Notre siège est à Dardilly, à dix minutes du centre de Lyon." Stock + techniciens sur place.
+- Angle propre : "Notre siège est à Dardilly, à dix minutes du centre de Lyon." Techniciens salariés sur place (JAMAIS de stock/entrepôt DCB : faux fait).
 - Accroche SAV propre : "A Lyon, les revendeurs ne manquent pas. Les techniciens qui répondent, si."
 - Card 3 propre : "Un prestataire sans ancrage local" (solutions nationales sans adresse physique).
 - Techniciens lede propre : "qui peut sortir de Dardilly en cas d'urgence".
