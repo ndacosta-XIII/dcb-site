@@ -1,0 +1,754 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Maintenance informatique préventive : anticiper la panne | DCB</title>
+<meta name="description" content="La panne informatique prévient rarement, mais elle envoie des signaux. La maintenance préventive, c'est les écouter avant que ça casse. Ce qu'elle couvre.">
+<link rel="canonical" href="https://dcb-technologies.fr/blog/maintenance-informatique-preventive/">
+<meta property="og:title" content="Maintenance informatique préventive : anticiper la panne avant qu'elle arrive | DCB Technologies">
+<meta property="og:description" content="La panne informatique prévient rarement, mais elle envoie des signaux. La maintenance préventive, c'est les écouter avant que ça casse. Ce qu'elle couvre vraiment.">
+<meta property="og:url" content="https://dcb-technologies.fr/blog/maintenance-informatique-preventive/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/infogerance-pme-bureau-supervision.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maintenance informatique préventive : anticiper la panne avant qu'elle arrive">
+<meta name="twitter:description" content="La panne envoie presque toujours des signaux avant l'arrêt. Sauvegardes testées, mises à jour, supervision : ce que couvre vraiment le préventif.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/infogerance-pme-bureau-supervision.webp">
+<link rel="preload" href="../../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/style.css?v=18">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+  ═══════════════════════════════════════════════════════════════ */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+
+    /* Hero override article */
+    [data-metier="article-blog"] .hero {
+      background: linear-gradient(135deg, #0B3D91 0%, #072B6B 100%);
+      color: #fff;
+      padding: 78px 18px 32px;
+    }
+    [data-metier="article-blog"] .hero .a-bread {
+      font-size: 12px; color: rgba(255,255,255,0.55); margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .hero .a-bread a { color: rgba(255,255,255,0.55); text-decoration: none }
+    [data-metier="article-blog"] .hero .a-bread .sep { margin: 0 6px }
+    [data-metier="article-blog"] .hero .a-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 16px;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-tag {
+      display: inline-block; padding: 5px 12px; border-radius: 8px;
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); color: #fff;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info .material-symbols-outlined { font-size: 14px }
+    [data-metier="article-blog"] .hero h1 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.18;
+      color: #fff; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .hero .a-author {
+      font-size: 12.5px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-author strong { color: rgba(255,255,255,0.85); font-weight: 600 }
+
+    /* Featured image */
+    [data-metier="article-blog"] .a-fimg {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      display: block; border-radius: 0;
+    }
+
+    /* Lede (intro) */
+    [data-metier="article-blog"] .a-lede {
+      font-size: 16.5px; line-height: 1.65; color: #334155; font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    /* Article body H2 + paragraphes */
+    [data-metier="article-blog"] .a-body h2 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.22;
+      color: #0B3D91; letter-spacing: -0.01em; margin: 28px 0 12px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .a-body p {
+      font-size: 14.5px; line-height: 1.7; color: #4A5568; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-body .a-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 700; color: #F57C00; text-decoration: none;
+      margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-body .a-link .material-symbols-outlined { font-size: 16px }
+
+    /* Callout 'Le point cle' */
+    [data-metier="article-blog"] .a-callout {
+      background: rgba(11,61,145,0.06); border-radius: 14px; padding: 18px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-callout-head {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: #0B3D91;
+      margin: 0 0 8px;
+    }
+    [data-metier="article-blog"] .a-callout-head .material-symbols-outlined { font-size: 18px; color: #F57C00 }
+    [data-metier="article-blog"] .a-callout p {
+      font-size: 14px; line-height: 1.6; color: #0B3D91; margin: 0;
+    }
+
+    /* Bento 2 boxes (Gain de temps / Fidelisation) : stack vertical mobile */
+    [data-metier="article-blog"] .a-bento {
+      display: flex; flex-direction: column; gap: 10px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box {
+      background: #F8F9FA; border-radius: 12px; padding: 16px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h.b1 { color: #0B3D91 }
+    [data-metier="article-blog"] .a-bento .a-box-h.b2 { color: #F57C00 }
+    [data-metier="article-blog"] .a-bento .a-box p {
+      font-size: 13.5px; line-height: 1.55; color: #4A5568; margin: 0;
+    }
+
+    /* Article CTA (fin article) */
+    [data-metier="article-blog"] .a-end-cta {
+      background: #F8F9FA; border-radius: 16px; padding: 24px 20px;
+      text-align: center; margin: 28px 0 0;
+    }
+    [data-metier="article-blog"] .a-end-cta h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; color: #0B3D91;
+      line-height: 1.2; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-end-cta p {
+      font-size: 14px; line-height: 1.55; color: #4A5568; margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-end-actions {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-pri {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-sec {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #E5E9F0;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* A lire aussi : pattern type liste */
+    [data-metier="article-blog"] .a-related-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-related-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+    }
+    [data-metier="article-blog"] .a-related-list li {
+      padding: 14px 0; border-top: 1px solid rgba(11,61,145,0.08);
+    }
+    [data-metier="article-blog"] .a-related-list li:last-child { border-bottom: 1px solid rgba(11,61,145,0.08) }
+    [data-metier="article-blog"] .a-related-list a { display: block; text-decoration: none; color: inherit }
+    [data-metier="article-blog"] .a-related-list .a-cat {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #94A3B8; margin: 0 0 4px;
+    }
+    [data-metier="article-blog"] .a-related-list .a-title {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3;
+      color: #0B3D91; margin: 0;
+    }
+
+    /* Conseil expert (sidebar mobile) */
+    [data-metier="article-blog"] .a-expert {
+      background: #0B3D91; color: #fff; border-radius: 18px; padding: 24px 20px;
+    }
+    [data-metier="article-blog"] .a-expert-eb {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-expert h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+      color: #fff; margin: 0 0 12px;
+    }
+    [data-metier="article-blog"] .a-expert p {
+      font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.72); margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-expert .a-expert-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* Phone block (sidebar mobile) */
+    [data-metier="article-blog"] .a-phone {
+      background: #F8F9FA; border-radius: 16px; padding: 22px 20px;
+    }
+    [data-metier="article-blog"] .a-phone-lb {
+      font-size: 12.5px; font-weight: 700; color: #0B3D91; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-phone-num {
+      display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+      color: #0B3D91; margin: 0 0 16px; text-decoration: none; letter-spacing: -0.01em;
+    }
+    [data-metier="article-blog"] .a-phone-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 44px; padding: 12px 18px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #0B3D91;
+      font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Maintenance informatique préventive : anticiper la panne avant qu'elle arrive",
+  "description": "La panne informatique prévient rarement, mais elle envoie des signaux. La maintenance préventive, c'est les écouter avant que ça casse. Sauvegardes testées, mises à jour, supervision : ce que couvre vraiment le préventif pour une PME.",
+  "author": { "@type": "Person", "name": "Nathanaël Da Costa", "url": "https://dcb-technologies.fr/notre-adn/", "worksFor": { "@type": "Organization", "name": "DCB Technologies" } },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DCB Technologies",
+    "logo": { "@type": "ImageObject", "url": "https://dcb-technologies.fr/assets/logo-dcb.svg" }
+  },
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "articleSection": "Maintenance informatique",
+  "inLanguage": "fr-FR",
+  "keywords": "maintenance informatique préventive, supervision parc informatique, sauvegarde testée, infogérance PME, préventif vs curatif",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dcb-technologies.fr/blog/maintenance-informatique-preventive/" },
+  "image": "https://dcb-technologies.fr/assets/infogerance-pme-bureau-supervision.webp"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "C'est quoi la différence entre maintenance préventive et curative ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La maintenance curative répare après la panne : la machine est déjà arrêtée quand on intervient. La maintenance préventive anticipe : on surveille l'état du matériel et des logiciels, on teste les sauvegardes, on déploie les correctifs et on remplace ce qui va lâcher avant que ça lâche. Le curatif traite les symptômes une fois qu'ils font mal, le préventif s'occupe des causes tant qu'elles sont encore silencieuses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La maintenance préventive, ça sert vraiment si mon informatique marche bien ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, et c'est justement quand tout marche que c'est le bon moment. Une machine qui marche bien peut avoir un disque en fin de vie, une sauvegarde corrompue ou un système sans correctif de sécurité depuis des mois. Rien de visible pour l'utilisateur, jusqu'au jour de l'arrêt. Le préventif sert à voir ces problèmes pendant qu'ils sont encore réparables au calme, pas dans l'urgence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi tester les sauvegardes, si elles se font toutes seules ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parce qu'une sauvegarde automatique peut échouer en silence : fichier corrompu, disque de destination plein, données incomplètes. Tant qu'on n'a pas restauré la sauvegarde sur un environnement de contrôle pour vérifier qu'elle repart, on ne sait pas si elle vaut quelque chose. Une sauvegarde jamais testée est une supposition, pas une garantie. C'est pour ça que le test de restauration régulier fait partie du préventif sérieux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte une heure d'arrêt informatique pour une PME ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ça dépend énormément de votre activité, donc méfiez-vous des chiffres uniques. Des sources françaises citent une fourchette de 500 à 5 000 € par heure pour une PME, à prendre comme un ordre de grandeur externe. Un commerce en plein rush et un cabinet en heure creuse ne perdent pas la même chose. Le vrai coût pour vous dépend de ce que vos équipes ne peuvent plus faire pendant l'arrêt, et c'est ce calcul-là qu'il faut faire, pas recopier un chiffre générique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les mises à jour, c'est vraiment de la sécurité ou juste du confort ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De la sécurité. Une grande partie des cyberattaques n'exploite pas une faille exotique mais une faille déjà connue et déjà corrigée, sur une machine où le correctif n'a jamais été installé. Déployer les mises à jour à temps, c'est fermer des portes que les attaquants savent déjà ouvrir. Un rythme mensuel, avec un suivi de ce qui est déployé sur quelle machine, couvre l'essentiel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps dure un serveur de PME avant qu'il faille le changer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En moyenne cinq à six ans selon les sources du secteur (un baromètre cite autour de 5,4 ans), et un suivi proactif peut l'étirer jusqu'à sept à neuf ans. Les SSD tiennent plutôt cinq à dix ans, mais se mesurent surtout en volume de données écrites, pas en années calendaires. La fin de support d'un système d'exploitation force souvent le renouvellement avant l'usure elle-même. Le préventif sert à planifier ce remplacement au calme plutôt qu'à le subir en panne sèche."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dcb-technologies.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dcb-technologies.fr/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Maintenance préventive", "item": "https://dcb-technologies.fr/blog/maintenance-informatique-preventive/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DESKTOP SHELL (visible >640px)
+═══════════════════════════════════════════════════════════════ -->
+<div class="d-shell">
+<div id="dcb-nav"></div>
+
+<!-- ── 1. HEADER ────────────────────────────────────────────── -->
+<header class="pt-[76px] bg-gradient-to-br from-[#0B3D91] to-[#072B6B] relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B] to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm text-white/50">
+      <a href="../../index.html" class="text-white/50 hover:text-white transition-colors no-underline">Accueil</a>
+      <span class="mx-2">›</span>
+      <a href="../../blog/index.html" class="text-white/50 hover:text-white transition-colors no-underline">Blog</a>
+      <span class="mx-2">›</span>
+      <span class="text-white/70">Maintenance préventive</span>
+    </nav>
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+      <span class="bg-white/10 text-white px-4 py-1.5 rounded-lg text-[0.6875rem] font-bold uppercase tracking-widest border border-white/20">Informatique</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">calendar_today</span>6 Juillet 2026</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">schedule</span>7 min de lecture</span>
+    </div>
+    <h1 class="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-4xl mb-4">Maintenance informatique préventive&nbsp;: anticiper la panne avant qu'elle arrive</h1>
+    <p class="text-white/50 text-sm">Par <strong class="text-white/70 font-semibold">Nathanaël Da Costa, DCB Technologies</strong></p>
+  </div>
+</header>
+
+<main>
+
+<!-- ── 2. ARTICLE + SIDEBAR ────────────────────────────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+    <!-- Article (8 cols) -->
+    <article class="lg:col-span-8">
+      <img src="../../assets/infogerance-pme-bureau-supervision.webp" alt="Supervision d'un parc informatique de PME en maintenance préventive" width="800" height="450" loading="eager" fetchpriority="high" decoding="async" class="w-full aspect-[16/9] object-cover rounded-xl mb-10">
+
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-6">On installe et on surveille des parcs informatiques toute l'année chez des PME de Mâcon, Chalon-sur-Saône, Villefranche ou Bourg-en-Bresse. Un garage, un cabinet comptable, un négoce, une petite PME industrielle. Et à force, on a fini par remarquer une chose : la panne qui met une boîte à l'arrêt un matin, on aurait presque toujours pu la voir venir. Le disque qui lâche envoyait des alertes SMART depuis des semaines. La sauvegarde soi-disant en place n'avait jamais été restaurée. Le serveur avait sept ans et personne ne s'était posé la question.</p>
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-12">La maintenance informatique préventive, c'est exactement ça : écouter ces signaux avant qu'ils ne deviennent un appel paniqué à 8h30 un jour de forte activité. Pas un contrat de plus, pas un jargon de plus. Juste le fait de regarder l'état de vos machines pendant qu'elles fonctionnent, plutôt que d'attendre qu'elles s'arrêtent pour s'en occuper. On vous explique ce que ça couvre vraiment, et pourquoi le calcul penche presque toujours du bon côté.</p>
+
+      <p class="text-[#4A5568] leading-[1.8] mb-12">La maintenance informatique préventive regroupe les actions planifiées (supervision continue, sauvegardes testées, mises à jour de sécurité, remplacement anticipé du matériel) qui repèrent et corrigent les signes de défaillance avant la panne, à l'inverse de la maintenance curative qui n'intervient qu'une fois l'incident survenu.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">La panne n'arrive presque jamais par surprise</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">C'est le point qu'on répète le plus souvent aux gérants qu'on rencontre, parce que c'est le moins intuitif. On imagine la panne comme un accident : la foudre, le coup de malchance, le disque qui claque sans prévenir. Dans la réalité, c'est rarement ça.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Un disque dur qui va rendre l'âme le fait savoir. Il ralentit, il multiplie les secteurs défectueux, ses indicateurs de santé se dégradent bien avant l'arrêt sec. Un serveur qui sature en mémoire ou en espace disque envoie les mêmes signaux discrets pendant des jours. Une mise à jour de sécurité qu'on repousse à plus tard ouvre une porte qui reste ouverte, et un jour quelqu'un la pousse.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Le préventif ne fait pas de miracle. Il ne rend pas une machine immortelle. Ce qu'il fait, c'est transformer une panne subie un mardi matin en une intervention planifiée un mercredi soir, quand personne ne travaille. La différence entre les deux, pour une PME, c'est une journée de chiffre d'affaires.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Ce que couvre concrètement le préventif</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">Le mot préventif sonne un peu vague, alors autant le rendre concret. Derrière, il y a une poignée de tâches précises, avec des rythmes précis.</p>
+
+      <ul class="space-y-6 mb-12 list-none p-0">
+        <li class="border-l-4 border-[#0B3D91] pl-6">
+          <p class="font-sora font-bold text-[#0B3D91] mb-2">Les sauvegardes, mais testées</p>
+          <p class="text-[#4A5568] leading-[1.7] mb-3">Tout le monde a une sauvegarde. Presque personne ne l'a testée. Et une sauvegarde qu'on n'a jamais restaurée n'est pas une sauvegarde, c'est une supposition. Le jour où le serveur du cabinet comptable tombe, découvrir que le fichier de sauvegarde est corrompu ou incomplet, c'est le pire moment possible.</p>
+          <p class="text-[#4A5568] leading-[1.7]">Le préventif sérieux, c'est une sauvegarde quotidienne, et surtout un test de restauration régulier pour vérifier qu'elle repart vraiment. On restaure sur un environnement de contrôle, on vérifie que les données sont là et lisibles. C'est fastidieux, ça ne se voit pas, et c'est précisément pour ça que sans routine en place, ça finit toujours par passer à la trappe.</p>
+        </li>
+        <li class="border-l-4 border-[#F57C00] pl-6">
+          <p class="font-sora font-bold text-[#F57C00] mb-2">Les mises à jour, qui sont de la sécurité et pas du confort</p>
+          <p class="text-[#4A5568] leading-[1.7] mb-3">On entend souvent « les mises à jour, on verra plus tard, tant que ça marche ». Le problème, c'est qu'une grande partie des cyberattaques n'exploite pas une faille inconnue et sophistiquée. Elle exploite une faille déjà connue, déjà corrigée par un éditeur, sur une machine où le correctif n'a jamais été appliqué. Selon plusieurs sources spécialisées en sécurité, c'est un des vecteurs les plus fréquents.</p>
+          <p class="text-[#4A5568] leading-[1.7]">Autrement dit, déployer les correctifs à temps, ce n'est pas du confort ni de la maniaquerie. C'est fermer des portes que les attaquants savent déjà ouvrir. Un rythme mensuel de mises à jour système, avec un suivi de ce qui est déployé sur quelle machine, fait une bonne partie du travail.</p>
+        </li>
+        <li class="border-l-4 border-[#0B3D91] pl-6">
+          <p class="font-sora font-bold text-[#0B3D91] mb-2">La supervision des points vitaux</p>
+          <p class="text-[#4A5568] leading-[1.7] mb-3">C'est la brique la plus invisible et sans doute la plus utile. Une supervision continue surveille en arrière-plan la santé des disques, la charge du processeur, la saturation de la mémoire, le bon déploiement des correctifs. Quand un indicateur sort de sa zone normale, une alerte remonte avant que l'utilisateur ne remarque quoi que ce soit.</p>
+          <p class="text-[#4A5568] leading-[1.7]">À ça s'ajoutent une vérification physique du matériel de temps en temps (un ventilateur encrassé, une machine qui chauffe) et un audit de sécurité périodique, souvent trimestriel, pour repasser sur les accès, les mots de passe, les points d'entrée. Rien de spectaculaire pris isolément. Mis bout à bout, c'est ce qui fait qu'une PME passe l'année sans arrêt subi.</p>
+        </li>
+      </ul>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Préventif contre curatif : le vrai coût du réactif</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Beaucoup de PME fonctionnent encore en curatif : on appelle quand ça casse, on paie la réparation, on repart. C'est intuitif et ça donne l'impression de ne dépenser que quand c'est nécessaire. Le calcul est trompeur.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Le curatif coûte plus cher au moment où il frappe. C'est l'urgence, la pièce qu'il faut commander en express, l'intervention à caler dans la journée coûte que coûte, le technicien qui débarque sur un problème qu'il découvre à l'instant. Une source tierce estime la maintenance réactive 25 à 30 % plus chère que la préventive une fois tout additionné. À prendre comme un ordre de grandeur, pas comme une loi, mais la logique tient : réparer dans la précipitation coûte toujours plus que prévenir au calme.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">Et ça, c'est seulement la facture de la réparation. Le vrai coût du curatif, c'est ce qui se passe pendant que tout est à l'arrêt.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:16px;overflow:hidden;margin:0 0 48px">
+        <table style="width:100%;border-collapse:collapse;text-align:left">
+          <thead>
+            <tr style="background:#F8F9FA">
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91"></th>
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91">Maintenance curative</th>
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F57C00">Maintenance préventive</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px">
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Quand on intervient</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Après la panne, dans l'urgence</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Avant, sur les signaux faibles</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Coût</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Élevé au pire moment (pièces express, heures sup)</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Lissé et planifié</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Temps d'arrêt</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Subi, imprévisible</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Réduit, programmé hors activité</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2;background:#FFF6EC">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;white-space:nowrap;line-height:1.35">Prévisibilité</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Nulle</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Le problème devient un rendez-vous</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-[#E6EEF9] p-8 rounded-xl mb-12">
+        <h4 class="font-sora font-bold text-[#0B3D91] mb-3 flex items-center gap-2"><span class="material-symbols-outlined ms-fill text-[#F57C00]">lightbulb</span>Le point clé</h4>
+        <p class="text-[#0B3D91] leading-[1.7]">Le curatif n'est pas moins cher parce qu'on paie moins souvent. Il déplace la dépense au pire moment : quand la machine est déjà arrêtée et que chaque heure d'immobilisation coûte de l'argent. Le préventif, lui, lisse la dépense et supprime l'essentiel des arrêts subis. On paie un peu tout le temps pour ne pas payer beaucoup d'un coup.</p>
+      </div>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Le matériel qui vieillit, et les signaux qu'il envoie</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Un serveur de PME, ça dure en moyenne cinq à six ans. Un baromètre du secteur cite autour de 5,4 ans, et un suivi proactif peut pousser jusqu'à sept ou neuf ans. Les SSD, eux, sont conçus pour tenir cinq à dix ans en usage normal, sauf qu'on ne les mesure pas vraiment en années : on les mesure en volume de données écrites (le fameux TBW). Un disque très sollicité vieillit plus vite qu'un disque tranquille du même âge.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Ces chiffres viennent de sources tierces et restent des moyennes. Votre matériel peut tenir plus longtemps, ou lâcher plus tôt. Ce qui compte, c'est ce qu'on en fait. Deux choses forcent souvent le renouvellement avant l'usure pure : la fin du support d'un système d'exploitation, qui laisse une machine sans correctifs de sécurité, et l'accumulation de signaux faibles sur la santé des disques.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Le rôle du préventif ici, c'est d'anticiper le remplacement avant la panne sèche. Repérer le disque dont les indicateurs se dégradent, planifier son changement pendant une période creuse, plutôt que de le subir un vendredi de fin de mois quand tout le monde clôture. Remplacer une machine qu'on a vu venir, c'est une ligne dans un budget. Remplacer une machine qui vient de tomber, c'est une urgence avec des données à récupérer.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Combien coûte vraiment une heure d'arrêt (et pourquoi la réponse dépend de vous)</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">C'est la question que tout le monde pose, et honnêtement, il faut se méfier des chiffres ronds qu'on lit partout. Des sources françaises citent souvent une fourchette de 500 à 5 000 € par heure d'arrêt pour une PME, avec un cumul annuel qui peut atteindre plusieurs dizaines de milliers d'euros pour une structure d'une cinquantaine de personnes.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Prenez ces montants pour ce qu'ils sont : des ordres de grandeur d'études tierces, pas une vérité universelle. Parce que tout dépend de votre activité. Un restaurant dont la caisse tombe en plein service du midi ne perd pas la même chose qu'un cabinet médical dont le logiciel rame une demi-heure, qui ne perd pas la même chose qu'une PME industrielle de Roanne dont la chaîne s'arrête. Le coût d'une heure d'arrêt pour vous, personne ne peut le sortir d'un tableau générique : il dépend de ce que vos équipes ne peuvent plus faire pendant ce temps.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Le point à retenir n'est pas le chiffre exact. C'est qu'un arrêt informatique n'est jamais gratuit, même court, et que la plupart de ces arrêts étaient évitables. C'est là que le préventif reprend tout son sens.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Notre position, en tant qu'infogéreur local</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">On va être directs, parce qu'on n'aime pas vendre par la peur. Non, tout ne casse pas tout le temps, et non, une PME n'a pas besoin d'une infrastructure de multinationale pour être tranquille. La plupart des arrêts qu'on voit sur le terrain viennent de trois ou quatre négligences simples : une sauvegarde jamais testée, des mises à jour repoussées, un vieux disque qu'on aurait dû changer, une supervision absente.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Concrètement, voilà comment on travaille quand un problème surgit malgré la prévention. On prend la main à distance immédiatement, par télémaintenance : la plupart des incidents se règlent comme ça, dans les minutes qui suivent, sans que personne ait à se déplacer. Et si le souci nécessite vraiment une présence physique, on intervient sur site sous 4h. C'est cet ordre-là qui compte : d'abord la réactivité immédiate à distance, puis le déplacement si et seulement si c'est nécessaire.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Le reste du temps, on est en arrière-plan. Supervision continue des machines, sauvegardes vérifiées, correctifs déployés, et un rapport clair pour que vous sachiez ce qui a été fait et ce qui vieillit dans votre parc. Un gérant de PME à Bourg-en-Bresse n'a pas à devenir administrateur système pour dormir tranquille, c'est justement notre métier. Si vous voulez déléguer tout ça et arrêter de gérer votre informatique dans l'urgence, c'est l'idée de <a href="../../maintenance-informatique/infogerance-pme/index.html" class="text-[#F57C00] font-bold no-underline hover:underline">notre contrat d'infogérance pour PME</a>.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-8">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3 mb-12">
+        <details class="faq-item"><summary>C'est quoi la différence entre maintenance préventive et curative ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">La maintenance curative répare après la panne : la machine est déjà arrêtée quand on intervient. La maintenance préventive anticipe : on surveille l'état du matériel et des logiciels, on teste les sauvegardes, on déploie les correctifs et on remplace ce qui va lâcher avant que ça lâche. Le curatif traite les symptômes une fois qu'ils font mal, le préventif s'occupe des causes tant qu'elles sont encore silencieuses.</div></details>
+        <details class="faq-item"><summary>La maintenance préventive, ça sert vraiment si mon informatique marche bien ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, et c'est justement quand tout marche que c'est le bon moment. Une machine qui marche bien peut avoir un disque en fin de vie, une sauvegarde corrompue ou un système sans correctif de sécurité depuis des mois. Rien de visible pour l'utilisateur, jusqu'au jour de l'arrêt. Le préventif sert à voir ces problèmes pendant qu'ils sont encore réparables au calme, pas dans l'urgence.</div></details>
+        <details class="faq-item"><summary>Pourquoi tester les sauvegardes, si elles se font toutes seules ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Parce qu'une sauvegarde automatique peut échouer en silence : fichier corrompu, disque de destination plein, données incomplètes. Tant qu'on n'a pas restauré la sauvegarde sur un environnement de contrôle pour vérifier qu'elle repart, on ne sait pas si elle vaut quelque chose. Une sauvegarde jamais testée est une supposition, pas une garantie. C'est pour ça que le test de restauration régulier fait partie du préventif sérieux.</div></details>
+        <details class="faq-item"><summary>Combien coûte une heure d'arrêt informatique pour une PME ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Ça dépend énormément de votre activité, donc méfiez-vous des chiffres uniques. Des sources françaises citent une fourchette de 500 à 5 000 € par heure pour une PME, à prendre comme un ordre de grandeur externe. Un commerce en plein rush et un cabinet en heure creuse ne perdent pas la même chose. Le vrai coût pour vous dépend de ce que vos équipes ne peuvent plus faire pendant l'arrêt, et c'est ce calcul-là qu'il faut faire, pas recopier un chiffre générique.</div></details>
+        <details class="faq-item"><summary>Les mises à jour, c'est vraiment de la sécurité ou juste du confort ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">De la sécurité. Une grande partie des cyberattaques n'exploite pas une faille exotique mais une faille déjà connue et déjà corrigée, sur une machine où le correctif n'a jamais été installé. Déployer les mises à jour à temps, c'est fermer des portes que les attaquants savent déjà ouvrir. Un rythme mensuel, avec un suivi de ce qui est déployé sur quelle machine, couvre l'essentiel.</div></details>
+        <details class="faq-item"><summary>Combien de temps dure un serveur de PME avant qu'il faille le changer ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">En moyenne cinq à six ans selon les sources du secteur (un baromètre cite autour de 5,4 ans), et un suivi proactif peut l'étirer jusqu'à sept à neuf ans. Les SSD tiennent plutôt cinq à dix ans, mais se mesurent surtout en volume de données écrites, pas en années calendaires. La fin de support d'un système d'exploitation force souvent le renouvellement avant l'usure elle-même. Le préventif sert à planifier ce remplacement au calme plutôt qu'à le subir en panne sèche.</div></details>
+      </div>
+
+      <!-- Sources E-E-A-T -->
+      <div class="bg-[#F8F9FA] p-8 rounded-xl mb-12">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B3D91] mb-4">Sources</p>
+        <p class="text-[0.9375rem] text-[#4A5568] leading-[1.7]">L'exploitation de failles connues non corrigées comme principal point d'entrée des attaques contre les PME est documentée par l'<a href="https://cyber.gouv.fr/publications/panorama-de-la-cybermenace-2024" target="_blank" rel="noopener noreferrer" class="text-[#F57C00] font-bold no-underline hover:underline">ANSSI</a> (panorama de la menace, rapports post-incident). Le coût des interruptions informatiques est étudié chaque année par l'<a href="https://uptimeinstitute.com/resources/research-and-reports/annual-outage-analysis-2025" target="_blank" rel="noopener noreferrer" class="text-[#F57C00] font-bold no-underline hover:underline">Uptime Institute</a> (Annual Outage Analysis) : il grimpe vite et varie fortement selon l'activité. Les fourchettes citées ici (500 à 5 000 € par heure pour une PME, surcoût du curatif estimé à 25 à 30 %) et les durées de vie du matériel (serveurs, SSD en TBW) sont des ordres de grandeur sectoriels et des moyennes constructeurs, pas des mesures propres à DCB.</p>
+      </div>
+
+      <!-- Article CTA -->
+      <div class="bg-[#F8F9FA] p-10 md:p-12 rounded-xl text-center">
+        <h3 class="font-sora text-2xl font-bold text-[#0B3D91] mb-4">Une informatique qui ne vous lâche pas ?</h3>
+        <p class="text-[#4A5568] mb-8">On supervise votre parc en arrière-plan, on teste vos sauvegardes et on intervient à distance dès qu'un souci pointe. Sans que vous ayez à y penser.</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="../../contact/index.html" class="btn btn--primary">Obtenir un devis gratuit</a>
+          <a href="../../maintenance-informatique/infogerance-pme/index.html" class="btn btn--outline-primary">Voir notre infogérance PME</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sidebar (4 cols) -->
+    <aside class="lg:col-span-4 sticky top-24 flex flex-col gap-8">
+
+      <!-- A lire aussi -->
+      <div>
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] border-b border-black/10 pb-3 mb-6">A lire aussi</h4>
+        <div class="flex flex-col gap-6">
+          <a href="../../maintenance-informatique/infogerance-pme/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Informatique</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Notre contrat d'infogérance pour PME</p>
+          </a>
+          <a href="../../maintenance-informatique/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Informatique</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Nos services de maintenance informatique</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA sidebar -->
+      <div class="bg-[#0B3D91] p-8 rounded-xl text-white">
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block mb-3">Conseil expert</span>
+        <h3 class="font-sora text-[1.375rem] font-bold mb-4 leading-[1.3]">Votre parc est-il vraiment sous contrôle ?</h3>
+        <p class="text-white/70 text-[0.9375rem] leading-relaxed mb-8">On passe en revue vos sauvegardes, vos mises à jour et l'âge de vos machines, et on vous dit ce qui risque de lâcher. Gratuitement.</p>
+        <a href="../../contact/index.html" class="btn btn--primary w-full justify-center">En profiter maintenant</a>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-[#F8F9FA] p-6 rounded-xl">
+        <p class="text-sm font-bold text-[#0B3D91] mb-2">Une question urgente ?</p>
+        <a href="tel:0482530510" class="font-sora text-[1.375rem] font-bold text-[#0B3D91] block mb-6 no-underline">04 82 53 05 10</a>
+        <a href="../../contact/index.html" class="btn btn--outline-primary w-full justify-center text-[0.9375rem]">Prendre contact</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ── 3. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;background:#F8F9FA;--accent:#F57C00;--accent-dark:#E06E00">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Une informatique qui ne vous lâche pas ?</h2>
+        <p class="d-lede">Nos conseillers vous rappellent sous 24h pour mettre votre parc sous surveillance préventive.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <a href="../index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour au blog</a>
+      <time class="d-updated" datetime="2026-07-06">Mis à jour le 6 juillet 2026</time>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="dcb-footer"></div>
+
+</div><!-- /d-shell -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+     Pattern mobile-first : hero compact > image > lede > body > CTA fin > related > expert > tel > cta-final
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="article-blog">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+  <!-- S1 : HERO COMPACT (fond bleu sombre comme desktop) -->
+  <section class="hero">
+    <nav class="a-bread" aria-label="Fil d'Ariane">
+      <a href="../../index.html">Accueil</a><span class="sep">›</span><a href="../../blog/index.html">Blog</a><span class="sep">›</span><span>Maintenance préventive</span>
+    </nav>
+    <div class="a-meta">
+      <span class="a-tag">Informatique</span>
+      <span class="a-info"><span class="material-symbols-outlined">calendar_today</span>6 Juillet 2026</span>
+      <span class="a-info"><span class="material-symbols-outlined">schedule</span>7 min de lecture</span>
+    </div>
+    <h1>Maintenance informatique préventive&nbsp;: anticiper la panne avant qu'elle arrive</h1>
+    <p class="a-author">Par <strong>Nathanaël Da Costa, DCB Technologies</strong></p>
+  </section>
+
+  <!-- S2 : IMAGE FEATURED -->
+  <img class="a-fimg" src="../../assets/infogerance-pme-bureau-supervision.webp" alt="Supervision d'un parc informatique de PME en maintenance préventive" width="800" height="450" loading="eager" fetchpriority="high" decoding="async">
+
+  <!-- S3 : LEDE + BODY ARTICLE -->
+  <section class="sec">
+    <p class="a-lede">On installe et on surveille des parcs informatiques toute l'année chez des PME de Mâcon, Chalon-sur-Saône, Villefranche ou Bourg-en-Bresse. Un garage, un cabinet comptable, un négoce, une petite PME industrielle. Et à force, on a remarqué une chose : la panne qui met une boîte à l'arrêt un matin, on aurait presque toujours pu la voir venir.</p>
+
+    <div class="a-body">
+      <p>Le disque qui lâche envoyait des alertes SMART depuis des semaines. La sauvegarde soi-disant en place n'avait jamais été restaurée. Le serveur avait sept ans et personne ne s'était posé la question. La maintenance informatique préventive, c'est exactement ça : écouter ces signaux avant qu'ils ne deviennent un appel paniqué à 8h30 un jour de forte activité.</p>
+      <p>Pas un contrat de plus, pas un jargon de plus. Juste le fait de regarder l'état de vos machines pendant qu'elles fonctionnent, plutôt que d'attendre qu'elles s'arrêtent. On vous explique ce que ça couvre vraiment, et pourquoi le calcul penche presque toujours du bon côté.</p>
+
+      <p>La maintenance informatique préventive regroupe les actions planifiées (supervision continue, sauvegardes testées, mises à jour de sécurité, remplacement anticipé du matériel) qui repèrent et corrigent les signes de défaillance avant la panne, à l'inverse de la maintenance curative qui n'intervient qu'une fois l'incident survenu.</p>
+
+      <h2>La panne n'arrive presque jamais par surprise</h2>
+      <p>On imagine la panne comme un accident : la foudre, le coup de malchance, le disque qui claque sans prévenir. Dans la réalité, c'est rarement ça. Un disque dur qui va rendre l'âme le fait savoir : il ralentit, ses indicateurs de santé se dégradent bien avant l'arrêt sec. Un serveur qui sature envoie les mêmes signaux discrets pendant des jours.</p>
+      <p>Le préventif ne fait pas de miracle. Ce qu'il fait, c'est transformer une panne subie un mardi matin en une intervention planifiée un mercredi soir, quand personne ne travaille. La différence, pour une PME, c'est une journée de chiffre d'affaires.</p>
+
+      <h2>Ce que couvre concrètement le préventif</h2>
+      <p>Le mot préventif sonne un peu vague, alors autant le rendre concret. Derrière, il y a une poignée de tâches précises, avec des rythmes précis.</p>
+
+      <ul style="margin:18px 0 24px;padding:0;list-style:none">
+        <li style="border-left:3px solid #0B3D91;padding-left:14px;margin:0 0 16px">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 4px">Les sauvegardes, mais testées</p>
+          <p style="margin:0">Tout le monde a une sauvegarde. Presque personne ne l'a testée. Une sauvegarde qu'on n'a jamais restaurée n'est pas une sauvegarde, c'est une supposition. Le préventif sérieux, c'est une sauvegarde quotidienne et un test de restauration régulier pour vérifier qu'elle repart vraiment.</p>
+        </li>
+        <li style="border-left:3px solid #F57C00;padding-left:14px;margin:0 0 16px">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 4px">Les mises à jour, de la sécurité pas du confort</p>
+          <p style="margin:0">Une grande partie des cyberattaques exploite une faille déjà connue, déjà corrigée, sur une machine où le correctif n'a jamais été appliqué. Déployer les correctifs à temps, c'est fermer des portes que les attaquants savent déjà ouvrir. Un rythme mensuel fait une bonne partie du travail.</p>
+        </li>
+        <li style="border-left:3px solid #0B3D91;padding-left:14px;margin:0">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 4px">La supervision des points vitaux</p>
+          <p style="margin:0">Une supervision continue surveille en arrière-plan la santé des disques, la charge du processeur, la mémoire, le déploiement des correctifs. Quand un indicateur sort de sa zone normale, une alerte remonte avant que l'utilisateur ne remarque quoi que ce soit.</p>
+        </li>
+      </ul>
+
+      <h2>Préventif contre curatif : le vrai coût du réactif</h2>
+      <p>Beaucoup de PME fonctionnent encore en curatif : on appelle quand ça casse, on paie, on repart. Le calcul est trompeur. Le curatif coûte plus cher au moment où il frappe : l'urgence, la pièce en express, l'intervention à caler coûte que coûte. Une source tierce estime la maintenance réactive 25 à 30 % plus chère que la préventive une fois tout additionné.</p>
+      <p>Et ça, c'est seulement la facture de la réparation. Le vrai coût du curatif, c'est ce qui se passe pendant que tout est à l'arrêt.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:14px;overflow:hidden;margin:18px 0 24px">
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Quand on intervient</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px"><strong style="color:#0B3D91">Curatif</strong> : après la panne, dans l'urgence · <strong style="color:#F57C00">Préventif</strong> : avant, sur les signaux faibles</p>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Coût</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px"><strong style="color:#0B3D91">Curatif</strong> : élevé au pire moment · <strong style="color:#F57C00">Préventif</strong> : lissé et planifié</p>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Temps d'arrêt</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px"><strong style="color:#0B3D91">Curatif</strong> : subi, imprévisible · <strong style="color:#F57C00">Préventif</strong> : réduit, programmé hors activité</p>
+        </div>
+        <div style="padding:14px 16px;background:#FFF6EC">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 3px">Prévisibilité</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px"><strong style="color:#0B3D91">Curatif</strong> : nulle · <strong style="color:#F57C00">Préventif</strong> : le problème devient un rendez-vous</p>
+        </div>
+      </div>
+
+      <div class="a-callout">
+        <div class="a-callout-head"><span class="material-symbols-outlined ms-fill">lightbulb</span>Le point clé</div>
+        <p>Le curatif n'est pas moins cher parce qu'on paie moins souvent. Il déplace la dépense au pire moment : quand la machine est déjà arrêtée et que chaque heure d'immobilisation coûte de l'argent. Le préventif lisse la dépense et supprime l'essentiel des arrêts subis.</p>
+      </div>
+
+      <h2>Le matériel qui vieillit, et les signaux qu'il envoie</h2>
+      <p>Un serveur de PME dure en moyenne cinq à six ans. Un baromètre du secteur cite autour de 5,4 ans, et un suivi proactif peut pousser jusqu'à sept ou neuf ans. Les SSD tiennent cinq à dix ans, mais se mesurent surtout en volume de données écrites (le TBW), pas en années. Ces chiffres viennent de sources tierces et restent des moyennes.</p>
+      <p>Le rôle du préventif ici, c'est d'anticiper le remplacement avant la panne sèche. Repérer le disque dont les indicateurs se dégradent, planifier son changement en période creuse. Remplacer une machine qu'on a vu venir, c'est une ligne dans un budget. Remplacer une machine qui vient de tomber, c'est une urgence avec des données à récupérer.</p>
+
+      <h2>Combien coûte vraiment une heure d'arrêt</h2>
+      <p>Des sources françaises citent souvent une fourchette de 500 à 5 000 € par heure d'arrêt pour une PME. Prenez ces montants pour ce qu'ils sont : des ordres de grandeur d'études tierces, pas une vérité universelle. Tout dépend de votre activité. Un restaurant dont la caisse tombe en plein service ne perd pas la même chose qu'un cabinet dont le logiciel rame une demi-heure.</p>
+      <p>Le point à retenir n'est pas le chiffre exact. C'est qu'un arrêt informatique n'est jamais gratuit, même court, et que la plupart de ces arrêts étaient évitables. C'est là que le préventif reprend tout son sens.</p>
+
+      <h2>Notre position, en tant qu'infogéreur local</h2>
+      <p>On va être directs, parce qu'on n'aime pas vendre par la peur. Une PME n'a pas besoin d'une infrastructure de multinationale pour être tranquille. La plupart des arrêts qu'on voit viennent de trois ou quatre négligences simples : une sauvegarde jamais testée, des mises à jour repoussées, un vieux disque, une supervision absente.</p>
+      <p>Quand un problème surgit, on prend la main à distance immédiatement, par télémaintenance : la plupart des incidents se règlent comme ça, dans les minutes qui suivent, sans déplacement. Et si le souci nécessite vraiment une présence physique, on intervient sur site sous 4h. C'est cet ordre-là qui compte : d'abord la réactivité immédiate à distance, puis le déplacement si c'est nécessaire.</p>
+      <p>Le reste du temps, on est en arrière-plan : supervision continue, sauvegardes vérifiées, correctifs déployés, et un rapport clair. Un gérant de PME à Bourg-en-Bresse n'a pas à devenir administrateur système pour dormir tranquille. C'est justement notre métier.</p>
+      <a class="a-link" href="../../maintenance-informatique/infogerance-pme/index.html">Notre contrat d'infogérance pour PME<span class="material-symbols-outlined">arrow_forward</span></a>
+
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>C'est quoi la différence entre maintenance préventive et curative ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">La maintenance curative répare après la panne : la machine est déjà arrêtée quand on intervient. La maintenance préventive anticipe : on surveille l'état du matériel et des logiciels, on teste les sauvegardes, on déploie les correctifs et on remplace ce qui va lâcher avant que ça lâche. Le curatif traite les symptômes une fois qu'ils font mal, le préventif s'occupe des causes tant qu'elles sont encore silencieuses.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Ça sert vraiment si mon informatique marche bien ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Oui, et c'est justement quand tout marche que c'est le bon moment. Une machine qui marche bien peut avoir un disque en fin de vie, une sauvegarde corrompue ou un système sans correctif de sécurité depuis des mois. Rien de visible pour l'utilisateur, jusqu'au jour de l'arrêt. Le préventif sert à voir ces problèmes pendant qu'ils sont encore réparables au calme.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Pourquoi tester les sauvegardes, si elles se font toutes seules ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Parce qu'une sauvegarde automatique peut échouer en silence : fichier corrompu, disque de destination plein, données incomplètes. Tant qu'on n'a pas restauré la sauvegarde sur un environnement de contrôle pour vérifier qu'elle repart, on ne sait pas si elle vaut quelque chose. Une sauvegarde jamais testée est une supposition, pas une garantie.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien coûte une heure d'arrêt pour une PME ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Ça dépend énormément de votre activité, donc méfiez-vous des chiffres uniques. Des sources françaises citent une fourchette de 500 à 5 000 € par heure pour une PME, à prendre comme un ordre de grandeur externe. Le vrai coût pour vous dépend de ce que vos équipes ne peuvent plus faire pendant l'arrêt, et c'est ce calcul-là qu'il faut faire, pas recopier un chiffre générique.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Les mises à jour, sécurité ou juste confort ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">De la sécurité. Une grande partie des cyberattaques n'exploite pas une faille exotique mais une faille déjà connue et déjà corrigée, sur une machine où le correctif n'a jamais été installé. Déployer les mises à jour à temps, c'est fermer des portes que les attaquants savent déjà ouvrir. Un rythme mensuel couvre l'essentiel.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien de temps dure un serveur de PME ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">En moyenne cinq à six ans selon les sources du secteur (un baromètre cite autour de 5,4 ans), et un suivi proactif peut l'étirer jusqu'à sept à neuf ans. Les SSD tiennent plutôt cinq à dix ans, mais se mesurent surtout en volume de données écrites. La fin de support d'un système d'exploitation force souvent le renouvellement avant l'usure elle-même. Le préventif sert à planifier ce remplacement au calme.</div>
+        </details>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Le rôle des failles connues non corrigées dans les attaques contre les PME est documenté par l'<a href="https://cyber.gouv.fr/publications/panorama-de-la-cybermenace-2024" target="_blank" rel="noopener noreferrer" style="color:#F57C00;font-weight:700;text-decoration:none">ANSSI</a> ; le coût des interruptions est étudié chaque année par l'<a href="https://uptimeinstitute.com/resources/research-and-reports/annual-outage-analysis-2025" target="_blank" rel="noopener noreferrer" style="color:#F57C00;font-weight:700;text-decoration:none">Uptime Institute</a>. Les fourchettes de coût et les durées de vie du matériel citées ici sont des ordres de grandeur sectoriels, pas des mesures propres à DCB.</p>
+    </div>
+
+    <!-- Article end CTA -->
+    <div class="a-end-cta">
+      <h3>Une informatique qui ne vous lâche pas ?</h3>
+      <p>On supervise votre parc en arrière-plan, on teste vos sauvegardes et on intervient à distance dès qu'un souci pointe.</p>
+      <div class="a-end-actions">
+        <a class="a-btn-pri" href="../../contact/index.html">Obtenir un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <a class="a-btn-sec" href="../../maintenance-informatique/infogerance-pme/index.html">Voir notre infogérance PME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 : A LIRE AUSSI -->
+  <section class="sec s1">
+    <p class="a-related-title">À lire aussi</p>
+    <ul class="a-related-list">
+      <li>
+        <a href="../../maintenance-informatique/infogerance-pme/index.html">
+          <div class="a-cat">Informatique</div>
+          <div class="a-title">Notre contrat d'infogérance pour PME</div>
+        </a>
+      </li>
+      <li>
+        <a href="../../maintenance-informatique/index.html">
+          <div class="a-cat">Informatique</div>
+          <div class="a-title">Nos services de maintenance informatique</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S5 : CTA FINAL v3 mobile "Le Seuil" + date E-E-A-T integree
+       NOTE : sections Conseil expert + Question urgente tel volontairement
+       SUPPRIMEES du mobile (doublons semantiques de l'article-end CTA et
+       du FAB tel sticky). Brief impeccable shape : template article mobile-first
+       = 5 sections (Hero / Image / Body / A lire aussi / CTA Final). -->
+  <section class="m-cta-final" style="--accent:#F57C00">
+    <span class="topbar" aria-hidden="true"></span>
+    <h3>Une informatique qui ne vous lâche pas ?</h3>
+    <p>Nos conseillers vous rappellent sous 24h pour mettre votre parc sous surveillance préventive.</p>
+    <a class="btn btn-pri" href="../../contact/index.html">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <span class="dpx-divider">ou appelez-nous</span>
+    <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+    <p class="m-updated">Mis à jour le <time datetime="2026-07-06">6 juillet 2026</time></p>
+    <span class="bottomark" aria-hidden="true"></span>
+  </section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<style>
+  /* CSS inline supplementaire pour .m-cta-final (pattern shared avec autres pages) */
+  @media(max-width:640px) {
+    .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
+    .m-cta-final .topbar{display:block;width:80px;height:3px;background:#F57C00;margin:0 0 22px;border-radius:2px}
+    .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
+    .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
+    .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+    .m-cta-final .btn-pri{display:inline-flex;align-items:center;gap:8px;background:#F57C00;color:#fff;padding:14px 22px;border-radius:14px;font-family:'Sora',sans-serif;font-weight:700;font-size:14.5px;text-decoration:none}
+    .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
+    .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
+    .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:#F57C00}
+    .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
+  }
+</style>
+
+<script src="../../js/scripts.js?v=38"></script>
+</body>
+</html>
+</content>
+</invoke>
+
+

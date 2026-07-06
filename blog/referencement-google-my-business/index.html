@@ -1,0 +1,735 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Référencement Google My Business : le guide pour être vu | DCB</title>
+<meta name="description" content="Bien référencer votre fiche Google My Business : catégorie, avis, nom, photos. Le guide concret de DCB pour être vu localement sans payer de pub.">
+<link rel="canonical" href="https://dcb-technologies.fr/blog/referencement-google-my-business/">
+<meta property="og:title" content="Référencement Google My Business : le guide pour être vu | DCB Technologies">
+<meta property="og:description" content="Bien référencer votre fiche Google My Business : catégorie, avis, nom, photos. Le guide concret de DCB pour être vu localement sans payer de pub.">
+<meta property="og:url" content="https://dcb-technologies.fr/blog/referencement-google-my-business/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/creation-site-webshop-commerce-qps-macbook.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Référencement Google My Business : le guide pour être vu">
+<meta name="twitter:description" content="Catégorie, avis, nom, photos : le guide concret pour sortir dans le pack local Google sans payer de pub.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/creation-site-webshop-commerce-qps-macbook.webp">
+<link rel="preload" href="../../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/style.css?v=18">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+  ═══════════════════════════════════════════════════════════════ */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+
+    /* Hero override article */
+    [data-metier="article-blog"] .hero {
+      background: linear-gradient(135deg, #0B3D91 0%, #072B6B 100%);
+      color: #fff;
+      padding: 78px 18px 32px;
+    }
+    [data-metier="article-blog"] .hero .a-bread {
+      font-size: 12px; color: rgba(255,255,255,0.55); margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .hero .a-bread a { color: rgba(255,255,255,0.55); text-decoration: none }
+    [data-metier="article-blog"] .hero .a-bread .sep { margin: 0 6px }
+    [data-metier="article-blog"] .hero .a-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 16px;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-tag {
+      display: inline-block; padding: 5px 12px; border-radius: 8px;
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); color: #fff;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info .material-symbols-outlined { font-size: 14px }
+    [data-metier="article-blog"] .hero h1 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.18;
+      color: #fff; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .hero .a-author {
+      font-size: 12.5px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-author strong { color: rgba(255,255,255,0.85); font-weight: 600 }
+
+    /* Featured image */
+    [data-metier="article-blog"] .a-fimg {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      display: block; border-radius: 0;
+    }
+
+    /* Lede (intro) */
+    [data-metier="article-blog"] .a-lede {
+      font-size: 16.5px; line-height: 1.65; color: #334155; font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    /* Article body H2 + paragraphes */
+    [data-metier="article-blog"] .a-body h2 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.22;
+      color: #0B3D91; letter-spacing: -0.01em; margin: 28px 0 12px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .a-body p {
+      font-size: 14.5px; line-height: 1.7; color: #4A5568; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-body .a-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 700; color: #F57C00; text-decoration: none;
+      margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-body .a-link .material-symbols-outlined { font-size: 16px }
+
+    /* Callout 'Le point cle' */
+    [data-metier="article-blog"] .a-callout {
+      background: rgba(11,61,145,0.06); border-radius: 14px; padding: 18px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-callout-head {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: #0B3D91;
+      margin: 0 0 8px;
+    }
+    [data-metier="article-blog"] .a-callout-head .material-symbols-outlined { font-size: 18px; color: #F57C00 }
+    [data-metier="article-blog"] .a-callout p {
+      font-size: 14px; line-height: 1.6; color: #0B3D91; margin: 0;
+    }
+
+    /* Bento 2 boxes (Gain de temps / Fidelisation) : stack vertical mobile */
+    [data-metier="article-blog"] .a-bento {
+      display: flex; flex-direction: column; gap: 10px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box {
+      background: #F8F9FA; border-radius: 12px; padding: 16px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h.b1 { color: #0B3D91 }
+    [data-metier="article-blog"] .a-bento .a-box-h.b2 { color: #F57C00 }
+    [data-metier="article-blog"] .a-bento .a-box p {
+      font-size: 13.5px; line-height: 1.55; color: #4A5568; margin: 0;
+    }
+
+    /* Article CTA (fin article) */
+    [data-metier="article-blog"] .a-end-cta {
+      background: #F8F9FA; border-radius: 16px; padding: 24px 20px;
+      text-align: center; margin: 28px 0 0;
+    }
+    [data-metier="article-blog"] .a-end-cta h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; color: #0B3D91;
+      line-height: 1.2; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-end-cta p {
+      font-size: 14px; line-height: 1.55; color: #4A5568; margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-end-actions {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-pri {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-sec {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #E5E9F0;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* A lire aussi : pattern type liste */
+    [data-metier="article-blog"] .a-related-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-related-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+    }
+    [data-metier="article-blog"] .a-related-list li {
+      padding: 14px 0; border-top: 1px solid rgba(11,61,145,0.08);
+    }
+    [data-metier="article-blog"] .a-related-list li:last-child { border-bottom: 1px solid rgba(11,61,145,0.08) }
+    [data-metier="article-blog"] .a-related-list a { display: block; text-decoration: none; color: inherit }
+    [data-metier="article-blog"] .a-related-list .a-cat {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #94A3B8; margin: 0 0 4px;
+    }
+    [data-metier="article-blog"] .a-related-list .a-title {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3;
+      color: #0B3D91; margin: 0;
+    }
+
+    /* Conseil expert (sidebar mobile) */
+    [data-metier="article-blog"] .a-expert {
+      background: #0B3D91; color: #fff; border-radius: 18px; padding: 24px 20px;
+    }
+    [data-metier="article-blog"] .a-expert-eb {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-expert h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+      color: #fff; margin: 0 0 12px;
+    }
+    [data-metier="article-blog"] .a-expert p {
+      font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.72); margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-expert .a-expert-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* Phone block (sidebar mobile) */
+    [data-metier="article-blog"] .a-phone {
+      background: #F8F9FA; border-radius: 16px; padding: 22px 20px;
+    }
+    [data-metier="article-blog"] .a-phone-lb {
+      font-size: 12.5px; font-weight: 700; color: #0B3D91; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-phone-num {
+      display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+      color: #0B3D91; margin: 0 0 16px; text-decoration: none; letter-spacing: -0.01em;
+    }
+    [data-metier="article-blog"] .a-phone-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 44px; padding: 12px 18px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #0B3D91;
+      font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Référencement Google My Business : le guide pour sortir sur Google sans payer de pub",
+  "description": "Bien référencer votre fiche Google My Business : catégorie, avis, nom, photos. Le guide concret de DCB pour être vu localement sans payer de pub.",
+  "author": { "@type": "Person", "name": "Nathanaël Da Costa", "url": "https://dcb-technologies.fr/notre-adn/", "worksFor": { "@type": "Organization", "name": "DCB Technologies" } },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DCB Technologies",
+    "logo": { "@type": "ImageObject", "url": "https://dcb-technologies.fr/assets/logo-dcb.svg" }
+  },
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "articleSection": "Visibilité web",
+  "inLanguage": "fr-FR",
+  "keywords": "référencement google my business, google business profile, référencement local, pack local",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dcb-technologies.fr/blog/referencement-google-my-business/" },
+  "image": "https://dcb-technologies.fr/assets/creation-site-webshop-commerce-qps-macbook.webp"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Google My Business et Google Business Profile, c'est la même chose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Google a renommé « Google My Business » en « Google Business Profile » en 2022. L'outil et sa fiche sont les mêmes, seul le nom a changé. Beaucoup de commerçants et de recherches continuent d'utiliser l'ancien nom, les deux désignent la fiche gratuite qui affiche votre établissement sur Google et Google Maps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps avant que ma fiche remonte dans le Top 3 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il n'y a pas de délai garanti, et personne d'honnête ne vous en promettra un. Le classement dépend de la concurrence sur votre secteur, de votre catégorie, de vos avis et de la cohérence de vos informations. Une fiche bien réglée et alimentée régulièrement en avis récents progresse au fil des semaines. La distance entre vous et le chercheur reste un facteur que vous ne maîtrisez pas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de catégories dois-je renseigner sur ma fiche ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une catégorie principale, la plus précise possible, c'est le réglage prioritaire. Ajoutez ensuite des catégories secondaires uniquement si elles décrivent vraiment votre activité. La plupart des fiches en utilisent trois à cinq au total. Inutile d'aller jusqu'aux neuf secondaires autorisées si elles ne correspondent pas à ce que vous faites vraiment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je ajouter ma ville dans le nom de ma fiche pour mieux ressortir ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, c'est risqué. Le nom de la fiche doit être exactement celui de votre établissement dans la réalité. Ajouter une ville ou des mots-clés qui ne figurent pas sur votre enseigne est une infraction aux règles de Google et un motif de suspension. Votre visibilité locale se gagne par la catégorie, les avis et la cohérence de vos informations, pas par le nom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il répondre aux avis négatifs ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, et c'est même là que ça se joue. Répondre calmement à un avis négatif montre au prochain lecteur que vous êtes présent et que vous prenez les remarques au sérieux. C'est souvent votre réponse, plus que l'avis lui-même, qui rassure le client suivant. Répondez aussi aux avis positifs : un simple merci entretient la fiche et signale à Google qu'elle est active."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ma fiche a été suspendue, que faire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "D'abord, corriger ce qui a déclenché la suspension : remettre le vrai nom si vous l'aviez modifié, aligner l'adresse et la catégorie sur le reste de vos informations. Ensuite seulement, déposer une demande de rétablissement auprès de Google avec des preuves (photo de l'enseigne, justificatif d'adresse). Les dossiers où l'infraction est réellement corrigée reviennent souvent en quelques jours à deux semaines."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dcb-technologies.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dcb-technologies.fr/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Référencement Google My Business : le guide pour être vu", "item": "https://dcb-technologies.fr/blog/referencement-google-my-business/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DESKTOP SHELL (visible >640px)
+═══════════════════════════════════════════════════════════════ -->
+<div class="d-shell">
+<div id="dcb-nav"></div>
+
+<!-- ── 1. HEADER ────────────────────────────────────────────── -->
+<header class="pt-[76px] bg-gradient-to-br from-[#0B3D91] to-[#072B6B] relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B] to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm text-white/50">
+      <a href="../../blog/index.html" class="text-white/50 hover:text-white transition-colors no-underline">Blog</a>
+      <span class="mx-2">›</span>
+      <span class="text-white/70">Google Business Profile</span>
+    </nav>
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+      <span class="bg-white/10 text-white px-4 py-1.5 rounded-lg text-[0.6875rem] font-bold uppercase tracking-widest border border-white/20">Web</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">calendar_today</span>6 Juillet 2026</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">schedule</span>7 min de lecture</span>
+    </div>
+    <h1 class="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-4xl mb-4">Référencement Google My Business&nbsp;: le guide pour sortir sur Google sans payer de pub</h1>
+    <p class="text-white/50 text-sm">Par <strong class="text-white/70 font-semibold">Nathanaël Da Costa, DCB Technologies</strong></p>
+  </div>
+</header>
+
+<main>
+
+<!-- ── 2. ARTICLE + SIDEBAR ────────────────────────────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+    <!-- Article (8 cols) -->
+    <article class="lg:col-span-8">
+      <img src="../../assets/creation-site-webshop-commerce-qps-macbook.webp" alt="Fiche Google Business Profile et visibilité locale d'un commerce" width="800" height="450" loading="eager" fetchpriority="high" decoding="async" class="w-full aspect-[16/9] object-cover rounded-xl mb-10">
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-6">Un client tape « boulangerie Mâcon » sur son téléphone, en pleine rue, à 9h du matin. Google lui renvoie trois adresses sur une carte, avec les étoiles, les horaires, le bouton « Itinéraire ». Il va pousser la porte de l'une des trois. Rarement la quatrième, qu'il faut aller chercher en scrollant. Cette petite carte, c'est le pack local, et pour beaucoup de commerces de proximité c'est devenu la première vitrine, avant même le site internet.</p>
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-6">Le bon référencement Google My Business (le service s'appelle aujourd'hui Google Business Profile, mais tout le monde dit encore « Google My Business ») consiste justement à faire partie de ces trois adresses. Sans acheter de publicité. La fiche est gratuite, la visibilité qu'elle apporte aussi. Encore faut-il la remplir et l'entretenir comme il faut, parce que Google ne classe pas les fiches au hasard.</p>
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-12">On installe et on dépanne des commerçants et des PME entre Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Villefranche-sur-Saône et Roanne, et la question de la fiche Google revient sans arrêt. Voici, concrètement, ce qui fait qu'une fiche sort ou reste invisible, et les quelques erreurs qui peuvent faire suspendre la vôtre du jour au lendemain.</p>
+
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Le référencement Google My Business (aujourd'hui Google Business Profile) désigne l'ensemble des réglages (catégorie, avis, photos, cohérence des informations) qui permettent à une fiche d'établissement d'apparaître dans le pack local de Google, gratuitement, sans publicité payante.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Google My Business : comment Google choisit qui apparaît dans le Top 3 local</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">Google le dit lui-même dans son aide : le classement local repose sur trois signaux.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:16px;overflow:hidden;margin:0 0 32px">
+        <table style="width:100%;border-collapse:collapse;text-align:left">
+          <thead>
+            <tr style="background:#F8F9FA">
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91">Signal</th>
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91">Ce qu'il mesure</th>
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F57C00">Ce que vous pouvez faire</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px">
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Pertinence</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">À quel point votre fiche colle à la recherche</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Bonne catégorie, infos complètes</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Distance</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">La proximité entre vous et le chercheur</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Rien : vous êtes là où vous êtes</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2;background:#FFF6EC">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;white-space:nowrap;line-height:1.35">Proéminence</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Votre notoriété (avis, mentions, cohérence)</td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Avis réguliers, informations cohérentes partout</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">La distance, vous ne la changez pas : votre boutique est là où elle est. La pertinence et la proéminence, en revanche, se travaillent. C'est là que tout se joue, et c'est ce que couvre la suite.</p>
+
+      <div class="bg-[#E6EEF9] p-8 rounded-xl mb-12">
+        <h4 class="font-sora font-bold text-[#0B3D91] mb-3 flex items-center gap-2"><span class="material-symbols-outlined ms-fill text-[#F57C00]">lightbulb</span>Le point clé</h4>
+        <p class="text-[#0B3D91] leading-[1.7]">Vous n'avez pas la main sur la distance. Concentrez vos efforts sur les deux leviers que vous contrôlez : une fiche pertinente (catégorie, infos, description) et une fiche connue (avis, mentions, cohérence).</p>
+      </div>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">La catégorie principale, le réglage qui change tout</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Si vous ne deviez soigner qu'un seul champ de votre fiche, ce serait celui-là. La catégorie principale est le premier facteur de classement local. Elle dit à Google ce que vous êtes, et donc sur quelles recherches vous êtes éligible.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-10">Le piège est brutal : si votre catégorie principale ne correspond pas à la requête, votre fiche n'apparaît même pas sur cette recherche, quel que soit votre nombre d'avis. Un salon de coiffure de Chalon rangé par erreur dans « salon de beauté » ratera une partie des recherches « coiffeur Chalon ». Cinq étoiles ou pas.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">Choisir la catégorie la plus précise</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">La règle est simple : prenez toujours la catégorie la plus spécifique disponible. « Boulangerie » plutôt que « magasin d'alimentation ». « Restaurant italien » plutôt que « restaurant ». Plus c'est précis, mieux Google comprend votre activité et mieux il vous positionne face aux recherches ciblées.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">Les catégories secondaires</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Vous avez droit à une catégorie principale et jusqu'à neuf catégories secondaires. Inutile de toutes les remplir : la plupart des fiches en utilisent trois à cinq, et c'est un bon repère. Ajoutez seulement celles qui décrivent vraiment ce que vous faites. Une boulangerie qui vend aussi des sandwichs et du café peut ajouter « sandwicherie » ou « salon de thé ». Une catégorie secondaire qui n'a rien à voir avec votre activité n'aide pas et brouille le message envoyé à Google.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Le nom de votre établissement : n'y touchez pas trop</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Voilà une erreur qu'on voit souvent, et elle est dangereuse. Le nom sur votre fiche doit être exactement celui de votre établissement dans la vraie vie : celui de l'enseigne, des papiers, du site. Rien de plus.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">La tentation est de bourrer le nom de mots-clés pour remonter : « Boulangerie Dupont, meilleure boulangerie bio artisanale de Mâcon ». C'est une infraction directe aux règles de Google, et un motif de suspension. En 2024, Google a supprimé des milliers de fiches pour nom trompeur. En pratique, Google commence souvent par un avertissement, mais la suspension reste possible, et une fiche suspendue, c'est votre visibilité qui disparaît d'un coup.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Si votre enseigne s'appelle « Le Fournil de Mâcon », votre fiche s'appelle « Le Fournil de Mâcon ». Le référencement, vous le gagnez par la catégorie et les avis, pas en trichant sur le nom.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Les avis, le carburant de votre visibilité</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-10">Les avis sont le facteur le plus influent, à la fois pour votre classement et pour la décision du client qui hésite entre vous et le concurrent d'à côté. Un bon paquet d'avis récents et bien notés fait deux choses en même temps : il rassure Google sur votre proéminence, et il rassure l'humain qui lit avant de se déplacer.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">La fraîcheur compte plus que le nombre</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Détail que beaucoup ratent : Google regarde la fraîcheur des avis. Un flux régulier de nouveaux avis pèse plus qu'un gros tas récolté il y a trois ans, puis plus rien. Cinquante avis étalés sur l'année valent mieux que cent avis tous datés du même mois de 2023. Prenez l'habitude d'en demander, simplement, au bon moment : un client content à qui vous rendez la monnaie, un rendez-vous qui s'est bien passé. La régularité, c'est le signal.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-10">Un point à ne jamais franchir : les faux avis. Acheter des avis ou se faire mousser par des comptes bidons peut désormais entraîner une suspension immédiate de la fiche, pas seulement la suppression des faux. Le risque n'en vaut pas la chandelle.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">Répondez à tout, même aux mauvais</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Répondre aux avis, tous les avis, positifs comme négatifs, est une bonne pratique reconnue. Un merci sous un avis cinq étoiles, ça coûte trente secondes. Une réponse posée sous un avis un peu sec montre au prochain lecteur que vous êtes là et que vous prenez les choses au sérieux. C'est souvent la réponse à l'avis négatif, plus que l'avis lui-même, qui convainc le suivant.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Si vous n'avez ni le temps ni l'envie de gérer tout ça, c'est typiquement le genre de travail qu'on peut confier à un prestataire local qui pilote la fiche pour vous, comme le fait notre <a href="../../visibilite-web/seo-sea-local/index.html" class="text-[#F57C00] font-bold no-underline hover:underline">offre de référencement local</a>. Mais même délégué, le principe reste le même : de la régularité et de l'honnêteté.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Photos et publications : montrez que la boutique est vivante</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Une fiche qui bouge est une fiche que Google considère comme active. Deux gestes simples envoient ce signal.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Les photos d'abord. Ajoutez-en régulièrement : la devanture, l'intérieur, les produits, l'équipe. Un client se projette bien mieux avec des vraies photos qu'avec une fiche vide, et Google note l'activité.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Les publications (les « posts » Google) ensuite. La fiche permet de publier des petites actualités : une nouveauté, une promo, un horaire spécial pour un jour férié. Publier régulièrement, idéalement chaque semaine, signale à Google que l'établissement tourne. Un restaurateur de Villefranche qui poste son menu du midi chaque semaine entretient sa fiche sans même y penser.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Rien de compliqué là-dedans. C'est juste une habitude à prendre, cinq minutes par semaine.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">NAP, la cohérence qui vous protège d'une suspension</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">NAP, c'est Nom, Adresse, Téléphone. La règle tient en une phrase : ces trois informations doivent être rigoureusement identiques partout où votre entreprise apparaît. Sur la fiche Google, sur votre site, sur les annuaires, sur les Pages Jaunes, partout.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Pourquoi ça compte autant ? Parce que cette cohérence est une des bases de la proéminence. Google recoupe les traces de votre entreprise sur le web. Si votre numéro de téléphone est écrit de trois façons différentes selon les sites, ou si votre adresse a changé quelque part mais pas ailleurs, le signal se brouille. Au mieux vous perdez du classement, au pire une incohérence marquée d'adresse ou de catégorie peut déclencher une revue et, dans les cas sérieux, une suspension.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Le geste utile : notez quelque part la forme exacte de votre nom, adresse et téléphone, et servez-vous-en comme référence chaque fois que vous inscrivez votre entreprise sur un nouveau site.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Fiche suspendue : d'où ça vient et comment revenir</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-4">La suspension, c'est la crainte numéro un, et elle est légitime : une fiche suspendue disparaît des résultats. En 2025 et 2026, trois causes reviennent le plus souvent.</p>
+      <ul class="list-disc pl-6 mb-6 text-[#4A5568] leading-[1.8] space-y-2">
+        <li>Un nom bourré de mots-clés (le fameux « meilleure boulangerie bio de Mâcon » du chapitre plus haut).</li>
+        <li>Une adresse ou une catégorie incohérente avec les autres traces de l'entreprise sur le web.</li>
+        <li>Une rafale de modifications rapides sur la fiche, qui déclenche une revue automatique de Google.</li>
+      </ul>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Ce dernier point surprend souvent : si vous changez le nom, l'adresse, la catégorie et les horaires tous en cinq minutes, Google peut interpréter ça comme suspect. Espacez les grosses modifications.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Si votre fiche est suspendue, tout n'est pas perdu. La marche à suivre : corriger l'infraction d'abord (remettre le vrai nom, aligner l'adresse), puis déposer une demande de rétablissement auprès de Google avec des preuves à l'appui (photo de l'enseigne, justificatif d'adresse, extrait Kbis). Les dossiers propres, où l'infraction a été corrigée, reviennent généralement en quelques jours à deux semaines. La condition, c'est d'avoir réellement réglé le problème avant de faire appel : redéposer sans rien changer ne mène nulle part.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-8">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3 mb-12">
+        <details class="faq-item"><summary>Google My Business et Google Business Profile, c'est la même chose ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Google a renommé « Google My Business » en « Google Business Profile » en 2022. L'outil et sa fiche sont les mêmes, seul le nom a changé. Beaucoup de commerçants et de recherches continuent d'utiliser l'ancien nom, les deux désignent la fiche gratuite qui affiche votre établissement sur Google et Google Maps.</div></details>
+        <details class="faq-item"><summary>Combien de temps avant que ma fiche remonte dans le Top 3 ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Il n'y a pas de délai garanti, et personne d'honnête ne vous en promettra un. Le classement dépend de la concurrence sur votre secteur, de votre catégorie, de vos avis et de la cohérence de vos informations. Une fiche bien réglée et alimentée régulièrement en avis récents progresse au fil des semaines. La distance entre vous et le chercheur reste un facteur que vous ne maîtrisez pas.</div></details>
+        <details class="faq-item"><summary>Combien de catégories dois-je renseigner sur ma fiche ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Une catégorie principale, la plus précise possible, c'est le réglage prioritaire. Ajoutez ensuite des catégories secondaires uniquement si elles décrivent vraiment votre activité. La plupart des fiches en utilisent trois à cinq au total. Inutile d'aller jusqu'aux neuf secondaires autorisées si elles ne correspondent pas à ce que vous faites vraiment.</div></details>
+        <details class="faq-item"><summary>Puis-je ajouter ma ville dans le nom de ma fiche pour mieux ressortir ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Non, c'est risqué. Le nom de la fiche doit être exactement celui de votre établissement dans la réalité. Ajouter une ville ou des mots-clés qui ne figurent pas sur votre enseigne est une infraction aux règles de Google et un motif de suspension. Votre visibilité locale se gagne par la catégorie, les avis et la cohérence de vos informations, pas par le nom.</div></details>
+        <details class="faq-item"><summary>Faut-il répondre aux avis négatifs ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, et c'est même là que ça se joue. Répondre calmement à un avis négatif montre au prochain lecteur que vous êtes présent et que vous prenez les remarques au sérieux. C'est souvent votre réponse, plus que l'avis lui-même, qui rassure le client suivant. Répondez aussi aux avis positifs : un simple merci entretient la fiche et signale à Google qu'elle est active.</div></details>
+        <details class="faq-item"><summary>Ma fiche a été suspendue, que faire ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">D'abord, corriger ce qui a déclenché la suspension : remettre le vrai nom si vous l'aviez modifié, aligner l'adresse et la catégorie sur le reste de vos informations. Ensuite seulement, déposer une demande de rétablissement auprès de Google avec des preuves (photo de l'enseigne, justificatif d'adresse). Les dossiers où l'infraction est réellement corrigée reviennent souvent en quelques jours à deux semaines.</div></details>
+      </div>
+
+      <!-- Sources E-E-A-T -->
+      <div class="bg-[#F8F9FA] p-8 rounded-xl mb-12">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B3D91] mb-4">Sources</p>
+        <p class="text-[0.9375rem] text-[#4A5568] leading-[1.7]">Facteurs de classement local d'après l'aide officielle de <a href="https://support.google.com/business/answer/7091?hl=fr" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">Google Business Profile</a>. Poids des avis dans la décision d'achat des Français d'après l'étude <a href="https://www.ifop.com/publication/limpact-de-le-reputation-sur-le-processus-dachat/" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">IFOP sur l'impact de l'e-réputation sur le processus d'achat</a>. Bonnes pratiques données à titre indicatif.</p>
+      </div>
+
+      <!-- Article CTA -->
+      <div class="bg-[#F8F9FA] p-10 md:p-12 rounded-xl text-center">
+        <h3 class="font-sora text-2xl font-bold text-[#0B3D91] mb-4">Envie de sortir sur Google localement ?</h3>
+        <p class="text-[#4A5568] mb-8">Nos experts optimisent votre fiche Google Business Profile et votre référencement local, sans jargon et sans promesse en l'air.</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="../../contact/index.html" class="btn btn--primary">Obtenir un devis gratuit</a>
+          <a href="../../visibilite-web/seo-sea-local/index.html" class="btn btn--outline-primary">Voir notre offre SEO local</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sidebar (4 cols) -->
+    <aside class="lg:col-span-4 sticky top-24 flex flex-col gap-8">
+
+      <!-- A lire aussi -->
+      <div>
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] border-b border-black/10 pb-3 mb-6">A lire aussi</h4>
+        <div class="flex flex-col gap-6">
+          <a href="../../visibilite-web/seo-sea-local/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Web</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Notre offre de référencement local (SEO/SEA)</p>
+          </a>
+          <a href="../../visibilite-web/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Web</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Toute notre offre visibilité web</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA sidebar -->
+      <div class="bg-[#0B3D91] p-8 rounded-xl text-white">
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block mb-3">Conseil expert</span>
+        <h3 class="font-sora text-[1.375rem] font-bold mb-4 leading-[1.3]">Votre fiche Google est-elle vraiment optimisée ?</h3>
+        <p class="text-white/70 text-[0.9375rem] leading-relaxed mb-8">On vérifie votre catégorie, vos avis et votre cohérence NAP, et on vous dit précisément quoi corriger. Gratuitement.</p>
+        <a href="../../contact/index.html" class="btn btn--primary w-full justify-center">En profiter maintenant</a>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-[#F8F9FA] p-6 rounded-xl">
+        <p class="text-sm font-bold text-[#0B3D91] mb-2">Une question urgente ?</p>
+        <a href="tel:0482530510" class="font-sora text-[1.375rem] font-bold text-[#0B3D91] block mb-6 no-underline">04 82 53 05 10</a>
+        <a href="../../contact/index.html" class="btn btn--outline-primary w-full justify-center text-[0.9375rem]">Prendre contact</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ── 3. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;background:#F8F9FA;--accent:#F57C00;--accent-dark:#E06E00">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Envie de sortir sur Google localement ?</h2>
+        <p class="d-lede">Nos conseillers vous rappellent sous 24h pour auditer votre fiche Google Business Profile.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <a href="../index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour au blog</a>
+      <time class="d-updated" datetime="2026-07-06">Mis à jour le 6 juillet 2026</time>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="dcb-footer"></div>
+
+</div><!-- /d-shell -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+     Pattern mobile-first : hero compact > image > lede > body > CTA fin > related > expert > tel > cta-final
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="article-blog">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+  <!-- S1 : HERO COMPACT (fond bleu sombre comme desktop) -->
+  <section class="hero">
+    <nav class="a-bread" aria-label="Fil d'Ariane">
+      <a href="../../blog/index.html">Blog</a><span class="sep">›</span><span>Google Business Profile</span>
+    </nav>
+    <div class="a-meta">
+      <span class="a-tag">Web</span>
+      <span class="a-info"><span class="material-symbols-outlined">calendar_today</span>6 Juillet 2026</span>
+      <span class="a-info"><span class="material-symbols-outlined">schedule</span>7 min de lecture</span>
+    </div>
+    <h1>Référencement Google My Business&nbsp;: le guide pour sortir sur Google sans payer de pub</h1>
+    <p class="a-author">Par <strong>Nathanaël Da Costa, DCB Technologies</strong></p>
+  </section>
+
+  <!-- S2 : IMAGE FEATURED -->
+  <img class="a-fimg" src="../../assets/creation-site-webshop-commerce-qps-macbook.webp" alt="Fiche Google Business Profile et visibilité locale d'un commerce" width="800" height="450" loading="eager" fetchpriority="high" decoding="async">
+
+  <!-- S3 : LEDE + BODY ARTICLE -->
+  <section class="sec">
+    <p class="a-lede">Un client tape « boulangerie Mâcon » sur son téléphone, en pleine rue, à 9h du matin. Google lui renvoie trois adresses sur une carte, avec les étoiles, les horaires, le bouton « Itinéraire ». Il va pousser la porte de l'une des trois. Rarement la quatrième, qu'il faut aller chercher en scrollant.</p>
+
+    <div class="a-body">
+      <p>Cette petite carte, c'est le pack local, et pour beaucoup de commerces de proximité c'est devenu la première vitrine, avant même le site internet. Le bon référencement Google My Business (le service s'appelle aujourd'hui Google Business Profile, mais tout le monde dit encore « Google My Business ») consiste justement à faire partie de ces trois adresses, sans acheter de publicité.</p>
+      <p>On installe et on dépanne des commerçants et des PME entre Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Villefranche-sur-Saône et Roanne, et la question de la fiche Google revient sans arrêt. Voici, concrètement, ce qui fait qu'une fiche sort ou reste invisible, et les quelques erreurs qui peuvent faire suspendre la vôtre du jour au lendemain.</p>
+      <p>Le référencement Google My Business (aujourd'hui Google Business Profile) désigne l'ensemble des réglages (catégorie, avis, photos, cohérence des informations) qui permettent à une fiche d'établissement d'apparaître dans le pack local de Google, gratuitement, sans publicité payante.</p>
+
+      <h2>Google My Business : comment Google choisit qui apparaît dans le Top 3 local</h2>
+      <p>Google le dit lui-même dans son aide : le classement local repose sur trois signaux.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:14px;overflow:hidden;margin:18px 0 24px">
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Pertinence</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Mesure : à quel point votre fiche colle à la recherche · <strong style="color:#F57C00">À faire</strong> : bonne catégorie, infos complètes</p>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Distance</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Mesure : la proximité entre vous et le chercheur · <strong style="color:#F57C00">À faire</strong> : rien, vous êtes là où vous êtes</p>
+        </div>
+        <div style="padding:14px 16px;background:#FFF6EC">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 3px">Proéminence</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Mesure : votre notoriété (avis, mentions, cohérence) · <strong style="color:#F57C00">À faire</strong> : avis réguliers, informations cohérentes partout</p>
+        </div>
+      </div>
+      <p>La distance, vous ne la changez pas : votre boutique est là où elle est. La pertinence et la proéminence, en revanche, se travaillent. C'est là que tout se joue.</p>
+
+      <div class="a-callout">
+        <div class="a-callout-head"><span class="material-symbols-outlined ms-fill">lightbulb</span>Le point clé</div>
+        <p>Vous n'avez pas la main sur la distance. Concentrez vos efforts sur les deux leviers que vous contrôlez : une fiche pertinente (catégorie, infos, description) et une fiche connue (avis, mentions, cohérence).</p>
+      </div>
+
+      <h2>La catégorie principale, le réglage qui change tout</h2>
+      <p>Si vous ne deviez soigner qu'un seul champ de votre fiche, ce serait celui-là. La catégorie principale est le premier facteur de classement local. Elle dit à Google ce que vous êtes, et donc sur quelles recherches vous êtes éligible.</p>
+      <p>Le piège est brutal : si votre catégorie principale ne correspond pas à la requête, votre fiche n'apparaît même pas sur cette recherche, quel que soit votre nombre d'avis. Un salon de coiffure de Chalon rangé par erreur dans « salon de beauté » ratera une partie des recherches « coiffeur Chalon ». Cinq étoiles ou pas.</p>
+      <p><strong>Choisir la catégorie la plus précise.</strong> La règle est simple : prenez toujours la catégorie la plus spécifique disponible. « Boulangerie » plutôt que « magasin d'alimentation ». « Restaurant italien » plutôt que « restaurant ». Plus c'est précis, mieux Google comprend votre activité et mieux il vous positionne face aux recherches ciblées.</p>
+      <p><strong>Les catégories secondaires.</strong> Vous avez droit à une catégorie principale et jusqu'à neuf catégories secondaires. Inutile de toutes les remplir : la plupart des fiches en utilisent trois à cinq, et c'est un bon repère. Ajoutez seulement celles qui décrivent vraiment ce que vous faites.</p>
+
+      <h2>Le nom de votre établissement : n'y touchez pas trop</h2>
+      <p>Voilà une erreur qu'on voit souvent, et elle est dangereuse. Le nom sur votre fiche doit être exactement celui de votre établissement dans la vraie vie : celui de l'enseigne, des papiers, du site. Rien de plus.</p>
+      <p>La tentation est de bourrer le nom de mots-clés pour remonter : « Boulangerie Dupont, meilleure boulangerie bio artisanale de Mâcon ». C'est une infraction directe aux règles de Google, et un motif de suspension. En 2024, Google a supprimé des milliers de fiches pour nom trompeur.</p>
+      <p>Si votre enseigne s'appelle « Le Fournil de Mâcon », votre fiche s'appelle « Le Fournil de Mâcon ». Le référencement, vous le gagnez par la catégorie et les avis, pas en trichant sur le nom.</p>
+
+      <h2>Les avis, le carburant de votre visibilité</h2>
+      <p>Les avis sont le facteur le plus influent, à la fois pour votre classement et pour la décision du client qui hésite entre vous et le concurrent d'à côté.</p>
+      <p><strong>La fraîcheur compte plus que le nombre.</strong> Google regarde la fraîcheur des avis. Un flux régulier de nouveaux avis pèse plus qu'un gros tas récolté il y a trois ans, puis plus rien. Prenez l'habitude d'en demander, simplement, au bon moment. Un point à ne jamais franchir : les faux avis. Acheter des avis peut désormais entraîner une suspension immédiate de la fiche.</p>
+      <p><strong>Répondez à tout, même aux mauvais.</strong> Un merci sous un avis cinq étoiles, ça coûte trente secondes. Une réponse posée sous un avis un peu sec montre au prochain lecteur que vous êtes là et que vous prenez les choses au sérieux. C'est souvent la réponse à l'avis négatif, plus que l'avis lui-même, qui convainc le suivant.</p>
+      <a class="a-link" href="../../visibilite-web/seo-sea-local/index.html">Notre offre de référencement local<span class="material-symbols-outlined">arrow_forward</span></a>
+
+      <h2>Photos et publications : montrez que la boutique est vivante</h2>
+      <p>Une fiche qui bouge est une fiche que Google considère comme active. Ajoutez des photos régulièrement : la devanture, l'intérieur, les produits, l'équipe. Publiez des petites actualités (les « posts » Google), idéalement chaque semaine : une nouveauté, une promo, un horaire spécial pour un jour férié. Rien de compliqué, juste une habitude à prendre, cinq minutes par semaine.</p>
+
+      <h2>NAP, la cohérence qui vous protège</h2>
+      <p>NAP, c'est Nom, Adresse, Téléphone. Ces trois informations doivent être rigoureusement identiques partout où votre entreprise apparaît : fiche Google, site, annuaires, Pages Jaunes.</p>
+      <p>Google recoupe les traces de votre entreprise sur le web. Si votre numéro est écrit de trois façons différentes selon les sites, le signal se brouille. Au mieux vous perdez du classement, au pire une incohérence marquée peut déclencher une revue et, dans les cas sérieux, une suspension.</p>
+
+      <h2>Fiche suspendue : d'où ça vient et comment revenir</h2>
+      <p>La suspension, c'est la crainte numéro un. En 2025 et 2026, trois causes reviennent le plus souvent : un nom bourré de mots-clés, une adresse ou catégorie incohérente avec les autres traces de l'entreprise sur le web, ou une rafale de modifications rapides sur la fiche.</p>
+      <p>Si votre fiche est suspendue, tout n'est pas perdu. La marche à suivre : corriger l'infraction d'abord (remettre le vrai nom, aligner l'adresse), puis déposer une demande de rétablissement auprès de Google avec des preuves à l'appui. Les dossiers propres reviennent généralement en quelques jours à deux semaines.</p>
+
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Google My Business et Google Business Profile, c'est la même chose ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Oui. Google a renommé « Google My Business » en « Google Business Profile » en 2022. L'outil et sa fiche sont les mêmes, seul le nom a changé. Beaucoup de commerçants et de recherches continuent d'utiliser l'ancien nom.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien de temps avant que ma fiche remonte dans le Top 3 ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Il n'y a pas de délai garanti, et personne d'honnête ne vous en promettra un. Le classement dépend de la concurrence sur votre secteur, de votre catégorie, de vos avis et de la cohérence de vos informations.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien de catégories dois-je renseigner sur ma fiche ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Une catégorie principale, la plus précise possible, c'est le réglage prioritaire. Ajoutez ensuite des catégories secondaires uniquement si elles décrivent vraiment votre activité. La plupart des fiches en utilisent trois à cinq au total.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Puis-je ajouter ma ville dans le nom de ma fiche pour mieux ressortir ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Non, c'est risqué. Le nom de la fiche doit être exactement celui de votre établissement dans la réalité. Ajouter une ville ou des mots-clés qui ne figurent pas sur votre enseigne est une infraction aux règles de Google.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Faut-il répondre aux avis négatifs ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Oui, et c'est même là que ça se joue. Répondre calmement à un avis négatif montre au prochain lecteur que vous êtes présent et que vous prenez les remarques au sérieux. Répondez aussi aux avis positifs.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Ma fiche a été suspendue, que faire ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">D'abord, corriger ce qui a déclenché la suspension : remettre le vrai nom, aligner l'adresse et la catégorie. Ensuite seulement, déposer une demande de rétablissement auprès de Google avec des preuves à l'appui.</div>
+        </details>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Facteurs de classement local d'après l'aide officielle de <a href="https://support.google.com/business/answer/7091?hl=fr" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">Google Business Profile</a>. Poids des avis dans la décision d'achat d'après l'étude <a href="https://www.ifop.com/publication/limpact-de-le-reputation-sur-le-processus-dachat/" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">IFOP sur l'impact de l'e-réputation</a>. Bonnes pratiques données à titre indicatif.</p>
+    </div>
+
+    <!-- Article end CTA -->
+    <div class="a-end-cta">
+      <h3>Envie de sortir sur Google localement ?</h3>
+      <p>Nos experts optimisent votre fiche Google Business Profile et votre référencement local, sans jargon et sans promesse en l'air.</p>
+      <div class="a-end-actions">
+        <a class="a-btn-pri" href="../../contact/index.html">Obtenir un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <a class="a-btn-sec" href="../../visibilite-web/seo-sea-local/index.html">Voir notre offre SEO local</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 : A LIRE AUSSI -->
+  <section class="sec s1">
+    <p class="a-related-title">À lire aussi</p>
+    <ul class="a-related-list">
+      <li>
+        <a href="../../visibilite-web/seo-sea-local/index.html">
+          <div class="a-cat">Web</div>
+          <div class="a-title">Notre offre de référencement local (SEO/SEA)</div>
+        </a>
+      </li>
+      <li>
+        <a href="../../visibilite-web/index.html">
+          <div class="a-cat">Web</div>
+          <div class="a-title">Toute notre offre visibilité web</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S5 : CTA FINAL v3 mobile "Le Seuil" + date E-E-A-T integree
+       NOTE : sections Conseil expert + Question urgente tel volontairement
+       SUPPRIMEES du mobile (doublons semantiques de l'article-end CTA et
+       du FAB tel sticky). Brief impeccable shape : template article mobile-first
+       = 5 sections (Hero / Image / Body / A lire aussi / CTA Final). -->
+  <section class="m-cta-final" style="--accent:#F57C00">
+    <span class="topbar" aria-hidden="true"></span>
+    <h3>Envie de sortir sur Google localement ?</h3>
+    <p>Nos conseillers vous rappellent sous 24h pour auditer votre fiche Google Business Profile.</p>
+    <a class="btn btn-pri" href="../../contact/index.html">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <span class="dpx-divider">ou appelez-nous</span>
+    <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+    <p class="m-updated">Mis à jour le <time datetime="2026-07-06">6 juillet 2026</time></p>
+    <span class="bottomark" aria-hidden="true"></span>
+  </section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<style>
+  /* CSS inline supplementaire pour .m-cta-final (pattern shared avec autres pages) */
+  @media(max-width:640px) {
+    .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
+    .m-cta-final .topbar{display:block;width:80px;height:3px;background:#F57C00;margin:0 0 22px;border-radius:2px}
+    .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
+    .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
+    .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+    .m-cta-final .btn-pri{display:inline-flex;align-items:center;gap:8px;background:#F57C00;color:#fff;padding:14px 22px;border-radius:14px;font-family:'Sora',sans-serif;font-weight:700;font-size:14.5px;text-decoration:none}
+    .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
+    .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
+    .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:#F57C00}
+    .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
+  }
+</style>
+
+<script src="../../js/scripts.js?v=38"></script>
+</body>
+</html>
