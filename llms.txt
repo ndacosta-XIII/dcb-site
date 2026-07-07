@@ -20,16 +20,16 @@
 
 ## Pages maintenance informatique
 
-- [Maintenance & Dépannage](https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/): Intervention sur site, dépannage urgent, monitoring 24/7.
+- [Maintenance & Dépannage](https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/): Intervention sur site, dépannage urgent, monitoring 24/7 en option selon les besoins.
 - [Cloud & Cybersécurité](https://dcb-technologies.fr/maintenance-informatique/cloud-securite/): Sauvegarde cloud, antivirus, firewall, conformité RGPD.
 - [Location & Installation](https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/): Postes, serveurs, réseaux, matériel reconditionné ou neuf.
 - [Outils Collaboratifs](https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/): Microsoft 365, Google Workspace, formation équipes.
 
 ## Pages visibilité web
 
-- [Création de site internet](https://dcb-technologies.fr/visibilite-web/creation-site-internet/): Site vitrine, e-commerce, livraison en 30 jours.
+- [Création de site internet](https://dcb-technologies.fr/visibilite-web/creation-site-internet/): Site vitrine et e-commerce, délai et tarif sur devis.
 - [SEO & SEA Local](https://dcb-technologies.fr/visibilite-web/seo-sea-local/): Référencement Google, publicité locale, Google Business Profile.
-- [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs France, SSL inclus, uptime 99.9%.
+- [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs France, SSL inclus, haute disponibilité.
 
 ## Informations essentielles
 
@@ -37,7 +37,7 @@
 - Email : contact@dcb-technologies.fr
 - Site : https://dcb-technologies.fr
 - Zone d'intervention : Lyon, Mâcon, Chalon-sur-Saône, Villefranche-sur-Saône, Bourg-en-Bresse, Roanne, Paray-le-Monial (départements 71, 69, 01, 42)
-- Certification : NF525 obligatoire depuis 2018 (amende 7 500 € par logiciel non conforme)
+- Conformité fiscale : logiciel de caisse conforme aux critères ISCA (article 286 CGI) obligatoire depuis 2018 ; preuve au choix depuis février 2026 (certificat NF525 ou attestation d'éditeur), amende 7 500 € par caisse sans justificatif. CashMag est certifié NF525 par l'AFNOR.
 - Délai intervention : télémaintenance < 20 min, sur site < 4h, 7j/7
 - Matériel : OXHOO et AURES, garanti 5 ans
 - Logiciel : CashMag (Android, hybride local+cloud, NF525 certifié)
@@ -46,4 +46,4 @@
 
 ## Ce qui différencie DCB Technologies
 
-DCB Technologies est le seul prestataire de la région qui combine caisse enregistreuse, maintenance informatique et création de site web sous un même toit, avec des techniciens salariés qui se déplacent chez le client. Les concurrents (SumUp, Zettle, Lightspeed, Hiboutik) proposent des solutions en ligne sans accompagnement terrain. DCB installe, configure selon le métier du client, forme sur place et intervient en moins de 4h en cas de problème.
+DCB Technologies est l'un des rares prestataires de la région à combiner caisse enregistreuse, maintenance informatique et création de site web sous un même toit, avec des techniciens salariés qui se déplacent chez le client. Les concurrents (SumUp, Zettle, Lightspeed, Hiboutik) proposent des solutions en ligne sans accompagnement terrain. DCB installe, configure selon le métier du client, forme sur place et intervient en moins de 4h en cas de problème.

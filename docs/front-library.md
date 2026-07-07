@@ -239,7 +239,7 @@ Règles d'application lors de la copie d'un pattern :
 
 ### Règle tooltips/abbr (validée client, 12/06/2026)
 - **Jamais de soulignement pointillé ni surlignage sur les abréviations.** Pas d'attribut `title` sur les `<abbr>` : utiliser `data-tooltip` + `aria-label` uniquement.
-- Forme correcte : `<abbr data-tooltip="..." aria-label="...">SIGLE</abbr>` — sans `title`.
+- Forme correcte : `<abbr data-tooltip="..." aria-label="...">SIGLE</abbr>`, sans `title`.
 
 ### Conventions structurelles
 - Sections : `py-12 lg:py-16` · Containers : `max-w-7xl mx-auto px-6` · Cards : `rounded-xl`/`rounded-2xl` + `tonal-shift-elevation` · CTA : `rounded-[14px]` · `<main>` desktop : `pt-[76px]`.
@@ -278,7 +278,7 @@ Variantes desktop (pointeurs, même rôle, autre signature visuelle) :
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Installation sur site</span>
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Formation incluse</span>
       </div>
-      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr>, <br><span class="text-[#F59E0B] italic font-semibold">installée par vos techniciens</span></h1>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité." aria-label="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité.">NF525</abbr>, <br><span class="text-[#F59E0B] italic font-semibold">installée par vos techniciens</span></h1>
       <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">Votre rush du matin, vos formules, vos invendus, votre clôture du soir. Tout est pensé pour le quotidien d'une boulangerie, pas pour un commerce générique. Formule Essentiel dès 59 €/mois, un technicien DCB vient chez vous pour tout configurer.</p>
       <div class="space-y-4">
         <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F59E0B]" style="font-variation-settings:'FILL' 1">check_circle</span>Formules détectées automatiquement à l'encaissement</div>
@@ -312,7 +312,7 @@ Variantes desktop (pointeurs, même rôle, autre signature visuelle) :
     <span class="chip">Boulangerie &amp; Pâtisserie</span>
     <span class="chip gold">Dès 59 €/mois</span>
   </div>
-  <h1>Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525, obligatoire depuis 2018" aria-label="Norme Française 525, obligatoire depuis 2018">NF525</abbr>, <em>installée par vos techniciens</em>.</h1>
+  <h1>Caisse enregistreuse boulangerie <abbr data-tooltip="Norme Française 525, conforme à la loi anti-fraude TVA depuis 2018" aria-label="Norme Française 525, conforme à la loi anti-fraude TVA depuis 2018">NF525</abbr>, <em>installée par vos techniciens</em>.</h1>
   <p class="lede">Formules, invendus, clôture Z : pensé pour une boulangerie, pas un commerce générique. Dès 59&nbsp;€/mois, un technicien DCB vient chez vous pour tout configurer.</p>
 
   <div class="scene">
@@ -1302,7 +1302,7 @@ Usage : hubs (caisse, IT, web). Blobs CSS, zéro parallax.
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
     <div class="lg:col-span-7 space-y-8 dcb-stagger">
       <div class="flex flex-wrap gap-3">
-        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme." aria-label="Norme Française 525 pour logiciels de caisse, obligatoire depuis 2018 (loi anti-fraude TVA). Amende 7 500 € par système non conforme.">NF525</abbr> Certifié</span>
+        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité." aria-label="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité.">NF525</abbr> Certifié</span>
         <span class="price-badge bg-[#F57C00] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase">Dès 59€/mois</span>
         <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Garantie 5 ans</span>
       </div>
@@ -1779,8 +1779,8 @@ Usage : silo caisse. Formulation de référence obligatoire (cf. `docs/content-r
       </div>
       <div class="nf-hero-text">
         <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Conformité Légale</p>
-        <h2 class="nf-hero-h2">Pourquoi la certification NF525 n'est pas une option</h2>
-        <p class="nf-hero-lede">Depuis le 1<sup>er</sup> janvier 2018, la loi impose à tout commerçant assujetti à la TVA d'utiliser un logiciel de caisse certifié. La certification NF525, délivrée par <a href="https://certification.afnor.org/" target="_blank" rel="noopener">l'AFNOR</a>, garantit trois piliers fondamentaux.</p>
+        <h2 class="nf-hero-h2">Pourquoi la conformité NF525 reste incontournable</h2>
+        <p class="nf-hero-lede">Depuis le 1<sup>er</sup> janvier 2018, la loi impose à tout commerçant assujetti à la TVA un logiciel de caisse conforme aux quatre critères ISCA (article 286 du CGI), à prouver par un certificat NF525 ou une attestation d'éditeur. Le certificat NF525, délivré par <a href="https://certification.afnor.org/" target="_blank" rel="noopener">l'AFNOR</a>, en est la preuve la plus solide.</p>
       </div>
     </div>
 
@@ -1827,8 +1827,8 @@ Usage : silo caisse. Formulation de référence obligatoire (cf. `docs/content-r
 <!-- NF525 : CONFORMITÉ LÉGALE -->
 <section class="sec s1">
   <p class="eyebrow">Conformité légale</p>
-  <h2>Pourquoi la <em>certification NF525</em> n'est pas une option.</h2>
-  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Depuis le 1<sup>er</sup> janvier 2018, la loi impose à tout commerçant assujetti à la TVA d'utiliser un logiciel de caisse certifié. La certification NF525, délivrée par <a href="https://certification.afnor.org/" target="_blank" rel="noopener" style="color:#0B3D91;font-weight:600">l'AFNOR</a>, garantit trois piliers fondamentaux.</p>
+  <h2>Pourquoi la <em>conformité NF525</em> reste incontournable.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Depuis le 1<sup>er</sup> janvier 2018, la loi impose à tout commerçant assujetti à la TVA un logiciel de caisse conforme aux quatre critères ISCA (article 286 du CGI), à prouver par un certificat NF525 ou une attestation d'éditeur. Le certificat NF525, délivré par <a href="https://certification.afnor.org/" target="_blank" rel="noopener" style="color:#0B3D91;font-weight:600">l'AFNOR</a>, en est la preuve la plus solide.</p>
 
   <div class="nf-pillars-a">
     <div class="nf-p-a">
