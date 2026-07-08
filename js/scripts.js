@@ -292,7 +292,7 @@
       '@keyframes dcbFabPulse{' +
         '0%,100%{box-shadow:0 4px 20px rgba(245,124,0,0.45),0 0 0 0 rgba(245,124,0,0.4);}' +
         '50%{box-shadow:0 4px 20px rgba(245,124,0,0.45),0 0 0 8px rgba(245,124,0,0);}}' +
-      '@media(max-width:1023px){#dcb-phone-fab{display:flex;}}';
+      '@media(max-width:640px){#dcb-phone-fab{display:flex;}}';
     document.head.appendChild(style);
   }
 

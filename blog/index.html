@@ -111,8 +111,17 @@
 
   /* ── Sidebar cards ── */
   .side-card { background:#fff; border-radius:20px; padding:1.75rem; border:1px solid rgba(11,61,145,.08); }
-  .side-card--accent { background:#fff; border-top:3px solid #F57C00; }
   .side-card--dark   { background:#0B3D91; color:#fff; border-color:transparent; }
+
+  /* ── Bloc "sujet du moment" : style editorial (filet), aligne sur la newsletter ── */
+  .side-topic { position:relative; padding-left:22px; }
+  .side-topic .side-topic__filet { position:absolute; left:0; top:0.2em; width:3px; height:calc(100% - 0.4em); min-height:64px; background:#F57C00; border-radius:2px; }
+  .side-topic__eb { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; display:block; margin:0 0 12px; }
+  .side-topic__h { font-family:'Sora',sans-serif; font-weight:700; color:#0B3D91; font-size:1.1rem; line-height:1.35; margin:0 0 10px; }
+  .side-topic__h:hover { color:#F57C00; }
+  .side-topic__p { color:#4A5568; line-height:1.6; font-size:0.9375rem; margin:0; }
+  .side-topic__link { color:#F57C00; font-weight:700; text-decoration:none; }
+  .side-topic__link:hover { text-decoration:underline; }
 
   @media (min-width:1024px) {
     .sticky-sidebar { position:sticky; top:96px; }
@@ -304,13 +313,17 @@
       font-size: 13.5px; line-height: 1.55; color: #4A5568; margin: 0;
     }
 
-    /* S5 Sujet du moment */
+    /* S5 Sujet du moment : style editorial (filet gauche), aligne sur la newsletter */
     [data-metier="blog"] .b-pinned {
-      background: #FFFFFF; border-radius: 20px; padding: 22px;
-      border: 1px solid rgba(11,61,145,0.08); border-top: 3px solid #F57C00;
+      position: relative; padding-left: 20px;
+    }
+    [data-metier="blog"] .b-pinned::before {
+      content: ''; position: absolute; left: 0; top: 0.2em;
+      width: 3px; height: calc(100% - 0.4em); min-height: 56px;
+      background: #F57C00; border-radius: 2px;
     }
     [data-metier="blog"] .b-pinned-head {
-      display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
     }
     [data-metier="blog"] .b-pinned-head .material-symbols-outlined {
       font-size: 16px; color: #F57C00;
@@ -321,10 +334,13 @@
     }
     [data-metier="blog"] .b-pinned-h {
       font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.35;
-      color: #0B3D91; margin: 0 0 10px;
+      color: #0B3D91; margin: 0 0 10px; text-decoration: none; display: block;
     }
     [data-metier="blog"] .b-pinned-p {
       font-size: 14px; line-height: 1.6; color: #4A5568; margin: 0;
+    }
+    [data-metier="blog"] .b-pinned-p a {
+      color: #F57C00; font-weight: 700; text-decoration: none;
     }
 
     /* S6 Contact expert */
@@ -443,16 +459,16 @@
 <section class="bg-white border-b border-black/5" style="padding-top:1.75rem; padding-bottom:1.75rem;">
   <div class="max-w-7xl mx-auto px-6" style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; align-items:center; justify-content:space-between;">
     <div class="flex flex-wrap gap-2" style="flex:1 1 auto; min-width:0;">
-      <button class="pill" aria-selected="true">Tous <span class="text-white/70 font-normal">7</span></button>
-      <button class="pill"><span class="dot" style="background:#0B3D91"></span>Caisse</button>
-      <button class="pill"><span class="dot" style="background:#0D9488"></span>IT &amp; Securite</button>
-      <button class="pill"><span class="dot" style="background:#B45309"></span>Reglementation</button>
-      <button class="pill"><span class="dot" style="background:#EF4444"></span>Metiers</button>
-      <button class="pill"><span class="dot" style="background:#A855F7"></span>Web</button>
+      <button class="pill" data-filter data-cat="all" aria-selected="true">Tous <span class="text-white/70 font-normal" data-count-all>4</span></button>
+      <button class="pill" data-filter data-cat="caisse"><span class="dot" style="background:#0B3D91"></span>Caisse</button>
+      <button class="pill" data-filter data-cat="it"><span class="dot" style="background:#0D9488"></span>IT &amp; Securite</button>
+      <button class="pill" data-filter data-cat="reglement"><span class="dot" style="background:#B45309"></span>Reglementation</button>
+      <button class="pill" data-filter data-cat="metiers"><span class="dot" style="background:#EF4444"></span>Metiers</button>
+      <button class="pill" data-filter data-cat="web"><span class="dot" style="background:#A855F7"></span>Web</button>
     </div>
     <label class="relative block" style="flex:0 0 320px; max-width:100%;">
       <span class="material-symbols-outlined text-[#4A5568] pointer-events-none" style="font-size:20px; position:absolute; left:1rem; top:50%; transform:translateY(-50%);">search</span>
-      <input type="search" placeholder="Rechercher un article..." class="w-full py-3 border-[1.5px] border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#0B3D91] transition-colors" style="padding-left:3rem; padding-right:1rem;">
+      <input type="search" id="d-blog-search" placeholder="Rechercher un article..." class="w-full py-3 border-[1.5px] border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#0B3D91] transition-colors" style="padding-left:3rem; padding-right:1rem;">
     </label>
   </div>
 </section>
@@ -462,30 +478,29 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex items-baseline justify-between mb-8">
       <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00]">A la une</span>
-      <span class="text-[#4A5568] text-sm hidden md:block">14 mai 2025</span>
+      <span class="text-[#4A5568] text-sm hidden md:block" id="d-featured-kicker">Réglementation NF525</span>
     </div>
 
-    <a href="digitaliser-point-de-vente/index.html" class="featured grid grid-cols-1 lg:grid-cols-12 group no-underline">
-      <!-- PLACEHOLDER IMAGE Gemini AI : a remplacer par photo equipe DCB ou client en accompagnement digitalisation + conversion WebP. -->
+    <a href="norme-nf525-caisse-enregistreuse/index.html" class="featured grid grid-cols-1 lg:grid-cols-12 group no-underline" id="d-featured" data-post data-cat="reglement" data-search="norme nf525 votre caisse est-elle conforme en 2026 obligatoire ou pas le point clair sans vendeur de peur reglementation">
       <div class="featured__cover lg:col-span-7 min-h-[20rem] lg:min-h-[26rem] p-10 flex flex-col justify-between relative">
-        <img src="../assets/blog/featured-digitaliser-point-de-vente.png" alt="Equipe en seance de travail collaboratif autour d'un ordinateur portable" width="1400" height="1050" loading="eager" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover">
+        <img src="../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="1400" height="1050" loading="eager" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover" id="d-featured-img">
         <div class="absolute inset-0 bg-gradient-to-tr from-white/85 via-white/40 to-transparent"></div>
         <div class="flex items-center gap-3 relative z-10">
-          <span class="tag tag-caisse">Caisse</span>
-          <span class="text-[#4A5568] text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">schedule</span>5 min de lecture</span>
+          <span class="tag tag-reglement" id="d-featured-tag">Réglementation</span>
+          <span class="text-[#4A5568] text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">schedule</span><span id="d-featured-read">7 min de lecture</span></span>
         </div>
         <div class="relative z-10">
           <div class="flex items-center gap-3 text-[#0B3D91]/45 text-xs uppercase tracking-[0.18em] font-bold">
             <span>n° 01</span>
             <span class="w-12 h-px bg-[#0B3D91]/15"></span>
-            <span>14 / 05 / 2025</span>
+            <span id="d-featured-label">NF525</span>
           </div>
         </div>
       </div>
       <div class="lg:col-span-5 p-10 lg:p-12 flex flex-col justify-center">
         <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] block mb-5">A la une</span>
-        <h2 class="font-sora text-2xl md:text-3xl lg:text-[2rem] font-bold text-[#0B3D91] leading-[1.2] mb-5 group-hover:text-[#F57C00] transition-colors duration-200">Digitaliser votre point de vente : les 5 etapes indispensables</h2>
-        <p class="text-[#4A5568] leading-[1.7] mb-8">L'annee 2025 marque un tournant decisif pour les commerces de proximite. Nos techniciens vous livrent la methode complete, de l'audit infra a la mesure de la performance.</p>
+        <h2 class="font-sora text-2xl md:text-3xl lg:text-[2rem] font-bold text-[#0B3D91] leading-[1.2] mb-5 group-hover:text-[#F57C00] transition-colors duration-200" id="d-featured-title">Norme NF525 : votre caisse est-elle conforme en 2026 ?</h2>
+        <p class="text-[#4A5568] leading-[1.7] mb-8" id="d-featured-lede">NF525 obligatoire ou pas en 2026 ? Le point clair sur la reforme, ce que dit vraiment la loi et comment prouver votre conformite, sans vendeur de peur.</p>
         <div class="flex items-center justify-between pt-6 border-t border-black/8">
           <span class="text-[#4A5568] text-sm">Par <strong class="text-[#0B3D91] font-semibold">DCB Technologies</strong></span>
           <span class="text-[#F57C00] font-bold flex items-center gap-2">Lire l'article <span class="material-symbols-outlined text-[1.1rem]">arrow_forward</span></span>
@@ -508,38 +523,12 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12" id="d-blog-grid">
 
-        <!-- Article 1 -->
-        <a href="#" class="post-card">
-          <!-- PLACEHOLDER IMAGE Gemini AI : a remplacer par photo reelle/banque pro (rack serveur cybersecurite) + conversion WebP -->
-          <div class="post-card__cover mb-5">
-            <img src="../assets/blog/article-cybersecurite.png" alt="Baie de serveurs avec cablage reseau securise" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-          </div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="tag tag-it">IT &amp; Securite</span>
-            <span class="text-[#4A5568] text-xs flex items-center gap-1"><span class="material-symbols-outlined text-[.9rem]">schedule</span>7 min</span>
-          </div>
-          <h3 class="post-card__title text-lg leading-[1.35] mb-2">Cyber-securite : les 7 reflexes pour proteger les donnees de vos clients</h3>
-          <p class="text-[#4A5568] text-sm leading-relaxed">Mots de passe, sauvegardes, terminaux de paiement : les bonnes pratiques pour securiser votre commerce.</p>
-        </a>
+        <p id="d-blog-empty" class="hidden sm:col-span-2 text-[#4A5568] text-sm py-8">Aucun article ne correspond à votre recherche. Essayez un autre mot-clé ou revenez à « Tous ».</p>
 
-        <!-- Article 2 -->
-        <a href="#" class="post-card">
-          <!-- PLACEHOLDER IMAGE Gemini AI : a remplacer par photo restaurant reelle + conversion WebP. Image actuelle = equipe bureau (faute de visuel restaurant dans la banque). -->
-          <div class="post-card__cover mb-5">
-            <img src="../assets/blog/article-restauration.png" alt="Equipe au travail autour d'un ordinateur portable" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-          </div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="tag tag-metiers">Metiers</span>
-            <span class="text-[#4A5568] text-xs flex items-center gap-1"><span class="material-symbols-outlined text-[.9rem]">schedule</span>4 min</span>
-          </div>
-          <h3 class="post-card__title text-lg leading-[1.35] mb-2">Restauration : comment optimiser la rotation de vos tables</h3>
-          <p class="text-[#4A5568] text-sm leading-relaxed">Envoi cuisine, addition rapide, mobile : -15 % de temps d'attente en moyenne.</p>
-        </a>
-
-        <!-- Article 3 -->
-        <a href="norme-nf525-caisse-enregistreuse/index.html" class="post-card">
+        <!-- Article : NF525 -->
+        <a href="norme-nf525-caisse-enregistreuse/index.html" class="post-card" data-post data-cat="reglement" data-search="norme nf525 votre caisse est-elle conforme en 2026 obligatoire ou pas le point clair sans vendeur de peur reglementation">
           <!-- PLACEHOLDER IMAGE Gemini AI : a remplacer par visuel ticket/loi/comptabilite + conversion WebP. Image actuelle = duo bureau IT (rapprochement editorial). -->
           <div class="post-card__cover mb-5">
             <img src="../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
@@ -552,22 +541,9 @@
           <p class="text-[#4A5568] text-sm leading-relaxed">NF525 obligatoire ou pas en 2026 ? Le point clair, sans vendeur de peur.</p>
         </a>
 
-        <!-- Article 4 -->
-        <a href="#" class="post-card">
-          <!-- PLACEHOLDER IMAGE Gemini AI : a remplacer par photo TPE Android reel + conversion WebP. Image actuelle = duo dev devant ecrans (tech generique). -->
-          <div class="post-card__cover mb-5">
-            <img src="../assets/blog/article-tpe-android.png" alt="Deux developpeurs travaillent devant des ecrans de code" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-          </div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="tag tag-caisse">Caisse</span>
-            <span class="text-[#4A5568] text-xs flex items-center gap-1"><span class="material-symbols-outlined text-[.9rem]">schedule</span>5 min</span>
-          </div>
-          <h3 class="post-card__title text-lg leading-[1.35] mb-2">TPE Android vs traditionnel : le comparatif 2025</h3>
-          <p class="text-[#4A5568] text-sm leading-relaxed">Cout total, ergonomie, integrations : tout pour choisir sereinement.</p>
-        </a>
 
-        <!-- Article 5 -->
-        <a href="maintenance-informatique-preventive/index.html" class="post-card">
+        <!-- Article : Maintenance preventive -->
+        <a href="maintenance-informatique-preventive/index.html" class="post-card" data-post data-cat="it" data-search="maintenance preventive eviter les pannes critiques it securite notre methode pour anticiper avant de subir sans alourdir le budget">
           <div class="post-card__cover mb-5">
             <img src="../assets/infogerance-pme-bureau-supervision.webp" alt="Supervision d'un parc informatique de PME en maintenance préventive" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
           </div>
@@ -579,8 +555,8 @@
           <p class="text-[#4A5568] text-sm leading-relaxed">Notre methode pour anticiper avant de subir, sans alourdir le budget.</p>
         </a>
 
-        <!-- Article 6 -->
-        <a href="referencement-google-my-business/index.html" class="post-card">
+        <!-- Article : Google My Business -->
+        <a href="referencement-google-my-business/index.html" class="post-card" data-post data-cat="web" data-search="referencement google my business sortir dans le top 3 local web categorie avis nom ce qui fait vraiment remonter votre fiche sans payer de pub">
           <div class="post-card__cover mb-5">
             <img src="../assets/creation-site-webshop-commerce-qps-macbook.webp" alt="Fiche Google Business Profile et visibilité locale d'un commerce" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
           </div>
@@ -592,8 +568,8 @@
           <p class="text-[#4A5568] text-sm leading-relaxed">Catégorie, avis, nom : ce qui fait vraiment remonter votre fiche, sans payer de pub.</p>
         </a>
 
-        <!-- Article 7 -->
-        <a href="combien-coute-un-site-internet/index.html" class="post-card">
+        <!-- Article : Combien coute un site internet -->
+        <a href="combien-coute-un-site-internet/index.html" class="post-card" data-post data-cat="web" data-search="combien coute un site internet en 2026 web vitrine e-commerce couts caches les vraies fourchettes de prix sans langue de bois">
           <div class="post-card__cover mb-5">
             <img src="../assets/creation-site-restaurant-ala12-macbook.webp" alt="Site internet professionnel de restaurant affiché sur un ordinateur portable, réalisé par DCB Technologies" width="800" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
           </div>
@@ -617,13 +593,11 @@
     <!-- Sidebar -->
     <aside class="lg:col-span-4 flex flex-col gap-6 sticky-sidebar self-start">
 
-      <div class="side-card side-card--accent">
-        <div class="flex items-center gap-2 mb-5">
-          <span class="material-symbols-outlined mat-filled text-[1.1rem] text-[#F57C00]">push_pin</span>
-          <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00]">Le sujet du moment</span>
-        </div>
-        <h4 class="font-sora font-bold text-[#0B3D91] text-[1.1rem] leading-[1.35] mb-3">NF525 : votre logiciel est-il encore conforme ?</h4>
-        <p class="text-[#4A5568] leading-[1.6] text-[0.9375rem]">La conformite NF525 reste le sujet n°1 de nos clients. Notre prochain dossier : la checklist 18 points pour verifier en 5 min.</p>
+      <div class="side-topic">
+        <span class="side-topic__filet" aria-hidden="true"></span>
+        <span class="side-topic__eb">Le sujet du moment</span>
+        <a href="norme-nf525-caisse-enregistreuse/index.html" class="no-underline"><h4 class="side-topic__h">NF525 : votre caisse est-elle conforme en 2026 ?</h4></a>
+        <p class="side-topic__p">La reforme de fevrier 2026 a change la donne : NF525 n'est plus obligatoire, mais il faut pouvoir le prouver. <a href="norme-nf525-caisse-enregistreuse/index.html" class="side-topic__link">Lire le point clair</a>.</p>
       </div>
 
 
@@ -689,25 +663,24 @@
 
   <!-- S2 : ARTICLE VEDETTE -->
   <section class="sec s1">
-    <a class="b-featured" href="digitaliser-point-de-vente/index.html">
-      <!-- PLACEHOLDER IMAGE Gemini AI mobile : a remplacer par photo equipe DCB + conversion WebP. -->
+    <a class="b-featured" id="m-featured" href="norme-nf525-caisse-enregistreuse/index.html">
       <div class="b-featured-cover">
-        <img src="../assets/blog/featured-digitaliser-point-de-vente.png" alt="Equipe en seance de travail collaboratif autour d'un ordinateur portable" width="800" height="450" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <img src="../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="800" height="450" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" id="m-featured-img">
         <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.78) 0%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0.78) 100%);z-index:0;pointer-events:none"></div>
         <div class="top">
-          <span class="b-tag b-tag-caisse">Caisse</span>
-          <span class="read"><span class="material-symbols-outlined">schedule</span>5 min de lecture</span>
+          <span class="b-tag b-tag-reglement" id="m-featured-tag">Réglementation</span>
+          <span class="read"><span class="material-symbols-outlined">schedule</span><span id="m-featured-read">7 min de lecture</span></span>
         </div>
         <div class="meta">
           <span>n° 01</span>
           <span class="line" aria-hidden="true"></span>
-          <span>14 / 05 / 2025</span>
+          <span id="m-featured-label">NF525</span>
         </div>
       </div>
       <div class="b-featured-body">
         <p class="b-featured-eb">À la une</p>
-        <h2 class="b-featured-h">Digitaliser votre point de vente : les 5 étapes indispensables</h2>
-        <p class="b-featured-lede">L'année 2025 marque un tournant décisif pour les commerces de proximité. Nos techniciens vous livrent la méthode complète, de l'audit infra à la mesure de la performance.</p>
+        <h2 class="b-featured-h" id="m-featured-title">Norme NF525 : votre caisse est-elle conforme en 2026 ?</h2>
+        <p class="b-featured-lede" id="m-featured-lede">NF525 obligatoire ou pas en 2026 ? Le point clair sur la réforme, ce que dit vraiment la loi et comment prouver votre conformité, sans vendeur de peur.</p>
         <div class="b-featured-foot">
           <span class="by">Par <strong>DCB Technologies</strong></span>
           <span class="cta">Lire l'article<span class="material-symbols-outlined">arrow_forward</span></span>
@@ -720,47 +693,27 @@
   <section class="sec">
     <label class="b-search" aria-label="Rechercher un article">
       <span class="material-symbols-outlined icon" aria-hidden="true">search</span>
-      <input type="search" placeholder="Rechercher un article..." inputmode="search" autocomplete="off">
+      <input type="search" id="m-blog-search" placeholder="Rechercher un article..." inputmode="search" autocomplete="off">
     </label>
     <div class="b-pills-wrap" role="tablist" aria-label="Filtrer par catégorie">
       <div class="b-pills">
-        <button class="b-pill" type="button" role="tab" aria-selected="true">Tous <span class="count">7</span></button>
-        <button class="b-pill" type="button" role="tab"><span class="dot" style="background:#0B3D91"></span>Caisse</button>
-        <button class="b-pill" type="button" role="tab"><span class="dot" style="background:#0D9488"></span>IT &amp; Sécurité</button>
-        <button class="b-pill" type="button" role="tab"><span class="dot" style="background:#B45309"></span>Réglementation</button>
-        <button class="b-pill" type="button" role="tab"><span class="dot" style="background:#EF4444"></span>Métiers</button>
-        <button class="b-pill" type="button" role="tab"><span class="dot" style="background:#A855F7"></span>Web</button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="all" aria-selected="true">Tous <span class="count" data-mcount-all>4</span></button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="caisse"><span class="dot" style="background:#0B3D91"></span>Caisse</button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="it"><span class="dot" style="background:#0D9488"></span>IT &amp; Sécurité</button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="reglement"><span class="dot" style="background:#B45309"></span>Réglementation</button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="metiers"><span class="dot" style="background:#EF4444"></span>Métiers</button>
+        <button class="b-pill" type="button" role="tab" data-mfilter data-cat="web"><span class="dot" style="background:#A855F7"></span>Web</button>
       </div>
     </div>
   </section>
 
   <!-- S4 : GRILLE 5 ARTICLES -->
   <section class="sec s1">
-    <div class="b-list">
+    <div class="b-list" id="m-blog-grid">
 
-      <a class="b-card" href="#">
-        <!-- PLACEHOLDER IMAGE Gemini AI mobile : a remplacer par visuel cybersecurite reel + conversion WebP. -->
-        <div class="b-card-cover"><img src="../assets/blog/article-cybersecurite.png" alt="Baie de serveurs avec cablage reseau securise" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="b-card-meta">
-          <span class="b-tag b-tag-it">IT &amp; Sécurité</span>
-          <span class="read"><span class="material-symbols-outlined">schedule</span>7 min</span>
-        </div>
-        <h3 class="b-card-h">Cyber-sécurité : les 7 réflexes pour protéger les données de vos clients</h3>
-        <p class="b-card-x">Mots de passe, sauvegardes, terminaux de paiement : les bonnes pratiques pour sécuriser votre commerce.</p>
-      </a>
+      <p id="m-blog-empty" class="hidden" style="color:#4A5568;font-size:.9rem;padding:1.5rem 0;">Aucun article ne correspond à votre recherche. Essayez un autre mot-clé ou revenez à « Tous ».</p>
 
-      <a class="b-card" href="#">
-        <!-- PLACEHOLDER IMAGE Gemini AI mobile : a remplacer par photo restaurant + conversion WebP. -->
-        <div class="b-card-cover"><img src="../assets/blog/article-restauration.png" alt="Equipe au travail autour d'un ordinateur portable" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="b-card-meta">
-          <span class="b-tag b-tag-metiers">Métiers</span>
-          <span class="read"><span class="material-symbols-outlined">schedule</span>4 min</span>
-        </div>
-        <h3 class="b-card-h">Restauration : comment optimiser la rotation de vos tables</h3>
-        <p class="b-card-x">Envoi cuisine, addition rapide, mobile : moins 15 % de temps d'attente en moyenne.</p>
-      </a>
-
-      <a class="b-card" href="norme-nf525-caisse-enregistreuse/index.html">
+      <a class="b-card" href="norme-nf525-caisse-enregistreuse/index.html" data-mpost data-cat="reglement" data-search="norme nf525 votre caisse est-elle conforme en 2026 obligatoire ou pas le point clair sans vendeur de peur reglementation">
         <!-- PLACEHOLDER IMAGE Gemini AI mobile : a remplacer par visuel ticket/loi/comptabilite + conversion WebP. -->
         <div class="b-card-cover"><img src="../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
         <div class="b-card-meta">
@@ -771,18 +724,7 @@
         <p class="b-card-x">NF525 obligatoire ou pas en 2026 ? Le point clair, sans vendeur de peur.</p>
       </a>
 
-      <a class="b-card" href="#">
-        <!-- PLACEHOLDER IMAGE Gemini AI mobile : a remplacer par photo TPE Android reel + conversion WebP. -->
-        <div class="b-card-cover"><img src="../assets/blog/article-tpe-android.png" alt="Deux developpeurs travaillent devant des ecrans de code" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="b-card-meta">
-          <span class="b-tag b-tag-caisse">Caisse</span>
-          <span class="read"><span class="material-symbols-outlined">schedule</span>5 min</span>
-        </div>
-        <h3 class="b-card-h">TPE Android vs traditionnel : le comparatif 2025</h3>
-        <p class="b-card-x">Coût total, ergonomie, intégrations : tout pour choisir sereinement.</p>
-      </a>
-
-      <a class="b-card" href="maintenance-informatique-preventive/index.html">
+      <a class="b-card" href="maintenance-informatique-preventive/index.html" data-mpost data-cat="it" data-search="maintenance preventive eviter les pannes critiques it securite notre methode pour anticiper avant de subir sans alourdir le budget">
         <div class="b-card-cover"><img src="../assets/infogerance-pme-bureau-supervision.webp" alt="Supervision d'un parc informatique de PME en maintenance préventive" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
         <div class="b-card-meta">
           <span class="b-tag b-tag-it">IT &amp; Sécurité</span>
@@ -792,7 +734,7 @@
         <p class="b-card-x">Notre méthode pour anticiper avant de subir, sans alourdir le budget.</p>
       </a>
 
-      <a class="b-card" href="referencement-google-my-business/index.html">
+      <a class="b-card" href="referencement-google-my-business/index.html" data-mpost data-cat="web" data-search="referencement google my business sortir dans le top 3 local web categorie avis nom ce qui fait vraiment remonter votre fiche sans payer de pub">
         <div class="b-card-cover"><img src="../assets/creation-site-webshop-commerce-qps-macbook.webp" alt="Fiche Google Business Profile et visibilité locale d'un commerce" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
         <div class="b-card-meta">
           <span class="b-tag b-tag-web">Web</span>
@@ -802,7 +744,7 @@
         <p class="b-card-x">Catégorie, avis, nom : ce qui fait vraiment remonter votre fiche, sans payer de pub.</p>
       </a>
 
-      <a class="b-card" href="combien-coute-un-site-internet/index.html">
+      <a class="b-card" href="combien-coute-un-site-internet/index.html" data-mpost data-cat="web" data-search="combien coute un site internet en 2026 web vitrine e-commerce couts caches les vraies fourchettes de prix sans langue de bois">
         <div class="b-card-cover"><img src="../assets/creation-site-restaurant-ala12-macbook.webp" alt="Site internet professionnel de restaurant affiché sur un ordinateur portable, réalisé par DCB Technologies" width="800" height="500" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
         <div class="b-card-meta">
           <span class="b-tag b-tag-web">Web</span>
@@ -819,11 +761,10 @@
   <section class="sec">
     <div class="b-pinned">
       <div class="b-pinned-head">
-        <span class="material-symbols-outlined ms-fill" aria-hidden="true">push_pin</span>
         <span class="eb">Le sujet du moment</span>
       </div>
-      <h3 class="b-pinned-h">NF525 : votre logiciel est-il encore conforme ?</h3>
-      <p class="b-pinned-p">La conformité NF525 reste le sujet n°1 de nos clients. Notre prochain dossier : la checklist 18 points pour vérifier en 5 min.</p>
+      <a href="norme-nf525-caisse-enregistreuse/index.html" class="b-pinned-h">NF525 : votre caisse est-elle conforme en 2026 ?</a>
+      <p class="b-pinned-p">La reforme de fevrier 2026 a change la donne : NF525 n'est plus obligatoire, mais il faut pouvoir le prouver. <a href="norme-nf525-caisse-enregistreuse/index.html">Lire le point clair</a>.</p>
     </div>
   </section>
 
@@ -838,24 +779,25 @@
     </div>
   </section>
 
-  <!-- S8 : NEWSLETTER -->
-  <section class="sec s1">
-    <div class="b-news">
-      <p class="b-news-eb">La lettre DCB</p>
-      <h3 class="b-news-h">Un guide pratique tous les 15 du mois. Pas de blabla, que du concret.</h3>
-      <p class="b-news-p">Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidélisation locale) directement dans votre boîte mail.</p>
-      <form class="b-news-form" novalidate>
-        <input type="email" class="b-news-input" placeholder="vous@commerce.fr"
-               inputmode="email" autocomplete="email" required aria-label="Votre email">
-        <button type="submit" class="b-news-btn">
-          <span class="b-news-label">M'inscrire</span>
-          <span class="b-spin b-hidden" aria-hidden="true"></span>
-          <span class="material-symbols-outlined b-arrow" aria-hidden="true">arrow_forward</span>
-        </button>
-      </form>
-      <div class="b-news-feedback" role="status" aria-live="polite"></div>
-      <p class="b-news-disclaimer">Désinscription en 1 clic. Pas de spam.</p>
-    </div>
+  <!-- S8 : CTA FINAL "La lettre DCB" (standard mobile .m-cta-final "Le Bord Tranche") -->
+  <section class="m-cta-final" style="--accent:#F57C00">
+    <span class="topbar" aria-hidden="true"></span>
+    <p class="b-news-eb">La lettre DCB</p>
+    <h3>Un guide pratique tous les 15 du mois. Pas de blabla, que du concret.</h3>
+    <p>Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidélisation locale) directement dans votre boîte mail.</p>
+    <form class="b-news-form" novalidate>
+      <input type="email" class="b-news-input" placeholder="vous@commerce.fr"
+             inputmode="email" autocomplete="email" required aria-label="Votre email">
+      <button type="submit" class="b-news-btn">
+        <span class="b-news-label">M'inscrire</span>
+        <span class="b-spin b-hidden" aria-hidden="true"></span>
+        <span class="material-symbols-outlined b-arrow" aria-hidden="true">arrow_forward</span>
+      </button>
+    </form>
+    <div class="b-news-feedback" role="status" aria-live="polite"></div>
+    <p class="b-news-disclaimer">Désinscription en 1 clic. Pas de spam.</p>
+    <p class="m-updated">Mis à jour le <time datetime="2026-04-23">23 avril 2026</time></p>
+    <span class="bottomark" aria-hidden="true"></span>
   </section>
 
 </main><!-- /m-main -->
@@ -867,15 +809,142 @@
 
 </div><!-- /m-shell -->
 
-<script src="../js/scripts.js?v=38"></script>
+<script src="../js/scripts.js?v=39"></script>
 <script>
-  /* Pills toggle desktop (preserve original) */
-  document.querySelectorAll('.pill').forEach(p => {
-    p.addEventListener('click', () => {
-      document.querySelectorAll('.pill').forEach(x => x.removeAttribute('aria-selected'));
-      p.setAttribute('aria-selected', 'true');
+  /* Blog : vedette dynamique par filtre (source unique desktop + mobile).
+     Un seul article representatif par categorie de pill active. "all" = NF525 (defaut). */
+  window.DCB_BLOG_FEATURED = {
+    all: {
+      href: 'norme-nf525-caisse-enregistreuse/index.html',
+      img: '../assets/caisse-tactile-cashmag-boulangerie.webp',
+      alt: "Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie",
+      tagClass: 'reglement', tagLabel: 'Réglementation',
+      read: '7 min de lecture', label: 'NF525', kicker: 'Réglementation NF525',
+      title: 'Norme NF525 : votre caisse est-elle conforme en 2026 ?',
+      lede: 'NF525 obligatoire ou pas en 2026 ? Le point clair sur la réforme, ce que dit vraiment la loi et comment prouver votre conformité, sans vendeur de peur.'
+    },
+    reglement: {
+      href: 'norme-nf525-caisse-enregistreuse/index.html',
+      img: '../assets/caisse-tactile-cashmag-boulangerie.webp',
+      alt: "Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie",
+      tagClass: 'reglement', tagLabel: 'Réglementation',
+      read: '7 min de lecture', label: 'NF525', kicker: 'Réglementation NF525',
+      title: 'Norme NF525 : votre caisse est-elle conforme en 2026 ?',
+      lede: 'NF525 obligatoire ou pas en 2026 ? Le point clair sur la réforme, ce que dit vraiment la loi et comment prouver votre conformité, sans vendeur de peur.'
+    },
+    it: {
+      href: 'maintenance-informatique-preventive/index.html',
+      img: '../assets/infogerance-pme-bureau-supervision.webp',
+      alt: "Supervision d'un parc informatique de PME en maintenance préventive",
+      tagClass: 'it', tagLabel: 'IT & Sécurité',
+      read: '7 min de lecture', label: 'IT', kicker: 'IT & Sécurité',
+      title: 'Maintenance préventive : éviter les pannes critiques',
+      lede: 'Notre méthode pour anticiper avant de subir, sans alourdir le budget.'
+    },
+    web: {
+      href: 'combien-coute-un-site-internet/index.html',
+      img: '../assets/creation-site-restaurant-ala12-macbook.webp',
+      alt: 'Site internet professionnel de restaurant affiché sur un ordinateur portable, réalisé par DCB Technologies',
+      tagClass: 'web', tagLabel: 'Web',
+      read: '8 min de lecture', label: 'Web', kicker: 'Web',
+      title: 'Combien coûte un site internet en 2026 ?',
+      lede: 'Vitrine, e-commerce, coûts cachés : les vraies fourchettes de prix, sans langue de bois.'
+    }
+  };
+</script>
+<script>
+  /* Blog desktop : recherche live + filtres categorie (combinables) + vedette dynamique */
+  (function() {
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+    var MSG_NO_MATCH = 'Aucun article ne correspond à votre recherche. Essayez un autre mot-clé ou revenez à « Tous ».';
+    var MSG_SOON = 'Pas encore d’article dans cette catégorie. Revenez bientôt : un nouveau guide tous les 15 du mois.';
+
+    var input = document.getElementById('d-blog-search');
+    var empty = document.getElementById('d-blog-empty');
+    var pills = document.querySelectorAll('.pill[data-filter]');
+    // Cartes de la grille uniquement (la vedette #d-featured est hors #d-blog-grid).
+    var gridPosts = document.querySelectorAll('#d-blog-grid [data-post]');
+    if (!gridPosts.length) return;
+
+    var featured = document.getElementById('d-featured');
+    // Masquer toute la section vedette (header "A la une" inclus) pour ne pas laisser d'orphelin.
+    var featuredSection = featured ? featured.closest('section') : null;
+    var featuredData = window.DCB_BLOG_FEATURED || {};
+
+    // Une categorie a du contenu si au moins une card de grille la porte (source de verite = le DOM).
+    function categoryHasArticle(cat) {
+      if (cat === 'all') return true;
+      return Array.prototype.some.call(gridPosts, function(p) {
+        return p.getAttribute('data-cat') === cat;
+      });
+    }
+
+    function updateFeatured(cat) {
+      if (!featured) return;
+      var f = featuredData[cat] || featuredData.all;
+      if (!f) return;
+      featured.href = f.href;
+      var img = document.getElementById('d-featured-img');
+      if (img) { img.src = f.img; img.alt = f.alt; }
+      var tag = document.getElementById('d-featured-tag');
+      if (tag) { tag.className = 'tag tag-' + f.tagClass; tag.textContent = f.tagLabel; }
+      var read = document.getElementById('d-featured-read');
+      if (read) read.textContent = f.read;
+      var label = document.getElementById('d-featured-label');
+      if (label) label.textContent = f.label;
+      var kicker = document.getElementById('d-featured-kicker');
+      if (kicker) kicker.textContent = f.kicker;
+      var title = document.getElementById('d-featured-title');
+      if (title) title.textContent = f.title;
+      var lede = document.getElementById('d-featured-lede');
+      if (lede) lede.textContent = f.lede;
+    }
+
+    var activeCat = 'all';
+
+    function apply() {
+      var q = norm(input ? input.value.trim() : '');
+      var hasArticles = categoryHasArticle(activeCat);
+      // Categorie sans article : pas de vedette (pas de trou), etat "bientot".
+      if (featuredSection) featuredSection.style.display = hasArticles ? '' : 'none';
+
+      var shown = 0;
+      gridPosts.forEach(function(p) {
+        var catOk = activeCat === 'all' || p.getAttribute('data-cat') === activeCat;
+        var hay = norm(p.getAttribute('data-search') || '') + ' ' + norm(p.textContent);
+        var qOk = !q || hay.indexOf(q) !== -1;
+        var visible = hasArticles && catOk && qOk;
+        p.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+
+      if (empty) {
+        if (!hasArticles) {
+          empty.textContent = MSG_SOON;
+          empty.classList.remove('hidden');
+        } else if (shown === 0) {
+          empty.textContent = MSG_NO_MATCH;
+          empty.classList.remove('hidden');
+        } else {
+          empty.classList.add('hidden');
+        }
+      }
+    }
+
+    if (input) input.addEventListener('input', apply);
+    pills.forEach(function(p) {
+      p.addEventListener('click', function() {
+        pills.forEach(function(x) { x.removeAttribute('aria-selected'); });
+        p.setAttribute('aria-selected', 'true');
+        activeCat = p.getAttribute('data-cat') || 'all';
+        if (categoryHasArticle(activeCat)) updateFeatured(activeCat);
+        apply();
+      });
     });
-  });
+    apply();
+  })();
 </script>
 <script>
   /* Blog mobile : pills toggle + newsletter validation */
@@ -883,14 +952,90 @@
     var shell = document.querySelector('.m-shell[data-metier="blog"]');
     if (!shell) return;
 
-    /* Pills */
-    var pills = shell.querySelectorAll('.b-pill');
+    /* Recherche live + filtres categorie (combinables) */
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+    var MSG_NO_MATCH = 'Aucun article ne correspond à votre recherche. Essayez un autre mot-clé ou revenez à « Tous ».';
+    var MSG_SOON = 'Pas encore d’article dans cette catégorie. Revenez bientôt : un nouveau guide tous les 15 du mois.';
+
+    var mInput = shell.querySelector('#m-blog-search');
+    var mEmpty = shell.querySelector('#m-blog-empty');
+    var pills = shell.querySelectorAll('.b-pill[data-mfilter]');
+    var posts = shell.querySelectorAll('[data-mpost]');
+    var activeCat = 'all';
+
+    var mFeatured = shell.querySelector('#m-featured');
+    // Masquer toute la section vedette (evite un trou de padding) quand la categorie est vide.
+    var mFeaturedSection = mFeatured ? mFeatured.closest('section') : null;
+    var featuredData = window.DCB_BLOG_FEATURED || {};
+
+    // Une categorie a du contenu si au moins une card de grille la porte (source de verite = le DOM).
+    function categoryHasArticle(cat) {
+      if (cat === 'all') return true;
+      return Array.prototype.some.call(posts, function(p) {
+        return p.getAttribute('data-cat') === cat;
+      });
+    }
+
+    function updateMFeatured(cat) {
+      if (!mFeatured) return;
+      var f = featuredData[cat] || featuredData.all;
+      if (!f) return;
+      mFeatured.href = f.href;
+      var img = shell.querySelector('#m-featured-img');
+      if (img) { img.src = f.img; img.alt = f.alt; }
+      var tag = shell.querySelector('#m-featured-tag');
+      if (tag) { tag.className = 'b-tag b-tag-' + f.tagClass; tag.textContent = f.tagLabel; }
+      var read = shell.querySelector('#m-featured-read');
+      if (read) read.textContent = f.read;
+      var label = shell.querySelector('#m-featured-label');
+      if (label) label.textContent = f.label;
+      var title = shell.querySelector('#m-featured-title');
+      if (title) title.textContent = f.title;
+      var lede = shell.querySelector('#m-featured-lede');
+      if (lede) lede.textContent = f.lede;
+    }
+
+    function apply() {
+      var q = norm(mInput ? mInput.value.trim() : '');
+      var hasArticles = categoryHasArticle(activeCat);
+      if (mFeaturedSection) mFeaturedSection.style.display = hasArticles ? '' : 'none';
+
+      var shown = 0;
+      posts.forEach(function(p) {
+        var catOk = activeCat === 'all' || p.getAttribute('data-cat') === activeCat;
+        var hay = norm(p.getAttribute('data-search') || '') + ' ' + norm(p.textContent);
+        var qOk = !q || hay.indexOf(q) !== -1;
+        var visible = hasArticles && catOk && qOk;
+        p.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+
+      if (mEmpty) {
+        if (!hasArticles) {
+          mEmpty.textContent = MSG_SOON;
+          mEmpty.classList.remove('hidden');
+        } else if (shown === 0) {
+          mEmpty.textContent = MSG_NO_MATCH;
+          mEmpty.classList.remove('hidden');
+        } else {
+          mEmpty.classList.add('hidden');
+        }
+      }
+    }
+
+    if (mInput) mInput.addEventListener('input', apply);
     pills.forEach(function(p) {
       p.addEventListener('click', function() {
         pills.forEach(function(x) { x.removeAttribute('aria-selected'); });
         p.setAttribute('aria-selected', 'true');
+        activeCat = p.getAttribute('data-cat') || 'all';
+        if (categoryHasArticle(activeCat)) updateMFeatured(activeCat);
+        apply();
       });
     });
+    if (posts.length) apply();
 
     /* Newsletter form */
     var form = shell.querySelector('.b-news-form');
