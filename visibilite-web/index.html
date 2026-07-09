@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Présence web locale en 71, 69, 01 et 42 | DCB Technologies</title>
-<meta name="description" content="Création de site internet, référencement local et hébergement pour commerces et PME en 71, 69, 01 et 42. Techniciens basés en Saône-et-Loire. DCB Technologies.">
+<title>Création de site internet et SEO local | DCB Technologies</title>
+<meta name="description" content="Création de site internet, référencement local et hébergement pour commerces et PME en 71, 69, 01 et 42. Techniciens basés en Saône-et-Loire.">
 <link rel="canonical" href="https://dcb-technologies.fr/visibilite-web/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Présence web locale en 71, 69, 01 et 42 | DCB Technologies">
-<meta property="og:description" content="Création de site internet, référencement local et hébergement pour commerces et PME en 71, 69, 01 et 42. Techniciens basés en Saône-et-Loire. DCB Technologies.">
+<meta property="og:title" content="Création de site internet et SEO local | DCB Technologies">
+<meta property="og:description" content="Création de site internet, référencement local et hébergement pour commerces et PME en 71, 69, 01 et 42. Techniciens basés en Saône-et-Loire.">
 <meta property="og:url" content="https://dcb-technologies.fr/visibilite-web/">
 <meta property="og:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
 <meta property="og:site_name" content="DCB Technologies">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Présence web locale en 71, 69, 01 et 42 | DCB Technologies">
+<meta name="twitter:title" content="Création de site internet et SEO local | DCB Technologies">
 <meta name="twitter:description" content="Création de site internet, référencement local et hébergement pour commerces et PME en 71, 69, 01 et 42. Techniciens basés en Saône-et-Loire.">
 <meta name="twitter:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
 <link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
@@ -123,6 +123,12 @@
   .fres-item.winner .fres-rank { background:#F57C00; color:#FFF; }
   .fres-item.dimmed .fres-name { color:#5F6368; font-weight:500; }
 
+  /* Hero mobile : maquette iPhone (reutilise .iphone-front desktop, recentree et redimensionnee pour 375px) */
+  .m-shell .hero .scene.scene-iphone { height:300px; }
+  .m-shell .hero .scene.scene-iphone .iphone-front { position:absolute; left:50%; top:50%; right:auto; bottom:auto; width:142px; height:auto; transform:translate(-50%,-50%) rotate(-4deg); }
+  /* Badges flottants du hero au-dessus de la maquette iPhone (iphone-front z-index:3) */
+  .m-shell .hero .scene.scene-iphone .float1, .m-shell .hero .scene.scene-iphone .float2 { z-index:6; }
+
   .float-stat { position:absolute; bottom:50px; left:-30px; background:#FFF; border-radius:14px; padding:18px 22px; box-shadow:0 24px 48px -12px rgba(0,0,0,0.35),0 0 0 1px rgba(11,61,145,0.06); z-index:4; min-width:180px; }
   .float-stat .lab { font-size:10px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F57C00; margin-bottom:4px; }
   .float-stat .val { font-family:'Sora',sans-serif; font-size:1.6rem; font-weight:700; color:#0B3D91; line-height:1; letter-spacing:-0.02em; display:flex; align-items:center; gap:6px; }
@@ -135,16 +141,16 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Ai-je besoin d'un site internet si j'ai déjà une fiche Google Business ?", "acceptedAnswer": {"@type": "Answer", "text": "Une fiche Google Business n'apparaît pas dans les résultats de recherche classiques. Un site internet est une présence permanente que vous contrôlez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent."}},
-    {"@type": "Question", "name": "Quelle est la différence entre le SEO et le SEA ?", "acceptedAnswer": {"@type": "Answer", "text": "Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux."}},
+    {"@type": "Question", "name": "Ai-je besoin d'un site internet si j'ai déjà une fiche Google Business ?", "acceptedAnswer": {"@type": "Answer", "text": "Une fiche Google Business apparaît surtout dans le pack local et sur Google Maps, mais vous ne la contrôlez pas entièrement et sa visibilité reste limitée. Un site internet est une présence permanente que vous maîtrisez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent."}},
+    {"@type": "Question", "name": "Quelle est la différence entre le SEO et le SEA ?", "acceptedAnswer": {"@type": "Answer", "text": "Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic, selon les règles décrites par Google Search Central. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux."}},
     {"@type": "Question", "name": "Mon site sera-t-il visible sur Google Maps ?", "acceptedAnswer": {"@type": "Answer", "text": "La visibilité sur Google Maps dépend de votre fiche Google Business, distincte de votre site internet. DCB peut optimiser votre fiche en complément de votre site pour maximiser votre présence locale dans les résultats de recherche."}},
     {"@type": "Question", "name": "Combien coûte un site internet chez DCB Technologies ?", "acceptedAnswer": {"@type": "Answer", "text": "Un site vitrine one-page coûte 950 € HT. Un site 5 pages coûte 1 200 € HT. L'hébergement (domaine inclus, serveur en France, sauvegarde quotidienne) est facturé 264 € HT par an."}},
-    {"@type": "Question", "name": "Mon site sera-t-il adapté aux recherches sur smartphone et aux assistants vocaux ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tous nos sites sont conçus en Mobile First. Ils sont également optimisés pour les recherches vocales et les moteurs IA comme ChatGPT et Perplexity, ce qui vous rend visible sur l'ensemble des canaux de recherche actuels."}},
+    {"@type": "Question", "name": "Mon site sera-t-il adapté aux recherches sur smartphone et aux assistants vocaux ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tous nos sites sont conçus en Mobile First. On optimise aussi pour les recherches vocales et les moteurs IA comme ChatGPT et Perplexity, et on met tout en œuvre pour maximiser votre citabilité locale, sans pouvoir garantir une citation par ces outils : leurs algorithmes évoluent en permanence."}},
     {"@type": "Question", "name": "Peut-on migrer mon ancien site sans perdre mon référencement ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous récupérons vos contenus existants et mettons en place les redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création."}},
     {"@type": "Question", "name": "Faites-vous du référencement local pour Mâcon, Chalon ou Lyon ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. On cible les requêtes 'votre métier + votre ville' à Mâcon, Chalon, Villefranche, Lyon, Roanne et Bourg-en-Bresse. On travaille la fiche Google Business et le site en parallèle pour qu'ils renforcent le même mot-clé."}},
-    {"@type": "Question", "name": "En combien de temps mon site est-il livré ?", "acceptedAnswer": {"@type": "Answer", "text": "Un site one-page est livré en moins d'une semaine après validation de la maquette. Un site 5 pages prend 2 à 3 semaines selon le volume de contenu à intégrer."}},
+    {"@type": "Question", "name": "En combien de temps mon site est-il livré ?", "acceptedAnswer": {"@type": "Answer", "text": "Le délai (moins d'une semaine pour un one-page, 2 à 3 semaines pour un 5 pages) démarre une fois votre brief et vos éléments reçus (logo, photos, contenus), puis se confirme à la validation de la maquette."}},
     {"@type": "Question", "name": "Pouvez-vous reprendre la maintenance d'un site existant ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, sous condition. On fait un audit avant : si la techno est saine (WordPress à jour, HTML/CSS standard), on reprend. Si le site a été codé sur mesure sans documentation, on conseille souvent une refonte."}},
-    {"@type": "Question", "name": "Qu'est-ce qui est inclus dans l'hébergement à 264€ HT par an ?", "acceptedAnswer": {"@type": "Answer", "text": "Le domaine, le serveur en France, le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages."}}
+    {"@type": "Question", "name": "Qu'est-ce qui est inclus dans l'hébergement à 264€ HT par an ?", "acceptedAnswer": {"@type": "Answer", "text": "Le domaine, le serveur en France (conforme aux recommandations de la CNIL sur l'hébergement des données), le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages."}}
   ]
 }
 </script>
@@ -152,10 +158,28 @@
 {
   "@context": "https://schema.org/",
   "@type": "Service",
+  "@id": "https://dcb-technologies.fr/visibilite-web/#service",
   "name": "Visibilité web pour PME et commerces locaux",
+  "alternateName": ["Agence web Mâcon", "Création de site internet Lyon", "SEO local Saône-et-Loire"],
   "description": "Création de site internet, référencement local Google et hébergement web haute performance pour commerçants, artisans et PME en Saône-et-Loire, Rhône, Ain et Loire.",
-  "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://dcb-technologies.fr/#localbusiness",
+    "name": "DCB Technologies",
+    "url": "https://dcb-technologies.fr",
+    "telephone": "+33482530510",
+    "email": "contact@dcb-technologies.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "59 Chemin du Moulin Carron",
+      "addressLocality": "Dardilly",
+      "postalCode": "69570",
+      "addressRegion": "Auvergne-Rhône-Alpes",
+      "addressCountry": "FR"
+    }
+  },
   "serviceType": "Marketing digital et visibilité web",
+  "category": "Web Design and SEO",
   "areaServed": [
     {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
     {"@type": "AdministrativeArea", "name": "Rhône (69)"},
@@ -179,6 +203,7 @@
         "itemOffered": {"@type": "Service", "name": "Site vitrine one-page"},
         "price": "950",
         "priceCurrency": "EUR",
+        "url": "https://dcb-technologies.fr/visibilite-web/creation-site-internet/",
         "description": "Site internet one-page Mobile First, SEO local intégré, livré en moins d'une semaine."
       },
       {
@@ -186,6 +211,7 @@
         "itemOffered": {"@type": "Service", "name": "Site internet 5 pages"},
         "price": "1200",
         "priceCurrency": "EUR",
+        "url": "https://dcb-technologies.fr/visibilite-web/creation-site-internet/",
         "description": "Site internet vitrine 5 pages Mobile First, SEO local intégré, livré en moins d'une semaine."
       },
       {
@@ -193,6 +219,7 @@
         "itemOffered": {"@type": "Service", "name": "Hébergement annuel"},
         "price": "264",
         "priceCurrency": "EUR",
+        "url": "https://dcb-technologies.fr/visibilite-web/hebergement/",
         "description": "Hébergement serveur France, domaine inclus, SSL et sauvegarde quotidienne."
       }
     ]
@@ -218,15 +245,15 @@
         <span class="hidden md:inline-flex bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 items-center gap-1">
           <span class="material-symbols-outlined text-[14px] ms-fill">verified</span> 950€ HT · One-page
         </span>
-        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Livré en moins d'une semaine</span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Sites Mobile First</span>
       </div>
       <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-        Visible quand le client cherche votre métier, <br><span class="text-[#F57C00] italic font-semibold">à côté de chez lui</span>
+        Création de site internet et référencement local, <br><span class="text-[#F57C00] italic font-semibold">visible quand le client cherche votre métier</span>
       </h1>
       <p class="text-white/70 text-lg max-w-xl leading-relaxed">Un client cherche 'boulanger ouvert le dimanche à Mâcon' sur son téléphone. Si vous n'apparaissez pas, il va chez le voisin. On s'occupe de ça, avec des tarifs clairs et un interlocuteur joignable.</p>
       <div class="space-y-4">
         <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Création de site dès 950€ HT, livré en moins d'une semaine</div>
-        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Référencement local inclus : visible sur Google dans les 4 départements</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Référencement local inclus : conçu pour vous rendre visible sur Google dans les 4 départements</div>
         <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Tarifs affichés, délais tenus : aucune surprise en cours de projet</div>
       </div>
       <div class="flex flex-wrap gap-4 pt-2">
@@ -457,10 +484,10 @@
             <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#7C3AED] bg-[#7C3AED]/10 px-3 py-1 rounded-full">En moins d'une semaine</span>
           </div>
           <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">Création de site internet</h3>
-          <p class="text-slate-500 text-sm mb-3">Votre vitrine en ligne, accessible 24h/24, Mobile First et prête pour le référencement local dès le premier jour.</p>
+          <p class="text-slate-500 text-sm mb-3">Votre vitrine en ligne, accessible 24h/24, <abbr data-tooltip="Conception pensée d'abord pour l'écran mobile." aria-label="Conception pensée d'abord pour l'écran mobile.">Mobile First</abbr> et prête pour le référencement local dès le premier jour.</p>
           <ul class="space-y-2.5 mb-4">
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>Design personnalisé sur mesure</li>
-            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>SEO technique intégré dès la création</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span><abbr data-tooltip="Search Engine Optimization : le référencement naturel sur Google." aria-label="Search Engine Optimization : le référencement naturel sur Google.">SEO</abbr> technique intégré dès la création</li>
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#7C3AED"></span>Mobile First, rapide et accessible</li>
           </ul>
           <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
@@ -481,7 +508,7 @@
             <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full">Jusqu'à ×3 visibilité</span>
           </div>
           <h3 class="font-sora font-bold text-2xl text-[#0B3D91] mb-2">SEO et SEA Local</h3>
-          <p class="text-slate-500 text-sm mb-3">Premier sur Google quand vos clients cherchent votre métier dans votre ville. Budget maîtrisé, résultats mesurables.</p>
+          <p class="text-slate-500 text-sm mb-3">Visible sur Google quand vos clients cherchent votre métier dans votre ville. Budget maîtrisé, résultats mesurables.</p>
           <ul class="space-y-2.5 mb-4">
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Référencement naturel ciblé local</li>
             <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Google Ads à budget maîtrisé</li>
@@ -582,7 +609,7 @@
       <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
         <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Pourquoi DCB</span>
         <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] leading-tight mb-4">On n'a pas réinventé le web. On a juste décidé d'être joignables.</h2>
-        <p class="text-slate-500 text-base leading-relaxed">DCB Technologies est une entreprise technique locale, spécialisée dans les commerces du 71, 69, 01 et 42. Pas de standardiste, pas de grand groupe. Le même technicien depuis le début. Vous n'expliquez rien deux fois.</p>
+        <p class="text-slate-500 text-base leading-relaxed">DCB Technologies est une agence web locale et entreprise technique, spécialisée dans les commerces du 71, 69, 01 et 42. Pas de standardiste, pas de grand groupe. Le même technicien depuis le début. Vous n'expliquez rien deux fois.</p>
       </div>
       <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
         <div class="space-y-3">
@@ -592,7 +619,7 @@
         </div>
         <div class="space-y-3">
           <div class="w-11 h-11 bg-[#F57C00]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#F57C00] ms-fill">euro</span></div>
-          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Pas de brief de 20 pages</h3>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Un appel suffit pour démarrer</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Un appel d'une heure suffit. On connaît les commerces du 71, 69, 01 et 42 : on pose les bonnes questions sans jargon digital, et on démarre.</p>
         </div>
         <div class="space-y-3">
@@ -622,15 +649,13 @@
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On était invisibles sur Google alors qu'on est là depuis 15 ans. DCB nous a refait un site et mis en place le SEO local. En trois mois, on est passés en première page pour nos requêtes principales. Le téléphone a repris."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Une agence de grande qualité qui nous a accompagnés sur plusieurs de nos sites internet. Le travail est sérieux, soigné et réalisé avec une vraie compréhension de nos besoins. Une agence de confiance que nous recommandons sans hésiter pour tout développement ou refonte de site web."</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
-            <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-jmf.webp" alt="Jean-Marc Faure, restaurant Les Platanes à Mâcon" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('JF'))">
-            </div>
+            <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">QPS</div>
             <div>
-              <p class="font-bold text-[#0B3D91]">Jean-Marc Faure</p>
-              <p class="text-slate-500 text-sm">Restaurant Les Platanes, Mâcon (71)</p>
+              <p class="font-bold text-[#0B3D91]">Groupe QPS</p>
+              <p class="text-slate-500 text-sm">Entreprise B2B, plusieurs sites web · Avis Google</p>
               <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
             </div>
           </div>
@@ -638,47 +663,13 @@
         <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
           <div>
             <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Mon ancien site ne s'affichait pas sur mobile, les clients me le disaient. DCB a tout refait en trois semaines, avec le référencement intégré. J'ai doublé mes demandes de devis en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</p>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Cela fait 3 ans que Clément nous accompagne sur notre petite agence audiovisuelle et nous sommes ravis. Réactivité, pédagogie et professionnalisme sont au rendez-vous!"</p>
           </div>
           <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
-            <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-cm.webp" alt="Claire Moreau, fleuriste à Chalon-sur-Saône" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('CM'))">
-            </div>
+            <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">JK</div>
             <div>
-              <p class="font-bold text-[#0B3D91]">Claire Moreau</p>
-              <p class="text-slate-500 text-sm">Fleuriste, Chalon-sur-Saône (71)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
-          <div>
-            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"On héberge notre site chez DCB depuis deux ans. Zéro panne, zéro lenteur. Quand on a eu un problème de certificat SSL un dimanche, ils ont répondu en moins d'une heure. C'est ce genre de réactivité qu'on cherchait."</p>
-          </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
-            <div class="w-12 h-12 bg-[#4F46E5] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-ta.webp" alt="Thomas Aubert, pharmacien à Villefranche-sur-Saône" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('TA'))">
-            </div>
-            <div>
-              <p class="font-bold text-[#0B3D91]">Thomas Aubert</p>
-              <p class="text-slate-500 text-sm">Pharmacie Aubert, Villefranche-sur-Saône (69)</p>
-              <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
-          <div>
-            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Ce qui m'a convaincue, c'est qu'ils sont locaux. Ils connaissent Lyon, ils connaissent les habitudes de recherche ici. Le SEO qu'ils ont mis en place est vraiment ciblé sur notre zone. On n'est pas un numéro de ticket."</p>
-          </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
-            <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-              <img src="../assets/testimonial-ip.webp" alt="Isabelle Perrin, boutique de mode à Lyon" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('IP'))">
-            </div>
-            <div>
-              <p class="font-bold text-[#0B3D91]">Isabelle Perrin</p>
-              <p class="text-slate-500 text-sm">Boutique mode, Lyon 6e (69)</p>
+              <p class="font-bold text-[#0B3D91]">Jonathan Kalifat</p>
+              <p class="text-slate-500 text-sm">Agence audiovisuelle · Avis Google</p>
               <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
             </div>
           </div>
@@ -706,8 +697,8 @@
       <!-- Photo dominante avec badges départements posés en bas -->
       <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
         <div class="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
-          <img alt="Commerçant de Saône-et-Loire accompagné par DCB Technologies pour sa présence en ligne"
-               src="../assets/dept-71.webp"
+          <img alt="Site e-commerce local réalisé par DCB Technologies, affiché sur MacBook"
+               src="../assets/creation-site-webshop-commerce-qps-macbook.webp"
                class="w-full h-full object-cover"
                width="1200" height="1500" loading="lazy" decoding="async"
                onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg';">
@@ -731,7 +722,7 @@
           </li>
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
-            <span class="leading-relaxed">Support réactif, interlocuteur identifié</span>
+            <span class="leading-relaxed">Support réactif, interlocuteur identifié dès le premier appel.</span>
           </li>
           <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
             <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
@@ -812,16 +803,16 @@
         <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Questions fréquentes</h2>
       </div>
       <div class="flex flex-col gap-3 mb-12 dcb-reveal">
-        <details class="faq-item"><summary><span>Ai-je besoin d'un site internet si j'ai déjà une fiche Google Business ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Une fiche Google Business n'apparaît pas dans les résultats de recherche classiques. Un site internet est une présence permanente que vous contrôlez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent.</div></details>
-        <details class="faq-item"><summary><span>Quelle est la différence entre le SEO et le SEA ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux.</div></details>
+        <details class="faq-item"><summary><span>Ai-je besoin d'un site internet si j'ai déjà une fiche Google Business ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Une fiche Google Business apparaît surtout dans le pack local et sur Google Maps, mais vous ne la contrôlez pas entièrement et sa visibilité reste limitée. Un site internet est une présence permanente que vous maîtrisez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent.</div></details>
+        <details class="faq-item"><summary><span>Quelle est la différence entre le SEO et le <abbr data-tooltip="Search Engine Advertising : les liens sponsorisés Google Ads." aria-label="Search Engine Advertising : les liens sponsorisés Google Ads.">SEA</abbr> ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic, selon les règles décrites par <a href="https://developers.google.com/search/docs" target="_blank" rel="noopener">Google Search Central</a>. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux.</div></details>
         <details class="faq-item"><summary><span>Mon site sera-t-il visible sur Google Maps ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">La visibilité sur Google Maps dépend de votre fiche Google Business, distincte de votre site internet. DCB peut optimiser votre fiche en complément de votre site pour maximiser votre présence locale dans les résultats de recherche.</div></details>
         <details class="faq-item"><summary><span>Combien coûte un site internet chez DCB Technologies ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Un site vitrine one-page coûte 950 € HT. Un site 5 pages coûte 1 200 € HT. L'hébergement (domaine inclus, serveur en France, sauvegarde quotidienne) est facturé 264 € HT par an.</div></details>
-        <details class="faq-item"><summary><span>Mon site sera-t-il adapté aux recherches sur smartphone et aux assistants vocaux ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Tous nos sites sont conçus en Mobile First. Ils sont également optimisés pour les recherches vocales et les moteurs IA comme ChatGPT et Perplexity, ce qui vous rend visible sur l'ensemble des canaux de recherche actuels.</div></details>
+        <details class="faq-item"><summary><span>Mon site sera-t-il adapté aux recherches sur smartphone et aux assistants vocaux ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Tous nos sites sont conçus en Mobile First. On optimise aussi pour les recherches vocales et les moteurs IA comme ChatGPT et Perplexity, et on met tout en œuvre pour maximiser votre citabilité locale, sans pouvoir garantir une citation par ces outils : leurs algorithmes évoluent en permanence.</div></details>
         <details class="faq-item"><summary><span>Peut-on migrer mon ancien site sans perdre mon référencement ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Nous récupérons vos contenus existants et mettons en place les redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création.</div></details>
         <details class="faq-item"><summary><span>Faites-vous du référencement local pour Mâcon, Chalon ou Lyon ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. On cible les requêtes 'votre métier + votre ville' à Mâcon, Chalon, Villefranche, Lyon, Roanne et Bourg-en-Bresse. On travaille la fiche Google Business et le site en parallèle pour qu'ils renforcent le même mot-clé.</div></details>
-        <details class="faq-item"><summary><span>En combien de temps mon site est-il livré ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Un site one-page est livré en moins d'une semaine après validation de la maquette. Un site 5 pages prend 2 à 3 semaines selon le volume de contenu à intégrer.</div></details>
+        <details class="faq-item"><summary><span>En combien de temps mon site est-il livré ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Le délai (moins d'une semaine pour un one-page, 2 à 3 semaines pour un 5 pages) démarre une fois votre brief et vos éléments reçus (logo, photos, contenus), puis se confirme à la validation de la maquette.</div></details>
         <details class="faq-item"><summary><span>Pouvez-vous reprendre la maintenance d'un site existant ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, sous condition. On fait un audit avant : si la techno est saine (WordPress à jour, HTML/CSS standard), on reprend. Si le site a été codé sur mesure sans documentation, on conseille souvent une refonte.</div></details>
-        <details class="faq-item"><summary><span>Qu'est-ce qui est inclus dans l'hébergement à 264€ HT par an ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Le domaine, le serveur en France, le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages.</div></details>
+        <details class="faq-item"><summary><span>Qu'est-ce qui est inclus dans l'hébergement à 264€ HT par an ?</span><span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Le domaine, le serveur en France (conforme aux recommandations de la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a> sur l'hébergement des données), le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages.</div></details>
       </div>
     </div>
   </div>
@@ -833,7 +824,7 @@
     <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
       <div class="lg:col-span-7 col-msg">
         <span class="filet" aria-hidden="true"></span>
-        <h2 class="d-h">Un devis web en 48h, sans engagement.</h2>
+        <h2 class="d-h">Votre audit web sous 48h, sans engagement.</h2>
         <p class="d-lede">Dites-nous ce que vous faites et où vous êtes. On revient vers vous avec un tarif clair et un délai précis.</p>
       </div>
       <div class="lg:col-span-5 col-action">
@@ -868,15 +859,70 @@
 <section class="hero">
   <div class="chips">
     <span class="chip"><span class="material-symbols-outlined fill ms-fill">euro</span>Dès 950€ HT</span>
-    <span class="chip gold">Livré &lt; 1 semaine</span>
+    <span class="chip gold">Mobile First</span>
   </div>
-  <h1>Visible quand le client cherche votre métier <em>à côté de chez lui.</em></h1>
+  <h1>Création de site internet et référencement local, <em>visible quand le client cherche votre métier.</em></h1>
   <p class="lede">Si vos clients ne vous trouvent pas sur Google, ils vont chez le voisin. Tarifs clairs, un interlocuteur joignable, livraison en moins d'une semaine.</p>
 
-  <div class="scene">
-    <div class="tpv">
-      <img src="../assets/hero-visibilite-web.webp" alt="Site web et fiche Google d'un commerce local conçus par DCB" width="500" height="400" loading="eager" fetchpriority="high"
-           onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'">
+  <div class="scene scene-iphone">
+    <div class="iphone-front" aria-hidden="true">
+      <div class="iphone-front-screen">
+        <div class="iphone-front-notch"></div>
+        <div class="iphone-status">
+          <span>9:41</span>
+          <span class="iphone-status-right">
+            <span class="material-symbols-outlined">network_cell</span>
+            <span class="material-symbols-outlined">wifi</span>
+            <span class="material-symbols-outlined">battery_full</span>
+          </span>
+        </div>
+        <div class="iphone-front-content">
+          <div class="fgbar">
+            <span class="fglogo"></span>
+            <span class="fgquery">métier + ville</span>
+            <span class="material-symbols-outlined fgmic">mic</span>
+          </div>
+          <div class="floc">
+            <span class="material-symbols-outlined">location_on</span>
+            Résultats locaux
+          </div>
+          <div class="fres">
+            <div class="fres-item winner">
+              <span class="fres-rank">1</span>
+              <div class="fres-content">
+                <div class="fres-name">Votre commerce</div>
+                <div class="fres-meta-line">
+                  <span class="fres-stars">★★★★★</span>
+                  <span>4,8 (127)</span>
+                </div>
+                <div class="fres-info"><span class="open">Ouvert</span> · 0,3 km</div>
+              </div>
+            </div>
+            <div class="fres-item dimmed">
+              <span class="fres-rank">2</span>
+              <div class="fres-content">
+                <div class="fres-name">Concurrent local</div>
+                <div class="fres-meta-line">
+                  <span class="fres-stars">★★★★<span class="fres-stars-empty">★</span></span>
+                  <span>4,2 (54)</span>
+                </div>
+                <div class="fres-info">Ouvre à 9h · 1,2 km</div>
+              </div>
+            </div>
+            <div class="fres-item dimmed">
+              <span class="fres-rank">3</span>
+              <div class="fres-content">
+                <div class="fres-name">Concurrent local</div>
+                <div class="fres-meta-line">
+                  <span class="fres-stars">★★★★<span class="fres-stars-empty">★</span></span>
+                  <span>4,0 (38)</span>
+                </div>
+                <div class="fres-info">Fermé · 2,1 km</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="float1" aria-hidden="true">
       <div class="ic"><span class="material-symbols-outlined ms-fill">trending_up</span></div>
@@ -890,7 +936,7 @@
 
   <div class="checks">
     <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Création de site dès 950€ HT, livré en moins d'une semaine</div>
-    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Référencement local inclus : visible sur Google dans les 4 départements</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Référencement local inclus : conçu pour vous rendre visible sur Google dans les 4 départements</div>
     <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Tarifs affichés, délais tenus : aucune surprise en cours de projet</div>
   </div>
 
@@ -969,8 +1015,8 @@
         <p class="ds">Votre vitrine en ligne, accessible 24h/24, pensée pour que le client appelle ou vienne.</p>
         <div class="feats">
           <div><span class="material-symbols-outlined ms-fill">design_services</span>Design personnalisé sur mesure</div>
-          <div><span class="material-symbols-outlined ms-fill">search</span>SEO technique intégré dès la création</div>
-          <div><span class="material-symbols-outlined ms-fill">smartphone</span>Mobile First, rapide et accessible</div>
+          <div><span class="material-symbols-outlined ms-fill">search</span><span><abbr data-tooltip="Search Engine Optimization : le référencement naturel sur Google." aria-label="Search Engine Optimization : le référencement naturel sur Google.">SEO</abbr> technique intégré dès la création</span></div>
+          <div><span class="material-symbols-outlined ms-fill">smartphone</span><span><abbr data-tooltip="Conception pensée d'abord pour l'écran mobile." aria-label="Conception pensée d'abord pour l'écran mobile.">Mobile First</abbr>, rapide et accessible</span></div>
         </div>
         <div class="go"><span class="lb">Voir la page<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
       </div>
@@ -982,7 +1028,7 @@
           <span class="pill">×3 visibilité</span>
         </div>
         <h3>SEO &amp; SEA Local</h3>
-        <p class="ds">Premier sur Google dans votre ville, et captez la demande immédiate.</p>
+        <p class="ds">Visible sur Google dans votre ville, et captez la demande immédiate.</p>
         <div class="feats">
           <div><span class="material-symbols-outlined ms-fill">place</span>Référencement naturel ciblé local</div>
           <div><span class="material-symbols-outlined ms-fill">ads_click</span>Google Ads à budget maîtrisé</div>
@@ -1088,12 +1134,12 @@
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"On était invisibles sur Google alors qu'on est là depuis 15 ans. DCB nous a refait un site et mis en place le SEO local. En trois mois, on est passés en première page. Le téléphone a repris."</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Une agence de grande qualité qui nous a accompagnés sur plusieurs de nos sites internet. Le travail est sérieux, soigné et réalisé avec une vraie compréhension de nos besoins. Une agence de confiance que nous recommandons sans hésiter pour tout développement ou refonte de site web."</p>
       <div style="display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0D9488,#14B8A6);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">JF</div>
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0D9488,#14B8A6);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">QPS</div>
         <div>
-          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Jean-Marc Faure</div>
-          <div style="font-size:11.5px;color:var(--mute)">Restaurant Les Platanes, Mâcon (71)</div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Groupe QPS</div>
+          <div style="font-size:11.5px;color:var(--mute)">Entreprise B2B, plusieurs sites web · Avis Google</div>
         </div>
       </div>
     </div>
@@ -1105,12 +1151,12 @@
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Mon ancien site ne s'affichait pas sur mobile. DCB a tout refait en trois semaines, référencement inclus. J'ai doublé mes demandes de devis en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Cela fait 3 ans que Clément nous accompagne sur notre petite agence audiovisuelle et nous sommes ravis. Réactivité, pédagogie et professionnalisme sont au rendez-vous!"</p>
       <div style="display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#1E5BD9);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">CM</div>
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#1E5BD9);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">JK</div>
         <div>
-          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Claire Moreau</div>
-          <div style="font-size:11.5px;color:var(--mute)">Fleuriste, Chalon-sur-Saône (71)</div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Jonathan Kalifat</div>
+          <div style="font-size:11.5px;color:var(--mute)">Agence audiovisuelle · Avis Google</div>
         </div>
       </div>
     </div>
@@ -1129,7 +1175,7 @@
 </style>
 <section class="m-prox" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
   <div class="m-prox-reveal" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
-    <img src="../assets/dept-71.webp" alt="Commerçant de Saône-et-Loire accompagné par DCB Technologies pour sa présence en ligne" width="800" height="600" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <img src="../assets/creation-site-webshop-commerce-qps-macbook.webp" alt="Site e-commerce local réalisé par DCB Technologies, affiché sur MacBook" width="800" height="600" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
   </div>
   <p style="color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.03em;margin-top:12px;margin-bottom:0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Saône-et-Loire · Rhône · Ain · Loire</p>
   <p class="m-prox-reveal" data-d="1" style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
@@ -1137,19 +1183,19 @@
   <p class="m-prox-reveal" data-d="3" style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Ce n'est pas une agence qui sous-traite à l'autre bout de la France. DCB est basée en Saône-et-Loire et intervient dans les 4 départements.</p>
   <ul class="m-prox-reveal" data-d="3" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
     <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
-    </li>
-    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
       <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">On se déplace pour le brief</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">4 dépts</span>
     </li>
     <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
-      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
-      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
-      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">search</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Référencement local inclus</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">SEO</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">verified</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Zéro sous-traitance</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">100% DCB</span>
     </li>
   </ul>
   <a class="m-prox-reveal" data-d="4" href="../contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Prendre rendez-vous<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
@@ -1193,27 +1239,15 @@
   <div class="faq">
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Fiche Google Business ou site internet ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Une fiche Google Business n'apparaît pas dans les résultats de recherche classiques. Un site internet est une présence permanente que vous contrôlez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent.</div>
+      <div class="ans">Une fiche Google Business apparaît surtout dans le pack local et sur Google Maps, mais vous ne la contrôlez pas entièrement et sa visibilité reste limitée. Un site internet est une présence permanente que vous maîtrisez, qui renforce votre référencement local et votre crédibilité auprès des clients qui vous cherchent.</div>
     </details>
     <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>SEO et SEA : quelle différence ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux.</div>
-    </details>
-    <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Visible sur Google Maps ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">La visibilité sur Google Maps dépend de votre fiche Google Business, distincte de votre site internet. DCB peut optimiser votre fiche en complément de votre site pour maximiser votre présence locale dans les résultats de recherche.</div>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span><span>SEO et <abbr data-tooltip="Search Engine Advertising : les liens sponsorisés Google Ads." aria-label="Search Engine Advertising : les liens sponsorisés Google Ads.">SEA</abbr> : quelle différence ?</span><span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Le SEO (référencement naturel) améliore votre position sur Google sans payer par clic, selon les règles décrites par <a href="https://developers.google.com/search/docs" target="_blank" rel="noopener">Google Search Central</a>. Le SEA (Google Ads) vous fait apparaître en haut des résultats immédiatement, mais vous payez à chaque clic. DCB analyse votre situation avant de recommander l'un, l'autre ou les deux.</div>
     </details>
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quel est le prix d'un site ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
       <div class="ans">Un site vitrine one-page coûte 950 € HT. Un site 5 pages coûte 1 200 € HT. L'hébergement (domaine inclus, serveur en France, sauvegarde quotidienne) est facturé 264 € HT par an.</div>
-    </details>
-    <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Compatible mobile et assistants vocaux ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Oui. Tous nos sites sont conçus en Mobile First. Ils sont également optimisés pour les recherches vocales et les moteurs IA comme ChatGPT et Perplexity, ce qui vous rend visible sur l'ensemble des canaux de recherche actuels.</div>
-    </details>
-    <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Migration sans perdre le SEO ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Oui. Nous récupérons vos contenus existants et mettons en place les redirections SEO pour conserver votre référencement acquis. La migration est incluse dans le tarif de création.</div>
     </details>
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>SEO local sur Mâcon, Lyon ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
@@ -1221,15 +1255,11 @@
     </details>
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Délai de livraison ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Un site one-page est livré en moins d'une semaine après validation de la maquette. Un site 5 pages prend 2 à 3 semaines selon le volume de contenu à intégrer.</div>
-    </details>
-    <details>
-      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Reprise d'un site existant ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Oui, sous condition. On fait un audit avant : si la techno est saine (WordPress à jour, HTML/CSS standard), on reprend. Si le site a été codé sur mesure sans documentation, on conseille souvent une refonte.</div>
+      <div class="ans">Le délai (moins d'une semaine pour un one-page, 2 à 3 semaines pour un 5 pages) démarre une fois votre brief et vos éléments reçus (logo, photos, contenus), puis se confirme à la validation de la maquette.</div>
     </details>
     <details>
       <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que comprend l'hébergement à 264€ ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-      <div class="ans">Le domaine, le serveur en France, le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages.</div>
+      <div class="ans">Le domaine, le serveur en France (conforme aux recommandations de la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a> sur l'hébergement des données), le SSL, la sauvegarde quotidienne et l'assistance technique. Aucune option payante. C'est le même prix pour un one-page ou un site 5 pages.</div>
     </details>
   </div>
 </section>
@@ -1238,12 +1268,12 @@
 <!-- CTA FINAL v3 : Le Bord Tranche (Web hub, accent orange brand) -->
 <section class="m-cta-final" style="--accent:#F57C00;--accent-shadow:rgba(245,124,0,0.35)" aria-labelledby="cta-final-h-web">
   <span class="topbar" aria-hidden="true"></span>
-  <h3 id="cta-final-h-web">Un devis web en 48h, sans engagement.</h3>
+  <h3 id="cta-final-h-web">Votre audit web sous 48h, sans engagement.</h3>
   <p>Dites-nous ce que vous faites et où vous êtes. On revient vers vous avec un tarif clair et un délai précis.</p>
   <a class="btn btn-pri" href="../contact/index.html">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
   <span class="dpx-divider">ou appelez-nous</span>
   <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
-  <p class="m-updated">Mis à jour le <time datetime="2026-04-30">30 avril 2026</time></p>
+  <p class="m-updated">Mis à jour le <time datetime="2026-06-04">4 juin 2026</time></p>
   <span class="bottomark" aria-hidden="true"></span>
 </section>
 
