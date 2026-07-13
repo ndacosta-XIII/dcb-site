@@ -266,8 +266,43 @@ Même message sur les 6 pages (télémaintenance immédiate d'abord, sur site en
 - **Retiré :** « 80% de nos clients choisissent la LLD » (faux), « garantie 5 ans » en absolu.
 - **NE PAS réutiliser ailleurs :** la LOA, l'argument trésorerie / comparatif fiscal, l'indépendance des marques, la section wifi et réseau.
 
-## Hub Web (`visibilite-web/index.html`)
+## Silo Web (`visibilite-web/`)
+
+### Hub (`visibilite-web/index.html`)
 # À remplir
+
+### Création de site (`visibilite-web/creation-site-internet/index.html`)
+
+- **Rôle éditorial :** page transactionnelle du silo Web. Elle porte prix, délais et devis (le blog n'en porte jamais, cf. règle Blog ci-dessus). Cible le mot-clé porteur "création de site internet" en exact match (title + H1).
+- **Requêtes cibles :** création de site internet (+ Mâcon, Lyon, Bourg-en-Bresse, Roanne en corps de texte), refonte site internet, site vitrine une page.
+
+**Lede hero (douleur, desktop + mobile, formulation quasi identique, longueur adaptée) :**
+« Aujourd'hui, un client vérifie votre commerce en ligne avant de pousser la porte. Sans site, ou avec une vitrine vieillissante dont vous n'êtes plus très fier, c'est le concurrent d'à côté qu'il trouve à votre place. »
+
+**Argument propriété vs abonnement (FAQ "À qui appartiennent le site et le nom de domaine ?") :**
+« Le site et le nom de domaine vous appartiennent, dès le premier jour. C'est toute la différence avec une plateforme en abonnement type Wix ou Squarespace : là-bas, vous louez un emplacement chez un géant américain, mois après mois, et le jour où vous arrêtez de payer, il ne vous reste rien. Chez DCB, vous payez une fois, le site est à vous, hébergé où vous voulez et récupérable à tout moment. Vous êtes propriétaire, pas locataire. »
+
+**Réponse refonte (FAQ "Pouvez-vous refaire mon site existant ?") :**
+« Oui, la refonte de site est une part importante de notre activité. Refaire un site internet vieillissant, c'est repartir de ce qui fonctionne déjà (vos textes, vos photos, votre nom de domaine, le référencement que vous avez acquis) et remettre le reste à niveau : design plus moderne, chargement plus rapide, affichage mobile impeccable et structure optimisée pour Google et les moteurs IA. On commence par un audit de l'existant pour vous dire ce qui vaut la peine d'être conservé et ce qu'il faut refaire, puis on vous chiffre la refonte au devis, sans facturer une création complète quand une remise à neuf suffit. »
+Point d'attention : cette réponse reste aujourd'hui le seul point d'entrée du cluster "refonte" (confirmé par volume Keyword Planner dans `pour-clement/audit-motscles-hub-web.md`) ; une section H2/H3 dédiée en corps de page est validée par XIII mais pas encore rédigée (cf. roadmap CLAUDE.md / audit `campagnes/audit-creation-site-seo.md` P1 n°1). Ne pas dupliquer cette formulation mot pour mot tant que cette section n'existe pas ailleurs.
+
+**Logique de gamme pricing (intro section Tarifs) :**
+« Nos tarifs sont publics : pas de devis à l'aveugle, vous connaissez le prix avant même de nous appeler. Ailleurs, un site professionnel se facture souvent plusieurs milliers d'euros ; chez DCB, vous payez une fois et le site vous appartient, sans abonnement à vie comme sur une plateforme en location. Le One Page va à l'essentiel pour une présence locale, le 5 Pages part du même socle et ajoute les pages, le blog et les formulaires : d'où un écart de prix contenu. »
+Prix de référence (identiques hub + sous-page + `llms.txt`, à ne pas faire dériver) : Site One Page à partir de 950€ HT (livré en 7 jours), Site 5 Pages à partir de 1200€ HT (livré en 7 jours à 3 semaines), Sur mesure / E-commerce sur devis. Formation à la prise en main toujours incluse, hébergement toujours en option.
+
+- **NE PAS réutiliser ailleurs dans le silo Web :** le lede douleur du hero (vitrine vieillissante / concurrent d'à côté), l'argument propriété vs abonnement Wix/Squarespace, la réponse refonte détaillée, la logique de gamme pricing One Page/5 Pages.
+
+---
+
+## Blog : "Combien coûte un site internet ?" (`blog/combien-coute-un-site-internet/index.html`)
+
+### FAQ "Quel est le prix minimum d'un vrai site internet professionnel ?" (formulation validée 07/07/2026)
+Correction post-publication : l'ancienne réponse posait 1 500 € comme plancher de qualité ("en dessous = travail bâclé"), ce qui dénigrait implicitement le positionnement prix de DCB (offres phares sous 1 500 € HT, non citées dans l'article). Nouvelle doctrine : découpler le prix du jugement de qualité. Un prix bas n'est pas un signal négatif en soi ; ce qui doit alerter, c'est ce que le prix cache (modèle standard vendu comme sur-mesure, textes non compris, site non possédé, coûts cachés), jamais le montant seul.
+
+**Réponse validée (identique JSON-LD + FAQ desktop + FAQ mobile, mot pour mot) :**
+« Un prix bas n'est pas en soi un mauvais signe : un professionnel efficace et transparent peut très bien vous livrer une vraie vitrine de qualité pour bien moins que 1 500 €. Ce qui doit vous alerter, ce n'est pas le montant, c'est ce qu'il cache : un modèle standard vendu comme du sur-mesure, des textes que personne n'a écrits pour vous, un site que vous ne possédez pas vraiment, ou des coûts qui tombent une fois que vous avez signé. Le bon réflexe, c'est de regarder ce qui est inclus (rédaction, référencement, propriété du site, accompagnement après la mise en ligne), pas le chiffre en bas du devis. »
+
+Ne jamais réintroduire "en dessous de 1 500 € = travail bâclé" ni "le plancher réaliste tourne autour de 1 500 €". Les autres mises en garde de l'article (site loué 29 €/mois, e-commerce clé en main à 1 500 €, template rempli à la va-vite) restent valables : toujours reliées au modèle/à ce qui manque, jamais au prix bas en tant que tel. Les prix DCB (950 €/1 200 € HT) ne sont jamais cités dans cet article : ils vivent sur `visibilite-web/creation-site-internet/index.html`.
 
 ---
 
