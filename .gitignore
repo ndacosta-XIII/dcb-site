@@ -7,6 +7,9 @@ dist/
 # ─── Dossier de travail local (assets de référence, brouillons) ────
 Logo et images/
 
+# ─── Docs campagnes ads (configs Google/Meta locales, non versionnées) ─
+campagnes/
+
 # ─── Fichiers système OS ───────────────────────────────────────────
 .DS_Store
 Thumbs.db
@@ -41,6 +44,9 @@ propagate-*.ps1
 .env.*.local
 *.key
 secrets.json
+
+# ─── Config MCP locale (chemins propres au PC, pointe vers credentials) ─
+.mcp.json
 
 # ─── Tests locaux générés ──────────────────────────────────────────
 test.html

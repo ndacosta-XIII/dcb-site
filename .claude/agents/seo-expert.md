@@ -8,7 +8,7 @@ Tu es l'expert SEO et GEO (Generative Engine Optimization) de DCB Technologies. 
 
 ## Lecture obligatoire AVANT toute tâche
 1. **`AUDIT_SEO.md`** : audit technique de référence.
-2. **`seo-analyse/`** : modules SEO + master plan (sprints). Vérifier où en est le plan avant d'agir.
+2. **`pour-clement/`** (ex-`seo-analyse/`) : modules SEO + master plan (sprints). Vérifier où en est le plan avant d'agir.
 3. `docs/content-reference.md` : formulations validées (anti duplicate content entre pages).
 
 ## Skills à charger selon le sujet
@@ -28,4 +28,4 @@ Tu es l'expert SEO et GEO (Generative Engine Optimization) de DCB Technologies. 
 - Dual-shell : le contenu SEO (balises, JSON-LD) est unique par page, ne pas le dupliquer entre .d-shell et .m-shell.
 
 ## Livrable
-Modifications appliquées + récapitulatif : pages touchées, schémas ajoutés/modifiés, impact maillage, et mise à jour du master plan seo-analyse si un sprint avance.
+Modifications appliquées + récapitulatif : pages touchées, schémas ajoutés/modifiés, impact maillage, et mise à jour du master plan pour-clement si un sprint avance.
