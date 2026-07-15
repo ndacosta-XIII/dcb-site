@@ -309,6 +309,24 @@ Prix de référence (identiques hub + sous-page + `llms.txt`, à ne pas faire d�
 
 - **NE PAS réutiliser ailleurs :** la signature "ce qu'on pilote / ce qu'on ne garantit pas", le hedge GEO ci-dessus, la FAQ prix "budget Ads séparé et vous appartient".
 
+### Hébergement web (`visibilite-web/hebergement/index.html`)
+
+- **Rôle éditorial :** page de COMPLÉMENT, pas moteur d'acquisition (cluster à faible volume, cf. `pour-clement/audit-motscles-hub-web.md`). Sa mission : rassurer (données en France, SSL, sauvegardes, support local) et servir de CROSS-SELL depuis création-site et SEO. Angle propre à cette page : **héberger chez celui qui a fait votre site, un seul interlocuteur** (site + emails + hébergement chez le même prestataire local). Ne jamais la vendre comme un produit autonome.
+- **Offre SUR DEVIS (décision XIII 15/07/2026) :** la grille 3 formules (Starter/Pro/Business, XX€/mois) et le JSON-LD `AggregateOffer` 29-99€/mois ont été retirés (front-builder + seo-expert). Le prix se cadre en transparence, jamais en forfait générique : "on dimensionne l'hébergement selon votre site et vos besoins réels". Ne jamais réintroduire de prix ferme sur cette page tant que l'arbitrage prix du silo (hub `visibilite-web/` et `llms.txt` portent encore 264€ HT/an) n'est pas tranché.
+- **Cadrage infra honnête (engagement de MOYENS, calqué sur la transparence de seo-sea-local) :** DCB revend une infrastructure tierce et ne maîtrise pas seul les garanties dures. Bannis en tant que faits mesurés ou garanties fermes : "99,9% uptime / SLA", "142 ms", "0 incident/an", "réponse sous 15 min", "chargement divisé par 3", et "ISO 27001" présenté comme une certification maison. Remplacés partout (hero, trust bar, comparatif, FAQ, dashboard) par des engagements réels et vérifiables : **serveurs supervisés en continu, données hébergées en France, sauvegardes quotidiennes, SSL inclus, support local réactif 7j/7**.
+
+**H1 (desktop + mobile) :** « Hébergement web en France, SSL et support local 7j/7. »
+
+**Lede hero (desktop) :** « Vos données sur des serveurs en France, SSL automatique, sauvegardes quotidiennes et un support humain local qui répond vraiment. »
+
+**Comparatif "Hébergeur mutualisé vs DCB" (signature propre à cette page, ne pas dupliquer ailleurs) :** intro « Un hébergeur low-cost peut sembler suffisant. Jusqu'au jour où votre site tombe un samedi matin et que personne ne répond. » Colonne DCB en engagements de moyens : ressources dédiées (SSD NVMe, datacenter en France), support humain local qui répond vite (pas un robot de ticketing), SSL gratuit auto, sauvegardes quotidiennes sur 30 jours, migration offerte et sans coupure.
+
+**FAQ panne (engagement de moyens, formulation validée) :** « Nos serveurs sont supervisés en continu. En cas d'incident, notre équipe est alertée et intervient sans tarder, et les sauvegardes quotidiennes permettent de restaurer votre site sans perte de données. »
+
+**FAQ engagement (sur devis) :** « L'hébergement est proposé sans engagement de longue durée. Les modalités précises sont définies avec vous dans le devis, selon votre site et vos besoins. »
+
+- **NE PAS réutiliser ailleurs :** le comparatif "mutualisé vs DCB", l'angle "un seul interlocuteur pour votre site, vos emails et votre hébergement", le cadrage infra "engagement de moyens" ci-dessus.
+
 ---
 
 ## Blog : "Combien coûte un site internet ?" (`blog/combien-coute-un-site-internet/index.html`)
