@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../css/style.css?v=18">
 <link rel="stylesheet" href="../css/tailwind.min.css?v=22">
 <style>
-  /* === PAGE MERCI : styles isolés, préfixe mrc- === */
+  /* === PAGE MERCI : styles isolés, préfixe mrc- (single-shell, pattern légales) === */
   .mrc-page { background-color: #F8F9FB; min-height: 60vh; }
   .mrc-wrap {
     max-width: 640px; margin: 0 auto; padding: 72px 24px 96px;
@@ -52,13 +52,9 @@
     font-weight: 600; font-size: 1rem; text-decoration: none;
     padding: 14px 26px; border-radius: 14px; transition: background-color .15s, border-color .15s;
   }
-  .mrc-btn-tel {
-    background: #F57C00; color: #fff;
-  }
+  .mrc-btn-tel { background: #F57C00; color: #fff; }
   .mrc-btn-tel:hover { background: #D96A00; }
-  .mrc-btn-home {
-    background: #fff; color: #0B3D91; border: 1px solid #E2E8F0;
-  }
+  .mrc-btn-home { background: #fff; color: #0B3D91; border: 1px solid #E2E8F0; }
   .mrc-btn-home:hover { background: #F8F9FB; border-color: #CBD5E1; }
   .mrc-reassure {
     margin-top: 40px; padding-top: 28px; border-top: 1px solid #EEF1F5;
@@ -69,14 +65,13 @@
   .mrc-reassure span { display: inline-flex; align-items: center; gap: 7px; }
   .mrc-reassure .material-symbols-outlined { font-size: 19px; color: #F57C00; }
   @media (max-width: 640px) {
-    .mrc-wrap { padding: 48px 20px 72px; }
+    .mrc-wrap { padding: 44px 20px 64px; }
+    .mrc-actions { flex-direction: column; }
+    .mrc-btn { width: 100%; justify-content: center; }
   }
 </style>
 </head>
 <body>
-
-<!-- ═══════════════ DESKTOP SHELL (.d-shell, >640px) ═══════════════ -->
-<div class="d-shell">
 
 <div id="dcb-nav"></div>
 
@@ -105,44 +100,6 @@
 </main>
 
 <div id="dcb-footer"></div>
-</div><!-- /d-shell -->
-
-<!-- ═══════════════ MOBILE SHELL (.m-shell, <=640px) ═══════════════ -->
-<div class="m-shell" data-metier="contact">
-
-<a class="skip-link" href="#m-main">Aller au contenu principal</a>
-<div id="m-nav"></div>
-
-<main id="m-main">
-  <div class="mrc-page">
-    <div class="mrc-wrap">
-      <div class="mrc-badge" aria-hidden="true">
-        <span class="material-symbols-outlined">check</span>
-      </div>
-      <h1 class="mrc-h1">Merci, c'est bien reçu.</h1>
-      <p class="mrc-lede"><strong>Nathanaël ou Clément</strong> vous recontacte sous 2h ouvrées.</p>
-      <p class="mrc-note">Un besoin urgent ? Appelez-nous, on décroche.</p>
-      <div class="mrc-actions">
-        <a class="mrc-btn mrc-btn-tel" href="tel:0482530510">
-          <span class="material-symbols-outlined" aria-hidden="true">call</span>04 82 53 05 10
-        </a>
-        <a class="mrc-btn mrc-btn-home" href="../index.html">
-          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>Accueil
-        </a>
-      </div>
-      <div class="mrc-reassure">
-        <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Sous 2h ouvrées</span>
-        <span><span class="material-symbols-outlined" aria-hidden="true">block</span>Zéro démarchage</span>
-      </div>
-    </div>
-  </div>
-</main>
-
-<div id="m-footer"></div>
-<div id="m-fab"></div>
-<div id="m-menu"></div>
-
-</div><!-- /m-shell -->
 
 <script src="../js/scripts.js?v=41"></script>
 </body>
