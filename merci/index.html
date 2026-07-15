@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Merci, votre demande est bien reçue · DCB Technologies</title>
+<meta name="description" content="Votre demande a bien été reçue. Nathanaël ou Clément vous recontacte sous 2h ouvrées.">
+<meta name="robots" content="noindex, follow">
+<link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css?v=18">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=22">
+<style>
+  /* === PAGE MERCI : styles isolés, préfixe mrc- === */
+  .mrc-page { background-color: #F8F9FB; min-height: 60vh; }
+  .mrc-wrap {
+    max-width: 640px; margin: 0 auto; padding: 72px 24px 96px;
+    text-align: center;
+  }
+  .mrc-badge {
+    width: 84px; height: 84px; margin: 0 auto 28px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 999px; background: #E9F2E7;
+  }
+  .mrc-badge .material-symbols-outlined {
+    font-size: 46px; color: #2E7D32;
+    font-variation-settings: 'FILL' 1;
+  }
+  .mrc-h1 {
+    font-family: var(--font-title, 'Sora', sans-serif);
+    font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.12; color: #0B3D91; margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .mrc-lede {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 1.12rem; line-height: 1.6; color: #4A5568;
+    margin: 0 0 8px;
+  }
+  .mrc-lede strong { color: #0B3D91; font-weight: 600; }
+  .mrc-note {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 0.95rem; color: #6B7280; margin: 0 0 36px;
+  }
+  .mrc-actions {
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+    align-items: center;
+  }
+  .mrc-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 600; font-size: 1rem; text-decoration: none;
+    padding: 14px 26px; border-radius: 14px; transition: transform .15s, box-shadow .15s;
+  }
+  .mrc-btn-tel {
+    background: #F57C00; color: #fff;
+    box-shadow: 0 6px 22px rgba(245,124,0,.28);
+  }
+  .mrc-btn-tel:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(245,124,0,.36); }
+  .mrc-btn-home {
+    background: #fff; color: #0B3D91; border: 1px solid #E2E8F0;
+  }
+  .mrc-btn-home:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(7,43,107,.08); }
+  .mrc-reassure {
+    margin-top: 40px; padding-top: 28px; border-top: 1px solid #EEF1F5;
+    display: flex; flex-wrap: wrap; gap: 22px; justify-content: center;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 0.92rem; color: #4A5568;
+  }
+  .mrc-reassure span { display: inline-flex; align-items: center; gap: 7px; }
+  .mrc-reassure .material-symbols-outlined { font-size: 19px; color: #F57C00; }
+  @media (max-width: 640px) {
+    .mrc-wrap { padding: 48px 20px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ DESKTOP SHELL (.d-shell, >640px) ═══════════════ -->
+<div class="d-shell">
+
+<div id="dcb-nav"></div>
+
+<main class="mrc-page pt-[76px]">
+  <div class="mrc-wrap">
+    <div class="mrc-badge" aria-hidden="true">
+      <span class="material-symbols-outlined">check</span>
+    </div>
+    <h1 class="mrc-h1">Merci, c'est bien reçu.</h1>
+    <p class="mrc-lede"><strong>Nathanaël ou Clément</strong> vous recontacte sous 2h ouvrées.</p>
+    <p class="mrc-note">Un besoin urgent ? Appelez-nous directement, on décroche.</p>
+    <div class="mrc-actions">
+      <a class="mrc-btn mrc-btn-tel" href="tel:0482530510">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span>04 82 53 05 10
+      </a>
+      <a class="mrc-btn mrc-btn-home" href="../index.html">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour à l'accueil
+      </a>
+    </div>
+    <div class="mrc-reassure">
+      <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Réponse sous 2h ouvrées</span>
+      <span><span class="material-symbols-outlined" aria-hidden="true">block</span>Zéro démarchage</span>
+      <span><span class="material-symbols-outlined" aria-hidden="true">handshake</span>Interlocuteur unique</span>
+    </div>
+  </div>
+</main>
+
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════ MOBILE SHELL (.m-shell, <=640px) ═══════════════ -->
+<div class="m-shell" data-metier="contact">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div id="m-nav"></div>
+
+<main id="m-main">
+  <div class="mrc-page">
+    <div class="mrc-wrap">
+      <div class="mrc-badge" aria-hidden="true">
+        <span class="material-symbols-outlined">check</span>
+      </div>
+      <h1 class="mrc-h1">Merci, c'est bien reçu.</h1>
+      <p class="mrc-lede"><strong>Nathanaël ou Clément</strong> vous recontacte sous 2h ouvrées.</p>
+      <p class="mrc-note">Un besoin urgent ? Appelez-nous, on décroche.</p>
+      <div class="mrc-actions">
+        <a class="mrc-btn mrc-btn-tel" href="tel:0482530510">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>04 82 53 05 10
+        </a>
+        <a class="mrc-btn mrc-btn-home" href="../index.html">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>Accueil
+        </a>
+      </div>
+      <div class="mrc-reassure">
+        <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Sous 2h ouvrées</span>
+        <span><span class="material-symbols-outlined" aria-hidden="true">block</span>Zéro démarchage</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<script src="../js/scripts.js?v=40"></script>
+</body>
+</html>
