@@ -503,7 +503,9 @@
         '</button>' +
         '<h3 id="sheet-title" tabindex="-1">Demander un devis</h3>' +
         '<p class="sub">Réponse d\'un technicien sous 2h ouvrées. Sans engagement.</p>' +
-        '<form action="' + base + 'contact/" method="post" novalidate>' +
+        '<form action="' + base + 'send.php" method="post">' +
+          '<input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
+          '<input type="hidden" name="source" value="sheet-devis">' +
           '<fieldset class="field">' +
             '<legend class="field-lbl">Mon métier</legend>' +
             '<div class="seg">' +

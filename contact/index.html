@@ -561,7 +561,9 @@
             <h2 class="c-h2">Dites-nous en quelques lignes.</h2>
           </div>
 
-          <form id="contact-form" class="c-form-stack" novalidate>
+          <form id="contact-form" class="c-form-stack" method="post" action="../send.php" novalidate>
+            <input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <input type="hidden" name="source" value="contact-desktop">
             <div class="c-form-grid-2">
               <div class="c-label-stack">
                 <label for="cf-name" class="c-eyebrow-xs">Nom &amp; Prénom</label>
@@ -657,7 +659,9 @@
     <p class="eyebrow">Votre demande</p>
     <h2 class="c-h2-m">Dites-nous en quelques lignes.</h2>
     <div class="c-form-card">
-      <form id="m-contact-form" novalidate>
+      <form id="m-contact-form" method="post" action="../send.php" novalidate>
+        <input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="hidden" name="source" value="contact-mobile">
 
         <div class="c-fld">
           <label for="m-cf-name">Nom &amp; Prénom</label>
@@ -708,7 +712,7 @@
 
 </div><!-- /m-shell -->
 
-<script src="../js/scripts.js?v=39"></script>
+<script src="../js/scripts.js?v=40"></script>
 
 <script>
 (function() {
@@ -783,27 +787,8 @@
     feedback.className = 'c-cta-feedback';
     feedback.textContent = '';
 
-    /* TODO : remplacer le setTimeout par un vrai POST vers l'endpoint
-       (Formspree, API custom, etc.).
-       fetch('/api/contact', { method: 'POST', ... }) */
-    setTimeout(function() {
-      spinner.classList.add('cf-hidden');
-      arrow.classList.remove('cf-hidden');
-      label.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1; margin-right: 4px;">check_circle</span>Message envoyé';
-      submit.classList.add('is-success');
-      feedback.className = 'c-cta-feedback is-success';
-      feedback.textContent = 'Merci. Nathanaël ou Clément vous recontacte dans les 2h ouvrées.';
-      form.reset();
-
-      /* Reset après 6s */
-      setTimeout(function() {
-        submit.disabled = false;
-        label.textContent = 'Envoyer ma demande';
-        submit.classList.remove('is-success');
-        feedback.textContent = '';
-        feedback.className = 'c-cta-feedback';
-      }, 6000);
-    }, 1200);
+    /* Envoi réel : POST natif vers send.php, puis redirection vers /merci */
+    form.submit();
   });
 })();
 </script>
@@ -877,22 +862,8 @@
     arrow.classList.add('c-hidden');
     feedback.className = 'c-feedback';
     feedback.textContent = '';
-    setTimeout(function() {
-      spinner.classList.add('c-hidden');
-      arrow.classList.remove('c-hidden');
-      label.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;margin-right:4px;vertical-align:middle">check_circle</span>Message envoyé';
-      submit.classList.add('is-success');
-      feedback.className = 'c-feedback is-success';
-      feedback.textContent = 'Merci. Nathanaël ou Clément vous recontacte dans les 2h ouvrées.';
-      form.reset();
-      setTimeout(function() {
-        submit.disabled = false;
-        label.textContent = 'Envoyer ma demande';
-        submit.classList.remove('is-success');
-        feedback.textContent = '';
-        feedback.className = 'c-feedback';
-      }, 6000);
-    }, 1200);
+    /* Envoi réel : POST natif vers send.php, puis redirection vers /merci */
+    form.submit();
   });
 })();
 </script>
