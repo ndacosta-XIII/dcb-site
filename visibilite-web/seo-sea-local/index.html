@@ -49,67 +49,6 @@
     [data-metier="seo-sea"] .results .r-desc { font-size:12.5px; color:var(--mute); line-height:1.45; margin-top:3px }
   }
 
-  /* ============ Google Local Pack + Maps mockup (hero signature SEO/SEA) ============ */
-  /* Stage : browser SERP (gauche) + phone Google Maps (bas-droite chevauchant) */
-  /* Même logique proportionnelle que duo-stage creation-site-internet */
-  .serp-stage { position:relative; width:100%; max-width:480px; margin:0 auto; height:420px; }
-
-  /* ---- Browser SERP : hauteur fixe pour que le phone s'ancre visuellement en bas ---- */
-  .serp-shell { position:absolute; top:0; left:0; width:385px; height:310px; background:#202124; border-radius:14px 14px 0 0; padding:11px 11px 0; box-shadow:0 28px 56px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06); overflow:hidden; filter:drop-shadow(0 24px 40px rgba(0,0,0,0.4)); }
-  .serp-chrome { display:flex; align-items:center; gap:7px; padding-bottom:9px; }
-  .serp-dots { display:flex; gap:4px; }
-  .serp-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-  .serp-dot.r { background:#FF5F57; } .serp-dot.y { background:#FEBC2E; } .serp-dot.g { background:#28C840; }
-  .serp-addr { flex:1; background:#3C3C3E; border-radius:6px; padding:4px 10px; display:flex; align-items:center; gap:5px; overflow:hidden; }
-  .serp-body { background:#FFF; border-radius:6px 6px 0 0; overflow:hidden; }
-  .serp-searchbar { display:flex; align-items:center; gap:8px; padding:8px 12px; background:#F8F9FA; border-bottom:1px solid #E8EAED; }
-  .serp-glogo { font-size:13px; font-weight:700; font-family:'Arial',sans-serif; display:flex; align-items:baseline; flex-shrink:0; }
-  .serp-glogo .g-b{color:#4285F4} .serp-glogo .g-r{color:#EA4335} .serp-glogo .g-y{color:#FBBC04} .serp-glogo .g-gr{color:#34A853}
-  .serp-q { flex:1; background:#FFF; border-radius:999px; padding:5px 11px; font-size:10px; color:#202124; font-weight:500; border:1px solid #DFE1E5; font-family:'Inter',sans-serif; }
-  .serp-tabs { display:flex; border-bottom:1px solid #E8EAED; padding:0 10px; gap:2px; }
-  .serp-tab { font-size:8px; color:#5F6368; padding:5px 7px; font-weight:600; white-space:nowrap; }
-  .serp-tab.active { color:#1A73E8; border-bottom:2px solid #1A73E8; }
-  .serp-map { height:90px; position:relative; overflow:hidden; border-bottom:1px solid #E8EAED; }
-  .serp-pin { position:absolute; width:14px; height:14px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); border:2px solid #FFF; box-shadow:0 2px 5px rgba(0,0,0,0.4); }
-  .serp-pin.p1 { background:#EF4444; } .serp-pin.p2,.serp-pin.p3 { background:#9CA3AF; }
-  .serp-pack { padding:2px 0 0; }
-  .serp-row { display:flex; align-items:flex-start; gap:8px; padding:8px 12px; border-bottom:1px solid #F1F3F4; position:relative; }
-  .serp-row:last-child { border-bottom:none; }
-  .serp-row.top { background:#FFF5F5; }
-  .serp-row.top::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:#EF4444; border-radius:0 2px 2px 0; }
-  .serp-num { width:17px; height:17px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; flex-shrink:0; margin-top:1px; font-family:'Inter',sans-serif; }
-  .serp-num.n1 { background:#EF4444; color:#FFF; } .serp-num.n2,.serp-num.n3 { background:#EBEBEB; color:#5F6368; }
-  .serp-info { flex:1; min-width:0; }
-  .serp-name { font-size:10.5px; font-weight:700; margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-family:'Inter',sans-serif; }
-  .serp-row.top .serp-name { color:#EF4444; } .serp-row:not(.top) .serp-name { color:#1A0DAB; }
-  .serp-rating-row { display:flex; align-items:center; gap:3px; margin-bottom:2px; flex-wrap:wrap; }
-  .serp-stars { font-size:8px; color:#F9AB00; } .serp-count { font-size:7.5px; color:#70757A; font-family:'Inter',sans-serif; }
-  .serp-cat { font-size:7.5px; color:#70757A; font-family:'Inter',sans-serif; }
-  .serp-dist-row { display:flex; align-items:center; gap:3px; font-size:7.5px; color:#70757A; font-family:'Inter',sans-serif; }
-  .serp-open { color:#137333; font-weight:600; }
-  .serp-thumb { width:36px; height:36px; border-radius:4px; flex-shrink:0; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-
-  /* ---- Phone Google Maps : ancré bas-droite, déborde sous le browser ---- */
-  /* Stage 420px, browser 310px → phone part de y=108 jusqu'à y=420 = 312px de haut */
-  .serp-phone { position:absolute; bottom:0; right:0; width:163px; height:327px; z-index:3; background:#1B1B20; border-radius:26px; padding:5px; box-shadow:0 24px 48px -10px rgba(0,0,0,0.65), 0 14px 32px -16px rgba(239,68,68,0.45); transform:rotate(3.5deg); }
-  @keyframes badge-pop { from{transform:scale(0.6) translateY(8px);opacity:0} to{transform:scale(1) translateY(0);opacity:1} }
-  @media (prefers-reduced-motion: reduce) { .serp-left-badge, .serp-biz-sheet { animation: none !important; opacity: 1; transform: none !important; } }
-  .serp-phone-screen { width:100%; height:100%; background:#C5D5EC; border-radius:21px; overflow:hidden; position:relative; }
-
-  /* ---- Badge stat flottant : ancré bas-gauche du browser (y≈270) ---- */
-  .serp-left-badge { position:absolute; top:258px; left:-22px; z-index:6; background:#FFF; border-radius:14px; padding:16px 20px 16px 16px; display:flex; align-items:center; gap:14px; box-shadow:0 10px 30px rgba(0,0,0,0.26), 0 2px 8px rgba(0,0,0,0.08); animation:badge-pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.4s both; }
-  .serp-lb-icon { width:46px; height:46px; background:#FFF5F5; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .serp-lb-num { font-family:'Sora',sans-serif; font-size:28px; font-weight:800; color:#EF4444; line-height:1; }
-  .serp-lb-label { font-size:11px; font-weight:600; color:#6B7280; font-family:'Inter',sans-serif; margin-top:3px; white-space:nowrap; }
-  .serp-phone-notch { position:absolute; top:5px; left:50%; transform:translateX(-50%); width:44px; height:13px; background:#1B1B20; border-radius:7px; z-index:5; }
-  .serp-phone-status { position:absolute; top:8px; left:0; right:0; display:flex; justify-content:space-between; padding:0 12px; font-size:6px; font-weight:700; color:#1B1B20; z-index:4; font-family:'Inter',sans-serif; }
-  .serp-gmap-bg { position:absolute; top:0; left:0; right:0; bottom:90px; overflow:hidden; }
-  .serp-biz-sheet { position:absolute; bottom:0; left:0; right:0; height:92px; background:#FFF; border-radius:14px 14px 0 0; box-shadow:0 -4px 16px rgba(0,0,0,0.14); padding:9px 10px 7px; animation:badge-pop 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.9s both; }
-  .serp-biz-name { font-size:9.5px; font-weight:700; color:#202124; margin-bottom:2px; font-family:'Inter',sans-serif; line-height:1.1; }
-  .serp-biz-line { display:flex; align-items:center; gap:3px; margin-bottom:5px; }
-  .serp-biz-stars { font-size:8px; color:#F9AB00; } .serp-biz-meta { font-size:7px; color:#5F6368; font-family:'Inter',sans-serif; }
-  .serp-biz-open-tag { font-size:7px; color:#137333; font-weight:700; font-family:'Inter',sans-serif; }
-  .serp-biz-btn { display:flex; align-items:center; justify-content:center; gap:4px; background:#EF4444; color:#FFF; font-size:9px; font-weight:700; padding:5px 10px; border-radius:7px; font-family:'Inter',sans-serif; }
 .faq-item{background:#F8F9FA !important}</style>
 <script type="application/ld+json">
 {
@@ -190,15 +129,10 @@
       <div class="relative mx-auto max-w-[480px]">
         <img src="../../assets/referencement-local-google-mobile.webp" width="1200" height="896" loading="eager" fetchpriority="high" alt="Client cherchant un commerce local sur Google, résultats de proximité (Local Pack) sur smartphone" class="w-full h-auto object-cover rounded-[14px] shadow-[0_28px_56px_rgba(0,0,0,0.28)]">
 
-        <!-- ── Badge stat flottant ROI ── -->
-        <div class="serp-left-badge" style="top:auto;bottom:24px;left:-16px;">
-          <div class="serp-lb-icon">
-            <span class="material-symbols-outlined" style="font-size:16px;color:#EF4444;font-variation-settings:'FILL' 1;">trending_up</span>
-          </div>
-          <div>
-            <div class="serp-lb-num">ROI</div>
-            <div class="serp-lb-label">mesuré chaque mois</div>
-          </div>
+        <!-- Card flottante stat (standard caisse) -->
+        <div class="absolute -bottom-4 bg-white p-5 rounded-xl shadow-xl" style="left:-32px">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-[#EF4444] mb-1">Reporting mensuel</p>
+          <p class="font-sora text-xl font-bold text-[#0B3D91]">ROI mesuré</p>
         </div>
       </div>
     </div>
