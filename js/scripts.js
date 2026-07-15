@@ -284,14 +284,10 @@
       '#dcb-phone-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:none;flex-direction:column;align-items:flex-end;gap:0.5rem;}' +
       '#dcb-phone-fab a{display:flex;align-items:center;gap:0.625rem;background:#F57C00;color:#fff;' +
         'padding:0.875rem 1.25rem;border-radius:3rem;' +
-        'box-shadow:0 4px 20px rgba(245,124,0,0.45),0 1px 4px rgba(0,0,0,0.15);' +
+        'box-shadow:0 6px 18px rgba(0,0,0,0.18);' +
         'font-family:"Plus Jakarta Sans","Inter",sans-serif;font-weight:700;font-size:0.9375rem;' +
-        'text-decoration:none;white-space:nowrap;transition:transform 0.15s,box-shadow 0.15s;' +
-        'animation:dcbFabPulse 2.5s ease-in-out infinite;}' +
-      '#dcb-phone-fab a:hover{transform:scale(1.04);box-shadow:0 6px 28px rgba(245,124,0,0.55),0 1px 4px rgba(0,0,0,0.15);}' +
-      '@keyframes dcbFabPulse{' +
-        '0%,100%{box-shadow:0 4px 20px rgba(245,124,0,0.45),0 0 0 0 rgba(245,124,0,0.4);}' +
-        '50%{box-shadow:0 4px 20px rgba(245,124,0,0.45),0 0 0 8px rgba(245,124,0,0);}}' +
+        'text-decoration:none;white-space:nowrap;transition:transform 0.15s,box-shadow 0.15s;}' +
+      '#dcb-phone-fab a:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,0.22);}' +
       '@media(max-width:640px){#dcb-phone-fab{display:flex;}}';
     document.head.appendChild(style);
   }
@@ -1098,7 +1094,7 @@
     /* 1. CSS frame mobile */
     var mgl = document.createElement('link');
     mgl.rel = 'stylesheet';
-    mgl.href = base + 'm/css/mobile-global.css?v=2';
+    mgl.href = base + 'm/css/mobile-global.css?v=3';
     mgl.media = 'screen and (max-width:640px)';
     document.head.appendChild(mgl);
 
