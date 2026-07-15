@@ -69,7 +69,7 @@ html{scroll-padding-top:72px}
 }
 .menu .btn-pri,.fab .b1{
   background:var(--cta);color:#fff;
-  box-shadow:0 10px 22px -6px rgba(245,124,0,0.55)
+  box-shadow:0 8px 18px -6px rgba(0,0,0,0.22)
 }
 .menu .btn-pri:active,.fab .b1:active{transform:scale(0.97);opacity:0.92}
 

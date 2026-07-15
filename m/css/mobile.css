@@ -310,7 +310,7 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .tech-prom .ic .material-symbols-outlined{font-size:20px}
 .tech-prom .t{font-family:'Sora',sans-serif;font-size:13.5px;font-weight:600;color:#fff;line-height:1.3}
 .tech-prom .b{font-family:'Sora',sans-serif;font-weight:800;font-size:18px;color:var(--cta);letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums}
-.tech .tech-cta{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;padding:14px;border-radius:14px;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 12px 24px -8px rgba(245,124,0,0.50);transition:transform 0.15s ease,opacity 0.15s ease}
+.tech .tech-cta{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;padding:14px;border-radius:14px;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:transform 0.15s ease,opacity 0.15s ease}
 .tech .tech-cta:active{transform:scale(0.97);opacity:0.92}
 
 /* ── FAQ chat-style */
