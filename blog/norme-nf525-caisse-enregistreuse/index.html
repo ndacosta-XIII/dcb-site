@@ -1,0 +1,769 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Norme NF525 caisse enregistreuse : conformité 2026 | DCB</title>
+<meta name="description" content="La certification NF525 n'est plus la seule voie légale depuis février 2026. Rendez votre caisse enregistreuse conforme et évitez l'amende de 7 500 €.">
+<link rel="canonical" href="https://dcb-technologies.fr/blog/norme-nf525-caisse-enregistreuse/">
+<meta property="og:title" content="Norme NF525 : votre caisse est-elle conforme en 2026 ? | DCB Technologies">
+<meta property="og:description" content="La certification NF525 n'est plus la seule voie légale depuis février 2026. Rendez votre caisse conforme et évitez l'amende de 7 500 € par caisse.">
+<meta property="og:url" content="https://dcb-technologies.fr/blog/norme-nf525-caisse-enregistreuse/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/caisse-tactile-cashmag-boulangerie.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Norme NF525 : votre caisse est-elle conforme en 2026 ?">
+<meta name="twitter:description" content="Plus obligatoire depuis février 2026 : deux preuves de conformité au choix. Ce qui change pour votre caisse.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/caisse-tactile-cashmag-boulangerie.webp">
+<link rel="preload" href="../../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/style.css?v=18">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+  ═══════════════════════════════════════════════════════════════ */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+
+    /* Hero override article */
+    [data-metier="article-blog"] .hero {
+      background: linear-gradient(135deg, #0B3D91 0%, #072B6B 100%);
+      color: #fff;
+      padding: 78px 18px 32px;
+    }
+    [data-metier="article-blog"] .hero .a-bread {
+      font-size: 12px; color: rgba(255,255,255,0.55); margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .hero .a-bread a { color: rgba(255,255,255,0.55); text-decoration: none }
+    [data-metier="article-blog"] .hero .a-bread .sep { margin: 0 6px }
+    [data-metier="article-blog"] .hero .a-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 16px;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-tag {
+      display: inline-block; padding: 5px 12px; border-radius: 8px;
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); color: #fff;
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-meta .a-info .material-symbols-outlined { font-size: 14px }
+    [data-metier="article-blog"] .hero h1 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.18;
+      color: #fff; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .hero .a-author {
+      font-size: 12.5px; color: rgba(255,255,255,0.55);
+    }
+    [data-metier="article-blog"] .hero .a-author strong { color: rgba(255,255,255,0.85); font-weight: 600 }
+
+    /* Featured image */
+    [data-metier="article-blog"] .a-fimg {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      display: block; border-radius: 0;
+    }
+
+    /* Lede (intro) */
+    [data-metier="article-blog"] .a-lede {
+      font-size: 16.5px; line-height: 1.65; color: #334155; font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    /* Article body H2 + paragraphes */
+    [data-metier="article-blog"] .a-body h2 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.22;
+      color: #0B3D91; letter-spacing: -0.01em; margin: 28px 0 12px; text-wrap: pretty;
+    }
+    [data-metier="article-blog"] .a-body p {
+      font-size: 14.5px; line-height: 1.7; color: #4A5568; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-body .a-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 700; color: #F57C00; text-decoration: none;
+      margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-body .a-link .material-symbols-outlined { font-size: 16px }
+
+    /* Callout 'Le point cle' */
+    [data-metier="article-blog"] .a-callout {
+      background: rgba(11,61,145,0.06); border-radius: 14px; padding: 18px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-callout-head {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: #0B3D91;
+      margin: 0 0 8px;
+    }
+    [data-metier="article-blog"] .a-callout-head .material-symbols-outlined { font-size: 18px; color: #F57C00 }
+    [data-metier="article-blog"] .a-callout p {
+      font-size: 14px; line-height: 1.6; color: #0B3D91; margin: 0;
+    }
+
+    /* Bento 2 boxes (Gain de temps / Fidelisation) : stack vertical mobile */
+    [data-metier="article-blog"] .a-bento {
+      display: flex; flex-direction: column; gap: 10px;
+      margin: 18px 0 24px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box {
+      background: #F8F9FA; border-radius: 12px; padding: 16px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-bento .a-box-h.b1 { color: #0B3D91 }
+    [data-metier="article-blog"] .a-bento .a-box-h.b2 { color: #F57C00 }
+    [data-metier="article-blog"] .a-bento .a-box p {
+      font-size: 13.5px; line-height: 1.55; color: #4A5568; margin: 0;
+    }
+
+    /* Article CTA (fin article) */
+    [data-metier="article-blog"] .a-end-cta {
+      background: #F8F9FA; border-radius: 16px; padding: 24px 20px;
+      text-align: center; margin: 28px 0 0;
+    }
+    [data-metier="article-blog"] .a-end-cta h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; color: #0B3D91;
+      line-height: 1.2; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-end-cta p {
+      font-size: 14px; line-height: 1.55; color: #4A5568; margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-end-actions {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-pri {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+    [data-metier="article-blog"] .a-end-cta .a-btn-sec {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #E5E9F0;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* A lire aussi : pattern type liste */
+    [data-metier="article-blog"] .a-related-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 14px;
+    }
+    [data-metier="article-blog"] .a-related-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+    }
+    [data-metier="article-blog"] .a-related-list li {
+      padding: 14px 0; border-top: 1px solid rgba(11,61,145,0.08);
+    }
+    [data-metier="article-blog"] .a-related-list li:last-child { border-bottom: 1px solid rgba(11,61,145,0.08) }
+    [data-metier="article-blog"] .a-related-list a { display: block; text-decoration: none; color: inherit }
+    [data-metier="article-blog"] .a-related-list .a-cat {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #94A3B8; margin: 0 0 4px;
+    }
+    [data-metier="article-blog"] .a-related-list .a-title {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3;
+      color: #0B3D91; margin: 0;
+    }
+
+    /* Conseil expert (sidebar mobile) */
+    [data-metier="article-blog"] .a-expert {
+      background: #0B3D91; color: #fff; border-radius: 18px; padding: 24px 20px;
+    }
+    [data-metier="article-blog"] .a-expert-eb {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin: 0 0 10px;
+    }
+    [data-metier="article-blog"] .a-expert h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+      color: #fff; margin: 0 0 12px;
+    }
+    [data-metier="article-blog"] .a-expert p {
+      font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.72); margin: 0 0 18px;
+    }
+    [data-metier="article-blog"] .a-expert .a-expert-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 48px; padding: 14px 20px;
+      background: #F57C00; color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 700;
+      border-radius: 12px; text-decoration: none;
+    }
+
+    /* Phone block (sidebar mobile) */
+    [data-metier="article-blog"] .a-phone {
+      background: #F8F9FA; border-radius: 16px; padding: 22px 20px;
+    }
+    [data-metier="article-blog"] .a-phone-lb {
+      font-size: 12.5px; font-weight: 700; color: #0B3D91; margin: 0 0 6px;
+    }
+    [data-metier="article-blog"] .a-phone-num {
+      display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+      color: #0B3D91; margin: 0 0 16px; text-decoration: none; letter-spacing: -0.01em;
+    }
+    [data-metier="article-blog"] .a-phone-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 44px; padding: 12px 18px;
+      background: #fff; color: #0B3D91; border: 1.5px solid #0B3D91;
+      font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
+      border-radius: 12px; text-decoration: none;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Norme NF525 : votre caisse est-elle conforme en 2026 ?",
+  "description": "La certification NF525 n'est plus la seule voie légale depuis février 2026. Voici comment rendre votre caisse enregistreuse conforme et éviter l'amende.",
+  "author": { "@type": "Person", "name": "Nathanaël Da Costa", "url": "https://dcb-technologies.fr/notre-adn/", "worksFor": { "@type": "Organization", "name": "DCB Technologies" } },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DCB Technologies",
+    "logo": { "@type": "ImageObject", "url": "https://dcb-technologies.fr/assets/logo-dcb.svg" }
+  },
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "articleSection": "Caisse enregistreuse",
+  "inLanguage": "fr-FR",
+  "keywords": "norme nf525, caisse enregistreuse conforme, certification logiciel de caisse, ISCA",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dcb-technologies.fr/blog/norme-nf525-caisse-enregistreuse/" },
+  "image": "https://dcb-technologies.fr/assets/caisse-tactile-cashmag-boulangerie.webp"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que la norme NF525 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La norme NF525 est un référentiel de certification qui atteste qu'un logiciel de caisse respecte les quatre critères ISCA (inaltérabilité, sécurisation, conservation, archivage) exigés par l'article 286 du Code général des impôts. C'est l'une des deux preuves de conformité admises, avec l'attestation individuelle de l'éditeur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La certification NF525 est-elle obligatoire en 2026 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Depuis le 21 février 2026, la loi accepte deux preuves de conformité au choix : le certificat d'un organisme accrédité (la NF525) ou l'attestation individuelle de votre éditeur de logiciel. Ce qui est obligatoire, c'est que le logiciel respecte les quatre critères ISCA, pas qu'il porte le label NF525."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que veut dire ISCA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inaltérabilité, Sécurisation, Conservation, Archivage. Ce sont les quatre exigences techniques que doit remplir un logiciel de caisse : ne pas pouvoir modifier une vente après coup, tracer toute correction, enregistrer les totaux de clôture, et archiver les données au moins une fois par an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je vends surtout à des professionnels. Suis-je concerné ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'obligation vise les ventes à des clients particuliers encaissées via un logiciel de caisse. Si votre activité est uniquement en B2B, ou si vous n'utilisez pas de logiciel de caisse, vous n'entrez a priori pas dans le champ de cette obligation précise. Pour une activité mixte ou un cas limite, vérifiez avec votre expert-comptable plutôt que de trancher seul."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien risque-t-on en cas de contrôle ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 500 € d'amende par caisse non conforme en cas de contrôle fiscal. Après le constat, vous avez 60 jours pour vous régulariser ; sans régularisation, une nouvelle amende de 7 500 € peut s'appliquer. Le contrôle peut être inopiné, et c'est à vous de présenter le justificatif sur place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CashMag est-il conforme ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. CashMag est certifié NF525 par l'AFNOR, et l'attestation est accessible à tout moment depuis votre caisse. C'est la preuve la plus solide à présenter lors d'un contrôle inopiné."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dcb-technologies.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dcb-technologies.fr/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Norme NF525 : conformité 2026", "item": "https://dcb-technologies.fr/blog/norme-nf525-caisse-enregistreuse/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DESKTOP SHELL (visible >640px)
+═══════════════════════════════════════════════════════════════ -->
+<div class="d-shell">
+<div id="dcb-nav"></div>
+
+<!-- ── 1. HEADER ────────────────────────────────────────────── -->
+<header class="pt-[76px] bg-gradient-to-br from-[#0B3D91] to-[#072B6B] relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B] to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm text-white/50">
+      <a href="../../index.html" class="text-white/50 hover:text-white transition-colors no-underline">Accueil</a>
+      <span class="mx-2">›</span>
+      <a href="../../blog/index.html" class="text-white/50 hover:text-white transition-colors no-underline">Blog</a>
+      <span class="mx-2">›</span>
+      <span class="text-white/70">Norme NF525 : conformité 2026</span>
+    </nav>
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+      <span class="bg-white/10 text-white px-4 py-1.5 rounded-lg text-[0.6875rem] font-bold uppercase tracking-widest border border-white/20">Réglementation</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">calendar_today</span>6 Juillet 2026</span>
+      <span class="text-white/50 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-[1rem]">schedule</span>7 min de lecture</span>
+    </div>
+    <h1 class="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-4xl mb-4">Norme NF525 : votre caisse est-elle conforme en 2026 ?</h1>
+    <p class="text-white/50 text-sm">Par <strong class="text-white/70 font-semibold">Nathanaël Da Costa, DCB Technologies</strong></p>
+  </div>
+</header>
+
+<main>
+
+<!-- ── 2. ARTICLE + SIDEBAR ────────────────────────────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+    <!-- Article (8 cols) -->
+    <article class="lg:col-span-8">
+      <img src="../../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="800" height="450" loading="eager" fetchpriority="high" decoding="async" class="w-full aspect-[16/9] object-cover rounded-xl mb-10">
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-6">Si vous vendez à des particuliers et que vous encaissez avec un logiciel de caisse, vous avez sûrement entendu parler de la NF525. Peut-être même qu'un commercial vous a mis la pression l'an dernier : « certifiez-vous avant le 31 août 2026, sinon ». Ce commercial n'avait pas tort à l'époque. Il a tort aujourd'hui.</p>
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-6">En février 2026, l'administration a rebattu les cartes. La certification par un organisme accrédité n'est plus le seul chemin légal. L'attestation de l'éditeur de votre logiciel, qu'on avait supprimée un an plus tôt, est de retour. Résultat : moins de pression, mais aussi plus de confusion. La moitié des pages que vous trouverez encore en ligne décrivent l'état d'avant, périmé.</p>
+      <p class="text-xl text-[#4A5568] leading-[1.7] mb-12">On installe des caisses tous les jours chez des commerçants de Mâcon, Chalon ou Villefranche. On a vu la panique de 2025, la course aux certificats, les organismes saturés. Alors voici l'état du droit au 6 juillet 2026, sans jargon et sans vendeur de peur.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">La norme NF525 est un référentiel de certification qui atteste qu'un logiciel de caisse respecte les quatre critères ISCA (inaltérabilité, sécurisation, conservation, archivage) exigés par l'article 286 du Code général des impôts. Depuis février 2026, ce n'est plus l'unique preuve de conformité admise : l'attestation de l'éditeur du logiciel est aussi acceptée.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">L'État a fait marche arrière : la certification NF525 n'est plus obligatoire</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Commençons par le fait qui compte, parce que c'est celui que presque personne n'a à jour.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Depuis le 21 février 2026, deux preuves de conformité sont de nouveau acceptées, au choix : le certificat d'un organisme accrédité (la fameuse NF525, délivrée par un organisme comme l'AFNOR, ou la certification LNE), OU l'attestation individuelle établie par l'éditeur de votre logiciel.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Pour comprendre pourquoi c'est une « marche arrière », il faut le petit historique. Il tient en trois dates.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Avant 2025, ces deux preuves existaient déjà, au choix. Vous pouviez présenter un certificat, ou une attestation de votre éditeur. Simple.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">La loi de finances 2025 (article 43, en vigueur le 16 février 2025) a supprimé l'attestation de l'éditeur. Du jour au lendemain, le certificat d'un organisme accrédité devenait la seule preuve admise. Le délai pour l'obtenir avait été repoussé au 31 août 2026. C'est cette version qui a déclenché la course à la certification et engorgé les organismes. C'est aussi cette version qui traîne encore partout sur le web, y compris dans de vieux articles et d'anciennes pages officielles.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">La <a href="https://entreprendre.service-public.gouv.fr/actualites/A18087?lang=fr" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">loi de finances 2026</a> (article 125, applicable dès le 21 février 2026) a rétabli l'attestation de l'éditeur. On revient donc au système du choix : certificat OU attestation.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:16px;overflow:hidden;margin:0 0 48px">
+        <table style="width:100%;border-collapse:collapse;text-align:left">
+          <thead>
+            <tr style="background:#F8F9FA">
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91">Date</th>
+              <th style="padding:15px 22px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#0B3D91">Ce qui change pour la preuve de conformité</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px">
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">Depuis 2018<br><span style="font-size:12px;font-weight:400;color:#94A3B8">Loi anti-fraude</span></td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Obligation de conformité ISCA du logiciel de caisse (article 286 du CGI). Deux preuves possibles : certificat accrédité ou attestation de l'éditeur.</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;white-space:nowrap;line-height:1.35">LF 2025<br><span style="font-size:12px;font-weight:400;color:#94A3B8">16 fév. 2025</span></td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Suppression de l'attestation de l'éditeur : seul le certificat d'un organisme accrédité est admis.</td>
+            </tr>
+            <tr style="border-top:1px solid #E8ECF2;background:#FFF6EC">
+              <td style="padding:20px 22px;vertical-align:top;font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;white-space:nowrap;line-height:1.35">LF 2026<br><span style="font-size:12px;font-weight:400;color:#B0844A">21 fév. 2026</span></td>
+              <td style="padding:20px 22px;vertical-align:top;color:#4A5568;line-height:1.7">Rétablissement de l'attestation de l'éditeur : de nouveau deux preuves de conformité au choix.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-[#E6EEF9] p-8 rounded-xl mb-12">
+        <h4 class="font-sora font-bold text-[#0B3D91] mb-3 flex items-center gap-2"><span class="material-symbols-outlined ms-fill text-[#F57C00]">lightbulb</span>Le point clé</h4>
+        <p class="text-[#0B3D91] leading-[1.7]">Au 6 juillet 2026, personne ne peut vous obliger à détenir une certification NF525. C'est faux. Vous avez le choix de la preuve. Ce qui reste obligatoire, ce n'est pas le label, c'est la conformité du logiciel lui-même. Nuance capitale, on y vient.</p>
+      </div>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Ce que la loi exige vraiment (et ne change pas depuis 2018)</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">Toute cette agitation portait sur la preuve. L'obligation de fond, elle, n'a pas bougé d'un iota depuis le 1er janvier 2018.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">L'article 286 du CGI, en clair</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6"><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051764897" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">L'article 286-I-3° bis du Code général des impôts</a> dit, en substance : si vous êtes assujetti à la TVA, que vous vendez à des clients particuliers, et que vous enregistrez leurs règlements avec un logiciel ou système de caisse, ce logiciel doit répondre à quatre exigences techniques.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-10">L'obligation porte sur le comportement du logiciel, pas sur un tampon commercial précis. C'est pour ça qu'un logiciel peut être parfaitement conforme sans porter le sigle NF525 : ce qui compte, c'est qu'il coche les quatre cases ci-dessous, et que vous puissiez le prouver.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">Les quatre critères ISCA, sans le jargon</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Les textes parlent des conditions « ISCA ». Derrière l'acronyme, quatre idées de bon sens, celles qui empêchent de trafiquer ses ventes après coup :</p>
+
+      <div class="space-y-6 mb-8">
+        <div class="border-l-4 border-[#0B3D91] pl-6">
+          <p class="font-sora font-bold text-[#0B3D91] mb-2">Inaltérabilité</p>
+          <p class="text-[#4A5568] leading-[1.7]">Une fois une vente enregistrée, on ne peut plus la modifier en douce. Les données de règlement sont figées.</p>
+        </div>
+        <div class="border-l-4 border-[#F57C00] pl-6">
+          <p class="font-sora font-bold text-[#F57C00] mb-2">Sécurisation</p>
+          <p class="text-[#4A5568] leading-[1.7]">Toute correction ultérieure laisse une trace. Si on modifie quelque chose, le logiciel garde la mémoire de l'original et du changement.</p>
+        </div>
+        <div class="border-l-4 border-[#0B3D91] pl-6">
+          <p class="font-sora font-bold text-[#0B3D91] mb-2">Conservation</p>
+          <p class="text-[#4A5568] leading-[1.7]">Le logiciel calcule et enregistre les totaux de clôture : journalière, mensuelle, annuelle. Vos cumuls sont bouclés et gardés.</p>
+        </div>
+        <div class="border-l-4 border-[#F57C00] pl-6">
+          <p class="font-sora font-bold text-[#F57C00] mb-2">Archivage</p>
+          <p class="text-[#4A5568] leading-[1.7]">Les données sont archivées à une périodicité que vous choisissez, au maximum une fois par an ou par exercice.</p>
+        </div>
+      </div>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">En clair : le fisc veut être sûr qu'une caisse ne peut pas « oublier » des tickets pour faire baisser le chiffre déclaré. C'est tout l'esprit de la loi anti-fraude à la TVA.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Qui est concerné, qui ne l'est pas</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">La règle vise les assujettis à la TVA qui vendent à des particuliers (du B2C) et qui enregistrent ces règlements via un logiciel ou système de caisse. Un boulanger, un restaurateur, un coiffeur, un commerce de détail : concernés, sans discussion.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-4">Deux cas d'exonération sont écrits noir sur blanc dans les textes :</p>
+      <ul class="list-disc pl-6 mb-6 text-[#4A5568] leading-[1.8] space-y-2">
+        <li>Les assujettis qui bénéficient de la franchise en base de TVA.</li>
+        <li>Les automates qui n'acceptent que la carte bancaire ou le virement via un établissement bancaire.</li>
+      </ul>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Reste une zone plus grise, qu'il faut manier avec prudence. La loi vise ceux qui vendent à des particuliers avec un logiciel de caisse. On peut en déduire que si vous ne facturez qu'à des professionnels, ou que vous n'utilisez tout bonnement pas de logiciel de caisse, cette obligation précise ne vous concerne pas. Mais « on peut en déduire » n'est pas « la loi le dit expressément ». Si votre activité est mixte, ou que votre cas ne rentre dans aucune case nette, ne tranchez pas au doigt mouillé : posez la question à votre expert-comptable ou à votre installateur. C'est cinq minutes de téléphone contre une amende par caisse.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Certificat NF525 ou attestation de l'éditeur : deux preuves, une différence de solidité</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-8">Depuis février 2026, vous avez le choix entre deux justificatifs. Ils sont légalement équivalents. Ils ne se valent pas tout à fait en pratique.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">Le certificat d'un organisme accrédité</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">C'est la certification NF525, délivrée par un organisme accrédité (l'AFNOR par exemple), ou la certification LNE. Un tiers indépendant a audité le logiciel et atteste qu'il respecte les quatre critères ISCA.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-10">Son intérêt : la preuve est externe, incontestable, et elle ne dépend pas de la bonne foi de l'éditeur. Le jour d'un contrôle, vous présentez le certificat, le contrôleur n'a rien à redire. C'est la voie la plus lisible.</p>
+
+      <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-4">L'attestation individuelle de l'éditeur</h3>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">C'est l'éditeur de votre logiciel qui atteste lui-même que son produit est conforme, selon un modèle fixé par l'administration fiscale et portant sur les mêmes exigences ISCA.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Son intérêt : c'est plus léger, plus rapide, ça n'implique pas de passer par un organisme. Sa limite : la preuve repose sur la déclaration de l'éditeur, pas sur un audit indépendant. Parfaitement légale, mais un cran moins solide qu'un certificat le jour où un contrôleur creuse.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">Dans les deux cas, une règle ne change pas : le justificatif doit exister pour chaque logiciel ou système de caisse, et vous devez pouvoir le présenter immédiatement. Pas « le retrouver chez l'éditeur la semaine prochaine ». Tout de suite.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Ce que vous risquez lors d'un contrôle</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Là, pas de zone grise. L'administration peut débarquer sans prévenir dans vos locaux pour vérifier que vous détenez, pour chaque caisse, votre certificat ou votre attestation. C'est un contrôle inopiné : pas de rendez-vous, pas de préavis.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Et c'est à vous de prouver que vous êtes en règle, pas à l'inspecteur de prouver que vous ne l'êtes pas. Vous devez sortir le justificatif sur-le-champ.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Si vous ne pouvez pas : 7 500 € d'amende par caisse non conforme en cas de contrôle fiscal. Par caisse. Deux points de vente, deux caisses, c'est potentiellement 15 000 €. Vous avez ensuite 60 jours pour vous mettre en conformité ; passé ce délai sans régularisation, une nouvelle amende de 7 500 € peut tomber.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-12">C'est précisément ce risque, immédiat et chiffré, qui explique pourquoi le choix de la preuve n'est pas anodin. Une attestation d'éditeur introuvable le jour J vous coûte aussi cher qu'une absence totale de preuve.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-6">Notre position, en tant qu'installateur de caisses</h2>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">On va être clairs, parce que le sujet se prête aux vendeurs de peur et qu'on n'en est pas.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Non, la certification NF525 n'est plus obligatoire. Depuis février 2026, l'attestation de votre éditeur suffit légalement. Quiconque vous dit encore « il faut vous certifier avant le 31 août, c'est la loi » vous vend un état du droit périmé.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Mais quand on a le choix entre une preuve qu'un contrôleur ne peut pas contester et une preuve un peu plus fragile, pour un risque de 7 500 € par caisse, le calcul est vite fait. Le certificat d'un organisme accrédité reste la position la plus tranquille.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">C'est pour ça qu'on installe CashMag, un logiciel certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse. Le jour d'un contrôle inopiné, vous ne cherchez pas, vous ne rappelez personne. Vous ouvrez votre caisse, le justificatif est là.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Notre rôle ne s'arrête pas au sigle. On vient sur place, on configure la caisse pour votre activité, et on s'assure que vous savez où trouver votre justificatif si le fisc frappe à la porte. Un boulanger de Mâcon n'a pas à devenir juriste fiscal pour dormir tranquille : c'est tout l'objet d'<a href="../../caisse-enregistreuse/boulangerie/index.html" class="text-[#F57C00] font-bold no-underline hover:underline">une caisse configurée pour votre boulangerie</a>.</p>
+      <p class="text-[#4A5568] leading-[1.8] mb-6">Si vous cherchez simplement une caisse déjà en règle, installée et configurée, voyez <a href="../../caisse-enregistreuse/index.html" class="text-[#F57C00] font-bold no-underline hover:underline">notre offre de caisse enregistreuse conforme</a>. Nous intervenons directement pour l'<a href="../../caisse-enregistreuse/saone-et-loire/index.html" class="text-[#F57C00] font-bold no-underline hover:underline">installation de caisse en Saône-et-Loire</a>, sur Mâcon, Chalon et les communes alentour.</p>
+
+      <h2 class="font-sora text-[1.75rem] font-bold text-[#0B3D91] mb-8">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3 mb-12">
+        <details class="faq-item"><summary>Qu'est-ce que la norme NF525 ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">La norme NF525 est un référentiel de certification qui atteste qu'un logiciel de caisse respecte les quatre critères ISCA (inaltérabilité, sécurisation, conservation, archivage) exigés par l'article 286 du Code général des impôts. C'est l'une des deux preuves de conformité admises, avec l'attestation individuelle de l'éditeur.</div></details>
+        <details class="faq-item"><summary>La certification NF525 est-elle obligatoire en 2026 ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Non. Depuis le 21 février 2026, la loi accepte deux preuves de conformité au choix : le certificat d'un organisme accrédité (la NF525) ou l'attestation individuelle de votre éditeur de logiciel. Ce qui est obligatoire, c'est que le logiciel respecte les quatre critères ISCA, pas qu'il porte le label NF525.</div></details>
+        <details class="faq-item"><summary>Que veut dire ISCA ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Inaltérabilité, Sécurisation, Conservation, Archivage. Ce sont les quatre exigences techniques que doit remplir un logiciel de caisse : ne pas pouvoir modifier une vente après coup, tracer toute correction, enregistrer les totaux de clôture, et archiver les données au moins une fois par an.</div></details>
+        <details class="faq-item"><summary>Je vends surtout à des professionnels. Suis-je concerné ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">L'obligation vise les ventes à des clients particuliers encaissées via un logiciel de caisse. Si votre activité est uniquement en B2B, ou si vous n'utilisez pas de logiciel de caisse, vous n'entrez a priori pas dans le champ de cette obligation précise. Pour une activité mixte ou un cas limite, vérifiez avec votre expert-comptable plutôt que de trancher seul.</div></details>
+        <details class="faq-item"><summary>Combien risque-t-on en cas de contrôle ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">7 500 € d'amende par caisse non conforme en cas de contrôle fiscal. Après le constat, vous avez 60 jours pour vous régulariser ; sans régularisation, une nouvelle amende de 7 500 € peut s'appliquer. Le contrôle peut être inopiné, et c'est à vous de présenter le justificatif sur place.</div></details>
+        <details class="faq-item"><summary>CashMag est-il conforme ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. CashMag est certifié NF525 par l'AFNOR, et l'attestation est accessible à tout moment depuis votre caisse. C'est la preuve la plus solide à présenter lors d'un contrôle inopiné.</div></details>
+      </div>
+
+      <!-- Sources E-E-A-T -->
+      <div class="bg-[#F8F9FA] p-8 rounded-xl mb-12">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B3D91] mb-4">Sources</p>
+        <ul class="list-disc pl-6 text-[0.9375rem] text-[#4A5568] leading-[1.7] space-y-2">
+          <li><a href="https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/ce-quil-faut-savoir-sur-la-certification-des-logiciels-de-caisse" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">economie.gouv.fr</a>, « Ce qu'il faut savoir sur la certification des logiciels de caisse ».</li>
+          <li><a href="https://entreprendre.service-public.gouv.fr/actualites/A18087?lang=fr" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">Service Public Entreprendre</a>, actualité A18087 (rétablissement de l'auto-certification par l'éditeur).</li>
+          <li>BOFiP, <a href="https://bofip.impots.gouv.fr/bofip/14826-PGP.html/ACTU-2025-00160" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">ACTU-2025-00160</a> (prorogation du délai au 31 août 2026) et <a href="https://bofip.impots.gouv.fr/bofip/10691-PGP.html/identifiant=BOI-TVA-DECLA-30-10-30-20250416" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">BOI-TVA-DECLA-30-10-30</a> (obligation, critères ISCA, exonérations, contrôle).</li>
+          <li><a href="https://www.legifiscal.fr/actualites-fiscales/4460-loi-finances-2026-retablissement-auto-certification-logiciels-caisse.html" target="_blank" rel="noopener noreferrer" class="text-[#0B3D91] font-semibold underline hover:text-[#F57C00] transition-colors">LégiFiscal</a>, article sur le rétablissement de l'auto-certification (loi de finances 2026).</li>
+        </ul>
+        <p class="text-[0.8125rem] text-[#94A3B8] leading-[1.6] mt-4 mb-0">economie.gouv.fr, service-public.gouv.fr et le BOFiP sont des sources officielles ; LégiFiscal en est une reprise et vulgarisation.</p>
+      </div>
+
+    </article>
+
+    <!-- Sidebar (4 cols) -->
+    <aside class="lg:col-span-4 sticky top-24 flex flex-col gap-8">
+
+      <!-- A lire aussi -->
+      <div>
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] border-b border-black/10 pb-3 mb-6">A lire aussi</h4>
+        <div class="flex flex-col gap-6">
+          <a href="../referencement-google-my-business/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Web</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Référencement Google My Business : sortir dans le Top 3 local</p>
+          </a>
+          <a href="../../caisse-enregistreuse/index.html" class="block text-inherit no-underline group">
+            <p class="text-xs text-[#4A5568] mb-1">Caisse</p>
+            <p class="font-bold text-[#0B3D91] text-[0.9375rem] leading-[1.4] transition-colors duration-200 group-hover:text-[#F57C00]">Notre offre de caisse enregistreuse CashMag</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA sidebar -->
+      <div class="bg-[#0B3D91] p-8 rounded-xl text-white">
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F57C00] block mb-3">Conseil expert</span>
+        <h3 class="font-sora text-[1.375rem] font-bold mb-4 leading-[1.3]">Votre caisse est-elle vraiment conforme ?</h3>
+        <p class="text-white/70 text-[0.9375rem] leading-relaxed mb-8">On vérifie votre configuration et on s'assure que votre justificatif est accessible le jour d'un contrôle. Gratuitement.</p>
+        <a href="../../contact/index.html" class="btn btn--primary w-full justify-center">En profiter maintenant</a>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-[#F8F9FA] p-6 rounded-xl">
+        <p class="text-sm font-bold text-[#0B3D91] mb-2">Une question urgente ?</p>
+        <a href="tel:0482530510" class="font-sora text-[1.375rem] font-bold text-[#F57C00] block mb-6 no-underline">04 82 53 05 10</a>
+        <a href="../../contact/index.html" class="btn btn--outline-primary w-full justify-center text-[0.9375rem]">Prendre contact</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ── 3. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;background:#F8F9FA;--accent:#F57C00;--accent-dark:#E06E00">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Une caisse conforme, sans mauvaise surprise ?</h2>
+        <p class="d-lede">Nos conseillers vous rappellent sous 24h pour installer une caisse déjà en règle.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <a href="../index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour au blog</a>
+      <time class="d-updated" datetime="2026-07-06">Mis à jour le 6 juillet 2026</time>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="dcb-footer"></div>
+
+</div><!-- /d-shell -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+     Pattern mobile-first : hero compact > image > lede > body > CTA fin > related > expert > tel > cta-final
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="article-blog">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+  <!-- S1 : HERO COMPACT (fond bleu sombre comme desktop) -->
+  <section class="hero">
+    <nav class="a-bread" aria-label="Fil d'Ariane">
+      <a href="../../index.html">Accueil</a><span class="sep">›</span><a href="../../blog/index.html">Blog</a><span class="sep">›</span><span>Norme NF525 : conformité 2026</span>
+    </nav>
+    <div class="a-meta">
+      <span class="a-tag">Réglementation</span>
+      <span class="a-info"><span class="material-symbols-outlined">calendar_today</span>6 Juillet 2026</span>
+      <span class="a-info"><span class="material-symbols-outlined">schedule</span>7 min de lecture</span>
+    </div>
+    <h1>Norme NF525 : votre caisse est-elle conforme en 2026 ?</h1>
+    <p class="a-author">Par <strong>Nathanaël Da Costa, DCB Technologies</strong></p>
+  </section>
+
+  <!-- S2 : IMAGE FEATURED -->
+  <!-- PLACEHOLDER IMAGE mobile : a remplacer par visuel NF525 dedie + conversion WebP. -->
+  <img class="a-fimg" src="../../assets/caisse-tactile-cashmag-boulangerie.webp" alt="Caisse tactile CashMag certifiée NF525 sur le comptoir d'une boulangerie" width="800" height="500" loading="eager" fetchpriority="high" decoding="async">
+
+  <!-- S3 : LEDE + BODY ARTICLE -->
+  <section class="sec">
+    <p class="a-lede">Si vous vendez à des particuliers et que vous encaissez avec un logiciel de caisse, vous avez sûrement entendu parler de la NF525. Un commercial vous a peut-être mis la pression l'an dernier : « certifiez-vous avant le 31 août 2026, sinon ». Il n'avait pas tort à l'époque. Il a tort aujourd'hui.</p>
+    <p class="a-lede" style="font-size:14.5px;font-weight:400">La norme NF525 est un référentiel de certification qui atteste qu'un logiciel de caisse respecte les quatre critères ISCA (inaltérabilité, sécurisation, conservation, archivage) exigés par l'article 286 du Code général des impôts. Depuis février 2026, ce n'est plus l'unique preuve de conformité admise : l'attestation de l'éditeur du logiciel est aussi acceptée.</p>
+
+    <div class="a-body">
+      <p>En février 2026, l'administration a rebattu les cartes. La certification par un organisme accrédité n'est plus le seul chemin légal. L'attestation de l'éditeur de votre logiciel, qu'on avait supprimée un an plus tôt, est de retour. Résultat : moins de pression, mais plus de confusion. La moitié des pages en ligne décrivent l'état d'avant, périmé.</p>
+      <p>On installe des caisses tous les jours chez des commerçants de Mâcon, Chalon ou Villefranche. On a vu la panique de 2025, la course aux certificats. Voici l'état du droit au 6 juillet 2026, sans jargon et sans vendeur de peur.</p>
+
+      <h2>La certification NF525 n'est plus obligatoire</h2>
+      <p>Depuis le 21 février 2026, deux preuves de conformité sont de nouveau acceptées, au choix : le certificat d'un organisme accrédité (la NF525, délivrée par l'AFNOR, ou la certification LNE), OU l'attestation individuelle établie par l'éditeur de votre logiciel.</p>
+      <p>Le petit historique tient en trois dates. Avant 2025, les deux preuves existaient déjà, au choix. La loi de finances 2025 (article 43, en vigueur le 16 février 2025) a supprimé l'attestation de l'éditeur : le certificat devenait la seule preuve admise, à obtenir avant le 31 août 2026. C'est la version qui a déclenché la course à la certification et qui traîne encore partout sur le web.</p>
+      <p>La <a href="https://entreprendre.service-public.gouv.fr/actualites/A18087?lang=fr" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">loi de finances 2026</a> (article 125, applicable dès le 21 février 2026) a rétabli l'attestation de l'éditeur. On revient au système du choix : certificat OU attestation.</p>
+
+      <div style="border:1px solid #E8ECF2;border-radius:14px;overflow:hidden;margin:18px 0 4px">
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">Depuis 2018</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Obligation de conformité ISCA (article 286 du CGI). Deux preuves possibles.</p>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid #E8ECF2">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 3px">LF 2025 · 16 fév. 2025</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Suppression de l'attestation éditeur : seul le certificat accrédité admis.</p>
+        </div>
+        <div style="padding:14px 16px;background:#FFF6EC">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 3px">LF 2026 · 21 fév. 2026</p>
+          <p style="margin:0;color:#4A5568;line-height:1.55;font-size:14px">Rétablissement de l'attestation éditeur : de nouveau deux preuves au choix.</p>
+        </div>
+      </div>
+
+      <div class="a-callout">
+        <div class="a-callout-head"><span class="material-symbols-outlined ms-fill">lightbulb</span>Le point clé</div>
+        <p>Au 6 juillet 2026, personne ne peut vous obliger à détenir une certification NF525. Vous avez le choix de la preuve. Ce qui reste obligatoire, ce n'est pas le label, c'est la conformité du logiciel lui-même.</p>
+      </div>
+
+      <h2>Ce que la loi exige vraiment (inchangé depuis 2018)</h2>
+      <p><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051764897" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">L'article 286-I-3° bis du Code général des impôts</a> dit, en substance : si vous êtes assujetti à la TVA, que vous vendez à des particuliers, et que vous enregistrez leurs règlements avec un logiciel de caisse, ce logiciel doit répondre à quatre exigences techniques.</p>
+      <p>L'obligation porte sur le comportement du logiciel, pas sur un tampon commercial. Un logiciel peut être parfaitement conforme sans porter le sigle NF525 : ce qui compte, c'est qu'il coche les quatre cases, et que vous puissiez le prouver.</p>
+      <p>Les textes parlent des conditions « ISCA ». Derrière l'acronyme, quatre idées de bon sens :</p>
+
+      <div style="margin:18px 0 24px">
+        <div style="border-left:3px solid #0B3D91;padding-left:14px;margin:0 0 16px">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 4px">Inaltérabilité</p>
+          <p style="margin:0">Une fois une vente enregistrée, on ne peut plus la modifier en douce. Les données sont figées.</p>
+        </div>
+        <div style="border-left:3px solid #F57C00;padding-left:14px;margin:0 0 16px">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 4px">Sécurisation</p>
+          <p style="margin:0">Toute correction ultérieure laisse une trace. Le logiciel garde la mémoire de l'original et du changement.</p>
+        </div>
+        <div style="border-left:3px solid #0B3D91;padding-left:14px;margin:0 0 16px">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#0B3D91;margin:0 0 4px">Conservation</p>
+          <p style="margin:0">Le logiciel calcule et enregistre les totaux de clôture : journalière, mensuelle, annuelle.</p>
+        </div>
+        <div style="border-left:3px solid #F57C00;padding-left:14px;margin:0">
+          <p style="font-family:'Sora',sans-serif;font-weight:700;color:#F57C00;margin:0 0 4px">Archivage</p>
+          <p style="margin:0">Les données sont archivées à la périodicité que vous choisissez, au maximum une fois par an.</p>
+        </div>
+      </div>
+      <p>En clair : le fisc veut être sûr qu'une caisse ne peut pas « oublier » des tickets pour faire baisser le chiffre déclaré. C'est tout l'esprit de la loi anti-fraude à la TVA.</p>
+
+      <h2>Qui est concerné, qui ne l'est pas</h2>
+      <p>La règle vise les assujettis à la TVA qui vendent à des particuliers (du B2C) et qui enregistrent ces règlements via un logiciel de caisse. Un boulanger, un restaurateur, un coiffeur, un commerce de détail : concernés, sans discussion.</p>
+      <p>Deux cas d'exonération sont écrits noir sur blanc : les assujettis qui bénéficient de la franchise en base de TVA, et les automates qui n'acceptent que la carte bancaire ou le virement via un établissement bancaire.</p>
+      <p>Reste une zone plus grise. Si vous ne facturez qu'à des professionnels, ou que vous n'utilisez pas de logiciel de caisse, cette obligation précise ne vous concerne pas a priori. Si votre activité est mixte, ne tranchez pas au doigt mouillé : posez la question à votre expert-comptable ou à votre installateur. Cinq minutes de téléphone contre une amende par caisse.</p>
+
+      <h2>Deux preuves, une différence de solidité</h2>
+      <p>Depuis février 2026, vous avez le choix entre deux justificatifs. Ils sont légalement équivalents. Ils ne se valent pas tout à fait en pratique.</p>
+      <p><strong>Le certificat d'un organisme accrédité</strong> (NF525 par l'AFNOR, ou LNE) : un tiers indépendant a audité le logiciel. La preuve est externe, incontestable, elle ne dépend pas de la bonne foi de l'éditeur. C'est la voie la plus lisible.</p>
+      <p><strong>L'attestation individuelle de l'éditeur</strong> : c'est l'éditeur qui atteste lui-même la conformité, selon un modèle fixé par l'administration. Plus léger, plus rapide, mais la preuve repose sur sa déclaration, pas sur un audit indépendant. Légale, mais un cran moins solide le jour où un contrôleur creuse.</p>
+      <p>Dans les deux cas, le justificatif doit exister pour chaque logiciel de caisse, et vous devez pouvoir le présenter immédiatement. Pas « le retrouver chez l'éditeur la semaine prochaine ». Tout de suite.</p>
+
+      <h2>Ce que vous risquez lors d'un contrôle</h2>
+      <p>L'administration peut débarquer sans prévenir pour vérifier que vous détenez, pour chaque caisse, votre certificat ou votre attestation. C'est un contrôle inopiné : pas de rendez-vous, pas de préavis. Et c'est à vous de prouver que vous êtes en règle, sur-le-champ.</p>
+      <p>Si vous ne pouvez pas : 7 500 € d'amende par caisse non conforme. Par caisse. Deux points de vente, deux caisses, c'est potentiellement 15 000 €. Vous avez ensuite 60 jours pour vous régulariser ; passé ce délai, une nouvelle amende de 7 500 € peut tomber.</p>
+      <p>C'est ce risque, immédiat et chiffré, qui explique pourquoi le choix de la preuve n'est pas anodin. Une attestation d'éditeur introuvable le jour J vous coûte aussi cher qu'une absence totale de preuve.</p>
+
+      <h2>Notre position, en tant qu'installateur</h2>
+      <p>Non, la certification NF525 n'est plus obligatoire. Depuis février 2026, l'attestation de votre éditeur suffit légalement. Quiconque vous dit encore « il faut vous certifier avant le 31 août, c'est la loi » vous vend un état du droit périmé.</p>
+      <p>Mais entre une preuve qu'un contrôleur ne peut pas contester et une preuve plus fragile, pour un risque de 7 500 € par caisse, le calcul est vite fait. Le certificat d'un organisme accrédité reste la position la plus tranquille.</p>
+      <p>C'est pour ça qu'on installe CashMag, certifié NF525 par l'AFNOR : l'attestation est accessible à tout moment depuis votre caisse. Le jour d'un contrôle inopiné, vous n'appelez personne. Vous ouvrez votre caisse, le justificatif est là. Un boulanger de Mâcon n'a pas à devenir juriste fiscal pour dormir tranquille : c'est tout l'objet d'<a href="../../caisse-enregistreuse/boulangerie/index.html" style="color:#F57C00;font-weight:700;text-decoration:none">une caisse configurée pour votre boulangerie</a>.</p>
+      <p>Nous intervenons directement pour l'<a href="../../caisse-enregistreuse/saone-et-loire/index.html" style="color:#F57C00;font-weight:700;text-decoration:none">installation de caisse en Saône-et-Loire</a>, sur Mâcon, Chalon et les communes alentour.</p>
+      <a class="a-link" href="../../caisse-enregistreuse/index.html">Notre offre de caisse enregistreuse conforme<span class="material-symbols-outlined">arrow_forward</span></a>
+
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Qu'est-ce que la norme NF525 ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">La norme NF525 est un référentiel de certification qui atteste qu'un logiciel de caisse respecte les quatre critères ISCA (inaltérabilité, sécurisation, conservation, archivage) exigés par l'article 286 du Code général des impôts. C'est l'une des deux preuves de conformité admises, avec l'attestation individuelle de l'éditeur.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La certification NF525 est-elle obligatoire en 2026 ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Non. Depuis le 21 février 2026, la loi accepte deux preuves au choix : le certificat d'un organisme accrédité (la NF525) ou l'attestation individuelle de votre éditeur. Ce qui est obligatoire, c'est que le logiciel respecte les quatre critères ISCA, pas qu'il porte le label.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que veut dire ISCA ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Inaltérabilité, Sécurisation, Conservation, Archivage. Les quatre exigences techniques d'un logiciel de caisse : ne pas pouvoir modifier une vente après coup, tracer toute correction, enregistrer les totaux de clôture, et archiver les données au moins une fois par an.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Je vends surtout à des professionnels. Suis-je concerné ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">L'obligation vise les ventes à des particuliers encaissées via un logiciel de caisse. En B2B pur, ou sans logiciel de caisse, vous n'entrez a priori pas dans le champ. Pour une activité mixte, vérifiez avec votre expert-comptable plutôt que de trancher seul.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Combien risque-t-on en cas de contrôle ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">7 500 € d'amende par caisse non conforme. Après le constat, 60 jours pour vous régulariser ; sans régularisation, une nouvelle amende de 7 500 € peut s'appliquer. Le contrôle peut être inopiné, et c'est à vous de présenter le justificatif sur place.</div>
+        </details>
+        <details>
+          <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>CashMag est-il conforme ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+          <div class="ans">Oui. CashMag est certifié NF525 par l'AFNOR, et l'attestation est accessible à tout moment depuis votre caisse. C'est la preuve la plus solide à présenter lors d'un contrôle inopiné.</div>
+        </details>
+      </div>
+
+      <h2>Sources</h2>
+      <p><a href="https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/ce-quil-faut-savoir-sur-la-certification-des-logiciels-de-caisse" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">economie.gouv.fr</a>, « Ce qu'il faut savoir sur la certification des logiciels de caisse ». <a href="https://entreprendre.service-public.gouv.fr/actualites/A18087?lang=fr" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">Service Public Entreprendre</a>, actualité A18087. BOFiP, <a href="https://bofip.impots.gouv.fr/bofip/14826-PGP.html/ACTU-2025-00160" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">ACTU-2025-00160</a> et <a href="https://bofip.impots.gouv.fr/bofip/10691-PGP.html/identifiant=BOI-TVA-DECLA-30-10-30-20250416" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">BOI-TVA-DECLA-30-10-30</a>. <a href="https://www.legifiscal.fr/actualites-fiscales/4460-loi-finances-2026-retablissement-auto-certification-logiciels-caisse.html" target="_blank" rel="noopener noreferrer" style="color:#0B3D91;font-weight:600;text-decoration:underline">LégiFiscal</a>, rétablissement de l'auto-certification (loi de finances 2026).</p>
+      <p style="font-size:12.5px;color:#94A3B8;line-height:1.6;margin:10px 0 0">economie.gouv.fr, service-public.gouv.fr et le BOFiP sont des sources officielles ; LégiFiscal en est une reprise et vulgarisation.</p>
+    </div>
+
+  </section>
+
+  <!-- S4 : A LIRE AUSSI -->
+  <section class="sec s1">
+    <p class="a-related-title">À lire aussi</p>
+    <ul class="a-related-list">
+      <li>
+        <a href="../referencement-google-my-business/index.html">
+          <div class="a-cat">Web</div>
+          <div class="a-title">Référencement Google My Business : sortir dans le Top 3 local</div>
+        </a>
+      </li>
+      <li>
+        <a href="../../caisse-enregistreuse/index.html">
+          <div class="a-cat">Caisse</div>
+          <div class="a-title">Notre offre de caisse enregistreuse CashMag</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S5 : CTA FINAL v3 mobile "Le Seuil" + date E-E-A-T integree
+       NOTE : sections Conseil expert + Question urgente tel volontairement
+       SUPPRIMEES du mobile (doublons semantiques de l'article-end CTA et
+       du FAB tel sticky). Brief impeccable shape : template article mobile-first
+       = 5 sections (Hero / Image / Body / A lire aussi / CTA Final). -->
+  <section class="m-cta-final" style="--accent:#F57C00">
+    <span class="topbar" aria-hidden="true"></span>
+    <h3>Une caisse conforme, sans mauvaise surprise ?</h3>
+    <p>Nos conseillers vous rappellent sous 24h pour installer une caisse déjà en règle.</p>
+    <a class="btn btn-pri" href="../../contact/index.html">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <span class="dpx-divider">ou appelez-nous</span>
+    <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+    <p class="m-updated">Mis à jour le <time datetime="2026-07-06">6 juillet 2026</time></p>
+    <span class="bottomark" aria-hidden="true"></span>
+  </section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<style>
+  /* CSS inline supplementaire pour .m-cta-final (pattern shared avec autres pages) */
+  @media(max-width:640px) {
+    .m-cta-final{background:#F8F9FA;padding:36px 22px 32px;position:relative}
+    .m-cta-final .topbar{display:block;width:80px;height:3px;background:#F57C00;margin:0 0 22px;border-radius:2px}
+    .m-cta-final h3{margin:0 0 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,6.8vw,28px);line-height:1.1;letter-spacing:-0.01em;color:#0B3D91;text-align:left}
+    .m-cta-final p{margin:0 0 26px;font-size:14.5px;line-height:1.55;color:#4A5568;text-align:left;max-width:36ch}
+    .m-cta-final .btn{display:inline-flex;width:auto;align-self:flex-start;margin:0}
+    .m-cta-final .btn-pri{display:inline-flex;align-items:center;gap:8px;background:#F57C00;color:#fff;padding:14px 22px;border-radius:14px;font-family:'Sora',sans-serif;font-weight:700;font-size:14.5px;text-decoration:none}
+    .m-cta-final .dpx-divider{display:block;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#64748B;margin:30px 0 12px;text-align:left}
+    .m-cta-final .dpx-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px 12px 18px;border:1.5px solid #0B3D91;border-radius:999px;background:#fff;color:#0B3D91;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;text-decoration:none}
+    .m-cta-final .dpx-tel .gly{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;font-size:20px;line-height:1;color:#F57C00}
+    .m-cta-final .bottomark{display:block;width:16px;height:2px;background:#0B3D91;margin:28px 0 0 auto;border-radius:1px}
+  }
+</style>
+
+<script src="../../js/scripts.js?v=39"></script>
+</body>
+</html>
+</content>
+</invoke>
+
+

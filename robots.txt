@@ -1,0 +1,46 @@
+# =====================================================================
+# DCB TECHNOLOGIES — robots.txt
+# https://dcb-technologies.fr/robots.txt
+# =====================================================================
+
+User-agent: *
+Allow: /
+
+# Bloquer les fichiers techniques et dépôts
+Disallow: /index.backup.html
+Disallow: /tools/
+Disallow: /components/
+Disallow: /.htaccess
+Disallow: /tailwind.config.js
+Disallow: /css/tailwind-input.css
+
+# Bloquer les anciens slugs (déjà gérés en 301 par .htaccess, ceinture + bretelles)
+Disallow: /service-it-360/
+
+# Autoriser explicitement les crawlers IA (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap + llms.txt
+Sitemap: https://dcb-technologies.fr/sitemap.xml

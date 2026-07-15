@@ -1,0 +1,1357 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="./">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DCB Technologies | Caisse NF525, informatique et web · 71 69 01 42</title>
+<meta name="description" content="Caisse NF525, maintenance informatique et création de site. Techniciens salariés, intervention sous 4h sur Lyon, Mâcon, Chalon. Devis gratuit.">
+<link rel="canonical" href="https://dcb-technologies.fr/">
+<meta property="og:title" content="DCB Technologies | Caisse NF525, informatique et web · 71 69 01 42">
+<meta property="og:description" content="Caisse NF525, maintenance informatique, site internet. Techniciens locaux, intervention sous 4h. 71 · 69 · 01 · 42.">
+<meta property="og:url" content="https://dcb-technologies.fr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DCB Technologies | Caisse NF525, informatique et web · 71 69 01 42">
+<meta name="twitter:description" content="Caisse NF525, maintenance informatique, site internet. Techniciens locaux, intervention sous 4h. 71 · 69 · 01 · 42.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<link rel="preload" href="assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=18">
+<link rel="stylesheet" href="css/tailwind.min.css?v=22">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+
+  /* Blob ambiant hero homepage : float infini, zero dépendance scroll */
+  @keyframes hero-blob-a {
+    0%,100% { transform: translate(30%,-30%) scale(1); }
+    50%     { transform: translate(22%,-22%) scale(1.12); }
+  }
+  .hero-blob-a { animation: hero-blob-a 16s ease-in-out infinite; }
+
+  /* Cards piliers : filet signature couleur destination (remplace le top-stripe dégradé) */
+  .pilier-filet {
+    display: block; width: 28px; height: 3px; border-radius: 2px;
+    margin-bottom: 20px;
+    transition: width 0.3s ease-out;
+  }
+  .group:hover .pilier-filet { width: 48px; }
+  /* Tooltip vers le bas, ancré à gauche pour rester dans la carte */
+  abbr.tooltip-down[data-tooltip]:hover::after {
+    bottom: auto;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    transform: none;
+    max-width: 260px;
+  }
+  abbr.tooltip-down[data-tooltip]:hover::before {
+    bottom: auto;
+    top: calc(100% + 0.1rem);
+    left: 1rem;
+    transform: none;
+    border-top-color: transparent;
+    border-bottom-color: #0B3D91;
+  }
+  /* Marquee partenaires DESKTOP : défilement infini sans saut (track dupliqué aria-hidden) */
+  .d-partners {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .d-partners-track {
+    display: flex; flex-wrap: nowrap; align-items: center;
+    width: max-content; gap: 24px 64px;
+    animation: d-partners-scroll 32s linear infinite;
+  }
+  .d-partners:hover .d-partners-track { animation-play-state: paused; }
+  .d-partners-track .partner-logo { flex-shrink: 0; }
+  @keyframes d-partners-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-blob-a { animation: none !important; }
+    .h-partners-track { animation: none !important; }
+    .d-partners-track { animation: none !important; flex-wrap: wrap; justify-content: center; }
+    .pilier-filet { transition: none; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+  ═══════════════════════════════════════════════════════════════ */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+
+    /* S1 HERO HOMEPAGE : stats inline animées */
+    [data-metier="home"] .hero { padding: 78px 18px 32px; }
+    [data-metier="home"] .hero h1 { font-size: 28px; margin: 0 0 14px; }
+    [data-metier="home"] .hero .lede { font-size: 14px; line-height: 1.65; margin: 0 0 18px; }
+    [data-metier="home"] .hero .checks { margin-bottom: 18px; }
+    [data-metier="home"] .h-disclaimer {
+      color: rgba(255,255,255,0.5); font-size: 11px; line-height: 1.5;
+      margin: 12px 0 22px; font-style: italic;
+    }
+    [data-metier="home"] .h-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-top: 4px; padding-top: 8px;
+    }
+    [data-metier="home"] .h-stat .num {
+      display: block; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 24px;
+      color: #FFFFFF; line-height: 1; letter-spacing: -0.02em;
+    }
+    [data-metier="home"] .h-stat .lb {
+      display: block; margin-top: 8px; font-size: 9px; font-weight: 700;
+      color: rgba(255,255,255,0.55); letter-spacing: 0.14em; text-transform: uppercase;
+      line-height: 1.3;
+    }
+    [data-metier="home"] .h-stat .sub {
+      display: block; margin-top: 4px; font-size: 9px; color: rgba(255,255,255,0.4);
+      font-style: italic; line-height: 1.35;
+    }
+
+    /* S2 MARQUEE PARTENAIRES */
+    [data-metier="home"] .h-partners {
+      background: #FFFFFF; padding: 18px 0;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    [data-metier="home"] .h-partners-track {
+      display: flex; gap: 32px; width: max-content; align-items: center;
+      animation: h-partners-scroll 32s linear infinite;
+    }
+    [data-metier="home"] .h-partners-track img {
+      filter: grayscale(1) opacity(0.45);
+      flex-shrink: 0; width: auto; display: block;
+    }
+    @keyframes h-partners-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* S3 TROIS PILIERS : carousel IT-hub pattern + color overrides 3 piliers */
+    /* Slop nettoye : suppression du bandeau colore en haut des cards (signal couleur porte par .ic/.pill/.go .ab) */
+    [data-metier="home"] .mcard .bar{display:none}
+    [data-metier="home"] .caisse .ic{background:rgba(29,158,117,0.12);color:#1D9E75}
+    [data-metier="home"] .caisse .pill{background:rgba(29,158,117,0.12);color:#1D9E75}
+    [data-metier="home"] .caisse .feats .material-symbols-outlined{color:#1D9E75}
+    [data-metier="home"] .caisse .go .ab{background:#1D9E75}
+    [data-metier="home"] .it .ic{background:rgba(11,61,145,0.10);color:#0B3D91}
+    [data-metier="home"] .it .pill{background:rgba(11,61,145,0.10);color:#0B3D91}
+    [data-metier="home"] .it .feats .material-symbols-outlined{color:#0B3D91}
+    [data-metier="home"] .it .go .ab{background:#0B3D91}
+    [data-metier="home"] .web .ic{background:rgba(245,124,0,0.10);color:#F57C00}
+    [data-metier="home"] .web .pill{background:rgba(245,124,0,0.10);color:#F57C00}
+    [data-metier="home"] .web .feats .material-symbols-outlined{color:#F57C00}
+    [data-metier="home"] .web .go .ab{background:#F57C00}
+    [data-metier="home"] #dots[data-mi="0"] span.on{background:#1D9E75!important}
+    [data-metier="home"] #dots[data-mi="1"] span.on{background:#0B3D91!important}
+    [data-metier="home"] #dots[data-mi="2"] span.on{background:#F57C00!important}
+    [data-metier="home"] #tab-caisse.active{background:#1D9E75!important;border-color:#1D9E75!important}
+    [data-metier="home"] #tab-it.active{background:#0B3D91!important;border-color:#0B3D91!important}
+    [data-metier="home"] #tab-web.active{background:#F57C00!important;border-color:#F57C00!important}
+
+    /* S4 PROOF : Trust block éditorial sans cards (3 garanties verticales, dividers fins) */
+    [data-metier="home"] .h-trust {
+      display: flex; flex-direction: column; margin-top: 6px;
+    }
+    [data-metier="home"] .h-trust-item {
+      display: grid; grid-template-columns: 64px 1fr; gap: 14px 16px;
+      padding: 26px 0;
+      text-decoration: none; color: inherit;
+    }
+    [data-metier="home"] .h-trust-item:first-child { padding-top: 14px; }
+    [data-metier="home"] a.h-trust-item { transition: opacity 0.15s; }
+    [data-metier="home"] a.h-trust-item:active { opacity: 0.75; }
+    [data-metier="home"] .h-trust-ic {
+      grid-row: 1; grid-column: 1;
+      width: 64px; height: 64px; border-radius: 14px;
+      background: #FFFFFF; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 4px 12px -4px rgba(11,61,145,0.12);
+    }
+    [data-metier="home"] .h-trust-ic img { max-width: 48px; max-height: 48px; object-fit: contain; }
+    [data-metier="home"] .h-trust-ic .material-symbols-outlined { font-size: 32px; color: #0B3D91; }
+    [data-metier="home"] .h-trust-ic-fond {
+      grid-row: 1; grid-column: 1;
+      display: inline-flex; align-items: center;
+      width: auto; height: 64px;
+    }
+    [data-metier="home"] .h-trust-ic-fond .av {
+      width: 56px; height: 56px; border-radius: 999px;
+      border: 2px solid #FFFFFF; overflow: hidden;
+      box-shadow: 0 4px 12px -4px rgba(11,61,145,0.20);
+      background: linear-gradient(135deg, #0B3D91, #1E5BD9);
+      display: flex; align-items: center; justify-content: center;
+      color: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px;
+    }
+    [data-metier="home"] .h-trust-ic-fond .av img { width: 100%; height: 100%; object-fit: cover; }
+    [data-metier="home"] .h-trust-ic-fond .av-2 {
+      margin-left: -14px; background: linear-gradient(135deg, #F57C00, #FF9933);
+    }
+    [data-metier="home"] .h-trust-meta {
+      grid-row: 1; grid-column: 2;
+      display: flex; flex-direction: column; align-self: center; min-width: 0;
+    }
+    /* Filet court orange (décline .d-proof-filet desktop, dimension réduite mobile) : marqueur d'entrée d'item, remplace le séparateur 1px */
+    [data-metier="home"] .h-trust-meta::before {
+      content: ""; display: block;
+      width: 24px; height: 3px; border-radius: 2px;
+      background: #F57C00; margin-bottom: 10px;
+    }
+    [data-metier="home"] .h-trust-eb {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #F57C00; margin-bottom: 4px;
+    }
+    [data-metier="home"] .h-trust-h {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px;
+      color: #0B3D91; margin: 0; line-height: 1.2;
+    }
+    [data-metier="home"] .h-trust-meta .cm-logo { height: 22px; width: auto; margin-top: 2px; align-self: flex-start; object-fit: contain; }
+    [data-metier="home"] .h-trust-p {
+      grid-row: 2; grid-column: 1 / -1;
+      font-size: 13.5px; line-height: 1.55; color: #64748B; margin: 6px 0 0;
+    }
+    [data-metier="home"] .h-trust-p .em-blue { color: #0B3D91; font-weight: 600; }
+
+    /* S5 TÉMOIGNAGES homepage link blog */
+    [data-metier="home"] .h-testi-blog {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 18px; padding: 8px 0;
+      font-weight: 700; color: #0B3D91; font-size: 14px; text-decoration: none;
+    }
+    [data-metier="home"] .h-testi-blog .material-symbols-outlined { font-size: 16px; }
+
+    /* S6 ARGUMENTS : List items différenciation (stack vertical + dividers, no card grid) */
+    [data-metier="home"] .h-args-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 600; color: #0B3D91; text-decoration: none;
+      margin: 22px 0 4px;
+    }
+    [data-metier="home"] .h-diff {
+      display: flex; flex-direction: column; margin-top: 6px;
+    }
+    [data-metier="home"] .h-diff-item {
+      display: grid; grid-template-columns: 44px 1fr; gap: 14px;
+      padding: 22px 0;
+      align-items: flex-start;
+    }
+    [data-metier="home"] .h-diff-item:first-child { padding-top: 8px; }
+    [data-metier="home"] .h-diff-item:last-child { padding-bottom: 0; }
+    [data-metier="home"] .h-diff-ic {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #F8F9FA; color: #F57C00;
+      display: flex; align-items: center; justify-content: center;
+    }
+    [data-metier="home"] .h-diff-ic .material-symbols-outlined { font-size: 22px; }
+    [data-metier="home"] .h-diff-body h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px;
+      color: #0B3D91; margin: 0 0 4px; line-height: 1.3;
+    }
+    [data-metier="home"] .h-diff-body p {
+      font-size: 13px; line-height: 1.55; color: #64748B; margin: 0;
+    }
+
+    /* S7 ZONE GÉO : Utilise pattern .tech IT-hub depuis mobile.css */
+
+    /* S8 COMPARATIF : pattern inline depannage/location-vente, CSS scopé non requis */
+  }
+</style>
+<link rel="stylesheet" href="m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "Organization"],
+      "@id": "https://dcb-technologies.fr/#localbusiness",
+      "name": "DCB Technologies",
+      "legalName": "SAS DCB TECHNOLOGIES",
+      "url": "https://dcb-technologies.fr",
+      "logo": "https://dcb-technologies.fr/assets/logo-dcb.svg",
+      "image": "https://dcb-technologies.fr/assets/logo-dcb.svg",
+      "description": "DCB Technologies, fondée par Nathanaël Da Costa et Clément Boissié, est une société de services tech locale avec son siège à Dardilly (69) et sa base technique à Paray-le-Monial (71). Elle installe des caisses certifiées NF525, assure la maintenance informatique et crée des sites internet pour les commerçants et PME de Saône-et-Loire, du Rhône, de l'Ain et de la Loire.",
+      "telephone": "+33482530510",
+      "email": "contact@dcb-technologies.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "59 Chemin du Moulin Carron",
+        "addressLocality": "Dardilly",
+        "postalCode": "69570",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "45.8136",
+        "longitude": "4.7553"
+      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+        {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+        {"@type": "AdministrativeArea", "name": "Ain (01)"},
+        {"@type": "AdministrativeArea", "name": "Loire (42)"}
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:30",
+        "closes": "18:30"
+      },
+      "sameAs": [
+        "https://www.facebook.com/people/DCB-Technologies/61581485093936/",
+        "https://www.instagram.com/dcb_technologies/",
+        "https://share.google/x3xb57FXP7zvC2c9l"
+      ],
+      "founder": [
+        {"@id": "https://dcb-technologies.fr/#nathanael"},
+        {"@id": "https://dcb-technologies.fr/#clement"}
+      ],
+      "numberOfEmployees": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 10},
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Virement, Chèque, Prélèvement"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dcb-technologies.fr/#nathanael",
+      "name": "Nathanaël Da Costa",
+      "jobTitle": "Président & Co-fondateur",
+      "worksFor": {"@id": "https://dcb-technologies.fr/#localbusiness"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dcb-technologies.fr/#clement",
+      "name": "Clément Boissié",
+      "jobTitle": "Directeur Général & Co-fondateur",
+      "worksFor": {"@id": "https://dcb-technologies.fr/#localbusiness"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dcb-technologies.fr/#website",
+      "url": "https://dcb-technologies.fr",
+      "name": "DCB Technologies",
+      "publisher": {"@id": "https://dcb-technologies.fr/#localbusiness"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "La certification NF525, c'est obligatoire ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, plus depuis février 2026 : deux preuves de conformité sont acceptées au choix, le certificat NF525 ou l'attestation de l'éditeur. Ce qui reste obligatoire, c'est que le logiciel soit conforme ; sans justificatif, l'amende est de 7 500 € par caisse. CashMag, que nous installons, est certifié NF525 par l'AFNOR, la preuve la plus solide en cas de contrôle."}},
+        {"@type": "Question", "name": "En combien de temps intervenez-vous en cas de panne ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos techniciens salariés, basés à Paray-le-Monial, interviennent en moins de 4 heures sur tout le secteur : Saône-et-Loire, Rhône, Ain, Loire. Y compris le week-end pour les urgences."}},
+        {"@type": "Question", "name": "Intervenez-vous aussi à Lyon et dans le Rhône ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Notre siège est à Dardilly (69) et notre base technique à Paray-le-Monial (71). Nous couvrons Lyon, Villefranche-sur-Saône, Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne et les départements 71, 69, 01 et 42."}},
+        {"@type": "Question", "name": "Quelle différence entre DCB et une solution comme SumUp ?", "acceptedAnswer": {"@type": "Answer", "text": "SumUp est une solution en ligne sans accompagnement. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h si nécessaire. Ce n'est pas le même métier."}},
+        {"@type": "Question", "name": "Est-ce que DCB gère aussi l'informatique de mon entreprise ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Au-delà des caisses, nous assurons la maintenance de votre parc informatique, la sécurité de vos données, l'infogérance cloud et le déploiement d'outils collaboratifs comme Microsoft 365."}},
+        {"@type": "Question", "name": "Combien coûte la création d'un site internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de votre projet. Nous proposons un premier échange gratuit pour cadrer votre besoin et vous donner un tarif transparent, sans surprise."}},
+        {"@type": "Question", "name": "Combien coûte la maintenance informatique pour une PME ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de votre parc : nombre de postes, serveurs, sauvegarde et cybersécurité. Après un premier échange pour cadrer votre besoin, nous établissons un devis sur mesure. Intervention sur site sous 4h et télémaintenance selon la formule retenue."}},
+        {"@type": "Question", "name": "Quelle différence entre DCB et une agence web locale ?", "acceptedAnswer": {"@type": "Answer", "text": "Une agence web crée votre site. DCB fait plus : nous créons le site, l'hébergeons en France, le connectons à votre caisse si besoin (prise de rendez-vous, stocks) et assurons votre référencement local. Un seul interlocuteur pour tout le parcours digital, pas trois prestataires à coordonner."}},
+        {"@type": "Question", "name": "Est-ce que vous assurez les sauvegardes et la cybersécurité ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Sauvegardes cloud automatiques, antivirus centralisé, firewall, audit RGPD et sensibilisation des équipes : nos contrats de maintenance IT incluent la protection complète. Un poste compromis peut coûter plusieurs jours d'activité, nous le prévenons avant qu'il n'arrive."}}
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dcb-technologies.fr/caisse-enregistreuse/#service",
+      "serviceType": "Caisse enregistreuse NF525",
+      "name": "Caisse enregistreuse tactile certifiée NF525",
+      "description": "Installation, formation et SAV de systèmes de caisse NF525 : caisses tactiles CashMag, bornes de commande et monnayeurs automatiques pour boulangeries, restaurants, commerces et salons. Intervention sur site en moins de 4h.",
+      "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+      "url": "https://dcb-technologies.fr/caisse-enregistreuse/",
+      "areaServed": [
+        {"@type": "City", "name": "Lyon"},
+        {"@type": "City", "name": "Mâcon"},
+        {"@type": "City", "name": "Chalon-sur-Saône"},
+        {"@type": "City", "name": "Villefranche-sur-Saône"},
+        {"@type": "City", "name": "Bourg-en-Bresse"},
+        {"@type": "City", "name": "Roanne"},
+        {"@type": "City", "name": "Paray-le-Monial"},
+        {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+        {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+        {"@type": "AdministrativeArea", "name": "Ain (01)"},
+        {"@type": "AdministrativeArea", "name": "Loire (42)"}
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "59",
+        "highPrice": "77",
+        "offerCount": 2,
+        "description": "Formule Essentiel dès 59 €/mois (matériel, logiciel CashMag, installation et formation, sans maintenance) ou Pack complet dès 77 €/mois (maintenance 7j/7 24h/24 incluse). Location 60 mois sans apport, matériel garanti 5 ans."
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dcb-technologies.fr/maintenance-informatique/#service",
+      "serviceType": "Maintenance informatique PME",
+      "name": "Maintenance informatique, cloud et cybersécurité PME",
+      "description": "Maintenance, infogérance, cloud, cybersécurité et outils collaboratifs Microsoft 365 pour PME et commerçants. Techniciens salariés, intervention sur site en moins de 4h.",
+      "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+      "url": "https://dcb-technologies.fr/maintenance-informatique/",
+      "areaServed": [
+        {"@type": "City", "name": "Lyon"},
+        {"@type": "City", "name": "Mâcon"},
+        {"@type": "City", "name": "Chalon-sur-Saône"},
+        {"@type": "City", "name": "Villefranche-sur-Saône"},
+        {"@type": "City", "name": "Bourg-en-Bresse"},
+        {"@type": "City", "name": "Roanne"},
+        {"@type": "City", "name": "Paray-le-Monial"},
+        {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+        {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+        {"@type": "AdministrativeArea", "name": "Ain (01)"},
+        {"@type": "AdministrativeArea", "name": "Loire (42)"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dcb-technologies.fr/visibilite-web/#service",
+      "serviceType": "Création de site internet et SEO local",
+      "name": "Création de site internet, SEO local et hébergement",
+      "description": "Création de sites vitrines et e-commerce, référencement local Google, hébergement sécurisé en France pour commerçants et PME locales.",
+      "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+      "url": "https://dcb-technologies.fr/visibilite-web/",
+      "areaServed": [
+        {"@type": "City", "name": "Lyon"},
+        {"@type": "City", "name": "Mâcon"},
+        {"@type": "City", "name": "Chalon-sur-Saône"},
+        {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+        {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+        {"@type": "AdministrativeArea", "name": "Ain (01)"},
+        {"@type": "AdministrativeArea", "name": "Loire (42)"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="d-shell">
+<div id="dcb-nav"></div>
+
+<!-- 1. HERO V3 : bandeau compact + trois cartes chevauchantes -->
+<header class="pt-[76px] bg-gradient-to-br from-[#0B3D91] to-[#072B6B] pb-32 relative overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-[0.06] pointer-events-none" aria-hidden="true">
+    <img alt="" src="assets/hero-bg-datacenter.webp" width="512" height="512" loading="eager" fetchpriority="low" decoding="async" class="w-full h-full object-cover grayscale mix-blend-overlay">
+  </div>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="hero-blob-a absolute top-0 right-0 w-[560px] h-[560px] bg-white/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 pt-9 relative z-10 flex items-end justify-between gap-12 dcb-stagger">
+    <div class="max-w-[720px]">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-[18px]">Présents là où vous êtes</p>
+      <h1 class="font-sora text-[54px] font-extrabold text-white leading-[1.05] tracking-tight mb-[18px]">Votre expert local<br><span class="text-[#F57C00] italic font-semibold">en caisse, informatique<br>et site internet</span></h1>
+      <p class="text-[18px] leading-relaxed max-w-[600px]" style="color:rgba(255,255,255,0.68)">Un seul interlocuteur, des techniciens salariés qui se déplacent chez vous sur les départements <span class="text-white font-semibold">71, 69, 01 et 42</span>. Zéro sous-traitance, zéro centre d'appels.</p>
+      <p class="text-[13px] leading-relaxed max-w-[600px] mt-4" style="color:rgba(255,255,255,0.5)">DCB Technologies, fondée par Nathanaël Da Costa et Clément Boissié, est basée à Paray-le-Monial (71) et Dardilly (69).</p>
+    </div>
+    <div class="flex flex-col items-center gap-3 shrink-0 pb-2">
+      <a href="tel:0482530510" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-[14px] font-bold flex items-center gap-2 whitespace-nowrap "><span class="material-symbols-outlined ms-fill">call</span> Appeler le 04 82 53 05 10</a>
+      <a href="./contact/index.html" class="flex items-center gap-2 text-white font-sora font-bold text-[17px]">Demander un devis <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</header>
+<!-- Trois cartes chevauchantes -->
+<div class="bg-[#F8F9FA] pb-12">
+<div class="max-w-7xl mx-auto px-6 -mt-24 relative z-10 pt-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 dcb-stagger">
+    <a href="./caisse-enregistreuse/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
+      <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#1D9E75" aria-hidden="true"></span>
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-xl bg-[#1D9E75]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#1D9E75] text-3xl">point_of_sale</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#1D9E75] bg-[#1D9E75]/10 px-3 py-1 rounded-full">Dès 59€/mois</span>
+        </div>
+        <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Caisse enregistreuse</h3>
+        <p class="text-slate-500 leading-relaxed mb-4">Logiciel CashMag certifié, matériel garanti 5 ans. Boulangeries, restaurants, commerces, salons.</p>
+        <ul class="space-y-2.5 mb-4">
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#1D9E75] shrink-0"></span>Installation et formation sur site</li>
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#1D9E75] shrink-0"></span>SAV en moins de 4h, 7j/7</li>
+        </ul>
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
+          <span class="font-bold text-[#0B3D91] group-hover:text-[#1D9E75] transition-colors">Voir nos caisses NF525</span>
+          <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#1D9E75] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+    <a href="./maintenance-informatique/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
+      <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#0B3D91" aria-hidden="true"></span>
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-xl bg-[#0B3D91]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#0B3D91] text-3xl">build</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#0B3D91] bg-[#0B3D91]/10 px-3 py-1 rounded-full">&lt;4h sur site</span>
+        </div>
+        <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Informatique</h3>
+        <p class="text-slate-500 leading-relaxed mb-4">Maintenance, cloud, sécurité, <abbr class="tooltip-down" data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>. Techniciens salariés, monitoring sur mesure.</p>
+        <ul class="space-y-2.5 mb-4">
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0B3D91] shrink-0"></span>Dépannage à distance et sur site</li>
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0B3D91] shrink-0"></span>Sauvegarde cloud et cybersécurité</li>
+        </ul>
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
+          <span class="font-bold text-[#0B3D91] group-hover:text-[#345baf] transition-colors">Voir nos services informatiques</span>
+          <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0B3D91] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+    <a href="./visibilite-web/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)]">
+      <div class="p-7 lg:p-8 flex flex-col">
+        <span class="pilier-filet" style="background:#F57C00" aria-hidden="true"></span>
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-xl bg-[#F57C00]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#F57C00] text-3xl">language</span></div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] bg-[#F57C00]/10 px-3 py-1 rounded-full">Visible sur Google</span>
+        </div>
+        <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Site internet</h3>
+        <p class="text-slate-500 leading-relaxed mb-4">Site vitrine, e-commerce, référencement local. Vos clients vous trouvent sur Google avant vos concurrents.</p>
+        <ul class="space-y-2.5 mb-4">
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F57C00] shrink-0"></span>Référencement local optimisé</li>
+          <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F57C00] shrink-0"></span>Hébergement pro, serveurs en France</li>
+        </ul>
+        <div class="mt-auto flex items-center justify-between" style="padding-top:20px">
+          <span class="font-bold text-[#0B3D91] group-hover:text-[#F57C00] transition-colors">Voir nos sites internet</span>
+          <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F57C00] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- 2. PROOF : Ce qui nous engage (certifications + expertise, pas de stats client inventées) -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 lg:mb-12 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Ce qui nous engage</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] max-w-2xl mx-auto leading-tight">Trois garanties vérifiables, sans marketing.</h2>
+    </div>
+    <style>
+      /* PROOF éditorial sans cards : 3 colonnes rythmées par le blanc + filet signature orange en marqueur d'entrée */
+      .d-proof {
+        display: grid; grid-template-columns: 1fr;
+        gap: 48px 0;
+      }
+      .d-proof-col { padding: 0; }
+      @media (min-width: 768px) {
+        .d-proof { grid-template-columns: repeat(3, 1fr); gap: 0 72px; }
+        .d-proof-col { padding: 0; }
+      }
+      /* Filet court orange (décline .pilier-filet) : marqueur d'entrée de colonne, remplace le séparateur 1px */
+      .d-proof-filet {
+        display: block; width: 28px; height: 3px; border-radius: 2px;
+        background: #F57C00; margin-bottom: 24px;
+      }
+      .d-proof-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+      .d-proof-ic {
+        width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0;
+        background: #FFFFFF; display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 1px 0 rgba(7,43,107,0.04), 0 6px 16px -8px rgba(7,43,107,0.18);
+      }
+      .d-proof-eb {
+        display: block; font-size: 10px; font-weight: 700;
+        letter-spacing: 0.2em; text-transform: uppercase; color: #F57C00;
+      }
+      .d-proof-h {
+        font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem;
+        line-height: 1.15; color: #0B3D91; margin: 2px 0 0;
+      }
+      .d-proof-p { color: #64748B; line-height: 1.65; font-size: 15px; margin: 0; }
+      .d-proof-p .em-blue { color: #0B3D91; font-weight: 600; }
+    </style>
+    <div class="d-proof dcb-stagger">
+
+      <!-- Colonne 1 : NF525 certification AFNOR -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
+            <img src="assets/partenaire-nf525.webp" alt="Certification NF525 AFNOR" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+          </div>
+          <div>
+            <span class="d-proof-eb">Certification AFNOR</span>
+            <p class="d-proof-h">NF525</p>
+          </div>
+        </div>
+        <p class="d-proof-p">Logiciel de caisse conforme loi anti-fraude TVA. Attestation éditable depuis votre caisse à tout moment, y compris en cas de contrôle fiscal. Amende évitée : 7 500 € par système non conforme.</p>
+      </div>
+
+      <!-- Colonne 2 : Partenaire officiel CashMag -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <div class="d-proof-ic">
+            <span class="material-symbols-outlined text-[#0B3D91]" style="font-variation-settings:'FILL' 1; font-size:40px;">workspace_premium</span>
+          </div>
+          <div>
+            <span class="d-proof-eb">Partenaire agréé</span>
+            <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." style="display:inline-flex;margin-top:0.25rem">
+              <img src="assets/partenaire-cashmag.webp" alt="CashMag" class="h-7 w-auto object-contain" width="179" height="28" loading="lazy">
+            </abbr>
+          </div>
+        </div>
+        <p class="d-proof-p">Partenaire agréé CashMag, la meilleure caisse tactile Android du marché. Formation technique certifiée, configuration adaptée à votre métier, ligne directe avec l'éditeur quand un cas sort de l'ordinaire.</p>
+      </div>
+
+      <!-- Colonne 3 : Expertise fondateurs vérifiable -->
+      <div class="d-proof-col">
+        <span class="d-proof-filet" aria-hidden="true"></span>
+        <div class="d-proof-head">
+          <a href="./notre-adn/index.html" class="flex shrink-0 no-underline group/founders" aria-label="Découvrir les fondateurs de DCB Technologies">
+            <img src="assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
+            <img src="assets/cb-clement-boissie.jpg" alt="Clément Boissié, Co-fondateur" class="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm -ml-3 transition-transform duration-200 group-hover/founders:scale-105" width="56" height="56" loading="lazy">
+          </a>
+          <div>
+            <span class="d-proof-eb">Fondateurs</span>
+            <p class="d-proof-h">22 ans cumulés</p>
+          </div>
+        </div>
+        <p class="d-proof-p">Votre garantie, c'est l'expérience : <span class="em-blue">Nathanaël</span>, 10 ans en gestion, relation client et management d'équipe. <span class="em-blue">Clément</span>, 12 ans en IT et projets internationaux. Vous parlez aux fondateurs, pas à un commercial.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3. BANDEAU PARTENAIRES : marquee infinie (track dupliqué aria-hidden, shift tonal sans bordure) -->
+<section class="overflow-hidden" style="background:#F3F4F5;padding-top:30px;padding-bottom:30px">
+  <style>
+    .partner-logo { filter: grayscale(1) opacity(0.45); transition: filter 0.3s ease; }
+    .partner-logo:hover { filter: grayscale(0) opacity(0.85); }
+  </style>
+  <div class="d-partners" aria-label="Nos partenaires et certifications">
+    <div class="d-partners-track">
+      <!-- Set 1 (lu) -->
+      <img src="assets/partenaire-cashmag.webp"      alt="CashMag, logiciel caisse NF525"   class="partner-logo h-7  w-auto object-contain" width="179" height="28" loading="lazy">
+      <img src="assets/partenaire-nf525.webp"        alt="Certification NF525 AFNOR"          class="partner-logo h-12 w-auto object-contain" width="51"  height="48" loading="lazy">
+      <img src="assets/partenaire-hairnet.webp"      alt="Hair-Net, logiciel coiffure NF525" class="partner-logo h-9  w-auto object-contain" width="225" height="36" style="transform:translateY(-5px)" loading="lazy">
+      <img src="assets/partenaire-oxhoo.webp"        alt="Oxhoo, matériel caisse tactile"    class="partner-logo h-10 w-auto object-contain" width="114" height="40" loading="lazy">
+      <img src="assets/partenaire-aures.webp"        alt="AURES, terminaux point de vente"   class="partner-logo h-10 w-auto object-contain" width="111" height="40" loading="lazy">
+      <img src="assets/partenaire-imin.webp"         alt="iMin, matériel caisse Android"     class="partner-logo h-8  w-auto object-contain" width="98"  height="32" loading="lazy">
+      <img src="assets/partenaire-lenovo.webp"       alt="Lenovo, parc informatique PME"     class="partner-logo h-8  w-auto object-contain" width="152" height="32" loading="lazy">
+      <img src="assets/partenaire-pedro-porto.webp"  alt="Pedro Porto, consommables caisse"  class="partner-logo h-10 w-auto object-contain" width="133" height="40" loading="lazy">
+      <img src="assets/partenaire-yavin.webp"        alt="Yavin, solutions de paiement"      class="partner-logo h-9  w-auto object-contain" width="85"  height="36" loading="lazy" style="transform:translateY(5px)">
+      <!-- Set 2 (dupliqué pour la boucle sans saut, masqué aux lecteurs d'écran) -->
+      <img src="assets/partenaire-cashmag.webp"      alt="" aria-hidden="true" class="partner-logo h-7  w-auto object-contain" width="179" height="28" loading="lazy">
+      <img src="assets/partenaire-nf525.webp"        alt="" aria-hidden="true" class="partner-logo h-12 w-auto object-contain" width="51"  height="48" loading="lazy">
+      <img src="assets/partenaire-hairnet.webp"      alt="" aria-hidden="true" class="partner-logo h-9  w-auto object-contain" width="225" height="36" style="transform:translateY(-5px)" loading="lazy">
+      <img src="assets/partenaire-oxhoo.webp"        alt="" aria-hidden="true" class="partner-logo h-10 w-auto object-contain" width="114" height="40" loading="lazy">
+      <img src="assets/partenaire-aures.webp"        alt="" aria-hidden="true" class="partner-logo h-10 w-auto object-contain" width="111" height="40" loading="lazy">
+      <img src="assets/partenaire-imin.webp"         alt="" aria-hidden="true" class="partner-logo h-8  w-auto object-contain" width="98"  height="32" loading="lazy">
+      <img src="assets/partenaire-lenovo.webp"       alt="" aria-hidden="true" class="partner-logo h-8  w-auto object-contain" width="152" height="32" loading="lazy">
+      <img src="assets/partenaire-pedro-porto.webp"  alt="" aria-hidden="true" class="partner-logo h-10 w-auto object-contain" width="133" height="40" loading="lazy">
+      <img src="assets/partenaire-yavin.webp"        alt="" aria-hidden="true" class="partner-logo h-9  w-auto object-contain" width="85"  height="36" loading="lazy" style="transform:translateY(5px)">
+    </div>
+  </div>
+</section>
+
+<!-- 5. TÉMOIGNAGES -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce que disent nos clients.</h2>
+    </div>
+    <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
+      <div data-dcb-track>
+        <!-- Témoignage 1 : Boulangerie Chalon -->
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#F59E0B] rounded-full flex items-center justify-center text-white font-bold shrink-0">CS</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Camille Simon</p>
+              <p class="text-slate-500 text-sm">Boulangerie-pâtisserie · Avis Google</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Témoignage 2 : Restaurateur Lyon -->
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nous pouvons compter sur DCB technologies pour toutes nos demandes informatiques dans le secteur lyonnais ! Hyper pro &amp; réactif !"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0">TM</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Teddy Malfroy</p>
+              <p class="text-slate-500 text-sm">DICREA, secteur lyonnais · Avis Google</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Témoignage 3 : Commerçant Villefranche -->
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Une agence de grande qualité qui nous a accompagnés sur plusieurs de nos sites internet. Le travail est sérieux, soigné et réalisé avec une vraie compréhension de nos besoins."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0">GQ</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Groupe QPS</p>
+              <p class="text-slate-500 text-sm">Sites internet · Avis Google</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Témoignage 4 : Coiffeuse Mâcon -->
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"J'ai acheté une caisse enregistreuse pour l'exploitation d'un bar éphémère. Bravo à DCB technologies pour leur professionnalisme, leur proximité et leur accompagnement après-vente. Logiciel simple et intuitif à l'utilisation."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#A855F7] rounded-full flex items-center justify-center text-white font-bold shrink-0">AD</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Adrien Desforges</p>
+              <p class="text-slate-500 text-sm">Bar éphémère · Avis Google</p>
+              <div class="flex gap-0.5 mt-1.5" aria-label="5 étoiles sur 5"><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span><span class="material-symbols-outlined ms-fill text-[#F57C00] text-base" aria-hidden="true">star</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dcb-carousel-controls">
+        <button type="button" data-dcb-prev aria-label="Témoignage précédent">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <div data-dcb-dots></div>
+        <button type="button" data-dcb-next aria-label="Témoignage suivant">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="./blog/index.html" class="inline-flex items-center gap-2 text-[#0B3D91] font-bold hover:text-[#F57C00] transition-colors">Lire nos conseils sur le blog <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ARGUMENTS - layout horizontal avec icônes (signature homepage) -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-2">Pourquoi DCB</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce qui nous différencie</h2>
+      <p class="text-slate-500 mt-3"><a href="./notre-adn/index.html" class="text-[#0B3D91] font-semibold hover:text-[#F57C00] transition-colors">Notre équipe et notre histoire →</a></p>
+    </div>
+    <style>
+      /* ARGUMENTS éditorial sans cards : liste 2 colonnes icône-à-gauche + texte.
+         Aucun filet de séparation : le blanc + la puce icône carrée font le travail (rythme généreux, alignement strict). */
+      .d-diff {
+        display: grid; grid-template-columns: 1fr;
+        column-gap: 72px; row-gap: 44px;
+        max-width: 980px; margin: 0 auto;
+      }
+      .d-diff-item {
+        display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+        align-items: flex-start;
+      }
+      .d-diff-ic {
+        width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+        background: #FFFFFF; color: #F57C00;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .d-diff-ic .material-symbols-outlined { font-size: 28px; }
+      .d-diff-body h3 {
+        font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.0625rem;
+        line-height: 1.25; color: #0B3D91; margin: 4px 0 6px;
+      }
+      .d-diff-body p { color: #64748B; line-height: 1.6; font-size: 14.5px; margin: 0; }
+      @media (min-width: 768px) {
+        .d-diff { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+    <div class="d-diff dcb-stagger">
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">location_on</span></div>
+        <div class="d-diff-body">
+          <h3>Toujours près de vous</h3>
+          <p>Nos techniciens interviennent directement sur votre site en moins de 4 heures.</p>
+        </div>
+      </div>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">badge</span></div>
+        <div class="d-diff-body">
+          <h3>Nos techniciens, pas des sous-traitants</h3>
+          <p>Tous nos intervenants sont des salariés qualifiés DCB. Vous savez toujours qui sonne à votre porte.</p>
+        </div>
+      </div>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">tune</span></div>
+        <div class="d-diff-body">
+          <h3>Adapté à votre activité</h3>
+          <p>Boulangerie, restaurant, salon, PME : chaque solution est configurée selon vos horaires et contraintes réelles.</p>
+        </div>
+      </div>
+      <div class="d-diff-item">
+        <div class="d-diff-ic"><span class="material-symbols-outlined ms-fill">headset_mic</span></div>
+        <div class="d-diff-body">
+          <h3>Support réel, pas une hotline</h3>
+          <p>Un numéro direct et une présence terrain quand le téléphone ne suffit pas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PROXIMITÉ LOCALE : composition éditoriale photo + texte panel + badges départements -->
+<section class="bg-[#0B3D91] py-12 lg:py-16 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B]/60 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+      <!-- Photo dominante avec badges départements posés en bas -->
+      <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
+        <div class="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+          <img alt="Technicien DCB Technologies en intervention dans une agence Lyon 69 Rhône"
+               src="assets/dept-69.webp"
+               class="w-full h-full object-cover"
+               width="1200" height="1500" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src='assets/placeholder-photo.svg';">
+        </div>
+        <p style="color:rgba(255,255,255,0.75);font-size:13.5px;letter-spacing:0.03em;margin-top:14px;line-height:1.5">Saône-et-Loire (71) · Rhône (69) · Ain (01) · Loire (42)</p>
+      </div>
+
+      <!-- Texte panel droite -->
+      <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:11px;font-weight:700;letter-spacing:0.2em">Proximité locale</span>
+        <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nous intervenons dans toute votre région</h2>
+        <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Deux bases opérationnelles à Paray-le-Monial et Dardilly. Des techniciens salariés qui connaissent votre installation par coeur. Quand vous appelez, vous tombez sur quelqu'un qui sait déjà comment vous travaillez.</p>
+        <ul class="space-y-4 mb-10 list-none p-0">
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Lyon, Mâcon, Chalon, Villefranche, Bourg-en-Bresse, Roanne</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Dépannage à distance en moins de 20 min, sur site en moins de 4h</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Caisse, informatique ou site web : un seul interlocuteur</span>
+          </li>
+        </ul>
+        <div class="flex flex-wrap items-center gap-6 mb-3">
+          <a href="./contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-[14px] font-bold inline-flex items-center gap-2.5">
+            Vérifier l'éligibilité
+            <span class="material-symbols-outlined">map</span>
+          </a>
+          <a href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10" class="inline-flex items-center gap-2 px-1 py-2 rounded-md transition-colors hover:opacity-100" style="color:rgba(255,255,255,0.92);font-weight:700">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F57C00">call</span>
+            04 82 53 05 10
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 8. COMPARATIF : DCB (un seul interlocuteur) vs 3 prestataires distincts -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-3">Un seul interlocuteur</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">DCB Technologies ou 3 prestataires distincts : ce qui change vraiment</h2>
+      <p class="text-slate-500 text-base leading-relaxed">Caisse, informatique, site internet : tout gérer avec trois fournisseurs différents ou avec un seul partenaire ? Un éditeur caisse, une ESN et une agence web, chacun fait son métier. Mais personne ne coordonne. Voici les différences concrètes.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto dcb-stagger">
+      <div class="bg-[#F8F9FA] p-7 rounded-2xl tonal-shift-elevation">
+        <h3 class="font-sora font-bold text-lg text-slate-400 mb-6 flex items-center gap-2">
+          <span class="material-symbols-outlined text-slate-300 text-2xl">people</span> 3 prestataires distincts
+        </h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">3 contrats, 3 factures, 3 échéances</div><div class="text-slate-500 text-xs mt-0.5">Chaque renouvellement et litige : à négocier séparément avec chaque fournisseur</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Interlocuteur qui change à chaque appel</div><div class="text-slate-500 text-xs mt-0.5">Rotation des commerciaux : réexpliquer votre contexte depuis le début</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Intervention variable, souvent sous-traitée</div><div class="text-slate-500 text-xs mt-0.5">Technicien inconnu, délai non garanti, urgence week-end rarement couverte</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">Aucune vision globale de votre système</div><div class="text-slate-500 text-xs mt-0.5">Un bug caisse/site : chacun renvoie la balle à l'autre</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-slate-300 text-lg mt-0.5 ms-fill">cancel</span><div><div class="font-semibold text-slate-600 text-sm">NF525, RGPD, SEO : 3 audits séparés</div><div class="text-slate-500 text-xs mt-0.5">Pas de cohérence, pas de vision unifiée de votre conformité</div></div></div>
+        </div>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border-2 border-[#F57C00] ring-4 ring-[#F57C00]/5 relative">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F57C00] text-white px-4 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase whitespace-nowrap">Un seul partenaire</div>
+        <div class="flex items-center gap-3 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 145 145" class="h-6 w-auto shrink-0" aria-hidden="true">
+            <defs>
+              <linearGradient id="dcb-home-grad" x1="-1818.28" y1="2093.8" x2="-1950.21" y2="2090.28" gradientTransform="translate(-2607.05 881.47) rotate(-148.4)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#0b3d91"/><stop offset=".31" stop-color="#0f4eab"/><stop offset=".97" stop-color="#1c7bee"/><stop offset="1" stop-color="#1d7ef2"/>
+              </linearGradient>
+            </defs>
+            <path fill="#1d7ef2" d="M51.68,79.33c6.7,9.04,20.23,9.49,29.51,4.31,13.54-7.02,21.06-22.92,19.28-37.88-2.08-20.69-19.28-37.16-39.86-39.06-19.16-1.6-38.96,6.4-52.17,20.25l.65-1.06C28.95.15,70.73-9.62,97.18,11.57c24.73,19.16,29.24,56.58,2.09,75.76-6.48,4.79-14.56,7.56-22.65,6.7-9.78-.98-19.9-6.09-24.93-14.71Z"/>
+            <path fill="url(#dcb-home-grad)" d="M78.61,142.06C36.56,149.04-18.76,103.54,6.25,60.03c10.84-19.46,39.29-29.74,57.79-14.86,7.21,5.47,11.39,14.77,7.18,23.4-.19.42-1,2.23-.79.82.62-14.71-18.24-15.9-21.29-1.93-4.61,19.15,14.35,34.33,31.89,35.87,41.3,4.98,69.54-37,54.73-74.45,0,0-.02,0-.02,0,27.56,48.09-3.57,107.31-61.82,97.1-14.73-3.12-28.61-11.73-37.06-24.31-8.67-11.85-10.36-29.67-.59-41.39,6.31-8.58,18.38-12.49,27.99-7.13,1.29.61,2.45,1.87,3.61,2.44-.41-1.37-1.45-2.58-2.39-3.67-8.62-8.51-23.05-9.72-33.44-3.79-12.68,6.45-20,20.05-20.75,33.99-1.85,19.33,9.99,36.59,25.51,47.01,12.1,8.78,26.99,13.2,41.81,12.95,0,0,0-.02,0-.02Z"/>
+          </svg>
+          <h3 class="font-sora font-bold text-lg text-[#0B3D91]">DCB Technologies</h3>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">1 seul contrat, 1 facture consolidée</div><div class="text-slate-500 text-xs mt-0.5">Caisse, IT et web dans un seul document, une seule échéance mensuelle</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Fondateurs joignables, technicien attitré</div><div class="text-slate-500 text-xs mt-0.5">Pas de hotline, pas de rotation : vous connaissez votre contact par son prénom</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Techniciens salariés, télémaintenance sous 20 min, sur site sous 4h</div><div class="text-slate-500 text-xs mt-0.5">7j/7 week-end compris, sur vos 4 départements, sans sous-traitance</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">Vision globale : caisse, réseau, sauvegarde, site</div><div class="text-slate-500 text-xs mt-0.5">Un seul historique partagé, un seul audit de conformité</div></div></div>
+          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-[#F57C00] text-lg mt-0.5 ms-fill">check_circle</span><div><div class="font-semibold text-[#0B3D91] text-sm">NF525, RGPD, SEO : un seul audit cohérent</div><div class="text-slate-500 text-xs mt-0.5">Conformité vérifiée en une passe, par des interlocuteurs qui se parlent</div></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-400 mt-10 italic max-w-3xl mx-auto">Comparatif à titre indicatif. Les prestataires spécialisés peuvent convenir aux grandes entreprises avec DSI interne. DCB Technologies est conçu pour les TPE et PME qui ne veulent pas jongler entre plusieurs interlocuteurs.</p>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto dcb-reveal">
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] text-center mb-10">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3 mb-12">
+        <details class="faq-item"><summary>La certification NF525, c'est obligatoire ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Non, plus depuis février 2026 : deux preuves de conformité sont acceptées au choix, le certificat NF525 ou l'attestation de l'éditeur. Ce qui reste obligatoire, c'est que le logiciel soit conforme ; sans justificatif, l'amende est de 7 500 € par caisse. CashMag, que nous installons, est certifié NF525 par l'AFNOR, la preuve la plus solide en cas de contrôle.</div></details>
+        <details class="faq-item"><summary>En combien de temps intervenez-vous en cas de panne ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Votre activité ne s'arrête pas, la nôtre non plus. Nos techniciens salariés, basés à Paray-le-Monial, interviennent en moins de 4 heures sur tout le secteur : Saône-et-Loire, Rhône, Ain, Loire. Y compris le week-end pour les urgences.</div></details>
+        <details class="faq-item"><summary>Intervenez-vous aussi à Lyon et dans le Rhône ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Notre siège est à Dardilly (69) et notre base technique à Paray-le-Monial (71). Nous couvrons Lyon, Villefranche-sur-Saône, Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne et l'ensemble des départements 71, 69, 01 et 42.</div></details>
+        <details class="faq-item"><summary>Quelle différence entre DCB et une solution comme SumUp ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">SumUp est une solution en ligne sans accompagnement. Vous achetez seul, vous installez seul, et en cas de panne, c'est un ticket de support. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h si nécessaire. Ce n'est pas le même métier.</div></details>
+        <details class="faq-item"><summary>Est-ce que DCB gère aussi l'informatique de mon entreprise ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Au-delà des caisses, nous assurons la maintenance de votre parc informatique, la sécurité de vos données, l'infogérance cloud et le déploiement d'outils collaboratifs comme Microsoft 365. Et rien n'est imposé : chaque décision est expliquée et chiffrée avant d'être actée.</div></details>
+        <details class="faq-item"><summary>Combien coûte la création d'un site internet ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Cela dépend de votre projet. Un site vitrine pour un commerçant local ne demande pas le même travail qu'un e-commerce multi-produits. Nous proposons un premier échange gratuit pour cadrer votre besoin et vous donner un tarif transparent, sans surprise.</div></details>
+        <details class="faq-item"><summary>Combien coûte la maintenance informatique pour une PME ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Cela dépend de votre parc : nombre de postes, serveurs, sauvegarde et cybersécurité. Après un premier échange pour cadrer votre besoin, nous établissons un devis sur mesure. Intervention sur site sous 4h et télémaintenance selon la formule retenue.</div></details>
+        <details class="faq-item"><summary>Quelle différence entre DCB et une agence web locale ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Une agence web crée votre site. DCB fait plus : nous créons le site, l'hébergeons en France, le connectons à votre caisse si besoin (prise de rendez-vous, stocks) et assurons votre référencement local. Un seul interlocuteur pour tout le parcours digital, pas trois prestataires à coordonner.</div></details>
+        <details class="faq-item"><summary>Est-ce que vous assurez les sauvegardes et la cybersécurité ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Sauvegardes cloud automatiques, antivirus centralisé, firewall, audit RGPD et sensibilisation des équipes : nos contrats de maintenance IT incluent la protection complète. Un poste compromis peut coûter plusieurs jours d'activité, nous le prévenons avant qu'il n'arrive.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;background:#FFFFFF;--accent:#F57C00;--accent-dark:#E06E00">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Parlons de votre projet en toute simplicité</h2>
+        <p class="d-lede">Un échange de 15 minutes avec un technicien DCB suffit pour cadrer vos besoins et vous proposer une solution adaptée.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="./contact/index.html" class="btn btn--primary">Obtenir mon devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <span class="d-foot-mark" aria-hidden="true"></span>
+      <time class="d-updated" datetime="2026-06-24">Mis à jour le 24 juin 2026</time>
+    </div>
+  </div>
+</section>
+
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (visible <=640 px uniquement : .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="home">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+  <!-- S1 HERO v3 (Claude Design : gradient + datacenter overlay, eyebrow orange, H1 monumental, 2 CTAs empilés) -->
+  <header class="hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0B3D91 0%,#072B6B 100%);padding:78px 20px 28px;border-bottom-left-radius:32px;border-bottom-right-radius:32px;color:#fff">
+    <img src="assets/hero-bg-datacenter.webp" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.12;mix-blend-mode:overlay;filter:grayscale(1)" loading="eager" fetchpriority="high">
+    <div style="position:relative;z-index:2">
+      <span style="display:block;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#F57C00">Présents là où vous êtes</span>
+      <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:29px;line-height:1.12;letter-spacing:-0.02em;color:#fff;margin:12px 0 12px">Votre expert local <span style="color:#F57C00;font-style:italic;font-weight:600">en caisse, informatique et site internet</span></h1>
+      <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.7);margin:0 0 12px">Un seul interlocuteur, des techniciens salariés qui se déplacent chez vous sur les départements <span style="color:#fff;font-weight:600">71, 69, 01 et 42</span>. Zéro sous-traitance.</p>
+      <p style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.5);margin:0 0 20px">DCB Technologies, fondée par Nathanaël Da Costa et Clément Boissié, est basée à Paray-le-Monial (71) et Dardilly (69).</p>
+      <a href="tel:0482530510" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#F57C00;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;height:54px;border-radius:14px;text-decoration:none;box-shadow:0 10px 22px -10px rgba(245,124,0,0.6);margin-bottom:12px" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px;font-variation-settings:'FILL' 1">call</span>Appeler le 04 82 53 05 10</a>
+      <a href="./contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:10px;border:2px solid rgba(255,255,255,0.85);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;height:54px;border-radius:14px;text-decoration:none" aria-label="Demander un devis">Demander un devis<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+      <p style="font-size:11.5px;font-style:italic;color:rgba(255,255,255,0.5);margin:14px 0 0;text-align:center">Devis gratuit, sans engagement.</p>
+    </div>
+  </header>
+
+  <!-- S2 MARQUEE PARTENAIRES -->
+  <ul class="sr-only">
+    <li>CashMag, logiciel caisse NF525</li>
+    <li>Certification NF525 AFNOR</li>
+    <li>Hair-Net, logiciel coiffure NF525</li>
+    <li>Oxhoo, matériel caisse tactile</li>
+    <li>AURES, terminaux point de vente</li>
+    <li>iMin, matériel caisse Android</li>
+    <li>Lenovo, parc informatique PME</li>
+    <li>Pedro Porto, consommables caisse</li>
+    <li>Yavin, solutions de paiement</li>
+  </ul>
+  <div class="h-partners" aria-hidden="true">
+    <div class="h-partners-track">
+      <img src="assets/partenaire-cashmag.webp" alt="" width="179" height="28" loading="lazy" style="height:28px">
+      <img src="assets/partenaire-nf525.webp" alt="" width="51" height="48" loading="lazy" style="height:42px">
+      <img src="assets/partenaire-hairnet.webp" alt="" width="225" height="36" loading="lazy" style="height:32px">
+      <img src="assets/partenaire-oxhoo.webp" alt="" width="114" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-aures.webp" alt="" width="111" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-imin.webp" alt="" width="98" height="32" loading="lazy" style="height:30px">
+      <img src="assets/partenaire-lenovo.webp" alt="" width="152" height="32" loading="lazy" style="height:30px">
+      <img src="assets/partenaire-pedro-porto.webp" alt="" width="133" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-yavin.webp" alt="" width="85" height="36" loading="lazy" style="height:32px">
+      <img src="assets/partenaire-cashmag.webp" alt="" width="179" height="28" loading="lazy" style="height:28px">
+      <img src="assets/partenaire-nf525.webp" alt="" width="51" height="48" loading="lazy" style="height:42px">
+      <img src="assets/partenaire-hairnet.webp" alt="" width="225" height="36" loading="lazy" style="height:32px">
+      <img src="assets/partenaire-oxhoo.webp" alt="" width="114" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-aures.webp" alt="" width="111" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-imin.webp" alt="" width="98" height="32" loading="lazy" style="height:30px">
+      <img src="assets/partenaire-lenovo.webp" alt="" width="152" height="32" loading="lazy" style="height:30px">
+      <img src="assets/partenaire-pedro-porto.webp" alt="" width="133" height="40" loading="lazy" style="height:36px">
+      <img src="assets/partenaire-yavin.webp" alt="" width="85" height="36" loading="lazy" style="height:32px">
+    </div>
+  </div>
+
+  <!-- S3 TROIS PILIERS : pattern carousel IT hub (.tabs + .carou + .dots) -->
+  <section class="sec s1">
+    <p class="eyebrow">Nos Domaines d'Action</p>
+    <h2>Trois expertises, <em>un seul interlocuteur</em>.</h2>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Filtrer par expertise">
+      <button class="tab active" role="tab" id="tab-caisse" aria-selected="true" aria-controls="card-caisse"><span class="material-symbols-outlined" aria-hidden="true">point_of_sale</span>Caisse</button>
+      <button class="tab" role="tab" id="tab-it" aria-selected="false" aria-controls="card-it"><span class="material-symbols-outlined" aria-hidden="true">build</span>Informatique</button>
+      <button class="tab" role="tab" id="tab-web" aria-selected="false" aria-controls="card-web"><span class="material-symbols-outlined" aria-hidden="true">language</span>Site internet</button>
+    </div>
+    <div class="carou" id="carou">
+      <a class="mcard caisse" id="card-caisse" role="tabpanel" aria-labelledby="tab-caisse" href="./caisse-enregistreuse/index.html" aria-label="Découvrir nos solutions de caisse">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head">
+            <div class="ic"><span class="material-symbols-outlined">point_of_sale</span></div>
+            <span class="pill">Dès 59€/mois</span>
+          </div>
+          <h3>Caisse enregistreuse</h3>
+          <p class="ds">Logiciel CashMag certifié, matériel garanti 5 ans. Boulangeries, restaurants, commerces, salons.</p>
+          <div class="feats">
+            <div><span class="material-symbols-outlined ms-fill">handyman</span>Installation et formation sur site</div>
+            <div><span class="material-symbols-outlined ms-fill">support_agent</span>SAV en moins de 4h, 7j/7</div>
+          </div>
+          <div class="go"><span class="lb">Voir nos caisses NF525<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+        </div>
+      </a>
+      <a class="mcard it" id="card-it" role="tabpanel" aria-labelledby="tab-it" href="./maintenance-informatique/index.html" aria-label="Découvrir nos services informatiques">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head">
+            <div class="ic"><span class="material-symbols-outlined">build</span></div>
+            <span class="pill">&lt;4h sur site</span>
+          </div>
+          <h3>Informatique</h3>
+          <p class="ds">Maintenance, cloud, sécurité, télémaintenance. Techniciens salariés, monitoring sur mesure.</p>
+          <div class="feats">
+            <div><span class="material-symbols-outlined ms-fill">monitor_heart</span>Dépannage à distance et sur site</div>
+            <div><span class="material-symbols-outlined ms-fill">cloud_done</span>Sauvegarde cloud et cybersécurité</div>
+          </div>
+          <div class="go"><span class="lb">Voir nos services informatiques<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+        </div>
+      </a>
+      <a class="mcard web" id="card-web" role="tabpanel" aria-labelledby="tab-web" href="./visibilite-web/index.html" aria-label="Découvrir nos services web">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head">
+            <div class="ic"><span class="material-symbols-outlined">language</span></div>
+            <span class="pill">Visible sur Google</span>
+          </div>
+          <h3>Site internet</h3>
+          <p class="ds">Site vitrine, e-commerce, référencement local. Vos clients vous trouvent avant vos concurrents.</p>
+          <div class="feats">
+            <div><span class="material-symbols-outlined ms-fill">search</span>Référencement local optimisé</div>
+            <div><span class="material-symbols-outlined ms-fill">dns</span>Hébergement pro, serveurs en France</div>
+          </div>
+          <div class="go"><span class="lb">Voir nos sites internet<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+        </div>
+      </a>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+  </section>
+
+  <!-- S4 PROOF : Trust block éditorial sans cards (3 garanties verticales, dividers fins) -->
+  <section class="sec">
+    <p class="eyebrow">Ce qui nous engage</p>
+    <h2>Trois garanties <em>vérifiables</em>, sans marketing.</h2>
+    <div class="h-trust">
+      <div class="h-trust-item">
+        <div class="h-trust-ic">
+          <img src="assets/partenaire-nf525.webp" alt="NF525 AFNOR" width="48" height="48" loading="lazy">
+        </div>
+        <div class="h-trust-meta">
+          <span class="h-trust-eb">Certification AFNOR</span>
+          <h3 class="h-trust-h">NF525</h3>
+        </div>
+        <p class="h-trust-p">Logiciel de caisse conforme loi anti-fraude TVA. Attestation éditable depuis votre caisse à tout moment, y compris en cas de contrôle fiscal. Amende évitée : 7 500 € par système non conforme.</p>
+      </div>
+      <div class="h-trust-item">
+        <div class="h-trust-ic">
+          <span class="material-symbols-outlined ms-fill">workspace_premium</span>
+        </div>
+        <div class="h-trust-meta">
+          <span class="h-trust-eb">Partenaire agréé</span>
+          <img src="assets/partenaire-cashmag.webp" alt="CashMag" class="cm-logo" width="143" height="22" loading="lazy">
+        </div>
+        <p class="h-trust-p">Partenaire agréé CashMag, la meilleure caisse tactile Android du marché. Formation technique certifiée, configuration adaptée à votre métier, ligne directe avec l'éditeur quand un cas sort de l'ordinaire.</p>
+      </div>
+      <a class="h-trust-item" href="./notre-adn/index.html">
+        <div class="h-trust-ic-fond">
+          <span class="av"><img src="assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa" width="56" height="56" loading="lazy" onerror="this.replaceWith(document.createTextNode('ND'))"></span>
+          <span class="av av-2"><img src="assets/cb-clement-boissie.jpg" alt="Clément Boissié" width="56" height="56" loading="lazy" onerror="this.replaceWith(document.createTextNode('CB'))"></span>
+        </div>
+        <div class="h-trust-meta">
+          <span class="h-trust-eb">Fondateurs</span>
+          <h3 class="h-trust-h">22 ans cumulés</h3>
+        </div>
+        <p class="h-trust-p">Votre garantie, c'est l'expérience : <span class="em-blue">Nathanaël</span>, 10 ans en gestion, relation client et management d'équipe. <span class="em-blue">Clément</span>, 12 ans en IT et projets internationaux. Vous parlez aux fondateurs, pas à un commercial.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- S5 TÉMOIGNAGES -->
+  <section class="sec s1">
+    <p class="eyebrow">Ils nous font confiance</p>
+    <h2>Ce que disent <em>nos clients</em>.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+      <div style="background:#fff;border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+        <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        </div>
+        <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#F59E0B,#D97706);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">CS</div>
+          <div>
+            <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Camille Simon</div>
+            <div style="font-size:11.5px;color:var(--mute)">Boulangerie-pâtisserie · Avis Google</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+        <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+          <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+        </div>
+        <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Nous pouvons compter sur DCB technologies pour toutes nos demandes informatiques dans le secteur lyonnais ! Hyper pro &amp; réactif !"</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#EF4444,#DC2626);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">TM</div>
+          <div>
+            <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Teddy Malfroy</div>
+            <div style="font-size:11.5px;color:var(--mute)">DICREA, secteur lyonnais · Avis Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="h-testi-blog" href="./blog/index.html">Lire nos conseils sur le blog<span class="material-symbols-outlined">arrow_forward</span></a>
+  </section>
+
+  <!-- S6 ARGUMENTS : List items stack vertical (no card grid) -->
+  <section class="sec">
+    <p class="eyebrow">Pourquoi DCB</p>
+    <h2>Ce qui <em>nous différencie</em>.</h2>
+    <div class="h-diff">
+      <div class="h-diff-item">
+        <div class="h-diff-ic"><span class="material-symbols-outlined ms-fill">location_on</span></div>
+        <div class="h-diff-body">
+          <h3>Toujours près de vous</h3>
+          <p>Nos techniciens interviennent directement sur votre site en moins de 4 heures.</p>
+        </div>
+      </div>
+      <div class="h-diff-item">
+        <div class="h-diff-ic"><span class="material-symbols-outlined ms-fill">badge</span></div>
+        <div class="h-diff-body">
+          <h3>Nos techniciens, pas des sous-traitants</h3>
+          <p>Tous nos intervenants sont des salariés qualifiés DCB. Vous savez toujours qui sonne à votre porte.</p>
+        </div>
+      </div>
+      <div class="h-diff-item">
+        <div class="h-diff-ic"><span class="material-symbols-outlined ms-fill">tune</span></div>
+        <div class="h-diff-body">
+          <h3>Adapté à votre activité</h3>
+          <p>Boulangerie, restaurant, salon, PME : chaque solution est configurée selon vos horaires et contraintes réelles.</p>
+        </div>
+      </div>
+      <div class="h-diff-item">
+        <div class="h-diff-ic"><span class="material-symbols-outlined ms-fill">headset_mic</span></div>
+        <div class="h-diff-body">
+          <h3>Support réel, pas une hotline</h3>
+          <p>Un numéro direct et une présence terrain quand le téléphone ne suffit pas.</p>
+        </div>
+      </div>
+    </div>
+    <a class="h-args-link" href="./notre-adn/index.html">Notre équipe et notre histoire<span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
+  </section>
+
+  <!-- S7 PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + texte panel) -->
+  <section class="m-prox dcb-stagger" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+    <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+      <img src="./assets/dept-69.webp" alt="Technicien DCB en intervention chez un commerçant du Rhône" width="800" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    </div>
+    <p style="color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.03em;margin-top:12px;margin-bottom:0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Saône-et-Loire · Rhône · Ain · Loire</p>
+    <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Proximité locale</p>
+    <h2 style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nous intervenons dans toute votre région</h2>
+    <p style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Deux agences, Paray-le-Monial et Dardilly. Vos techniciens connaissent vos machines, pas un ticket.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
+      <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+        <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+        <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+      </li>
+      <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+        <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+        <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+      </li>
+      <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+        <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+        <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+      </li>
+    </ul>
+    <a href="./contact/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Vérifier l'éligibilité<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+  </section>
+
+  <!-- S8 COMPARATIF : pattern inline depannage/location-vente (3 prestataires vs DCB) -->
+  <section class="sec s1">
+    <p class="eyebrow">Un seul interlocuteur</p>
+    <h2>DCB ou 3 prestataires : <em>ce qui change vraiment</em>.</h2>
+    <p style="font-size:13px;color:var(--mute);line-height:1.55;margin:8px 0 20px">Caisse, informatique, site internet : tout gérer avec trois fournisseurs différents ou avec un seul partenaire. Un éditeur caisse, une ESN et une agence web, chacun fait son métier. Mais personne ne coordonne.</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#fff;border-radius:18px;padding:18px 16px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+        <div style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;color:var(--mute);padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)">
+          <span class="material-symbols-outlined" style="font-size:17px;color:#CBD5E1">people</span>
+          3 prestataires distincts
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">3 contrats, 3 factures, 3 échéances</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Chaque renouvellement et litige à négocier séparément</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Interlocuteur qui change à chaque appel</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Rotation des commerciaux, réexpliquer votre contexte</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Intervention variable, souvent sous-traitée</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Technicien inconnu, délai non garanti, résultat imprévisible</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#CBD5E1;margin-top:1px;font-variation-settings:'FILL' 1">cancel</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--mute);line-height:1.35">Aucune vision globale de votre système</strong><span style="display:block;font-size:11.5px;color:var(--subtle);line-height:1.4;margin-top:2px">Un bug caisse/site : chacun renvoie la balle à l'autre</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border:2px solid #F57C00;border-radius:18px;padding:18px 16px;box-shadow:0 8px 28px -8px rgba(245,124,0,0.20);position:relative;margin-top:8px">
+        <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#F57C00;color:#fff;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:99px;white-space:nowrap">Un seul partenaire</span>
+        <div style="display:flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;color:var(--ink);padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)">
+          <span class="material-symbols-outlined" style="font-size:17px;color:#F57C00;font-variation-settings:'FILL' 1">verified</span>
+          DCB Technologies
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">1 seul contrat, 1 facture consolidée</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Caisse, IT et web dans un seul document, une seule échéance</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Fondateurs joignables, technicien attitré</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Vous connaissez votre contact par son prénom</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Techniciens salariés, télémaintenance sous 20 min, sur site sous 4h</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">7j/7 week-end compris, sur vos 4 départements, sans sous-traitance</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#F57C00;margin-top:1px;font-variation-settings:'FILL' 1">check_circle</span>
+            <div><strong style="display:block;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35">Vision globale : caisse, réseau, sauvegarde, site</strong><span style="display:block;font-size:11.5px;color:var(--mute);line-height:1.4;margin-top:2px">Un seul historique partagé, un seul audit de conformité</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--subtle);text-align:center;margin-top:14px;font-style:italic;line-height:1.5">Comparatif à titre indicatif. Les prestataires spécialisés peuvent convenir aux grandes entreprises avec DSI interne. DCB est conçu pour les TPE et PME qui ne veulent pas jongler entre plusieurs interlocuteurs.</p>
+  </section>
+
+  <!-- S9 FAQ : 5 questions homepage funnel (standard mobile-standard 5-7) -->
+  <section class="sec">
+    <p class="eyebrow">Besoin de précisions ?</p>
+    <h2>Questions <em>fréquentes</em>.</h2>
+    <div class="faq">
+      <details>
+        <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La certification NF525, c'est obligatoire ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+        <div class="ans">Non, plus depuis février 2026 : deux preuves de conformité sont acceptées au choix, le certificat NF525 ou l'attestation de l'éditeur. Ce qui reste obligatoire, c'est que le logiciel soit conforme ; sans justificatif, l'amende est de 7 500 € par caisse. CashMag, que nous installons, est certifié NF525 par l'AFNOR, la preuve la plus solide en cas de contrôle.</div>
+      </details>
+      <details>
+        <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>En combien de temps intervenez-vous en cas de panne ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+        <div class="ans">Nos techniciens salariés, basés à Paray-le-Monial, interviennent en moins de 4 heures sur tout le secteur : Saône-et-Loire, Rhône, Ain, Loire. Y compris le week-end pour les urgences.</div>
+      </details>
+      <details>
+        <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quelle différence entre DCB et une solution comme SumUp ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+        <div class="ans">SumUp est une solution en ligne sans accompagnement. Vous achetez seul, vous installez seul, et en cas de panne, c'est un ticket de support. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h si nécessaire. Ce n'est pas le même métier.</div>
+      </details>
+      <details>
+        <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Est-ce que DCB gère aussi l'informatique de mon entreprise ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+        <div class="ans">Oui. Au-delà des caisses, nous assurons la maintenance de votre parc informatique, la sécurité de vos données, l'infogérance cloud et le déploiement d'outils collaboratifs comme Microsoft 365. Et rien n'est imposé : chaque décision est expliquée et chiffrée avant d'être actée.</div>
+      </details>
+      <details>
+        <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Est-ce que vous assurez les sauvegardes et la cybersécurité ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+        <div class="ans">Oui. Sauvegardes cloud automatiques, antivirus centralisé, firewall, audit RGPD et sensibilisation des équipes : nos contrats de maintenance IT incluent la protection complète.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINAL v3 : Le Bord Tranche (home, accent orange brand) -->
+  <style>
+    /* Override local : em italique gras dans le titre (squelette m-cta-final dans mobile.css) */
+    .m-cta-final h3 em{font-style:italic;font-weight:700}
+  </style>
+  <section class="m-cta-final" style="--accent:#F57C00;--accent-shadow:rgba(245,124,0,0.35)" aria-labelledby="cta-final-h-home">
+    <span class="topbar" aria-hidden="true"></span>
+    <h3 id="cta-final-h-home">Parlons de votre projet <em>en toute simplicité</em>.</h3>
+    <p>Un échange de 15 minutes avec un technicien DCB suffit pour cadrer vos besoins et vous proposer une solution adaptée.</p>
+    <a class="btn btn-pri" href="./contact/index.html">Obtenir mon devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <span class="dpx-divider">ou appelez-nous</span>
+    <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+    <p class="m-updated">Mis à jour le <time datetime="2026-06-24">24 juin 2026</time></p>
+  <span class="bottomark" aria-hidden="true"></span>
+  </section>
+
+</main><!-- /m-main -->
+
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<script src="js/scripts.js?v=39"></script>
+<script>
+/* Sync #dots data-mi pour color override par pilier (pattern IT hub) */
+(function () {
+  function bind() {
+    var dotsEl = document.getElementById('dots');
+    if (!dotsEl) return;
+    function syncIdx() {
+      var idx = Array.from(dotsEl.children).findIndex(function (s) { return s.classList.contains('on'); });
+      dotsEl.setAttribute('data-mi', idx < 0 ? '0' : String(idx));
+    }
+    var obs = new MutationObserver(syncIdx);
+    Array.from(dotsEl.children).forEach(function (s) {
+      obs.observe(s, { attributes: true, attributeFilter: ['class'] });
+    });
+    syncIdx();
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', bind) : bind();
+})();
+</script>
+</body>
+</html>
+
+

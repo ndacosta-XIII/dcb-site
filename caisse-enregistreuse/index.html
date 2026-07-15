@@ -1,0 +1,1455 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Caisse enregistreuse NF525 : installation et SAV sur site | DCB Technologies</title>
+<meta name="description" content="Caisse enregistreuse tactile NF525 : prise en main à distance immédiate, sur site en moins de 4h. Boulangerie, restaurant, commerce en 71/69/01/42.">
+<link rel="canonical" href="https://dcb-technologies.fr/caisse-enregistreuse/">
+<meta property="og:title" content="Caisse enregistreuse NF525 : installation et SAV sur site | DCB Technologies">
+<meta property="og:description" content="Caisse tactile NF525 pour boulangerie, restaurant, commerce. Installation, formation et SAV sur site en moins de 4h.">
+<meta property="og:url" content="https://dcb-technologies.fr/caisse-enregistreuse/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caisse enregistreuse NF525 : installation et SAV sur site | DCB Technologies">
+<meta name="twitter:description" content="Caisse tactile NF525 pour boulangerie, restaurant, commerce. Installation, formation et SAV sur site en moins de 4h.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css?v=18">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=22">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .price-badge { }
+
+  /* Blobs ambiants hero : float CSS infini, zero parallax scroll */
+  @keyframes hubc-blob-a {
+    0%,100% { transform: translate(30%,-30%) scale(1); }
+    50%     { transform: translate(22%,-22%) scale(1.12); }
+  }
+  @keyframes hubc-blob-b {
+    0%,100% { transform: translateY(0); opacity:1; }
+    50%     { transform: translateY(-20px); opacity:0.7; }
+  }
+  .hubc-blob-a { animation: hubc-blob-a 16s ease-in-out infinite; }
+  .hubc-blob-b { animation: hubc-blob-b 12s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .hubc-blob-a, .hubc-blob-b { animation: none !important; }
+    .pilier-filet { transition: none !important; }
+  }
+
+  /* Filet signature (P-16) : aplat court couleur destination, marqueur d'entree de card, hover 28 -> 48px */
+  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
+  .group:hover .pilier-filet { width:48px; }
+
+  /* METIERS : cards d'origine du hub, de-sloppees (stripe -> filet P-16, hover sobre, sans glow ni border-t) */
+
+  /* KPI badges mockup : apparition one-shot (plus de loop breathe), rotate conserve */
+  @keyframes cm-kpi-in-top { from { opacity:0; transform:rotate(2.5deg) translateY(10px) scale(0.96); } to { opacity:1; transform:rotate(2.5deg) translateY(0) scale(1); } }
+  @keyframes cm-kpi-in-bot { from { opacity:0; transform:rotate(-2.5deg) translateY(10px) scale(0.96); } to { opacity:1; transform:rotate(-2.5deg) translateY(0) scale(1); } }
+  .cm-kpi-badge.top { animation:cm-kpi-in-top 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .cm-kpi-badge.bot { animation:cm-kpi-in-bot 0.7s cubic-bezier(0.22,1,0.36,1) 0.12s both; }
+  @media (prefers-reduced-motion: reduce) { .cm-kpi-badge.top, .cm-kpi-badge.bot { animation:none !important; } }
+
+  /* ── CASHMAG MOCKUP : import direct handoff ─────────── */
+  .cm-mockup-stage { position:relative; width:100%; max-width:620px; margin:0 auto; }
+  .cm-tablet { background:#1B1B20; border-radius:18px; padding:12px; box-shadow:0 40px 70px -20px rgba(11,61,145,0.25),0 25px 50px -25px rgba(0,0,0,0.3); position:relative; z-index:2; }
+  .cm-tablet-screen { background:#FFF; border-radius:8px; overflow:hidden; display:grid; grid-template-columns:1fr 1.5fr; min-height:360px; }
+  .cm-ticket { background:#F8F9FB; padding:14px; display:flex; flex-direction:column; border-right:1px solid #E5E9F0; }
+  .cm-ticket-head { display:flex; align-items:center; justify-content:space-between; font-size:9px; font-weight:700; color:#5F6368; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #E5E9F0; }
+  .cm-ticket-num { color:#0B3D91; }
+  .cm-ticket-list { flex:1; display:flex; flex-direction:column; gap:6px; }
+  .cm-line { display:flex; align-items:center; justify-content:space-between; font-size:11px; }
+  .cm-line-name { font-weight:600; color:#0B3D91; }
+  .cm-line-qty { color:#5F6368; font-size:10px; }
+  .cm-line-price { font-weight:700; color:#0B3D91; font-variant-numeric:tabular-nums; }
+  .cm-ticket-total { margin-top:10px; padding-top:10px; border-top:2px solid #0B3D91; }
+  .cm-total-row { display:flex; align-items:baseline; justify-content:space-between; }
+  .cm-total-label { font-size:10px; font-weight:700; color:#5F6368; letter-spacing:0.1em; text-transform:uppercase; }
+  .cm-total-amount { font-family:'Sora',sans-serif; font-size:1.5rem; font-weight:700; color:#0B3D91; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; }
+  .cm-grid-area { padding:12px; background:#FFF; }
+  .cm-grid-tabs { display:flex; gap:4px; margin-bottom:8px; border-bottom:1px solid #F1F3F4; padding-bottom:8px; }
+  .cm-tab { font-size:9px; font-weight:700; padding:4px 8px; border-radius:4px; color:#5F6368; background:#F1F3F4; letter-spacing:0.04em; }
+  .cm-tab.active { background:#0B3D91; color:#FFF; }
+  .cm-products { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+  .cm-product { aspect-ratio:1; background:#FFF; border:1px solid #E5E9F0; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:4px; font-size:9px; color:#0B3D91; font-weight:600; }
+  .cm-product .emo { font-size:16px; margin-bottom:2px; }
+  .cm-product .name { font-size:8px; line-height:1.1; font-weight:700; }
+  .cm-product .price { font-size:7px; color:#5F6368; margin-top:1px; font-variant-numeric:tabular-nums; }
+  .cm-product.highlight { background:#F57C00; color:#FFF; border-color:#F57C00; }
+  .cm-product.highlight .name,.cm-product.highlight .price { color:#FFF; }
+  .cm-pay-bar { display:flex; gap:4px; margin-top:10px; padding-top:10px; border-top:1px solid #F1F3F4; }
+  .cm-pay-btn { flex:1; padding:8px 4px; border-radius:6px; text-align:center; font-size:9px; font-weight:700; background:#F8F9FB; color:#0B3D91; display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .cm-pay-btn .material-symbols-outlined { font-size:16px; }
+  .cm-pay-btn.primary { background:#15803d; color:#FFF; }
+  .cm-kpi-badge { position:absolute; background:#FFF; border-radius:16px; padding:18px 22px; box-shadow:0 0 0 1px rgba(11,61,145,0.08),0 4px 12px rgba(0,0,0,0.08); z-index:3; display:flex; align-items:center; gap:14px; min-width:200px; }
+  .cm-kpi-badge.top { top:-28px; right:-22px; transform:rotate(2.5deg); }
+  .cm-kpi-badge.bot { bottom:-28px; left:-22px; transform:rotate(-2.5deg); }
+  .cm-kpi-icon { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#F57C00 0%,#FF9933 100%); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 6px 14px -4px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.25); }
+  .cm-kpi-icon .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1,'wght' 600; }
+  .cm-kpi-badge.bot .cm-kpi-icon { background:linear-gradient(135deg,#0B3D91 0%,#1E5BD9 100%); box-shadow:0 6px 14px -4px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.25); }
+  .cm-kpi-text { display:flex; flex-direction:column; line-height:1.1; }
+  .cm-kpi-text .lab { font-size:10px; font-weight:700; color:#5F6368; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:4px; }
+  .cm-kpi-text .val { font-family:'Sora',sans-serif; font-size:1.75rem; font-weight:700; color:#0B3D91; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; margin-bottom:2px; line-height:1; }
+  .cm-kpi-text .sub { font-size:11px; color:#64748B; font-weight:500; }
+  /* ── CASHMAG : mise en scene centree. Mockup piece maitresse, points editoriaux
+     en 3 colonnes (P-18, sans cards). Regime marque bleu, accents orange (chantier 2) ─────────── */
+  .cm-points { display:grid; grid-template-columns:1fr; gap:2rem; margin-top:3rem; }
+  @media(min-width:768px){ .cm-points { grid-template-columns:repeat(3,1fr); gap:2.5rem 4rem; } }
+  .cm-point { display:grid; grid-template-columns:44px 1fr; gap:1rem; align-items:start; }
+  .cm-point-icon {
+    width:44px; height:44px; border-radius:12px;
+    background:#FFFFFF;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cm-point-icon .material-symbols-outlined { color:#F57C00; font-size:1.375rem; }
+  .cm-point h3 { font-family:'Sora',sans-serif; font-size:1rem; font-weight:700; color:#0B3D91; letter-spacing:-0.01em; margin-bottom:0.375rem; }
+  .cm-point p { color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  .cm-note { font-style:italic; color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  .cm-note strong { color:#0B3D91; font-weight:600; font-style:normal; }
+
+  /* ── HAIRNET SECTION ─────────── */
+  .sec-inner { max-width:80rem; margin:0 auto; }
+  .sec-hairnet { background:#FFF; padding:4rem 1.5rem 5rem; }
+  .hn-header { display:grid; grid-template-columns:1fr; gap:2rem; margin-bottom:3rem; align-items:center; }
+  @media(min-width:900px){ .hn-header { grid-template-columns:1.4fr 1fr; gap:4rem; } }
+  .hn-eyebrow { display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; margin-bottom:1rem; }
+  .hn-h2 { font-family:'Sora',sans-serif; font-size:clamp(1.875rem,3.5vw,2.25rem); font-weight:700; line-height:1.1; color:#0B3D91; letter-spacing:-0.02em; margin-bottom:1rem; }
+  .hn-h2 em { font-style:normal; color:#0B3D91; }
+  .hn-lede { color:#475569; font-size:1.25rem; line-height:1.625; margin-bottom:1.5rem; }
+  .hn-pivot { background:rgba(11,61,145,0.06); border-radius:14px; padding:1.5rem 1.75rem; display:flex; align-items:center; gap:1.25rem; }
+  .hn-pivot-icon { width:48px; height:48px; border-radius:12px; background:#0B3D91; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .hn-pivot-icon .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1; }
+  .hn-pivot-text { font-size:0.9375rem; line-height:1.55; color:#475569; }
+  .hn-pivot-text strong { color:#0B3D91; font-weight:700; display:block; margin-bottom:2px; font-family:'Sora',sans-serif; font-size:1rem; }
+  .hn-main { display:grid; grid-template-columns:1fr; gap:3rem; align-items:stretch; }
+  @media(min-width:1024px){ .hn-main { grid-template-columns:5fr 7fr; gap:4rem; align-items:center; } }
+  .hn-card { background:linear-gradient(160deg,#0B3D91 0%,#072B6B 100%); border-radius:20px; padding:2.25rem; color:#FFF; box-shadow:0 30px 60px -20px rgba(11,61,145,0.35); }
+  .hn-card-head { display:flex; align-items:center; gap:12px; margin-bottom:1.5rem; position:relative; z-index:1; }
+  .hn-card-logo { width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .hn-card-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .hn-card-logo .material-symbols-outlined { color:#FFF; font-size:24px; font-variation-settings:'FILL' 1; }
+  .hn-card-name { font-family:'Sora',sans-serif; font-size:1.125rem; font-weight:700; }
+  .hn-card-tag { margin-left:auto; font-size:9px; font-weight:700; letter-spacing:0.14em; background:rgba(255,255,255,0.12); padding:4px 8px; border-radius:999px; text-transform:uppercase; }
+  .hn-stat-block { margin-bottom:1.5rem; position:relative; z-index:1; }
+  .hn-stat-label { font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F57C00; margin-bottom:6px; }
+  .hn-card .hn-stat-label { color:#F57C00; }
+  .hn-stat-value { font-family:'Sora',sans-serif; font-weight:800; letter-spacing:-0.02em; line-height:1; margin-bottom:6px; }
+  .hn-stat-value.xl { font-size:2.25rem; }
+  .hn-stat-value.lg { font-size:1.875rem; }
+  .hn-stat-desc { color:rgba(255,255,255,0.72); font-size:0.875rem; line-height:1.5; }
+  .hn-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:1.75rem; }
+  .hn-pill { background:#FFF; color:#0B3D91; padding:5px 11px; border-radius:999px; font-size:11px; font-weight:700; }
+  /* Hairnet : liste editoriale (P-18) chip icone + texte, zero bordure, le blanc fait le rythme (chantier 3) */
+  .hn-features { display:flex; flex-direction:column; gap:2rem; margin-bottom:2.25rem; }
+  .hn-feature { display:grid; grid-template-columns:56px 1fr; gap:1.25rem; align-items:flex-start; }
+  .hn-feature-icon { width:56px; height:56px; border-radius:14px; background:#F8F9FA; display:flex; align-items:center; justify-content:center; color:#F57C00; flex-shrink:0; }
+  .hn-feature-icon .material-symbols-outlined { font-size:26px; }
+  .hn-feature-title { font-family:'Sora',sans-serif; font-size:1.0625rem; font-weight:700; color:#0B3D91; margin-bottom:0.4rem; letter-spacing:-0.01em; }
+  .hn-feature-desc { color:#64748B; font-size:0.9375rem; line-height:1.6; }
+  /* CTA Hairnet : atomes standards dcb-btn-hover, seule la couleur or change (inline) */
+
+  /* ── NF525 : section verbatim hub (classes .nf-* via css/style.css) ── */
+  /* NF525 desktop chantier 3 : epure editorial homepage. Watermark geant et cadre
+     pointille purges a la source dans css/style.css (anti-slop global). */
+  /* 3a. Logo NF : chip blanc simple ombre homepage */
+  .d-shell .sec-nf525{background:#F8F9FA}
+  .sec-nf525 .nf-logo-frame{width:auto;height:auto;border-radius:14px;background:#FFFFFF;padding:1.5rem;}
+  .sec-nf525 .nf-logo-frame img{max-width:120px;max-height:120px}
+  /* 3b. Bloc amende : composition editoriale nue (filet orange 28x3, chiffre Sora bleu) */
+  .nf-editorial{display:grid;grid-template-columns:auto 1fr;gap:2.5rem 3.5rem;align-items:start;margin-top:1rem}
+  @media(max-width:767px){.nf-editorial{grid-template-columns:1fr;gap:1.5rem}}
+  .nf-editorial-amount{}
+  .nf-editorial-filet{display:block;width:28px;height:3px;border-radius:2px;background:#F57C00;margin-bottom:1.25rem}
+  .nf-editorial-lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#64748B;margin-bottom:0.5rem}
+  .nf-editorial-val{font-family:'Sora',sans-serif;font-size:clamp(3rem,5vw,3.75rem);font-weight:800;letter-spacing:-0.02em;line-height:1;color:#F57C00}
+  .nf-editorial-sub{font-size:0.9375rem;color:#64748B;margin-top:0.625rem}
+  .nf-editorial-body{color:#475569;font-size:1.0625rem;line-height:1.65;max-width:42rem;align-self:center}
+  .nf-editorial-body strong{color:#0B3D91;font-weight:700}
+  /* ── SHELLS mobile / desktop ─────────────────────────────────── */
+  .m-shell{display:none}
+  @media(max-width:640px){.m-shell{display:block}.d-shell{display:none}#dcb-phone-fab{display:none!important}
+    /* ANTI-SLOP MOBILE (iteration 2) ─────────────────────────── */
+    /* Cards legitimes : on remplace la bordure 1px par l'ombre tintee bleu (doctrine homepage mobile) */
+    .m-shell .pain .row{border:0;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)}
+    /* TRUST BAR mobile (chantier 1) : marquee fond gris #F8F9FA, zero bordure (shift tonal) */
+    .m-shell .marquee{background:#F8F9FA;border-bottom:0}
+    /* CASHMAG mobile : effet carte casse -> section flat editoriale, fond neutre, pastilles bleues a icones orange */
+    .m-shell .cm-flat .eyebrow-cm{color:#F57C00}
+    .m-shell .cm-flat-chip{display:inline-flex;align-items:center;background:transparent;padding:0;margin:14px 0 18px;box-shadow:none}
+    .m-shell .cm-flat-chip img{height:30px;width:auto;display:block}
+    .m-shell .cm-flat-intro{font-size:13.5px;line-height:1.6;color:var(--mute);margin:0 0 20px}
+    .m-shell .cm-flat-intro strong{color:#0B3D91;font-weight:700}
+    .m-shell .cm-flat .cm-feats .ft .ic{background:#F8F9FA;color:#F57C00}
+    /* CTA CashMag mobile : vrai atome bouton homepage (.btn.btn-pri), regle en pill auto-width inline */
+    .m-shell .cm-flat-cta{display:inline-flex;width:auto;margin-top:20px;text-decoration:none;box-shadow:none}
+    .m-shell .cm-flat-cta .material-symbols-outlined{font-size:18px}
+    /* Chaine tonale (chantier 5) : periph cards gris sur section blanche (evite carte blanche sur fond blanc) */
+    .m-shell .peri-a a{background:#F8F9FA}
+    /* NF525 mobile : piliers verbatim hub (.nf-pillars-a / .nf-p-a via m/css/mobile.css) */
+    /* Chantier 4 : panneau ambre remplace par composition editoriale nue (filet orange 24x3, chiffre Sora bleu) */
+    .m-shell .nf-editorial-a{margin-top:16px}
+    .m-shell .nf-editorial-a .filet{display:block;width:24px;height:3px;border-radius:2px;background:#F57C00;margin-bottom:16px}
+    .m-shell .nf-editorial-a .lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+    .m-shell .nf-editorial-a .amt{font-family:'Sora',sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.02em;color:#F57C00}
+    .m-shell .nf-editorial-a .sub{font-size:13px;color:var(--mute);margin-top:8px}
+    .m-shell .nf-editorial-a .desc{font-size:13.5px;line-height:1.6;color:var(--mute);margin:18px 0 0}
+    .m-shell .nf-editorial-a .desc strong{color:#0B3D91;font-weight:700}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Quelle différence entre DCB et une solution comme SumUp ou Zettle ?", "acceptedAnswer": {"@type": "Answer", "text": "SumUp et Zettle sont des solutions en ligne sans accompagnement. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h en cas de problème. Le logiciel CashMag est certifié NF525 et configuré pour votre métier."}},
+    {"@type": "Question", "name": "Ma caisse actuelle est-elle conforme NF525 ?", "acceptedAnswer": {"@type": "Answer", "text": "Votre logiciel doit respecter les critères de conformité fiscale (ISCA) et vous devez pouvoir présenter un certificat ou une attestation à tout moment. Si vous n'avez ni l'un ni l'autre, il y a un doute : on audite votre installation gratuitement. CashMag est certifié NF525 par l'AFNOR."}},
+    {"@type": "Question", "name": "Location ou achat : quelle formule choisir ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous proposons trois formules : location longue durée (12, 24 ou 36 mois) avec matériel inclus, crédit-bail avec option d'achat, ou achat comptant. La majorité de nos clients choisissent la location pour lisser l'investissement."}},
+    {"@type": "Question", "name": "Comment se passe l'installation et la formation ?", "acceptedAnswer": {"@type": "Answer", "text": "Un technicien DCB vient dans votre établissement, installe le matériel, configure le logiciel selon votre activité et forme votre équipe sur place. La formation dure en moyenne une demi-journée. Un support téléphonique reste disponible 7j/7."}},
+    {"@type": "Question", "name": "En combien de temps intervenez-vous en cas de panne ?", "acceptedAnswer": {"@type": "Answer", "text": "En cas de panne, nous prenons la main à distance immédiatement. Si un déplacement est nécessaire, nos techniciens interviennent en moins de 4 heures sur site : Lyon, Villefranche-sur-Saône, Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne et l'ensemble des départements 71, 69, 01 et 42. En cas de panne matérielle, un équipement de remplacement est fourni sous 48h."}},
+    {"@type": "Question", "name": "La caisse est-elle compatible avec mon terminal de paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "CashMag est compatible avec les principaux terminaux de paiement (Ingenico, Verifone, PAX). La liaison caisse-TPE envoie automatiquement le montant, ce qui élimine les erreurs de saisie."}},
+    {"@type": "Question", "name": "Qu'est-ce qui est inclus dans les 59 €/mois ?", "acceptedAnswer": {"@type": "Answer", "text": "Le pack Essentiel à 59 €/mois comprend le matériel (écran tactile, tiroir-caisse, imprimante de tickets), le logiciel CashMag certifié NF525, l'installation sur place par un technicien et la formation de votre équipe, sans la maintenance. Le Pack Comptoir à 77 €/mois ajoute la maintenance 7j/7 : télémaintenance, intervention sur site sous 4h et remplacement du matériel sous 48h en cas de panne. Les deux formules sont en location 60 mois sans apport, matériel garanti 5 ans."}},
+    {"@type": "Question", "name": "La caisse fonctionne-t-elle sans connexion internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. CashMag s'installe en local sur votre caisse : l'encaissement, l'édition des tickets et l'archivage NF525 continuent de fonctionner même si votre connexion internet tombe. Internet sert aux mises à jour, à la sauvegarde des données et à notre télémaintenance, mais une coupure ne bloque jamais votre activité au comptoir."}},
+    {"@type": "Question", "name": "Que comprend la maintenance après l'installation ?", "acceptedAnswer": {"@type": "Answer", "text": "Dès qu'un problème survient, on prend la main à distance immédiatement : la télémaintenance résout la majorité des incidents en moins de 20 minutes, 7j/7. Si un déplacement est nécessaire, un technicien DCB salarié est sur place en moins de 4 heures, partout en 71, 69, 01 et 42. En cas de panne matérielle, un équipement de remplacement est fourni sous 48h. Nos techniciens sont salariés DCB : zéro sous-traitance, vous parlez toujours à la même équipe."}}
+  ]
+}
+</script>
+<script type="application/ld+json">{  "@context": "https://schema.org",  "@type": "BreadcrumbList",  "itemListElement": [{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dcb-technologies.fr/"},{"@type":"ListItem","position":2,"name":"Caisse enregistreuse","item":"https://dcb-technologies.fr/caisse-enregistreuse/"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://dcb-technologies.fr/caisse-enregistreuse/#service",
+  "serviceType": "Caisse enregistreuse NF525",
+  "name": "Caisse enregistreuse tactile certifiée NF525 : installation, formation et SAV sur site",
+  "description": "Caisse tactile NF525 certifiée CashMag pour boulangerie, restaurant, commerce et salon. Installation, formation et SAV sur site en moins de 4h sur Lyon, Mâcon, Chalon-sur-Saône, Villefranche-sur-Saône, Bourg-en-Bresse, Roanne et l'ensemble des départements 71, 69, 01, 42.",
+  "url": "https://dcb-technologies.fr/caisse-enregistreuse/",
+  "category": "POS System",
+  "brand": {"@type": "Brand", "name": "CashMag"},
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://dcb-technologies.fr/#localbusiness",
+    "name": "DCB Technologies",
+    "url": "https://dcb-technologies.fr",
+    "telephone": "+33482530510",
+    "email": "contact@dcb-technologies.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "59 Chemin du Moulin Carron",
+      "addressLocality": "Dardilly",
+      "postalCode": "69570",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Lyon", "containedInPlace": {"@type": "AdministrativeArea", "name": "Rhône"}},
+    {"@type": "City", "name": "Mâcon", "containedInPlace": {"@type": "AdministrativeArea", "name": "Saône-et-Loire"}},
+    {"@type": "City", "name": "Chalon-sur-Saône", "containedInPlace": {"@type": "AdministrativeArea", "name": "Saône-et-Loire"}},
+    {"@type": "City", "name": "Villefranche-sur-Saône", "containedInPlace": {"@type": "AdministrativeArea", "name": "Rhône"}},
+    {"@type": "City", "name": "Bourg-en-Bresse", "containedInPlace": {"@type": "AdministrativeArea", "name": "Ain"}},
+    {"@type": "City", "name": "Roanne", "containedInPlace": {"@type": "AdministrativeArea", "name": "Loire"}},
+    {"@type": "City", "name": "Paray-le-Monial", "containedInPlace": {"@type": "AdministrativeArea", "name": "Saône-et-Loire"}},
+    {"@type": "City", "name": "Charolles"},
+    {"@type": "City", "name": "Tournus"},
+    {"@type": "City", "name": "Cluny"},
+    {"@type": "City", "name": "Le Creusot"},
+    {"@type": "City", "name": "Montceau-les-Mines"},
+    {"@type": "AdministrativeArea", "name": "Saône-et-Loire"},
+    {"@type": "AdministrativeArea", "name": "Rhône"},
+    {"@type": "AdministrativeArea", "name": "Ain"},
+    {"@type": "AdministrativeArea", "name": "Loire"}
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "59",
+    "highPrice": "258",
+    "offerCount": 6,
+    "description": "Packs caisse tactile de 59 €/mois (Essentiel boulangerie) à 127 €/mois (borne de commande). Monnayeur automatique à 258 €/mois. Location 60 mois sans apport ou achat comptant, matériel garanti 5 ans."
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Solutions caisse par métier",
+    "itemListElement": [
+      {"@type": "Offer", "name": "Caisse Boulangerie & Pâtisserie (Essentiel)", "price": "59", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "59", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/boulangerie/"},
+      {"@type": "Offer", "name": "Caisse Restaurant & Bar (Pack Comptoir)", "price": "77", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "77", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/restaurant/"},
+      {"@type": "Offer", "name": "Caisse Commerce de détail (Pack Boutique)", "price": "83", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "83", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/commerce-de-detail/"},
+      {"@type": "Offer", "name": "Caisse Coiffure & Beauté (Pack Fauteuil)", "price": "115", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "115", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/coiffure/"},
+      {"@type": "Offer", "name": "Borne de commande self-service", "price": "127", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "127", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/borne-de-commande/"},
+      {"@type": "Offer", "name": "Monnayeur automatique", "price": "258", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "258", "priceCurrency": "EUR", "unitText": "MOIS"}, "url": "https://dcb-technologies.fr/caisse-enregistreuse/monnayeur/"}
+    ]
+  },
+  "termsOfService": "https://dcb-technologies.fr/cgv/"
+}
+</script>
+<link rel="stylesheet" href="../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<link rel="preload" as="image" type="image/webp" href="../assets/tpv-tactile-cashmag-nf525.webp" fetchpriority="high" media="(max-width:640px)">
+</head>
+<body>
+<div class="d-shell">
+<div id="dcb-nav"></div>
+<main class="pt-[76px]">
+
+<!-- ── 1. HERO : blobs CSS ambiants (zero parallax scroll = zero bug) ─────────── -->
+<section class="bg-gradient-to-br from-[#0B3D91] to-[#072B6B] py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+    <div class="lg:col-span-7 space-y-8 dcb-stagger">
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité." aria-label="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité.">NF525</abbr> Certifié</span>
+        <span class="price-badge bg-[#F57C00] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase">Dès 59€/mois</span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Garantie 5 ans</span>
+      </div>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+        Caisse enregistreuse NF525,<br><span class="text-[#F57C00] italic font-semibold">installation, formation<br>et SAV sur site</span>
+      </h1>
+      <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">Votre caisse tombe un samedi matin : on prend la main à distance en quelques minutes. Si besoin, un technicien DCB est chez vous en moins de 4 heures en Saône-et-Loire, Rhône, Ain ou Loire. Packs caisse tactile à partir de 59 €/mois, un technicien DCB vient chez vous.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>
+          <span>Logiciel <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr> certifié NF525, conforme loi anti-fraude TVA</span>
+        </div>
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>
+          <span>Matériel garanti 5 ans, configuré sur mesure pour votre activité</span>
+        </div>
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>
+          <span>Formation sur site incluse, assistance 7j/7 24h/24</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="../contact/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">
+          Demander un devis <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="#metiers" class="dcb-btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-bold">Voir les solutions par métier</a>
+      </div>
+    </div>
+    <div class="hidden lg:flex lg:col-span-5 relative items-center justify-center">
+      <div class="relative mx-auto" style="width:97%">
+      <img alt="TPV tactile CashMag caisse enregistreuse" class="block w-full" src="../assets/tpv-tactile-cashmag-nf525.webp" width="1200" height="1192" loading="eager" fetchpriority="high">
+      <div class="absolute -bottom-4 bg-white p-5 rounded-xl shadow-xl" style="left:-32px">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] mb-1">Installé sous 48h</p>
+        <p class="font-sora text-xl font-bold text-[#0B3D91]">Matériel en stock</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. TRUST BAR ─────────── -->
+<section class="py-6 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">speed</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Intervention &lt;4h</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">verified_user</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Garantie 5 ans</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">verified</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Certifié NF525</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">groups</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Zéro sous-traitance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. PROBLEME / SOLUTION ─────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-12 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Pourquoi changer ?</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Votre caisse actuelle vous freine.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 dcb-stagger">
+
+      <div>
+        <div class="w-8 h-[3px] bg-[#F57C00] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Un SAV injoignable</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Avec SumUp ou un revendeur en ligne, une panne c'est un ticket, un chatbot, et 48 heures à compter vos ventes à la main. Chez DCB, vous appelez le 04 82 53 05 10 : on prend la main à distance immédiatement. Si on doit passer chez vous, un technicien est là en moins de 4 heures.</p>
+      </div>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[#F57C00] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Un logiciel non conforme</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Depuis 2018, tout commerçant assujetti à la TVA doit disposer d'un logiciel de caisse conforme (critères <abbr data-tooltip="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI." aria-label="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI.">ISCA</abbr>), avec certificat ou attestation à l'appui. Sans justificatif : 7 500 € d'amende par caisse. CashMag est certifié NF525 par l'AFNOR, attestation éditable à tout moment depuis la caisse.</p>
+      </div>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[#F57C00] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Une caisse pas faite pour vous</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Une boulangerie ouverte à 5h n'a pas les mêmes besoins qu'un restaurant avec plan de salle. Nous configurons chaque solution selon votre activité réelle, avant la mise en service.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. METIERS CARDS ─────────── -->
+<section id="metiers" class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Configurations sur mesure</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Une solution pour chaque métier.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
+
+      <!-- Boulangerie : liste numérotée -->
+      <a href="./boulangerie/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#F59E0B" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#F59E0B] text-2xl">bakery_dining</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-2.5 py-1 rounded-full">Dès 59€</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Boulangerie</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Vente au poids et DLC</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Suivi des invendus en temps réel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Fidélité et rendu monnaie</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Restaurant -->
+      <a href="./restaurant/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#EF4444] text-2xl">restaurant</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-2.5 py-1 rounded-full">Dès 77€</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Restauration &amp; Bar</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Plan de salle visuel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Commande mobile en salle</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Encaissement éclair</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Commerce -->
+      <a href="./commerce-de-detail/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#0D9488] text-2xl">storefront</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-full">Dès 83€</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Commerce de détail</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Stocks et codes-barres temps réel</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Statistiques et tableaux de bord</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Multi-boutiques centralisé</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Coiffure -->
+      <a href="./coiffure/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#A855F7" aria-hidden="true"></span>
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+              <span class="material-symbols-outlined text-[#A855F7] text-2xl">content_cut</span>
+            </div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-2.5 py-1 rounded-full">Dès 115€</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Beauté &amp; Bien-être</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Agenda et réservation en ligne</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Rappels SMS automatiques</li>
+            <li class="flex items-center gap-2.5 text-sm text-slate-600"><span class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Fidélité et fiches clients</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#A855F7] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. TEMOIGNAGES ─────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce que disent nos clients.</h2>
+    </div>
+    <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
+      <div data-dcb-track>
+        <!-- Témoignage 1 : Boucher (Antoine Lacroix) -->
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nous avons fait appel à dcb, le service et la réactivité au top. C'était assez urgent et ils ont su répondre à notre demande. Qualité prix rien à redire et très facile d'utilisation. Une mise en route expliquée. Toujours les petits couacs du début mais dû à la prise d'habitude du nouveau matériels. On recommande à 100%"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0">AL</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Antoine Lacroix</p>
+              <p class="text-slate-500 text-sm">Boucherie · Avis Google</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Témoignage 2 : Boulanger Mâcon -->
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center text-white font-bold shrink-0">CS</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Camille Simon</p>
+              <p class="text-slate-500 text-sm">Boulangerie-pâtisserie · Avis Google</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Témoignage 3 : Bar éphémère Mâcon -->
+        <div class="bg-[#F8F9FA] p-6 md:p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"J'ai acheté une caisse enregistreuse pour l'exploitation d'un bar éphémère. Bravo à DCB technologies pour leur professionnalisme, leur proximité et leur accompagnement après-vente. Logiciel simple et intuitif à l'utilisation."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6">
+            <div class="w-12 h-12 bg-[#F59E0B] rounded-full flex items-center justify-center text-white font-bold shrink-0">AD</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Adrien Desforges</p>
+              <p class="text-slate-500 text-sm">Bar éphémère · Avis Google</p>
+              <p class="flex items-center gap-0.5 mt-1.5 text-[#F57C00]" role="img" aria-label="5 étoiles sur 5">
+                <span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span><span class="material-symbols-outlined ms-fill text-[15px] leading-none">star</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dcb-carousel-controls">
+        <button type="button" data-dcb-prev aria-label="Témoignage précédent">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <div data-dcb-dots></div>
+        <button type="button" data-dcb-next aria-label="Témoignage suivant">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. LOGICIEL CASHMAG : regime marque bleu, vert partenaire reserve au logo ─────────── -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#F57C00">Le cerveau de votre établissement</p>
+      <span class="inline-flex items-center justify-center mb-6">
+        <img src="../assets/logo-cashmag-logiciel-caisse-nf525.png" alt="Logo CashMag, logiciel de caisse certifié NF525" width="419" height="80" class="h-9 w-auto" loading="lazy">
+      </span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-5">CashMag : le logiciel de caisse certifié que nous installons et maîtrisons</h2>
+      <p class="text-xl text-slate-500 leading-relaxed">Certifié NF525 par l'AFNOR. On vient sur place, on prend le temps de comprendre votre activité, et on configure chaque paramètre avant la mise en service.</p>
+    </div>
+    <div class="dcb-reveal dcb-reveal-scale">
+        <div class="cm-mockup-stage">
+
+          <!-- Tablette CashMag : screenshot réel de l'interface d'encaissement -->
+          <div class="cm-tablet">
+            <div class="cm-tablet-screen" style="display:block;min-height:0">
+              <img src="../assets/logiciel-caisse-cashmag-ecran-encaissement.webp" alt="Interface de caisse CashMag : écran d'encaissement des boissons" width="1280" height="720" loading="lazy" decoding="async" style="display:block;width:100%;height:auto">
+            </div>
+          </div>
+          <div class="cm-kpi-badge bot">
+            <div class="cm-kpi-icon"><span class="material-symbols-outlined">cloud</span></div>
+            <div class="cm-kpi-text">
+              <span class="lab">Back-office</span>
+              <span class="val">24h/24</span>
+              <span class="sub">Accès à vos données</span>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="cm-points dcb-stagger">
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">monitoring</span></div>
+        <div>
+          <h3>Back-office cloud temps réel</h3>
+          <p>Chiffre d'affaires, panier moyen et couverts depuis votre smartphone. Prix et produits modifiables à distance.</p>
+        </div>
+      </div>
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">bolt</span></div>
+        <div>
+          <h3>Rapide et autonome</h3>
+          <p>Zéro latence pendant le coup de feu. Mode hybride : encaisse même sans internet, synchronise au retour de la connexion.</p>
+        </div>
+      </div>
+      <div class="cm-point">
+        <div class="cm-point-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+        <div>
+          <h3>Stock et comptabilité automatisés</h3>
+          <p>Stock décrémenté à chaque vente, alertes rupture. Ventilation TVA et export expert-comptable automatiques.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-10 dcb-reveal">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="./cashmag/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
+          Découvrir CashMag en détail <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+        <a href="../contact/index.html" class="dcb-btn-hover bg-transparent border-2 border-[#0B3D91] text-[#0B3D91] px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
+          Demander un devis
+        </a>
+      </div>
+      <p class="cm-note mt-6">En cas de problème, vous n'appelez pas un standard : <strong>vous appelez le technicien qui a installé votre caisse</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. LOGICIEL HAIRNET (pour les salons de coiffure) ─────────── -->
+<section class="sec-hairnet">
+  <div class="sec-inner">
+
+    <div class="hn-header">
+      <div>
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style="color:#F57C00">Logiciel métier dédié</p>
+        <h2 class="hn-h2">Hairnet : <em>le logiciel pensé pour les salons de coiffure</em></h2>
+        <p class="hn-lede">CashMag couvre la boulangerie, le restaurant et le commerce. Pour les salons de coiffure et les instituts de beauté, DCB installe Hairnet : un logiciel spécialisé avec agenda, réservation en ligne via Google Reserve, fidélité dématérialisée, gestion des no-show et pilotage multi-salons. Certifié NF525, configuré sur site par nos techniciens.</p>
+      </div>
+      <div class="hn-pivot">
+        <div class="hn-pivot-icon"><span class="material-symbols-outlined">swap_horiz</span></div>
+        <div class="hn-pivot-text">
+          <strong>Vous êtes coiffeur ou esthéticien&nbsp;?</strong> CashMag n'est pas optimisé pour vous. Hairnet l'est : agenda, RDV, fidélité, anti no-show.
+        </div>
+      </div>
+    </div>
+
+    <div class="hn-main">
+      <div class="hn-card">
+        <div class="hn-card-head">
+          <div class="hn-card-logo" style="width:auto;height:72px;padding:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;margin-left:-4px;"><img src="../assets/hairnet-logo-blanc.webp" alt="Logo Hairnet logiciel de caisse coiffure" width="300" height="94" style="height:100%;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);"></div>
+          <span class="hn-card-tag">Salon</span>
+        </div>
+        <div class="hn-stat-block">
+          <div class="hn-stat-label">Signature salon</div>
+          <div class="hn-stat-value xl">Google Reserve</div>
+          <div class="hn-stat-desc">Vos clientes réservent depuis Google Maps, le créneau arrive en direct dans votre agenda.</div>
+        </div>
+        <div class="hn-stat-block">
+          <div class="hn-stat-label">Anti no-show</div>
+          <div class="hn-stat-value lg">Divisés par 3</div>
+          <div class="hn-stat-desc">Acompte, empreinte bancaire, rappels automatiques. Donnée Hairnet.</div>
+        </div>
+        <div class="hn-pills">
+          <span class="hn-pill">Fidélité VIP</span>
+          <span class="hn-pill">Multi-salons</span>
+          <span class="hn-pill">NF525</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="hn-features">
+          <div class="hn-feature">
+            <div class="hn-feature-icon"><span class="material-symbols-outlined">event_available</span></div>
+            <div>
+              <div class="hn-feature-title">Agenda et réservation en ligne</div>
+              <p class="hn-feature-desc">Planning par praticien, rappels SMS, prise de rendez-vous directe depuis Google Maps et votre site.</p>
+            </div>
+          </div>
+          <div class="hn-feature">
+            <div class="hn-feature-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
+            <div>
+              <div class="hn-feature-title">Fidélité et clients VIP</div>
+              <p class="hn-feature-desc">Cartes dématérialisées, statut VIP automatique, campagnes SMS et email segmentées.</p>
+            </div>
+          </div>
+          <div class="hn-feature">
+            <div class="hn-feature-icon"><span class="material-symbols-outlined">insights</span></div>
+            <div>
+              <div class="hn-feature-title">Pilotage et management</div>
+              <p class="hn-feature-desc">KPI temps réel par praticien, challenges équipe, stocks produits et export comptable.</p>
+            </div>
+          </div>
+        </div>
+        <!-- (markup conservé, restyle editorial via CSS .hn-feature ci-dessous) -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a href="./hairnet/index.html" class="dcb-btn-hover text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2" style="background:#F57C00">
+            Découvrir Hairnet en détail <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+          <a href="../contact/index.html" class="dcb-btn-hover bg-white border-2 border-[#0B3D91] text-[#0B3D91] px-8 py-4 rounded-lg font-bold inline-flex items-center gap-2">
+            Demander un devis
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── 8. NF525 ─────────── -->
+<section class="sec-nf525">
+  <div class="sec-inner">
+
+    <div class="nf-hero">
+      <div class="nf-logo-wrap">
+        <div class="nf-logo-frame">
+          <img src="../assets/partenaire-nf525.webp" alt="Logo certification NF525 AFNOR">
+        </div>
+      </div>
+      <div class="nf-hero-text">
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Conformité Légale</p>
+        <h2 class="nf-hero-h2">Pourquoi la conformité NF525 reste incontournable</h2>
+        <p class="nf-hero-lede">Depuis 2018, la loi impose à tout commerçant assujetti à la TVA d'utiliser un logiciel de caisse conforme aux critères ISCA. Le certificat NF525, délivré par <a href="https://certification.afnor.org/" target="_blank" rel="noopener">l'AFNOR</a>, en est la preuve la plus solide.</p>
+      </div>
+    </div>
+
+    <div class="nf-pillars">
+      <div class="nf-pillars-grid">
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">lock</span></div>
+          <span class="nf-pillar-num">Pilier 01</span>
+          <div class="nf-pillar-title">Inaltérabilité</div>
+          <div class="nf-pillar-desc">Les données de vente ne peuvent être modifiées ni supprimées après validation.</div>
+        </div>
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">shield</span></div>
+          <span class="nf-pillar-num">Pilier 02</span>
+          <div class="nf-pillar-title">Sécurisation</div>
+          <div class="nf-pillar-desc">Chaque opération est chaînée cryptographiquement pour empêcher toute fraude.</div>
+        </div>
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">archive</span></div>
+          <span class="nf-pillar-num">Pilier 03 &amp; 04</span>
+          <div class="nf-pillar-title">Conservation &amp; Archivage</div>
+          <div class="nf-pillar-desc">Vos données sont conservées et exportables pour tout contrôle fiscal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nf-editorial">
+      <div class="nf-editorial-amount">
+        <span class="nf-editorial-filet" aria-hidden="true"></span>
+        <div class="nf-editorial-lab">Amende</div>
+        <div class="nf-editorial-val">7 500 €</div>
+        <div class="nf-editorial-sub">par caisse non conforme</div>
+      </div>
+      <p class="nf-editorial-body">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse. Pour aller plus loin : <a href="../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ce qui a changé depuis février 2026</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── 9. PERIPHERIQUES ─────────── -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Écosystème matériel</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Optimisez votre point de vente.</h2>
+      <p class="text-slate-500 text-lg mt-3">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dcb-stagger">
+      <!-- Borne -->
+      <a href="./borne-de-commande/index.html" data-dest="borne-de-commande" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <span class="pilier-filet" style="background:#4F46E5;margin-bottom:16px" aria-hidden="true"></span>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#4F46E5] text-2xl ms-fill">point_of_sale</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full">+20% panier moyen</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Borne de commande</h3>
+          <p class="text-slate-500 text-base md:text-sm mb-4">Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
+          <div class="pt-4 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#4F46E5] transition-colors">Découvrir la borne</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="relative bg-white min-h-[200px]">
+          <img alt="Borne de commande tactile en libre-service dans un restaurant" class="absolute inset-0 w-full h-full object-cover" src="../assets/borne-commande-loire.webp" width="1000" height="1000" loading="lazy" decoding="async">
+        </div>
+      </a>
+      <!-- Monnayeur -->
+      <a href="./monnayeur/index.html" data-dest="monnayeur" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <span class="pilier-filet" style="background:#059669;margin-bottom:16px" aria-hidden="true"></span>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#059669]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105"><span class="material-symbols-outlined text-[#059669] text-2xl ms-fill">payments</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#059669] bg-[#059669]/10 px-3 py-1 rounded-full">0 contact argent</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Monnayeur automatique</h3>
+          <p class="text-slate-500 text-base md:text-sm mb-4">Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
+          <div class="pt-4 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#059669] transition-colors">Découvrir le monnayeur</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#059669] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="relative bg-white min-h-[200px]">
+          <img alt="Monnayeur automatique CashMag encastré dans le comptoir d'une boulangerie" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 85%" src="../assets/monnayeur-automatique-cashmag-boulangerie.webp" width="900" height="1200" loading="lazy" decoding="async">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 10. TECHNICIENS / PROXIMITE ─────────── -->
+<section class="bg-[#0B3D91] py-12 lg:py-16 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-3xl opacity-[0.08]"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#072B6B]/60 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+      <!-- Photo dominante avec badges départements posés en bas -->
+      <div class="lg:col-span-7 relative dcb-reveal dcb-reveal-left">
+        <div class="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-[#072B6B] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+          <img alt="Caisse tactile CashMag sur le comptoir d'un restaurant"
+               src="../assets/caisse-tactile-cashmag-restaurant.webp"
+               class="w-full h-full object-cover"
+               width="1200" height="1192" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg';">
+        </div>
+        <p style="color:rgba(255,255,255,0.75);font-size:13.5px;letter-spacing:0.03em;margin-top:14px;line-height:1.5"><a href="./saone-et-loire/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Saône-et-Loire (71)</a> · <a href="./rhone/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Rhône (69)</a> · <a href="./ain/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Ain (01)</a> · <a href="./loire/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Loire (42)</a></p>
+      </div>
+
+      <!-- Texte panel droite -->
+      <div class="lg:col-span-5 dcb-reveal dcb-reveal-right">
+        <span class="block mb-4 uppercase" style="color:#F57C00;font-size:11px;font-weight:700;letter-spacing:0.2em">Expertise de proximité</span>
+        <h2 class="font-sora text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">Nos techniciens à vos côtés</h2>
+        <p class="text-xl mb-8 leading-relaxed" style="color:rgba(255,255,255,0.75)">Chaque client a un interlocuteur identifié, quelqu'un qui connaît son installation, son activité, ses horaires. Pas un numéro de ticket : un nom, un téléphone, une présence.</p>
+        <ul class="space-y-4 mb-10 list-none p-0">
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Télémaintenance 7j/7 en moins de 20 minutes</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Si besoin, sur site en moins de 4h</span>
+          </li>
+          <li class="flex items-start gap-3" style="color:rgba(255,255,255,0.95)">
+            <span class="material-symbols-outlined mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;color:#F57C00">check_circle</span>
+            <span class="leading-relaxed">Remplacement de matériel sous 48h</span>
+          </li>
+        </ul>
+        <div class="flex flex-wrap items-center gap-6 mb-3">
+          <a href="../notre-adn/index.html" class="dcb-btn-hover bg-[#F57C00] text-white px-8 py-4 rounded-lg font-bold inline-flex items-center gap-3">
+            Découvrir notre équipe
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10" class="inline-flex items-center gap-2 px-1 py-2 rounded-md transition-colors hover:opacity-100" style="color:rgba(255,255,255,0.92);font-weight:700">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F57C00">call</span>
+            04 82 53 05 10
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 11. FAQ + CTA FINAL ─────────── -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto space-y-12">
+      <div class="dcb-reveal">
+        <div class="text-center mb-8">
+          <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Besoin de précisions ?</p>
+          <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Questions fréquentes.</h2>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Quelle différence entre DCB et une solution comme SumUp ou Zettle ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              SumUp et Zettle sont des solutions en ligne sans accompagnement. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h en cas de problème. Le logiciel CashMag est certifié NF525 et configuré pour votre métier. Ce n'est pas le même service.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Ma caisse actuelle est-elle conforme NF525 ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Votre logiciel doit respecter les critères de conformité fiscale (ISCA) et vous devez pouvoir présenter un certificat ou une attestation à tout moment. Si vous n'avez ni l'un ni l'autre, il y a un doute : on audite votre installation gratuitement. CashMag est certifié NF525 par l'AFNOR. <a href="../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">comprendre la réforme NF525 (février 2026)</a>
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Location ou achat : quelle formule choisir ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Nous proposons trois formules : location longue durée (12, 24 ou 36 mois) avec matériel inclus, crédit-bail avec option d'achat, ou achat comptant. La location inclut le remplacement du matériel en cas de panne et les mises à jour logicielles. La majorité de nos clients choisissent la location pour lisser l'investissement.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Comment se passe l'installation et la formation ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Un technicien DCB vient dans votre établissement. Il installe le matériel, configure le logiciel selon votre activité et forme votre équipe sur place. La formation dure en moyenne une demi-journée. Un support téléphonique reste disponible 7j/7 après l'installation.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              En combien de temps intervenez-vous en cas de panne ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Nos techniciens salariés interviennent en moins de 4 heures sur site : Lyon, Villefranche-sur-Saône, Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne et l'ensemble des départements 71, 69, 01 et 42. En cas de panne matérielle, un équipement de remplacement est fourni sous 48h. Notre hotline est disponible 7j/7.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              La caisse est-elle compatible avec mon terminal de paiement ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              CashMag est compatible avec les principaux terminaux de paiement (Ingenico, Verifone, PAX). La liaison caisse-TPE envoie automatiquement le montant, ce qui élimine les erreurs de saisie.            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Qu'est-ce qui est inclus dans les 59 €/mois ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Le pack Essentiel à 59 €/mois comprend le matériel (écran tactile, tiroir-caisse, imprimante de tickets), le logiciel CashMag certifié NF525, l'installation sur place par un technicien et la formation de votre équipe, sans la maintenance. Le Pack Comptoir à 77 €/mois ajoute la maintenance 7j/7 : télémaintenance, intervention sur site sous 4h et remplacement du matériel sous 48h en cas de panne. Les deux formules sont en location 60 mois sans apport, matériel garanti 5 ans.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              La caisse fonctionne-t-elle sans connexion internet ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Oui. CashMag s'installe en local sur votre caisse : l'encaissement, l'édition des tickets et l'archivage NF525 continuent de fonctionner même si votre connexion internet tombe. Internet sert aux mises à jour, à la sauvegarde des données et à notre télémaintenance, mais une coupure ne bloque jamais votre activité au comptoir.
+            </div>
+          </details>
+          <details class="faq-item bg-white rounded-xl tonal-shift-elevation">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-[#0B3D91]">
+              Que comprend la maintenance après l'installation ?
+              <span class="material-symbols-outlined text-slate-400 shrink-0 ml-4 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              Dès qu'un problème survient, on prend la main à distance immédiatement : la télémaintenance résout la majorité des incidents en moins de 20 minutes, 7j/7. Si un déplacement est nécessaire, un technicien DCB salarié est sur place en moins de 4 heures, partout en 71, 69, 01 et 42. En cas de panne matérielle, un équipement de remplacement est fourni sous 48h. Nos techniciens sont salariés DCB : zéro sous-traitance, vous parlez toujours à la même équipe.
+            </div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 12. CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Parlez à un technicien, pas à un commercial.</h2>
+        <p class="d-lede">Diagnostic gratuit, sans engagement. On vérifie votre conformité NF525 et on vous propose ce qui correspond à votre activité.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../contact/index.html" class="btn btn--primary">Diagnostic gratuit, sans engagement<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <span class="d-foot-mark" aria-hidden="true"></span>
+      <time class="d-updated" datetime="2026-04-23">Mis à jour le 23 avril 2026</time>
+    </div>
+  </div>
+</section>
+</main>
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement, .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="">
+
+<!-- SKIP LINK -->
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+
+<!-- PROGRESS BAR -->
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+
+<!-- HEADER : injecté par scripts.js via #m-nav -->
+<div id="m-nav"></div>
+
+<!-- MAIN CONTENT -->
+<main id="m-main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="chips" style="flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none">
+    <span class="chip" style="white-space:nowrap;flex-shrink:0"><span class="material-symbols-outlined fill ms-fill">verified</span>NF525</span>
+    <span class="chip gold" style="white-space:nowrap;flex-shrink:0">Dès 59€/mois</span>
+    <span class="chip" style="white-space:nowrap;flex-shrink:0">Garantie 5 ans</span>
+  </div>
+  <h1>Caisse enregistreuse NF525, <em>installation, formation et SAV sur site</em>.</h1>
+  <p class="lede">Panne un samedi matin : prise en main à distance immédiate. Sur place en moins de 4h si besoin. Packs caisse tactile à partir de 59&nbsp;€/mois, en 71, 69, 01 et 42.</p>
+
+  <div class="scene scene-cutout">
+    <div class="tpv">
+      <img src="../assets/tpv-tactile-cashmag-nf525.webp" alt="Terminal point de vente tactile CashMag NF525" width="1200" height="1192" loading="eager" fetchpriority="high">
+    </div>
+    <div class="float2" aria-hidden="true">
+      <div class="ic"><span class="material-symbols-outlined ms-fill">verified</span></div>
+      <div><div class="lb">Installé</div><div class="vl">&lt;48h</div></div>
+    </div>
+  </div>
+
+  <div class="checks">
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Logiciel CashMag certifié NF525, conforme loi anti-fraude TVA</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Matériel garanti 5 ans, configuré sur mesure pour votre activité</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Formation sur site incluse, assistance 7j/7 24h/24</div>
+  </div>
+
+  <div class="cta-row">
+    <button class="btn btn-pri" data-sheet aria-label="Demander un devis caisse">Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
+  </div>
+</section>
+
+<!-- TRUST BAR : marquee infini + équivalent SR statique -->
+<ul class="sr-only">
+  <li>Intervention sur site en moins de 4h</li>
+  <li>Garantie 5 ans matériel</li>
+  <li>Certifié NF525</li>
+  <li>Zéro sous-traitance</li>
+</ul>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">speed</span>Intervention &lt;4h</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">groups</span>Zéro sous-traitance</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">speed</span>Intervention &lt;4h</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Garantie 5 ans</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified</span>Certifié NF525</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">groups</span>Zéro sous-traitance</div>
+  </div>
+</div>
+
+<!-- POURQUOI CHANGER -->
+<section class="sec s1">
+  <p class="eyebrow">Pourquoi changer ?</p>
+  <h2>Votre caisse actuelle vous <em>freine</em>.</h2>
+  <div class="pain">
+    <div class="row">
+      <div class="n">01</div>
+      <div>
+        <h3>Un SAV injoignable</h3>
+        <p>Ailleurs, une panne c'est un ticket et 48h d'attente. Chez DCB, vous appelez le 04 82 53 05 10. Prise en main à distance immédiate. Sur place en moins de 4h si besoin.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <div>
+        <h3>Un logiciel non conforme</h3>
+        <p>Depuis 2018, votre logiciel de caisse doit être conforme (critères <abbr data-tooltip="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI." aria-label="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI.">ISCA</abbr>), certificat ou attestation à l'appui. Sans justificatif : 7&nbsp;500&nbsp;€ d'amende par caisse. CashMag est certifié NF525 par l'AFNOR, attestation accessible en 1 clic.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <div>
+        <h3>Une caisse pas faite pour vous</h3>
+        <p>Boulangerie à 5h ou restaurant avec plan de salle : chaque métier a ses contraintes. Chaque caisse DCB est configurée pour votre activité avant la mise en service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="sec">
+  <p class="eyebrow">Ils nous font confiance</p>
+  <h2>Ce que disent <em>nos clients</em>.</h2>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+    <div style="background:var(--s1);border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" role="img" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Nous avons fait appel à dcb, le service et la réactivité au top. C'était assez urgent et ils ont su répondre à notre demande. Qualité prix rien à redire et très facile d'utilisation. Une mise en route expliquée. Toujours les petits couacs du début mais dû à la prise d'habitude du nouveau matériels. On recommande à 100%"</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#072B6B);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">AL</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Antoine Lacroix</div>
+          <div style="font-size:11.5px;color:var(--mute)">Boucherie · Avis Google</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--s1);border-radius:18px;padding:18px;box-shadow:0 14px 28px -10px rgba(11,61,145,0.12)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" role="img" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+        <span class="material-symbols-outlined fill" style="font-variation-settings:'FILL' 1;font-size:16px;color:#F59E0B">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#F59E0B,#D97706);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">CS</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Camille Simon</div>
+          <div style="font-size:11.5px;color:var(--mute)">Boulangerie-pâtisserie · Avis Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURATIONS MÉTIERS : carousel -->
+<section class="sec s1">
+  <p class="eyebrow">Configurations sur mesure</p>
+  <h2>Une solution pour <em>chaque métier</em>.</h2>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Filtrer par métier">
+    <button class="tab active" role="tab" id="tab-boul" aria-selected="true" aria-controls="card-boul"><span class="material-symbols-outlined" aria-hidden="true">bakery_dining</span>Boulangerie</button>
+    <button class="tab" role="tab" id="tab-rest" aria-selected="false" aria-controls="card-rest" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">restaurant</span>Restaurant</button>
+    <button class="tab" role="tab" id="tab-com" aria-selected="false" aria-controls="card-com" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">storefront</span>Commerce</button>
+    <button class="tab" role="tab" id="tab-coif" aria-selected="false" aria-controls="card-coif" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">content_cut</span>Beauté</button>
+  </div>
+  <div class="carou" id="carou">
+    <a class="mcard boul" id="card-boul" role="tabpanel" aria-labelledby="tab-boul" href="boulangerie/index.html" aria-label="Caisse boulangerie et pâtisserie, dès 59 euros par mois">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head"><div class="ic"><span class="material-symbols-outlined">bakery_dining</span></div><span class="pill">Dès 59€/mois</span></div>
+        <h3>Boulangerie</h3>
+        <p class="ds">Encaissement rapide dès l'ouverture, gestion des invendus, fidélisation.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined fill ms-fill">scale</span>Vente au poids et gestion des DLC</div>
+          <div><span class="material-symbols-outlined fill ms-fill">inventory</span>Suivi des invendus en temps réel</div>
+          <div><span class="material-symbols-outlined fill ms-fill">loyalty</span>Fidélité client et rendu monnaie automatique</div>
+        </div>
+        <div class="go"><span class="lb">Voir les configurations<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard rest" id="card-rest" role="tabpanel" aria-labelledby="tab-rest" href="restaurant/index.html" aria-label="Caisse restaurant et bar, dès 77 euros par mois">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head"><div class="ic"><span class="material-symbols-outlined">restaurant</span></div><span class="pill">Dès 77€/mois</span></div>
+        <h3>Restauration &amp; Bar</h3>
+        <p class="ds">Service fluide du premier au dernier couvert, même en plein coup de feu.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined fill ms-fill">table_restaurant</span>Plan de salle visuel</div>
+          <div><span class="material-symbols-outlined fill ms-fill">stylus_note</span>Commande mobile en salle</div>
+          <div><span class="material-symbols-outlined fill ms-fill">payments</span>Encaissement éclair</div>
+        </div>
+        <div class="go"><span class="lb">Voir les configurations<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard com" id="card-com" role="tabpanel" aria-labelledby="tab-com" href="commerce-de-detail/index.html" aria-label="Caisse commerce de détail, dès 83 euros par mois">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head"><div class="ic"><span class="material-symbols-outlined">storefront</span></div><span class="pill">Dès 83€/mois</span></div>
+        <h3>Commerce de détail</h3>
+        <p class="ds">Pilotez vos stocks et vos ventes sur un ou plusieurs points de vente.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined fill ms-fill">inventory_2</span>Stocks et codes-barres temps réel</div>
+          <div><span class="material-symbols-outlined fill ms-fill">bar_chart</span>Statistiques et tableaux de bord</div>
+          <div><span class="material-symbols-outlined fill ms-fill">store</span>Multi-boutiques centralisé</div>
+        </div>
+        <div class="go"><span class="lb">Voir les configurations<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+    <a class="mcard coif" id="card-coif" role="tabpanel" aria-labelledby="tab-coif" href="coiffure/index.html" aria-label="Caisse coiffure et beauté, dès 115 euros par mois">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="head"><div class="ic"><span class="material-symbols-outlined">content_cut</span></div><span class="pill">Dès 115€/mois</span></div>
+        <h3>Beauté &amp; Bien-être</h3>
+        <p class="ds">Gérez RDV, clients et caisse depuis un seul écran.</p>
+        <div class="feats">
+          <div><span class="material-symbols-outlined fill ms-fill">calendar_month</span>Agenda et réservation en ligne</div>
+          <div><span class="material-symbols-outlined fill ms-fill">sms</span>Rappels SMS automatiques</div>
+          <div><span class="material-symbols-outlined fill ms-fill">loyalty</span>Fidélité et fiches clients</div>
+        </div>
+        <div class="go"><span class="lb">Voir la caisse coiffure<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span><span class="ab" aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+</section>
+<style>
+/* Dots couleur métier */
+#dots[data-mi="0"] span.on{background:#F59E0B!important}
+#dots[data-mi="1"] span.on{background:#EF4444!important}
+#dots[data-mi="2"] span.on{background:#0D9488!important}
+#dots[data-mi="3"] span.on{background:#A855F7!important}
+/* Tab actif couleur métier */
+#tab-boul.active{background:#F59E0B!important;border-color:#F59E0B!important}
+#tab-rest.active{background:#EF4444!important;border-color:#EF4444!important}
+#tab-com.active{background:#0D9488!important;border-color:#0D9488!important}
+#tab-coif.active{background:#A855F7!important;border-color:#A855F7!important}
+/* Anti-slop : suppression du bandeau colore en haut des mcards (doctrine homepage : .mcard .bar{display:none}).
+   Le signal couleur metier est porte par .ic / .pill / .feats / .go .ab (deja en place via mobile.css). */
+.m-shell .mcard .bar{display:none}
+</style>
+<script>
+/* MutationObserver : réagit à chaque toggle .on, indépendant du cache mobile.js */
+(function () {
+  function bind() {
+    var dotsEl = document.getElementById('dots');
+    if (!dotsEl) return;
+    /* Détermine l'index actif depuis les spans */
+    function syncIdx() {
+      var idx = Array.from(dotsEl.children).findIndex(function (s) { return s.classList.contains('on'); });
+      dotsEl.setAttribute('data-mi', idx < 0 ? '0' : String(idx));
+    }
+    /* MutationObserver sur chaque span : réagit quand .on bouge */
+    var obs = new MutationObserver(syncIdx);
+    Array.from(dotsEl.children).forEach(function (s) {
+      obs.observe(s, { attributes: true, attributeFilter: ['class'] });
+    });
+    syncIdx(); /* init */
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', bind) : bind();
+})();
+</script>
+
+<!-- CASHMAG : regime marque bleu, composition editoriale flat (effet carte casse, chantier 3) -->
+<section class="sec cm-flat">
+  <p class="eyebrow eyebrow-cm">Le cerveau de votre établissement</p>
+  <h2>CashMag : <em>le logiciel de caisse certifié</em> que nous installons et maîtrisons.</h2>
+  <span class="cm-flat-chip"><img src="../assets/logo-cashmag-logiciel-caisse-nf525.png" alt="Logo CashMag, logiciel de caisse certifié NF525" width="419" height="80"></span>
+  <p class="cm-flat-intro">On a choisi CashMag parce qu'il est <strong>certifié NF525 par l'AFNOR</strong> et qu'on maîtrise chaque paramètre de sa configuration. Notre valeur ajoutée : on vient sur place, on prend le temps de comprendre votre activité, et on configure tout avant la mise en service.</p>
+  <p class="cm-flat-intro">En cas de problème, vous n'appelez pas un standard : vous appelez votre technicien, celui qui a installé votre caisse.</p>
+  <div class="cm-feats">
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">monitoring</span></div>
+      <div>
+        <h3>Dashboard temps réel</h3>
+        <p>Chiffre d'affaires, panier moyen, couverts : consultable depuis smartphone, où que vous soyez.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+      <div>
+        <h3>Comptabilité automatisée</h3>
+        <p>Journaux de vente, ventilation TVA, export expert-comptable automatique.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic"><span class="material-symbols-outlined">inventory_2</span></div>
+      <div>
+        <h3>Gestion de stock dynamique</h3>
+        <p>Décrémentation automatique à chaque vente, alertes rupture, fiches techniques matières premières.</p>
+      </div>
+    </div>
+  </div>
+  <a class="btn btn-pri cm-flat-cta" href="cashmag/index.html">Découvrir CashMag en détail<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+</section>
+
+<!-- NF525 : CONFORMITÉ LÉGALE -->
+<section class="sec s1">
+  <p class="eyebrow">Conformité légale</p>
+  <h2>Pourquoi la <em>conformité NF525</em> reste incontournable.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Depuis 2018, la loi impose à tout commerçant assujetti à la TVA d'utiliser un logiciel de caisse conforme aux critères ISCA. Le certificat NF525, délivré par <a href="https://certification.afnor.org/" target="_blank" rel="noopener" style="color:#0B3D91;font-weight:600">l'AFNOR</a>, en est la preuve la plus solide.</p>
+
+  <div class="nf-pillars-a">
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">lock</span></div>
+      <div>
+        <span class="num">Pilier 01</span>
+        <h3>Inaltérabilité</h3>
+        <p>Les données de vente ne peuvent être modifiées ni supprimées après validation.</p>
+      </div>
+    </div>
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">shield</span></div>
+      <div>
+        <span class="num">Pilier 02</span>
+        <h3>Sécurisation</h3>
+        <p>Chaque opération est chaînée cryptographiquement pour empêcher toute fraude.</p>
+      </div>
+    </div>
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">archive</span></div>
+      <div>
+        <span class="num">Pilier 03 &amp; 04</span>
+        <h3>Conservation &amp; archivage</h3>
+        <p>Vos données sont conservées et exportables pour tout contrôle fiscal.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nf-editorial-a">
+    <span class="filet" aria-hidden="true"></span>
+    <div class="lab">Amende</div>
+    <div class="amt">7 500 €</div>
+    <div class="sub">par caisse non conforme</div>
+    <p class="desc">Les logiciels <strong>CashMag et Hairnet que nous installons sont certifiés NF525</strong>. Votre attestation de conformité est remise par DCB Technologies le jour de l'installation et reste accessible à tout moment depuis votre système de caisse. Pour aller plus loin : <a href="../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ce qui a changé depuis février 2026</a>.</p>
+  </div>
+</section>
+
+<!-- TECHNICIENS DE PROXIMITÉ : composition éditoriale mobile v2 (photo + badges hiérarchisés + 3 promesses) -->
+<section class="m-prox dcb-stagger" style="background:#0B3D91;padding:48px 20px 56px;color:#fff;position:relative;overflow:hidden">
+  <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 60px -24px rgba(0,0,0,0.55);margin-bottom:28px">
+    <img src="../assets/caisse-tactile-cashmag-restaurant.webp" alt="Caisse tactile CashMag sur le comptoir d'un restaurant" width="1200" height="1192" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/placeholder-photo.svg'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  </div>
+  <p style="color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.03em;margin-top:12px;margin-bottom:0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><a href="./saone-et-loire/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Saône-et-Loire</a> · <a href="./rhone/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Rhône</a> · <a href="./ain/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Ain</a> · <a href="./loire/index.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Loire</a></p>
+  <p style="margin:24px 0 12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#F57C00">Expertise de proximité</p>
+  <h2 style="margin:0 0 14px;font-family:'Sora',sans-serif;font-size:28px;line-height:1.15;font-weight:700;color:#fff;letter-spacing:-0.01em">Nos techniciens, à vos côtés</h2>
+  <p style="margin:0 0 22px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.92)">Chaque client a un interlocuteur identifié. Un nom, un téléphone, quelqu'un qui connaît votre caisse et votre activité. Pas un numéro de ticket.</p>
+  <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px">
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">support_agent</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Télémaintenance 7j/7</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;20 min</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">directions_car</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Si besoin, sur site</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;4 h</span>
+    </li>
+    <li style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)">
+      <span class="material-symbols-outlined" style="font-size:22px;color:#F57C00;font-variation-settings:'FILL' 1;flex-shrink:0">inventory_2</span>
+      <span style="flex:1;font-size:14.5px;line-height:1.35;color:#fff">Remplacement matériel</span>
+      <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#F57C00;letter-spacing:-0.01em">&lt;48 h</span>
+    </li>
+  </ul>
+  <a href="../notre-adn/index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:16px 24px;background:#F57C00;color:#fff;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;border-radius:14px;text-decoration:none">Découvrir notre équipe<span class="material-symbols-outlined" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+</section>
+
+<!-- ÉCOSYSTÈME MATÉRIEL : cross-sell -->
+<section class="sec">
+  <p class="eyebrow">Écosystème matériel</p>
+  <h2>Optimisez votre <em>point de vente</em>.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:-8px 0 18px">Complétez votre installation avec des périphériques connectés à votre caisse CashMag.</p>
+  <div class="peri-a">
+    <a href="borne-de-commande/index.html" data-dest="borne-de-commande" class="peri-photo" aria-label="Borne de commande self-service K1">
+      <div class="txt">
+        <span class="pp">+20% panier moyen</span>
+        <h3>Borne de commande</h3>
+        <p>Désengorgez votre file d'attente et augmentez votre panier moyen.</p>
+        <span class="lk">Découvrir la borne<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis vis-photo"><img src="../assets/borne-commande-loire.webp" alt="Borne de commande tactile en libre-service dans un restaurant" width="1000" height="1000" loading="lazy" decoding="async"></div>
+    </a>
+    <a href="monnayeur/index.html" data-dest="monnayeur" aria-label="Monnayeur automatique" class="peri-photo">
+      <div class="txt">
+        <span class="pp">0 contact argent</span>
+        <h3>Monnayeur automatique</h3>
+        <p>Rendu de monnaie exact, zéro erreur, hygiène totale.</p>
+        <span class="lk">Découvrir le monnayeur<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis vis-photo">
+        <img src="../assets/monnayeur-automatique-cashmag-boulangerie.webp" alt="Monnayeur automatique CashMag encastré dans le comptoir d'une boulangerie" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 85%">
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec s1">
+  <p class="eyebrow">Besoin de précisions ?</p>
+  <h2>Questions <em>fréquentes</em>.</h2>
+  <div class="faq">
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Différence avec SumUp ou Zettle ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">SumUp et Zettle sont des solutions en ligne sans accompagnement. Chez DCB, un technicien vient sur place, installe tout, forme votre équipe et intervient sous 4h en cas de problème. Le logiciel CashMag est certifié NF525 et configuré pour votre métier. Ce n'est pas le même service.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Ma caisse est-elle NF525 ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Votre logiciel doit respecter les critères de conformité fiscale (ISCA) et vous devez pouvoir présenter un certificat ou une attestation à tout moment. Si vous n'avez ni l'un ni l'autre, il y a un doute : on audite votre installation gratuitement. CashMag est certifié NF525 par l'AFNOR. <a href="../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">comprendre la réforme NF525 (février 2026)</a></div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Location ou achat ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Nous proposons trois formules : location longue durée (12, 24 ou 36 mois) avec matériel inclus, crédit-bail avec option d'achat, ou achat comptant. La location inclut le remplacement du matériel en cas de panne et les mises à jour logicielles. La majorité de nos clients choisissent la location pour lisser l'investissement.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Comment se passe l'installation ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Un technicien DCB installe, configure et forme votre équipe sur place. Demi-journée en moyenne. Support 7j/7 ensuite.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Délai d'intervention en cas de panne ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">En cas de panne, on prend la main à distance immédiatement. Si on doit passer chez vous, un technicien est là en moins de 4 heures : Lyon, Villefranche-sur-Saône, Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne et l'ensemble des départements 71, 69, 01 et 42. En cas de panne matérielle, un équipement de remplacement est fourni sous 48h.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La caisse est-elle compatible avec mon terminal de paiement ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">CashMag est compatible avec les principaux terminaux de paiement (Ingenico, Verifone, PAX). La liaison caisse-TPE envoie automatiquement le montant, ce qui élimine les erreurs de saisie.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 : Le Bord Tranché (fond clair, alignement gauche éditorial, pill tel bordurée) -->
+<section class="m-cta-final" style="--accent:#F57C00;--accent-dark:#E06E00" aria-labelledby="cta-final-h-hub">
+  <span class="topbar" aria-hidden="true"></span>
+  <h3 id="cta-final-h-hub">Parlez à un technicien DCB : diagnostic gratuit, sans engagement.</h3>
+  <p>Diagnostic gratuit, sans engagement. On vérifie votre conformité NF525 et on vous propose ce qui correspond à votre activité.</p>
+  <button class="btn btn-pri" data-sheet>Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+  <span class="dpx-divider">ou appelez-nous</span>
+  <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+  <p class="m-updated">Mis à jour le <time datetime="2026-04-23">23 avril 2026</time></p>
+  <span class="bottomark" aria-hidden="true"></span>
+</section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+
+</div><!-- /m-shell -->
+<script src="../js/scripts.js?v=39"></script>
+</body>
+</html>
+
+

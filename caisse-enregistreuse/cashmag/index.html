@@ -1,0 +1,946 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Logiciel CashMag NF525 | Revendeur agréé DCB Technologies</title>
+<meta name="description" content="DCB Technologies installe et maintient le logiciel de caisse CashMag, certifié NF525. Formation incluse. Prise en main à distance immédiate, sur site en moins de 4h. Devis gratuit.">
+<link rel="canonical" href="https://dcb-technologies.fr/caisse-enregistreuse/cashmag/">
+<meta property="og:title" content="Logiciel CashMag NF525 | Revendeur agréé DCB Technologies">
+<meta property="og:description" content="DCB Technologies installe et maintient le logiciel de caisse CashMag, certifié NF525. Formation incluse. Prise en main à distance immédiate, sur site en moins de 4h.">
+<meta property="og:url" content="https://dcb-technologies.fr/caisse-enregistreuse/cashmag/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Logiciel CashMag NF525 | Revendeur agréé DCB Technologies">
+<meta name="twitter:description" content="DCB Technologies installe et maintient le logiciel de caisse CashMag, certifié NF525. Formation incluse. Prise en main à distance immédiate, sur site en moins de 4h.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<link rel="preload" href="../../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/style.css?v=18">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
+<link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+
+  /* NF525 : section verbatim hub caisse (classes .nf-* via css/style.css).
+     Watermark geant, cadre pointille et panneau ambre purges (anti-slop, alignement hub). */
+  .sec-inner { max-width:80rem; margin:0 auto; }
+  .d-shell .sec-nf525 { background:#FFFFFF; }
+  /* Logo NF : chip blanc simple ombre (pas de cadre pointille) */
+  .sec-nf525 .nf-logo-frame { width:auto; height:auto; border-radius:14px; background:#FFFFFF; padding:1.5rem; }
+  .sec-nf525 .nf-logo-frame img { max-width:120px; max-height:120px; }
+  /* Bloc amende : composition editoriale nue (filet orange 28x3, chiffre Sora orange) */
+  .nf-editorial { display:grid; grid-template-columns:auto 1fr; gap:2.5rem 3.5rem; align-items:start; margin-top:1rem; }
+  @media(max-width:767px){ .nf-editorial { grid-template-columns:1fr; gap:1.5rem; } }
+  .nf-editorial-filet { display:block; width:28px; height:3px; border-radius:2px; background:var(--accent); margin-bottom:1.25rem; }
+  .nf-editorial-lab { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#64748B; margin-bottom:0.5rem; }
+  .nf-editorial-val { font-family:'Sora',sans-serif; font-size:clamp(3rem,5vw,3.75rem); font-weight:800; letter-spacing:-0.02em; line-height:1; color:var(--accent); }
+  .nf-editorial-sub { font-size:0.9375rem; color:#64748B; margin-top:0.625rem; }
+  .nf-editorial-body { color:#475569; font-size:1.0625rem; line-height:1.65; max-width:42rem; align-self:center; }
+  .nf-editorial-body strong { color:#0B3D91; font-weight:700; }
+  /* Cards metiers : filet signature couleur destination (atome hub caisse) */
+  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
+  .group:hover .pilier-filet { width:48px; }
+  @media(prefers-reduced-motion:reduce){ .pilier-filet { transition:none !important; } }
+  /* Cartes FAQ : grises sur section blanche (surface opposee) */
+  .d-shell .faq-item{background:#F8F9FA}
+  /* ── MOBILE SHELL ── */
+  .m-shell{display:none}
+  @media(max-width:640px){
+    .m-shell{display:block}
+    .d-shell{display:none}
+    #dcb-phone-fab{display:none!important}
+    [data-metier="cashmag"] #m-main{--cta:var(--accent)}
+    [data-metier="cashmag"] .fab .b1{background:var(--accent);box-shadow:0 10px 22px -6px rgba(1,81,9,0.55)}
+    [data-metier="cashmag"] .btn-pri{background:var(--accent)}
+    [data-metier="cashmag"] .eyebrow{color:var(--accent)}
+    @media(max-width:390px){[data-metier="cashmag"] .hero h1{font-size:23px}}
+    [data-metier="cashmag"] .hero h1 em{color:var(--accent)}
+    [data-metier="cashmag"] .sec h2 em{color:var(--accent)}
+    [data-metier="cashmag"] .hero .chip{background:var(--accent);border-color:var(--accent);color:#fff}
+    [data-metier="cashmag"] .hero .checks .material-symbols-outlined{color:var(--accent)}
+    [data-metier="cashmag"] .hero .btn-pri{background:var(--accent)}
+    [data-metier="cashmag"] .marquee-track .it .material-symbols-outlined{color:var(--accent)}
+    /* Bloc amende NF525 nu (atome hub mobile .nf-editorial-a, accent vert partenaire) */
+    .m-shell .nf-editorial-a{margin-top:16px}
+    .m-shell .nf-editorial-a .filet{display:block;width:24px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:16px}
+    .m-shell .nf-editorial-a .lab{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+    .m-shell .nf-editorial-a .amt{font-family:'Sora',sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.02em;color:var(--accent)}
+    .m-shell .nf-editorial-a .sub{font-size:13px;color:var(--mute);margin-top:8px}
+    .m-shell .nf-editorial-a .desc{font-size:13.5px;line-height:1.6;color:var(--mute);margin:18px 0 0}
+    .m-shell .nf-editorial-a .desc strong{color:#0B3D91;font-weight:700}
+    /* Pastilles features S4 (section blanche .sec) : surface opposee grise + icone accent (regle pastille 12/06) */
+    .m-shell .cm-feats .ft .ic{background:#F8F9FA;color:var(--accent)}
+    .m-shell .cm-feats .ft .ic .material-symbols-outlined{color:var(--accent)}
+  }
+  .dcb-dot.is-active::before { background: var(--accent) !important; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Qu'est-ce que DCB apporte en plus du logiciel CashMag ?", "acceptedAnswer": {"@type": "Answer", "text": "CashMag est un très bon logiciel de caisse. Ce que DCB ajoute autour, c'est tout ce qui fait qu'il tourne vraiment dans votre commerce : l'installation sur site, le paramétrage pour votre métier, la formation de vos équipes et notre expertise IT quand un périphérique ou un réseau fait des siennes. Vous gardez un interlocuteur identifié, la même personne qui connaît votre installation, joignable 7j/7 en télémaintenance. Si un déplacement s'impose, un technicien est chez vous en moins de 4h."}},
+    {"@type": "Question", "name": "Ma caisse actuelle est-elle conforme NF525 ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce que la loi exige, c'est un logiciel conforme aux critères ISCA (article 286 du CGI). Vous devez pouvoir le prouver en cas de contrôle, soit par un certificat NF525, soit par une attestation de votre éditeur. Sans preuve, l'amende est de 7 500 € par système de caisse non conforme. On peut auditer votre installation gratuitement pour vérifier."}},
+    {"@type": "Question", "name": "Qu'est-ce qui distingue CashMag d'une caisse en ligne classique ?", "acceptedAnswer": {"@type": "Answer", "text": "Deux choses concrètes et vérifiables. CashMag est édité en France et certifié NF525 dès sa conception : l'attestation est accessible à tout moment depuis le menu de la caisse. Et il ne s'arrête pas à la première coupure internet : l'encaissement continue, les données se synchronisent au retour du réseau. Le reste, c'est notre part : DCB travaille à l'échelle de son territoire (69, 71, 01, 42), donc un suivi plus proche, une réponse plus rapide, et un technicien qui se déplace."}},
+    {"@type": "Question", "name": "CashMag fonctionne-t-il si internet tombe en panne ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. CashMag est hybride : il stocke les ventes en local sur la caisse et se synchronise avec le cloud quand la connexion est là. Si votre box lâche en plein rush, vous continuez à encaisser normalement, à imprimer vos tickets et à rendre la monnaie, et tout remonte dans votre back-office au retour du réseau. Une limite à connaître : CashMag a besoin de se reconnecter au moins une fois toutes les 72 heures pour synchroniser vos données et rester conforme. Rien n'est perdu."}},
+    {"@type": "Question", "name": "Je peux suivre mon commerce à distance depuis mon téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c'est le back-office inclus de base. Depuis votre smartphone, vous consultez votre chiffre d'affaires du jour, votre panier moyen, vos ventes par article et l'état de vos stocks, sans être derrière le comptoir. Vous pouvez aussi changer un prix ou ajouter un produit : la mise à jour descend en caisse dans la foulée. Pratique quand vous gérez plusieurs points de vente ou que vous êtes en déplacement."}},
+    {"@type": "Question", "name": "Mes données de vente et mes fichiers clients sont-ils protégés ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vos données sont sauvegardées et hébergées en conformité avec le RGPD. Les ventes validées sont chaînées et chiffrées au titre de la certification NF525, donc inaltérables. Votre fichier clients reste le vôtre : il vous suit si vous ajoutez une caisse ou changez de matériel, et nous vous aidons à l'exporter quand vous le demandez."}},
+    {"@type": "Question", "name": "Les mises à jour du logiciel sont-elles incluses ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les mises à jour de CashMag sont comprises dans votre licence, y compris les évolutions réglementaires qui maintiennent votre caisse conforme NF525 dans le temps. Vous n'avez rien à installer manuellement ni à surveiller : on s'assure que votre version reste à jour, et on vous prévient si une nouveauté change quelque chose à votre façon de travailler."}},
+    {"@type": "Question", "name": "Comment se passe l'installation concrètement ?", "acceptedAnswer": {"@type": "Answer", "text": "Un technicien DCB vient dans votre établissement. Il installe le matériel, configure CashMag selon votre activité (articles, TVA, modes de paiement, périphériques) et forme vos équipes sur place. Comptez une demi-journée. Vous ouvrez votre caisse, tout est prêt. Si vous recrutez ensuite, on revient pour une session de rappel."}},
+    {"@type": "Question", "name": "Je peux migrer depuis mon ancien logiciel de caisse ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. On récupère votre base de données existante (articles, clients, tarifs) et on la réintègre dans CashMag. Vous reprenez votre activité sans tout ressaisir. Le technicien gère l'aspect technique, vous n'avez rien à faire de ce côté."}},
+    {"@type": "Question", "name": "Et si j'ai un problème après l'installation ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous appelez votre technicien DCB directement. Pas une hotline, pas un chatbot. La télémaintenance résout 95% des soucis en moins de 20 minutes. Si on doit se déplacer, un technicien est chez vous en moins de 4h, que vous soyez dans le 71, le 69, le 01 ou le 42."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CashMag",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Android",
+  "description": "Logiciel de caisse Android certifié NF525, édité en France. Gestion encaissement, stocks, fidélité client et comptabilité. Continue d'encaisser même en cas de coupure internet.",
+  "url": "https://dcb-technologies.fr/caisse-enregistreuse/cashmag/",
+  "brand": {"@type": "Brand", "name": "CashMag"},
+  "offers": {"@type": "Offer", "seller": {"@id": "https://dcb-technologies.fr/#localbusiness"}}
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dcb-technologies.fr/"},{"@type":"ListItem","position":2,"name":"Caisse Enregistreuse","item":"https://dcb-technologies.fr/caisse-enregistreuse/"},{"@type":"ListItem","position":3,"name":"CashMag","item":"https://dcb-technologies.fr/caisse-enregistreuse/cashmag/"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://dcb-technologies.fr/caisse-enregistreuse/cashmag/#service",
+  "serviceType": "Installation et maintenance logiciel CashMag NF525",
+  "name": "CashMag NF525 : Installation, formation et SAV par DCB Technologies",
+  "description": "Revendeur agréé CashMag. Formation incluse. Prise en main à distance immédiate, sur site en moins de 4h en Saône-et-Loire, Rhône, Ain et Loire (Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Roanne, Lyon).",
+  "url": "https://dcb-technologies.fr/caisse-enregistreuse/cashmag/",
+  "brand": {"@type": "Brand", "name": "CashMag"},
+  "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+  "areaServed": [
+    {"@type": "City", "name": "Mâcon"},
+    {"@type": "City", "name": "Lyon"},
+    {"@type": "City", "name": "Roanne"},
+    {"@type": "City", "name": "Bourg-en-Bresse"},
+    {"@type": "City", "name": "Chalon-sur-Saône"},
+    {"@type": "City", "name": "Villefranche-sur-Saône"},
+    {"@type": "City", "name": "Paray-le-Monial"},
+    {"@type": "AdministrativeArea", "name": "Saône-et-Loire (71)"},
+    {"@type": "AdministrativeArea", "name": "Rhône (69)"},
+    {"@type": "AdministrativeArea", "name": "Ain (01)"},
+    {"@type": "AdministrativeArea", "name": "Loire (42)"}
+  ]
+}
+</script>
+</head>
+<body style="--accent:#015109;--accent-dark:#5E9028">
+<div class="d-shell">
+<div id="dcb-nav"></div>
+<main class="pt-[76px]">
+
+<!-- ── 1. HERO ─────────── -->
+<section class="py-12 lg:py-16 relative overflow-hidden" style="background:#76B737">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="hero-blob-a absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#5A9A20] to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+    <div class="lg:col-span-7 space-y-8 dcb-stagger">
+      <div class="flex flex-wrap gap-3">
+        <span class="text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border" style="background:var(--accent);border-color:var(--accent)">DCB × <abbr data-tooltip="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé." aria-label="Logiciel de caisse CashMag, certifié NF525 par l'AFNOR. DCB Technologies est installateur agréé.">CashMag</abbr></span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20"><abbr data-tooltip="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité." aria-label="Norme Française 525 pour logiciels de caisse, conforme à la loi anti-fraude TVA (article 286 du CGI). Amende 7 500 € par caisse sans justificatif de conformité.">NF525</abbr> Certifié</span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Logiciel Android</span>
+      </div>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+        Logiciel CashMag NF525, <br><span class="italic font-semibold" style="color:var(--accent)">installé et maintenu par vos techniciens</span>
+      </h1>
+      <p class="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed">Le logiciel de caisse Android certifié NF525, conçu pour les commerces français. Back-office intégré, simple à prendre en main. DCB Technologies l'installe, le configure pour votre métier. En cas de problème : prise en main à distance immédiate, sur site en moins de 4h dans le Rhône, la Saône-et-Loire, la Loire et l'Ain.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined ms-fill" style="color:var(--accent)">check_circle</span>
+          <span>Logiciel Android rapide, compatible tous périphériques</span>
+        </div>
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined ms-fill" style="color:var(--accent)">check_circle</span>
+          <span>NF525 certifié, mises à jour réglementaires incluses dans votre licence</span>
+        </div>
+        <div class="flex items-center gap-3 text-white">
+          <span class="material-symbols-outlined ms-fill" style="color:var(--accent)">check_circle</span>
+          <span>Back-office complet intégré de base : stats, stocks, fidélité, export comptable</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="tel:0482530510" class="dcb-btn-hover text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2" style="background:var(--accent)"><span class="material-symbols-outlined">call</span> 04 82 53 05 10</a>
+        <a href="../../contact/index.html" class="dcb-btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">
+          Demander une démo <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+    <div class="hidden lg:flex lg:col-span-5 relative items-center justify-center">
+      <div class="relative mx-auto" style="width:97%">
+        <img alt="Caisse tactile CashMag avec écran de rendu monnaie" class="block w-full" src="../../assets/tpv-tactile-cashmag-rendu-monnaie-boulangerie.webp" width="1200" height="1199" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. TRUST BAR (spécifique CashMag) ─────────── -->
+<section class="py-6 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[var(--accent)] text-3xl ms-fill">android</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Logiciel Android</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[var(--accent)] text-3xl ms-fill">verified_user</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Certifié NF525</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[var(--accent)] text-3xl ms-fill">dashboard</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Back-office inclus</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[var(--accent)] text-3xl ms-fill">speed</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Support DCB &lt;4h</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. POURQUOI DCB × CASHMAG -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-10 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase block mb-3">Le partenariat</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] leading-tight mb-4">Pourquoi choisir DCB pour installer et suivre votre CashMag</h2>
+      <p class="text-slate-500 leading-relaxed mb-4">CashMag est un logiciel de caisse Android certifié NF525, édité en France, qui continue d'encaisser même en cas de coupure internet. Il gère l'encaissement, les stocks, la fidélité client et la comptabilité depuis un seul écran.</p>
+      <p class="text-slate-500 leading-relaxed">DCB Technologies l'installe chez vous, le paramètre selon votre activité, forme votre équipe et reste votre interlocuteur au quotidien. Vous gardez la même personne, celle qui connaît votre installation, avec l'expertise IT qui va autour (périphériques, réseau, sauvegardes). Une limite à connaître sur le mode hors-ligne : CashMag a besoin de se reconnecter au moins une fois toutes les 72 heures pour synchroniser vos données et rester conforme.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 dcb-stagger">
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Nous nous déplaçons chez vous</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">CashMag est un éditeur national. DCB travaille sur son territoire (69, 71, 01, 42) : suivi plus proche, réponse plus rapide, et on se déplace chez vous.</p>
+      </div>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Nous connaissons votre métier</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Nous configurons CashMag pour une boulangerie différemment d'un restaurant ou d'un salon. Ce paramétrage prend du temps et de l'expérience.</p>
+      </div>
+
+      <div>
+        <div class="w-8 h-[3px] bg-[var(--accent)] mb-4"></div>
+        <h3 class="font-sora text-xl font-bold text-[#0B3D91] mb-3 leading-tight">Nous restons disponibles</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Un numéro direct, un technicien qui connaît votre installation. 7j/7, <abbr data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes." aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr> en moins de 20 min. Si besoin, il est chez vous en moins de 4h.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. L'ACCOMPAGNEMENT DCB -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal dcb-reveal-left">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase block mb-3">Notre valeur ajoutée</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">De la première démo à la clôture de caisse</h2>
+        <p class="text-slate-500 text-base leading-relaxed">Un logiciel en ligne, vous l'installez seul avec un tutoriel. Nous, on vient le paramétrer sur votre comptoir et on reste joignable quand un tiroir-caisse ou une imprimante lâche.</p>
+      </div>
+      <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
+        <div class="space-y-3">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:var(--accent)">search</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Diagnostic personnalisé</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">On vient chez vous, on regarde comment vous travaillez. Vos flux, vos horaires, vos contraintes. On ne propose rien avant d'avoir compris votre quotidien.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:var(--accent)">handyman</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Installation sur site</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">On s'adapte à vos horaires, même à 6h du matin. Le technicien installe, câble et configure tout. Vous ouvrez votre caisse, tout est prêt.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:var(--accent)">school</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Formation de votre équipe</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Le jour de l'installation, sur votre caisse, avec vos vrais articles. Vos vendeurs sont autonomes dès le premier service. On revient si vous recrutez.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg" style="background:#FFFFFF"><span class="material-symbols-outlined ms-fill" style="color:var(--accent)">support_agent</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">SAV continu</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Après l'installation, on ne disparaît pas. Télémaintenance 7j/7 en moins de 20 min. Si besoin, votre technicien est chez vous en moins de 4h. Toujours le même interlocuteur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CASHMAG : L'encaissement -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Texte -->
+      <div class="dcb-reveal dcb-reveal-left">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase block mb-3">L'encaissement</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4">Rapide, fiable, même quand le réseau lâche</h2>
+        <p class="text-slate-500 leading-relaxed mb-8">Android natif. La sécurité d'une caisse traditionnelle avec la puissance du cloud. Vos équipes encaissent sans friction, même en plein rush.</p>
+        <div class="space-y-5">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">touch_app</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Prise en main immédiate</h3>
+              <p class="text-slate-500 text-sm">Navigation tactile par famille d'articles. Vos vendeurs l'utilisent dès le premier service.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">cloud_sync</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Hybride local + cloud</h3>
+              <p class="text-slate-500 text-sm">Coupure réseau ? L'encaissement continue. Les données se synchronisent au retour.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#F8F9FA"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">credit_card</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Tous les paiements</h3>
+              <p class="text-slate-500 text-sm">Espèces, CB, ticket restaurant, chèque, mixte. Liaison TPE automatique.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup tablette -->
+      <div class="flex justify-center items-center dcb-reveal dcb-reveal-right">
+        <div class="relative mx-auto w-full" style="max-width:480px;border-radius:24px;background:#15161a;padding:13px;box-shadow:0 34px 70px -18px rgba(7,43,107,0.45),0 16px 32px -20px rgba(0,0,0,0.5)">
+          <div class="overflow-hidden" style="aspect-ratio:16/9;border-radius:12px;background:#000">
+            <img alt="Interface CashMag : écran d'encaissement d'un restaurant" src="../../assets/logiciel-caisse-cashmag-encaissement-divers.webp" class="w-full h-full object-cover" width="1280" height="720" loading="lazy" decoding="async">
+          </div>
+          <span aria-hidden="true" style="position:absolute;top:50%;right:6px;transform:translateY(-50%);width:6px;height:6px;border-radius:9999px;background:rgba(255,255,255,0.28)"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 6. CASHMAG : Le back-office -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Mockup smartphone -->
+      <div class="flex justify-center dcb-reveal dcb-reveal-left">
+        <div class="w-[240px] rounded-[2rem] p-2.5 shadow-2xl" style="background:#15161a">
+          <div class="w-12 h-1 bg-white/20 rounded-full mx-auto mb-1.5"></div>
+          <div class="bg-white rounded-[1.5rem] overflow-hidden">
+            <div class="aspect-[1220/2395]">
+              <img alt="Back-office CashMag sur smartphone : graphique evolution des ventes, total TTC par service" src="../../assets/cashmag-back-office-evolution-ventes.webp" width="720" height="1413" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texte -->
+      <div class="dcb-reveal dcb-reveal-right">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase block mb-3">Le back-office</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4">Votre commerce dans la poche</h2>
+        <p class="text-slate-500 leading-relaxed mb-8">Depuis votre smartphone, vous consultez votre chiffre d'affaires, votre panier moyen, vos stocks. Sans être au comptoir.</p>
+        <div class="space-y-5">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">monitoring</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Statistiques en temps réel</h3>
+              <p class="text-slate-500 text-sm">CA par heure, par article, par vendeur. Consultable depuis n'importe quel écran.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">summarize</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Clôture et compta en un clic</h3>
+              <p class="text-slate-500 text-sm">Rapport Z automatique, archivage NF525, export comptable.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:#FFFFFF"><span class="material-symbols-outlined text-[var(--accent)] ms-fill">edit_note</span></div>
+            <div>
+              <h3 class="font-sora font-bold text-[#0B3D91] mb-1">Pilotage à distance</h3>
+              <p class="text-slate-500 text-sm">Changez un prix, ajoutez un produit, gérez vos stocks. La mise à jour descend en caisse instantanément.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7. NF525 : Pourquoi c'est important, comment CashMag le gère -->
+<section class="sec-nf525">
+  <div class="sec-inner">
+
+    <div class="nf-hero">
+      <div class="nf-logo-wrap">
+        <div class="nf-logo-frame">
+          <img src="../../assets/partenaire-nf525.webp" alt="Logo certification NF525 AFNOR">
+        </div>
+      </div>
+      <div class="nf-hero-text">
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[var(--accent)] mb-4">Conformité légale</p>
+        <h2 class="nf-hero-h2">CashMag est certifié NF525. Votre commerce est protégé.</h2>
+        <p class="nf-hero-lede">La loi impose un logiciel conforme aux critères <abbr data-tooltip="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI." aria-label="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI.">ISCA</abbr> (article 286 du CGI). Cette conformité se prouve de deux façons : un certificat NF525 délivré par un organisme accrédité comme <a href="https://certification.afnor.org/" target="_blank" rel="noopener">l'AFNOR</a>, ou une attestation de l'éditeur. En cas de contrôle, l'amende est de 7 500 € par système de caisse non conforme. CashMag va au-delà : il est certifié NF525 dès sa conception.</p>
+      </div>
+    </div>
+
+    <div class="nf-pillars">
+      <div class="nf-pillars-grid">
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">lock</span></div>
+          <span class="nf-pillar-num">Pilier 01</span>
+          <div class="nf-pillar-title">Inaltérabilité</div>
+          <div class="nf-pillar-desc">Aucune donnée de vente ne peut être modifiée ou supprimée après validation dans CashMag.</div>
+        </div>
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">shield</span></div>
+          <span class="nf-pillar-num">Pilier 02</span>
+          <div class="nf-pillar-title">Sécurisation</div>
+          <div class="nf-pillar-desc">Chaque opération est chaînée et chiffrée pour empêcher toute manipulation frauduleuse.</div>
+        </div>
+        <div class="nf-pillar">
+          <div class="nf-pillar-icon-wrap"><span class="material-symbols-outlined">archive</span></div>
+          <span class="nf-pillar-num">Pilier 03 &amp; 04</span>
+          <div class="nf-pillar-title">Conservation &amp; Archivage</div>
+          <div class="nf-pillar-desc">Toutes vos données sont archivées et exportables depuis CashMag pour tout contrôle fiscal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nf-editorial">
+      <div class="nf-editorial-amount">
+        <span class="nf-editorial-filet" aria-hidden="true"></span>
+        <div class="nf-editorial-lab">Amende</div>
+        <div class="nf-editorial-val">7 500 €</div>
+        <div class="nf-editorial-sub">par caisse non conforme</div>
+      </div>
+      <p class="nf-editorial-body">Votre attestation de conformité NF525 est <strong>accessible directement depuis le menu CashMag</strong> : téléchargeable, imprimable, envoyable par email à tout moment. DCB Technologies vous la remet aussi le jour de l'installation.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 8. CROSS-SELL MÉTIERS - Maillage interne (pattern hub caisse) -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase block mb-2">CashMag pour votre métier</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">CashMag s'adapte à votre métier, pas l'inverse</h2>
+      <p class="text-slate-500 mt-3">DCB Technologies configure une version différente selon votre activité.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
+      <a href="../boulangerie/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#F59E0B" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 mb-5">
+            <span class="material-symbols-outlined text-[#F59E0B] text-2xl">bakery_dining</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Boulangerie</h3>
+          <p class="text-slate-500 text-sm mb-4">Formules, monnayeur, clôture à 5h. Configuré pour le rythme du fournil.</p>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#F59E0B] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#F59E0B] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="../restaurant/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 mb-5">
+            <span class="material-symbols-outlined text-[#EF4444] text-2xl">restaurant</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Restaurant</h3>
+          <p class="text-slate-500 text-sm mb-4">Plan de salle, envoi cuisine, borne de commande. Le flux sans friction.</p>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#EF4444] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="../commerce-de-detail/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-xl bg-[#0D9488]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 mb-5">
+            <span class="material-symbols-outlined text-[#0D9488] text-2xl">storefront</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Commerce</h3>
+          <p class="text-slate-500 text-sm mb-4">Codes-barres, stocks, fidélité. Tout ce qu'une boutique attend de sa caisse.</p>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#0D9488] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#0D9488] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="../coiffure/index.html" class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
+        <div class="p-6 lg:p-7 flex flex-col flex-1">
+          <span class="pilier-filet" style="background:#A855F7" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-xl bg-[#A855F7]/10 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 mb-5">
+            <span class="material-symbols-outlined text-[#A855F7] text-2xl">content_cut</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Coiffure</h3>
+          <p class="text-slate-500 text-sm mb-4">Agenda, rappels, fiches clients. Pensé pour les salons qui font du volume.</p>
+          <div class="mt-auto flex items-center justify-between" style="padding-top:18px">
+            <span class="font-bold text-[#0B3D91] group-hover:text-[#A855F7] transition-colors">Découvrir</span>
+            <span class="w-10 h-10 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#A855F7] transition-all">
+              <span class="material-symbols-outlined text-[#0B3D91] text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. TÉMOIGNAGES (carrousel standard site) -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-10 dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[var(--accent)] mb-4">Ils nous font confiance</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce que disent nos clients.</h2>
+    </div>
+    <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
+      <div data-dcb-track>
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[var(--accent)] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nous avons fait appel à dcb, le service et la réactivité au top. C'était assez urgent et ils ont su répondre à notre demande. Qualité prix rien à redire et très facile d'utilisation. Une mise en route expliquée. Toujours les petits couacs du début mais dû à la prise d'habitude du nouveau matériels. On recommande à 100%"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[var(--accent)] rounded-full flex items-center justify-center text-white font-bold shrink-0">AL</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Antoine Lacroix</p>
+              <p class="text-slate-500 text-sm">Maison Lacroix, boucherie · Avis Google</p>
+              <p class="text-[var(--accent)] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[var(--accent)] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0">CS</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Camille Simon</p>
+              <p class="text-slate-500 text-sm">Boulangerie-pâtisserie · Avis Google</p>
+              <p class="text-[var(--accent)] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#F8F9FA] p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-[var(--accent)] text-4xl mb-6 block ms-fill">format_quote</span>
+            <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"J'ai acheté une caisse enregistreuse pour l'exploitation d'un bar éphémère. Bravo à DCB technologies pour leur professionnalisme, leur proximité et leur accompagnement après-vente. Logiciel simple et intuitif à l'utilisation."</p>
+          </div>
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+            <div class="w-12 h-12 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold shrink-0">AD</div>
+            <div>
+              <p class="font-bold text-[#0B3D91]">Adrien Desforges</p>
+              <p class="text-slate-500 text-sm">Bar éphémère · Avis Google</p>
+              <p class="text-[var(--accent)] text-xs font-medium mt-1">★★★★★</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dcb-carousel-controls">
+        <button type="button" data-dcb-prev aria-label="Témoignage précédent"><span class="material-symbols-outlined">arrow_back</span></button>
+        <div data-dcb-dots></div>
+        <button type="button" data-dcb-next aria-label="Témoignage suivant"><span class="material-symbols-outlined">arrow_forward</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9b. BANNER HAIRNET (cross-link logiciel métier) -->
+<section class="py-12 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <a href="../hairnet/index.html" class="block rounded-2xl overflow-hidden no-underline bg-white border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_rgba(11,61,145,0.2)] tonal-shift-elevation dcb-reveal dcb-reveal-scale">
+      <div class="flex flex-col md:flex-row items-stretch">
+        <div class="md:w-[280px] md:shrink-0 p-8 md:p-10 flex flex-col justify-between" style="background-color: #4527a4;">
+          <div>
+            <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 inline-block mb-6">Logiciel salon</span>
+            <img src="../../assets/hairnet-logo-blanc.webp" alt="Logiciel de caisse Hairnet spécialisé coiffure et beauté, certifié NF525. DCB Technologies est partenaire agréé." style="max-width:200px;width:100%;height:auto;display:block;" loading="lazy" decoding="async">
+            <p class="font-sora text-sm font-medium text-white/80 -mt-1" style="padding-left:70px">Certifié NF525</p>
+          </div>
+          <div class="mt-8 flex items-center gap-3 text-white/70">
+            <span class="material-symbols-outlined text-base ms-fill">content_cut</span>
+            <span class="material-symbols-outlined text-base ms-fill">event_available</span>
+            <span class="material-symbols-outlined text-base ms-fill">loyalty</span>
+          </div>
+        </div>
+        <div class="flex-1 p-8 md:p-10 flex flex-col justify-center">
+          <p class="text-[11px] font-bold tracking-[0.2em] uppercase mb-3" style="color: #4527a4;">Salon de coiffure ou institut ?</p>
+          <h3 class="font-sora text-xl md:text-2xl font-bold text-[#0B3D91] mb-3 leading-tight">Hairnet, le logiciel dédié aux salons</h3>
+          <p class="text-slate-500 text-sm md:text-base leading-relaxed mb-5 max-w-2xl">Agenda, Google Reserve, fidélité VIP, anti no-show : DCB configure Hairnet selon votre planning, l'installe sur site et assure le SAV 7j/7. Le pendant de CashMag, adapté au métier du salon.</p>
+          <span class="inline-flex items-center gap-2 text-sm font-bold" style="color: #0B3D91;">
+            Découvrir Hairnet <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto dcb-reveal">
+      <h2 class="font-sora text-2xl font-bold text-[#0B3D91] text-center mb-8">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3">
+        <details class="faq-item"><summary>Qu'est-ce que DCB apporte en plus du logiciel CashMag ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">CashMag est un très bon logiciel de caisse. Ce que DCB ajoute autour, c'est tout ce qui fait qu'il tourne vraiment dans votre commerce : l'installation sur site, le paramétrage pour votre métier, la formation de vos équipes et notre expertise IT quand un périphérique ou un réseau fait des siennes. Vous gardez un interlocuteur identifié, la même personne qui connaît votre installation, joignable 7j/7 en télémaintenance. Si un déplacement s'impose, un technicien est chez vous en moins de 4h.</div></details>
+        <details class="faq-item"><summary>Ma caisse actuelle est-elle conforme NF525 ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Ce que la loi exige, c'est un logiciel conforme aux critères <abbr data-tooltip="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI." aria-label="Inaltérabilité, Sécurisation, Conservation, Archivage : les quatre critères de conformité fiscale de l'article 286 du CGI.">ISCA</abbr> (article 286 du CGI). Vous devez pouvoir le prouver en cas de contrôle, soit par un certificat NF525, soit par une attestation de votre éditeur. Sans preuve, l'amende est de 7 500 € par système de caisse non conforme. Si vous voulez y voir clair, on fait <a href="../../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">le point sur la conformité NF525 en 2026</a>, et on peut auditer votre installation gratuitement.</div></details>
+        <details class="faq-item"><summary>Qu'est-ce qui distingue CashMag d'une caisse en ligne classique ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Deux choses concrètes et vérifiables. CashMag est édité en France et certifié NF525 dès sa conception : l'attestation est accessible à tout moment depuis le menu de la caisse. Et il ne s'arrête pas à la première coupure internet : l'encaissement continue, les données se synchronisent au retour du réseau. Le reste, c'est notre part : DCB travaille à l'échelle de son territoire (69, 71, 01, 42), donc un suivi plus proche, une réponse plus rapide, et un technicien qui se déplace.</div></details>
+        <details class="faq-item"><summary>CashMag fonctionne-t-il si internet tombe en panne ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. CashMag est hybride : il stocke les ventes en local sur la caisse et se synchronise avec le cloud quand la connexion est là. Si votre box lâche en plein rush, vous continuez à encaisser normalement, à imprimer vos tickets et à rendre la monnaie, et tout remonte dans votre back-office au retour du réseau. Une limite à connaître : CashMag a besoin de se reconnecter au moins une fois toutes les 72 heures pour synchroniser vos données et rester conforme. Rien n'est perdu.</div></details>
+        <details class="faq-item"><summary>Je peux suivre mon commerce à distance depuis mon téléphone ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui, c'est le back-office inclus de base. Depuis votre smartphone, vous consultez votre chiffre d'affaires du jour, votre panier moyen, vos ventes par article et l'état de vos stocks, sans être derrière le comptoir. Vous pouvez aussi changer un prix ou ajouter un produit : la mise à jour descend en caisse dans la foulée. Pratique quand vous gérez plusieurs points de vente ou que vous êtes en déplacement.</div></details>
+        <details class="faq-item"><summary>Mes données de vente et mes fichiers clients sont-ils protégés ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Vos données sont sauvegardées et hébergées en conformité avec le RGPD. Les ventes validées sont chaînées et chiffrées au titre de la certification NF525, donc inaltérables. Votre fichier clients reste le vôtre : il vous suit si vous ajoutez une caisse ou changez de matériel, et nous vous aidons à l'exporter quand vous le demandez.</div></details>
+        <details class="faq-item"><summary>Les mises à jour du logiciel sont-elles incluses ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. Les mises à jour de CashMag sont comprises dans votre licence, y compris les évolutions réglementaires qui maintiennent votre caisse conforme NF525 dans le temps. Vous n'avez rien à installer manuellement ni à surveiller : on s'assure que votre version reste à jour, et on vous prévient si une nouveauté change quelque chose à votre façon de travailler.</div></details>
+        <details class="faq-item"><summary>Comment se passe l'installation concrètement ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Un technicien DCB vient dans votre établissement. Il installe le matériel, configure CashMag selon votre activité (articles, TVA, modes de paiement, périphériques) et forme vos équipes sur place. Comptez une demi-journée. Vous ouvrez votre caisse, tout est prêt. Si vous recrutez ensuite, on revient pour une session de rappel.</div></details>
+        <details class="faq-item"><summary>Je peux migrer depuis mon ancien logiciel de caisse ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Oui. On récupère votre base de données existante (articles, clients, tarifs) et on la réintègre dans CashMag. Vous reprenez votre activité sans tout ressaisir. Le technicien gère l'aspect technique, vous n'avez rien à faire de ce côté.</div></details>
+        <details class="faq-item"><summary>Et si j'ai un problème après l'installation ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Vous appelez votre technicien DCB directement. Pas une hotline, pas un chatbot. La télémaintenance résout 95% des soucis en moins de 20 minutes. Si on doit se déplacer, un technicien est chez vous en moins de 4h, que vous soyez dans le 71, le 69, le 01 ou le 42.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#015109;--accent-dark:#5E9028;background:#F8F9FA">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Demandez une démo CashMag chez vous, sans engagement</h2>
+        <p class="d-lede">Un technicien DCB se déplace pour vous montrer CashMag en conditions réelles, sur votre configuration.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../../contact/index.html" class="btn btn--primary">Demander une démo gratuite<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <a href="../index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour à Caisse enregistreuse</a>
+      <time class="d-updated" datetime="2026-06-29">Mis à jour le 29 juin 2026</time>
+    </div>
+  </div>
+</section>
+</main>
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement : .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="cashmag">
+
+<!-- SKIP LINK -->
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+
+<!-- PROGRESS BAR -->
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+
+<!-- HEADER : injecté par scripts.js via #m-nav -->
+<div id="m-nav"></div>
+
+<!-- MAIN CONTENT -->
+<main id="m-main">
+
+<!-- S1 : HERO -->
+<section class="hero" style="background:#76B737">
+  <div class="chips">
+    <span class="chip">DCB × CashMag</span>
+    <span class="chip">NF525 Certifié</span>
+  </div>
+  <h1>Logiciel CashMag NF525, <em>installé et maintenu par vos techniciens</em>.</h1>
+  <p class="lede">Le logiciel de caisse Android certifié NF525, conçu pour les commerces français. Back-office intégré. DCB l'installe, le configure. Prise en main à distance immédiate, sur site en moins de 4h.</p>
+
+  <div class="scene scene-cutout">
+    <div class="tpv">
+      <img src="../../assets/tpv-tactile-cashmag-rendu-monnaie-boulangerie.webp" alt="Caisse tactile CashMag avec écran de rendu monnaie" width="1200" height="1199" loading="eager" fetchpriority="high">
+      <div class="cert-pill">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:var(--accent)">verified</span>
+        NF525 Certifié
+      </div>
+    </div>
+  </div>
+
+  <div class="checks">
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Logiciel Android rapide, compatible tous périphériques</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>NF525 certifié, mises à jour réglementaires incluses</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Back-office complet intégré : stats, stocks, fidélité, export</div>
+  </div>
+
+  <div class="cta-row">
+    <button class="btn btn-pri" data-sheet aria-label="Demander une démo CashMag">Demander une démo<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
+  </div>
+</section>
+
+<!-- S2 : TRUST BAR MARQUEE -->
+<ul class="sr-only">
+  <li>Logiciel Android rapide</li>
+  <li>Certifié NF525</li>
+  <li>Back-office inclus</li>
+  <li>Support DCB moins de 4h</li>
+</ul>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">android</span>Logiciel Android</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Certifié NF525</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">dashboard</span>Back-office inclus</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">speed</span>Support DCB &lt;4h</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">android</span>Logiciel Android</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified_user</span>Certifié NF525</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">dashboard</span>Back-office inclus</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">speed</span>Support DCB &lt;4h</div>
+  </div>
+</div>
+
+<!-- S3 : POURQUOI DCB × CASHMAG -->
+<section class="sec s1">
+  <p class="eyebrow">Le partenariat</p>
+  <h2>Pourquoi choisir DCB pour <em>installer et suivre votre CashMag</em></h2>
+  <div class="pain">
+    <div class="row">
+      <div class="n">01</div>
+      <div>
+        <h3>Nous nous déplaçons chez vous</h3>
+        <p>CashMag est un éditeur national. DCB travaille sur son territoire (69, 71, 01, 42) : suivi plus proche, réponse plus rapide, et on se déplace chez vous.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <div>
+        <h3>Nous connaissons votre métier</h3>
+        <p>CashMag boulangerie, restaurant, salon : on configure différemment selon l'activité. Ce paramétrage prend du temps et de l'expérience.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <div>
+        <h3>Nous restons disponibles</h3>
+        <p>Un numéro direct, votre technicien attitré. 7j/7, télémaintenance en moins de 20 min. Sur site en moins de 4h si besoin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 : FEATURES (Encaissement + Back-office) -->
+<section class="sec">
+  <p class="eyebrow">Le logiciel</p>
+  <h2>CashMag en <em>situation réelle</em>.</h2>
+  <div class="cm-feats" style="margin-top:14px">
+    <div style="font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#94A3B8;padding:10px 0 6px;border-bottom:1px solid var(--line);margin-bottom:4px">Encaissement</div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">touch_app</span>
+      </div>
+      <div>
+        <h3>Prise en main immédiate</h3>
+        <p>Interface Android intuitive. Vos équipes encaissent le jour de l'installation, sans formation longue.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">cloud_sync</span>
+      </div>
+      <div>
+        <h3>Hybride local et cloud</h3>
+        <p>L'encaissement continue en cas de coupure. Les données se synchronisent au retour.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">credit_card</span>
+      </div>
+      <div>
+        <h3>Tous les paiements</h3>
+        <p>CB, espèces, chèques, tickets restaurant, paiement mixte. Liaison TPE automatique.</p>
+      </div>
+    </div>
+    <div style="font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#94A3B8;padding:14px 0 6px;border-bottom:1px solid var(--line);margin-bottom:4px">Back-office</div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">monitoring</span>
+      </div>
+      <div>
+        <h3>Statistiques en temps réel</h3>
+        <p>CA, panier moyen, top produits. Consultable depuis n'importe quel écran.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">summarize</span>
+      </div>
+      <div>
+        <h3>Clôture et compta</h3>
+        <p>Rapport Z automatique, archivage NF525, export comptable.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic">
+        <span class="material-symbols-outlined ms-fill">edit_note</span>
+      </div>
+      <div>
+        <h3>Pilotage à distance</h3>
+        <p>Modifiez prix, articles et promotions depuis n'importe où, sans être derrière la caisse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 : NF525 -->
+<section class="sec s1">
+  <p class="eyebrow" style="color:var(--accent)">Conformité légale</p>
+  <h2>NF525 certifié dès la <em>conception</em>.</h2>
+  <p style="color:var(--mute);font-size:13.5px;line-height:1.55;margin:8px 0 18px">La loi impose un logiciel conforme aux critères ISCA (article 286 du CGI). Deux preuves au choix : un certificat NF525 délivré par un organisme accrédité comme <a href="https://certification.afnor.org/" target="_blank" rel="noopener" style="color:#0B3D91;font-weight:600">l'AFNOR</a>, ou une attestation de l'éditeur. CashMag va plus loin : certifié NF525 dès sa conception.</p>
+  <div class="nf-pillars-a" style="margin-top:14px">
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">lock</span></div>
+      <div>
+        <span class="num">Pilier 01</span>
+        <h3>Données inaltérables</h3>
+        <p>Aucune transaction ne peut être supprimée après validation. Chaque opération est chaînée pour prévenir toute fraude.</p>
+      </div>
+    </div>
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">archive</span></div>
+      <div>
+        <span class="num">Pilier 02</span>
+        <h3>Archivage conforme</h3>
+        <p>Données conservées selon les règles fiscales. Mises à jour réglementaires incluses dans la licence.</p>
+      </div>
+    </div>
+    <div class="nf-p-a">
+      <div class="ic"><span class="material-symbols-outlined fill ms-fill">verified</span></div>
+      <div>
+        <span class="num">Pilier 03</span>
+        <h3>Attestation disponible</h3>
+        <p>Accessible depuis le menu CashMag, imprimable, envoyable. DCB vous la remet le jour de l'installation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nf-editorial-a">
+    <span class="filet" aria-hidden="true"></span>
+    <div class="lab">Amende</div>
+    <div class="amt">7 500 €</div>
+    <div class="sub">par caisse non conforme</div>
+    <p class="desc">Votre attestation de conformité NF525 est <strong>accessible directement depuis le menu CashMag</strong>, imprimable et envoyable à tout moment. DCB peut auditer votre installation gratuitement.</p>
+  </div>
+</section>
+
+<!-- S6 : TÉMOIGNAGES -->
+<section class="sec">
+  <p class="eyebrow">Ils nous font confiance</p>
+  <h2>Ce que disent <em>nos clients</em>.</h2>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Nous avons fait appel à dcb, le service et la réactivité au top. C'était assez urgent et ils ont su répondre à notre demande. Qualité prix rien à redire et très facile d'utilisation. On recommande à 100%"</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">AL</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Antoine Lacroix</div>
+          <div style="font-size:11.5px;color:var(--mute)">Maison Lacroix, boucherie · Avis Google</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
+      <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:16px;color:var(--accent)">star</span>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Merci à DCB Technologies pour l'installation de ma caisse enregistreuse dans ma boulangerie-pâtisserie, juste avant le rush de la saison d'été ! Le système est hyper simple à prendre en main. Service client au top en plus de ça, je recommande !!"</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:99px;background:linear-gradient(135deg,#0B3D91,#1E5BD9);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff">CS</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Camille Simon</div>
+          <div style="font-size:11.5px;color:var(--mute)">Boulangerie-pâtisserie · Avis Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S8 : FAQ -->
+<section class="sec s1">
+  <p class="eyebrow">Besoin de précisions ?</p>
+  <h2>Questions <em>fréquentes</em>.</h2>
+  <div class="faq">
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Qu'est-ce que DCB apporte en plus du logiciel CashMag ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">CashMag est un très bon logiciel. Ce que DCB ajoute autour, c'est l'installation sur site, le paramétrage pour votre métier, la formation de vos équipes et notre expertise IT quand un périphérique ou un réseau fait des siennes. Vous gardez un interlocuteur identifié, la même personne qui connaît votre installation, joignable 7j/7 en télémaintenance. Si besoin, un technicien est chez vous en moins de 4h.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Ma caisse actuelle est-elle conforme NF525 ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Ce que la loi exige, c'est un logiciel conforme aux critères ISCA (article 286 du CGI). Vous devez pouvoir le prouver en cas de contrôle, soit par un certificat NF525, soit par une attestation de votre éditeur. Sans preuve, l'amende est de 7 500 € par système de caisse non conforme. Si vous voulez y voir clair, on fait <a href="../../blog/norme-nf525-caisse-enregistreuse/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">le point sur la conformité NF525 en 2026</a>, et on peut auditer votre installation gratuitement.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>CashMag fonctionne-t-il si internet tombe en panne ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Oui. CashMag stocke les ventes en local et se synchronise avec le cloud quand la connexion revient. Si votre box lâche en plein rush, vous continuez à encaisser, imprimer vos tickets et rendre la monnaie, et tout remonte au retour du réseau. Une limite à connaître : CashMag a besoin de se reconnecter au moins une fois toutes les 72 heures pour synchroniser vos données et rester conforme. Rien n'est perdu.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Comment se passe l'installation concrètement ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Un technicien DCB vient dans votre établissement. Il installe le matériel, configure CashMag selon votre activité et forme vos équipes sur place. Comptez une demi-journée. Vous ouvrez votre caisse, tout est prêt. Si vous recrutez ensuite, on revient pour une session de rappel.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Et si j'ai un problème après l'installation ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Vous appelez votre technicien DCB directement. Pas une hotline, pas un chatbot. La télémaintenance résout 95% des soucis en moins de 20 minutes. Si on doit se déplacer, un technicien est chez vous en moins de 4h, que vous soyez dans le 71, le 69, le 01 ou le 42.</div>
+    </details>
+  </div>
+</section>
+
+<!-- S9 : CTA FINAL -->
+<!-- CTA FINAL v3 : Le Bord Tranché (signature partenaire CashMag, accent herite de body via var(--accent)) -->
+<section class="m-cta-final" style="--accent:#015109;--accent-dark:#5E9028;--accent-shadow:rgba(1,81,9,0.40)" aria-labelledby="cta-final-h">
+  <span class="topbar" aria-hidden="true"></span>
+  <h3 id="cta-final-h">Demandez une démo CashMag chez vous, sans engagement.</h3>
+  <p>Un technicien DCB se déplace pour vous montrer CashMag en conditions réelles.</p>
+  <button class="btn btn-pri" data-sheet>Demander une démo gratuite<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+  <span class="dpx-divider">ou appelez-nous</span>
+  <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+  <p class="m-updated">Mis à jour le <time datetime="2026-06-29">29 juin 2026</time></p>
+  <span class="bottomark" aria-hidden="true"></span>
+</section>
+
+</main><!-- /m-main -->
+
+<!-- FRAME MOBILE : injecté par scripts.js -->
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+<script src="../../js/scripts.js?v=39"></script>
+</body>
+</html>
+

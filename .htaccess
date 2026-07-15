@@ -1,0 +1,87 @@
+# =====================================================================
+# DCB TECHNOLOGIES — Configuration Apache (.htaccess)
+# Maintenu par : audit SEO Phase 0 (cf. AUDIT_SEO.md)
+# =====================================================================
+
+# ── 1. RewriteEngine ─────────────────────────────────────────────────
+RewriteEngine On
+
+# ── 2. Redirection mobile vers version parallèle (m/) ────────────────
+# Déclenché par : UA mobile + hôte principal + pas de cookie forceDesktop
+# Périmètre Phase 1 : hub caisse uniquement
+RewriteCond %{HTTP_USER_AGENT} (Android|iPhone|iPod|Mobile|BlackBerry|webOS) [NC]
+RewriteCond %{HTTP_HOST} ^dcb-technologies\.fr$ [NC]
+RewriteCond %{HTTP_COOKIE} !forceDesktop=1
+RewriteCond %{REQUEST_URI} ^/(caisse-enregistreuse)(/.*)?$
+RewriteRule ^(.*)$ https://m.dcb-technologies.fr/$1 [R=302,L]
+
+# ── 3. HTTPS forcé ───────────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── 4. www → apex (canonical : dcb-technologies.fr sans www) ────────
+RewriteCond %{HTTP_HOST} ^www\.dcb-technologies\.fr$ [NC]
+RewriteRule ^(.*)$ https://dcb-technologies.fr/$1 [L,R=301]
+
+# ── 5. Migration slug /service-it-360/ → /maintenance-informatique/ ─
+# Ordre IMPORTANT : sous-pages d'abord, hub en dernier
+Redirect 301 /service-it-360/maintenance-depannage/ /maintenance-informatique/maintenance-depannage/
+Redirect 301 /service-it-360/cloud-securite/ /maintenance-informatique/cloud-securite/
+Redirect 301 /service-it-360/location-vente-installation/ /maintenance-informatique/location-vente-installation/
+Redirect 301 /service-it-360/outils-collaboratifs/ /maintenance-informatique/outils-collaboratifs/
+Redirect 301 /service-it-360/ /maintenance-informatique/
+
+# ── 5. Cache navigateur (Expires) ────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                              "access plus 1 month"
+  ExpiresByType text/html                     "access plus 0 seconds"
+  ExpiresByType text/css                      "access plus 1 year"
+  ExpiresByType application/javascript        "access plus 1 month"
+  ExpiresByType image/webp                    "access plus 1 year"
+  ExpiresByType image/jpeg                    "access plus 1 year"
+  ExpiresByType image/png                     "access plus 1 year"
+  ExpiresByType image/svg+xml                 "access plus 1 year"
+  ExpiresByType font/woff                     "access plus 1 year"
+  ExpiresByType font/woff2                    "access plus 1 year"
+  ExpiresByType application/font-woff         "access plus 1 year"
+  ExpiresByType application/font-woff2        "access plus 1 year"
+</IfModule>
+
+# ── 6. Compression (Brotli + gzip fallback) ──────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript text/xml text/plain
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/rss+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/x-font-ttf
+</IfModule>
+
+# ── 7. Headers de sécurité ───────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # HSTS : 1 an, sous-domaines inclus. À activer SEULEMENT après vérif HTTPS OK partout.
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ── 8. Bloquer fichiers sensibles ────────────────────────────────────
+<Files "index.backup.html">
+  Require all denied
+</Files>
+
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+<FilesMatch "\.(md|log|sh|ps1|config\.js)$">
+  Require all denied
+</FilesMatch>
+
+# ── 9. Documents par défaut ──────────────────────────────────────────
+DirectoryIndex index.html index.htm
+
+# ── 10. Pages d'erreur (à créer en Phase 1) ──────────────────────────
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html

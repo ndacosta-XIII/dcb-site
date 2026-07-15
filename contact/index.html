@@ -1,0 +1,903 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Contact DCB Technologies · caisse, IT et web en Saône-et-Loire et Rhône</title>
+<meta name="description" content="Un projet de caisse, d'informatique ou de site ? Pas de standard, pas de démarchage. Nathanaël ou Clément vous rappellent sous 2h. Basés à Dardilly et Paray-le-Monial.">
+<link rel="canonical" href="https://dcb-technologies.fr/contact/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<meta property="og:title" content="Contact DCB Technologies · caisse, IT et web en Saône-et-Loire et Rhône">
+<meta property="og:description" content="Un projet de caisse, d'informatique ou de site ? Pas de standard, pas de démarchage. Nathanaël ou Clément vous rappellent sous 2h. Basés à Dardilly et Paray-le-Monial.">
+<meta property="og:url" content="https://dcb-technologies.fr/contact/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DCB Technologies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact DCB Technologies · caisse, IT et web en Saône-et-Loire et Rhône">
+<meta name="twitter:description" content="Un projet de caisse, d'informatique ou de site ? Pas de standard, pas de démarchage. Nathanaël ou Clément vous rappellent sous 2h. Basés à Dardilly et Paray-le-Monial.">
+<meta name="twitter:image" content="https://dcb-technologies.fr/assets/og-homepage.jpg">
+<link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css?v=18">
+<link rel="stylesheet" href="../css/tailwind.min.css?v=22">
+<style>
+  /* === PAGE CONTACT : styles isolés, préfixe c- ===
+     Reprend strictement les tokens du :root de style.css.
+     Aucune dépendance Tailwind sauf pt-[76px] sur <main>. */
+
+  .contact-page { background-color: #F8F9FB; }
+
+  .contact-page .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* Filet éditorial signature DCB (bleu/orange) */
+  .editorial-rule {
+    height: 4px;
+    background: linear-gradient(90deg, #0B3D91 0%, #0B3D91 35%, #F57C00 35%, #F57C00 50%, transparent 50%);
+  }
+
+  /* Form card */
+  @keyframes form-card-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .form-card {
+    animation: form-card-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    background: #FFFFFF;
+    border: 1px solid #E5E9F0;
+    box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 24px 48px -24px rgba(11,61,145,0.18);
+  }
+
+  /* Inputs : fond gris pour contraster avec la card blanche */
+  .form-input-underline {
+    background: #F3F4F6;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    color: #0B3D91;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+  }
+  .form-input-underline:hover {
+    background: #EDEEF1;
+  }
+  .form-input-underline:focus {
+    background: #FFFFFF;
+    border-color: #0B3D91;
+    box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
+  }
+  .form-input-underline.is-error { border-color: #EF4444 !important; background: #FEF2F2 !important; }
+  .form-input-underline::placeholder { color: #94A3B8; }
+  textarea.form-input-underline {
+    background: #F3F4F6;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 14px 16px;
+    resize: vertical;
+    min-height: 160px;
+  }
+  textarea.form-input-underline:hover {
+    background: #EDEEF1;
+  }
+  textarea.form-input-underline:focus {
+    background: #FFFFFF;
+    border-color: #0B3D91;
+    box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
+  }
+
+  /* Photos polaroid */
+  .polaroid {
+    background: #FFFFFF;
+    padding: 10px 10px 14px 10px;
+    box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 12px 32px -12px rgba(11,61,145,0.18);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+  }
+  .polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; }
+  .polaroid-1 { transform: rotate(-1deg); }
+  .polaroid-2 { transform: rotate(1deg); margin-top: 1.5rem; }
+  .polaroid-1:hover { transform: translateY(-3px) rotate(-1.5deg); box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 20px 40px -16px rgba(11,61,145,0.25); }
+  .polaroid-2:hover { transform: translateY(-3px) rotate(0.3deg); box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 20px 40px -16px rgba(11,61,145,0.25); }
+
+  /* Numéro téléphone XXL */
+  .phone-display {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #0B3D91;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .phone-display:hover { color: #F57C00; }
+
+  /* Bouton CTA orange */
+  .cta-btn {
+    background: #F57C00;
+    color: #FFFFFF;
+    transition: background-color 0.2s, transform 0.15s;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+  }
+  .cta-btn:hover { background: #D96A00; }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+  .cta-btn.is-success { background: #16A34A !important; }
+
+  /* Utilitaires c-* autonomes */
+  .c-eyebrow-sm { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; }
+  .c-eyebrow-xs { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; }
+
+  .c-h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #0B3D91;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  @media (min-width: 1024px) { .c-h1 { font-size: 3.25rem; } }
+  .c-h1-italic { font-style: italic; font-weight: 400; color: #F57C00; }
+
+  .c-h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0B3D91;
+    line-height: 1.2;
+    margin: 0;
+  }
+  @media (min-width: 1024px) { .c-h2 { font-size: 1.875rem; } }
+
+  .c-lede {
+    color: #475569;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 32rem;
+    margin-top: 1.5rem;
+  }
+
+  .c-section { padding: 2.5rem 1.5rem; }
+  @media (min-width: 1024px) { .c-section { padding: 3.5rem 1.5rem; } }
+  .c-container { max-width: 80rem; margin: 0 auto; }
+
+  .c-grid-12 { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+  @media (min-width: 1024px) {
+    .c-grid-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4rem; }
+    .c-col-5 { grid-column: span 5 / span 5; }
+    .c-col-7 { grid-column: span 7 / span 7; }
+  }
+
+  .c-stack-lg > * + * { margin-top: 2.5rem; }
+
+  .c-polaroid-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 28rem;
+  }
+  .c-polaroid-name { font-family: 'Sora', sans-serif; font-weight: 700; color: #0B3D91; font-size: 0.875rem; margin: 0; }
+  .c-polaroid-role { color: #94A3B8; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; margin: 2px 0 0 0; }
+  .c-polaroid-cap { padding-top: 0.75rem; text-align: center; }
+
+  .c-tel-block {
+    border-left: 2px solid #F57C00;
+    padding-left: 1.5rem;
+  }
+  .c-tel-block > * + * { margin-top: 1rem; }
+  .c-tel-eyebrow { color: #F57C00; }
+  .c-tel-mail {
+    color: #0B3D91;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    word-break: break-all;
+    display: block;
+    transition: color 0.2s;
+  }
+  .c-tel-mail:hover { color: #F57C00; }
+  .c-tel-hours {
+    color: #94A3B8;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .c-form-card-wrap { padding: 2rem; border-radius: 1rem; }
+  @media (min-width: 1024px) { .c-form-card-wrap { padding: 3rem; border-radius: 1rem; } }
+
+  .c-form-header { margin-bottom: 2.5rem; }
+  .c-form-header .c-eyebrow-sm { color: #F57C00; display: block; margin-bottom: 0.75rem; }
+
+  .c-form-grid-2 { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+  @media (min-width: 768px) { .c-form-grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  .c-form-stack > * + * { margin-top: 1.75rem; }
+
+  .c-label-stack { display: block; }
+  .c-label-stack > label { display: block; color: #64748B; margin-bottom: 0.5rem; }
+
+  .c-form-textarea-wrap { padding-top: 0.75rem; }
+
+  .c-cta-block { padding-top: 1rem; }
+  .c-cta-feedback { min-height: 1.5rem; margin-top: 1rem; text-align: center; font-size: 0.75rem; }
+  .c-cta-feedback.is-error { color: #EF4444; font-weight: 600; }
+  .c-cta-feedback.is-success { color: #16A34A; font-weight: 600; }
+  .c-cta-disclaimer { text-align: center; font-size: 0.75rem; color: #94A3B8; margin-top: 0.25rem; }
+
+  .c-arrow-icon { font-size: 1.25rem; }
+
+  .c-rule-wrap { max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem 0 1.5rem; }
+  .c-rule-eyebrow { color: #0B3D91; margin-top: 0.75rem; display: block; }
+
+  .cf-hint { font-size: 0.75rem; color: #EF4444; margin: 4px 0 0 0; }
+  .cf-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  .cf-hidden { display: none !important; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .form-card, .polaroid { animation: none !important; transform: none !important; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (.m-shell) : visible <=640px uniquement
+  ═══════════════════════════════════════════════════════════════ */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+
+    /* Filet éditorial signature DCB (top page) */
+    [data-metier="contact"] .c-rule {
+      height: 4px; margin: 78px 18px 0;
+      background: linear-gradient(90deg, #0B3D91 0%, #0B3D91 35%, #F57C00 35%, #F57C00 50%, transparent 50%);
+    }
+
+    /* S1 Header humanisé : h1 éditorial + polaroids rectangles rotated */
+    [data-metier="contact"] .c-h1-m {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 30px;
+      line-height: 1.05; letter-spacing: -0.02em; color: #0B3D91;
+      margin: 6px 0 14px;
+    }
+    [data-metier="contact"] .c-h1-m em { font-style: italic; font-weight: 400; color: #F57C00; }
+    [data-metier="contact"] .c-lede-m {
+      font-size: 14px; line-height: 1.65; color: #475569; margin: 0 0 28px;
+    }
+    [data-metier="contact"] .c-polaroid-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+      margin: 0 auto; max-width: 320px;
+    }
+    [data-metier="contact"] .c-polaroid {
+      background: #FFFFFF;
+      padding: 8px 8px 12px;
+      margin: 0;
+      box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 14px 32px -14px rgba(11,61,145,0.22);
+    }
+    [data-metier="contact"] .c-polaroid-1 { transform: rotate(-1.5deg); }
+    [data-metier="contact"] .c-polaroid-2 { transform: rotate(1.2deg); margin-top: 18px; }
+    [data-metier="contact"] .c-polaroid img {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
+      display: block; background: #E8EFF8;
+    }
+    [data-metier="contact"] .c-polaroid figcaption { padding-top: 10px; text-align: center; margin: 0; }
+    [data-metier="contact"] .c-polaroid-name {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 12.5px;
+      color: #0B3D91; margin: 0; line-height: 1.2;
+    }
+    [data-metier="contact"] .c-polaroid-role {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #94A3B8; margin: 4px 0 0; line-height: 1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-metier="contact"] .c-polaroid-1,
+      [data-metier="contact"] .c-polaroid-2 { transform: none !important; }
+    }
+
+    /* S2 Téléphone éditorial (sans card, sans icone, sans border-left) */
+    [data-metier="contact"] .c-tel-num {
+      display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px;
+      color: #0B3D91; line-height: 1; letter-spacing: -0.02em; text-decoration: none;
+      margin: 6px 0 14px;
+    }
+    [data-metier="contact"] .c-tel-num:active { color: #F57C00; }
+    [data-metier="contact"] .c-tel-mail {
+      display: block; font-size: 14px; color: #0B3D91; text-decoration: none;
+      font-weight: 500; margin: 0 0 10px; word-break: break-all;
+    }
+    [data-metier="contact"] .c-tel-hours {
+      font-size: 11px; color: #94A3B8; margin: 0;
+    }
+
+    /* S3 Formulaire */
+    [data-metier="contact"] .c-h2-m {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px;
+      color: #0B3D91; line-height: 1.2; margin: 6px 0 18px;
+    }
+    [data-metier="contact"] .c-form-card {
+      background: #F8F9FA; border-radius: 16px; padding: 20px;
+      border: 1px solid #E5E9F0;
+      box-shadow: 0 1px 0 rgba(11,61,145,0.04), 0 18px 36px -16px rgba(11,61,145,0.14);
+    }
+    [data-metier="contact"] .c-fld { margin-bottom: 18px; }
+    [data-metier="contact"] .c-fld:last-of-type { margin-bottom: 22px; }
+    [data-metier="contact"] .c-fld label {
+      display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #64748B; margin-bottom: 8px;
+    }
+    [data-metier="contact"] .c-fld label .opt {
+      text-transform: none; letter-spacing: 0; font-weight: 500;
+      color: #94A3B8; font-size: 10px; margin-left: 4px;
+    }
+    [data-metier="contact"] .c-fld input,
+    [data-metier="contact"] .c-fld textarea {
+      width: 100%; font-family: inherit; font-size: 16px;
+      color: #0B3D91; background: #FFFFFF;
+      border: 1.5px solid #E5E9F0; border-radius: 10px;
+      padding: 12px 14px;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    [data-metier="contact"] .c-fld input::placeholder,
+    [data-metier="contact"] .c-fld textarea::placeholder { color: #94A3B8; }
+    [data-metier="contact"] .c-fld input:focus,
+    [data-metier="contact"] .c-fld textarea:focus {
+      border-color: #0B3D91;
+      box-shadow: 0 4px 14px -4px rgba(11,61,145,0.12);
+    }
+    [data-metier="contact"] .c-fld textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    [data-metier="contact"] .c-fld input.is-error,
+    [data-metier="contact"] .c-fld textarea.is-error {
+      border-color: #EF4444 !important;
+      border-bottom-color: #EF4444 !important;
+    }
+    [data-metier="contact"] .c-fld .hint {
+      font-size: 11px; color: #EF4444; margin: 6px 0 0;
+    }
+    [data-metier="contact"] .c-submit {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #F57C00; color: #FFFFFF; font-weight: 700; font-size: 15px;
+      font-family: 'Inter', sans-serif; border: none; border-radius: 14px;
+      padding: 16px 18px; min-height: 52px; cursor: pointer;
+      transition: background 0.15s, opacity 0.15s, transform 0.15s;
+    }
+    [data-metier="contact"] .c-submit:active { transform: scale(0.97); }
+    [data-metier="contact"] .c-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    [data-metier="contact"] .c-submit.is-success {
+      background: #16A34A !important;
+    }
+    [data-metier="contact"] .c-spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff;
+      border-radius: 50%; animation: c-spin 0.8s linear infinite;
+    }
+    [data-metier="contact"] .c-hidden { display: none !important; }
+    @keyframes c-spin { to { transform: rotate(360deg); } }
+    [data-metier="contact"] .c-feedback {
+      min-height: 18px; margin: 12px 0 0; font-size: 12px; text-align: center;
+    }
+    [data-metier="contact"] .c-feedback.is-error { color: #EF4444; font-weight: 600; }
+    [data-metier="contact"] .c-feedback.is-success { color: #16A34A; font-weight: 600; }
+    [data-metier="contact"] .c-disclaimer {
+      font-size: 11px; color: #94A3B8; text-align: center; margin: 10px 0 0; line-height: 1.5;
+    }
+
+    /* S4 Footer info */
+    [data-metier="contact"] .c-info-text {
+      font-size: 11px; color: #94A3B8; margin: 0 0 6px; line-height: 1.5; text-align: center;
+    }
+  }
+</style>
+<link rel="stylesheet" href="../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://dcb-technologies.fr/contact/#contactpage",
+      "url": "https://dcb-technologies.fr/contact/",
+      "name": "Contact DCB Technologies",
+      "isPartOf": {"@id": "https://dcb-technologies.fr/#website"},
+      "mainEntity": {"@id": "https://dcb-technologies.fr/contact/#localbusiness"}
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://dcb-technologies.fr/contact/#localbusiness",
+      "name": "DCB Technologies",
+      "url": "https://dcb-technologies.fr/",
+      "telephone": "+33482530510",
+      "email": "contact@dcb-technologies.fr",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Dardilly",
+          "postalCode": "69570",
+          "addressRegion": "Rhône",
+          "addressCountry": "FR"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Paray-le-Monial",
+          "postalCode": "71600",
+          "addressRegion": "Saône-et-Loire",
+          "addressCountry": "FR"
+        }
+      ],
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Saône-et-Loire"},
+        {"@type": "AdministrativeArea", "name": "Rhône"},
+        {"@type": "AdministrativeArea", "name": "Ain"},
+        {"@type": "AdministrativeArea", "name": "Loire"}
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dcb-technologies.fr/contact/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://dcb-technologies.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://dcb-technologies.fr/contact/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="d-shell">
+<!-- NAV STANDARD INJECTÉE PAR scripts.js -->
+<div id="dcb-nav"></div>
+
+<main class="contact-page pt-[76px]">
+
+  <!-- Filet éditorial haut + eyebrow -->
+  <div class="c-rule-wrap">
+    <div class="editorial-rule"></div>
+    <p class="c-eyebrow-sm c-rule-eyebrow">Contact</p>
+  </div>
+
+  <section class="c-container c-section">
+    <div class="c-grid-12">
+
+      <!-- COLONNE GAUCHE 5/12 : humanisation -->
+      <div class="c-col-5 c-stack-lg">
+
+        <!-- Titre éditorial -->
+        <div>
+          <h1 class="c-h1">
+            Parlons<br>
+            <span class="c-h1-italic">directement.</span>
+          </h1>
+          <p class="c-lede">
+            Nathanaël ou Clément vous rappellent en moins de 2h. Pas de standard, pas de CRM, pas de démarchage.
+          </p>
+        </div>
+
+        <!-- Photos polaroid des fondateurs -->
+        <div class="c-polaroid-grid">
+          <figure class="polaroid polaroid-1">
+            <img alt="Nathanaël Da Costa, Co-fondateur de DCB Technologies"
+                 src="../assets/ndc-nathanael-dacosta.jpg"
+                 loading="eager" width="300" height="375">
+            <figcaption class="c-polaroid-cap">
+              <p class="c-polaroid-name">Nathanaël</p>
+              <p class="c-polaroid-role">Co-fondateur</p>
+            </figcaption>
+          </figure>
+          <figure class="polaroid polaroid-2">
+            <img alt="Clément Boissié, Co-fondateur de DCB Technologies"
+                 src="../assets/cb-clement-boissie.jpg"
+                 loading="eager" width="300" height="375">
+            <figcaption class="c-polaroid-cap">
+              <p class="c-polaroid-name">Clément</p>
+              <p class="c-polaroid-role">Co-fondateur</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Bloc téléphone -->
+        <div class="c-tel-block">
+          <p class="c-eyebrow-sm c-tel-eyebrow">Préférez le téléphone</p>
+          <a href="tel:0482530510" class="phone-display">04 82 53 05 10</a>
+          <a href="mailto:contact@dcb-technologies.fr" class="c-tel-mail">contact@dcb-technologies.fr</a>
+          <p class="c-tel-hours">Lun-Ven 9h-19h</p>
+        </div>
+
+      </div>
+
+      <!-- COLONNE DROITE 7/12 : formulaire -->
+      <div class="c-col-7">
+        <div class="form-card c-form-card-wrap">
+
+          <div class="c-form-header">
+            <p class="c-eyebrow-sm">Votre demande</p>
+            <h2 class="c-h2">Dites-nous en quelques lignes.</h2>
+          </div>
+
+          <form id="contact-form" class="c-form-stack" novalidate>
+            <div class="c-form-grid-2">
+              <div class="c-label-stack">
+                <label for="cf-name" class="c-eyebrow-xs">Nom &amp; Prénom</label>
+                <input id="cf-name" name="name" required
+                       class="form-input-underline"
+                       placeholder="Jean Dupont" type="text" autocomplete="name">
+              </div>
+              <div class="c-label-stack">
+                <label for="cf-email" class="c-eyebrow-xs">Email professionnel</label>
+                <input id="cf-email" name="email" required
+                       class="form-input-underline"
+                       placeholder="jean@entreprise.fr" type="email" autocomplete="email">
+              </div>
+            </div>
+
+            <div class="c-label-stack c-form-textarea-wrap">
+              <label for="cf-message" class="c-eyebrow-xs">De quoi avez-vous besoin ?</label>
+              <textarea id="cf-message" name="message" required
+                        class="form-input-underline" rows="6"
+                        placeholder="Caisse, maintenance IT, site web... dites-nous simplement de quoi vous avez besoin. Si vous préférez, laissez juste votre numéro et on vous rappelle."></textarea>
+            </div>
+
+            <div class="c-cta-block">
+              <button id="cf-submit" type="submit" class="cta-btn">
+                <span class="cf-label">Envoyer ma demande</span>
+                <span class="cf-spinner cf-hidden" aria-hidden="true"></span>
+                <span class="material-symbols-outlined cf-arrow c-arrow-icon">arrow_forward</span>
+              </button>
+              <div id="cf-feedback" role="status" aria-live="polite" class="c-cta-feedback"></div>
+              <p class="c-cta-disclaimer">Réponse personnalisée sous 2h ouvrées · Zéro démarchage</p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER STANDARD INJECTÉ PAR scripts.js -->
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL (visible <=640 px uniquement : .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="contact">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+  <!-- S1 : HEADER HUMANISÉ (.sec white) -->
+  <div class="c-rule" aria-hidden="true"></div>
+  <section class="sec">
+    <p class="eyebrow">Contact</p>
+    <h1 class="c-h1-m">Parlons<br><em>directement.</em></h1>
+    <p class="c-lede-m">Nathanaël ou Clément vous rappellent en moins de 2h. Pas de standard, pas de CRM, pas de démarchage.</p>
+    <div class="c-polaroid-grid">
+      <figure class="c-polaroid c-polaroid-1">
+        <img src="../assets/ndc-nathanael-dacosta.jpg" alt="Nathanaël Da Costa, Co-fondateur DCB Technologies" width="300" height="375" loading="eager"
+             onerror="this.style.display='none'">
+        <figcaption>
+          <p class="c-polaroid-name">Nathanaël</p>
+          <p class="c-polaroid-role">Co-fondateur</p>
+        </figcaption>
+      </figure>
+      <figure class="c-polaroid c-polaroid-2">
+        <img src="../assets/cb-clement-boissie.jpg" alt="Clément Boissié, Co-fondateur DCB Technologies" width="300" height="375" loading="eager"
+             onerror="this.style.display='none'">
+        <figcaption>
+          <p class="c-polaroid-name">Clément</p>
+          <p class="c-polaroid-role">Co-fondateur</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- S2 : QUICK ACTION TÉLÉPHONE (.sec.s1 gradient gris, éditorial sans card) -->
+  <section class="sec s1" aria-labelledby="m-tel-eb">
+    <p class="eyebrow" id="m-tel-eb">Préférez le téléphone</p>
+    <a class="c-tel-num" href="tel:0482530510" aria-label="Appeler DCB Technologies au 04 82 53 05 10">04 82 53 05 10</a>
+    <a class="c-tel-mail" href="mailto:contact@dcb-technologies.fr">contact@dcb-technologies.fr</a>
+    <p class="c-tel-hours">Lun-Ven 9h-19h</p>
+  </section>
+
+  <!-- S3 : FORMULAIRE (.sec white) -->
+  <section class="sec">
+    <p class="eyebrow">Votre demande</p>
+    <h2 class="c-h2-m">Dites-nous en quelques lignes.</h2>
+    <div class="c-form-card">
+      <form id="m-contact-form" novalidate>
+
+        <div class="c-fld">
+          <label for="m-cf-name">Nom &amp; Prénom</label>
+          <input id="m-cf-name" name="name" type="text" required
+                 placeholder="Jean Dupont" autocomplete="name">
+        </div>
+
+        <div class="c-fld">
+          <label for="m-cf-email">Email</label>
+          <input id="m-cf-email" name="email" type="email" required
+                 placeholder="jean@entreprise.fr" inputmode="email" autocomplete="email">
+        </div>
+
+        <div class="c-fld">
+          <label for="m-cf-tel">Téléphone <span class="opt">(optionnel)</span></label>
+          <input id="m-cf-tel" name="phone" type="tel"
+                 placeholder="06 12 34 56 78" inputmode="tel" autocomplete="tel">
+        </div>
+
+        <div class="c-fld">
+          <label for="m-cf-message">De quoi avez-vous besoin ?</label>
+          <textarea id="m-cf-message" name="message" required rows="4"
+                    placeholder="Caisse, maintenance IT, site web... dites-nous votre besoin en quelques mots."></textarea>
+        </div>
+
+        <button id="m-cf-submit" type="submit" class="c-submit">
+          <span class="cf-label">Envoyer ma demande</span>
+          <span class="c-spinner c-hidden" aria-hidden="true"></span>
+          <span class="material-symbols-outlined c-arrow" aria-hidden="true">arrow_forward</span>
+        </button>
+        <div id="m-cf-feedback" role="status" aria-live="polite" class="c-feedback"></div>
+        <p class="c-disclaimer">Réponse personnalisée sous 2h ouvrées · Zéro démarchage</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- S4 : FOOTER INFO (.sec.s1 gradient gris) -->
+  <section class="sec s1">
+    <p class="c-info-text">DCB Technologies · Paray-le-Monial (71) · Intervention 71 / 69 / 01 / 42</p>
+    <p class="c-info-text">Mis à jour le <time datetime="2026-04-23">23 avril 2026</time></p>
+  </section>
+
+</main><!-- /m-main -->
+
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<script src="../js/scripts.js?v=39"></script>
+
+<script>
+(function() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var submit   = document.getElementById('cf-submit');
+  var label    = submit.querySelector('.cf-label');
+  var spinner  = submit.querySelector('.cf-spinner');
+  var arrow    = submit.querySelector('.cf-arrow');
+  var feedback = document.getElementById('cf-feedback');
+
+  function setError(input, msg) {
+    input.classList.add('is-error');
+    var hint = input.parentElement.querySelector('.cf-hint');
+    if (!hint) {
+      hint = document.createElement('p');
+      hint.className = 'cf-hint';
+      input.parentElement.appendChild(hint);
+    }
+    hint.textContent = msg;
+  }
+  function clearError(input) {
+    input.classList.remove('is-error');
+    var hint = input.parentElement.querySelector('.cf-hint');
+    if (hint) hint.remove();
+  }
+  function validate(input) {
+    var v = input.value.trim();
+    if (input.hasAttribute('required') && !v) {
+      setError(input, 'Ce champ est requis.');
+      return false;
+    }
+    if (input.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+      setError(input, 'Email invalide.');
+      return false;
+    }
+    if (input.tagName === 'TEXTAREA' && v.length < 10) {
+      setError(input, "Encore quelques mots pour qu'on puisse bien vous répondre.");
+      return false;
+    }
+    clearError(input);
+    return true;
+  }
+
+  /* Validation on blur + correction live */
+  form.querySelectorAll('input, textarea').forEach(function(input) {
+    input.addEventListener('blur', function() { validate(input); });
+    input.addEventListener('input', function() {
+      if (input.classList.contains('is-error')) validate(input);
+    });
+  });
+
+  /* Submit handler */
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = form.querySelectorAll('input[required], textarea[required]');
+    var allOk = true;
+    inputs.forEach(function(i) { if (!validate(i)) allOk = false; });
+    if (!allOk) {
+      feedback.className = 'c-cta-feedback is-error';
+      feedback.textContent = 'Merci de compléter les champs requis.';
+      var firstErr = form.querySelector('.is-error');
+      if (firstErr) firstErr.focus();
+      return;
+    }
+
+    /* Loading state */
+    submit.disabled = true;
+    label.textContent = 'Envoi en cours';
+    spinner.classList.remove('cf-hidden');
+    arrow.classList.add('cf-hidden');
+    feedback.className = 'c-cta-feedback';
+    feedback.textContent = '';
+
+    /* TODO : remplacer le setTimeout par un vrai POST vers l'endpoint
+       (Formspree, API custom, etc.).
+       fetch('/api/contact', { method: 'POST', ... }) */
+    setTimeout(function() {
+      spinner.classList.add('cf-hidden');
+      arrow.classList.remove('cf-hidden');
+      label.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1; margin-right: 4px;">check_circle</span>Message envoyé';
+      submit.classList.add('is-success');
+      feedback.className = 'c-cta-feedback is-success';
+      feedback.textContent = 'Merci. Nathanaël ou Clément vous recontacte dans les 2h ouvrées.';
+      form.reset();
+
+      /* Reset après 6s */
+      setTimeout(function() {
+        submit.disabled = false;
+        label.textContent = 'Envoyer ma demande';
+        submit.classList.remove('is-success');
+        feedback.textContent = '';
+        feedback.className = 'c-cta-feedback';
+      }, 6000);
+    }, 1200);
+  });
+})();
+</script>
+
+<script>
+/* Validation form mobile : reproduction logique desktop, IDs préfixés m- */
+(function() {
+  var form = document.getElementById('m-contact-form');
+  if (!form) return;
+  var submit = document.getElementById('m-cf-submit');
+  var label = submit.querySelector('.cf-label');
+  var spinner = submit.querySelector('.c-spinner');
+  var arrow = submit.querySelector('.c-arrow');
+  var feedback = document.getElementById('m-cf-feedback');
+
+  function setError(input, msg) {
+    input.classList.add('is-error');
+    var hint = input.parentElement.querySelector('.hint');
+    if (!hint) {
+      hint = document.createElement('p');
+      hint.className = 'hint';
+      input.parentElement.appendChild(hint);
+    }
+    hint.textContent = msg;
+  }
+  function clearError(input) {
+    input.classList.remove('is-error');
+    var hint = input.parentElement.querySelector('.hint');
+    if (hint) hint.remove();
+  }
+  function validate(input) {
+    var v = input.value.trim();
+    if (input.hasAttribute('required') && !v) {
+      setError(input, 'Ce champ est requis.');
+      return false;
+    }
+    if (input.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+      setError(input, 'Email invalide.');
+      return false;
+    }
+    if (input.tagName === 'TEXTAREA' && input.hasAttribute('required') && v.length < 10) {
+      setError(input, "Encore quelques mots pour qu'on puisse bien vous répondre.");
+      return false;
+    }
+    clearError(input);
+    return true;
+  }
+
+  form.querySelectorAll('input[required], textarea[required], input[type="email"]').forEach(function(input) {
+    input.addEventListener('blur', function() { validate(input); });
+    input.addEventListener('input', function() {
+      if (input.classList.contains('is-error')) validate(input);
+    });
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = form.querySelectorAll('input[required], textarea[required], input[type="email"]');
+    var allOk = true;
+    inputs.forEach(function(i) { if (!validate(i)) allOk = false; });
+    if (!allOk) {
+      feedback.className = 'c-feedback is-error';
+      feedback.textContent = 'Merci de compléter les champs requis.';
+      var firstErr = form.querySelector('.is-error');
+      if (firstErr) firstErr.focus();
+      return;
+    }
+    submit.disabled = true;
+    label.textContent = 'Envoi en cours';
+    spinner.classList.remove('c-hidden');
+    arrow.classList.add('c-hidden');
+    feedback.className = 'c-feedback';
+    feedback.textContent = '';
+    setTimeout(function() {
+      spinner.classList.add('c-hidden');
+      arrow.classList.remove('c-hidden');
+      label.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;margin-right:4px;vertical-align:middle">check_circle</span>Message envoyé';
+      submit.classList.add('is-success');
+      feedback.className = 'c-feedback is-success';
+      feedback.textContent = 'Merci. Nathanaël ou Clément vous recontacte dans les 2h ouvrées.';
+      form.reset();
+      setTimeout(function() {
+        submit.disabled = false;
+        label.textContent = 'Envoyer ma demande';
+        submit.classList.remove('is-success');
+        feedback.textContent = '';
+        feedback.className = 'c-feedback';
+      }, 6000);
+    }, 1200);
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
