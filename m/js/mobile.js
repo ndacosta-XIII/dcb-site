@@ -351,12 +351,12 @@
   var devisForm = document.querySelector('.sheet form');
   if (devisForm) {
     devisForm.addEventListener('submit', function (e) {
-      e.preventDefault();
       var submitBtn = devisForm.querySelector('[type="submit"]');
-      if (submitBtn && submitBtn.disabled) return;
+      if (submitBtn && submitBtn.disabled) { e.preventDefault(); return; }
       /* Basic required check — all [required] fields */
       var invalid = Array.from(devisForm.querySelectorAll('[required]')).find(function (f) { return !f.value.trim(); });
       if (invalid) {
+        e.preventDefault();
         invalid.setAttribute('aria-invalid', 'true');
         invalid.focus();
         return;
@@ -364,28 +364,20 @@
       /* Validation téléphone basique — au moins 9 chiffres */
       var telField = devisForm.querySelector('[name="telephone"]');
       if (telField && telField.value.replace(/\D/g, '').length < 9) {
+        e.preventDefault();
         telField.setAttribute('aria-invalid', 'true');
         telField.focus();
         return;
       }
       /* Clear previous errors */
       devisForm.querySelectorAll('[aria-invalid]').forEach(function (f) { f.removeAttribute('aria-invalid'); });
-      /* Disable to prevent double-submit */
+      /* Valide : on laisse partir le POST natif vers send.php (redirige vers /merci) */
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.setAttribute('aria-busy', 'true');
         submitBtn.innerHTML = 'Envoi en cours…';
       }
-      /* TODO: replace with real API call (Formspree, etc.) */
-      setTimeout(function () {
-        if (submitBtn) {
-          submitBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">check</span>Demande envoyée !';
-          submitBtn.setAttribute('aria-busy', 'false');
-          submitBtn.disabled = false;
-        }
-        var statusEl = document.getElementById('sheet-status');
-        if (statusEl) { statusEl.textContent = 'Votre demande a été envoyée. Un technicien vous rappelle sous 2h.'; }
-      }, 1500);
+      /* pas de preventDefault ici : la soumission native part vers send.php */
     });
 
     /* Clear aria-invalid on input */
