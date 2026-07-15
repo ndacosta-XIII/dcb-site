@@ -45,7 +45,7 @@ html{scroll-padding-top:72px}
   overflow:hidden
 }
 .top .lg{display:flex;align-items:center;gap:8px}
-.top .lg img{height:24px}
+.top .lg img{height:32px}
 .top .grp{display:flex;gap:6px}
 .top .grp button{
   width:44px;height:44px;border-radius:11px;background:var(--s1);

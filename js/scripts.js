@@ -1094,7 +1094,7 @@
     /* 1. CSS frame mobile */
     var mgl = document.createElement('link');
     mgl.rel = 'stylesheet';
-    mgl.href = base + 'm/css/mobile-global.css?v=3';
+    mgl.href = base + 'm/css/mobile-global.css?v=4';
     mgl.media = 'screen and (max-width:640px)';
     document.head.appendChild(mgl);
 
