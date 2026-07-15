@@ -292,6 +292,23 @@ Prix de référence (identiques hub + sous-page + `llms.txt`, à ne pas faire d�
 
 - **NE PAS réutiliser ailleurs dans le silo Web :** le lede douleur du hero (vitrine vieillissante / concurrent d'à côté), l'argument propriété vs abonnement Wix/Squarespace, la réponse refonte détaillée, la logique de gamme pricing One Page/5 Pages.
 
+### SEO et SEA local (`visibilite-web/seo-sea-local/index.html`)
+
+- **Rôle éditorial :** page service référencement local + gestion Google Ads en continu, vendue SUR DEVIS (le hub, lui, présente le SEO on-page "inclus" livré avec un site : pas de contradiction, ce sont deux offres distinctes). Mot-clé porteur : "référencement local" (décision XIII 09/07, désormais en tête du title et du H1).
+- **Signature honnêteté (le différenciateur de la page, calqué sur la transparence prix de creation-site) :** distinguer ce que DCB CONTRÔLE (fiche Google Business, SEO technique et on-page, pilotage des campagnes Google Ads, reporting mensuel) de ce qui ne se GARANTIT jamais (la position organique). Ne jamais réintroduire "dominer Google", "vos clients en premier", "Top 3" présenté comme acquis, ni de stat moyenne non sourcée (×3, +240%, 80%).
+
+**H1 (desktop + mobile) :** « Référencement local et Google Ads, pour que vos clients vous trouvent. »
+
+**Lede hero (desktop) :** « Fiche Google optimisée, campagnes Ads pilotées, SEO local sur devis. On met en place tout ce qui vous rend visible, et on vous montre les résultats en toute transparence. »
+
+**Cadrage honnête (section "Ce qu'on pilote pour vous", remplace l'ancien bloc de faux chiffres) :** « On ne vous promet pas la première place : personne ne peut la garantir honnêtement. Ce qu'on maîtrise, on le met en place, et on vous le prouve chaque mois. » Les 3 colonnes portent des leviers, pas des chiffres : Fiche (Google Business optimisée de A à Z) / Ads (campagnes locales pilotées en continu) / Suivi (positions, appels et ROI, chaque mois).
+
+**FAQ prix (sur devis) :** « Chaque commerce part d'une situation différente : votre fiche Google, votre site, votre concurrence locale et vos objectifs ne sont jamais les mêmes. On établit donc un devis sur mesure après un audit gratuit de votre référencement, sans engagement de longue durée. Le budget de vos campagnes Google Ads reste séparé et vous appartient : vous le fixez, nous le pilotons. »
+
+**FAQ GEO / moteurs IA (hedge propre à cette page, ne pas dupliquer verbatim celui du hub ou de creation-site) :** « Les moteurs IA comme ChatGPT, Perplexity, Gemini ou les AI Overviews de Google s'appuient largement sur les mêmes signaux que le référencement local : une fiche Google Business complète et cohérente, des informations à jour partout sur le web, un contenu clair et structuré. En travaillant ces bases, on maximise vos chances d'être repris par ces outils. Personne, nous compris, ne peut garantir une citation : leurs algorithmes évoluent en permanence et ne sont pas publics. »
+
+- **NE PAS réutiliser ailleurs :** la signature "ce qu'on pilote / ce qu'on ne garantit pas", le hedge GEO ci-dessus, la FAQ prix "budget Ads séparé et vous appartient".
+
 ---
 
 ## Blog : "Combien coûte un site internet ?" (`blog/combien-coute-un-site-internet/index.html`)
