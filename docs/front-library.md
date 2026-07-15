@@ -222,7 +222,7 @@ Les placeholders `m-nav`, `m-menu`, `m-fab`, `m-sheet`, `m-footer` restent VIDES
 | coiffure, outils-collaboratifs | `#A855F7` | `#9333EA` |
 | borne-de-commande, location-vente-installation | `#4F46E5` | `#4338CA` |
 | monnayeur | `#059669` | `#047857` |
-| creation-site-internet | `#7C3AED` | `#6D28D9` |
+| creation-site-internet | `#A855F7` | `#9333EA` |
 | cashmag | `#76B737` | `#5E9028` |
 | hairnet | `#4527A4` + or `#C59C45` | : |
 | pages marque (orange DCB) | `#F57C00` | `#E06E00` |

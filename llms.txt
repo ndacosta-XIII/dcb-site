@@ -7,7 +7,7 @@
 - [Caisse enregistreuse NF525](https://dcb-technologies.fr/caisse-enregistreuse/): Installation, formation et SAV de caisses tactiles CashMag certifiées NF525 pour boulangerie, restaurant, commerce et coiffure. Formule Essentiel dès 59 €/mois (matériel + logiciel + installation + formation, sans maintenance). Pack complet dès 77 €/mois (maintenance 7j/7 24h/24 incluse). Location 60 mois sans apport, matériel garanti 5 ans.
 - [Logiciel CashMag](https://dcb-technologies.fr/caisse-enregistreuse/cashmag/): Revendeur agréé CashMag. Logiciel Android natif, hybride local+cloud, back-office intégré, NF525 certifié.
 - [Maintenance informatique](https://dcb-technologies.fr/maintenance-informatique/): Infogérance, cloud, cybersécurité, Microsoft 365 pour PME. Télémaintenance 7j/7 en moins de 20 minutes, intervention sur site en moins de 4h.
-- [Visibilité web](https://dcb-technologies.fr/visibilite-web/): Création de site internet Mobile First pour commerces et PME. Site vitrine one-page dès 950 € HT, site 5 pages 1 200 € HT, livraison en moins d'une semaine. Référencement local (SEO et SEA) sur Saône-et-Loire (71), Rhône (69), Ain (01) et Loire (42). Hébergement web professionnel infogéré, SSL et support local, sur devis.
+- [Visibilité web](https://dcb-technologies.fr/visibilite-web/): Création de site internet Mobile First pour commerces et PME. Site vitrine one-page dès 950 € HT, site 5 pages 1 200 € HT, livraison de 7 jours (one-page) à 3 semaines (5 pages). Référencement local (SEO et SEA) sur Saône-et-Loire (71), Rhône (69), Ain (01) et Loire (42). Hébergement web professionnel infogéré, SSL et support local, sur devis.
 
 ## Pages métier caisse enregistreuse
 
@@ -29,7 +29,7 @@
 
 - [Création de site internet](https://dcb-technologies.fr/visibilite-web/creation-site-internet/): Site one page dès 950 € HT livré en 7 jours, site 5 pages 1 200 € HT, sur mesure et e-commerce sur devis. Codé en dur (HTML/CSS) ou WordPress selon le besoin, optimisé SEO local et moteurs IA. Refonte de site existant possible. Formation incluse, hébergement en option.
 - [SEO & SEA Local](https://dcb-technologies.fr/visibilite-web/seo-sea-local/): Référencement Google, publicité locale, Google Business Profile.
-- [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs France, SSL inclus, haute disponibilité.
+- [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs en France, SSL inclus, sauvegardes quotidiennes, sur devis.
 
 ## Informations essentielles
 

@@ -191,7 +191,7 @@ Gouvernance : **une règle n'existe ici que si le code la prouve** (audit du 11/
 | coiffure, outils-collaboratifs | `#A855F7` violet | `#9333EA` |
 | borne-de-commande, location-vente-installation | `#4F46E5` indigo | `#4338CA` |
 | monnayeur | `#059669` vert | `#047857` |
-| creation-site-internet | `#7C3AED` violet web | `#6D28D9` |
+| creation-site-internet | `#A855F7` violet web | `#9333EA` |
 | cashmag (vert partenaire) | `#76B737` | `#5E9028` |
 | hairnet | `#4527A4` + or `#C59C45` | : |
 | pages marque (orange DCB) | `#F57C00` | `#E06E00` |

@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="../../css/style.css?v=18">
 <link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
 <link rel="stylesheet" href="../../m/css/mobile.css?v=30" media="screen and (max-width:640px)">
-<link rel="preload" as="image" type="image/jpeg" href="../../assets/hero-seo-sea.jpg" fetchpriority="high" media="(max-width:640px)">
 <style>
   body { font-family: 'Inter', sans-serif; }
   /* Shells mobile / desktop */
@@ -188,10 +187,11 @@
       </div>
     </div>
     <div class="hidden lg:block lg:col-span-5">
-      <div class="serp-stage">
+      <div class="relative mx-auto max-w-[480px]">
+        <img src="../../assets/referencement-local-google-mobile.webp" width="1200" height="896" loading="eager" fetchpriority="high" alt="Client cherchant un commerce local sur Google, résultats de proximité (Local Pack) sur smartphone" class="w-full h-auto object-cover rounded-[14px] shadow-[0_28px_56px_rgba(0,0,0,0.28)]">
 
-        <!-- ── Badge stat flottant gauche ── -->
-        <div class="serp-left-badge">
+        <!-- ── Badge stat flottant ROI ── -->
+        <div class="serp-left-badge" style="top:auto;bottom:24px;left:-16px;">
           <div class="serp-lb-icon">
             <span class="material-symbols-outlined" style="font-size:16px;color:#EF4444;font-variation-settings:'FILL' 1;">trending_up</span>
           </div>
@@ -200,166 +200,6 @@
             <div class="serp-lb-label">mesuré chaque mois</div>
           </div>
         </div>
-
-        <!-- ── SERP Browser ── -->
-        <div class="serp-shell">
-          <div class="serp-chrome">
-            <div class="serp-dots">
-              <div class="serp-dot r"></div>
-              <div class="serp-dot y"></div>
-              <div class="serp-dot g"></div>
-            </div>
-            <div class="serp-addr">
-              <svg width="8" height="10" viewBox="0 0 8 10" fill="none"><path d="M4 0C2.07 0 .5 1.57.5 3.5c0 2.63 3.5 6.5 3.5 6.5S7.5 6.13 7.5 3.5C7.5 1.57 5.93 0 4 0zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#9CA3AF"/></svg>
-              <span style="font-size:8px;color:#AEAEB2;font-family:monospace;">google.com/search?q=restaurant+mâcon</span>
-            </div>
-          </div>
-          <div class="serp-body">
-            <!-- Google search bar -->
-            <div class="serp-searchbar">
-              <span class="serp-glogo"><span class="g-b">G</span><span class="g-r">o</span><span class="g-y">o</span><span class="g-b">g</span><span class="g-gr">l</span><span class="g-r">e</span></span>
-              <div class="serp-q">restaurant mâcon</div>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#4285F4" stroke-width="2"/><path d="M20 20l-3-3" stroke="#4285F4" stroke-width="2.5" stroke-linecap="round"/></svg>
-            </div>
-            <!-- Tabs -->
-            <div class="serp-tabs">
-              <div class="serp-tab active">Tous</div>
-              <div class="serp-tab">Cartes</div>
-              <div class="serp-tab">Restaurants</div>
-              <div class="serp-tab">Actualités</div>
-            </div>
-            <!-- Map -->
-            <div class="serp-map">
-              <svg width="100%" height="100%" viewBox="0 0 360 90" preserveAspectRatio="xMidYMid slice">
-                <rect width="360" height="90" fill="#E8EDF7"/>
-                <path d="M0 55 Q40 48 80 60 Q110 68 140 54 Q165 42 190 52 Q220 64 360 50" fill="#B8D4F0" opacity="0.55"/>
-                <rect x="8" y="6" width="28" height="18" rx="2" fill="#D4D9E4"/>
-                <rect x="42" y="10" width="18" height="12" rx="2" fill="#CDD2DE"/>
-                <rect x="68" y="4" width="32" height="20" rx="2" fill="#D0D5E0"/>
-                <rect x="118" y="8" width="22" height="14" rx="2" fill="#D4D9E4"/>
-                <rect x="152" y="5" width="16" height="18" rx="2" fill="#CDD2DE"/>
-                <rect x="182" y="7" width="28" height="15" rx="2" fill="#D0D5E0"/>
-                <rect x="228" y="4" width="20" height="19" rx="2" fill="#D4D9E4"/>
-                <rect x="262" y="9" width="26" height="13" rx="2" fill="#CDD2DE"/>
-                <rect x="300" y="5" width="32" height="17" rx="2" fill="#D0D5E0"/>
-                <rect x="175" y="36" width="36" height="22" rx="4" fill="#C8E6C9"/>
-                <rect x="0" y="28" width="360" height="7" fill="#FFF" opacity="0.8"/>
-                <rect x="0" y="58" width="360" height="5" fill="#FFF" opacity="0.7"/>
-                <rect x="98" y="0" width="6" height="90" fill="#FFF" opacity="0.75"/>
-                <rect x="218" y="0" width="5" height="90" fill="#FFF" opacity="0.7"/>
-              </svg>
-              <div class="serp-pin p1" style="left:19%;top:20%;"></div>
-              <div class="serp-pin p2" style="left:56%;top:50%;"></div>
-              <div class="serp-pin p3" style="left:76%;top:16%;"></div>
-            </div>
-            <!-- Local Pack -->
-            <div class="serp-pack">
-              <!-- #1 winner -->
-              <div class="serp-row top">
-                <div class="serp-num n1">1</div>
-                <div class="serp-info">
-                  <div class="serp-name">Le Comptoir du Chef</div>
-                  <div class="serp-rating-row">
-                    <span class="serp-stars">★★★★★</span>
-                    <span class="serp-count">4,9 (187)</span>
-                    <span class="serp-cat">· Restaurant français</span>
-                  </div>
-                  <div class="serp-dist-row">
-                    <span>0,8 km</span>
-                    <span class="serp-open">· Ouvert</span>
-                    <span>· Ferme à 22h</span>
-                  </div>
-                </div>
-                <div class="serp-thumb" style="background:linear-gradient(135deg,#E53E3E,#C53030);">
-                  <span class="material-symbols-outlined" style="font-size:17px;color:rgba(255,255,255,0.75);font-variation-settings:'FILL' 1;">restaurant</span>
-                </div>
-              </div>
-              <!-- #2 -->
-              <div class="serp-row">
-                <div class="serp-num n2">2</div>
-                <div class="serp-info">
-                  <div class="serp-name">Brasserie du Marché</div>
-                  <div class="serp-rating-row">
-                    <span class="serp-stars">★★★★</span>
-                    <span class="serp-count">4,2 (94)</span>
-                    <span class="serp-cat">· Brasserie</span>
-                  </div>
-                  <div class="serp-dist-row"><span>1,4 km</span><span>· Ferme à 21h30</span></div>
-                </div>
-                <div class="serp-thumb" style="background:#F1F3F4;">
-                  <span class="material-symbols-outlined" style="font-size:17px;color:#9CA3AF;font-variation-settings:'FILL' 1;">storefront</span>
-                </div>
-              </div>
-              <!-- #3 -->
-              <div class="serp-row">
-                <div class="serp-num n3">3</div>
-                <div class="serp-info">
-                  <div class="serp-name">L'Atelier Gourmand</div>
-                  <div class="serp-rating-row">
-                    <span class="serp-stars">★★★★</span>
-                    <span class="serp-count">4,0 (61)</span>
-                    <span class="serp-cat">· Gastronomique</span>
-                  </div>
-                  <div class="serp-dist-row"><span>2,1 km</span><span>· Ferme à 22h</span></div>
-                </div>
-                <div class="serp-thumb" style="background:#F1F3F4;">
-                  <span class="material-symbols-outlined" style="font-size:17px;color:#9CA3AF;font-variation-settings:'FILL' 1;">dinner_dining</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Phone Google Maps ── -->
-        <div class="serp-phone">
-          <div class="serp-phone-screen">
-            <div class="serp-phone-notch"></div>
-            <div class="serp-phone-status">
-              <span>9:41</span>
-              <div style="display:flex;gap:2px;align-items:center;">
-                <svg width="7" height="7" viewBox="0 0 10 10" fill="#1B1B20"><rect x="1" y="5" width="2" height="5" rx="0.5"/><rect x="4" y="3" width="2" height="7" rx="0.5"/><rect x="7" y="1" width="2" height="9" rx="0.5"/></svg>
-                <svg width="8" height="6" viewBox="0 0 12 9" fill="none"><path d="M6 2C4.34 2 2.84 2.68 1.76 3.76L0 2C1.52.76 3.67 0 6 0s4.48.76 6 2l-1.76 1.76C9.16 2.68 7.66 2 6 2z" fill="#1B1B20"/><path d="M6 5.5c-.83 0-1.58.34-2.12.88L2.5 5C3.46 4.06 4.66 3.5 6 3.5s2.54.56 3.5 1.5L8.12 6.38C7.58 5.84 6.83 5.5 6 5.5z" fill="#1B1B20"/><circle cx="6" cy="8" r="1" fill="#1B1B20"/></svg>
-                <svg width="13" height="7" viewBox="0 0 18 10" fill="none"><rect x="0.5" y="0.5" width="14" height="9" rx="2.5" stroke="#1B1B20"/><rect x="2" y="2" width="10" height="6" rx="1.5" fill="#1B1B20"/><path d="M16 3.5v3a1.5 1.5 0 000-3z" fill="#1B1B20"/></svg>
-              </div>
-            </div>
-            <!-- Google Maps background -->
-            <div class="serp-gmap-bg">
-              <svg width="100%" height="100%" viewBox="0 0 152 240" preserveAspectRatio="xMidYMid slice">
-                <rect width="152" height="240" fill="#C5D5EC"/>
-                <path d="M0 115 Q28 105 56 118 Q82 130 118 112 Q140 102 152 112 L152 240 L0 240Z" fill="#A8C4E8" opacity="0.6"/>
-                <rect x="0" y="76" width="152" height="8" fill="#FFF" opacity="0.8"/>
-                <rect x="0" y="142" width="152" height="6" fill="#FFF" opacity="0.7"/>
-                <rect x="62" y="0" width="6" height="240" fill="#FFF" opacity="0.75"/>
-                <rect x="114" y="0" width="5" height="240" fill="#FFF" opacity="0.65"/>
-                <rect x="5" y="14" width="18" height="28" rx="2" fill="#D4DAE8"/>
-                <rect x="28" y="18" width="26" height="20" rx="2" fill="#C8CFDF"/>
-                <rect x="72" y="10" width="32" height="24" rx="2" fill="#D4DAE8"/>
-                <rect x="122" y="16" width="24" height="26" rx="2" fill="#C8CFDF"/>
-                <rect x="5" y="96" width="48" height="28" rx="2" fill="#D4DAE8"/>
-                <rect x="72" y="100" width="36" height="20" rx="2" fill="#C8CFDF"/>
-                <rect x="16" y="38" width="36" height="20" rx="3" fill="#C8E6C9"/>
-              </svg>
-              <!-- Winning business pin (red, highlighted) -->
-              <div style="position:absolute;left:36%;top:32%;width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#EF4444;border:2.5px solid #FFF;box-shadow:0 3px 10px rgba(239,68,68,0.55);z-index:2;"></div>
-              <div style="position:absolute;left:62%;top:52%;width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#9CA3AF;border:1.5px solid #FFF;z-index:1;"></div>
-            </div>
-            <!-- Business bottom sheet -->
-            <div class="serp-biz-sheet">
-              <div class="serp-biz-name">Le Comptoir du Chef</div>
-              <div class="serp-biz-line">
-                <span class="serp-biz-stars">★★★★★</span>
-                <span class="serp-biz-meta">4,9 (187)</span>
-                <span style="color:#5F6368;font-size:7px;font-family:'Inter',sans-serif;"> · </span>
-                <span class="serp-biz-open-tag">Ouvert</span>
-              </div>
-              <div class="serp-biz-btn">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M12 2L5 9h4v6h6V9h4L12 2z" fill="#FFF"/><path d="M5 15H19v2H5z" fill="#FFF"/></svg>
-                Itinéraire
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -615,8 +455,8 @@
       </div>
     </div>
     <div class="d-foot">
-      <a href="../../visibilite-web/index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour a Visibilite web</a>
-      <time class="d-updated" datetime="2026-07-13">Mis a jour le 13 juillet 2026</time>
+      <a href="../../visibilite-web/index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour à Visibilité web</a>
+      <time class="d-updated" datetime="2026-07-15">Mis à jour le 15 juillet 2026</time>
     </div>
   </div>
 </section>
@@ -647,10 +487,9 @@
 
   <div class="scene">
     <div class="tpv">
-      <img src="../../assets/hero-seo-sea.jpg" alt="Tableau de bord référencement local Google Maps DCB" width="500" height="400" loading="eager" fetchpriority="high"
-           onerror="this.onerror=null;this.src='../../assets/placeholder-photo.svg'">
+      <img src="../../assets/referencement-local-google-mobile.webp" width="1200" height="896" loading="eager" fetchpriority="high" alt="Client cherchant un commerce local sur Google, résultats de proximité (Local Pack) sur smartphone">
     </div>
-    <div class="float-stat" aria-hidden="true">
+    <div class="float-stat">
       <div class="ic" style="background:linear-gradient(135deg,#EF4444,#991B1B)"><span class="material-symbols-outlined">trending_up</span></div>
       <div class="txt">
         <div class="num">ROI</div>
@@ -904,7 +743,7 @@
   <a class="btn btn-pri" href="../../contact/index.html">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
   <span class="dpx-divider">ou appelez-nous</span>
   <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
-  <p class="m-updated">Mis à jour le <time datetime="2026-07-13">13 juillet 2026</time></p>
+  <p class="m-updated">Mis à jour le <time datetime="2026-07-15">15 juillet 2026</time></p>
   <span class="bottomark" aria-hidden="true"></span>
 </section>
 
