@@ -3,6 +3,13 @@
 # Maintenu par : audit SEO Phase 0 (cf. AUDIT_SEO.md)
 # =====================================================================
 
+# ── 0. STAGING : blocage indexation du sous-dossier /new/ ────────────
+# AJOUT TEMPORAIRE (branche deploy uniquement). A RETIRER au lancement
+# a la racine. Empeche toute indexation Google du staging /new/.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>
+
 # ── 1. RewriteEngine ─────────────────────────────────────────────────
 RewriteEngine On
 
