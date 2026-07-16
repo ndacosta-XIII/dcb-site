@@ -1271,3 +1271,86 @@
   }
 
 })();
+
+/* ═══════════════════════════════════════════════════════════════
+   CONSENTEMENT (RGPD, Consent Mode v2) + couche dataLayer -> GTM
+   Le default 'denied' est pose dans le <head> AVANT GTM. Ici : l'UI
+   du bandeau + l'update de consentement + les events (delegation sur
+   document, donc couvre le chrome injecte au runtime : sheet, FAB, tel).
+═══════════════════════════════════════════════════════════════ */
+(function () {
+  var STORE = 'dcb-consent';
+  var base = document.documentElement.getAttribute('data-base') || './';
+  function gt() { if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
+
+  window.dataLayer = window.dataLayer || [];
+  function track(event, params) {
+    var o = { event: event };
+    if (params) { for (var k in params) { if (params.hasOwnProperty(k)) o[k] = params[k]; } }
+    window.dataLayer.push(o);
+  }
+  window.dcbTrack = track;
+
+  /* ── Clics (delegation unique) ── */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var tel = t.closest('a[href^="tel:"]');
+    if (tel) { track('phone_call_click', { location: tel.getAttribute('data-loc') || 'lien', page_path: location.pathname }); return; }
+    var mail = t.closest('a[href^="mailto:"]');
+    if (mail) { track('email_click', { page_path: location.pathname }); return; }
+    var sh = t.closest('[data-sheet]');
+    if (sh) { var ms = document.querySelector('.m-shell'); track('sheet_opened', { metier: ms ? (ms.getAttribute('data-metier') || '') : '', page_path: location.pathname }); }
+    var dt = t.closest('[data-track]');
+    if (dt) { track(dt.getAttribute('data-track'), { label: dt.getAttribute('data-track-label') || (dt.textContent || '').trim().slice(0, 60), page_path: location.pathname }); }
+  }, true);
+
+  /* ── form_start : premier focus dans un formulaire ── */
+  document.addEventListener('focusin', function (e) {
+    var f = e.target.closest ? e.target.closest('form') : null;
+    if (!f || f.__dcbStarted || !e.target.matches('input,textarea,select')) return;
+    f.__dcbStarted = true;
+    track('form_start', { form_id: f.id || 'form', page_path: location.pathname });
+  });
+
+  /* ── generate_lead : page /merci (issue de la redirection 303 serveur) ── */
+  if (/\/merci\/?($|\?)/.test(location.pathname)) {
+    track('generate_lead', { form_type: 'devis', page_path: location.pathname });
+  }
+
+  /* ── Bandeau de consentement ── */
+  var stored = null; try { stored = localStorage.getItem(STORE); } catch (e) {}
+  function setConsent(v) {
+    try { localStorage.setItem(STORE, v); } catch (e) {}
+    if (v === 'granted') {
+      gt('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+      track('consent_granted');
+    } else {
+      track('consent_denied');
+    }
+  }
+  var bar = null;
+  function closeBar() { if (bar && bar.parentNode) { bar.parentNode.removeChild(bar); } bar = null; }
+  function render() {
+    var st = document.createElement('style');
+    st.textContent = '#dcb-cc{position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;max-width:680px;margin:0 auto;background:#fff;border:1px solid #E2E8F0;border-radius:14px;box-shadow:0 14px 38px -12px rgba(7,43,107,.3);padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-family:Inter,system-ui,sans-serif}'
+      + '#dcb-cc p{margin:0;flex:1 1 260px;font-size:13px;line-height:1.5;color:#4A5568}'
+      + '#dcb-cc a{color:#0B3D91;text-decoration:underline}'
+      + '#dcb-cc .b{display:flex;gap:10px;flex:0 0 auto}'
+      + '#dcb-cc button{font:600 13px/1 Inter,system-ui,sans-serif;padding:11px 20px;border-radius:10px;cursor:pointer;border:1px solid transparent}'
+      + '#dcb-cc .no{background:#fff;border-color:#CBD5E1;color:#4A5568}#dcb-cc .no:hover{background:#F8F9FB}'
+      + '#dcb-cc .yes{background:#F57C00;color:#fff}#dcb-cc .yes:hover{background:#D96A00}'
+      + '@media(max-width:520px){#dcb-cc .b{flex:1 1 100%}#dcb-cc button{flex:1}}';
+    document.head.appendChild(st);
+    bar = document.createElement('div');
+    bar.id = 'dcb-cc';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Consentement aux cookies');
+    bar.innerHTML = '<p>Cookies de mesure d\'audience et de publicité, pour améliorer le site et nos campagnes. Vous pouvez accepter ou refuser. <a href="' + base + 'confidentialite/">En savoir plus</a>.</p>'
+      + '<div class="b"><button type="button" class="no">Refuser</button><button type="button" class="yes">Accepter</button></div>';
+    document.body.appendChild(bar);
+    bar.querySelector('.yes').addEventListener('click', function () { setConsent('granted'); closeBar(); });
+    bar.querySelector('.no').addEventListener('click', function () { setConsent('denied'); closeBar(); });
+  }
+  if (!stored) { render(); }
+})();
