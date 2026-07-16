@@ -127,7 +127,15 @@
       if (sheet.classList.contains('on')) sheet.style.transform = 'none';
     }, 340);
     if (fab) fab.classList.add('hidden');
-    /* iOS Safari : overflow:hidden sur html+body bloque le scroll de fond */
+    /* iOS Safari : overflow:hidden ne bloque PAS le scroll au focus d'un champ
+       (le sheet saute en haut de l'ecran). Lock robuste = body en position:fixed
+       avec l'offset de scroll memorise, restaure a la fermeture. */
+    sheet._lockY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.top = (-sheet._lockY) + 'px';
+    document.body.style.position = 'fixed';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     /* Clavier virtuel iOS : ajuster le padding-bottom quand le clavier remonte */
@@ -167,9 +175,15 @@
     if (!menu || !menu.classList.contains('on')) {
       if (fab) fab.classList.remove('hidden');
     }
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
-    if (_sheetOpener) { _sheetOpener.focus(); _sheetOpener = null; }
+    window.scrollTo(0, sheet._lockY || 0);
+    if (_sheetOpener) { _sheetOpener.focus({ preventScroll: true }); _sheetOpener = null; }
   }
 
   /* Wire all "Demander un devis" CTAs */
