@@ -61,7 +61,8 @@ if ($fullname === '' || ($email === '' && $phoneAny === '')) {
 }
 
 $to      = 'contact@dcb-technologies.fr';
-$subject = 'Nouvelle demande via le site : ' . ($fullname !== '' ? $fullname : 'contact');
+$context = $formule !== '' ? $formule : $source;
+$subject = 'Demande site DCB' . ($fullname !== '' ? ' : ' . $fullname : '') . ($context !== '' ? ' (' . $context . ')' : '');
 
 $lines   = array();
 $lines[] = 'Nouvelle demande depuis le site DCB Technologies.';

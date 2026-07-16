@@ -520,23 +520,17 @@
             '</div>' +
             '<input type="hidden" name="formule" id="sheet-formule">' +
           '</div>' +
-          '<div class="row2">' +
-            '<div class="field">' +
-              '<label for="sheet-prenom">Prénom</label>' +
-              '<input id="sheet-prenom" name="prenom" type="text" placeholder="Marie" autocomplete="given-name" required>' +
-            '</div>' +
-            '<div class="field">' +
-              '<label for="sheet-nom">Nom</label>' +
-              '<input id="sheet-nom" name="nom" type="text" placeholder="Dupont" autocomplete="family-name">' +
-            '</div>' +
+          '<div class="field">' +
+            '<label for="sheet-prenom">Prénom</label>' +
+            '<input id="sheet-prenom" name="prenom" type="text" placeholder="Marie" autocomplete="given-name" required>' +
           '</div>' +
           '<div class="field">' +
             '<label for="sheet-tel">Téléphone</label>' +
             '<input id="sheet-tel" name="telephone" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="tel" required>' +
           '</div>' +
           '<div class="field">' +
-            '<label for="sheet-ville">Ville</label>' +
-            '<input id="sheet-ville" name="ville" type="text" placeholder="Mâcon" autocomplete="address-level2">' +
+            '<label for="sheet-email">Email</label>' +
+            '<input id="sheet-email" name="email" type="email" inputmode="email" placeholder="marie@moncommerce.fr" autocomplete="email" required>' +
           '</div>' +
           '<button type="submit" class="btn btn-pri" style="width:100%;margin-top:6px">Envoyer ma demande<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>' +
           '<p id="sheet-status" aria-live="polite" aria-atomic="true" class="sr-only"></p>' +
