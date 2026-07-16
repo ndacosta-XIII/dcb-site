@@ -800,7 +800,7 @@
     /* ── Charge mobile.js si viewport mobile ── */
     if (window.matchMedia('(max-width:640px)').matches) {
       var mjs = document.createElement('script');
-      mjs.src = base + 'm/js/mobile.js?v=4';
+      mjs.src = base + 'm/js/mobile.js?v=5';
       document.body.appendChild(mjs);
     }
   })();
@@ -1267,7 +1267,7 @@
 
     /* 9. Charge mobile.js pour burger + scroll + progress bar */
     var mjs = document.createElement('script');
-    mjs.src = base + 'm/js/mobile.js?v=4';
+    mjs.src = base + 'm/js/mobile.js?v=5';
     /* FAB visible dès le départ : pas de .hero à observer sur ces pages */
     mjs.onload = function () {
       var fabEl = document.querySelector('.fab');

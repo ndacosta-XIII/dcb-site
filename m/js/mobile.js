@@ -120,6 +120,12 @@
       var title = document.getElementById('sheet-title');
       if (title) { setTimeout(function () { title.focus(); }, 80); }
     });
+    /* iOS : neutralise le transform persistant une fois l'ouverture terminee.
+       position:fixed + transform fait sauter le sheet en haut au focus d'un champ
+       (clavier). translateY(0) == none visuellement, mais sans le bug d'ancrage. */
+    setTimeout(function () {
+      if (sheet.classList.contains('on')) sheet.style.transform = 'none';
+    }, 340);
     if (fab) fab.classList.add('hidden');
     /* iOS Safari : overflow:hidden sur html+body bloque le scroll de fond */
     document.body.style.overflow = 'hidden';
@@ -148,6 +154,9 @@
       window.visualViewport.removeEventListener('resize', sheet._vpResize);
       sheet._vpResize = null;
     }
+    /* Retire le transform:none inline pose a l'ouverture, pour reactiver l'animation de sortie */
+    sheet.style.transform = '';
+    void sheet.offsetHeight;
     sheet.classList.remove('on');
     sheet.setAttribute('aria-hidden', 'true');
     setTimeout(function () {
