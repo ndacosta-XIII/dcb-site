@@ -502,6 +502,8 @@
         '<form action="' + base + 'send.php" method="post">' +
           '<input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
           '<input type="hidden" name="source" value="sheet-devis">' +
+          '<input type="hidden" name="metier" id="sheet-metier">' +
+          '<input type="hidden" name="page" id="sheet-page">' +
           '<fieldset class="field">' +
             '<legend class="field-lbl">Mon métier</legend>' +
             '<div class="seg">' +
@@ -794,7 +796,7 @@
     /* ── Charge mobile.js si viewport mobile ── */
     if (window.matchMedia('(max-width:640px)').matches) {
       var mjs = document.createElement('script');
-      mjs.src = base + 'm/js/mobile.js?v=6';
+      mjs.src = base + 'm/js/mobile.js?v=7';
       document.body.appendChild(mjs);
     }
   })();
@@ -1261,7 +1263,7 @@
 
     /* 9. Charge mobile.js pour burger + scroll + progress bar */
     var mjs = document.createElement('script');
-    mjs.src = base + 'm/js/mobile.js?v=6';
+    mjs.src = base + 'm/js/mobile.js?v=7';
     /* FAB visible dès le départ : pas de .hero à observer sur ces pages */
     mjs.onload = function () {
       var fabEl = document.querySelector('.fab');

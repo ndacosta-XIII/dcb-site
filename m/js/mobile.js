@@ -394,6 +394,13 @@
       }
       /* Clear previous errors */
       devisForm.querySelectorAll('[aria-invalid]').forEach(function (f) { f.removeAttribute('aria-invalid'); });
+      /* Origine du lead : la sheet est PARTAGEE par toutes les pages. Sans ca, tous
+         les leads mobiles (80% du trafic) arrivent identiques, sans source. */
+      var selMetier = document.querySelector('.sheet .seg button.on');
+      var fMetier = document.getElementById('sheet-metier');
+      if (fMetier) { fMetier.value = selMetier ? (selMetier.getAttribute('data-metier') || '') : ''; }
+      var fPage = document.getElementById('sheet-page');
+      if (fPage) { fPage.value = location.pathname; }
       /* Valide : on laisse partir le POST natif vers send.php (redirige vers /merci) */
       if (submitBtn) {
         submitBtn.disabled = true;
