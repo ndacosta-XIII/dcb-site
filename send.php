@@ -10,7 +10,14 @@
  */
 
 // Base de redirection : dossier du script + /merci/
-$dir     = rtrim(str_replace('\\', '/', dirname($_SERVER['REQUEST_URI'])), '/');
+$dir = rtrim(str_replace('\\', '/', dirname($_SERVER['REQUEST_URI'] ?? '/')), '/');
+/* Securite : REQUEST_URI est fourni par le client. On n'accepte qu'un chemin
+   local simple, sinon la redirection pourrait etre detournee vers un domaine
+   externe (redirection ouverte -> phishing). Sinon, repli sur la racine. */
+if ($dir === '' || $dir[0] !== '/' || strpos($dir, '//') === 0
+    || strpos($dir, "\n") !== false || strpos($dir, "\r") !== false) {
+    $dir = '';
+}
 $merci   = $dir . '/merci/';
 
 function redirect_merci($path) {
@@ -23,6 +30,34 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
     header('Location: ' . ($dir === '' ? '/' : $dir . '/'), true, 302);
     exit;
 }
+
+/* ── Anti-flood : limite les envois par IP sur une fenetre glissante.
+   Le honeypot arrete les bots betes ; ceci arrete celui qui poste en boucle
+   et inonderait la boite mail. Stockage fichier, aucune dependance. ── */
+$RL_MAX    = 5;    // envois autorises...
+$RL_WINDOW = 600;  // ...par tranche de 10 minutes
+$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+// Derriere Cloudflare, l'IP reelle du visiteur est dans CF-Connecting-IP
+if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) { $ip = $_SERVER['HTTP_CF_CONNECTING_IP']; }
+$rlFile = sys_get_temp_dir() . '/dcb_rl_' . hash('sha256', $ip) . '.txt';
+$now  = time();
+$hits = array();
+if (is_readable($rlFile)) {
+    $raw = @file_get_contents($rlFile);
+    if ($raw !== false && $raw !== '') {
+        foreach (explode(',', $raw) as $ts) {
+            $ts = (int) $ts;
+            if ($ts > $now - $RL_WINDOW) { $hits[] = $ts; }
+        }
+    }
+}
+if (count($hits) >= $RL_MAX) {
+    http_response_code(429);
+    header('Retry-After: ' . $RL_WINDOW);
+    exit('Trop de demandes envoyees depuis cette connexion. Merci de reessayer dans quelques minutes, ou de nous appeler au 04 82 53 05 10.');
+}
+$hits[] = $now;
+@file_put_contents($rlFile, implode(',', $hits), LOCK_EX);
 
 // Honeypot : champ caché jamais rempli par un humain -> bot silencieux
 if (!empty($_POST['hp_website'])) {
