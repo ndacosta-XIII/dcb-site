@@ -13,14 +13,11 @@
 # ── 1. RewriteEngine ─────────────────────────────────────────────────
 RewriteEngine On
 
-# ── 2. Redirection mobile vers version parallèle (m/) ────────────────
-# Déclenché par : UA mobile + hôte principal + pas de cookie forceDesktop
-# Périmètre Phase 1 : hub caisse uniquement
-RewriteCond %{HTTP_USER_AGENT} (Android|iPhone|iPod|Mobile|BlackBerry|webOS) [NC]
-RewriteCond %{HTTP_HOST} ^dcb-technologies\.fr$ [NC]
-RewriteCond %{HTTP_COOKIE} !forceDesktop=1
-RewriteCond %{REQUEST_URI} ^/(caisse-enregistreuse)(/.*)?$
-RewriteRule ^(.*)$ https://m.dcb-technologies.fr/$1 [R=302,L]
+# ── 2. (RETIRE 17/07/2026) Redirection mobile vers m.dcb-technologies.fr ──
+# Relique de la V1 (version mobile = site separe). Le sous-domaine m. n'existe
+# plus (DNS ne resout pas) et le site V2 est dual-shell : la version mobile
+# (.m-shell) est dans le meme fichier, servie par la meme URL. Conservee, cette
+# regle aurait envoye tout le trafic mobile du silo caisse dans le vide.
 
 # ── 3. HTTPS forcé ───────────────────────────────────────────────────
 RewriteCond %{HTTPS} off
