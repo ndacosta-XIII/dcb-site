@@ -49,6 +49,8 @@ $message  = field('message');
 $formule  = field('formule');
 $ville    = field('ville');
 $source   = field('source');
+$metier   = field('metier');
+$page     = field('page');
 
 // Email invalide : ignoré plutôt que bloquant
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -61,7 +63,7 @@ if ($fullname === '' || ($email === '' && $phoneAny === '')) {
 }
 
 $to      = 'contact@dcb-technologies.fr';
-$context = $formule !== '' ? $formule : $source;
+$context = $metier !== '' ? $metier : ($formule !== '' ? $formule : $source);
 $subject = 'Demande site DCB' . ($fullname !== '' ? ' : ' . $fullname : '') . ($context !== '' ? ' (' . $context . ')' : '');
 
 $lines   = array();
@@ -71,6 +73,7 @@ if ($fullname !== '') $lines[] = 'Nom        : ' . $fullname;
 if ($email !== '')    $lines[] = 'Email      : ' . $email;
 if ($phoneAny !== '') $lines[] = 'Telephone  : ' . $phoneAny;
 if ($ville !== '')    $lines[] = 'Ville      : ' . $ville;
+if ($metier !== '')   $lines[] = 'Metier     : ' . $metier;
 if ($formule !== '')  $lines[] = 'Formule    : ' . $formule;
 if ($message !== '') {
     $lines[] = '';
@@ -80,6 +83,7 @@ if ($message !== '') {
 $lines[] = '';
 $lines[] = '---';
 if ($source !== '') $lines[] = 'Origine    : ' . $source;
+if ($page !== '')   $lines[] = 'Page       : ' . $page;
 $lines[] = 'Recu le    : ' . date('d/m/Y H:i');
 $body    = implode("\r\n", $lines);
 
