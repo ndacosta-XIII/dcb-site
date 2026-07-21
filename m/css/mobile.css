@@ -325,6 +325,14 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .faq summary .ch{color:var(--subtle);transition:transform 0.2s;justify-self:end}
 .faq details[open] summary .ch{transform:rotate(180deg)}
 .faq .ans{padding:0 14px 16px 56px;color:#475569;font-size:13px;line-height:1.55}
+/* « Voir plus de questions » (flat, toggle JS) : questions surnuméraires masquées, révélées à plat */
+.faq .faq-x{display:none}
+.faq.faq-open .faq-x{display:block}
+.faq-more-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:12px 14px;font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:0.03em;color:var(--mute);background:transparent;border:none;cursor:pointer;transition:color 0.2s}
+.faq-more-btn:hover{color:var(--p)}
+.faq-more-btn .ch{color:var(--subtle);transition:transform 0.2s}
+.faq-more-btn[aria-expanded="true"] .ch{transform:rotate(180deg)}
+.faq-more-btn:focus-visible{outline:3px solid var(--cta);outline-offset:-3px;border-radius:12px}
 
 /* ── CTA FINAL */
 .final-a{padding:30px 18px 30px}

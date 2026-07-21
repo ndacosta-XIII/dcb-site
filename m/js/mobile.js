@@ -350,6 +350,18 @@
   /* ── FAQ details — icon rotation handled by CSS only ─────────── */
   /* .faq details[open] summary .ch { transform:rotate(180deg) } — déjà dans mobile.css */
 
+  /* ── FAQ « Voir plus de questions » : toggle délégué (générique, toutes pages) ── */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.faq-more-btn');
+    if (!btn) return;
+    var faq = btn.closest('.faq');
+    if (!faq) return;
+    var open = faq.classList.toggle('faq-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    /* Ne remplacer que le noeud texte, pas le chevron (span séparé) */
+    btn.firstChild.textContent = open ? 'Voir moins de questions' : 'Voir plus de questions';
+  });
+
   /* ── FAB : masqué quand le Hero est visible ──── */
   var hero = document.querySelector('.hero');
   if (hero && fab) {
