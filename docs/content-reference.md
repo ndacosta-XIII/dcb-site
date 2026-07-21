@@ -348,3 +348,33 @@ Ne jamais réintroduire "en dessous de 1 500 € = travail bâclé" ni "le planc
 3. La description NF525 peut être identique sur hub + sous-pages caisse (c'est de l'information légale, pas du contenu marketing).
 4. Les témoignages : chaque page a ses propres témoignages, pas de répétition entre pages.
 5. Les JSON-LD FAQ : questions différentes entre hub et sous-pages.
+
+---
+
+## Référentiel de valeurs canoniques (cohérence transverse, verrouillé le 21/07/2026)
+
+Un sujet = une valeur, sur TOUTES les pages (hors silo IT gelé). Toute nouvelle page ou modification s'y aligne. Base : audit de cohérence (`docs/audit-coherence-juillet-2026.md`).
+
+| Sujet | Valeur canonique |
+|---|---|
+| Bases opérationnelles | "nos deux bases, Paray-le-Monial (71) et Dardilly (69)". Jamais "Lyon" comme base, jamais "agences". |
+| Intervention sur site | "sous 4h" (jamais assortie de 24h/24 : pas de 4h sur site la nuit). |
+| Télémaintenance | "moins de 20 minutes". |
+| Taux de résolution à distance | "95%". Jamais 92 / 9-sur-10 / 8-sur-10 / "la majorité". |
+| Durée d'engagement location | "24 à 60 mois, flexible selon le besoin client". Base tarif = 60 mois. Jamais plafond 36, jamais départ 12. |
+| Horaires bureau (openingHours) | "Lun-Ven 8h30-18h30". |
+| Disponibilité SAV / astreinte | "7j/7 24h/24" (accroche ; astreinte réservée aux clients sous contrat, mais ne pas écrire "sur contrat"). notre-adn garde sa formulation propre. |
+| Clôture de caisse (logiciel) | "3 minutes". Le monnayeur (30s) est un cas produit à part. |
+| Durée de formation | "une demi-journée". |
+| Remplacement matériel (caisse) | "sous 48h". |
+| No-show (coiffure / Hairnet) | "divisés par 3". |
+| Devis | "sous 24h" (jamais "RDV sous 5 jours" concurrent sur la même page). |
+| Zone / villes | 71/69/01/42 uniquement. Jamais "Auxois" (Côte-d'Or, hors zone). |
+| Amende NF525 | "7 500 € par caisse non conforme". |
+| NF525 | plus obligatoire depuis février 2026 (certificat OU attestation). Jamais "obligatoire". |
+
+Exceptions assumées (ne pas "corriger") :
+- Garantie matériel : "5 ans" en promesse générale, monnayeur "1 an + extension jusqu'à 5 ans".
+- "intervention sur site sous 4h, 7j/7" et "maintenance 7j/7" du hub : ne PAS y ajouter "24h/24" (n'engage pas du 4h sur site nocturne).
+
+Silo IT (gelé) : 8 incohérences documentées dans l'audit de cohérence, à harmoniser au dégel avec la vraie grille tarifaire.
