@@ -670,13 +670,16 @@
       <div class="lg:col-span-7 col-msg">
         <span class="filet" aria-hidden="true"></span>
         <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] block mb-4">La lettre DCB</span>
-        <h2 class="d-h">Un guide pratique tous les 15 du mois. Pas de blabla, que du concret.</h2>
+        <h2 class="d-h">Des guides pratiques concrets. Pas de blabla.</h2>
         <p class="d-lede">Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidélisation locale) directement dans votre boîte mail.</p>
       </div>
       <div class="lg:col-span-5 col-action flex flex-col justify-center" style="align-self:stretch">
-        <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault();">
+        <form class="flex flex-col sm:flex-row gap-3" method="post" action="../send.php">
           <label for="news-email" class="sr-only">Votre adresse email</label>
-          <input id="news-email" type="email" placeholder="vous@commerce.fr" required class="flex-1 min-w-0 px-4 py-3.5 text-sm" style="border:1.5px solid #E5E7EB;border-radius:14px;background:#fff;color:#0B3D91" onfocus="this.style.borderColor='#0B3D91'" onblur="this.style.borderColor='#E5E7EB'">
+          <input id="news-email" name="email" type="email" placeholder="vous@commerce.fr" required class="flex-1 min-w-0 px-4 py-3.5 text-sm" style="border:1.5px solid #E5E7EB;border-radius:14px;background:#fff;color:#0B3D91" onfocus="this.style.borderColor='#0B3D91'" onblur="this.style.borderColor='#E5E7EB'">
+          <input type="text" name="hp_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <input type="hidden" name="name" value="Inscription newsletter">
+          <input type="hidden" name="source" value="newsletter-blog">
           <button type="submit" class="btn btn--primary whitespace-nowrap">M'inscrire</button>
         </form>
         <span class="text-[#4A5568] text-xs block mt-4">Désinscription en 1 clic. Pas de spam.</span>
@@ -833,11 +836,14 @@
   <section class="m-cta-final" style="--accent:#F57C00">
     <span class="topbar" aria-hidden="true"></span>
     <p class="b-news-eb">La lettre DCB</p>
-    <h3>Un guide pratique tous les 15 du mois. Pas de blabla, que du concret.</h3>
+    <h3>Des guides pratiques concrets. Pas de blabla.</h3>
     <p>Inscrivez-vous : nos prochains dossiers (NF525, IA en boutique, fidélisation locale) directement dans votre boîte mail.</p>
-    <form class="b-news-form" novalidate>
-      <input type="email" class="b-news-input" placeholder="vous@commerce.fr"
+    <form class="b-news-form" method="post" action="../send.php">
+      <input type="email" name="email" class="b-news-input" placeholder="vous@commerce.fr"
              inputmode="email" autocomplete="email" required aria-label="Votre email">
+      <input type="text" name="hp_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <input type="hidden" name="name" value="Inscription newsletter">
+      <input type="hidden" name="source" value="newsletter-blog">
       <button type="submit" class="b-news-btn">
         <span class="b-news-label">M'inscrire</span>
         <span class="b-spin b-hidden" aria-hidden="true"></span>
@@ -1095,57 +1101,6 @@
       });
     });
     if (posts.length) apply();
-
-    /* Newsletter form */
-    var form = shell.querySelector('.b-news-form');
-    if (!form) return;
-    var input = form.querySelector('.b-news-input');
-    var btn = form.querySelector('.b-news-btn');
-    var label = btn.querySelector('.b-news-label');
-    var spin = btn.querySelector('.b-spin');
-    var arrow = btn.querySelector('.b-arrow');
-    var feedback = shell.querySelector('.b-news-feedback');
-
-    function setError(msg) {
-      input.classList.add('is-error');
-      feedback.className = 'b-news-feedback is-error';
-      feedback.textContent = msg;
-    }
-    function clearError() {
-      input.classList.remove('is-error');
-      feedback.className = 'b-news-feedback';
-      feedback.textContent = '';
-    }
-    input.addEventListener('input', function() {
-      if (input.classList.contains('is-error')) clearError();
-    });
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var v = input.value.trim();
-      if (!v) { setError('Email requis.'); input.focus(); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { setError('Email invalide.'); input.focus(); return; }
-      clearError();
-      btn.disabled = true;
-      label.textContent = 'Inscription...';
-      spin.classList.remove('b-hidden');
-      arrow.classList.add('b-hidden');
-      setTimeout(function() {
-        spin.classList.add('b-hidden');
-        arrow.classList.remove('b-hidden');
-        label.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;margin-right:4px;vertical-align:middle">check_circle</span>Inscription confirmée';
-        btn.classList.add('is-success');
-        feedback.className = 'b-news-feedback is-success';
-        feedback.textContent = 'Merci. Premier guide envoyé le 15 du mois prochain.';
-        form.reset();
-        setTimeout(function() {
-          btn.disabled = false;
-          label.textContent = "M'inscrire";
-          btn.classList.remove('is-success');
-          feedback.textContent = '';
-          feedback.className = 'b-news-feedback';
-        }, 6000);
-      }, 1200);
-    });
   })();
 </script>
 </body>
