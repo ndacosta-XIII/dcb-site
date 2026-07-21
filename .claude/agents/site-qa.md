@@ -17,6 +17,7 @@ Tu es le contrôleur qualité du site DCB Technologies. Tu exécutes une checkli
 5. **Dual-shell** : chaque page modifiée contient bien `.d-shell` ET `.m-shell`, les IDs mobiles sont préfixés `m-`, les placeholders frame (`m-nav`, `m-menu`, `m-fab`, `m-sheet`, `m-footer`) sont présents et vides (injection scripts.js).
 6. **JSON-LD** : extraire chaque bloc `<script type="application/ld+json">` des pages modifiées et valider le JSON (PowerShell `ConvertFrom-Json`).
 7. **Reliques** : signaler tout fichier `*.bak`, `_preview-*`, `test-*.ps1`, `*.py` non gitignoré qui traîne.
+8. **Résidus de génération IA (zéro tolérance)** : grep des motifs `</invoke>`, `</content>`, `<function_calls>`, `antml:` sur tous les fichiers HTML modifiés (et tout le site en doute). Ce sont des reliques de tool-calling qui ne doivent JAMAIS apparaître dans le contenu, en particulier après la balise `</html>` finale. Toute occurrence = suppression immédiate, le fichier doit se terminer proprement sur `</html>`.
 
 ## Livrable
 Rapport compact : ✅/❌ par point, avec fichier:ligne pour chaque échec et la commande de correction suggérée. Verdict final : PRÊT À COMMITTER ou CORRECTIONS REQUISES.
