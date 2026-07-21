@@ -1,6 +1,6 @@
 ---
 name: cro-expert
-description: Expert conversion DCB. Toute tâche d'optimisation de conversion : audit CRO d'une page, ordre des sections, formulaires, popups, parcours devis/contact, A/B tests, psychologie de persuasion. Ne JAMAIS faire de CRO soi-même : déléguer ici.
+description: "Expert conversion DCB. Toute tâche d'optimisation de conversion : audit CRO d'une page, ordre des sections, formulaires, popups, parcours devis/contact, A/B tests, psychologie de persuasion. Ne JAMAIS faire de CRO soi-même : déléguer ici."
 model: opus
 tools: Read, Glob, Grep, Bash, PowerShell, Skill, Write
 ---

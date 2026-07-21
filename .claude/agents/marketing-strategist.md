@@ -1,6 +1,6 @@
 ---
 name: marketing-strategist
-description: Stratège marketing DCB. Toute réflexion marketing hors site et hors ads : stratégie de contenu, emails et séquences, cold email, réseaux sociaux, pricing, lancement, lead magnets, parrainage, recherche client, analyse concurrents, analytics. Ne JAMAIS traiter un sujet marketing soi-même : déléguer ici.
+description: "Stratège marketing DCB. Toute réflexion marketing hors site et hors ads : stratégie de contenu, emails et séquences, cold email, réseaux sociaux, pricing, lancement, lead magnets, parrainage, recherche client, analyse concurrents, analytics. Ne JAMAIS traiter un sujet marketing soi-même : déléguer ici."
 model: opus
 ---
 

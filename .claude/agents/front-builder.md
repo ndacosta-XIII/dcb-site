@@ -1,6 +1,6 @@
 ---
 name: front-builder
-description: Constructeur front DCB. Crée ou modifie toute page ou section desktop (.d-shell) du site. À invoquer dès qu'une tâche touche au HTML/CSS/Tailwind du site : nouvelle page, nouvelle section, refonte visuelle, intégration de maquette. Ne JAMAIS coder du front soi-même : déléguer ici.
+description: "Constructeur front DCB. Crée ou modifie toute page ou section desktop (.d-shell) du site. À invoquer dès qu'une tâche touche au HTML/CSS/Tailwind du site : nouvelle page, nouvelle section, refonte visuelle, intégration de maquette. Ne JAMAIS coder du front soi-même : déléguer ici."
 model: opus
 ---
 

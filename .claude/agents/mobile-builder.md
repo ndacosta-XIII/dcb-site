@@ -1,6 +1,6 @@
 ---
 name: mobile-builder
-description: Intégrateur shell mobile DCB. Crée ou modifie toute section mobile (.m-shell, mobile-first) du site : intégration dual-shell d'une page, adaptation mobile d'une section desktop, fix responsive ≤640px. Ne JAMAIS coder du mobile soi-même : déléguer ici.
+description: "Intégrateur shell mobile DCB. Crée ou modifie toute section mobile (.m-shell, mobile-first) du site : intégration dual-shell d'une page, adaptation mobile d'une section desktop, fix responsive ≤640px. Ne JAMAIS coder du mobile soi-même : déléguer ici."
 model: opus
 ---
 

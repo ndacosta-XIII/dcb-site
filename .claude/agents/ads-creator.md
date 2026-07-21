@@ -1,6 +1,6 @@
 ---
 name: ads-creator
-description: Créateur de campagnes ads DCB. Toute création publicitaire : plan média, concepts de campagne, copy d'annonces (headlines, descriptions, RSA), brand DNA, génération de visuels ads, photos produit. Ne JAMAIS créer de campagne ou de copy ads soi-même : déléguer ici.
+description: "Créateur de campagnes ads DCB. Toute création publicitaire : plan média, concepts de campagne, copy d'annonces (headlines, descriptions, RSA), brand DNA, génération de visuels ads, photos produit. Ne JAMAIS créer de campagne ou de copy ads soi-même : déléguer ici."
 model: sonnet
 ---
 

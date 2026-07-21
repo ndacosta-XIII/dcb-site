@@ -1,6 +1,6 @@
 ---
 name: ads-auditor
-description: Auditeur publicité payante DCB. Tout audit ou analyse de campagnes ads : Google Ads, Meta, LinkedIn, TikTok, Microsoft, budget, attribution, tracking server-side, landing pages ads, calculs PPC (CPA, ROAS, break-even), veille concurrents. Ne JAMAIS analyser des campagnes soi-même : déléguer ici.
+description: "Auditeur publicité payante DCB. Tout audit ou analyse de campagnes ads : Google Ads, Meta, LinkedIn, TikTok, Microsoft, budget, attribution, tracking server-side, landing pages ads, calculs PPC (CPA, ROAS, break-even), veille concurrents. Ne JAMAIS analyser des campagnes soi-même : déléguer ici."
 model: sonnet
 ---
 

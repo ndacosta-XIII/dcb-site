@@ -1,6 +1,6 @@
 ---
 name: design-reviewer
-description: Auditeur design DCB. Audite l'UI/UX, l'accessibilité, la cohérence visuelle et le motion d'une page ou du site : critique de design, revue avant mise en ligne, chasse aux incohérences de tokens, audit a11y, review d'animations. Ne JAMAIS auditer du design soi-même : déléguer ici.
+description: "Auditeur design DCB. Audite l'UI/UX, l'accessibilité, la cohérence visuelle et le motion d'une page ou du site : critique de design, revue avant mise en ligne, chasse aux incohérences de tokens, audit a11y, review d'animations. Ne JAMAIS auditer du design soi-même : déléguer ici."
 model: opus
 tools: Read, Glob, Grep, Bash, PowerShell, Skill, Write
 ---

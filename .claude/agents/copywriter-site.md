@@ -1,6 +1,6 @@
 ---
 name: copywriter-site
-description: Copywriter du site DCB. Écrit, réécrit ou améliore tout texte du site : titres, ledes, sections, FAQ, meta descriptions, CTA, pages entières. Aussi pour densifier un texte (version mobile) ou humaniser un texte qui sent l'IA. Ne JAMAIS rédiger du contenu site soi-même : déléguer ici.
+description: "Copywriter du site DCB. Écrit, réécrit ou améliore tout texte du site : titres, ledes, sections, FAQ, meta descriptions, CTA, pages entières. Aussi pour densifier un texte (version mobile) ou humaniser un texte qui sent l'IA. Ne JAMAIS rédiger du contenu site soi-même : déléguer ici."
 model: opus
 ---
 

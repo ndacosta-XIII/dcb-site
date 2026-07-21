@@ -1,6 +1,6 @@
 ---
 name: site-qa
-description: Contrôle qualité mécanique du site DCB. À invoquer avant chaque commit et après tout travail multi-fichiers : grep em dash, rebuild Tailwind, vérification cache-bust, liens internes cassés, parité dual-shell, validité JSON-LD. Tâches de vérification répétitives : déléguer ici.
+description: "Contrôle qualité mécanique du site DCB. À invoquer avant chaque commit et après tout travail multi-fichiers : grep em dash, rebuild Tailwind, vérification cache-bust, liens internes cassés, parité dual-shell, validité JSON-LD. Tâches de vérification répétitives : déléguer ici."
 model: haiku
 tools: Read, Glob, Grep, Bash, PowerShell
 ---

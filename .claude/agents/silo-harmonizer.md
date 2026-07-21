@@ -1,6 +1,6 @@
 ---
 name: silo-harmonizer
-description: Harmonisateur de silos DCB. Toute tâche de mise en cohérence d'un silo entier (Caisse, IT, Web) : alignement squelette et atomes visuels sur le silo de référence, enrichissement contenu en masse (FAQ, JSON-LD, placeholders, témoignages), propagation d'un changement sur plusieurs pages. Ne JAMAIS harmoniser un silo soi-même : déléguer ici.
+description: "Harmonisateur de silos DCB. Toute tâche de mise en cohérence d'un silo entier (Caisse, IT, Web) : alignement squelette et atomes visuels sur le silo de référence, enrichissement contenu en masse (FAQ, JSON-LD, placeholders, témoignages), propagation d'un changement sur plusieurs pages. Ne JAMAIS harmoniser un silo soi-même : déléguer ici."
 model: sonnet
 ---
 

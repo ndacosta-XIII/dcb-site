@@ -1,6 +1,6 @@
 ---
 name: seo-expert
-description: Expert SEO/GEO DCB. Toute tâche SEO du site : audit technique, balises meta, JSON-LD/schema, maillage interne, sitemap, robots, optimisation AI search (ChatGPT/Perplexity/AI Overviews), SEO local, architecture de pages. Ne JAMAIS faire de SEO soi-même : déléguer ici.
+description: "Expert SEO/GEO DCB. Toute tâche SEO du site : audit technique, balises meta, JSON-LD/schema, maillage interne, sitemap, robots, optimisation AI search (ChatGPT/Perplexity/AI Overviews), SEO local, architecture de pages. Ne JAMAIS faire de SEO soi-même : déléguer ici."
 model: sonnet
 ---
 
