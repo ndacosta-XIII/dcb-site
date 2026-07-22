@@ -17,6 +17,14 @@
 - [Coiffure & Beauté](https://dcb-technologies.fr/caisse-enregistreuse/coiffure/): Agenda intégré, rappels SMS, fiches clients, historique soins.
 - [Borne de commande](https://dcb-technologies.fr/caisse-enregistreuse/borne-de-commande/): +20% panier moyen, idéal restauration rapide et boulangerie snacking.
 - [Monnayeur automatique](https://dcb-technologies.fr/caisse-enregistreuse/monnayeur/): Rendu exact, zéro erreur, hygiène, compatible CashMag.
+- [Hairnet coiffure](https://dcb-technologies.fr/caisse-enregistreuse/hairnet/): Logiciel de caisse NF525 pour salons de coiffure et instituts, avec Google Reserve, fidélité dématérialisée, gestion des no-show et multi-salons. Prise en main à distance immédiate, intervention sur site en moins de 4h.
+
+## Pages locales caisse enregistreuse
+
+- [Saône-et-Loire (71)](https://dcb-technologies.fr/caisse-enregistreuse/saone-et-loire/): Installateur de caisses NF525 en Saône-et-Loire, atelier et stock à Paray-le-Monial, techniciens salariés, intervention sous 4h à Mâcon, Chalon-sur-Saône, Charolles et Autun. Dès 59 €/mois.
+- [Rhône (69)](https://dcb-technologies.fr/caisse-enregistreuse/rhone/): Installateur de caisses NF525 dans le Rhône, siège DCB à Dardilly, techniciens salariés, intervention sous 4h à Lyon, Givors, Villefranche-sur-Saône et dans le Beaujolais. Dès 59 €/mois.
+- [Ain (01)](https://dcb-technologies.fr/caisse-enregistreuse/ain/): Installateur de caisses NF525 dans l'Ain, prise en main à distance en 20 minutes, intervention sur site sous 4h à Bourg-en-Bresse, Gex, Ambérieu-en-Bugey et Oyonnax. Dès 59 €/mois.
+- [Loire (42)](https://dcb-technologies.fr/caisse-enregistreuse/loire/): Installateur de caisses NF525 dans la Loire, télémaintenance en 20 minutes, intervention sur site sous 4h à Saint-Étienne, Roanne, Montbrison, Feurs et Firminy. Dès 59 €/mois.
 
 ## Pages maintenance informatique
 
@@ -31,6 +39,19 @@
 - [Création de site internet](https://dcb-technologies.fr/visibilite-web/creation-site-internet/): Site one page dès 950 € HT livré en 7 jours, site 5 pages 1 200 € HT, sur mesure et e-commerce sur devis. Codé en dur (HTML/CSS) ou WordPress selon le besoin, optimisé SEO local et moteurs IA. Refonte de site existant possible. Formation incluse, hébergement en option.
 - [SEO & SEA Local](https://dcb-technologies.fr/visibilite-web/seo-sea-local/): Référencement Google, publicité locale, Google Business Profile.
 - [Hébergement](https://dcb-technologies.fr/visibilite-web/hebergement/): Serveurs en France, SSL inclus, sauvegardes quotidiennes, sur devis.
+
+## Pages institutionnelles
+
+- [Contact](https://dcb-technologies.fr/contact/): Formulaire de contact et coordonnées de DCB Technologies. Rappel sous 2h par Nathanaël Da Costa ou Clément Boissié, sans standard ni démarchage, depuis Dardilly et Paray-le-Monial.
+- [Notre ADN](https://dcb-technologies.fr/notre-adn/): Présentation de DCB Technologies, fondée en 2025 par Nathanaël Da Costa et Clément Boissié : techniciens salariés, zéro sous-traitance, un seul interlocuteur pour la caisse, l'informatique et le web.
+
+## Blog
+
+- [Blog & Actualités](https://dcb-technologies.fr/blog/): Conseils et guides pour commerçants locaux sur les caisses enregistreuses, la réglementation NF525, la maintenance informatique et la visibilité web.
+- [Norme NF525 caisse enregistreuse](https://dcb-technologies.fr/blog/norme-nf525-caisse-enregistreuse/): La certification NF525 n'est plus la seule voie légale depuis février 2026. Comment rendre sa caisse conforme et éviter l'amende de 7 500 € par caisse.
+- [Maintenance informatique préventive](https://dcb-technologies.fr/blog/maintenance-informatique-preventive/): Les signaux d'une panne informatique qui approche et ce que couvre concrètement un contrat de maintenance préventive.
+- [Référencement Google Business Profile](https://dcb-technologies.fr/blog/referencement-google-my-business/): Le guide pour bien référencer sa fiche Google Business Profile (catégorie, avis, nom, photos) et être vu localement sans payer de publicité.
+- [Combien coûte un site internet](https://dcb-technologies.fr/blog/combien-coute-un-site-internet/): Les vraies fourchettes de prix d'un site internet en 2026, vitrine ou e-commerce, coûts cachés annuels inclus.
 
 ## Informations essentielles
 
