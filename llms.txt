@@ -20,10 +20,11 @@
 
 ## Pages maintenance informatique
 
-- [Maintenance & Dépannage](https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/): Intervention sur site, dépannage urgent, monitoring 24/7 en option selon les besoins.
-- [Cloud & Cybersécurité](https://dcb-technologies.fr/maintenance-informatique/cloud-securite/): Sauvegarde cloud, antivirus, firewall, conformité RGPD.
-- [Location & Installation](https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/): Postes, serveurs, réseaux, matériel reconditionné ou neuf.
-- [Outils Collaboratifs](https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/): Microsoft 365, Google Workspace, formation équipes.
+- [Infogérance et maintenance](https://dcb-technologies.fr/maintenance-informatique/infogerance-maintenance/): Service informatique sur mesure pour PME, contrat à la carte : surveillance, maintenance préventive et curative, télémaintenance en moins de 20 minutes, intervention sur site en moins de 4h. Chaque prestation se souscrit seule ou combinée.
+- [Dépannage et assistance](https://dcb-technologies.fr/maintenance-informatique/depannage-assistance/): Intervention sur site, dépannage urgent, monitoring 24/7 en option selon les besoins.
+- [Cybersécurité & sauvegarde](https://dcb-technologies.fr/maintenance-informatique/cybersecurite-sauvegarde/): Sauvegarde cloud, antivirus, firewall, conformité RGPD.
+- [Matériel et réseaux](https://dcb-technologies.fr/maintenance-informatique/materiel-reseaux/): Postes, serveurs, réseaux, matériel reconditionné ou neuf.
+- [Emails Pro et collaboration](https://dcb-technologies.fr/maintenance-informatique/emails-pro-collaboration/): Microsoft 365, Google Workspace, formation équipes.
 
 ## Pages visibilité web
 

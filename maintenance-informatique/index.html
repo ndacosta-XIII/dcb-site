@@ -2,50 +2,186 @@
 <html lang="fr" data-base="../">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<!-- Consent Mode v2 (defaut refuse) + Google Tag Manager -->
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});try{if(localStorage.getItem('dcb-consent')==='granted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}</script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MXK7RX9P');</script>
-<title>Maintenance Informatique PME : Intervention &lt;4h | DCB Technologies</title>
-<meta name="description" content="Maintenance informatique, cloud, cybersécurité et outils collaboratifs pour PME. Techniciens salariés, intervention sous 4h sur Lyon, Mâcon, Chalon. Devis gratuit.">
-<link rel="canonical" href="https://dcb-technologies.fr/maintenance-informatique/">
-<link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../css/style.css?v=18">
-<link rel="stylesheet" href="../css/tailwind.min.css?v=22">
-<style>
-  body { font-family: 'Inter', sans-serif; }
-  /* Cards services/cross-sell : filet signature couleur destination (remplace le top-stripe degrade) */
-  .pilier-filet { display:block; width:28px; height:3px; border-radius:2px; margin-bottom:20px; transition:width 0.3s ease-out; }
-  .group:hover .pilier-filet { width:48px; }
-  @media (prefers-reduced-motion: reduce) { .pilier-filet { transition:none !important; } }
-  /* Shells mobile / desktop */
-  .m-shell { display: none }
-  @media(max-width:640px) {
-    .m-shell { display: block }
-    .d-shell { display: none }
-    #dcb-phone-fab { display: none !important }
-    /* ── Couleurs mcard IT hub ─────────────── */
-    .info .bar{background:linear-gradient(90deg,#F59E0B,#FBBF24)}.info .ic{background:rgba(245,158,11,0.12);color:#F59E0B}.info .pill{background:rgba(245,158,11,0.12);color:#F59E0B}.info .feats .material-symbols-outlined{color:#F59E0B}.info .go .ab{background:#F59E0B}
-    .maint .bar{background:linear-gradient(90deg,#EF4444,#F87171)}.maint .ic{background:rgba(239,68,68,0.12);color:#EF4444}.maint .pill{background:rgba(239,68,68,0.12);color:#EF4444}.maint .feats .material-symbols-outlined{color:#EF4444}.maint .go .ab{background:#EF4444}
-    .cloud .bar{background:linear-gradient(90deg,#0D9488,#14B8A6)}.cloud .ic{background:rgba(13,148,136,0.12);color:#0D9488}.cloud .pill{background:rgba(13,148,136,0.12);color:#0D9488}.cloud .feats .material-symbols-outlined{color:#0D9488}.cloud .go .ab{background:#0D9488}
-    .loc .bar{background:linear-gradient(90deg,#0B3D91,#2563EB)}.loc .ic{background:rgba(11,61,145,0.12);color:#0B3D91}.loc .pill{background:rgba(11,61,145,0.12);color:#0B3D91}.loc .feats .material-symbols-outlined{color:#0B3D91}.loc .go .ab{background:#0B3D91}
-    .outils .bar{background:linear-gradient(90deg,#A855F7,#C084FC)}.outils .ic{background:rgba(168,85,247,0.12);color:#A855F7}.outils .pill{background:rgba(168,85,247,0.12);color:#A855F7}.outils .feats .material-symbols-outlined{color:#A855F7}.outils .go .ab{background:#A855F7}
-  }
-</style>
-<link rel="stylesheet" href="../m/css/mobile.css?v=33" media="screen and (max-width:640px)">
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- Consent Mode v2 (defaut refuse) + Google Tag Manager -->
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', functionality_storage: 'granted', security_storage: 'granted', wait_for_update: 500 }); try { if (localStorage.getItem('dcb-consent') === 'granted') { gtag('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); } } catch (e) { }</script>
+  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MXK7RX9P');</script>
+  <title>Maintenance Informatique PME : Intervention &lt;4h | DCB Technologies</title>
+  <meta name="description"
+    content="Infogérance, maintenance informatique, dépannage, cybersécurité et emails pro pour PME. Techniciens salariés, intervention sous 4h sur Lyon, Mâcon, Chalon. Devis gratuit.">
+  <link rel="canonical" href="https://dcb-technologies.fr/maintenance-informatique/">
+  <link rel="preload" href="../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=19">
+  <link rel="stylesheet" href="../css/tailwind.min.css?v=22">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Cards services/cross-sell : filet signature couleur destination (remplace le top-stripe degrade) */
+    .pilier-filet {
+      display: block;
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      transition: width 0.3s ease-out;
+    }
+
+    .group:hover .pilier-filet {
+      width: 48px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pilier-filet {
+        transition: none !important;
+      }
+    }
+
+    /* Shells mobile / desktop */
+    .m-shell {
+      display: none
+    }
+
+    @media(max-width:640px) {
+      .m-shell {
+        display: block
+      }
+
+      .d-shell {
+        display: none
+      }
+
+      #dcb-phone-fab {
+        display: none !important
+      }
+
+      /* ── Couleurs mcard IT hub ─────────────── */
+      .info .bar {
+        background: linear-gradient(90deg, #F59E0B, #FBBF24)
+      }
+
+      .info .ic {
+        background: rgba(245, 158, 11, 0.12);
+        color: #F59E0B
+      }
+
+      .info .pill {
+        background: rgba(245, 158, 11, 0.12);
+        color: #F59E0B
+      }
+
+      .info .feats .material-symbols-outlined {
+        color: #F59E0B
+      }
+
+      .info .go .ab {
+        background: #F59E0B
+      }
+
+      .maint .bar {
+        background: linear-gradient(90deg, #EF4444, #F87171)
+      }
+
+      .maint .ic {
+        background: rgba(239, 68, 68, 0.12);
+        color: #EF4444
+      }
+
+      .maint .pill {
+        background: rgba(239, 68, 68, 0.12);
+        color: #EF4444
+      }
+
+      .maint .feats .material-symbols-outlined {
+        color: #EF4444
+      }
+
+      .maint .go .ab {
+        background: #EF4444
+      }
+
+      .cloud .bar {
+        background: linear-gradient(90deg, #0D9488, #14B8A6)
+      }
+
+      .cloud .ic {
+        background: rgba(13, 148, 136, 0.12);
+        color: #0D9488
+      }
+
+      .cloud .pill {
+        background: rgba(13, 148, 136, 0.12);
+        color: #0D9488
+      }
+
+      .cloud .feats .material-symbols-outlined {
+        color: #0D9488
+      }
+
+      .cloud .go .ab {
+        background: #0D9488
+      }
+
+      .loc .bar {
+        background: linear-gradient(90deg, #0B3D91, #2563EB)
+      }
+
+      .loc .ic {
+        background: rgba(11, 61, 145, 0.12);
+        color: #0B3D91
+      }
+
+      .loc .pill {
+        background: rgba(11, 61, 145, 0.12);
+        color: #0B3D91
+      }
+
+      .loc .feats .material-symbols-outlined {
+        color: #0B3D91
+      }
+
+      .loc .go .ab {
+        background: #0B3D91
+      }
+
+      .outils .bar {
+        background: linear-gradient(90deg, #A855F7, #C084FC)
+      }
+
+      .outils .ic {
+        background: rgba(168, 85, 247, 0.12);
+        color: #A855F7
+      }
+
+      .outils .pill {
+        background: rgba(168, 85, 247, 0.12);
+        color: #A855F7
+      }
+
+      .outils .feats .material-symbols-outlined {
+        color: #A855F7
+      }
+
+      .outils .go .ab {
+        background: #A855F7
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../m/css/mobile.css?v=34" media="screen and (max-width:640px)">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Quel est le délai de réponse en cas d'urgence ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos techniciens salariés interviennent en moins de 4 heures sur site pour toute panne critique. En télémaintenance, la prise en charge est immédiate pendant les heures ouvrées."}},
-    {"@type": "Question", "name": "La télémaintenance est-elle sécurisée ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, nous utilisons des outils de prise en main à distance chiffrés de bout en bout. Chaque session est tracée et soumise à votre autorisation préalable."}},
-    {"@type": "Question", "name": "Que couvre la maintenance préventive ?", "acceptedAnswer": {"@type": "Answer", "text": "Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage logiciel, vérification des sauvegardes et rapports mensuels d'état de santé de votre infrastructure."}},
-    {"@type": "Question", "name": "Combien coûte une intervention sur site ?", "acceptedAnswer": {"@type": "Answer", "text": "Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement."}},
-    {"@type": "Question", "name": "Êtes-vous compatibles avec mon matériel existant ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous travaillons avec toutes les marques du marché. Un audit préalable gratuit nous permet de vérifier la compatibilité et de vous proposer la solution la plus adaptée."}},
-    {"@type": "Question", "name": "Y a-t-il un engagement contractuel minimum ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des interventions ponctuelles sans engagement pour les besoins spécifiques."}}
+    {"@type": "Question", "name": "Qu'est-ce que l'infogérance informatique ?", "acceptedAnswer": {"@type": "Answer", "text": "L'infogérance consiste à confier la gestion et la maintenance de votre parc informatique à un prestataire externe. DCB Technologies supervise vos postes, serveurs et réseaux, applique les mises à jour, sécurise vos données et intervient en cas de panne, pour un budget mensuel fixe."}},
+    {"@type": "Question", "name": "Quelle est la différence entre maintenance informatique préventive et curative ?", "acceptedAnswer": {"@type": "Answer", "text": "La maintenance curative répare après la panne ; la maintenance préventive surveille votre parc en continu pour l'éviter : mises à jour de sécurité, vérification des sauvegardes, remplacement du matériel vieillissant. Nos contrats combinent les deux, avec un rapport mensuel d'état de santé de votre infrastructure."}},
+    {"@type": "Question", "name": "Pourquoi externaliser la gestion de son parc informatique ?", "acceptedAnswer": {"@type": "Answer", "text": "Externaliser la gestion de son parc informatique coûte moins cher qu'un recrutement dédié et garantit une expertise toujours à jour : supervision 24/7, maintenance préventive, sécurité et sauvegardes gérées par des techniciens salariés. Vos équipes se concentrent sur leur métier et votre budget informatique devient prévisible."}},
+    {"@type": "Question", "name": "Que comprend un contrat de maintenance informatique ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos contrats couvrent la surveillance 24/7 du parc, les mises à jour de sécurité, l'assistance informatique en télémaintenance, les interventions sur site et la vérification des sauvegardes. Les formules sont flexibles, de 12 à 36 mois, avec des interventions ponctuelles sans engagement et un audit initial gratuit."}},
+    {"@type": "Question", "name": "Comment choisir son prestataire informatique quand on est une PME ?", "acceptedAnswer": {"@type": "Answer", "text": "Trois critères font la différence : des techniciens salariés plutôt que de la sous-traitance, un délai d'intervention garanti par contrat et un prestataire de proximité. Chez DCB Technologies, votre technicien référent connaît votre installation et intervient sur site en moins de 4 heures."}},
+    {"@type": "Question", "name": "Où intervenez-vous pour le dépannage et l'assistance informatique ?", "acceptedAnswer": {"@type": "Answer", "text": "Nos techniciens interviennent à Lyon, Mâcon, Chalon-sur-Saône et dans toute la Saône-et-Loire, le Rhône, l'Ain et la Loire. Dépannage sur site en moins de 4 heures pour les pannes critiques, assistance informatique en télémaintenance en moins de 20 minutes pendant les heures ouvrées."}}
   ]
 }
 </script>
@@ -56,7 +192,7 @@
   "@context": "https://schema.org/",
   "@type": "Service",
   "name": "Maintenance informatique entreprise",
-  "description": "Maintenance, cloud, cybersécurité et outils collaboratifs pour PME. Techniciens salariés DCB, intervention sous 4h, zéro sous-traitance. Saône-et-Loire, Rhône, Ain, Loire.",
+  "description": "Infogérance, maintenance, dépannage, cybersécurité, sauvegarde et emails pro pour PME. Techniciens salariés DCB, intervention sous 4h, zéro sous-traitance. Saône-et-Loire, Rhône, Ain, Loire.",
   "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
   "serviceType": "Maintenance informatique",
   "areaServed": [
@@ -76,10 +212,10 @@
     "@type": "OfferCatalog",
     "name": "Services IT DCB",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Maintenance et dépannage informatique","url":"https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud et cybersécurité","url":"https://dcb-technologies.fr/maintenance-informatique/cloud-securite/"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Location, vente et installation","url":"https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Outils collaboratifs Microsoft 365 et Google Workspace","url":"https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage et assistance","url":"https://dcb-technologies.fr/maintenance-informatique/depannage-assistance/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cybersécurité et sauvegarde","url":"https://dcb-technologies.fr/maintenance-informatique/cybersecurite-sauvegarde/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Matériel et réseaux","url":"https://dcb-technologies.fr/maintenance-informatique/materiel-reseaux/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Emails Pro et collaboration","url":"https://dcb-technologies.fr/maintenance-informatique/emails-pro-collaboration/"}}
     ]
   }
 }
@@ -87,7 +223,8 @@
 </head>
 
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXK7RX9P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXK7RX9P" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <div class="d-shell">
     <div id="dcb-nav"></div>
     <main class="pt-[76px]">
@@ -115,23 +252,24 @@
             </div>
             <h1
               class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-              Un seul interlocuteur pour <span class="text-[#F57C00] italic font-semibold">tout votre
-                informatique.</span>
+              Prestataire informatique pour TPE et PME, <span class="text-[#F57C00] italic font-semibold">une
+                infogérance locale et réactive.</span>
             </h1>
-            <p class="text-white/70 text-lg max-w-xl leading-relaxed">On vous dépanne à distance, sans attendre.
-              Techniciens
-              salariés, zéro sous-traitance. Nous gérons votre parc informatique pour que vous puissiez vous concentrer
-              sur votre métier.</p>
+            <p class="text-white/70 text-lg max-w-xl leading-relaxed">Que vous partiez de zéro ou que vous vouliez aller
+              plus loin, on trouve les solutions informatiques adaptées à votre entreprise et on vous accompagne à
+              chaque étape.</p>
             <div class="space-y-4">
               <div class="flex items-center gap-3 text-white"><span
-                  class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Maintenance, cloud, réseau
-                : un seul contrat, un seul numéro</div>
+                  class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Maintenance, dépannage,
+                matériel, emails profesionnels, téléphonie, facturation electronique : un seul numéro, fini de jongler
+                entre tous vos prestataires.</div>
               <div class="flex items-center gap-3 text-white"><span
-                  class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Prise en main à distance
-                immédiate, technicien salarié sur site en moins de 4h si besoin</div>
+                  class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Dépannage à distance
+                immédiat: Un problème ? On prend la main sur votre poste en quelques minutes et on intervient sur site
+                quand il le faut.</div>
               <div class="flex items-center gap-3 text-white"><span
                   class="material-symbols-outlined text-[#F57C00] ms-fill">check_circle</span>Saône-et-Loire, Rhône,
-                Ain, Loire : couverture locale garantie</div>
+                Ain, Loire, Allier : Une équipe locale, proche de vous.</div>
             </div>
             <div class="flex flex-wrap gap-4 pt-2">
               <a href="../contact/index.html"
@@ -157,14 +295,14 @@
                   <span class="absolute inline-flex h-3 w-3 rounded-full bg-[#10B981] opacity-60 animate-ping"></span>
                   <span class="relative inline-flex h-2 w-2 rounded-full bg-[#10B981]"></span>
                 </span>
-                <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">Système</span>
+                <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">Monitoring</span>
               </div>
-              <p class="font-sora text-2xl font-bold text-[#0B3D91] leading-none mb-1">Online</p>
-              <p class="text-xs text-slate-500 leading-relaxed">4 départements monitorés 24/7</p>
+              <p class="font-sora text-2xl font-bold text-[#0B3D91] leading-none mb-1">Esprit libre</p>
+              <p class="text-xs text-slate-500 leading-relaxed">Nous veillons sur vos systèmes dans l'ombre</p>
             </div>
             <div class="absolute -bottom-4 -left-4 z-30 bg-white p-5 rounded-xl shadow-xl">
-              <p class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] mb-1">Expertise IT</p>
-              <p class="font-sora text-xl font-bold text-[#0B3D91]">4 départements couverts</p>
+              <p class="text-[11px] font-bold uppercase tracking-widest text-[#F57C00] mb-1">Transparence</p>
+              <p class="font-sora text-xl font-bold text-[#0B3D91]">Aucun frais caché</p>
             </div>
           </div>
         </div>
@@ -181,7 +319,7 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">engineering</span>
-              <span class="font-semibold text-base md:text-xl text-slate-500">Techniciens salariés</span>
+              <span class="font-semibold text-base md:text-xl text-slate-500">Techniciens compétents</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">speed</span>
@@ -189,7 +327,7 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-[#F57C00] text-3xl ms-fill">support_agent</span>
-              <span class="font-semibold text-base md:text-xl text-slate-500">Support 7j/7</span>
+              <span class="font-semibold text-base md:text-xl text-slate-500">Support français</span>
             </div>
           </div>
         </div>
@@ -199,12 +337,14 @@
       <section class="py-12 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
           <div class="max-w-3xl mb-12 dcb-reveal">
-            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Le constat</p>
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Problèmes informatiques à
+              répétition ?</p>
             <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Ce que votre
               informatique vous coûte vraiment</h2>
-            <p class="text-slate-500 text-base leading-relaxed">Entre pannes à répétition, risques sécurité non couverts
-              et matériel obsolète, l'informatique devient un centre de coût invisible. Voici les signaux à reconnaître
-              avant qu'ils ne coûtent cher.</p>
+            <p class="text-slate-500 text-base leading-relaxed">Entre l'imprimante qui ne fonctionne plus, l'ordinateur
+              qui plante, le logiciel ne répond pas, le temps passé avec la hotline, et matériel obsolète,
+              l'informatique devient une source de stress et un budget imprévisible. Voici les signaux à reconnaître
+              avant la crise de nerfs:</p>
           </div>
           <div class="space-y-10 md:space-y-12 dcb-stagger">
 
@@ -212,20 +352,19 @@
               <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">01</span>
               <div class="pt-2">
                 <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Du temps perdu chaque jour</h3>
-                <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Un poste qui rame, une impression qui
-                  plante, une mise à jour qui bloque. Cumulé sur une équipe, c'est plusieurs heures de productivité qui
-                  fuient chaque semaine.</p>
+                <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Aller chercher un café pendant que son
+                  ordinateur s'allume, un logiciel qui plante sans arrêt, une mise à jour qui bloque. Cumulé sur une
+                  équipe, c'est plusieurs heures de productivité qui fuient chaque semaine.</p>
               </div>
             </div>
 
             <div class="flex gap-6 md:gap-12 items-start">
               <span class="font-sora text-6xl font-bold text-[#F57C00]/20 leading-none shrink-0 select-none">02</span>
               <div class="pt-2">
-                <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Des risques sécurité non couverts</h3>
+                <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Le stress de tout perdre</h3>
                 <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Antivirus périmé, sauvegardes non testées,
-                  mots de passe faibles. Une attaque par ransomware peut coûter des dizaines de milliers d'euros à une
-                  TPE. La prévention
-                  coûte dix fois moins cher.</p>
+                  mots de passe faibles. Une attaque par ransomware peut mettre une TPE à l'arrêt et coûter très cher.
+                  La prévention revient bien moins cher que la reprise.</p>
               </div>
             </div>
 
@@ -234,8 +373,8 @@
               <div class="pt-2">
                 <h3 class="font-sora text-xl font-semibold text-[#0B3D91] mb-3">Du matériel vieillissant sans suivi</h3>
                 <p class="text-slate-500 text-base leading-relaxed max-w-2xl">Des postes de 5 à 7 ans, un serveur sans
-                  remplacement prévu. Le jour de la panne critique, tout s'arrête en urgence. Renouveler votre parc à
-                  froid coûte toujours moins cher.</p>
+                  remplacement prévu. Le jour de la panne critique, tout s'arrête en urgence. Cela peut nuire à votre
+                  productivité et à la sécurité de vos données..</p>
               </div>
             </div>
 
@@ -247,14 +386,21 @@
       <section id="services" class="bg-[#F8F9FA] py-12 lg:py-16">
         <div class="max-w-7xl mx-auto px-6">
           <div class="mb-10 dcb-reveal">
-            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Nos domaines d'intervention
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">L'expertise DCB Technologies
             </p>
             <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Cinq expertises, un seul partenaire.
             </h2>
+            <p class="text-slate-500 text-base leading-relaxed">Que vous souhaitiez déléguer toute la gestion de votre
+              parc informatique ou que vous ayez besoin d'un dépannage ponctuel, nous vous accompagnons pour que
+              l'informatique devienne un atout, et non une contrainte.</p>
+
+            <p>
+
+            </p>
           </div>
 
-          <!-- Card vedette : Infogérance PME (coeur du silo) -->
-          <a href="infogerance-pme/index.html"
+          <!-- Card vedette : Infogérance et maintenance (coeur du silo) -->
+          <a href="infogerance-maintenance/index.html"
             class="group bg-white rounded-2xl overflow-hidden no-underline mb-8 hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] dcb-reveal block">
             <div class="flex flex-col lg:flex-row">
               <div class="flex-1 p-6 lg:p-7">
@@ -268,18 +414,17 @@
                     class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-1 rounded-full">Technicien
                     référent</span>
                 </div>
-                <h3 class="font-sora font-bold text-xl lg:text-2xl text-[#0B3D91] mb-2 leading-tight">Infogérance
-                  PME<span class="block text-[#F59E0B]">Un technicien qui vous connaît.</span></h3>
-                <p class="text-slate-500 text-sm mb-2 max-w-lg">Un technicien référent suit votre entreprise.
-                  Votre installation est documentée : le technicien qui intervient sait déjà qui vous êtes. Vous ne
-                  réexpliquez jamais tout. Coût mensuel fixe, zéro surprise.</p>
+                <h3 class="font-sora font-bold text-xl lg:text-2xl text-[#0B3D91] mb-2 leading-tight">Infogérance et maintenance<span class="block text-[#F59E0B]">Gestion de parc informatique</span></h3>
+                <p class="text-slate-500 text-sm mb-2 max-w-lg">Externalisez la gestion de votre parc informatique avec
+                  un contrat d'infogérance et de maintenance tout inclus, au budget mensuel fixe. Maintenance préventive
+                  et curative, mises à jour, sécurité de vos données.</p><br>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 mt-1 mb-2" style="row-gap:11px">
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
-                      class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Surveillance 24/7 de votre parc</li>
+                      class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Surveillance de votre parc</li>
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Interventions sur site incluses</li>
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
-                      class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Rapport mensuel d'état de santé</li>
+                      class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Parc informatique documenté</li>
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0"></span>Audit initial gratuit</li>
                 </ul>
@@ -309,8 +454,8 @@
           </a>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 dcb-stagger">
-            <!-- Location · Vente · Installation -->
-            <a href="location-vente-installation/index.html"
+            <!-- Matériel et réseaux -->
+            <a href="materiel-reseaux/index.html"
               class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
               <div class="p-6 lg:p-7 flex flex-col flex-1">
                 <span class="pilier-filet" style="background:#4F46E5" aria-hidden="true"></span>
@@ -323,12 +468,14 @@
                     class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-2.5 py-1 rounded-full">Location
                     & Achat</span>
                 </div>
-                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Location &amp; Installation</h3>
+                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Matériel et réseaux</h3>
                 <ul class="space-y-2.5 mb-4">
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
-                      class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Postes, serveurs et réseaux</li>
+                      class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Ordinateurs fixes et portables,
+                    écrans, imprimantes.</li>
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
-                      class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Location ou achat avec financement
+                      class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Réseaux, cablage, baie, serveurs,
+                    NAS, wifi
                   </li>
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></span>Installation et paramétrage sur site
@@ -344,8 +491,8 @@
                 </div>
               </div>
             </a>
-            <!-- Maintenance & Dépannage -->
-            <a href="maintenance-depannage/index.html"
+            <!-- Dépannage et assistance -->
+            <a href="depannage-assistance/index.html"
               class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
               <div class="p-6 lg:p-7 flex flex-col flex-1">
                 <span class="pilier-filet" style="background:#EF4444" aria-hidden="true"></span>
@@ -358,7 +505,7 @@
                     class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-2.5 py-1 rounded-full">&lt;4h
                     sur site</span>
                 </div>
-                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Maintenance &amp; Dépannage</h3>
+                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Dépannage et assistance</h3>
                 <ul class="space-y-2.5 mb-4">
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0"></span>Surveillance préventive 24/7</li>
@@ -377,8 +524,8 @@
                 </div>
               </div>
             </a>
-            <!-- Cloud · Sécurité · Messagerie -->
-            <a href="cloud-securite/index.html"
+            <!-- Cybersécurité & sauvegarde -->
+            <a href="cybersecurite-sauvegarde/index.html"
               class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
               <div class="p-6 lg:p-7 flex flex-col flex-1">
                 <span class="pilier-filet" style="background:#0D9488" aria-hidden="true"></span>
@@ -391,7 +538,7 @@
                     class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-full">Sauvegarde
                     3-2-1</span>
                 </div>
-                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Cloud &amp; Sécurité</h3>
+                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Cybersécurité &amp; sauvegarde</h3>
                 <ul class="space-y-2.5 mb-4">
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#0D9488] shrink-0"></span>Sauvegarde externalisée automatique
@@ -411,8 +558,8 @@
                 </div>
               </div>
             </a>
-            <!-- Outils Collaboratifs -->
-            <a href="outils-collaboratifs/index.html"
+            <!-- Emails Pro et collaboration -->
+            <a href="emails-pro-collaboration/index.html"
               class="group bg-white rounded-2xl no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] flex flex-col">
               <div class="p-6 lg:p-7 flex flex-col flex-1">
                 <span class="pilier-filet" style="background:#A855F7" aria-hidden="true"></span>
@@ -425,7 +572,7 @@
                     class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#A855F7] bg-[#A855F7]/10 px-2.5 py-1 rounded-full">M365
                     & Workspace</span>
                 </div>
-                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Outils Collaboratifs</h3>
+                <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-3">Emails Pro et collaboration</h3>
                 <ul class="space-y-2.5 mb-4">
                   <li class="flex items-center gap-2.5 text-sm text-slate-600"><span
                       class="w-1.5 h-1.5 rounded-full bg-[#A855F7] shrink-0"></span>Visioconférence et messagerie</li>
@@ -576,33 +723,69 @@
         </div>
       </section>
 
-      <!-- 6. TÉMOIGNAGES (témoignage unique centré ; re-basculer en data-dcb-carousel + data-dcb-track + dcb-carousel-controls quand plusieurs avis) -->
+      <!-- 6. TÉMOIGNAGES (carrousel data-dcb-carousel : 2 avis, cards 50% sur desktop) -->
       <section class="py-12 lg:py-16 bg-[#F8F9FA]">
         <div class="max-w-7xl mx-auto px-6">
           <div class="text-center mb-10 dcb-reveal">
             <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#F57C00] mb-4">Ils nous font confiance</p>
             <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Ce que disent nos clients.</h2>
           </div>
-          <div class="dcb-reveal dcb-reveal-scale max-w-xl mx-auto">
-            <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
-              <div>
-                <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
-                <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nous pouvons compter sur DCB technologies
-                  pour toutes nos demandes informatiques dans le secteur lyonnais ! Hyper pro &amp; réactif !"</p>
-              </div>
-              <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
-                <div
-                  class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
-                  <img src="../assets/testimonial-tm.png" alt="Teddy Malfroy, agence de communication Dicrea"
-                    width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover"
-                    onerror="this.replaceWith(document.createTextNode('TM'))">
-                </div>
+          <div data-dcb-carousel class="dcb-reveal dcb-reveal-scale">
+            <div data-dcb-track>
+              <!-- Témoignage 1 : Teddy Malfroy (Dicrea) -->
+              <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
                 <div>
-                  <p class="font-bold text-[#0B3D91]">Teddy Malfroy</p>
-                  <p class="text-slate-500 text-sm">Agence de communication Dicrea, Lyon (69)</p>
-                  <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+                  <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+                  <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Nous pouvons compter sur DCB
+                    technologies pour toutes nos demandes informatiques dans le secteur lyonnais ! Hyper pro &amp;
+                    réactif !"</p>
+                </div>
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                  <div
+                    class="w-12 h-12 bg-[#0B3D91] rounded-full flex items-center justify-center text-white font-bold shrink-0 overflow-hidden">
+                    <img src="../assets/testimonial-tm.png" alt="Teddy Malfroy, agence de communication Dicrea"
+                      width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-cover"
+                      onerror="this.replaceWith(document.createTextNode('TM'))">
+                  </div>
+                  <div>
+                    <p class="font-bold text-[#0B3D91]">Teddy Malfroy</p>
+                    <p class="text-slate-500 text-sm">Agence de communication Dicrea, Lyon (69)</p>
+                    <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+                  </div>
                 </div>
               </div>
+              <!-- Témoignage 2 : Jonathan Kalifat (Kabuki Media, Paris) -->
+              <div class="bg-white p-10 rounded-2xl tonal-shift-elevation flex flex-col justify-between">
+                <div>
+                  <span class="material-symbols-outlined text-[#F57C00] text-4xl mb-6 block ms-fill">format_quote</span>
+                  <p class="text-lg text-slate-700 italic leading-relaxed mb-6">"Cela fait 3 ans que Clément nous
+                    accompagne sur notre petite agence audiovisuelle et nous sommes ravis. Réactivité, pédagogie et
+                    professionnalisme sont au rendez-vous !"</p>
+                </div>
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                  <div
+                    class="w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center text-[#0B3D91] font-bold shrink-0 overflow-hidden p-1.5">
+                    <img src="../assets/testimonial-kabuki-icon.png"
+                      alt="Logo Kabuki Media, société de création audiovisuelle à Paris" width="198" height="198"
+                      loading="lazy" decoding="async" class="w-full h-full object-contain"
+                      onerror="this.replaceWith(document.createTextNode('JK'))">
+                  </div>
+                  <div>
+                    <p class="font-bold text-[#0B3D91]">Jonathan Kalifat</p>
+                    <p class="text-slate-500 text-sm">Kabuki Media, création audiovisuelle, Paris</p>
+                    <p class="text-[#F57C00] text-xs font-medium mt-1">★★★★★</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dcb-carousel-controls">
+              <button type="button" data-dcb-prev aria-label="Témoignage précédent">
+                <span class="material-symbols-outlined">arrow_back</span>
+              </button>
+              <div data-dcb-dots></div>
+              <button type="button" data-dcb-next aria-label="Témoignage suivant">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
             </div>
           </div>
         </div>
@@ -776,48 +959,59 @@
             </div>
             <div class="flex flex-col gap-3 dcb-reveal">
               <details class="faq-item">
-                <summary><span>Quel est le délai de réponse en cas d'urgence ?</span><span
+                <summary><span>Qu'est-ce que l'infogérance informatique ?</span><span
                     class="material-symbols-outlined expand-icon">expand_more</span></summary>
-                <div class="faq-item__body">Nos techniciens salariés interviennent en moins de 4 heures sur site pour
-                  toute panne critique. En <abbr
+                <div class="faq-item__body">L'infogérance consiste à confier la gestion et la maintenance de votre parc
+                  informatique à un prestataire externe. DCB Technologies supervise vos postes, serveurs et réseaux,
+                  applique les mises à jour, sécurise vos données et intervient en cas de panne, pour un budget mensuel
+                  fixe.</div>
+              </details>
+              <details class="faq-item">
+                <summary><span>Quelle est la différence entre maintenance informatique préventive et curative ?</span><span
+                    class="material-symbols-outlined expand-icon">expand_more</span></summary>
+                <div class="faq-item__body">La maintenance curative répare après la panne ; la maintenance préventive
+                  surveille votre parc en continu pour l'éviter : mises à jour de sécurité, vérification des
+                  sauvegardes, remplacement du matériel vieillissant. Nos contrats combinent les deux, avec un rapport
+                  mensuel d'état de santé de votre infrastructure. Pour approfondir, consultez notre <a
+                    href="../blog/maintenance-informatique-preventive/index.html"
+                    class="underline decoration-[#F57C00] underline-offset-2 hover:text-[#F57C00]">guide de la
+                    maintenance informatique préventive</a>.</div>
+              </details>
+              <details class="faq-item">
+                <summary><span>Pourquoi externaliser la gestion de son parc informatique ?</span><span
+                    class="material-symbols-outlined expand-icon">expand_more</span></summary>
+                <div class="faq-item__body">Externaliser la gestion de son parc informatique coûte moins cher qu'un
+                  recrutement dédié et garantit une expertise toujours à jour : supervision 24/7, maintenance
+                  préventive, sécurité et sauvegardes gérées par des techniciens salariés. Vos équipes se concentrent
+                  sur leur métier et votre budget informatique devient prévisible.</div>
+              </details>
+              <details class="faq-item">
+                <summary><span>Que comprend un contrat de maintenance informatique ?</span><span
+                    class="material-symbols-outlined expand-icon">expand_more</span></summary>
+                <div class="faq-item__body">Nos contrats couvrent la surveillance 24/7 du parc, les mises à jour de
+                  sécurité, l'assistance informatique en <abbr
                     data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes."
                     aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>,
-                  la prise en charge est immédiate pendant les heures ouvrées.</div>
+                  les interventions sur site et la vérification des sauvegardes. Les formules sont flexibles, de 12 à
+                  36 mois, avec des interventions ponctuelles sans engagement et un audit initial gratuit.</div>
               </details>
               <details class="faq-item">
-                <summary><span>La <abbr
-                      data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes."
-                      aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>
-                    est-elle sécurisée ?</span><span class="material-symbols-outlined expand-icon">expand_more</span>
-                </summary>
-                <div class="faq-item__body">Oui, nous utilisons des outils de prise en main à distance chiffrés de bout
-                  en bout. Chaque session est tracée et soumise à votre autorisation préalable.</div>
-              </details>
-              <details class="faq-item">
-                <summary><span>Que couvre la maintenance préventive ?</span><span
+                <summary><span>Comment choisir son prestataire informatique quand on est une PME ?</span><span
                     class="material-symbols-outlined expand-icon">expand_more</span></summary>
-                <div class="faq-item__body">Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage
-                  logiciel, vérification des sauvegardes et rapports mensuels d'état de santé de votre infrastructure.
-                </div>
+                <div class="faq-item__body">Trois critères font la différence : des techniciens salariés plutôt que de
+                  la sous-traitance, un délai d'intervention garanti par contrat et un prestataire de proximité. Chez
+                  DCB Technologies, votre technicien référent connaît votre installation et intervient sur site en
+                  moins de 4 heures.</div>
               </details>
               <details class="faq-item">
-                <summary><span>Combien coûte une intervention sur site ?</span><span
+                <summary><span>Où intervenez-vous pour le dépannage et l'assistance informatique ?</span><span
                     class="material-symbols-outlined expand-icon">expand_more</span></summary>
-                <div class="faq-item__body">Les interventions sont incluses dans nos contrats de maintenance. Hors
-                  contrat, un diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement.</div>
-              </details>
-              <details class="faq-item">
-                <summary><span>Êtes-vous compatibles avec mon matériel existant ?</span><span
-                    class="material-symbols-outlined expand-icon">expand_more</span></summary>
-                <div class="faq-item__body">Nous travaillons avec toutes les marques du marché. Un audit préalable
-                  gratuit nous permet de vérifier la compatibilité et de vous proposer la solution la plus adaptée.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary><span>Y a-t-il un engagement contractuel minimum ?</span><span
-                    class="material-symbols-outlined expand-icon">expand_more</span></summary>
-                <div class="faq-item__body">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous
-                  proposons aussi des interventions ponctuelles sans engagement pour les besoins spécifiques.</div>
+                <div class="faq-item__body">Nos techniciens interviennent à Lyon, Mâcon, Chalon-sur-Saône et dans toute
+                  la Saône-et-Loire, le Rhône, l'Ain et la Loire. Dépannage sur site en moins de 4 heures pour les
+                  pannes critiques, assistance informatique en <abbr
+                    data-tooltip="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes."
+                    aria-label="Dépannage à distance via accès sécurisé, sans déplacement technicien. Délai DCB : moins de 20 minutes.">télémaintenance</abbr>
+                  en moins de 20 minutes pendant les heures ouvrées.</div>
               </details>
             </div>
           </div>
@@ -985,24 +1179,24 @@
           <button class="tab active" role="tab" id="tab-info" aria-selected="true" aria-controls="card-info"><span
               class="material-symbols-outlined" aria-hidden="true">manage_accounts</span>Infogérance</button>
           <button class="tab" role="tab" id="tab-maint" aria-selected="false" aria-controls="card-maint"><span
-              class="material-symbols-outlined" aria-hidden="true">build</span>Maintenance</button>
+              class="material-symbols-outlined" aria-hidden="true">build</span>Dépannage</button>
           <button class="tab" role="tab" id="tab-cloud" aria-selected="false" aria-controls="card-cloud"><span
-              class="material-symbols-outlined" aria-hidden="true">cloud_done</span>Cloud</button>
+              class="material-symbols-outlined" aria-hidden="true">cloud_done</span>Cybersécurité</button>
           <button class="tab" role="tab" id="tab-loc" aria-selected="false" aria-controls="card-loc"><span
-              class="material-symbols-outlined" aria-hidden="true">devices</span>Location</button>
+              class="material-symbols-outlined" aria-hidden="true">devices</span>Matériel</button>
           <button class="tab" role="tab" id="tab-outils" aria-selected="false" aria-controls="card-outils"><span
-              class="material-symbols-outlined" aria-hidden="true">groups</span>Outils</button>
+              class="material-symbols-outlined" aria-hidden="true">groups</span>Emails</button>
         </div>
         <div class="carou" id="carou">
           <a class="mcard info" id="card-info" role="tabpanel" aria-labelledby="tab-info"
-            href="infogerance-pme/index.html" aria-label="Voir la page Infogérance PME">
+            href="infogerance-maintenance/index.html" aria-label="Voir la page Infogérance et maintenance">
             <div class="bar"></div>
             <div class="body">
               <div class="head">
                 <div class="ic"><span class="material-symbols-outlined ms-fill">manage_accounts</span></div>
                 <span class="pill">Technicien référent</span>
               </div>
-              <h3>Infogérance PME</h3>
+              <h3>Infogérance et maintenance</h3>
               <p class="ds">Un technicien référent salarié qui suit votre parc. Votre installation est documentée :
                 vous ne réexpliquez jamais tout. Coût fixe, zéro surprise.</p>
               <div class="feats">
@@ -1019,14 +1213,14 @@
             </div>
           </a>
           <a class="mcard maint" id="card-maint" role="tabpanel" aria-labelledby="tab-maint"
-            href="maintenance-depannage/index.html" aria-label="Voir la page Maintenance et Dépannage">
+            href="depannage-assistance/index.html" aria-label="Voir la page Dépannage et assistance">
             <div class="bar"></div>
             <div class="body">
               <div class="head">
                 <div class="ic"><span class="material-symbols-outlined ms-fill">build</span></div>
                 <span class="pill">Intervention &lt;4h</span>
               </div>
-              <h3>Maintenance &amp; Dépannage</h3>
+              <h3>Dépannage et assistance</h3>
               <p class="ds">Votre technicien référent, sur place en moins de 4h.</p>
               <div class="feats">
                 <div><span class="material-symbols-outlined ms-fill">timer</span>Intervention garantie &lt;4h</div>
@@ -1040,14 +1234,14 @@
             </div>
           </a>
           <a class="mcard cloud" id="card-cloud" role="tabpanel" aria-labelledby="tab-cloud"
-            href="cloud-securite/index.html" aria-label="Voir la page Cloud et Sécurité">
+            href="cybersecurite-sauvegarde/index.html" aria-label="Voir la page Cybersécurité et sauvegarde">
             <div class="bar"></div>
             <div class="body">
               <div class="head">
                 <div class="ic"><span class="material-symbols-outlined ms-fill">cloud_done</span></div>
                 <span class="pill">Sauvegarde 3-2-1</span>
               </div>
-              <h3>Cloud &amp; Sécurité</h3>
+              <h3>Cybersécurité &amp; sauvegarde</h3>
               <p class="ds">Vos données sauvegardées et protégées, même en cas de sinistre.</p>
               <div class="feats">
                 <div><span class="material-symbols-outlined ms-fill">backup</span>Sauvegarde externalisée quotidienne
@@ -1062,14 +1256,14 @@
             </div>
           </a>
           <a class="mcard loc" id="card-loc" role="tabpanel" aria-labelledby="tab-loc"
-            href="location-vente-installation/index.html" aria-label="Voir la page Location et Installation">
+            href="materiel-reseaux/index.html" aria-label="Voir la page Matériel et réseaux">
             <div class="bar"></div>
             <div class="body">
               <div class="head">
                 <div class="ic"><span class="material-symbols-outlined ms-fill">devices</span></div>
                 <span class="pill">Zéro achat immédiat</span>
               </div>
-              <h3>Location &amp; Installation</h3>
+              <h3>Matériel et réseaux</h3>
               <p class="ds">Matériel récent, financement flexible, installation clé en main.</p>
               <div class="feats">
                 <div><span class="material-symbols-outlined ms-fill">computer</span>Matériel récent, garanti</div>
@@ -1083,14 +1277,14 @@
             </div>
           </a>
           <a class="mcard outils" id="card-outils" role="tabpanel" aria-labelledby="tab-outils"
-            href="outils-collaboratifs/index.html" aria-label="Voir la page Outils Collaboratifs">
+            href="emails-pro-collaboration/index.html" aria-label="Voir la page Emails Pro et collaboration">
             <div class="bar"></div>
             <div class="body">
               <div class="head">
                 <div class="ic"><span class="material-symbols-outlined ms-fill">groups</span></div>
                 <span class="pill">Microsoft 365 &amp; Google</span>
               </div>
-              <h3>Outils Collaboratifs</h3>
+              <h3>Emails Pro et collaboration</h3>
               <p class="ds">Microsoft 365 ou Google Workspace, configuré et formé sur site.</p>
               <div class="feats">
                 <div><span class="material-symbols-outlined ms-fill">email</span>Messagerie et agenda partagés</div>
@@ -1320,6 +1514,34 @@
               </div>
             </div>
           </div>
+          <div style="background:var(--s1);border-radius:18px;padding:18px;border:1px solid var(--line)">
+            <div style="display:flex;gap:2px;margin-bottom:10px" aria-label="5 étoiles sur 5">
+              <span class="material-symbols-outlined"
+                style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+              <span class="material-symbols-outlined"
+                style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+              <span class="material-symbols-outlined"
+                style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+              <span class="material-symbols-outlined"
+                style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+              <span class="material-symbols-outlined"
+                style="font-variation-settings:'FILL' 1;font-size:16px;color:#F57C00">star</span>
+            </div>
+            <p style="font-size:14px;line-height:1.6;color:var(--ink);margin:0 0 12px">"Cela fait 3 ans que Clément nous
+              accompagne sur notre petite agence audiovisuelle et nous sommes ravis. Réactivité, pédagogie et
+              professionnalisme sont au rendez-vous !"</p>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div
+                style="width:36px;height:36px;border-radius:99px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:4px">
+                <img src="../assets/testimonial-kabuki-icon.png" alt="Logo Kabuki Media" width="198" height="198"
+                  loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+              <div>
+                <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--ink)">Jonathan
+                  Kalifat</div>
+                <div style="font-size:11.5px;color:var(--mute)">Kabuki Media, création audiovisuelle, Paris</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1464,46 +1686,60 @@
         <h2>Questions <em>fréquentes</em>.</h2>
         <div class="faq">
           <details>
-            <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Quel
-              est le délai de réponse en cas d'urgence ?<span class="material-symbols-outlined ch faq-icon"
-                aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Nos techniciens salariés interviennent en moins de 4 heures sur site pour toute panne
-              critique. En télémaintenance, la prise en charge est immédiate pendant les heures ouvrées.</div>
+            <summary><span class="qi"><span class="material-symbols-outlined"
+                  aria-hidden="true">help</span></span>Qu'est-ce que l'infogérance informatique ?<span
+                class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+            <div class="ans">L'infogérance consiste à confier la gestion et la maintenance de votre parc informatique à
+              un prestataire externe. DCB Technologies supervise vos postes, serveurs et réseaux, applique les mises à
+              jour, sécurise vos données et intervient en cas de panne, pour un budget mensuel fixe.</div>
           </details>
           <details>
-            <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>La
-              télémaintenance est-elle sécurisée ?<span class="material-symbols-outlined ch faq-icon"
+            <summary><span class="qi"><span class="material-symbols-outlined"
+                  aria-hidden="true">help</span></span>Quelle est la différence entre maintenance informatique
+              préventive et curative ?<span class="material-symbols-outlined ch faq-icon"
                 aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Oui, nous utilisons des outils de prise en main à distance chiffrés de bout en bout. Chaque
-              session est tracée et soumise à votre autorisation préalable.</div>
+            <div class="ans">La maintenance curative répare après la panne ; la maintenance préventive surveille votre
+              parc en continu pour l'éviter : mises à jour de sécurité, vérification des sauvegardes, remplacement du
+              matériel vieillissant. Nos contrats combinent les deux, avec un rapport mensuel d'état de santé de votre
+              infrastructure. Pour approfondir, consultez notre <a
+                href="../blog/maintenance-informatique-preventive/index.html">guide de la maintenance informatique
+                préventive</a>.</div>
+          </details>
+          <details>
+            <summary><span class="qi"><span class="material-symbols-outlined"
+                  aria-hidden="true">help</span></span>Pourquoi externaliser la gestion de son parc informatique ?<span
+                class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+            <div class="ans">Externaliser la gestion de son parc informatique coûte moins cher qu'un recrutement dédié
+              et garantit une expertise toujours à jour : supervision 24/7, maintenance préventive, sécurité et
+              sauvegardes gérées par des techniciens salariés. Vos équipes se concentrent sur leur métier et votre
+              budget informatique devient prévisible.</div>
           </details>
           <details>
             <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que
-              couvre la maintenance préventive ?<span class="material-symbols-outlined ch faq-icon"
+              comprend un contrat de maintenance informatique ?<span class="material-symbols-outlined ch faq-icon"
                 aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Surveillance 24/7 de votre parc, mises à jour de sécurité, nettoyage logiciel, vérification
-              des sauvegardes et rapports mensuels d'état de santé de votre infrastructure.</div>
+            <div class="ans">Nos contrats couvrent la surveillance 24/7 du parc, les mises à jour de sécurité,
+              l'assistance informatique en télémaintenance, les interventions sur site et la vérification des
+              sauvegardes. Les formules sont flexibles, de 12 à 36 mois, avec des interventions ponctuelles sans
+              engagement et un audit initial gratuit.</div>
           </details>
           <details>
             <summary><span class="qi"><span class="material-symbols-outlined"
-                  aria-hidden="true">help</span></span>Combien coûte une intervention sur site ?<span
-                class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Les interventions sont incluses dans nos contrats de maintenance. Hors contrat, un
-              diagnostic gratuit est proposé pour évaluer vos besoins avant tout engagement.</div>
+                  aria-hidden="true">help</span></span>Comment choisir son prestataire informatique quand on est une
+              PME ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+            <div class="ans">Trois critères font la différence : des techniciens salariés plutôt que de la
+              sous-traitance, un délai d'intervention garanti par contrat et un prestataire de proximité. Chez DCB
+              Technologies, votre technicien référent connaît votre installation et intervient sur site en moins de 4
+              heures.</div>
           </details>
           <details>
-            <summary><span class="qi"><span class="material-symbols-outlined"
-                  aria-hidden="true">help</span></span>Êtes-vous compatibles avec mon matériel existant ?<span
+            <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Où
+              intervenez-vous pour le dépannage et l'assistance informatique ?<span
                 class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Nous travaillons avec toutes les marques du marché. Un audit préalable gratuit nous permet
-              de vérifier la compatibilité et de vous proposer la solution la plus adaptée.</div>
-          </details>
-          <details>
-            <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Y
-              a-t-il un engagement contractuel minimum ?<span class="material-symbols-outlined ch faq-icon"
-                aria-hidden="true">expand_more</span></summary>
-            <div class="ans">Nos contrats sont flexibles : 12, 24 ou 36 mois selon la formule. Nous proposons aussi des
-              interventions ponctuelles sans engagement pour les besoins spécifiques.</div>
+            <div class="ans">Nos techniciens interviennent à Lyon, Mâcon, Chalon-sur-Saône et dans toute la
+              Saône-et-Loire, le Rhône, l'Ain et la Loire. Dépannage sur site en moins de 4 heures pour les pannes
+              critiques, assistance informatique en télémaintenance en moins de 20 minutes pendant les heures
+              ouvrées.</div>
           </details>
         </div>
       </section>
@@ -1533,7 +1769,7 @@
     <div id="m-menu"></div>
 
   </div><!-- /m-shell -->
-  <script src="../js/scripts.js?v=49"></script>
+  <script src="../js/scripts.js?v=50"></script>
   <script>
     /* Hub IT : remplace le FAB "Demander un devis" (sheet caisse) par un lien contact */
     (function waitFab() {

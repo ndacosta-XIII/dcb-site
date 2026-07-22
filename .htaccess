@@ -29,11 +29,21 @@ RewriteRule ^(.*)$ https://dcb-technologies.fr/$1 [L,R=301]
 
 # ── 5. Migration slug /service-it-360/ → /maintenance-informatique/ ─
 # Ordre IMPORTANT : sous-pages d'abord, hub en dernier
-Redirect 301 /service-it-360/maintenance-depannage/ /maintenance-informatique/maintenance-depannage/
-Redirect 301 /service-it-360/cloud-securite/ /maintenance-informatique/cloud-securite/
-Redirect 301 /service-it-360/location-vente-installation/ /maintenance-informatique/location-vente-installation/
-Redirect 301 /service-it-360/outils-collaboratifs/ /maintenance-informatique/outils-collaboratifs/
+# (cibles mises a jour 22/07/2026 : renommage des slugs du silo IT,
+#  redirection directe vers les nouveaux slugs pour eviter les chaines)
+Redirect 301 /service-it-360/maintenance-depannage/ /maintenance-informatique/depannage-assistance/
+Redirect 301 /service-it-360/cloud-securite/ /maintenance-informatique/cybersecurite-sauvegarde/
+Redirect 301 /service-it-360/location-vente-installation/ /maintenance-informatique/materiel-reseaux/
+Redirect 301 /service-it-360/outils-collaboratifs/ /maintenance-informatique/emails-pro-collaboration/
 Redirect 301 /service-it-360/ /maintenance-informatique/
+
+# ── 5bis. Migration slugs silo IT (22/07/2026) ───────────────────────
+# Renommage des 5 sous-pages du silo maintenance-informatique
+Redirect 301 /maintenance-informatique/infogerance-pme/ /maintenance-informatique/infogerance-maintenance/
+Redirect 301 /maintenance-informatique/location-vente-installation/ /maintenance-informatique/materiel-reseaux/
+Redirect 301 /maintenance-informatique/maintenance-depannage/ /maintenance-informatique/depannage-assistance/
+Redirect 301 /maintenance-informatique/cloud-securite/ /maintenance-informatique/cybersecurite-sauvegarde/
+Redirect 301 /maintenance-informatique/outils-collaboratifs/ /maintenance-informatique/emails-pro-collaboration/
 
 # ── 5. Cache navigateur (Expires) ────────────────────────────────────
 <IfModule mod_expires.c>

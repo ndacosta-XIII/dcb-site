@@ -65,11 +65,11 @@
 
   var ddIT = ddPanel(
     ddItem('maintenance-informatique/index.html',                           '#E6EEF9','#0B3D91','build',          'Toute notre offre IT',           'Vue d\u2019ensemble, services, tarifs') +
-    ddItem('maintenance-informatique/infogerance-pme/index.html',           '#FEF3C7','#F59E0B','manage_accounts','Infog\u00e9rance PME',            'Technicien attibr\u00e9, co\u00fbt fixe') +
-    ddItem('maintenance-informatique/maintenance-depannage/index.html',      '#FEE2E2','#EF4444','build',          'Maintenance &amp; D\u00e9pannage','Intervention &lt;4h sur site') +
-    ddItem('maintenance-informatique/cloud-securite/index.html',             '#CCFBF1','#0D9488','cloud_done',     'Cloud &amp; S\u00e9curit\u00e9',  'Sauvegarde, antivirus, firewall') +
-    ddItem('maintenance-informatique/location-vente-installation/index.html','#E0E7FF','#4F46E5','router',         'Location &amp; Installation',     'R\u00e9seaux, postes, serveurs') +
-    ddItem('maintenance-informatique/outils-collaboratifs/index.html',       '#F3E8FF','#A855F7','groups',         'Outils Collaboratifs',            'Messagerie, visio, partage')
+    ddItem('maintenance-informatique/infogerance-maintenance/index.html',           '#FEF3C7','#F59E0B','manage_accounts','Infog\u00e9rance et maintenance',            'Technicien attibr\u00e9, co\u00fbt fixe') +
+    ddItem('maintenance-informatique/depannage-assistance/index.html',      '#FEE2E2','#EF4444','build',          'D\u00e9pannage et assistance','Intervention &lt;4h sur site') +
+    ddItem('maintenance-informatique/cybersecurite-sauvegarde/index.html',             '#CCFBF1','#0D9488','cloud_done',     'Cybers\u00e9curit\u00e9 &amp; sauvegarde',  'Sauvegarde, antivirus, firewall') +
+    ddItem('maintenance-informatique/materiel-reseaux/index.html','#E0E7FF','#4F46E5','router',         'Mat\u00e9riel et r\u00e9seaux',     'R\u00e9seaux, postes, serveurs') +
+    ddItem('maintenance-informatique/emails-pro-collaboration/index.html',       '#F3E8FF','#A855F7','groups',         'Emails Pro et collaboration',            'Messagerie, visio, partage')
   );
 
   var ddWeb = ddPanel(
@@ -100,11 +100,11 @@
 
     mobSection('dcb-m-it','Informatique',
       mobLink('maintenance-informatique/index.html',                            'hub',           '#0B3D91','Tous nos services IT') +
-      mobLink('maintenance-informatique/infogerance-pme/index.html',            'manage_accounts','#F59E0B','Infog\u00e9rance PME') +
-      mobLink('maintenance-informatique/maintenance-depannage/index.html',      'build',         '#EF4444','Maintenance & D\u00e9pannage') +
-      mobLink('maintenance-informatique/cloud-securite/index.html',             'cloud_done',    '#0D9488','Cloud & S\u00e9curit\u00e9') +
-      mobLink('maintenance-informatique/location-vente-installation/index.html','router',        '#4F46E5','Location & Installation') +
-      mobLink('maintenance-informatique/outils-collaboratifs/index.html',       'groups',        '#A855F7','Outils Collaboratifs')
+      mobLink('maintenance-informatique/infogerance-maintenance/index.html',            'manage_accounts','#F59E0B','Infog\u00e9rance et maintenance') +
+      mobLink('maintenance-informatique/depannage-assistance/index.html',      'build',         '#EF4444','D\u00e9pannage et assistance') +
+      mobLink('maintenance-informatique/cybersecurite-sauvegarde/index.html',             'cloud_done',    '#0D9488','Cybers\u00e9curit\u00e9 & sauvegarde') +
+      mobLink('maintenance-informatique/materiel-reseaux/index.html','router',        '#4F46E5','Mat\u00e9riel et r\u00e9seaux') +
+      mobLink('maintenance-informatique/emails-pro-collaboration/index.html',       'groups',        '#A855F7','Emails Pro et collaboration')
     ) +
 
     mobSection('dcb-m-web','Visibilit\u00e9 Web',
@@ -141,11 +141,11 @@
     'caisse-enregistreuse/monnayeur':         '#059669',
     'caisse-enregistreuse/cashmag':           '#F57C00',
     'caisse-enregistreuse/hairnet':           '#c59c45',
-    'maintenance-informatique/maintenance-depannage':       '#EF4444',
-    'maintenance-informatique/cloud-securite':              '#0D9488',
-    'maintenance-informatique/location-vente-installation': '#4F46E5',
-    'maintenance-informatique/outils-collaboratifs':        '#A855F7',
-    'maintenance-informatique/infogerance-pme':             '#F59E0B',
+    'maintenance-informatique/depannage-assistance':       '#EF4444',
+    'maintenance-informatique/cybersecurite-sauvegarde':              '#0D9488',
+    'maintenance-informatique/materiel-reseaux': '#4F46E5',
+    'maintenance-informatique/emails-pro-collaboration':        '#A855F7',
+    'maintenance-informatique/infogerance-maintenance':             '#F59E0B',
     'visibilite-web/creation-site-internet': '#A855F7',
     'visibilite-web/seo-sea-local':          '#EF4444',
     'visibilite-web/hebergement':            '#0D9488'
@@ -240,11 +240,11 @@
           '<!-- Col 3: IT & Web -->' +
           '<div>' +
             '<h3 class="font-sora font-bold text-base text-white mt-0 mb-4">IT &amp; Digital</h3>' +
-            fl('maintenance-informatique/infogerance-pme/index.html',            'Infog\u00e9rance PME') +
-            fl('maintenance-informatique/maintenance-depannage/index.html',      'Maintenance Informatique') +
-            fl('maintenance-informatique/cloud-securite/index.html',             'Cloud &amp; S\u00e9curit\u00e9') +
-            fl('maintenance-informatique/location-vente-installation/index.html','Location &amp; Installation') +
-            fl('maintenance-informatique/outils-collaboratifs/index.html',       'Outils Collaboratifs') +
+            fl('maintenance-informatique/infogerance-maintenance/index.html',            'Infog\u00e9rance et maintenance') +
+            fl('maintenance-informatique/depannage-assistance/index.html',      'D\u00e9pannage et assistance') +
+            fl('maintenance-informatique/cybersecurite-sauvegarde/index.html',             'Cybers\u00e9curit\u00e9 &amp; sauvegarde') +
+            fl('maintenance-informatique/materiel-reseaux/index.html','Mat\u00e9riel et r\u00e9seaux') +
+            fl('maintenance-informatique/emails-pro-collaboration/index.html',       'Emails Pro et collaboration') +
             '<h3 class="font-sora font-bold text-base text-white mt-8 mb-4">Visibilit\u00e9 Web</h3>' +
             fl('visibilite-web/creation-site-internet/index.html', 'Cr\u00e9ation de Site Web') +
             fl('visibilite-web/seo-sea-local/index.html',          'SEO &amp; SEA Local') +
@@ -454,11 +454,11 @@
             msSub('caisse-enregistreuse/monnayeur/index.html',          'payments',      '#059669', 'Monnayeur automatique')
           ) +
           msGrp('maintenance-informatique', 'build', '#345BAF', 'Informatique',
-            msSub('maintenance-informatique/infogerance-pme/index.html',            'manage_accounts','#F59E0B', 'Infogérance PME') +
-            msSub('maintenance-informatique/maintenance-depannage/index.html',      'build',          '#EF4444', 'Maintenance &amp; Dépannage') +
-            msSub('maintenance-informatique/cloud-securite/index.html',             'cloud_done',     '#0D9488', 'Cloud &amp; Sécurité') +
-            msSub('maintenance-informatique/location-vente-installation/index.html','router',         '#4F46E5', 'Location &amp; Installation') +
-            msSub('maintenance-informatique/outils-collaboratifs/index.html',       'groups',         '#A855F7', 'Outils collaboratifs')
+            msSub('maintenance-informatique/infogerance-maintenance/index.html',            'manage_accounts','#F59E0B', 'Infogérance et maintenance') +
+            msSub('maintenance-informatique/depannage-assistance/index.html',      'build',          '#EF4444', 'Dépannage et assistance') +
+            msSub('maintenance-informatique/cybersecurite-sauvegarde/index.html',             'cloud_done',     '#0D9488', 'Cybersécurité &amp; sauvegarde') +
+            msSub('maintenance-informatique/materiel-reseaux/index.html','router',         '#4F46E5', 'Matériel et réseaux') +
+            msSub('maintenance-informatique/emails-pro-collaboration/index.html',       'groups',         '#A855F7', 'Emails Pro et collaboration')
           ) +
           msGrp('visibilite-web', 'language', '#F57C00', 'Visibilité web',
             msSub('visibilite-web/creation-site-internet/index.html', 'design_services', '#C084FC', 'Création de site web') +
@@ -591,10 +591,10 @@
         '<details>' +
           '<summary>IT &amp; Digital<span class="material-symbols-outlined" aria-hidden="true">expand_more</span></summary>' +
           '<ul>' +
-            '<li><a href="' + base + 'maintenance-informatique/maintenance-depannage/index.html">Maintenance informatique</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/cloud-securite/index.html">Cloud &amp; Sécurité</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/location-vente-installation/index.html">Location &amp; Installation</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/outils-collaboratifs/index.html">Outils collaboratifs</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/depannage-assistance/index.html">Dépannage et assistance</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/cybersecurite-sauvegarde/index.html">Cybersécurité &amp; sauvegarde</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/materiel-reseaux/index.html">Matériel et réseaux</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/emails-pro-collaboration/index.html">Emails Pro et collaboration</a></li>' +
           '</ul>' +
         '</details>' +
         '<details>' +
@@ -1221,10 +1221,10 @@
             '<span class="material-symbols-outlined" aria-hidden="true">expand_more</span>' +
           '</summary>' +
           '<ul>' +
-            '<li><a href="' + base + 'maintenance-informatique/maintenance-depannage/index.html">Maintenance informatique</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/cloud-securite/index.html">Cloud &amp; Sécurité</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/location-vente-installation/index.html">Location &amp; Installation</a></li>' +
-            '<li><a href="' + base + 'maintenance-informatique/outils-collaboratifs/index.html">Outils collaboratifs</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/depannage-assistance/index.html">Dépannage et assistance</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/cybersecurite-sauvegarde/index.html">Cybersécurité &amp; sauvegarde</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/materiel-reseaux/index.html">Matériel et réseaux</a></li>' +
+            '<li><a href="' + base + 'maintenance-informatique/emails-pro-collaboration/index.html">Emails Pro et collaboration</a></li>' +
           '</ul>' +
         '</details>' +
         '<details>' +

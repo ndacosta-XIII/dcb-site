@@ -107,26 +107,32 @@
 
   <!-- ── SOUS-PAGES MAINTENANCE INFORMATIQUE ──── -->
   <url>
-    <loc>https://dcb-technologies.fr/maintenance-informatique/maintenance-depannage/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <loc>https://dcb-technologies.fr/maintenance-informatique/infogerance-maintenance/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dcb-technologies.fr/maintenance-informatique/cloud-securite/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <loc>https://dcb-technologies.fr/maintenance-informatique/depannage-assistance/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dcb-technologies.fr/maintenance-informatique/location-vente-installation/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <loc>https://dcb-technologies.fr/maintenance-informatique/cybersecurite-sauvegarde/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dcb-technologies.fr/maintenance-informatique/outils-collaboratifs/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <loc>https://dcb-technologies.fr/maintenance-informatique/materiel-reseaux/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dcb-technologies.fr/maintenance-informatique/emails-pro-collaboration/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
