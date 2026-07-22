@@ -86,7 +86,7 @@ Parlez à un technicien DCB — diagnostic gratuit, sans engagement.
 
 ## Pages locales Caisse par département
 
-Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations propres par page (garde-fou anti-duplicate). Angle 71 = base technique réelle (atelier Paray-le-Monial). Angle 69 = siège social réel à Dardilly + techniciens salariés (proximité). ATTENTION : DCB n'a PAS de stock/entrepôt local (ni à Lyon/Dardilly) : ne jamais écrire "stock" ou "entrepôt" DCB (faux fait banni le 01/07/2026). Angle 01/42 = réactivité sans base locale (télémaintenance 20 min + sur site <4h), aucune base/stock/agence suggérée.
+Texte complet rédigé dans `docs/content-departements-redige.md`. Formulations propres par page (garde-fou anti-duplicate). Angle 71 = base technique réelle (atelier Paray-le-Monial). Angle 69 = siège social réel à Dardilly + techniciens salariés (proximité). ATTENTION : DCB n'a PAS d'entrepôt ou d'agence locale par département (ni à Lyon/Dardilly) : ne jamais revendiquer une base ou un entrepôt propre à un département (faux fait banni le 01/07/2026). En revanche, la formulation "Matériel en stock" est validée par XIII le 22/07/2026 et retirée de la liste des claims bannis (DCB tient bien du matériel en stock sur sa base technique). Angle 01/42 = réactivité sans base locale (télémaintenance 20 min + sur site <4h), aucune base ou agence locale suggérée.
 
 ### Saône-et-Loire (`caisse-enregistreuse/saone-et-loire/index.html`)
 - Angle : "Votre technicien ne vient pas de Lyon, il vient de Paray." Base et stock à Paray-le-Monial.
@@ -155,7 +155,7 @@ Slugs cibles validés (renommages sans coût SEO, site pas en ligne) :
 - Ponctuel (`depannage-informatique/`) : mécanisme affiché, aucun montant public. Formulation validée : « facturé à l'heure, tarif annoncé avant intervention selon l'expertise requise, zéro surprise ».
 - Tout le reste (protéger, communiquer, équiper) : sur devis après audit gratuit. Emplacement prévu pour accueillir une grille quand une offre sera productisée (VoIP en premier, cf. annexe A de la spec).
 
-**Témoignages.** L'avis réel Teddy Malfroy (Agence de communication Dicrea, Lyon 69) vit sur le hub UNIQUEMENT, en carte unique centrée. Zéro témoignage sur les 5 sous-pages tant qu'aucun vrai avis n'est collecté : une section absente vaut mieux qu'un faux avis. Sections réactivables à réception d'avis réels distincts (6 castings distincts exigés à la livraison, jamais le même personnage recyclé de page en page).
+**Témoignages.** Nous ne disposons pour le moment que de 7 avis Google réels (dont Teddy Malfroy, Agence de communication Dicrea, Lyon 69). Leur réutilisation sur plusieurs pages est acceptée (décision XIII du 22/07/2026), à revoir quand la banque d'avis grandira. Ne jamais inventer d'avis ni de casting fictif : seuls les 7 avis réels sont utilisables, une section absente vaut mieux qu'un faux avis.
 
 **Audit gratuit = porte d'entrée du silo.** Mis en évidence sur le hub comme offre à risque zéro. CTA secondaire sur toutes les pages, décliné (pas mot pour mot) autour de l'idée : « on regarde votre installation gratuitement, on vous dit où vous en êtes ».
 
@@ -188,11 +188,11 @@ Même message sur les 6 pages (télémaintenance immédiate d'abord, sur site en
 - **Requêtes cibles :** maintenance informatique entreprise, infogérance PME + villes, prestataire informatique local.
 - **Formulations réservées au hub :**
   - Le comparatif « Chez les autres / DCB » (meilleur bloc du silo, à ne dupliquer nulle part).
-  - L'avis Teddy Malfroy (hub uniquement).
+  - L'avis Teddy Malfroy (réutilisable sur plusieurs pages, décision XIII du 22/07/2026).
   - Le positionnement « technicien référent » (référent prioritaire épaulé par une équipe qui connaît le dossier ; « votre installation est documentée, vous ne réexpliquez jamais tout »). Ne plus promettre un technicien « attitré » exclusif.
   - Le bloc échelle en version courte (les 2 pages maintenance en portent la version complète).
   - L'audit gratuit érigé en porte d'entrée à risque zéro.
-- **NE PAS réutiliser ailleurs :** l'angle « un seul interlocuteur pour tout », le comparatif marque, l'avis Teddy Malfroy.
+- **NE PAS réutiliser ailleurs :** l'angle « un seul interlocuteur pour tout », le comparatif marque. (Les 7 avis Google réels, eux, sont réutilisables sur plusieurs pages : décision XIII du 22/07/2026.)
 
 ### 2. Contrat (`infogerance-pme/`)
 
