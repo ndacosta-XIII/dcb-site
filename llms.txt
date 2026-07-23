@@ -61,7 +61,7 @@
 - Zone d'intervention : Lyon, Mâcon, Chalon-sur-Saône, Villefranche-sur-Saône, Bourg-en-Bresse, Roanne, Paray-le-Monial (départements 71, 69, 01, 42)
 - Conformité fiscale : logiciel de caisse conforme aux critères ISCA (article 286 CGI) obligatoire depuis 2018 ; preuve au choix depuis février 2026 (certificat NF525 ou attestation d'éditeur), amende 7 500 € par caisse sans justificatif. CashMag est certifié NF525 par l'AFNOR.
 - Délai intervention : télémaintenance < 20 min, sur site < 4h, 7j/7
-- Matériel : OXHOO et AURES, garanti 5 ans
+- Matériel : AURES, garanti 5 ans
 - Logiciel : CashMag (Android, hybride local+cloud, NF525 certifié)
 - Fondateurs : Nathanaël Da Costa (Président & Co-fondateur) et Clément Boissié (Directeur Général & Co-fondateur)
 - Zéro sous-traitance : tous les techniciens sont salariés DCB
