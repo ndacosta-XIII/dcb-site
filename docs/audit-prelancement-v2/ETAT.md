@@ -41,6 +41,11 @@ Référence : la section « IT gelé » consolidée de RAPPORT-FINAL.md = checkl
 | Vérification adversariale IT | general-purpose | opus | it-07-verification.md | TERMINÉ : 6 confirmés, 0 réfuté, 4 requalifiés. 3 vrais bloquants (B2 heroes 404, B3 OG/Twitter absents, B8 FAQ mobile amputée 4 pages). B6 astreinte = arbitrage XIII (décision produit). B1 BOM requalifié mineur (meta charset OK, mojibake 0). B4/B5/B7/M1/M3 = majeurs. Contradiction 301 tranchée pour it-02 (règles dormantes sous /new/, actives à la bascule racine). 3 faux positifs internes isolés : it-01 prétend à tort LocalBusiness inliné sur le hub (faux), it-01 « 301 actives » surévalué, it-05 « aucun form sur les 5 sous-pages » inexact (emails-pro a un form desktop). |
 | Synthèse IT | orchestrateur | : | RAPPORT-IT-DEGEL.md | TERMINÉ : note globale silo IT 74/100 (moyenne des 6 dimensions). 3 bloquants (B2 heroes 404, B3 OG/Twitter, B8 FAQ mobile amputée), 1 arbitrage XIII (B6 astreinte), 5 majeurs (B4/B5/B7/M1/M3), 6 mineurs. Écart de 11 points vs le reste du site (85/100). |
 
+## Corrections : état des batchs (23/07/2026)
+- Batch 0 (rapatriement deploy→main) : FAIT (369919c). Batch 1 (4 bloquants + 3 formulaires IT inertes câblés) : FAIT (c514d98, 0391ecd), déployé (c2ae4cc), confirmé live 7/7 (batch1-confirmation.md). Batch 2 (arbitrages : astreinte sans « en option », Oxhoo bandeau seul, title hub Web) : FAIT (923f0c4), deploy dbce77a.
+- Arbitrages XIII rendus : astreinte = argument commercial sans précision contractuelle ; Oxhoo uniquement bandeau partenaires homepage ; title hub Web validé via reco SEO.
+- AJOUTS XIII 23/07 : (a) CTA « Demander un devis » sur pages IT illogique (pas de prix) → reformuler, batch 4 ; (b) heroes IT placeholder (cybersécu, emails-pro, matériel) à remplacer dès réception photos XIII, noms de fichiers figés ; (c) batch de test dédié de TOUS les formulaires IT (structurel + envois réels coordonnés avec XIII).
+
 ## Acquis : INTERDIT de re-flaguer (faux positifs connus / décisions XIII)
 - « Matériel en stock » : formulation de XIII, validée, dé-bannie du référentiel.
 - Réutilisation des 7 avis clients sur plusieurs pages : assumée (base clients jeune).
