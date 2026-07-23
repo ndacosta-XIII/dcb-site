@@ -1041,6 +1041,53 @@
         </div>
       </section>
 
+      <!-- FORMULAIRE DEVIS -->
+      <section id="devis" class="py-12 lg:py-16 bg-white scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="mb-10 dcb-reveal">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[#F57C00] uppercase block mb-2">Un échange, pas un engagement</span>
+            <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Parlons de votre informatique</h2>
+            <p class="text-slate-500 mt-2">Décrivez votre besoin, un technicien vous rappelle avec un premier diagnostic et une proposition claire. Sans démarchage, sans engagement.</p>
+          </div>
+          <form id="devis-it-form" action="../send.php" method="post" class="bg-[#F8F9FA] p-8 rounded-xl tonal-shift-elevation border border-slate-100">
+            <input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <input type="hidden" name="source" value="page-maintenance-informatique-hub">
+            <input type="hidden" name="page" value="/maintenance-informatique/">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="space-y-1">
+                <label for="prenom-it" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Prénom</label>
+                <input id="prenom-it" name="prenom" required class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20" placeholder="Jean" type="text" autocomplete="given-name">
+              </div>
+              <div class="space-y-1">
+                <label for="email-it" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Email</label>
+                <input id="email-it" name="email" required class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20" placeholder="jean@monentreprise.fr" type="email" autocomplete="email">
+              </div>
+              <div class="space-y-1">
+                <label for="tel-it" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Téléphone</label>
+                <input id="tel-it" name="telephone" required class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
+              </div>
+              <div class="space-y-1">
+                <label for="besoin-it-select" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Votre besoin</label>
+                <select id="besoin-it-select" name="formule" class="w-full bg-white border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20">
+                  <option value="">Choisir un besoin</option>
+                  <option value="infogerance">Infogérance et maintenance</option>
+                  <option value="depannage">Dépannage et assistance</option>
+                  <option value="cybersecurite">Cybersécurité et sauvegarde</option>
+                  <option value="materiel">Matériel et réseaux</option>
+                  <option value="emails">Emails pro et collaboration</option>
+                  <option value="autre">Je ne sais pas encore</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button type="submit" class="bg-[#F57C00] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Être rappelé <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+              <a href="tel:0482530510" class="border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#0B3D91]/5 transition-colors"><span class="material-symbols-outlined text-sm">call</span> 04 82 53 05 10</a>
+            </div>
+            <p class="text-slate-400 text-xs mt-3 flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">lock</span> Vos données restent confidentielles. Zéro spam, zéro démarchage téléphonique.</p>
+          </form>
+        </div>
+      </section>
+
       <!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
       <section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#F57C00;--accent-dark:#E06E00">
         <div class="max-w-7xl mx-auto px-6">
@@ -1790,20 +1837,7 @@
     <div id="m-menu"></div>
 
   </div><!-- /m-shell -->
-  <script src="../js/scripts.js?v=50"></script>
-  <script>
-    /* Hub IT : remplace le FAB "Demander un devis" (sheet caisse) par un lien contact */
-    (function waitFab() {
-      var btn = document.getElementById('fabDevis');
-      if (!btn) { return setTimeout(waitFab, 30); }
-      var a = document.createElement('a');
-      a.className = btn.className;
-      a.href = '../contact/index.html';
-      a.setAttribute('aria-label', 'Demander un diagnostic informatique');
-      a.innerHTML = btn.innerHTML;
-      btn.parentNode.replaceChild(a, btn);
-    })();
-  </script>
+  <script src="../js/scripts.js?v=51"></script>
 </body>
 
 </html>

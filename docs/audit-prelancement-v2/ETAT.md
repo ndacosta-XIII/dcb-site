@@ -44,7 +44,8 @@ Référence : la section « IT gelé » consolidée de RAPPORT-FINAL.md = checkl
 ## Corrections : état des batchs (23/07/2026)
 - Batch 0 (rapatriement deploy→main) : FAIT (369919c). Batch 1 (4 bloquants + 3 formulaires IT inertes câblés) : FAIT (c514d98, 0391ecd), déployé (c2ae4cc), confirmé live 7/7 (batch1-confirmation.md). Batch 2 (arbitrages : astreinte sans « en option », Oxhoo bandeau seul, title hub Web) : FAIT (923f0c4), deploy dbce77a.
 - Arbitrages XIII rendus : astreinte = argument commercial sans précision contractuelle ; Oxhoo uniquement bandeau partenaires homepage ; title hub Web validé via reco SEO.
-- AJOUTS XIII 23/07 : (a) CTA « Demander un devis » sur pages IT illogique (pas de prix) → reformuler, batch 4 ; (b) heroes IT placeholder (cybersécu, emails-pro, matériel) à remplacer dès réception photos XIII, noms de fichiers figés ; (c) batch de test dédié de TOUS les formulaires IT (structurel + envois réels coordonnés avec XIII).
+- AJOUTS XIII 23/07 : (a) CTA « Demander un devis » sur pages IT illogique (pas de prix) → reformuler, batch 4 ; (b) heroes IT placeholder (cybersécu, emails-pro, matériel) à remplacer dès réception photos XIII, noms de fichiers figés ; (c) batch de test dédié de TOUS les formulaires IT (structurel + envois réels coordonnés avec XIII) ; (d) batch 4.7 : UNIFORMISER les formulaires IT (aucun n'est pareil), sur le standard du silo caisse (mêmes champs/ordre/style/microcopy), imbriqué avec 4.5 (forms manquants hub+infogérance) et 4.6 (CTA).
+- Batch 3 : FAIT (9cb8382), deploy a193654. Marques : règle finale = visibles uniquement bandeau partenaires ; JSON-LD/llms.txt = liste fournisseurs factuelle autorisée.
 
 ## Acquis : INTERDIT de re-flaguer (faux positifs connus / décisions XIII)
 - « Matériel en stock » : formulation de XIII, validée, dé-bannie du référentiel.

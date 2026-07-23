@@ -292,7 +292,7 @@
             </div>
             <div class="space-y-1">
               <label for="tel-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Téléphone</label>
-              <input id="tel-cloud" name="telephone" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
+              <input id="tel-cloud" name="telephone" required class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
             </div>
             <div class="space-y-1">
               <label for="besoin-cloud-select" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Votre priorité</label>
@@ -642,19 +642,6 @@
 
 </div><!-- /m-shell -->
 
-<script src="../../js/scripts.js?v=50"></script>
-<script>
-/* Sous-page IT : remplace le FAB "Demander un devis" par un lien contact */
-(function waitFab() {
-  var btn = document.getElementById('fabDevis');
-  if (!btn) { return setTimeout(waitFab, 30); }
-  var a = document.createElement('a');
-  a.className = btn.className;
-  a.href = '../../contact/index.html';
-  a.setAttribute('aria-label', 'Demander un audit cybersécurité et sauvegarde');
-  a.innerHTML = btn.innerHTML;
-  btn.parentNode.replaceChild(a, btn);
-})();
-</script>
+<script src="../../js/scripts.js?v=51"></script>
 </body>
 </html>
