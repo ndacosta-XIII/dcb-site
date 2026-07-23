@@ -261,25 +261,28 @@
         </div>
       </div>
       <div class="lg:col-span-7">
-        <div id="devis-cloud-form" class="bg-white p-8 rounded-xl tonal-shift-elevation border border-slate-100">
+        <form id="devis-cloud-form" action="../../send.php" method="post" class="bg-white p-8 rounded-xl tonal-shift-elevation border border-slate-100">
+          <input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="hidden" name="source" value="page-cybersecurite-sauvegarde">
+          <input type="hidden" name="page" value="/maintenance-informatique/cybersecurite-sauvegarde/">
           <h3 class="font-sora font-bold text-lg text-[#0B3D91] mb-1 no-underline">Être recontacté par un expert</h3>
           <p class="text-slate-500 text-sm mb-6">Réponse sous 24h. Pas de démarchage, pas d'engagement.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div class="space-y-1">
               <label for="prenom-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Prénom</label>
-              <input id="prenom-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="Jean" type="text">
+              <input id="prenom-cloud" name="prenom" required class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="Jean" type="text" autocomplete="given-name">
             </div>
             <div class="space-y-1">
               <label for="email-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Email</label>
-              <input id="email-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="jean@monentreprise.fr" type="email">
+              <input id="email-cloud" name="email" required class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="jean@monentreprise.fr" type="email" autocomplete="email">
             </div>
             <div class="space-y-1">
               <label for="tel-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Téléphone</label>
-              <input id="tel-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="06 12 34 56 78" type="tel">
+              <input id="tel-cloud" name="telephone" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
             </div>
             <div class="space-y-1">
               <label for="besoin-cloud-select" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Votre priorité</label>
-              <select id="besoin-cloud-select" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20">
+              <select id="besoin-cloud-select" name="formule" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20">
                 <option value="">Choisir une priorité</option>
                 <option value="sauvegarde">Sauvegarde externalisée</option>
                 <option value="antivirus">Antivirus professionnel</option>
@@ -290,11 +293,11 @@
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button class="bg-[#0D9488] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Être recontacté sous 24h <span class="material-symbols-outlined text-sm">mail</span></button>
+            <button type="submit" class="bg-[#0D9488] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Être recontacté sous 24h <span class="material-symbols-outlined text-sm">mail</span></button>
             <a href="tel:0482530510" class="border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#0B3D91]/5 transition-colors"><span class="material-symbols-outlined text-sm">call</span> 04 82 53 05 10</a>
           </div>
           <p class="text-slate-400 text-xs mt-3 flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">lock</span> Vos données restent confidentielles. Zéro spam, zéro démarchage téléphonique.</p>
-        </div>
+        </form>
       </div>
     </div>
   </div>
