@@ -331,15 +331,15 @@
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#0B3D91] text-base">check</span>Formation équipe sur site</li>
           <li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-[#0B3D91] text-base">check</span>Contrat de maintenance optionnel</li>
         </ul>
-        <a href="../../contact/index.html?offre=lvi-achat" class="mt-auto w-full border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold hover:bg-[#0B3D91]/5 transition-colors text-sm text-center block">Demander un devis achat</a>
+        <a href="../../contact/index.html?offre=lvi-achat" class="mt-auto w-full border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold hover:bg-[#0B3D91]/5 transition-colors text-sm text-center block">Être rappelé</a>
       </div>
     </div>
     <form id="devis-lvi-form" action="../../send.php" method="post" class="bg-white p-8 rounded-xl tonal-shift-elevation border border-slate-100 mt-6">
       <input type="text" name="hp_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <input type="hidden" name="source" value="page-materiel-reseaux">
       <input type="hidden" name="page" value="/maintenance-informatique/materiel-reseaux/">
-      <h3 class="font-sora font-bold text-lg text-[#0B3D91] mb-1 no-underline">Recevoir mon devis par email</h3>
-      <p class="text-slate-500 text-sm mb-6">Devis détaillé sous 24h. Pas de démarchage, pas d'engagement.</p>
+      <h3 class="font-sora font-bold text-lg text-[#0B3D91] mb-1 no-underline">Être rappelé par un technicien</h3>
+      <p class="text-slate-500 text-sm mb-6">Un technicien vous rappelle avec un audit de votre parc et un comparatif clair. Pas de démarchage, pas d'engagement.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div class="space-y-1">
           <label for="prenom-lvi" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Prénom</label>
@@ -351,7 +351,7 @@
         </div>
         <div class="space-y-1">
           <label for="tel-lvi" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Téléphone</label>
-          <input id="tel-lvi" name="telephone" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
+          <input id="tel-lvi" name="telephone" required class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0B3D91]/20" placeholder="06 12 34 56 78" type="tel" autocomplete="tel">
         </div>
         <div class="space-y-1">
           <label for="offre-lvi-select" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Formule souhaitée</label>
@@ -364,7 +364,7 @@
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <button type="submit" class="bg-[#0B3D91] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Recevoir mon devis <span class="material-symbols-outlined text-sm">mail</span></button>
+        <button type="submit" class="bg-[#0B3D91] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Être rappelé <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
         <a href="tel:0482530510" class="border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#0B3D91]/5 transition-colors"><span class="material-symbols-outlined text-sm">call</span> 04 82 53 05 10</a>
       </div>
       <p class="text-slate-400 text-xs mt-3 flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">lock</span> Vos données restent confidentielles. Zéro spam, zéro démarchage téléphonique.</p>
@@ -600,7 +600,7 @@ FIN TÉMOIGNAGES -->
         <p class="d-lede">Nos conseillers étudient votre parc et vous proposent un comparatif leasing vs achat adapté à votre situation.</p>
       </div>
       <div class="lg:col-span-5 col-action">
-        <a href="../../contact/index.html" class="btn btn--primary">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <a href="../../contact/index.html" class="btn btn--primary">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
         <span class="d-divider">ou appelez-nous</span>
         <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
       </div>
@@ -658,7 +658,7 @@ FIN TÉMOIGNAGES -->
   </div>
 
   <div class="cta-row">
-    <a class="btn btn-pri" href="../../contact/index.html" aria-label="Demander un devis location ou achat">Demander un devis<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <a class="btn btn-pri" href="../../contact/index.html" aria-label="Demander un audit gratuit">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
     <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
   </div>
 </section>
@@ -870,7 +870,7 @@ FIN TÉMOIGNAGES -->
       <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:#4F46E5">check</span>Formation équipe sur site</div>
       <div style="display:flex;align-items:center;gap:8px;font-weight:600"><span class="material-symbols-outlined" style="font-size:16px;color:#4F46E5">check</span>Contrat de maintenance optionnel</div>
     </div>
-    <a class="btn btn-pri" href="../../contact/index.html?offre=lvi-achat" style="width:100%;background:transparent;border:2px solid #4F46E5;color:#4F46E5;box-shadow:none">Demander un devis achat<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <a class="btn btn-pri" href="../../contact/index.html?offre=lvi-achat" style="width:100%;background:transparent;border:2px solid #4F46E5;color:#4F46E5;box-shadow:none">Être rappelé<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
   </div>
 </section>
 
@@ -1025,7 +1025,7 @@ FIN TÉMOIGNAGES -->
   <span class="topbar" aria-hidden="true"></span>
   <h3 id="cta-final-h">Prêt à moderniser <em>votre parc informatique</em>&nbsp;?</h3>
   <p>Nos conseillers étudient votre parc et vous proposent un comparatif leasing vs achat adapté à votre situation.</p>
-  <a class="btn btn-pri" href="../../contact/index.html">Demander un devis gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  <a class="btn btn-pri" href="../../contact/index.html">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
   <span class="dpx-divider">ou appelez-nous</span>
   <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
   <p class="m-updated">Mis à jour le <time datetime="2026-07-22">22 juillet 2026</time></p>
@@ -1041,19 +1041,6 @@ FIN TÉMOIGNAGES -->
 
 </div><!-- /m-shell -->
 
-<script src="../../js/scripts.js?v=50"></script>
-<script>
-/* Sous-page IT : remplace le FAB par un lien contact */
-(function waitFab() {
-  var btn = document.getElementById('fabDevis');
-  if (!btn) { return setTimeout(waitFab, 30); }
-  var a = document.createElement('a');
-  a.className = btn.className;
-  a.href = '../../contact/index.html';
-  a.setAttribute('aria-label', 'Demander un devis location ou achat');
-  a.innerHTML = btn.innerHTML;
-  btn.parentNode.replaceChild(a, btn);
-})();
-</script>
+<script src="../../js/scripts.js?v=51"></script>
 </body>
 </html>

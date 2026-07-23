@@ -194,7 +194,7 @@
 
         '<!-- Right: Phone + CTA + Burger -->' +
         '<div class="flex items-center gap-5">' +
-          '<a href="tel:0482530510" class="hidden xl:flex items-center gap-2 py-2.5 font-headline font-bold text-[0.9375rem] tracking-[-0.02em] text-[#0B3D91] no-underline whitespace-nowrap">' +
+          '<a href="tel:0482530510" class="hidden lg:flex items-center gap-2 py-2.5 font-headline font-bold text-[0.9375rem] tracking-[-0.02em] text-[#0B3D91] no-underline whitespace-nowrap">' +
             '<span class="material-symbols-outlined mat-filled text-[1.2rem] leading-none" style="color:' + navAccent + '">call</span>04 82 53 05 10</a>' +
           '<a href="' + base + 'contact/index.html" class="hidden min-[480px]:inline-block text-white py-3 px-6 rounded-[14px] font-headline text-[0.9375rem] font-bold no-underline whitespace-nowrap shadow-sm hover:brightness-95 transition-all duration-150" style="background:' + navAccent + '">Demander un devis</a>' +
           '<button id="dcb-burger" onclick="dcbBurgerToggle()" aria-label="Menu" class="flex lg:hidden flex-col justify-center items-center gap-[5px] w-11 h-11 bg-transparent border-none cursor-pointer p-1.5 rounded-lg">' +
