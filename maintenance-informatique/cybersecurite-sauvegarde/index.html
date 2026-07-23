@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Consent Mode v2 (defaut refuse) + Google Tag Manager -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});try{if(localStorage.getItem('dcb-consent')==='granted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MXK7RX9P');</script>
+<title>Cybersécurité & sauvegarde PME | DCB Technologies</title>
+<meta name="description" content="Cybersécurité et sauvegarde pour PME : sauvegarde externalisée, antivirus professionnel managé, firewall et formation de vos employés. Données hébergées en France. 71, 69, 01, 42.">
+<link rel="canonical" href="https://dcb-technologies.fr/maintenance-informatique/cybersecurite-sauvegarde/">
+<link rel="preload" href="../../assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/style.css?v=19">
+<link rel="stylesheet" href="../../css/tailwind.min.css?v=22">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  /* Shells mobile / desktop */
+  .m-shell { display: none }
+  @media(max-width:640px) {
+    .m-shell { display: block }
+    .d-shell { display: none }
+    #dcb-phone-fab { display: none !important }
+    /* Thème teal cybersecurite-sauvegarde */
+    [data-metier="cybersecurite-sauvegarde"] .eyebrow { color: #0D9488 }
+    [data-metier="cybersecurite-sauvegarde"] .hero h1 em,
+    [data-metier="cybersecurite-sauvegarde"] .sec h2 em { color: #0D9488 }
+    [data-metier="cybersecurite-sauvegarde"] .pain .n { color: #0D9488 }
+    [data-metier="cybersecurite-sauvegarde"] .hero .checks .material-symbols-outlined { color: #0D9488 }
+    [data-metier="cybersecurite-sauvegarde"] .marquee-track .it .material-symbols-outlined { color: #0D9488 }
+    [data-metier="cybersecurite-sauvegarde"] .fab .b1 { background: #0D9488; box-shadow: 0 10px 22px -6px rgba(13,148,136,0.55) }
+    [data-metier="cybersecurite-sauvegarde"] .btn-pri { background: #0D9488}
+  }
+  .dcb-dot.is-active::before { background: #0D9488 !important; }
+  @media (prefers-reduced-motion: reduce) { .animate-ping { animation: none !important; } }
+</style>
+<link rel="stylesheet" href="../../m/css/mobile.css?v=34" media="screen and (max-width:640px)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Que faire en cas de cyberattaque ou de ransomware ?", "acceptedAnswer": {"@type": "Answer", "text": "Isolez immédiatement la machine du réseau, ne payez pas la rançon et appelez-nous. Grâce à la sauvegarde externalisée avec copies immuables, nous restaurons votre système à son état antérieur à l'attaque en quelques heures."}},
+    {"@type": "Question", "name": "Comment reconnaître un mail frauduleux ou de phishing ?", "acceptedAnswer": {"@type": "Answer", "text": "Expéditeur inhabituel, sentiment d'urgence, lien ou pièce jointe inattendus : ce sont les signaux classiques. Notre antispam filtre ces messages en amont et nous formons vos équipes à repérer ceux qui passent."}},
+    {"@type": "Question", "name": "Pourquoi externaliser la sauvegarde des données de son entreprise ?", "acceptedAnswer": {"@type": "Answer", "text": "Panne, incendie, vol ou ransomware : une copie conservée uniquement dans vos locaux peut disparaître avec le reste. La sauvegarde externalisée duplique vos données dans des datacenters français certifiés ISO 27001, avec des copies immuables impossibles à chiffrer par un attaquant."}},
+    {"@type": "Question", "name": "Quel antivirus choisir pour une entreprise ?", "acceptedAnswer": {"@type": "Answer", "text": "Un antivirus grand public ne suffit plus face aux attaques actuelles. Nous déployons un antivirus professionnel managé avec détection comportementale, supervisé 24/7 par nos techniciens : chaque alerte est qualifiée par un humain."}},
+    {"@type": "Question", "name": "Comment sensibiliser ses salariés à la cybersécurité ?", "acceptedAnswer": {"@type": "Answer", "text": "Par des formations courtes et régulières, des simulations de phishing et des règles simples sur les mots de passe. 80% des incidents partent d'une erreur humaine : nous formons vos équipes directement sur site."}},
+    {"@type": "Question", "name": "En quoi consiste un audit de sécurité informatique ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous cartographions votre parc, identifions les vulnérabilités sur les sauvegardes, les accès, la messagerie et le réseau, puis vous remettons un plan d'action priorisé. L'audit initial est réalisé sous 48h."}}
+  ]
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dcb-technologies.fr/"},{"@type":"ListItem","position":2,"name":"Maintenance informatique","item":"https://dcb-technologies.fr/maintenance-informatique/"},{"@type":"ListItem","position":3,"name":"Cybersécurité et sauvegarde"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "name": "Cybersécurité et sauvegarde entreprise",
+  "description": "Sauvegarde externalisée avec copies immuables, antivirus professionnel managé, firewall et formation des employés à la cybersécurité. Données hébergées en France, supervision proactive 24/7 par techniciens DCB salariés sur Saône-et-Loire, Rhône, Ain, Loire.",
+  "provider": {"@id": "https://dcb-technologies.fr/#localbusiness"},
+  "serviceType": "Cybersécurité et sauvegarde IT",
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Saône-et-Loire (71)"},
+    {"@type":"AdministrativeArea","name":"Rhône (69)"},
+    {"@type":"AdministrativeArea","name":"Ain (01)"},
+    {"@type":"AdministrativeArea","name":"Loire (42)"},
+    {"@type":"City","name":"Lyon"},
+    {"@type":"City","name":"Mâcon"},
+    {"@type":"City","name":"Chalon-sur-Saône"},
+    {"@type":"City","name":"Paray-le-Monial"},
+    {"@type":"City","name":"Villefranche-sur-Saône"},
+    {"@type":"City","name":"Bourg-en-Bresse"}
+  ],
+  "url": "https://dcb-technologies.fr/maintenance-informatique/cybersecurite-sauvegarde/"
+}
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXK7RX9P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="d-shell">
+<div id="dcb-nav"></div>
+<main class="pt-[76px]">
+
+<!-- 1. HERO (identité Trust Layered Operations : 3 layers) -->
+<section class="bg-gradient-to-br from-[#115E59] to-[#0F6E56] py-12 lg:py-16 relative overflow-hidden dcb-parallax">
+  <div class="absolute inset-0 opacity-10 pointer-events-none dcb-parallax-layer" data-speed="0.35">
+    <div class="hero-blob-a absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#0F6E56] to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+    <div class="lg:col-span-7 space-y-6 dcb-stagger">
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-[#0D9488] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-[#0D9488]">Cybersécurité &amp; sauvegarde</span>
+        <span class="hidden md:inline-flex bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 items-center gap-1">
+          <span class="material-symbols-outlined text-[14px] ms-fill">verified</span> Hébergement France
+        </span>
+        <span class="hidden md:inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20">Monitoring 24/7</span>
+      </div>
+      <h1 class="font-sora text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">Cybersécurité et sauvegarde : protégez vos données d'entreprise</h1>
+      <p class="text-white/70 text-lg max-w-xl leading-relaxed">Sauvegarde externalisée, antivirus managé, firewall et formation de vos équipes. Infrastructure cloud hébergée en France, supervisée par nos experts.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#0D9488] ms-fill">check_circle</span>Sauvegarde externalisée avec copies immuables</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#0D9488] ms-fill">check_circle</span>Protection proactive contre les ransomwares</div>
+        <div class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-[#0D9488] ms-fill">check_circle</span>Formation de vos employés à la cybersécurité</div>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="#contact" class="dcb-btn-hover bg-[#0D9488] text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3">Demander un audit sécurité <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a href="tel:0482530510" class="dcb-btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2"><span class="material-symbols-outlined">call</span> 04 82 53 05 10</a>
+      </div>
+    </div>
+    <!-- HERO IDENTITY : Trust Layered Operations (3 layers avec z-index, identité silo informatique) -->
+    <div class="hidden lg:block lg:col-span-5 relative pt-8">
+      <!-- LAYER 1 : Main image placeholder v2.0 (photo équipe cloud/sécurité) -->
+      <img alt="Expert DCB supervisant la sécurité cloud d'un client"
+           class="relative z-20 rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover bg-[#072B6B]"
+           src="../../assets/hero-cybersecurite-sauvegarde.jpg"
+           width="1200" height="900" loading="eager" fetchpriority="high" decoding="async"
+           onerror="this.onerror=null;this.src='../../assets/placeholder-photo.svg';">
+
+      <!-- LAYER 2 : Floating mini dashboard card (offset top-right), identité IT "sécurité continue" -->
+      <!-- IMAGE PLACEHOLDER v2.0 : possibilité d'intégrer un mini screenshot supervision sécurité -->
+      <div class="absolute -top-2 -right-6 z-30 bg-white rounded-xl shadow-xl p-4 w-52 dcb-reveal dcb-reveal-scale">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="relative flex items-center justify-center w-3 h-3">
+            <span class="absolute inline-flex h-3 w-3 rounded-full bg-[#0D9488] opacity-60 animate-ping"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-[#0D9488]"></span>
+          </span>
+          <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">Chiffré</span>
+        </div>
+        <p class="font-sora text-2xl font-bold text-[#0B3D91] leading-none mb-1">Actif</p>
+        <p class="text-xs text-slate-500 leading-relaxed">Sauvegardes 24/7 en France</p>
+      </div>
+
+      <!-- LAYER 3 : Trust badge hébergement (bottom-left) -->
+      <div class="absolute -bottom-4 -left-4 z-30 bg-white p-5 rounded-xl shadow-xl">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#0D9488] mb-1">Hébergement France</p>
+        <p class="font-sora text-xl font-bold text-[#0B3D91]">99.9% uptime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TRUST BAR (pattern DNA, accent #0D9488, 4 items sécurité) -->
+<section class="py-6 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4 dcb-stagger">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0D9488] text-3xl ms-fill">verified</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">99.9% uptime garanti</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0D9488] text-3xl ms-fill">lock</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Chiffré AES-256</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0D9488] text-3xl ms-fill">backup</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Sauvegarde externalisée</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#0D9488] text-3xl ms-fill">gavel</span>
+        <span class="font-semibold text-base md:text-xl text-slate-500">Conforme RGPD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROBLÈME / SOLUTION (narration éducation : comprendre les risques) -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl dcb-reveal">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#0D9488] uppercase block mb-3">Comprendre les risques</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-6 leading-tight">Les menaces qui pèsent sur votre entreprise</h2>
+      <p class="text-slate-500 text-base leading-relaxed mb-8">En 2024, une PME sur deux a subi une cyberattaque. Sans protection adaptée, vos données clients, votre comptabilité et votre activité sont en danger permanent. Le premier pas consiste à identifier vos vulnérabilités avant qu'elles ne soient exploitées.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 dcb-stagger">
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <span class="material-symbols-outlined text-[#0D9488] text-2xl mb-3 block">cloud_off</span>
+        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Données non sauvegardées</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Panne de serveur, incendie, vol de matériel : sans sauvegarde externalisée, une seule défaillance peut effacer des années de travail. La <a href="../../maintenance-informatique/depannage-assistance/" class="underline hover:text-[#0D9488] transition-colors">maintenance préventive</a> ne suffit pas si vos données ne sont pas dupliquées ailleurs.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <span class="material-symbols-outlined text-[#0D9488] text-2xl mb-3 block">bug_report</span>
+        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Virus et ransomware</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Un clic sur une pièce jointe malveillante et c'est tout votre réseau qui est chiffré. Rançon moyenne exigée : 20 000€ pour une PME. Sans copies immuables, impossible de restaurer sans payer.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl tonal-shift-elevation">
+        <span class="material-symbols-outlined text-[#0D9488] text-2xl mb-3 block">psychology</span>
+        <h3 class="font-sora font-semibold text-[#0B3D91] mb-2">Des équipes non formées</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Phishing, mails frauduleux, mots de passe faibles : 80% des incidents de sécurité partent d'une erreur humaine. Sans sensibilisation régulière, vos collaborateurs restent la première porte d'entrée des attaques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FEATURES (la solution, pattern sticky sidebar 2x2) -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-24 dcb-reveal">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[#0D9488] uppercase block mb-3">La solution</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Une protection complète pour votre entreprise</h2>
+        <p class="text-slate-500 text-base leading-relaxed">Quatre piliers complémentaires : sauvegarde externalisée, antivirus, firewall et formation de vos équipes. Chaque brique est supervisée par nos experts avec un <a href="../../maintenance-informatique/" class="underline hover:text-[#0D9488] transition-colors">monitoring serveur</a> continu et des sauvegardes hors-site automatisées.</p>
+      </div>
+      <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 dcb-stagger">
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#0D9488]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0D9488] ms-fill">backup</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Sauvegarde externalisée</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Copies immuables conservées hors de vos locaux, dans des datacenters français. Sauvegarde incrémentale quotidienne, rétention 90 jours, restauration garantie en moins de 4 heures.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#0D9488]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0D9488] ms-fill">shield_with_heart</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Antivirus managé</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Protection proactive de tous vos terminaux avec surveillance 24/7. Détection comportementale avancée, mises à jour automatiques, rapports mensuels.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#0D9488]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0D9488] ms-fill">security</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Firewall entreprise</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Pare-feu nouvelle génération avec filtrage applicatif, VPN sécurisé pour le télétravail, détection d'intrusion et filtrage antispam et anti-phishing de votre messagerie professionnelle.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="w-11 h-11 bg-[#0D9488]/10 flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-[#0D9488] ms-fill">school</span></div>
+          <h3 class="font-sora text-lg font-semibold text-[#0B3D91]">Formation de vos employés</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Sensibilisation à la cybersécurité de vos équipes : repérer un mail de phishing, gérer ses mots de passe, adopter les bons réflexes. Sessions courtes et simulations d'attaques adaptées à votre activité.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CONTACT (besoin calibré ensemble) -->
+<section id="contact" class="py-12 lg:py-16 bg-[#F8F9FA] scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 dcb-reveal">
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[#0D9488] uppercase block mb-2">Parlons de votre besoin</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91] mb-4 leading-tight">Une protection calibrée ensemble, pas une offre imposée</h2>
+        <p class="text-slate-500 text-base leading-relaxed mb-6">Nombre de postes, serveurs, télétravail, données sensibles : chaque entreprise a des risques différents. Décrivez votre situation via le formulaire, nous analysons votre parc et construisons avec vous le niveau de protection adapté, sans surdimensionner.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#0D9488] shrink-0 mt-0.5 ms-fill">check_circle</span>
+            <p class="text-slate-500 text-sm">Audit sécurité initial de votre parc, sans engagement</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#0D9488] shrink-0 mt-0.5 ms-fill">check_circle</span>
+            <p class="text-slate-500 text-sm">Proposition claire sous 24h, uniquement ce dont vous avez besoin</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#0D9488] shrink-0 mt-0.5 ms-fill">check_circle</span>
+            <p class="text-slate-500 text-sm">Données hébergées en France, techniciens DCB salariés</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <div id="devis-cloud-form" class="bg-white p-8 rounded-xl tonal-shift-elevation border border-slate-100">
+          <h3 class="font-sora font-bold text-lg text-[#0B3D91] mb-1 no-underline">Être recontacté par un expert</h3>
+          <p class="text-slate-500 text-sm mb-6">Réponse sous 24h. Pas de démarchage, pas d'engagement.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="space-y-1">
+              <label for="prenom-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Prénom</label>
+              <input id="prenom-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="Jean" type="text">
+            </div>
+            <div class="space-y-1">
+              <label for="email-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Email</label>
+              <input id="email-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="jean@monentreprise.fr" type="email">
+            </div>
+            <div class="space-y-1">
+              <label for="tel-cloud" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Téléphone</label>
+              <input id="tel-cloud" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20" placeholder="06 12 34 56 78" type="tel">
+            </div>
+            <div class="space-y-1">
+              <label for="besoin-cloud-select" class="text-[11px] font-bold tracking-widest text-slate-400 uppercase block">Votre priorité</label>
+              <select id="besoin-cloud-select" class="w-full bg-[#F8F9FA] border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#0D9488]/20">
+                <option value="">Choisir une priorité</option>
+                <option value="sauvegarde">Sauvegarde externalisée</option>
+                <option value="antivirus">Antivirus professionnel</option>
+                <option value="firewall">Firewall</option>
+                <option value="formation">Formation des employés</option>
+                <option value="audit-global">Je ne sais pas encore, audit global</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="bg-[#0D9488] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all">Être recontacté sous 24h <span class="material-symbols-outlined text-sm">mail</span></button>
+            <a href="tel:0482530510" class="border-2 border-[#0B3D91] text-[#0B3D91] py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#0B3D91]/5 transition-colors"><span class="material-symbols-outlined text-sm">call</span> 04 82 53 05 10</a>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">lock</span> Vos données restent confidentielles. Zéro spam, zéro démarchage téléphonique.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CROSS-SELL -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 max-w-3xl dcb-reveal">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0D9488] mb-4">Aller plus loin</p>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold text-[#0B3D91]">Complétez votre protection IT</h2>
+      <p class="text-slate-500 text-lg mt-3">Intervention rapide et hébergement surveillé : deux expertises qui prolongent la sécurité cloud sur toute votre infrastructure.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dcb-stagger">
+      <a href="../../maintenance-informatique/depannage-assistance/index.html" data-dest="depannage-assistance" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#EF4444]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#EF4444] text-2xl ms-fill">build_circle</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(239,68,68,0.12)]">Intervention &lt;4h</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Dépannage et assistance</h3>
+          <p class="text-slate-500 text-sm mb-4">Panne détectée, intervention 4h. Monitoring préventif, télémaintenance immédiate et technicien salarié sur site. Zéro sous-traitance.</p>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#EF4444] transition-colors">Découvrir le dépannage</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#EF4444] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="cx-vis relative overflow-hidden min-h-[220px] sm:min-h-0">
+          <img src="../../assets/maintenance-depannage-technicien-intervention.webp" alt="Technicien DCB en intervention de dépannage sur un poste informatique en panne" width="1024" height="1024" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105">
+        </div>
+      </a>
+      <a href="../../maintenance-informatique/materiel-reseaux/index.html" data-dest="materiel-reseaux" class="cx-card group bg-[#F8F9FA] rounded-2xl overflow-hidden no-underline hover:-translate-y-1 transition-all duration-300 tonal-shift-elevation hover:shadow-[0_15px_40px_-10px_rgba(11,61,145,0.2)] grid grid-cols-1 sm:grid-cols-2">
+        <div class="p-7 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="cx-icon w-11 h-11 rounded-xl bg-[#4F46E5]/10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6"><span class="material-symbols-outlined text-[#4F46E5] text-2xl ms-fill">router</span></div>
+            <span class="cx-badge text-[11px] font-bold uppercase tracking-widest text-[#4F46E5] bg-[#4F46E5]/10 px-3 py-1 rounded-full transition-all duration-500 ease-out group-hover:shadow-[0_0_0_6px_rgba(79,70,229,0.12)]">Sans apport</span>
+          </div>
+          <h3 class="font-sora font-bold text-xl text-[#0B3D91] mb-2">Matériel et réseaux</h3>
+          <p class="text-slate-500 text-sm mb-4">Postes, serveurs, réseau : équipements neufs installés par nos techniciens, financement inclus. Le même interlocuteur gère votre parc et votre sécurité.</p>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="cx-link font-bold text-[#0B3D91] text-sm group-hover:text-[#4F46E5] transition-colors">Voir les formules</span>
+            <span class="cx-arrow w-8 h-8 rounded-full bg-[#0B3D91]/5 flex items-center justify-center group-hover:bg-[#4F46E5] transition-all"><span class="material-symbols-outlined text-[#0B3D91] text-sm group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span></span>
+          </div>
+        </div>
+        <div class="cx-vis bg-gradient-to-br from-[#4F46E5] to-[#3730A3] flex items-center justify-center p-4 relative overflow-hidden min-h-[220px] sm:min-h-0">
+          <span class="material-symbols-outlined text-white/60 relative z-10 transition-transform duration-500 ease-out group-hover:scale-110" style="font-size: 72px; font-variation-settings:'FILL' 1, 'wght' 300;">router</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="py-12 lg:py-16 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-sora text-2xl font-bold text-[#0B3D91] text-center mb-8 dcb-reveal">Questions fréquentes</h2>
+      <div class="flex flex-col gap-3 dcb-reveal">
+        <details class="faq-item"><summary>Que faire en cas de cyberattaque ou de ransomware ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Isolez immédiatement la machine du réseau, ne payez pas la rançon et appelez-nous. Grâce à la sauvegarde externalisée avec copies immuables, nous restaurons votre système à son état antérieur à l'attaque en quelques heures.</div></details>
+        <details class="faq-item"><summary>Comment reconnaître un mail frauduleux ou de phishing ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Expéditeur inhabituel, sentiment d'urgence, lien ou pièce jointe inattendus : ce sont les signaux classiques. Notre antispam filtre ces messages en amont et nous formons vos équipes à repérer ceux qui passent.</div></details>
+        <details class="faq-item"><summary>Pourquoi externaliser la sauvegarde des données de son entreprise ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Panne, incendie, vol ou ransomware : une copie conservée uniquement dans vos locaux peut disparaître avec le reste. La sauvegarde externalisée duplique vos données dans des datacenters français certifiés ISO 27001, avec des copies immuables impossibles à chiffrer par un attaquant.</div></details>
+        <details class="faq-item"><summary>Quel antivirus choisir pour une entreprise ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Un antivirus grand public ne suffit plus face aux attaques actuelles. Nous déployons un antivirus professionnel managé avec détection comportementale, supervisé 24/7 par nos techniciens : chaque alerte est qualifiée par un humain.</div></details>
+        <details class="faq-item"><summary>Comment sensibiliser ses salariés à la cybersécurité ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Par des formations courtes et régulières, des simulations de phishing et des règles simples sur les mots de passe. 80% des incidents partent d'une erreur humaine : nous formons vos équipes directement sur site.</div></details>
+        <details class="faq-item"><summary>En quoi consiste un audit de sécurité informatique ?<span class="material-symbols-outlined expand-icon">expand_more</span></summary><div class="faq-item__body">Nous cartographions votre <a href="../../maintenance-informatique/" class="underline hover:text-[#0D9488] transition-colors">parc informatique</a>, identifions les vulnérabilités sur les sauvegardes, les accès, la messagerie et le réseau, puis vous remettons un plan d'action priorisé. L'audit initial est réalisé sous 48h.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 desktop : "Le Seuil" (CSS dans style.css) -->
+<section class="d-cta-final" style="padding-top:80px;padding-bottom:56px;--accent:#0D9488;--accent-dark:#0F766E">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-seuil grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start dcb-reveal">
+      <div class="lg:col-span-7 col-msg">
+        <span class="filet" aria-hidden="true"></span>
+        <h2 class="d-h">Prêt à sécuriser votre entreprise ?</h2>
+        <p class="d-lede">Demandez votre audit cybersécurité gratuit. Nos experts vous rappellent sous 24h avec un plan d'action adapté à votre parc.</p>
+      </div>
+      <div class="lg:col-span-5 col-action">
+        <a href="../../contact/index.html" class="btn btn--primary">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <span class="d-divider">ou appelez-nous</span>
+        <a href="tel:0482530510" class="d-tel" aria-label="Appeler DCB au 04 82 53 05 10"><span class="material-symbols-outlined gly ms-fill" aria-hidden="true">call</span>04 82 53 05 10</a>
+      </div>
+    </div>
+    <div class="d-foot">
+      <a href="../../maintenance-informatique/index.html" class="d-back"><span class="arr material-symbols-outlined" aria-hidden="true">arrow_back</span>Retour a Maintenance informatique</a>
+      <time class="d-updated" datetime="2026-07-22">Mis a jour le 22 juillet 2026</time>
+    </div>
+  </div>
+</section>
+</main>
+<div id="dcb-footer"></div>
+</div><!-- /d-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE SHELL  (visible ≤640 px uniquement : .m-shell)
+═══════════════════════════════════════════════════════════════ -->
+<div class="m-shell" data-metier="cybersecurite-sauvegarde">
+
+<a class="skip-link" href="#m-main">Aller au contenu principal</a>
+<div class="progress" aria-hidden="true"><span id="m-pg"></span></div>
+<div id="m-nav"></div>
+
+<main id="m-main">
+
+<!-- S1 : HERO (Family B, stat 99.9%) -->
+<section class="hero">
+  <div class="chips">
+    <span class="chip"><span class="material-symbols-outlined fill ms-fill">cloud_done</span>Cybersécurité &amp; sauvegarde</span>
+    <span class="chip teal" style="white-space:nowrap;flex-shrink:0">Hébergement France</span>
+  </div>
+  <h1>Cybersécurité et sauvegarde&nbsp;: <em>protégez vos données</em>.</h1>
+  <p class="lede">Sauvegarde externalisée, antivirus managé, firewall et formation de vos équipes. Infrastructure cloud hébergée en France, supervisée par nos experts.</p>
+
+  <div class="scene">
+    <div class="tpv">
+      <img src="../../assets/hero-cybersecurite-sauvegarde.jpg" alt="Expert DCB supervisant la sécurité cloud d'un client" width="500" height="400" loading="eager" fetchpriority="high"
+           onerror="this.onerror=null;this.src='../../assets/placeholder-photo.svg'">
+    </div>
+    <div class="float-stat" aria-hidden="true">
+      <div class="ic" style="background:linear-gradient(135deg,#0D9488,#0F766E)"><span class="material-symbols-outlined ms-fill">verified</span></div>
+      <div class="txt">
+        <div class="num">99.9%</div>
+        <div class="desc">Uptime garanti</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checks">
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Sauvegarde externalisée avec copies immuables</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Protection proactive contre les ransomwares</div>
+    <div><span class="material-symbols-outlined fill ms-fill">check_circle</span>Formation de vos employés à la cybersécurité</div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-pri" href="../../contact/index.html" aria-label="Demander un audit sécurité">Demander un audit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    <a class="btn btn-icon" href="tel:0482530510" aria-label="Appeler DCB Technologies"><span class="material-symbols-outlined fill ms-fill">call</span></a>
+  </div>
+</section>
+
+<!-- S2 : MARQUEE -->
+<ul class="sr-only">
+  <li>99.9% uptime garanti</li>
+  <li>Chiffré AES-256</li>
+  <li>Sauvegarde externalisée</li>
+  <li>Conforme RGPD</li>
+</ul>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">verified</span>99.9% uptime</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">lock</span>Chiffré AES-256</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">backup</span>Sauvegarde externalisée</div>
+    <div class="it"><span class="material-symbols-outlined fill ms-fill">gavel</span>Conforme RGPD</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">verified</span>99.9% uptime</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">lock</span>Chiffré AES-256</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">backup</span>Sauvegarde externalisée</div>
+    <div class="it" aria-hidden="true"><span class="material-symbols-outlined fill ms-fill">gavel</span>Conforme RGPD</div>
+  </div>
+</div>
+
+<!-- S3 : PAIN -->
+<section class="sec s1">
+  <p class="eyebrow">Comprendre les risques</p>
+  <h2>Les menaces qui pèsent <em>sur votre entreprise</em>.</h2>
+  <div class="pain">
+    <div class="row">
+      <div class="n">01</div>
+      <div>
+        <h3>Données non sauvegardées</h3>
+        <p>Panne de serveur, incendie, vol de matériel : sans sauvegarde externalisée, une seule défaillance peut effacer des années de travail.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <div>
+        <h3>Virus et ransomware</h3>
+        <p>Un clic sur une pièce jointe malveillante et tout votre réseau est chiffré. Rançon moyenne exigée : 20 000€ pour une PME.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <div>
+        <h3>Des équipes non formées</h3>
+        <p>Phishing, mails frauduleux, mots de passe faibles : 80% des incidents partent d'une erreur humaine. La sensibilisation de vos équipes est votre première ligne de défense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 : FEATURES (pattern .cm-feats > .ft) -->
+<section class="sec">
+  <p class="eyebrow">La solution</p>
+  <h2>Une protection <em>complète</em> pour votre entreprise.</h2>
+  <p style="font-size:13.5px;color:var(--mute);margin:0 0 18px;line-height:1.55">Chaque brique de sécurité est supervisée par nos experts. Vous vous concentrez sur votre activité, nous veillons sur votre infrastructure.</p>
+  <div class="cm-feats" style="margin-top:14px">
+    <div class="ft">
+      <div class="ic" style="background:rgba(13,148,136,0.10);color:#0D9488">
+        <span class="material-symbols-outlined ms-fill">backup</span>
+      </div>
+      <div>
+        <h3>Sauvegarde externalisée</h3>
+        <p>Copies immuables conservées hors de vos locaux, dans des datacenters français. Sauvegarde incrémentale quotidienne, rétention 90 jours, restauration en moins de 4 heures.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic" style="background:rgba(13,148,136,0.10);color:#0D9488">
+        <span class="material-symbols-outlined ms-fill">shield_with_heart</span>
+      </div>
+      <div>
+        <h3>Antivirus managé</h3>
+        <p>Protection proactive de tous vos terminaux avec surveillance 24/7. Détection comportementale, mises à jour automatiques, rapports mensuels.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic" style="background:rgba(13,148,136,0.10);color:#0D9488">
+        <span class="material-symbols-outlined ms-fill">security</span>
+      </div>
+      <div>
+        <h3>Firewall entreprise</h3>
+        <p>Pare-feu nouvelle génération avec filtrage applicatif, VPN télétravail, détection d'intrusion et filtrage antispam et anti-phishing de votre messagerie.</p>
+      </div>
+    </div>
+    <div class="ft">
+      <div class="ic" style="background:rgba(13,148,136,0.10);color:#0D9488">
+        <span class="material-symbols-outlined ms-fill">school</span>
+      </div>
+      <div>
+        <h3>Formation de vos employés</h3>
+        <p>Sensibilisation à la cybersécurité : repérer un mail de phishing, gérer ses mots de passe, adopter les bons réflexes. Sessions courtes et simulations adaptées à votre activité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 : CONTACT -->
+<section class="sec">
+  <p class="eyebrow">Parlons de votre besoin</p>
+  <h2>Une protection <em>calibrée ensemble</em>.</h2>
+  <p style="font-size:13.5px;color:var(--mute);margin:0 0 14px;line-height:1.55">Nombre de postes, serveurs, télétravail, données sensibles : chaque entreprise a des risques différents. Décrivez votre situation via le formulaire de contact, nous analysons votre parc et construisons avec vous le niveau de protection adapté.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:#0D9488">check</span>Audit sécurité initial sans engagement</div>
+    <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:#0D9488">check</span>Proposition claire sous 24h</div>
+    <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:#0D9488">check</span>Données hébergées en France</div>
+  </div>
+  <a class="btn btn-pri" href="../../contact/index.html" style="width:100%">Décrire mon besoin<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+</section>
+
+<!-- S6 : CROSS-SELL -->
+<section class="sec s1">
+  <p class="eyebrow">Aller plus loin</p>
+  <h2>Complétez votre <em>protection IT</em>.</h2>
+  <div class="peri-a">
+    <a href="../../maintenance-informatique/depannage-assistance/index.html" data-dest="depannage-assistance" aria-label="Dépannage et assistance informatique" class="peri-photo">
+      <div class="txt">
+        <span class="pp">Intervention &lt;4h</span>
+        <h3>Dépannage et assistance</h3>
+        <p>Intervention 4h, monitoring préventif, télémaintenance et technicien salarié sur site.</p>
+        <span class="lk">Découvrir le dépannage<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis vis-photo">
+        <img src="../../assets/maintenance-depannage-technicien-intervention.webp" alt="Technicien DCB en intervention de dépannage sur un poste informatique en panne" width="1024" height="1024" loading="lazy" decoding="async">
+      </div>
+    </a>
+    <a href="../../maintenance-informatique/materiel-reseaux/index.html" data-dest="materiel-reseaux" aria-label="Matériel et réseaux informatiques">
+      <div class="txt">
+        <span class="pp">Sans apport</span>
+        <h3>Matériel et réseaux</h3>
+        <p>Postes, serveurs, réseau : neufs installés par nos techniciens, financement inclus.</p>
+        <span class="lk">Voir les formules<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span>
+      </div>
+      <div class="vis">
+        <span class="material-symbols-outlined fill ic-cx" aria-hidden="true">router</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- S7 : FAQ + CTA FINAL -->
+<section class="sec">
+  <p class="eyebrow">Besoin de précisions ?</p>
+  <h2>Questions <em>fréquentes</em>.</h2>
+  <div class="faq">
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Que faire en cas de cyberattaque ou de ransomware ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Isolez immédiatement la machine du réseau, ne payez pas la rançon et appelez-nous. Grâce à la sauvegarde externalisée avec copies immuables, nous restaurons votre système à son état antérieur à l'attaque en quelques heures.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Pourquoi externaliser la sauvegarde de ses données ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Panne, incendie, vol ou ransomware : une copie conservée uniquement dans vos locaux peut disparaître avec le reste. La sauvegarde externalisée duplique vos données dans des datacenters français certifiés ISO 27001, avec des copies immuables.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>Comment sensibiliser ses salariés à la cybersécurité ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Par des formations courtes et régulières, des simulations de phishing et des règles simples sur les mots de passe. 80% des incidents partent d'une erreur humaine : nous formons vos équipes directement sur site.</div>
+    </details>
+    <details>
+      <summary><span class="qi"><span class="material-symbols-outlined" aria-hidden="true">help</span></span>En quoi consiste un audit de sécurité informatique ?<span class="material-symbols-outlined ch faq-icon" aria-hidden="true">expand_more</span></summary>
+      <div class="ans">Nous cartographions votre parc, identifions les vulnérabilités sur les sauvegardes, les accès, la messagerie et le réseau, puis vous remettons un plan d'action priorisé. L'audit initial est réalisé sous 48h.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL v3 : Le Bord Tranché (signature narrative éducation #0D9488) -->
+<section class="m-cta-final" style="--accent:#0D9488;--accent-shadow:rgba(13,148,136,0.40)" aria-labelledby="cta-final-h">
+  <span class="topbar" aria-hidden="true"></span>
+  <h3 id="cta-final-h">Prêt à sécuriser votre entreprise&nbsp;?</h3>
+  <p>Demandez votre audit cybersécurité gratuit. Nos experts vous rappellent sous 24h avec un plan d'action adapté à votre parc.</p>
+  <a class="btn btn-pri" href="../../contact/index.html">Demander un audit gratuit<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  <span class="dpx-divider">ou appelez-nous</span>
+  <a class="dpx-tel" href="tel:0482530510" aria-label="Appeler DCB au 04 82 53 05 10"><span class="gly" aria-hidden="true">call</span>04 82 53 05 10</a>
+  <p class="m-updated">Mis à jour le <time datetime="2026-07-22">22 juillet 2026</time></p>
+  <span class="bottomark" aria-hidden="true"></span>
+</section>
+
+</main><!-- /m-main -->
+
+<div id="m-footer"></div>
+<div id="m-fab"></div>
+<div id="m-sheet"></div>
+<div id="m-menu"></div>
+
+</div><!-- /m-shell -->
+
+<script src="../../js/scripts.js?v=50"></script>
+<script>
+/* Sous-page IT : remplace le FAB "Demander un devis" par un lien contact */
+(function waitFab() {
+  var btn = document.getElementById('fabDevis');
+  if (!btn) { return setTimeout(waitFab, 30); }
+  var a = document.createElement('a');
+  a.className = btn.className;
+  a.href = '../../contact/index.html';
+  a.setAttribute('aria-label', 'Demander un audit cybersécurité et sauvegarde');
+  a.innerHTML = btn.innerHTML;
+  btn.parentNode.replaceChild(a, btn);
+})();
+</script>
+</body>
+</html>

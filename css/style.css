@@ -976,11 +976,11 @@ abbr[data-tooltip]:focus::before {
 [data-dest="cashmag"]                      { --cx: #76B737; --cx-rgb: 118,183,55  }
 [data-dest="hairnet"]                      { --cx: #4527a4; --cx-rgb: 69,39,164   }
 /* Silo IT */
-[data-dest="maintenance-depannage"]        { --cx: #EF4444; --cx-rgb: 239,68,68   }
-[data-dest="cloud-securite"]               { --cx: #0D9488; --cx-rgb: 13,148,136  }
-[data-dest="location-vente-installation"]  { --cx: #0B3D91; --cx-rgb: 11,61,145   }
-[data-dest="outils-collaboratifs"]         { --cx: #A855F7; --cx-rgb: 168,85,247  }
-[data-dest="infogerance-pme"]              { --cx: #F59E0B; --cx-rgb: 245,158,11  }
+[data-dest="depannage-assistance"]         { --cx: #EF4444; --cx-rgb: 239,68,68   }
+[data-dest="cybersecurite-sauvegarde"]     { --cx: #0D9488; --cx-rgb: 13,148,136  }
+[data-dest="materiel-reseaux"]             { --cx: #0B3D91; --cx-rgb: 11,61,145   }
+[data-dest="emails-pro-collaboration"]     { --cx: #A855F7; --cx-rgb: 168,85,247  }
+[data-dest="infogerance-maintenance"]      { --cx: #F59E0B; --cx-rgb: 245,158,11  }
 /* Hubs inter-silos */
 [data-dest="caisse-enregistreuse"]         { --cx: #0B3D91; --cx-rgb: 11,61,145   }
 [data-dest="maintenance-informatique"]     { --cx: #0B3D91; --cx-rgb: 11,61,145   }

@@ -46,7 +46,7 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 [data-metier="cashmag"]        .hero{background:linear-gradient(135deg,#5A8E29 0%,#76B737 100%)}
 [data-metier="hairnet"]        .hero{background:linear-gradient(135deg,#2E1A7A 0%,#4527a4 100%)}
 [data-metier="depannage"]      .hero{background:linear-gradient(135deg,#7F1D1D 0%,#991B1B 100%)}
-[data-metier="cloud-securite"] .hero{background:linear-gradient(135deg,#115E59 0%,#0F6E56 100%)}
+[data-metier="cybersecurite-sauvegarde"] .hero{background:linear-gradient(135deg,#115E59 0%,#0F6E56 100%)}
 [data-metier="location-vente"] .hero{background:linear-gradient(135deg,#0B3D91 0%,#072B6B 100%)}
 [data-metier="outils-collab"]  .hero{background:linear-gradient(135deg,#581C87 0%,#6D28D9 100%)}
 [data-metier="web"]            .hero{background:linear-gradient(135deg,#0B3D91 0%,#072B6B 100%)}
@@ -258,21 +258,21 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 [data-dest="hairnet"]             .vis{background:rgba(69,39,164,0.06)}
 [data-dest="hairnet"]           .ic-cx{color:#4527a4}
 /* Silo IT — sous-pages */
-[data-dest="maintenance-depannage"]         .pp{background:rgba(239,68,68,0.10);color:#EF4444}
-[data-dest="maintenance-depannage"]        .vis{background:rgba(239,68,68,0.05)}
-[data-dest="maintenance-depannage"]      .ic-cx{color:#EF4444}
-[data-dest="cloud-securite"]              .pp{background:rgba(13,148,136,0.10);color:#0D9488}
-[data-dest="cloud-securite"]             .vis{background:rgba(13,148,136,0.05)}
-[data-dest="cloud-securite"]           .ic-cx{color:#0D9488}
-[data-dest="location-vente-installation"] .pp{background:rgba(11,61,145,0.08);color:#0B3D91}
-[data-dest="location-vente-installation"] .vis{background:rgba(11,61,145,0.06)}
-[data-dest="location-vente-installation"] .ic-cx{color:#0B3D91}
-[data-dest="outils-collaboratifs"]        .pp{background:rgba(168,85,247,0.10);color:#A855F7}
-[data-dest="outils-collaboratifs"]       .vis{background:rgba(168,85,247,0.05)}
-[data-dest="outils-collaboratifs"]     .ic-cx{color:#A855F7}
-[data-dest="infogerance-pme"]             .pp{background:rgba(245,158,11,0.10);color:#F59E0B}
-[data-dest="infogerance-pme"]            .vis{background:rgba(245,158,11,0.05)}
-[data-dest="infogerance-pme"]          .ic-cx{color:#F59E0B}
+[data-dest="depannage-assistance"]         .pp{background:rgba(239,68,68,0.10);color:#EF4444}
+[data-dest="depannage-assistance"]        .vis{background:rgba(239,68,68,0.05)}
+[data-dest="depannage-assistance"]      .ic-cx{color:#EF4444}
+[data-dest="cybersecurite-sauvegarde"]              .pp{background:rgba(13,148,136,0.10);color:#0D9488}
+[data-dest="cybersecurite-sauvegarde"]             .vis{background:rgba(13,148,136,0.05)}
+[data-dest="cybersecurite-sauvegarde"]           .ic-cx{color:#0D9488}
+[data-dest="materiel-reseaux"] .pp{background:rgba(11,61,145,0.08);color:#0B3D91}
+[data-dest="materiel-reseaux"] .vis{background:rgba(11,61,145,0.06)}
+[data-dest="materiel-reseaux"] .ic-cx{color:#0B3D91}
+[data-dest="emails-pro-collaboration"]        .pp{background:rgba(168,85,247,0.10);color:#A855F7}
+[data-dest="emails-pro-collaboration"]       .vis{background:rgba(168,85,247,0.05)}
+[data-dest="emails-pro-collaboration"]     .ic-cx{color:#A855F7}
+[data-dest="infogerance-maintenance"]             .pp{background:rgba(245,158,11,0.10);color:#F59E0B}
+[data-dest="infogerance-maintenance"]            .vis{background:rgba(245,158,11,0.05)}
+[data-dest="infogerance-maintenance"]          .ic-cx{color:#F59E0B}
 /* Hubs inter-silos */
 [data-dest="caisse-enregistreuse"]        .pp{background:rgba(11,61,145,0.08);color:#0B3D91}
 [data-dest="caisse-enregistreuse"]       .vis{background:rgba(11,61,145,0.04)}
@@ -508,7 +508,7 @@ button,a,[role="button"],[role="radio"]{touch-action:manipulation}
 .m-shell[data-metier="monnayeur"]     .menu-tel .material-symbols-outlined{color:#059669}
 .m-shell[data-metier="cashmag"]       .menu-tel .material-symbols-outlined{color:#76B737}
 .m-shell[data-metier="depannage"]     .menu-tel .material-symbols-outlined{color:#EF4444}
-.m-shell[data-metier="cloud-securite"] .menu-tel .material-symbols-outlined{color:#0D9488}
+.m-shell[data-metier="cybersecurite-sauvegarde"] .menu-tel .material-symbols-outlined{color:#0D9488}
 .m-shell[data-metier="outils-collab"]  .menu-tel .material-symbols-outlined{color:#A855F7}
 .m-shell[data-metier="location-vente"] .menu-tel .material-symbols-outlined{color:#4F46E5}
 .m-shell[data-metier="creation-site"] .menu-tel .material-symbols-outlined{color:#7C3AED}
